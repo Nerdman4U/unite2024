@@ -1,0 +1,321 @@
+body
+{
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.alert {
+  position: absolute;
+  left:0;right:0;
+  z-index: 1000;
+  top:1em;
+  text-align: center;
+}
+
+/* skin-barber-shop.css defines many texts as grey, change them to black */
+body,
+.post-info,
+.footer .widget-title,
+.footer .widget-title a,
+.footer-top a:not(.button),
+.footer .widget, .footer address,
+.header-background .navigation > ul > li > a
+{
+    color: black;
+}
+
+.header-transparent .navigation > ul > li > a
+{
+    opacity: 1.0;
+}
+
+.table, th, td { border: 0 !important; }
+.table > tbody > tr > td, .table > tbody > tr > th, .table > thead > tr > th {
+  border-top: 1px solid #ddd !important;
+  line-height: 1.42857;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.comment-area { 
+  display: none 
+}
+
+/* Make the input fields and the country selector look the same */
+input[type="text"].form-control, select#vote_country
+{
+    color: black;
+    font-size: inherit;
+    font-weight: normal;
+    border: 1pt solid #bbbbbb;
+    padding: 1rem 2.5rem;
+}
+
+input[type="text"].form-control:focus, select#vote_country:focus
+{
+    border-color: #777777;
+}
+
+#slideshow-caption
+{
+    position: absolute;
+    z-index: 3;
+    width: 600px;
+    right: 0%;
+    top: 0;
+    height: auto;
+    margin-top: 50pt;
+    margin-bottom: 0;
+}
+
+#slideshow-caption span {
+}
+
+#slideshow-caption h2 {
+    color: inherit;
+/*    text-shadow:
+            2px  2px 1px rgba(0, 0, 0, 0.4),
+            0 0 0.3em rgba(0, 0, 0, 0.2),
+            0 0 0.7em rgba(0, 0, 0, 0.3); */
+    transition: color 0.5s, text-shadow 0.5s;
+}
+
+#slideshow-caption p {
+    color: inherit;
+/*    text-shadow:
+            1px  1px 0em rgba(0, 0, 0, 0.5),
+            0 0 0.3em rgba(0, 0, 0, 0.3),
+            0 0 0.7em rgba(0, 0, 0, 0.4); */
+    transition: color 0.5s, text-shadow 0.5s;
+}
+
+.slideshow + div {
+    color: white;
+    text-shadow:
+            1px  1px 0em rgba(0, 0, 0, 0.5),
+            0 0 0.3em rgba(0, 0, 0, 0.3),
+            0 0 0.7em rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 769px) {
+    .slideshow[data-slide-class=black-text] + div
+    {
+        color: black !important;
+        text-shadow:
+                1px  1px 0em rgba(255, 255, 255, 0.8),
+                0 0 0.3em rgba(255, 255, 255, 1),
+                0 0 0.7em rgba(255, 255, 255, 1);
+    }
+}
+
+@media (max-width: 768px)
+{
+    #slideshow-caption
+    {
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: auto;
+        height: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 80%;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 768px)
+{
+    #appeal_caption
+    { /*
+        margin-left: 150pt;
+        margin-top: -120pt; */
+    }
+}
+
+/* core.min.css defines some weird rules, override them for recent votes */
+#recent_votes thead, #recent_votes tbody
+{
+    background: none;
+    color: black;
+    display: table-row-group;
+    float: none;
+}
+
+#recent_votes tr
+{
+    display: table-row;
+    float: none;
+}
+
+#recent_votes th
+{
+    display: table-cell;
+    float: none;
+}
+
+/*
+ * Country votes table
+ */
+
+table#country_votes_table
+{
+    background: none;
+    color: black;
+    display: table;
+    float: none;
+}
+
+#country_votes_table tbody
+{
+    background: none;
+    color: black;
+    display: table-row-group;
+    float: none;
+}
+
+#country_votes_table tr
+{
+    display: table-row;
+    float: none;
+}
+
+#country_votes_table th
+{
+    display: table-cell;
+    float: none;
+}
+
+#country_votes_table td.country_flag
+{
+    width: 70px;
+}
+
+#country_votes_table td.country
+{
+    width: 100pt;
+    vertical-align: middle;
+}
+
+#country_votes_table td.vote_percentage
+{
+    width: auto;
+}
+
+#country_votes_table td.vote_count
+{
+    text-align: right;
+    width: 50pt;
+}
+
+@media (max-width: 500px)
+{
+    #country_votes_table td.country_flag
+    {
+        width: 50px;
+    }
+    #country_votes_table td
+    {
+        padding: 5pt;
+    }
+}
+
+/*
+ * share button plugin configuration
+ */
+
+.social-share-button .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+}
+
+/*
+ * header share buttons
+ */
+
+div.share-buttons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: initial;
+    line-height: initial;
+    z-index: 1;
+}
+
+a.share-button {
+    display: inline;
+    box-sizing: border-box;
+    height: 20px;
+    border-radius: 3px;
+    padding-left: 18pt;
+    padding-right: 4pt;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+    color: white;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    background-size: 16px 16px;
+
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: initial;
+}
+
+a.facebook.share-button {
+    background-color: #4267B2;
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%20class%3D%22_1pbq%22%3E%0D%0A%20%3Cpath%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8%2014H3.667C2.733%2013.9%202%2013.167%202%2012.233V3.667A1.65%201.65%200%200%201%0D%0A%20%203.667%202h8.666A1.65%201.65%200%200%201%2014%203.667v8.566c0%20.934-.733%0D%0A%20%201.667-1.667%0D%0A%20%201.767H10v-3.967h1.3l.7-2.066h-2V6.933c0-.466.167-.9.867-.9H12v-1.8c.033%0D%0A%20%200-.933-.266-1.533-.266-1.267%200-2.434.7-2.467%0D%0A%20%202.133v1.867H6v2.066h2V14z%22%2F%3E%0D%0A%3C%2Fsvg%3E);
+}
+
+a.facebook.share-button:hover {
+    background-color: #4884d5;
+}
+
+a.twitter.share-button {
+    background-color: #1b95e0;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+a.twitter.share-button:hover {
+    background-color: #1ba9f4;
+}
+
+a.mailto-link {
+    color: #227 !important;
+}
+
+a.mailto-link:hover {
+    color: #44a !important;
+}
+
+a.show-on-click {
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a.show-on-click span {
+    display: none;
+    min-width: 3em;
+    border: 1px solid #777;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    background: white;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+}
+
+a.show-on-click:focus span {
+    display: block;
+    position: absolute;
+    top: 1em;
+    left: 0;
+}

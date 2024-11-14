@@ -1,0 +1,432 @@
+# Chinese translations for unite-the-armies package.
+# Copyright (C) 2015 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the unite-the-armies package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unite-the-armies 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-01-02 12:56+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Chinese\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
+msgstr "时间紧迫，我们正在摧毁地球资源。我们必须改变这种状况，而且它能够被改变。你也可以参与。现在就行动。"
+
+msgid "\"We are in a hurry. We don’t have time for centuries, we have only decades. That is why effective and quick actions are necessary. The armies are the only possibility.\""
+msgstr "我们必须抓紧行动。我们没有几个世纪的时间，可能只有几十年。所以我们需要快速有效的行动。军队是唯一的可能。"
+
+msgid "About Us"
+msgstr "关于我们"
+
+msgid "Act NOW!"
+msgstr "现在就开始行动"
+
+msgid "Add"
+msgstr ""
+
+msgid "Add a comment"
+msgstr ""
+
+msgid "Administration"
+msgstr "行政"
+
+msgid "Ago"
+msgstr "时间"
+
+msgid "Air pollution is a global Challenge!"
+msgstr "空气污染是全球性的挑战"
+
+msgid "Animation realization"
+msgstr ""
+
+msgid "Arabic"
+msgstr ""
+
+msgid "Back to top"
+msgstr "返回页面顶部"
+
+msgid "Background"
+msgstr "背景"
+
+msgid "Biodiversity"
+msgstr "生物多样性"
+
+msgid "Campaign"
+msgstr "活动"
+
+msgid "Chinese"
+msgstr ""
+
+msgid "Choose the language"
+msgstr "选择语言"
+
+msgid "Choose the language of the invitation letter"
+msgstr "选择邀请信的语言"
+
+msgid "Choose the topic"
+msgstr "选择话题"
+
+msgid "Climate"
+msgstr "气候"
+
+msgid "Comment"
+msgstr "评论"
+
+msgid "Comment (max 1000 characters)"
+msgstr "评论（1000字符以内）"
+
+msgid "Comment was successfully created."
+msgstr ""
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Country"
+msgstr "国家"
+
+msgid "Created at"
+msgstr ""
+
+msgid "Do not share this direct link to anybody. Instead, you can use a form on the site to send invitations to your friends by email."
+msgstr ""
+
+msgid "Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends."
+msgstr "不要直接分享这个链接，你可以通过下面的表格把这个投票的公众版本分享给你的朋友。"
+
+msgid "Email"
+msgstr "电子邮件"
+
+msgid "Email Confirmation"
+msgstr "电子邮件确认"
+
+msgid "English"
+msgstr ""
+
+msgid "Facebook"
+msgstr ""
+
+msgid "Finnish"
+msgstr ""
+
+msgid "First Aid"
+msgstr "紧急救助"
+
+msgid "Food for all"
+msgstr "足够的食物"
+
+msgid "French"
+msgstr ""
+
+msgid "Global responsibility"
+msgstr "全球性的责任感"
+
+msgid "Google+"
+msgstr ""
+
+msgid "Greetings %{name}!"
+msgstr ""
+
+msgid "Happy mankind"
+msgstr "幸福的人类"
+
+msgid "Helsinki, 4.11.2014"
+msgstr ""
+
+msgid "IP"
+msgstr ""
+
+msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
+msgstr "在接下来的数十年中，唯有采取强力有效的应对措施才能中断这一问题的恶化过程。我们在此提议：全球军力开支应得到重新分配，转而用于以更集中的方式解决社会问题及环境恶化。"
+
+msgid "Initiative presented to the United Nations:"
+msgstr "提交给联合国的倡议"
+
+msgid "Instructions"
+msgstr ""
+
+msgid "Invitation has been sent, thank you!"
+msgstr ""
+
+msgid "Invitation to Save the World - Unite the Armies"
+msgstr ""
+
+msgid "Invite your friends. Fill out a form below and information will be sent to given email"
+msgstr "邀请你的朋友。填下面的表格，信息将会发送到你提供的电子邮箱。"
+
+msgid "It is accepted that the military are called to assist the areas affected by sudden disasters. The same power should be used to defend us against gradual disasters."
+msgstr "通常部队要去帮助那些突发灾难的地区。同样他们也应该帮助我们对抗那些逐渐到来的灾难。"
+
+msgid "It is logical to extend the actions from sudden disasters to large scale catastrophes."
+msgstr "突发的局部性的灾难有可能会演变成大规模的毁灭。"
+
+msgid "Language"
+msgstr ""
+
+msgid "Listing comments"
+msgstr ""
+
+msgid "Make an initiative for the action of the United Armies."
+msgstr "提出切实可行的行动倡议"
+
+msgid "Make the initiative using some of the UN:s official languages (6)."
+msgstr "使用联合国的一些官方语言提出倡议（6）"
+
+msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
+msgstr "成千上万吨的塑料垃圾污染了海洋和海岸。"
+
+msgid "Name"
+msgstr "姓名"
+
+msgid "Name of your friend"
+msgstr ""
+
+msgid "New future"
+msgstr "新的未来"
+
+msgid "New global role for the Military"
+msgstr "军事力量在全球的新角色"
+
+msgid "New technology"
+msgstr "新技术"
+
+msgid "On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs."
+msgstr "从政治方面看，军队可以用于救助突发的自然灾害，这在全世界都是普遍接受的惯例。因此，我们把这一惯例延伸也是符合逻辑的——理想情况下，在与本土非政府组织合作的基础上，把军队资源用于应对发展更缓慢，但规模更巨大，影响更深远的自然灾害。"
+
+msgid "Plastic Waste"
+msgstr "塑料垃圾"
+
+msgid "Positive initiations will be published."
+msgstr ""
+
+msgid "Present the task with max. 1000 characters."
+msgstr "提议在1000字符以内"
+
+msgid "Protected Areas"
+msgstr "保护区"
+
+msgid "Radical actions are urgently needed to save our planet. Possible future world:"
+msgstr "相关的行动需立即展开以拯救我们共有的星球。以及未来的世界"
+
+msgid "Read more"
+msgstr "拯救我们共有的世界"
+
+msgid "Recent Votes"
+msgstr "最新投票"
+
+msgid "Reforestation"
+msgstr "造林"
+
+msgid "Richness of cultures"
+msgstr "丰富的文化"
+
+msgid "Rules for Comments"
+msgstr "评论规则"
+
+msgid "Russian"
+msgstr ""
+
+msgid "Save the Planet - Unite the Armies!"
+msgstr ""
+
+msgid "Save the World! Act Now!"
+msgstr "拯救地球。马上行动"
+
+msgid "Save the planet."
+msgstr "拯救地球"
+
+msgid "Send"
+msgstr "发送"
+
+msgid "Share"
+msgstr "分享"
+
+msgid "Share email with your friends"
+msgstr ""
+
+msgid "Share with social media"
+msgstr "分享到媒体"
+
+msgid "Sign"
+msgstr "加入"
+
+msgid "Signatures! Let’s work further!"
+msgstr ""
+
+msgid "Spanish"
+msgstr ""
+
+msgid "State of the global environment"
+msgstr "全球环境状况"
+
+msgid "Statistics"
+msgstr "统计数据"
+
+msgid "Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention."
+msgstr "这类恶性问题正加快恶化，并且往往产生相互作用、彼此加剧的严重性。我们担忧这一过程会在人们的忽视中一直发展至无可挽回的地步，之后便再也不能经由人力干预得到逆转，甚至无法遏止。"
+
+msgid "Suggest a new task for the Action of the United Armies not presented here."
+msgstr "建议这里还没有提到的新任务。"
+
+msgid "Support now"
+msgstr "现在就支持我们的行动"
+
+msgid "Support the Initiative"
+msgstr "支持这项计划"
+
+msgid "Technical realization"
+msgstr ""
+
+msgid "Thank you for your contribution to the Save the World - Unite The Armies!"
+msgstr ""
+
+msgid "Thank you for your support %{name}!"
+msgstr "谢谢你和你的支持！你是第 %{name}"
+
+msgid "Thank you for your vote!"
+msgstr ""
+
+msgid "The Green Association for the Protection of Life"
+msgstr ""
+
+msgid "The Suggested task must benefit the whole world."
+msgstr "你的建议必须对全世界都有益处"
+
+msgid "The United Armies must collect the plastic waste from the oceans and shores."
+msgstr "军队要收集海洋和海岸的塑料垃圾"
+
+msgid "The United Armies must ensure sufficient water availability everywhere for the needs of people and life."
+msgstr "军队必须保证所有地方的人都有足够的生存所需要的水。"
+
+msgid "The United Armies must protect the areas reserved for nature."
+msgstr "军队要保护那些自然景区。"
+
+msgid "The activities of the United Armies must be controlled by a common, international organ."
+msgstr "必须有有一个共同的全球性的组织来控制联合军队的行动。"
+
+msgid "The best contributors will be rewarded later."
+msgstr ""
+
+msgid "The concern of this campaign is that the global environment is radically deteriorating. Dangerous developments have accelerated and approach the point of no return."
+msgstr "这个活动关注的是全球环境从根本上的恶化。越来越快的危机发展到了几乎不可逆转的程度。"
+
+msgid "The link below will go to your private secret vote"
+msgstr ""
+
+msgid "The resources and capacity of the United Armies must be directed to reforestation of the deserts."
+msgstr "军队的资源和能力要被定向在使沙漠森林化方面。"
+
+msgid "There is a hidden potential at hand: the national armies. We have to give the armies a new, positive task. In these pages we collect support for a global initiative."
+msgstr "国家军队是一项隐藏的资产。我们有必要赋予国家军队新的，积极的任务。在下面的网页中我们征集对一项全球性倡议的支持。"
+
+msgid "There was an error"
+msgstr ""
+
+msgid "There was an error while adding your vote"
+msgstr ""
+
+msgid "There was an error with human verifying"
+msgstr ""
+
+msgid "This is your private vote!"
+msgstr "这是你的个人投票！"
+
+msgid "To Our Common World"
+msgstr "为了我们共有的世界"
+
+msgid "To the Secretary-General and Secretariat of the United Nations"
+msgstr "致联合国秘书长及秘书处："
+
+msgid "Topic"
+msgstr ""
+
+msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
+msgstr "每年全球的军力开支预计为1.5万亿美元。透视这笔开支，与之相比，为整个撒哈拉沙漠植树造林的预算成本仅占全球军力开支的六分之一。上述例证很好阐释了一旦相关政治问题得以解决，在这一问题上采取行动将有巨大的发展潜力。"
+
+msgid "Twitter"
+msgstr ""
+
+msgid "Unite the Armies to Save Life – not to Kill!"
+msgstr "联合军队来保护生命—不要杀戮。"
+
+msgid "Video"
+msgstr "视频"
+
+msgid "Water"
+msgstr "水"
+
+msgid "Water is the Mother of Life – we all need it!"
+msgstr "水是生命之源—我们都需要它。"
+
+msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
+msgstr "我们衷心企盼联合国能够率先开展一项全球行动以实施上述提议，并重新调遣全世界的武装部队，使其尽快参与至此项新使命中。该项行动能够切实有效地促进世界和平。"
+
+msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
+msgstr "我们介绍这项活动是为支持U.B. LIndström 和 Eero Paloheimo两位教授提交给联合国秘书处的一项倡议。"
+
+msgid "We must defend Life's Richness on our Planet!"
+msgstr "我们必须保护地球上丰富多彩的生命。"
+
+msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
+msgstr "我们提议联合国开展行动，大规模调动人力物力资源，包括在全球变暖加剧的情况下开展农林业项目以及森林和动植物迁移项目。此类项目能够帮助避免最可怕的灾难；它们还可以帮助建立并维护生态和社会稳定，同时通过使用当地劳动力而促进本土就业。"
+
+msgid "We still miss %{count} of the 100.000.000."
+msgstr ""
+
+msgid "We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible."
+msgstr "我们建议联合国在此项计划中进行全球性指挥，并尽快调集全球的武装部队进行大规模的环境改善任务"
+
+msgid "We the undersigned addressees turn to you because of our concern at the state of the global environment. In many parts of the world the deterioration of the environment can be linked directly to social problems among the local population."
+msgstr "我们出于对全球环境的殷切关心，特此向您寻求帮助。在全世界许多地区，环境恶化都与当地人口面临的社会问题息息相关。"
+
+msgid "Would you like to have the initiative in your language – please, contact us!"
+msgstr "你想要一份你自己语言的倡议书----请不要犹豫，与我们联系！"
+
+msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
+msgstr "加入后你也可以加入讨论。你会收到一封有关这个活动的邮件。"
+
+msgid "You can now add a comment."
+msgstr "添加评论"
+
+msgid "You have added %{count} comments."
+msgstr ""
+
+msgid "You have been invited to Save the World - Unite the Armies by %{name}."
+msgstr ""
+
+msgid "You have helped campaign by having %{count} people signed after you."
+msgstr ""
+
+msgid "YouTube"
+msgstr ""
+
+msgid "Your friends email address"
+msgstr "你朋友的电子邮箱"
+
+msgid "Your support has been registered %{name}!"
+msgstr ""
+
+msgid "Your supporter number is %{count}."
+msgstr ""
+
+msgid "days"
+msgstr ""
+
+msgid "e-mail"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "professor"
+msgstr ""
+
+msgid "seconds"
+msgstr ""

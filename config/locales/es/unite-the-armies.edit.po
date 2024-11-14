@@ -1,0 +1,431 @@
+# Spanish translations for unite-the-armies package.
+# Copyright (C) 2015 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the unite-the-armies package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: unite-the-armies 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-01-02 09:59+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
+msgstr "Se acaba el tiempo, entretanto, nosotros estamos destruyendo los recursos del planeta. Esto debe cambiar y puede ser cambiado. Tú puedes participar.!Actúa hoy!"
+
+msgid "\"We are in a hurry. We don’t have time for centuries, we have only decades. That is why effective and quick actions are necessary. The armies are the only possibility.\""
+msgstr "Tenemos prisa. No nos quedan siglos, sólo tenemos unas décadas de tiempo. Poresta razón, son necesarias acciones rápidas y efectivas. Los ejércitos son la única posibilidad"
+
+msgid "About Us"
+msgstr "Acerca de nosotros"
+
+msgid "Act NOW!"
+msgstr "!Actúa ahora!"
+
+msgid "Add"
+msgstr "Añade"
+
+msgid "Add a comment"
+msgstr "Deja tu comentario"
+
+msgid "Administration"
+msgstr "Administración"
+
+msgid "Ago"
+msgstr "Hace tiempo"
+
+msgid "Air pollution is a global Challenge!"
+msgstr "!La contaminación es un desafio global!"
+
+msgid "Animation realization"
+msgstr ""
+
+msgid "Arabic"
+msgstr "Árabe"
+
+msgid "Back to top"
+msgstr "Volver al inicio"
+
+msgid "Background"
+msgstr "Trasfondo"
+
+msgid "Biodiversity"
+msgstr "Biodiversidad"
+
+msgid "Campaign"
+msgstr "La campaña"
+
+msgid "Chinese"
+msgstr "Chino"
+
+msgid "Choose the language"
+msgstr "Elige un idioma"
+
+msgid "Choose the language of the invitation letter"
+msgstr "Elige el idioma para la carta de invitación"
+
+msgid "Choose the topic"
+msgstr "elige un tópico"
+
+msgid "Climate"
+msgstr "Medio Ambiente"
+
+msgid "Comment"
+msgstr "Deja un comentario"
+
+msgid "Comment (max 1000 characters)"
+msgstr "Comentario (máximo 1000 carácteres)"
+
+msgid "Comment was successfully created."
+msgstr "El comentario fue creado en forma exitosa"
+
+msgid "Continue"
+msgstr "Continua"
+
+msgid "Country"
+msgstr "País"
+
+msgid "Created at"
+msgstr "Creado en"
+
+msgid "Do not share this direct link to anybody. Instead, you can use a form on the site to send invitations to your friends by email."
+msgstr "No compartas este enlace con nadie. Puedes, sin embargo, usar el formulario de la página web para enviar por correo electrónico invitaciones a tus amigos"
+
+msgid "Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends."
+msgstr "No compartas este enlace con nadie. Puedes, sin embargo, usar el formulario de de abajo, para compartir la versión pública de este voto, con tus amigos"
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "Email Confirmation"
+msgstr "Confirmar correo"
+
+msgid "English"
+msgstr "Inglés"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Finnish"
+msgstr "Finés"
+
+msgid "First Aid"
+msgstr "Primeros auxilios"
+
+msgid "Food for all"
+msgstr "Comida para todos"
+
+msgid "French"
+msgstr "Francés"
+
+msgid "Global responsibility"
+msgstr "Responsabilidad global"
+
+msgid "Google+"
+msgstr "Goole+"
+
+msgid "Greetings %{name}!"
+msgstr "Saludos %{nombre}"
+
+msgid "Happy mankind"
+msgstr "Una humandidad feliz"
+
+msgid "Helsinki, 4.11.2014"
+msgstr "Helsinki 4.11.2014"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
+msgstr "En las próximas décadas sólo se podrá parar el avance de este proceso mediante contramedidas fuertes y eficaces. Proponemos para su consideración la idea de que el gasto global en armamento sea redirigido (junto con otras medidas) a abordar el deterioro social y medioambiental de una manera más concentrada que en el presente."
+
+msgid "Initiative presented to the United Nations:"
+msgstr "Iniciativa presentada a las Naciones Unidas:"
+
+msgid "Instructions"
+msgstr "Instrucciones"
+
+msgid "Invitation has been sent, thank you!"
+msgstr ""
+
+msgid "Invitation to Save the World - Unite the Armies"
+msgstr "Invitación a salvar el Mundo- Unificar los Ejércitos"
+
+msgid "Invite your friends. Fill out a form below and information will be sent to given email"
+msgstr "Invita a tus amigos. Llena el formulario de abajo y la información será enviada al correspondiente correo electrónico"
+
+msgid "It is accepted that the military are called to assist the areas affected by sudden disasters. The same power should be used to defend us against gradual disasters."
+msgstr "Por hoy es aceptado que los militares sean llamado a ayudar regiones afectadas por repentinos desastres. De la misma forma ellos deberían defendernos de los desastres"
+
+msgid "It is logical to extend the actions from sudden disasters to large scale catastrophes."
+msgstr "Es lógico ampliar las acciones desde desastres repentinos hasta catástrofes a gran escala"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Listing comments"
+msgstr "Lista de comentarios"
+
+msgid "Make an initiative for the action of the United Armies."
+msgstr "Proponer una iniciativa para la acción de los Ejércitos Unificados"
+
+msgid "Make the initiative using some of the UN:s official languages (6)."
+msgstr "Proponer la iniciativa usando uno de los idiomas oficiales (6) de la ONU"
+
+msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
+msgstr "!Millones de toneladas de basura plástica en las costas y los oceanos!"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Name of your friend"
+msgstr "Nombre de tu amigo"
+
+msgid "New future"
+msgstr "Nuevo futuro"
+
+msgid "New global role for the Military"
+msgstr "Un nuevo rol global para los militares"
+
+msgid "New technology"
+msgstr "Nueva tecnología"
+
+msgid "On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs."
+msgstr "A nivel político, es una práctica comúnmente aceptada que el ejército sea llamado para ayudar a aquellos afectados por desastres medioambientales repentinos e inesperados. Sería, por tanto, una lógica extensión de esta práctica emplear tal recurso en contrarrestar los efectos de unas catástrofes que gradualmente aumentan en escala y en importancia; todo esto con la ayuda, es de esperar, de las ONGs locales."
+
+msgid "Plastic Waste"
+msgstr "Reciduos plásticos"
+
+msgid "Positive initiations will be published."
+msgstr "Seran publicada las iniciativas positivas"
+
+msgid "Present the task with max. 1000 characters."
+msgstr "Escriba la tarea en un máximo de 1000 carácteres"
+
+msgid "Protected Areas"
+msgstr "Áreas protegidas"
+
+msgid "Radical actions are urgently needed to save our planet. Possible future world:"
+msgstr "Se necesitan urgentemente acciones radicals para salvar nuestro planeta. un futuro posible para el mundo"
+
+msgid "Read more"
+msgstr "Sigue leyendo"
+
+msgid "Recent Votes"
+msgstr "Votos recientes"
+
+msgid "Reforestation"
+msgstr "Reforestación"
+
+msgid "Richness of cultures"
+msgstr "La riqueza de las culturas"
+
+msgid "Rules for Comments"
+msgstr "Reglas para los comentarios"
+
+msgid "Russian"
+msgstr "Ruso"
+
+msgid "Save the Planet - Unite the Armies!"
+msgstr "!Salvar el planeta - Unificar los Ejércitos!"
+
+msgid "Save the World! Act Now!"
+msgstr "!Salvar el planeta! !Actúa Ahora!"
+
+msgid "Save the planet."
+msgstr "!Salvar el planeta!"
+
+msgid "Send"
+msgstr "Envía"
+
+msgid "Share"
+msgstr "Compartir"
+
+msgid "Share email with your friends"
+msgstr "Compartir con correo electrónico"
+
+msgid "Share with social media"
+msgstr "Compartir en las redes sociales"
+
+msgid "Sign"
+msgstr "Firma"
+
+msgid "Signatures! Let’s work further!"
+msgstr "!Firmantes! !Sigamos trabajando!"
+
+msgid "Spanish"
+msgstr "Español"
+
+msgid "State of the global environment"
+msgstr "Estado del medio ambiente global"
+
+msgid "Statistics"
+msgstr "Estadísticas"
+
+msgid "Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention."
+msgstr "Estos acontecimientos tan dañinos se han acelerado, y a menudo agravado, mutuamente. Es de temer que este proceso pueda alcanzar un inadvertido ‘punto de no retorno’ tras el cual ya no pueda ser revertido, o ni siquiera detenido, por la intervención humana."
+
+msgid "Suggest a new task for the Action of the United Armies not presented here."
+msgstr "Sugiere una nueva tarea para los Ejércitos Unificados, que no esté en las las expuestas aquí"
+
+msgid "Support now"
+msgstr "Danos tu apoyo ahora!"
+
+msgid "Support the Initiative"
+msgstr "Apoya la iniciativa"
+
+msgid "Technical realization"
+msgstr ""
+
+msgid "Thank you for your contribution to the Save the World - Unite The Armies!"
+msgstr "!Gracias por tu contribución a Salvar el Planeta- Unificar los Ejércitos!"
+
+msgid "Thank you for your support %{name}!"
+msgstr "!Gracias por tu apoyo %{nombre}!"
+
+msgid "Thank you for your vote!"
+msgstr ""
+
+msgid "The Green Association for the Protection of Life"
+msgstr "La Asociación Verde para la protección de la vida"
+
+msgid "The Suggested task must benefit the whole world."
+msgstr "La tarea sugerida debe benificiar al mundo entero."
+
+msgid "The United Armies must collect the plastic waste from the oceans and shores."
+msgstr "Los Ejércitos Unidos deberán recoger los residuos plásticos de los océanos y de las costas."
+
+msgid "The United Armies must ensure sufficient water availability everywhere for the needs of people and life."
+msgstr "Los Ejércitos Unidos deben de garantizar un flujo suficiente de agua para las necesidades de la gente y de la vida."
+
+msgid "The United Armies must protect the areas reserved for nature."
+msgstr "Los Ejércitos Unidos deberán proteger las áreas reservadas para la naturaleza."
+
+msgid "The activities of the United Armies must be controlled by a common, international organ."
+msgstr "Las actividades de los Ejércitos Unidos deben ser controladas por un organismo común e internacional. "
+
+msgid "The best contributors will be rewarded later."
+msgstr "Los mejores contribuyentes tendrán su reconocimiento más tarde"
+
+msgid "The concern of this campaign is that the global environment is radically deteriorating. Dangerous developments have accelerated and approach the point of no return."
+msgstr "La preocupación de este campaña es que el medio ambiente global se está deteriorando. Desarrollos peligrosos han acelerado este deterioro hasta un punto de no retorno"
+
+msgid "The link below will go to your private secret vote"
+msgstr "El enlace, más abojo, facilitará tu voto secreto"
+
+msgid "The resources and capacity of the United Armies must be directed to reforestation of the deserts."
+msgstr "Los recursos y capacidad de los Ejércitos Unidos deben apuntar a la reforestación de los desiertos."
+
+msgid "There is a hidden potential at hand: the national armies. We have to give the armies a new, positive task. In these pages we collect support for a global initiative."
+msgstr "Tenemos un potencial escondido a nuestra mano: los ejércitos nacionales. Tenemos que darle ahora, al ejército, tareas positivas. En estas páginas recogemos los apoyos para una iniciativa global"
+
+msgid "There was an error"
+msgstr ""
+
+msgid "There was an error while adding your vote"
+msgstr ""
+
+msgid "There was an error with human verifying"
+msgstr ""
+
+msgid "This is your private vote!"
+msgstr "!Este es tu voto privado!"
+
+msgid "To Our Common World"
+msgstr "Por Nuestro Mundo Común"
+
+msgid "To the Secretary-General and Secretariat of the United Nations"
+msgstr "Al Secretario General y al Secretariado de las Naciones Unidas."
+
+msgid "Topic"
+msgstr "Tópicos"
+
+msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
+msgstr "El gasto total en armamento mundial gira en torno a los 1’5 billones anuales; tal gasto puede ser puesto en perspectiva comparándolo con el coste estimado de la reforestación de todo el desierto del Sáhara, que supondría una sexta parte del gasto anual en armamento mundial. Este ejemplo ilustra claramente el alcance del potencial necesario para actuar en este asunto, si se encontrara la voluntad política."
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Unite the Armies to Save Life – not to Kill!"
+msgstr "!Unificar los Ejércitos para Salvar Vidas- no para Matar!"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Water"
+msgstr "Agua"
+
+msgid "Water is the Mother of Life – we all need it!"
+msgstr "!El Agua es la madre de la vida - todos la necesitamos!"
+
+msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
+msgstr "Esperamos seriamente que las Naciones Unidas tengan en consideración motivar la realización de una iniciativa global para llevar a efecto las supradichas proposiciones y para la redistribución de las fuerzas armadas en una nueva tarea tan pronto como sea posible. Esta iniciativa tendría también un efecto bien tangible en promover la paz mundial."
+
+msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
+msgstr "Llevamos a cabo esta campaña para apoyar la iniciativa presentada al Secretariado de las Naciones Unidas por dos profesores: U.B. Lindström y EeroPaloheimo"
+
+msgid "We must defend Life's Richness on our Planet!"
+msgstr "Tenemos que defender la Riqueza de nuestro Planeta"
+
+msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
+msgstr "Proponemos acciones en proyectos que requieran recursos a gran escala, tanto de mano de obra como de equipamiento; estos incluirían proyectos agroforestales y reubicación de bosques, plantas y animales con miras a evitar el calentamiento global. Tales proyectos ayudarían a evitar las peores catástrofes; también ayudarían y fomentarían la estabilidad social y el empleo a nivel local, suponiendo que se empleara mano de obra local."
+
+msgid "We still miss %{count} of the 100.000.000."
+msgstr "Todavía nos falta %{contar} de los 100.000.000"
+
+msgid "We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible."
+msgstr "Sugerimos que las Naciones Unidas presente una iniciativa global para un nuevo despliegue de las fuerzas armadas del mundo, lo más pronto posible, y que las lleve hacia importantes tareas medioambientales"
+
+msgid "We the undersigned addressees turn to you because of our concern at the state of the global environment. In many parts of the world the deterioration of the environment can be linked directly to social problems among the local population."
+msgstr "Nosotros, los abajo firmantes, nos  dirigimos a ustedes a causa de nuestra preocupación por el medio ambiente. En muchas partes del mundo el deterioro del medio ambiente puede ponerse directamente en relación con problemas sociales entre la población local."
+
+msgid "Would you like to have the initiative in your language – please, contact us!"
+msgstr "Si quieres expresar tu iniciativa en tu propio idioma, por favor,!contáctanos!"
+
+msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
+msgstr "Después de firmar, puedes contribuir a la discusión. Sobre esto te enviaremos un correo electrónico por separado"
+
+msgid "You can now add a comment."
+msgstr "Puedes, ahora, escribir tu comentario"
+
+msgid "You have added %{count} comments."
+msgstr "Tú has sumado %{contar} comentarios"
+
+msgid "You have been invited to Save the World - Unite the Armies by %{name}."
+msgstr "Tú has sido invitado a la campaña Salvar el Planeta- Unificar los Ejércitos por %{nombre}"
+
+msgid "You have helped campaign by having %{count} people signed after you."
+msgstr "Tú has contribuido a la campaña al motivar %{contar} personas a firmar"
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Your friends email address"
+msgstr "Correos electrónicos de tus amigos"
+
+msgid "Your support has been registered %{name}!"
+msgstr ""
+
+msgid "Your supporter number is %{count}."
+msgstr "Tu número de contriibuyente es %{contar}"
+
+msgid "days"
+msgstr "Días"
+
+msgid "e-mail"
+msgstr "Correo electrónico"
+
+msgid "minutes"
+msgstr "Minutos"
+
+msgid "professor"
+msgstr "Profesor"
+
+msgid "seconds"
+msgstr "Segundos"

@@ -1,0 +1,4 @@
+<tr>
+  <td><image class="flag_small <%= this.country %>"/></td>
+  <td><%= this.name %></td>
+</tr>

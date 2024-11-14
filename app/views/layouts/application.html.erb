@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render partial: "head" %>
+  </head>
+  <body class="shop home-page">
+    <%= flash_messages %>
+    <%= render partial: "overlay_navigation" %>
+    <div class="wrapper reveal-side-navigation">
+      <div class="wrapper-inner">
+        <%= render partial: "header" %>
+        <div class="content clearfix">
+          <%= yield %>
+        </div>
+        # <%# content_for?(:footer) ? yield(:footer) : render(partial: "footer") %>
+      </div>
+    </div>
+  </body>
+</html>
+
