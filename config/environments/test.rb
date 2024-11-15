@@ -50,4 +50,9 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.x.backup_email = "info@jonitoyryla.eu"
+  config.x.send_count = 100
+  config.x.comment_target_email = "info@jonitoyryla.eu"
+
 end

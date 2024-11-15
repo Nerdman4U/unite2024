@@ -32,7 +32,7 @@ class VotesController < ApplicationController
 
     # Share a vote with ActionMailer. If everything is ok, return 200.
     @share_valid = @vote.email_invite(params)
-    
+
     respond_to do |format|
       format.html do
         if @share_valid
@@ -46,7 +46,7 @@ class VotesController < ApplicationController
     end
   end
 
-  # Add parent vote id to session and redirect to new vote.  
+  # Add parent vote id to session and redirect to new vote.
   #
   # Use md5 crypted secret token in parameters, this way token cannot be
   # used as a part of the url.
@@ -57,7 +57,7 @@ class VotesController < ApplicationController
     end
     redirect_to action: :new, locale: locale
   end
-  
+
   # If session votes[:parent_id] exists, add parent to this vote
   def create
     @vote = Vote.new(vote_params)
@@ -84,10 +84,12 @@ class VotesController < ApplicationController
 
       # If sent_count amount of votes is added after last backup email,
       # send a backup email.
-
       uas = UaSetting.instance
-      if VoteCount.total >= uas.vote_count.to_i + Rails.configuration.x.send_count
-        uas.send!       
+      puts uas.vote_count
+      puts Rails.configuration.x.send_count
+      total = uas.vote_count.to_i + Rails.configuration.x.send_count
+      if VoteCount.total >= total
+        uas.send!
       end
     end
 
@@ -117,7 +119,7 @@ class VotesController < ApplicationController
     end
   end
 
-  def index    
+  def index
     @votes = VoteCount.all
     @sorted_votes = @votes.sort { |a,b| b.count <=> a.count }
   end
@@ -134,7 +136,7 @@ class VotesController < ApplicationController
   end
 
   def clear
-    session.delete :current_vote_id    
+    session.delete :current_vote_id
   end
 
   def show
@@ -153,9 +155,16 @@ class VotesController < ApplicationController
 
   private
 
+
+  # TODO: return default country instead of nil.
   def country_code
-    return request[:vote][:country] if request[:vote] and request[:vote][:country]
-    nil
+    return nil unless request.params
+    vote = request.params[:vote] if request.params.has_key?(:vote)
+    return nil if vote.blank?
+    country_code = vote[:country] if vote.has_key?(:country)
+    return nil if country_code.blank?
+    #return request[:vote][:country] if request[:vote] and request[:vote][:country]
+    country_code
   end
 
   def language_code

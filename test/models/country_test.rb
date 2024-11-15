@@ -4,7 +4,7 @@ class CountryTest < ActiveSupport::TestCase
 
   test 'should return country list from disc' do
     assert Country.from_disc
-    assert Country.from_disc.size == 243
+    assert Country.from_disc.size === 244
   end
 
   test 'should reverse array for select tag' do

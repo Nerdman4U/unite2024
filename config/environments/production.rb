@@ -88,4 +88,9 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.x.backup_email = "aurora_paloheimo@hotmail.com"
+  config.x.send_count = 100
+  config.x.comment_target_email = "emmi.seppanen@unite-the-armies.org"
+
 end

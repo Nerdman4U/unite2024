@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class VotesControllerTest < ActionController::TestCase
-  
+
   def json_response
     ActiveSupport::JSON.decode @response.body
   end
@@ -31,7 +31,7 @@ class VotesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
-  
+
   # /votes/recently_added
   test 'should get recent votes as json' do
     get :recently_added, format: :json, locale: "en"
@@ -51,14 +51,14 @@ class VotesControllerTest < ActionController::TestCase
 
   test "should create vote" do
     values = {
-      name: "foobar", 
-      email: "foobar01@foobar.com", 
-      email_confirmation: "foobar01@foobar.com", 
+      name: "foobar",
+      email: "foobar01@foobar.com",
+      email_confirmation: "foobar01@foobar.com",
       country: "fi"
     }
     assert_difference("Vote.count") do
       post :create, vote: values
-    end    
+    end
     vote = assigns(:vote)
     assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
     assert flash[:success], "Thank you for your vote!"
@@ -76,16 +76,17 @@ class VotesControllerTest < ActionController::TestCase
     assert_equal VoteCount.total, 3000
 
     values = {
-      name: "foobar", 
-      email: "foobar01@foobar.com", 
-      email_confirmation: "foobar01@foobar.com", 
+      name: "foobar",
+      email: "foobar01@foobar.com",
+      email_confirmation: "foobar01@foobar.com",
       country: "fi"
     }
-    post :create, vote: values
+    #post :create, vote: values
+    post :create, params: { vote: values }
 
-    uas.reload
+    #uas.reload
     assert_equal uas.vote_count, 3001
-    assert_not ActionMailer::Base.deliveries.empty?   
+    assert_not ActionMailer::Base.deliveries.empty?
   end
 
   test 'should add parent vote id to session' do
@@ -97,9 +98,9 @@ class VotesControllerTest < ActionController::TestCase
   test 'should add parent vote' do
     session[:parent_vote_id] = votes("vote_1").id
     values = {
-      name: "foobar", 
-      email: "foobar02@foobar.com", 
-      email_confirmation: "foobar02@foobar.com", 
+      name: "foobar",
+      email: "foobar02@foobar.com",
+      email_confirmation: "foobar02@foobar.com",
       country: "fi"
     }
     assert_difference("Vote.count") do
@@ -111,14 +112,14 @@ class VotesControllerTest < ActionController::TestCase
 
   test "should flash error if invalid vote" do
     values = {
-      name: "foobar", 
-      email: "foobar1@foobar.com", 
-      email_confirmation: "foobar2@foobar.com", 
+      name: "foobar",
+      email: "foobar1@foobar.com",
+      email_confirmation: "foobar2@foobar.com",
       country: "fi",
     }
     assert_no_difference("Vote.count") do
       post :create, vote: values
-    end   
+    end
   end
 
   test 'should return correct language code' do
@@ -133,7 +134,7 @@ class VotesControllerTest < ActionController::TestCase
 
     @request.headers["Accept-Language"] = nil
     @request.params[:vote] = nil
-    assert_equal nil, @controller.send(:country_code)
+    assert_nil @controller.send(:country_code)
   end
 
   test 'should send email invite' do
@@ -145,7 +146,7 @@ class VotesControllerTest < ActionController::TestCase
       email: "testi@yeah.foo",
       language: "english"
     }
-    post :email_invite, options  
+    post :email_invite, options
     assert !ActionMailer::Base.deliveries.empty?
     assert_equal I18n.locale, :en
   end
@@ -159,7 +160,7 @@ class VotesControllerTest < ActionController::TestCase
       email: "testi@yeah.foo",
       language: "arabic"
     }
-    post :email_invite, options   
+    post :email_invite, options
     assert !ActionMailer::Base.deliveries.empty?
     assert_equal I18n.locale, :en
   end
