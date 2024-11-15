@@ -1,0 +1,34 @@
+<h1><%= _("Listing comments") %></h1>
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th><%= _("Topic") %></th>
+      <th><%= _("Comment") %></th>
+      <th><%= _("Email") %></th>
+      <th><%= _("Language") %></th>
+      <th><%= _("Name") %></th>
+      <th><%= _("IP") %></th>
+      <th><%= _("Created at") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.theme %></td>
+        <td><%= comment.body %></td>
+        <td><%= comment.email %></td>
+        <td><%= comment.language %></td>
+        <td><%= comment.name %></td>
+        <td><%= comment.ip %></td>
+        <td><%= comment.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comment', new_comment_path %>

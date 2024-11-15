@@ -85,8 +85,6 @@ class VotesController < ApplicationController
       # If sent_count amount of votes is added after last backup email,
       # send a backup email.
       uas = UaSetting.instance
-      puts uas.vote_count
-      puts Rails.configuration.x.send_count
       total = uas.vote_count.to_i + Rails.configuration.x.send_count
       if VoteCount.total >= total
         uas.send!

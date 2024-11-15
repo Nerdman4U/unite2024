@@ -1,5 +1,9 @@
 class UaSetting < ApplicationRecord
-  acts_as_singleton
+  @@instance = nil
+
+  def self.instance
+    @@instance ||= UaSetting.first
+  end
 
   # Send backup email when VoteCount.total is bigger than
   # UaSetting.vote_count + UaSetting.sent_count...

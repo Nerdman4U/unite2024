@@ -1,0 +1,68 @@
+<div class="new_vote_form">
+<% 
+   remote = request.xhr? ? true : false   
+%>
+
+<%= form_for @vote, url: {action: "create"}, html: {class: "nifty_form"}, remote: remote do |f| %>
+<% if @vote.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@vote.errors.count, "error") %> 
+      prohibited this vote from being saved:
+    </h2>
+    <ul>
+      <% @vote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>  
+
+<div id="sign" class="ua-sign-the-petition">
+  <h1><%= _("Support the Initiative") %></h1>
+  <br/>
+  <p class="lead"><%= _("We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible.") %></p>
+
+  <div class="field">
+    <%= _("Name") %> (*) </br>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= _("Email") %> (*) </br>
+    <%= f.text_field :email, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= _("Email Confirmation") %> (*) </br>
+    <%= f.text_field :email_confirmation, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= _("Country") %> (*)
+  </div>
+  <div class="field">
+    <%= f.select :country, options_for_select([["", "", {:selected => true, :disabled => true, :hidden => true}]] + Country.for_select, country_code), {}, :class => "form-control" %>
+  </div></br>
+  
+  <div class="field">
+    <div class="g-recaptcha" data-sitekey="6LfwgBQTAAAAAJrdJfpdvnMhibW4iUFJRdlK0ZXb"></div>
+  </div>
+
+  <div class="field"><%= _("You can also contribute to the discussion after signing. You will get a separate message of that by email.") %></div>
+
+  <div class="actions">
+    <%= f.submit _("Send"), :class => "btn btn-primary form-control" %>
+  </div>
+
+  <% if locale == :fi %>
+    <div>
+      <%= link_to votes_path(locale: locale), { :class => "button large bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
+          <span class="icon-add-user left"></span>
+
+          <p>Katso ketkä ovat kannattaneet!</p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% end %>
+
+</div>

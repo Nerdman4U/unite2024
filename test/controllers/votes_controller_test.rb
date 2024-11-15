@@ -34,7 +34,7 @@ class VotesControllerTest < ActionController::TestCase
 
   # /votes/recently_added
   test 'should get recent votes as json' do
-    get :recently_added, format: :json, locale: "en"
+    get :recently_added, format: :json, params: { locale: "en" }
     assert_response :success
     assert json_response.class == Array
     assert json_response[0]["id"]
@@ -57,7 +57,7 @@ class VotesControllerTest < ActionController::TestCase
       country: "fi"
     }
     assert_difference("Vote.count") do
-      post :create, vote: values
+      post :create, params: { vote: values }
     end
     vote = assigns(:vote)
     assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
@@ -84,13 +84,13 @@ class VotesControllerTest < ActionController::TestCase
     #post :create, vote: values
     post :create, params: { vote: values }
 
-    #uas.reload
+    uas.reload
     assert_equal uas.vote_count, 3001
     assert_not ActionMailer::Base.deliveries.empty?
   end
 
   test 'should add parent vote id to session' do
-    post :add_parent, t: votes("vote_1").md5_secret_token
+    post :add_parent, params: { t: votes("vote_1").md5_secret_token }
     assert_redirected_to new_vote_path(locale: "en")
     assert session[:parent_vote_id]
   end
@@ -104,7 +104,7 @@ class VotesControllerTest < ActionController::TestCase
       country: "fi"
     }
     assert_difference("Vote.count") do
-      post :create, vote: values
+      post :create, params: { vote: values }
     end
     assert_equal assigns(:vote).vote_id, votes("vote_1").id
     assert_not session[:parent_vote_id]
@@ -118,7 +118,7 @@ class VotesControllerTest < ActionController::TestCase
       country: "fi",
     }
     assert_no_difference("Vote.count") do
-      post :create, vote: values
+      post :create, params: { vote: values }
     end
   end
 
@@ -146,7 +146,7 @@ class VotesControllerTest < ActionController::TestCase
       email: "testi@yeah.foo",
       language: "english"
     }
-    post :email_invite, options
+    post :email_invite, params: options
     assert !ActionMailer::Base.deliveries.empty?
     assert_equal I18n.locale, :en
   end
@@ -160,7 +160,7 @@ class VotesControllerTest < ActionController::TestCase
       email: "testi@yeah.foo",
       language: "arabic"
     }
-    post :email_invite, options
+    post :email_invite, params: options
     assert !ActionMailer::Base.deliveries.empty?
     assert_equal I18n.locale, :en
   end

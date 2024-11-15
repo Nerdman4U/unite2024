@@ -1,0 +1,93 @@
+<!-- Content -->
+<div class="content clearfix">
+  <!-- Fullscreen Slider Section -->
+  <section class="section-block featured-media tm-slider-parallax-container">
+    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
+      <ul class="tms-slides">
+        <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.0">
+          <div class="tms-content">
+            <div class="tms-content-inner center left-on-mobile v-align-middle">
+              <div class="row">
+                <div class="column width-12">
+                  <h1 class="tms-caption title-xlarge color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+                    <%= _("Thank you for your support %{name}") % {name: @vote.name} %>
+                  </h1>
+                  <div class="clear"></div>
+                  <h5 class="tms-caption color-white lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+                    <%= _("This is your private vote") %>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img data-src="/images/frontpage-slides/slide-5.jpg" src="/images/blank.png" alt=""/>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Fullscreen Slider Section End -->
+
+  <div id="featured-trips" class="section-block replicable-content">
+    <div class="row">
+      <div class="column width-4">
+	<div class="feature-column small left">
+          <p><%= _("Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends.") %> </p>
+        </div>
+      </div>
+      <div class="column width-4">
+	<div class="feature-column small left">
+          <%= _("Your supporter number is %{count}.") % {count: number_with_delimiter(@vote.order_number)} %>
+          <%= _("We still miss %{count} of the %{target}.") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
+        </div>
+      </div>
+      <div class="column width-4">
+	      <div class="feature-column small left">
+          <% if locale == :en || locale == :fi %>
+              <%= _("Thank you for spreading the word! Click") %>
+              <a class="show-on-click" href="#" onclick="event.preventDefault()"><%= _("here") %><span><%= number_with_delimiter(@votes_count) %></span></a><%= _("if you wish see how many people have signed by following your personal invitation.") %>
+          <% else %>
+              <%= _("You have helped campaign by having %{count} people signed after you.") % {count: number_with_delimiter(@votes_count)} %>
+              <%= _("You have added %{count} comments.") % {count: number_with_delimiter(@vote.comments.size)} %>
+              <%= _("Signatures! Let’s work further!") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">   
+    <div class="row">
+      <div class="column width-12">
+        <h2><%= _("Add a comment") %></h2>
+        <p>
+          <%= _("You can now add a comment.") %>
+        </p>
+        <%= button_tag(_("Comment"), :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }, onClick: "window.location='#{new_comment_path}'") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block replicable-content bkg-grey-ultralight">
+    <div class="row">
+      <div class="column width-12">
+        <h2><%= _("Share with social media") %></h2>
+        <p>
+          <%= social_share_button_tag("Save the Planet - Unite the Armies", url: add_parent_vote_url(t: @vote.md5_secret_token)) %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">   
+    <div class="row">
+      <div class="column width-12">
+        <h2><%= _("Share email with your friends") %></h2>
+        <p>
+          <%= _("Invite your friends. Fill out a form below and information will be sent to given email") %>
+        </p> 
+        <%= render partial: "share_vote" %>
+      </div>
+    </div>
+
+  </div>
+</div>

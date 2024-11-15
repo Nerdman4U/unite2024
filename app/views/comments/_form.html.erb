@@ -1,0 +1,88 @@
+<script>
+  $(document).ready(function() {
+    function showTopic(el) {
+      $(".comment-topic").each(function(ind,el) {
+        $(el).css("display","none")
+      })
+      $(".comment-area").show();
+      $(".comment-"+el.value).show();
+    }
+    window.showTopic = showTopic
+  });
+</script>
+
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:
+      </h2>
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label _("Choose the language") %><br>
+    <%# f.text_field :language %>
+    <%= f.select(:language, Language.translated_select_options) %>
+  </div>
+
+  <div class="field">
+    <%= f.label _("Choose the topic") %><br/>
+    <% topics = %w(administration water climate plastic-waste protected-areas) 
+       descriptions = {
+         "administration" => _("The activities of the United Armies must be controlled by a common, international organ."),
+         "water" => _("The United Armies must ensure sufficient water availability everywhere for the needs of people and life."),
+         "climate" => _("The resources and capacity of the United Armies must be directed to reforestation of the deserts."),
+         "plastic-waste" => _("The United Armies must collect the plastic waste from the oceans and shores."),
+         "protected-areas" => _("The United Armies must protect the areas reserved for nature.")
+       }
+       topics.each do |topic|
+    %>
+       <p>
+       <label for="<%= topic %>">
+         <%= radio_button("comment","theme", topic, onChange: "showTopic(this)", :id => topic) %> 
+         <%= Comment.translated_themes[topic] %>
+       </label>
+       </p>
+    <% end %>
+  </div>
+
+  <div class="comment-area">
+    <% topics.each do |topic| %>
+      <div class="comment-topic comment-<%= topic %>">
+        <h1 class="page-header"><%= Comment.translated_themes[topic] %></h1>
+        <%= image_tag("#{topic}.jpg", :class => "img-responsive img-rounded") %>
+        <p class="lead">
+          <%= _(descriptions[topic]) %>
+        </p>
+      </div>
+    <% end %>
+
+    <br style="clear:both"/>
+
+    <div class="field">
+      <%= @vote.name %> (<%= @vote.email %>)
+    </div>
+    <div class="field">
+      <%= f.label _('Comment (max 1000 characters)') %><br>
+      <%= f.text_area :body, :class => "form-control" %>
+    </div>
+    <div class="field">
+      <div class="g-recaptcha" data-sitekey="6LfwgBQTAAAAAJrdJfpdvnMhibW4iUFJRdlK0ZXb"></div>
+    </div>
+    <div class="field">
+      <%# f.label :humanizer_answer, @comment.humanizer_question %>
+      <%# f.text_field :humanizer_answer, :class => "form-control" %>
+      <%# f.hidden_field :humanizer_question_id %>
+    </div>
+    <div class="actions">
+      <%= f.submit _("Add"), :class => "btn btn-primary form-control" %>
+    </div>
+  </div>
+  
+<% end %>

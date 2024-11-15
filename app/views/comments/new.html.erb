@@ -1,0 +1,54 @@
+<!-- Content -->
+<div class="content clearfix">
+
+  <!-- Fullscreen Slider Section -->
+  <section class="section-block featured-media tm-slider-parallax-container">
+    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
+      <ul class="tms-slides">
+	<li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.3">
+	  <div class="tms-content">
+	    <div class="tms-content-inner center left-on-mobile v-align-middle">
+	      <div class="row">
+		<div class="column width-12">
+		  <h1 class="tms-caption title-xlarge color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+                    <%= _("Comments") %>
+                  </h1>
+		  <div class="clear"></div>
+		  <h5 class="tms-caption color-white lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+                    <%= _("Make an initiative for the action of the United Armies.") %>
+                  </h5>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	  <img data-src="/images/slide-2-fs.jpg" data-retina src="/images/blank.png" alt=""/>
+	</li>
+      </ul>
+    </div>
+  </section>
+  <!-- Fullscreen Slider Section End -->
+
+  <!-- Feature Column Section -->
+  <div id="featured-trips" class="section-block replicable-content">
+    <div class="row">
+
+      <h1 class="page-header"></h1>
+      <p class="lead">
+        <%= _("Rules for Comments") %>        
+      </p>
+      <p>
+        <%= _("Suggest a new task for the Action of the United Armies not presented here.") %></br>
+        <%= _("Positive initiations will be published.") %></br>
+        <%= _("The Suggested task must benefit the whole world.") %></br>
+        <%= _("Present the task with max. 1000 characters.") %></br>
+        <%= _("Make the initiative using some of the UN:s official languages (6).") %></br>
+        <%= _("Would you like to have the initiative in your language – please, contact us!") %><br/>
+      </p>
+      
+      <%= render 'form' %>
+      
+      <div style="height:200px"></div>
+      
+    </div>
+  </div>
+</div>
