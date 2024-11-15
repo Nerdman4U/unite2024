@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% require 'digest/md5' %>
+
+<% 1000.times do |n| %>
+vote_<%= n %>:
+  name: <%= "vote#{n}" %>
+  email: <%= "user#{n}@vote-example.com" %>
+  country: "FI"
+  ip: <%= "127.#{(rand * 255).round}.#{(rand * 255).round}.#{(rand * 255).round}" %>
+  secret_token: <%= "secret#{n}" %>
+  md5_secret_token: <%= Digest::MD5.hexdigest("secret#{n}") %>
+<% end %>
+

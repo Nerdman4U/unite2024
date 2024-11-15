@@ -1,0 +1,7 @@
+<table>
+<tr><td>ID</td><td>Nimi</td><td>Maa</td><td>Sähköposti</td><td>Allekirjoitettu</td></tr>
+<% @votes.map do |vote| %>
+  <tr><td><%= vote.id %></td><td><%= vote.name %></td><td><%= vote.country %></td><td><%= vote.email %></td><td><%= vote.created_at.localtime.to_s %></tr>
+<% end %>
+</table>
+

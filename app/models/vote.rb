@@ -22,7 +22,7 @@ class Vote < ApplicationRecord
 
   has_many :votes, foreign_key: :vote_id
   has_many :comments, foreign_key: :vote_id
-  belongs_to :vote, counter_cache: true
+  #belongs_to :vote, counter_cache: true
 
 
   def ago

@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+vote_count_fi:
+  country: fi
+  count: 1000
+
+vote_count_gb:
+  country: gb
+  count: 2000

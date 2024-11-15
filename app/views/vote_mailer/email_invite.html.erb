@@ -1,0 +1,16 @@
+<h1>
+  <%= _("Greetings %{name}!") % {name: @name} %>
+</h1>
+<h2>
+  <%=  _("You have been invited to Save the World - Unite the Armies by %{name}.") % {name: @inviter_name} %>
+</h2>
+
+<p class="lead"><%= _("Background") %></p>
+<p><%= _("We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo.") %></p>
+<p><%= _("The concern of this campaign is that the global environment is radically deteriorating. Dangerous developments have accelerated and approach the point of no return.") %></p>
+<p><%= _("It is accepted that the military are called to assist the areas affected by sudden disasters. The same power should be used to defend us against gradual disasters.") %></p>
+
+<p class="lead"><%= _("Save the World! Act Now!") %></p>
+<p>
+  <a href="<%= add_parent_vote_url(t: @token) %>">Vote</a>
+</p>

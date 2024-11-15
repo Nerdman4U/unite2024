@@ -51,6 +51,7 @@ gem 'httparty'
 gem 'loofah'
 gem 'sdoc'
 gem 'time_difference'
+gem 'email_validator'
 #gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
 

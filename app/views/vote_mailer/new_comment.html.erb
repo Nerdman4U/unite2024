@@ -1,0 +1,10 @@
+<h1>Unite the Armies-sivustolle on lisätty uusi kommentti</h1>
+<table>
+  <tr><th style="text-align: left">Nimi:</th><td><%= @comment.vote.name %></td></tr>
+  <tr><th style="text-align: left">Sähköposti:</th><td><%= @comment.vote.email %></td></tr>
+  <tr><th style="text-align: left">Kieli:</th><td><%= Language.translated_names[@comment.language] %></td></tr>
+  <tr><th style="text-align: left">Lisätty:</th><td><%= @comment.created_at %></td></tr>
+  <tr><th style="text-align: left">Muokattu:</th><td><%= @comment.updated_at %></td></tr>
+  <tr><th style="text-align: left">Aihe:</th><td><%= Comment.translated_themes[@comment.theme] %></td></tr>
+</table>
+<p style="white-space: pre-wrap"><%= @comment.body %></p>
