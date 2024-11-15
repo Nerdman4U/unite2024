@@ -1,0 +1,32 @@
+<script>
+  $(document).ready(function() {
+    function setVideoHeight() {
+      var h = $( window ).height();
+      $("#video").css({height: h});
+    }
+    $( window ).on("resize", setVideoHeight);
+    setVideoHeight();
+  });
+</script>
+
+
+<% 
+   if locale == :fi
+     url = "https://player.vimeo.com/video/153508732?autoplay=true"
+   elsif locale == :es
+     url = "https://player.vimeo.com/video/153508813?autoplay=true"
+   elsif locale == :zh
+     url = "https://player.vimeo.com/video/153508814?autoplay=true"
+   elsif locale == :ru
+     url = "https://player.vimeo.com/video/153508816?autoplay=true"
+   elsif locale == :fr
+     url = "https://player.vimeo.com/video/153508812?autoplay=true"
+   elsif locale == :ar
+     url = "https://player.vimeo.com/video/153508911?autoplay=true"
+   else
+     url = "https://player.vimeo.com/video/153508772?autoplay=true"
+   end
+%>
+
+<iframe style="width:100%" id="video" src="<%= url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+

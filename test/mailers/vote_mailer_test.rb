@@ -24,14 +24,14 @@ class VoteMailerTest < ActionMailer::TestCase
     vote = votes(:vote_1)
     email = VoteMailer.sign_up(vote).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
-    assert_equal "Kiitokset allekirjoituksesta ja mahdollisuus auttaa", email.subject    
+    assert_equal "Kiitokset allekirjoituksesta ja mahdollisuus auttaa", email.subject
   end
 
   test 'should send email invitations' do
     I18n.locale = :en
     vote = votes(:vote_1)
     email = VoteMailer.email_invite(inviter_name: "Kalle Kutsuja", name: "Joni Töyrylä", email: "info@jonitoyryla.eu", language: "english", token: vote.md5_secret_token).deliver_now
-    assert_not ActionMailer::Base.deliveries.empty?   
+    assert_not ActionMailer::Base.deliveries.empty?
   end
 
 end

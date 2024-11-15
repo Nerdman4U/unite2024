@@ -23,5 +23,35 @@ module UniteTheArmiesOrg
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    # config.i18n.default_locale = :de
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    # config.active_record.raise_in_transactional_callbacks = true
+
+    config.action_mailer.default_url_options = { host: 'unite-the-armies.org' }
+
+    # config.before_configuration do
+    #   env_file = File.join(Rails.root, 'config', 'local_env.yml')
+    #   YAML.load(File.open(env_file)).each do |key, value|
+    #     ENV[key.to_s] = value
+    #   end if File.exists?(env_file)
+    # end
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'unite-the-armies.org',
+      user_name:            ENV["GMAIL_USERNAME"],
+      password:             ENV["GMAIL_PASSWORD"],
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
+
+    config.admin_hash = "26d438f70627d0a01a9435d3675a6902"
+
   end
 end

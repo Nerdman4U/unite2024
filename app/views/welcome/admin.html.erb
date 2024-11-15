@@ -1,0 +1,44 @@
+<!-- Content -->
+<div class="content clearfix">
+  <!-- Fullscreen Slider Section -->
+  <section class="section-block featured-media tm-slider-parallax-container">
+    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960" style="height:10rem">
+      <ul class="tms-slides">
+        <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.0">
+          <div class="tms-content">
+            <div class="tms-content-inner center left-on-mobile v-align-middle">
+              <div class="row">
+                <div class="column width-12">
+                </div>
+              </div>
+            </div>
+          </div>
+          <img data-src="/images/frontpage-slides/slide-5.jpg" src="/images/blank.png" alt=""/>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">   
+      <div class="row">
+        <div class="column width-12">
+          <h1>Ylläpito</h1>
+          <p>Mikäli et ole tämän sivuston ylläpitäjä, poistu sivulta välittömästi. Ota yhteyttä Unite The Armies- kehittäjiin sähköpostilla unite-the-armies@gmail.com.</p>
+          <p>If you are not an admin of this website, leave this page. Contact Unite The Armies developers at unitethearmies@gmail.com.</p>
+
+          <h2>Lisää useita käyttäjiä</h2>
+          <p>Lataa CSV-tiedosto alla olevan lomakkeen kautta. </p>
+          <p>Tiedoston tulee olla CSV (comma separated values) muotoinen. Yksi allekirjoittanut aina rivillä niin että ensin on käyttäjän nimi, sitten käyttäjän sähköpostiosoite ja lopuksi maakoodi. Esimerkki yhdestä rivistä: Matti Meikäläinen, matti@gmail.com, fi</p>
+          <p>Virheelliset rivit ohitetaan. Esimerkiksi rivi "Matti, Meikälainen, matti@gmail.com" ei lisää käyttäjää järjestelmään.</p>
+          <p>Tiedostossa voi olla kuinka monta riviä tahansa.</p>
+        </div>
+        <div class="column width-12">
+          <%= form_tag("/admin/#{params[:admin_hash]}", multipart: true) do %>
+            <%= file_field_tag(:admin_csv, {style: "width:auto;padding:0;margin:0;"}) %>
+            <%= submit_tag("Lähetä", {style: "color:#333 !important; width:auto; margin:0; padding:0"}) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

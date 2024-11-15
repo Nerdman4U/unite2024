@@ -15,7 +15,9 @@
                   <%= _("Give the armies a new, positive task: protect the environment") %>
                 </h5>
                 <div class="clear"></div>
-                <!-- TODO -->
+                <%= link_to new_vote_path(locale: locale, anchor: "sign"), :class => "tms-caption button large bkg-white thick bkg-hover-beige color-black color-hover-white text-uppercase no-margin-bottom text-uppercase", data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;", no_scale: true, no_turbolink: true } do %>
+                    <%= _("Support now") %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -184,8 +186,15 @@
     <div class="column width-6 offset-3">
       <div class="feature-content">
         <div class="feature-content-inner">
-          <!-- TODO -->
+          <%= link_to appeal_path(locale: locale), { :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
+              <span class="icon-info-with-circle left"></span>
+              <%= _("Read more") %>
+          <% end %>
 
+          <%= link_to new_vote_path(locale: locale), { :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
+              <span class="icon-add-user left"></span>
+              <%= _("Support now") %>
+          <% end %>
         </div>
       </div>
     </div>
