@@ -1,0 +1,163 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="row">
+      <div class="column width-4">
+        <div class="widget">
+          <%= link_to "http://www.vesl.fi/", target: "_blank" do %>
+              <h4 class="widget-title">
+                <%= _("The Green Association for the Protection of Life") %>
+              </h4>
+              <%= image_tag "veslogo-scaled.jpg", alt: _("The Green Association for the Protection of Life") %>
+          <% end %>
+        </div>
+        <div class="widget">
+          <%= link_to "http://tekniikkaelamaapalvelemaan.fi/", target: "_blank" do %>
+              <h4 class="widget-title">
+                <%= _("Technology for Life") %>
+              </h4>
+              <%= image_tag "teplogo-scaled.jpg", alt: _("Technology for Life") %>
+          <% end %>
+        </div>
+      </div>
+      <div class="column width-4">
+        <div class="widget">
+          <h4 class="widget-title"><%= _("About Us") %></h4>
+          <ul class="list-group small">
+            <li>
+              <%= link_to _("The Green Association for the Protection of Life"), "http://www.vesl.fi/", target: "_blank" %>
+            </li>
+            <li><span class="post-info"><span class="post-date">
+                  Anyara Granskog
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Valtteri Hirvonen (the landscape photos)
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Hayang Hu
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Elli Kempas
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Ulla Klötzer
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Riikka Kämppi
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Lea Launokari
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Pekka Lehtinen
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Ulf Lindström
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Pentti Linkola
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Harriet Lonka
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Tommi Lukkarinen
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Mika Mattila
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Nina Motaleff
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Saku Mättö
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Aurora Paloheimo
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Eero Paloheimo
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Kimmo Pietiläinen
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Sanna Saastamoinen-Barrois
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Emmi Seppänen
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Adrian Soto
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Joni Töyrylä
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Tere Vadén
+                </span></span></li>
+            <li><span class="post-info"><span class="post-date">
+                  Michael Wynne-Ellis
+                </span></span></li>
+          </ul>
+          <p>
+            <%= _("Contact our Campaign Assistant") %>:<br>
+            <a class="button small" style="color:#333 !important" href="mailto:emmi.seppanen@unite-the-armies.org">emmi.seppanen@unite-the-armies.org</a>
+          </p>
+        </div>
+      </div>
+      <div class="column width-3" style="padding-left: 0">
+        <div class="widget">
+          <h4 class="widget-title"><%= _("Recent Votes") %></h4>
+          <!--div id="recent_votes"></div-->
+          <table id="recent_votes" class="table">
+            <thead>
+              <tr class="recent_votes_header">
+                <th><%= _("Country") %></td>
+                <th><%= _("Name") %></td>                
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+
+        </div>
+      </div>
+      <div class="column width-1">
+        <ul class="social-list list-horizontal pull-right clear-float-on-mobile">
+          <li>
+            <%= link_to "https://www.facebook.com/unitethearmiesnow", target: "_blank" do %>
+                <span class="icon-facebook-with-circle medium"></span>
+            <% end %>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon-twitter-with-circle medium"></span>
+            </a>
+          </li>
+          <li>
+            <%= link_to "https://www.youtube.com/channel/UCbBytuGB3cDGyJ2RCSWpovw", target: "_blank" do %>
+                <span class="icon-youtube-with-circle  medium"></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://plus.google.com/u/0/b/110514912421465474435/110514912421465474435/about/p/pub", target: "_blank" do %>
+                <span class="icon-google-with-circle medium"></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="row">
+      <div class="column width-12 center">
+        <%= (_('Would you like to help the campaign by doing voluntary programming? Great! Fork the code from %{github}.') % { github: link_to("Github", "https://github.com/ekpaloheimo/unite", target: "_blank")}).html_safe   %>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
