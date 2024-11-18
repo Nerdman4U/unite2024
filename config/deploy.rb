@@ -16,7 +16,7 @@ namespace :deploy do
   task :install do
     on roles(:all) do
       within release_path do
-        execute :rake, 'deploy:install'
+        execute :rails, 'deploy:install'
       end
     end
   end
