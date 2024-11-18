@@ -16,7 +16,8 @@ namespace :deploy do
   task :install do
     on roles(:all) do
       within release_path do
-        execute :rails, 'deploy:install'
+        execute "whoami"
+        execute "/bin/rails", 'deploy:install'
       end
     end
   end

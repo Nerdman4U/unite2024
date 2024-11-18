@@ -4,4 +4,9 @@ namespace :deploy do
     system("bundle install")
     system("RAILS_ENV=production bin/rails assets:precompile")
   end
+
+  desc "Testing"
+  task :name do
+    system("whoami")
+  end
 end
