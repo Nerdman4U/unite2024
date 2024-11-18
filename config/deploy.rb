@@ -15,9 +15,8 @@ namespace :deploy do
   desc "Precompile assets"
   task :precompile_assets do
     on roles(:all) do
-      within current_path do
-        execute "pwd"
-        #execute "RAILS_ENV=production bin/rails assets:precompile"
+      within release_path do
+        execute :rake, 'deploy'
       end
     end
   end
