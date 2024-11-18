@@ -1,4 +1,4 @@
-GITHUB_URL = 'https://github.com/Nerdman4U/unite-the-armies-2024'
+GITHUB_URL = 'https://github.com/Nerdman4U/unite2024'
 VESL_URL = 'https://www.vesl.fi'
 TEKNIIKKAELAMAAPALVELEMAAN_URL = "http://tekniikkaelamaapalvelemaan.fi"
 UNITE_ROOT_URL = 'https://unitethearmies.org'
