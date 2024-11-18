@@ -12,17 +12,17 @@ set :rvm_ruby_string, :local              # use the same ruby as used locally fo
 set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
 
 namespace :deploy do
-  desc "Precompile assets"
-  task :precompile_assets do
+  desc "install"
+  task :install do
     on roles(:all) do
       within release_path do
-        execute :rake, 'deploy'
+        execute :rake, 'deploy:install'
       end
     end
   end
 end
 
-after 'deploy', 'deploy:precompile_assets'
+after 'deploy', 'deploy:install'
 
 # after :restart, :clear_cache do
 #   on roles(:web), in: :groups, limit: 3, wait: 10 do
