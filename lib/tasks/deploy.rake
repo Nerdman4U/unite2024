@@ -3,10 +3,6 @@ namespace :deploy do
   task :install do
     system("bundle install")
     system("RAILS_ENV=production bin/rails assets:precompile")
-  end
-
-  desc "Testing"
-  task :name do
-    system("whoami")
+    system("passenger-config restart-app /var/www/unitethearmies.org/")
   end
 end
