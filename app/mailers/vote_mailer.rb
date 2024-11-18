@@ -27,7 +27,7 @@ class VoteMailer < ApplicationMailer
     I18n.locale = value
     mail(to: email, subject: _('Invitation to Save the World - Unite the Armies'))
     I18n.locale = old_locale
-  end  
+  end
 
   def vote_backup votes_to
     # allekirjoittajat xx - yy esim. 1200-1300
@@ -36,7 +36,7 @@ class VoteMailer < ApplicationMailer
       Rails.logger.error("Votes_to is blank")
       return
     end
-    
+
     votes_from = UaSetting.instance.sent_at || Vote.first.created_at
     @votes = Vote.where(created_at: votes_from..votes_to).order(:created_at)
 

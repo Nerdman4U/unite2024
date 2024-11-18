@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unite-the-armies 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-01-02 09:59+0200\n"
+"PO-Revision-Date: 2016-03-04 10:23+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -33,11 +33,11 @@ msgstr ""
 "sta razón, son necesarias acciones rápidas y efectivas. Los ejércitos son la ú"
 "nica posibilidad"
 
+msgid "%{count} votes"
+msgstr "%{count} votos"
+
 msgid "About Us"
 msgstr "Acerca de nosotros"
-
-msgid "Act NOW!"
-msgstr "!Actúa ahora!"
 
 msgid "Add"
 msgstr "Añade"
@@ -48,26 +48,21 @@ msgstr "Deja tu comentario"
 msgid "Administration"
 msgstr "Administración"
 
-msgid "Ago"
-msgstr "Hace tiempo"
-
 msgid "Air pollution is a global Challenge!"
 msgstr "!La contaminación es un desafio global!"
-
-msgid "Animation realization"
-msgstr ""
 
 msgid "Arabic"
 msgstr "Árabe"
 
-msgid "Back to top"
-msgstr "Volver al inicio"
+msgid ""
+"Are you a programmer who knows Rails? The campaign page source code is free an"
+"d we hope that someone with such skills could help out with programming. If ev"
+"en a couple volunteers are found, the work to come is minimal. Consider droppi"
+"ng us a line! Check our GitHub repository:"
+msgstr ""
 
 msgid "Background"
 msgstr "Trasfondo"
-
-msgid "Biodiversity"
-msgstr "Biodiversidad"
 
 msgid "Campaign"
 msgstr "La campaña"
@@ -96,6 +91,12 @@ msgstr "Comentario (máximo 1000 carácteres)"
 msgid "Comment was successfully created."
 msgstr "El comentario fue creado en forma exitosa"
 
+msgid "Comments"
+msgstr "Comentarios"
+
+msgid "Contact our Campaign Assistant"
+msgstr ""
+
 msgid "Continue"
 msgstr "Continua"
 
@@ -104,13 +105,6 @@ msgstr "País"
 
 msgid "Created at"
 msgstr "Creado en"
-
-msgid ""
-"Do not share this direct link to anybody. Instead, you can use a form on the s"
-"ite to send invitations to your friends by email."
-msgstr ""
-"No compartas este enlace con nadie. Puedes, sin embargo, usar el formulario de"
-" la página web para enviar por correo electrónico invitaciones a tus amigos"
 
 msgid ""
 "Do not share this direct link with anybody. Instead, you can use a form below "
@@ -128,8 +122,12 @@ msgstr "Confirmar correo"
 msgid "English"
 msgstr "Inglés"
 
-msgid "Facebook"
-msgstr "Facebook"
+msgid ""
+"Even if you’ve read everything on our web page, there’s still some material fo"
+"r you to see, such as a printable pamphlet in English+Finnish for you to distr"
+"ibute at your convenience. To spread the idea of armies doing environmental wo"
+"rk, see also a simple one-page guide as to how to get more people to sign."
+msgstr ""
 
 msgid "Finnish"
 msgstr "Finés"
@@ -137,29 +135,32 @@ msgstr "Finés"
 msgid "First Aid"
 msgstr "Primeros auxilios"
 
-msgid "Food for all"
-msgstr "Comida para todos"
-
 msgid "French"
 msgstr "Francés"
 
-msgid "Global responsibility"
-msgstr "Responsabilidad global"
+msgid "German"
+msgstr ""
 
-msgid "Google+"
-msgstr "Goole+"
+msgid "Give the armies a new, positive task: protect the environment"
+msgstr ""
+"Dotar a los ejércitos de un papel nuevo, positivo, protector del medio ambient"
+"e"
 
 msgid "Greetings %{name}!"
-msgstr "Saludos %{nombre}"
-
-msgid "Happy mankind"
-msgstr "Una humandidad feliz"
+msgstr "Saludos %{name}"
 
 msgid "Helsinki, 4.11.2014"
 msgstr "Helsinki 4.11.2014"
 
 msgid "IP"
 msgstr "IP"
+
+msgid ""
+"If you click the link below, you’ll find your personal supporter page. If you "
+"so wish, you can spread awareness of our campaign via that page, so that the n"
+"umber of those who have signed via your link is recorded there. The best suppo"
+"rters shall be rewarded."
+msgstr ""
 
 msgid ""
 "In the next few decades only strong and effective countermeasures will be able"
@@ -174,14 +175,14 @@ msgstr ""
 "bordar el deterioro social y medioambiental de una manera más concentrada que "
 "en el presente."
 
+msgid "In these pages we collect support for a global initiative."
+msgstr "En estas páginas recogemos los apoyos para una iniciativa global."
+
 msgid "Initiative presented to the United Nations:"
 msgstr "Iniciativa presentada a las Naciones Unidas:"
 
-msgid "Instructions"
-msgstr "Instrucciones"
-
 msgid "Invitation has been sent, thank you!"
-msgstr ""
+msgstr "Invitation has been sent, thank you!"
 
 msgid "Invitation to Save the World - Unite the Armies"
 msgstr "Invitación a salvar el Mundo- Unificar los Ejércitos"
@@ -203,11 +204,12 @@ msgstr ""
 " desastres"
 
 msgid ""
-"It is logical to extend the actions from sudden disasters to large scale catas"
-"trophes."
+"It’s common practice in many countries that armies are called in to assist tho"
+"se affected by sudden environmental disasters. It would be a logical extension"
+" of this practice to employ such a resource in counteracting the somewhat more"
+" gradual but much larger-scale catastrophes – this with the help, it is to be "
+"hoped, of local NGOs – and that is the aim of our campaign."
 msgstr ""
-"Es lógico ampliar las acciones desde desastres repentinos hasta catástrofes a "
-"gran escala"
 
 msgid "Language"
 msgstr "Idioma"
@@ -221,8 +223,20 @@ msgstr "Proponer una iniciativa para la acción de los Ejércitos Unificados"
 msgid "Make the initiative using some of the UN:s official languages (6)."
 msgstr "Proponer la iniciativa usando uno de los idiomas oficiales (6) de la ONU"
 
+msgid "Material"
+msgstr ""
+
+msgid "Menu"
+msgstr "Menú"
+
 msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
 msgstr "!Millones de toneladas de basura plástica en las costas y los oceanos!"
+
+msgid "More work must be done"
+msgstr "Tenemos que trabajar aún más"
+
+msgid "My supporter page"
+msgstr ""
 
 msgid "Name"
 msgstr "Nombre"
@@ -230,14 +244,8 @@ msgstr "Nombre"
 msgid "Name of your friend"
 msgstr "Nombre de tu amigo"
 
-msgid "New future"
-msgstr "Nuevo futuro"
-
 msgid "New global role for the Military"
 msgstr "Un nuevo rol global para los militares"
-
-msgid "New technology"
-msgstr "Nueva tecnología"
 
 msgid ""
 "On a political level, it is the accepted practice everywhere that the military"
@@ -254,6 +262,12 @@ msgstr ""
 "e aumentan en escala y en importancia; todo esto con la ayuda, es de esperar, "
 "de las ONGs locales."
 
+msgid ""
+"Our campaign promotes a petition sent to the United Nations to deploy the worl"
+"d’s armies into environmental work to protect the diversity of the global ecos"
+"ystem and win the battle against climate change."
+msgstr ""
+
 msgid "Plastic Waste"
 msgstr "Reciduos plásticos"
 
@@ -266,22 +280,15 @@ msgstr "Escriba la tarea en un máximo de 1000 carácteres"
 msgid "Protected Areas"
 msgstr "Áreas protegidas"
 
-msgid "Radical actions are urgently needed to save our planet. Possible future world:"
-msgstr ""
-"Se necesitan urgentemente acciones radicals para salvar nuestro planeta. un fu"
-"turo posible para el mundo"
+msgid "Radical actions are urgently needed to save our planet."
+msgstr "Se necesitan urgentemente acciones radicals para salvar nuestro planeta."
 
 msgid "Read more"
 msgstr "Sigue leyendo"
 
+#, fuzzy
 msgid "Recent Votes"
-msgstr "Votos recientes"
-
-msgid "Reforestation"
-msgstr "Reforestación"
-
-msgid "Richness of cultures"
-msgstr "La riqueza de las culturas"
+msgstr "%{count} votos"
 
 msgid "Rules for Comments"
 msgstr "Reglas para los comentarios"
@@ -295,14 +302,17 @@ msgstr "!Salvar el planeta - Unificar los Ejércitos!"
 msgid "Save the World! Act Now!"
 msgstr "!Salvar el planeta! !Actúa Ahora!"
 
-msgid "Save the planet."
+msgid "Save the planet"
 msgstr "!Salvar el planeta!"
+
+msgid ""
+"See link below for a printable pamphlet and other campaign material. You may r"
+"ead the materials online, download them on your computer or print them; note t"
+"hat the pamphlet is designed to be printed on both sides of the paper."
+msgstr ""
 
 msgid "Send"
 msgstr "Envía"
-
-msgid "Share"
-msgstr "Compartir"
 
 msgid "Share email with your friends"
 msgstr "Compartir con correo electrónico"
@@ -341,22 +351,41 @@ msgstr ""
 "Sugiere una nueva tarea para los Ejércitos Unificados, que no esté en las las "
 "expuestas aquí"
 
+msgid "Support"
+msgstr "Apoyo"
+
 msgid "Support now"
 msgstr "Danos tu apoyo ahora!"
 
 msgid "Support the Initiative"
 msgstr "Apoya la iniciativa"
 
-msgid "Technical realization"
+msgid "Supporters"
+msgstr "Partidarios"
+
+#, fuzzy
+msgid "Swedish"
+msgstr "Español"
+
+msgid "Technical realization 6.2015 - 10.2018"
 msgstr ""
 
-msgid "Thank you for your contribution to the Save the World - Unite The Armies!"
-msgstr "!Gracias por tu contribución a Salvar el Planeta- Unificar los Ejércitos!"
+msgid "Technology for Life"
+msgstr ""
 
-msgid "Thank you for your support %{name}!"
-msgstr "!Gracias por tu apoyo %{nombre}!"
+msgid "Thank you for signing the Unite the Armies petition"
+msgstr ""
+
+msgid "Thank you for spreading the word! Click"
+msgstr ""
+
+msgid "Thank you for your support %{name}"
+msgstr "!Gracias por tu apoyo %{name}"
 
 msgid "Thank you for your vote!"
+msgstr "Gracias por tu voto"
+
+msgid "Thank you in any case for signing the petition,"
 msgstr ""
 
 msgid "The Green Association for the Protection of Life"
@@ -364,6 +393,9 @@ msgstr "La Asociación Verde para la protección de la vida"
 
 msgid "The Suggested task must benefit the whole world."
 msgstr "La tarea sugerida debe benificiar al mundo entero."
+
+msgid "The Unite the Armies campaign team"
+msgstr ""
 
 msgid "The United Armies must collect the plastic waste from the oceans and shores."
 msgstr ""
@@ -387,9 +419,6 @@ msgstr ""
 "Las actividades de los Ejércitos Unidos deben ser controladas por un organismo"
 " común e internacional. "
 
-msgid "The best contributors will be rewarded later."
-msgstr "Los mejores contribuyentes tendrán su reconocimiento más tarde"
-
 msgid ""
 "The concern of this campaign is that the global environment is radically deter"
 "iorating. Dangerous developments have accelerated and approach the point of no"
@@ -399,9 +428,6 @@ msgstr ""
 "orando. Desarrollos peligrosos han acelerado este deterioro hasta un punto de "
 "no retorno"
 
-msgid "The link below will go to your private secret vote"
-msgstr "El enlace, más abojo, facilitará tu voto secreto"
-
 msgid ""
 "The resources and capacity of the United Armies must be directed to reforestat"
 "ion of the deserts."
@@ -409,25 +435,19 @@ msgstr ""
 "Los recursos y capacidad de los Ejércitos Unidos deben apuntar a la reforestac"
 "ión de los desiertos."
 
-msgid ""
-"There is a hidden potential at hand: the national armies. We have to give the "
-"armies a new, positive task. In these pages we collect support for a global in"
-"itiative."
-msgstr ""
-"Tenemos un potencial escondido a nuestra mano: los ejércitos nacionales. Tenem"
-"os que darle ahora, al ejército, tareas positivas. En estas páginas recogemos "
-"los apoyos para una iniciativa global"
+msgid "There is a hidden potential at hand: the national armies."
+msgstr "Tenemos un potencial Escondido a nuestra mano: los ejércitos nacionales."
 
 msgid "There was an error"
-msgstr ""
+msgstr "Ha habido un error"
 
 msgid "There was an error while adding your vote"
-msgstr ""
+msgstr "Ha ocurrido un error al momento de contabilizar tu voto"
 
 msgid "There was an error with human verifying"
-msgstr ""
+msgstr "Ha habido un error con la verificación humana"
 
-msgid "This is your private vote!"
+msgid "This is your private vote"
 msgstr "!Este es tu voto privado!"
 
 msgid "To Our Common World"
@@ -435,6 +455,9 @@ msgstr "Por Nuestro Mundo Común"
 
 msgid "To the Secretary-General and Secretariat of the United Nations"
 msgstr "Al Secretario General y al Secretariado de las Naciones Unidas."
+
+msgid "To the material page"
+msgstr ""
 
 msgid "Topic"
 msgstr "Tópicos"
@@ -453,9 +476,6 @@ msgstr ""
 "te del gasto anual en armamento mundial. Este ejemplo ilustra claramente el al"
 "cance del potencial necesario para actuar en este asunto, si se encontrara la "
 "voluntad política."
-
-msgid "Twitter"
-msgstr "Twitter"
 
 msgid "Unite the Armies to Save Life – not to Kill!"
 msgstr "!Unificar los Ejércitos para Salvar Vidas- no para Matar!"
@@ -480,6 +500,12 @@ msgstr ""
 "oposiciones y para la redistribución de las fuerzas armadas en una nueva tarea"
 " tan pronto como sea posible. Esta iniciativa tendría también un efecto bien t"
 "angible en promover la paz mundial."
+
+msgid "We have to give the armies a new, positive task"
+msgstr "TENEMOS QUE DARLE AHORA, AL EJÉRCITO, TAREAS POSITIVAS"
+
+msgid "We have to give the armies a new, positive task."
+msgstr "TENEMOS QUE DARLE AHORA, AL EJÉRCITO, TAREAS POSITIVAS."
 
 msgid ""
 "We introduce this campaign to support an initiative presented to the United Na"
@@ -506,8 +532,8 @@ msgstr ""
 " ayudarían y fomentarían la estabilidad social y el empleo a nivel local, supo"
 "niendo que se empleara mano de obra local."
 
-msgid "We still miss %{count} of the 100.000.000."
-msgstr "Todavía nos falta %{contar} de los 100.000.000"
+msgid "We still miss %{count} of the %{target}."
+msgstr "Todavía nos falta %{count} de los %{target}."
 
 msgid ""
 "We suggest the United Nations presents a global initiative for a redeployment "
@@ -533,6 +559,11 @@ msgid "Would you like to have the initiative in your language – please, contac
 msgstr "Si quieres expresar tu iniciativa en tu propio idioma, por favor,!contáctanos!"
 
 msgid ""
+"Would you like to help the campaign by doing voluntary programming? Great! For"
+"k the code from %{github}."
+msgstr ""
+
+msgid ""
 "You can also contribute to the discussion after signing. You will get a separa"
 "te message of that by email."
 msgstr ""
@@ -543,33 +574,54 @@ msgid "You can now add a comment."
 msgstr "Puedes, ahora, escribir tu comentario"
 
 msgid "You have added %{count} comments."
-msgstr "Tú has sumado %{contar} comentarios"
+msgstr "Tú has sumado %{count} comentarios"
 
 msgid "You have been invited to Save the World - Unite the Armies by %{name}."
 msgstr ""
 "Tú has sido invitado a la campaña Salvar el Planeta- Unificar los Ejércitos po"
-"r %{nombre}"
+"r %{name}"
 
 msgid "You have helped campaign by having %{count} people signed after you."
-msgstr "Tú has contribuido a la campaña al motivar %{contar} personas a firmar"
-
-msgid "YouTube"
-msgstr "YouTube"
+msgstr "Tú has contribuido a la campaña al motivar %{count} personas a firmar"
 
 msgid "Your friends email address"
 msgstr "Correos electrónicos de tus amigos"
 
 msgid "Your support has been registered %{name}!"
-msgstr ""
+msgstr "Tu apoyo ha sido registrado %{name}!"
 
 msgid "Your supporter number is %{count}."
-msgstr "Tu número de contriibuyente es %{contar}"
+msgstr "Tu número de contriibuyente es %{count}."
+
+msgid "day"
+msgstr "Días"
 
 msgid "days"
 msgstr "Días"
 
-msgid "e-mail"
-msgstr "Correo electrónico"
+#, fuzzy
+msgid "here"
+msgstr "Compartir"
+
+msgid "hour"
+msgstr ""
+
+msgid "hours"
+msgstr ""
+
+msgid "http://unite-the-armies.org/en/download"
+msgstr ""
+
+msgid "https://www.dropbox.com/sh/u5gnv99jy2tj6bu/AAAwbxfS04f6sGzSGky0_sZMa?dl=0"
+msgstr ""
+
+msgid ""
+"if you wish see how many people have signed by following your personal invitat"
+"ion."
+msgstr ""
+
+msgid "minute"
+msgstr "Minutos"
 
 msgid "minutes"
 msgstr "Minutos"
@@ -577,5 +629,11 @@ msgstr "Minutos"
 msgid "professor"
 msgstr "Profesor"
 
+msgid "second"
+msgstr "Segundos"
+
 msgid "seconds"
 msgstr "Segundos"
+
+msgid "sincerely,"
+msgstr ""

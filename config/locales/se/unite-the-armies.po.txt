@@ -1,0 +1,427 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"PO-Revision-Date: 2016-05-29 13:12+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: de <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+Msgid "Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today."
+msgstr "Tiden tar slut medan vi förstör planetens resurser. Det måste ändras och det kan ändras. Du kan delta. Handla idag."
+
+msgid "We are in a hurry. We don’t have time for centuries, we have only decades. That is why effective and quick actions are necessary. The armies are the only possibility."
+msgstr "Vi har bråttom.Vi har inte århundraden på oss, endast årtionden. Därför behövs effektiva och snabba handlingar. Arméerna är den enda möjligheten."
+
+msgid "%{count} votes"
+msgstr "%{count} röster"
+
+msgid "About Us"
+msgstr "Om oss"
+
+msgid "Add"
+msgstr "Tillägg "
+
+msgid "Add a comment"
+msgstr "Lägg till en kommentar"
+
+msgid "Administration"
+msgstr "Administration "
+
+msgid "Ago"
+msgstr "Sedan"
+
+msgid "Air pollution is a global Challenge!"
+msgstr "Luftföroreningen är en världsomfattande utmaning "
+
+msgid "Animation realization"
+msgstr "Animation"
+
+msgid "Arabic"
+msgstr "Arabiska "
+
+msgid "Back to top"
+msgstr "Tillbaka till början"
+
+msgid "Background"
+msgstr " Bakgrunden"
+
+msgid "Campaign"
+msgstr "Kampanjen"
+
+msgid "Chinese"
+msgstr "Kinesiska"
+
+msgid "Choose the language"
+msgstr "Välj språk"
+
+msgid "Choose the language of the invitation letter"
+msgstr "Välj inbjudningsbrevets språk"
+
+msgid "Choose the topic"
+msgstr "Välj ämnet"
+
+msgid "Climate"
+msgstr "Klimatet "
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Comment (max 1000 characters)"
+msgstr "Kommentar(max 1000 tecken)"
+
+msgid "Comment was successfully created."
+msgstr "En konstruktiv kommentar skapades framgångsrikt"
+
+msgid "Comments"
+msgstr "Kommentar"
+
+msgid "Continue"
+msgstr "Fortsätt"
+
+msgid "Country"
+msgstr " Landet"
+
+msgid "Created at"
+msgstr "Skapades vid"
+
+msgid "Do not share this direct link to anybody. Instead, you can use a form on the site to send invitations to your friends by email."
+msgstr "Dela inte den direktalänkenmed någon. Använd I stället formuläret nedan för att skicka inbjudan till dina vänner via e-mail."
+
+msgid "Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends."
+msgstr "Dela inte den direkta länken med någon. Använd i stället formuläret nedan för att skicka inbjudan till dina vänner via e-mail."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email Confirmation"
+msgstr "Email bekräftelse"
+
+msgid "English"
+msgstr "Engelska"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Finnish"
+msgstr "Finska"
+
+msgid "First Aid"
+msgstr "Första hjälpen"
+
+msgid "French"
+msgstr "Franska"
+
+msgid "German"
+msgstr "Tyska"
+
+msgid "Give the armies a new, positive task: protect the environment"
+msgstr "Ge arméerna en ny positiv uppgift: att skydda miljön"
+
+msgid "Google+"
+msgstr "Google+"
+
+msgid "Greetings %{name}!"
+msgstr "Hälsningar %(namnet)"
+
+msgid "Helsinki, 4.11.2014"
+msgstr "Helsingfors, 4.11.2014"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
+msgstr "Inom de närmaste decennierna kan endast starka och effektiva motåtgärder stoppa denna process. Vi föreslår att en del av de resurser som globalt går till militärsektorn i stället skulle riktas till den sociala sektorn och för att bromsa miljöförstörelsen. "
+
+msgid "In these pages we collect support for a global initiative."
+msgstr "På dessa sidor samlar vi stöd för ett världsomfattande initiativ"
+
+msgid "Initiative presented to the United Nations:"
+msgstr "Initiativet presenteras till Förenta nationerna"
+
+msgid "Instructions"
+msgstr "Anvisningar"
+
+msgid "Invitation has been sent, thank you!"
+msgstr "Inbjudan har gått ut, tack "
+
+msgid "Invitation to Save the World - Unite the Armies"
+msgstr "Inbjudan att rädda världen - Förena armeérna"
+
+msgid "Invite your friends. Fill out a form below and information will be sent to given email"
+msgstr "Bjud in dina vänner. Fyll i blanketten nedan och informationen går vidare"
+
+msgid  "It is accepted that the military are called to assist the areas affected by sudden disasters. The same power should be used to defend us against gradual disasters."
+msgstr "Det är accepterat att militären kan inkallas för att hjälpa områden där en plötslig katastrof har inträffat. Samma styrkor borde användas att försvara oss mot gradvis skeende katastrofer."
+
+msgid "Language"
+msgstr "Språket"
+
+msgid "Listing comments"
+msgstr "Listade synpunkter"
+
+msgid "Make an initiative for the action of the United Armies."
+msgstr "Starta ett initiativ för ett projekt lämpat för United Armies "
+
+msgid "Make the initiative using some of the UN:s official languages (6)."
+msgstr "Ta ett initiativ genom att använd något av FN:s officiella språk (6)"
+
+msgid "Menu"
+msgstr "Meny"
+
+msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
+msgstr "Miljontals ton plastavfall längs kuster och hav"
+
+msgid "More work must be done"
+msgstr "Det behövs en större insats"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Name of your friend"
+msgstr "Din väns namn"
+
+msgid "New global role for the Military"
+msgstr "En ny världsomfattande roll för militären"
+
+msgid  "On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs."
+msgstr "Det är en allmänt godkänd praxis att militären kallats till hjälp då plötsliga och oväntade miljökatastrofer inträffar. Det skulle helt enkelt vara en logisk utvidgning av denna praxis att också nyttja militären för att bromsa effekterna av de till synes långsammare men mycket storskaliga och accelererande  katastroferna. Detta skulle ske tillsammans med de lokala medborgarorganisationerna."
+
+msgid "Plastic Waste"
+msgstr "Plastavfall"
+
+msgid "Positive initiations will be published."
+msgstr "Positiva initiativ kommer att publiceras"
+
+msgid "Present the task with max. 1000 characters."
+msgstr "Presentera uppgiften med max 1000 tecken"
+
+msgid "Protected Areas"
+msgstr "Skyddade områden"
+
+msgid "Radical actions are urgently needed to save our planet."
+msgstr "Det behövs radikala åtgärder för att snabbt rädda vår planet."
+
+msgid "Read more"
+msgstr "Läs mera"
+
+msgid "Recent Votes"
+msgstr "Senaste röster"
+
+msgid "Rules for Comments"
+msgstr "Regler för kommentarer"
+
+msgid "Russian"
+msgstr "Ryska"
+
+msgid "Save the Planet - Unite the Armies!"
+msgstr "Rädda planeten – Förena arméerna"
+
+msgid "Save the World! Act Now!"
+msgstr "Rädda jorden! Handla NU"
+
+msgid "Save the planet"
+msgstr "Rädda planeten"
+
+msgid "Send"
+msgstr "Skicka"
+
+msgid "Share"
+msgstr "Dela"
+
+msgid "Share email with your friends"
+msgstr "Dela email med dina vänner"
+
+msgid "Share with social media"
+msgstr "Dela med de sociala medierna"
+
+msgid "Sign"
+msgstr "Underteckna"
+
+msgid "Signatures! Let’s work further!"
+msgstr "Underskrifter! Låt oss jobba vidare!"
+
+msgid "Spanish"
+msgstr "Spanska"
+
+msgid "State of the global environment"
+msgstr "Den globala miljöns tillstånd"
+
+msgid "Statistics"
+msgstr "Statistik"
+
+msgid "Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention."
+msgstr "Skadliga trender har accelererat och verkat sinsemellan förstärkande. Det finns fog för fruktan att denna process når en punkt 'utan  återvändo' och inte längre kan stoppas av människan."
+
+msgid "Suggest a new task for the Action of the United Armies not presented here."
+msgstr "Föreslå en ny uppgift för de förenade arméerna som inte har blivit presenterad här."
+
+msgid "Support"
+msgstr "Ge ditt stöd"
+
+msgid "Support now"
+msgstr "Stöd nu"
+
+msgid "Support the Initiative"
+msgstr "Stöd initiativet"
+
+msgid "Supporters"
+msgstr "Supportrarna"
+
+msgid "Swedish"
+msgstr "Spanska"
+
+msgid "Technical realization"
+msgstr "Tekniskt förverkligande"
+
+msgid "Thank you for your contribution to the Save the World - Unite The Armies!"
+msgstr "Tack för ditt bidrag för att Rädda världen - Förena Arméerna!"
+
+msgid "Thank you for your support %{name}"
+msgstr "Tack för ditt stöd %(namn)!"
+
+msgid "Thank you for your vote!"
+msgstr "Tack för din röst"
+
+msgid "The Green Association for the Protection of Life"
+msgstr "Gröna Förbundet för Livets Beskydd"
+
+msgid "The Suggested task must benefit the whole world."
+msgstr "Den föreslagna uppgiften måste gynna hela världen."
+
+msgid "The United Armies must collect the plastic waste from the oceans and shores."
+msgstr "De förenade arméerna skall samla plastavfall från hav och kuster."
+
+msgid "The United Armies must ensure sufficient water availability everywhere for the needs of people and life."
+msgstr "De förenade arméerna måste verka för tillräcklig vattenförsörjning."
+
+msgid "The United Armies must protect the areas reserved for nature."
+msgstr "De förenade arméerna skall beskydda naturskyddsområdena."
+
+msgid ""
+"The activities of the United Armies must be controlled by a common, international organ."
+msgstr "De förenade arméernas aktiviteter skall kontrolleras av ett allmänt, internationellt organ."
+
+msgid "The best contributors will be rewarded later."
+msgstr "De bästa medarbetarna skall belönas senare."
+
+msgid "The concern of this campaign is that the global environment is radically deteriorating. Dangerous developments have accelerated and approach the point of no return."
+msgstr "Den här kampanjen bekymrar sig  för att den globala  miljön har försämrats radikalt. Farliga trender har accelererat och närmar sig en punkt utan återvändo."
+
+msgid "The link below will go to your private secret vote"
+msgstr "Linken nedan ska leda till din privata hemliga sida"
+
+msgid  "The resources and capacity of the United Armies must be directed to reforestation of the deserts."
+msgstr "De förenade arméernas  resurser och kapacitet skall nyttjas för skogsplantering av ökenmark."
+
+msgid "There is a hidden potential at hand: the national armies."
+msgstr "Det finns en undangömd potential till hands: de nationella arméerna."
+
+msgid "There was an error"
+msgstr "Det förekom ett fel"
+
+msgid "There was an error while adding your vote"
+msgstr "Det har inträffat ett fel då din röst räknades"
+
+msgid "There was an error with human verifying"
+msgstr "Det skedde ett verifieringsmistag"
+
+msgid "This is your private vote"
+msgstr "Detta är din privata röst"
+
+msgid "To Our Common World"
+msgstr "Till vår gemensamma värld"
+
+msgid "To the Secretary-General and Secretariat of the United Nations"
+msgstr "Till Förenta Nationernas generalsekreteraren och Sekretariatet"
+
+msgid "Topic"
+msgstr "Tema"
+
+msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
+msgstr "Arméernas totala kostnader i världen uppskattas till 1500 miljarder dollar årligen. Kostnaden kan sättas i perspektiv genom en jämförelse med den uppskattade kostnaden för skogsplantering över hela Sahara, som uppskattas vara en sjättedel av  de militära utgifterna varje år. Detta exempel  illustrerar klart vilken potential den föreslagna åtgärden besitter, om bara den politiska viljan finns."
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Unite the Armies to Save Life – not to Kill!"
+msgstr "Förena arméerna för att rädda livet - inte för att döda"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Water"
+msgstr "Vatten"
+
+msgid "Water is the Mother of Life – we all need it!"
+msgstr "Vattnet är Livets Moder - vi behöver alla det"
+
+msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
+msgstr "Vi önskar att Förenta Nationerna allvarligt begrundar detta världsomfattande initiativ och nyttjar ovanstående presentation för att föra fram en ny uppgift för världens militära styrkor och detta så fort som möjligt. Ett sådant initiativ skulle också ha en vikitig fredsbefrämjande effekt i världen."
+
+msgid "We have to give the armies a new, positive task"
+msgstr "Vi måste ge arméerna en ny positiv uppgift"
+
+msgid "We have to give the armies a new, positive task."
+msgstr "Vi måste ge arméerna en ny positiv uppgift."
+
+msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
+msgstr "Vi introducerar denna kampanj för att stödja initiativet, vilket två professorer, U. B. Lindström och Eero Paloheimo, har framställt för sekretariatet hos Förenta Nationerna"
+
+msgid "We must defend Life's Richness on our Planet!"
+msgstr "Vi måste försvara livets rikedom på vår planet"
+
+msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
+msgstr "Vi föreslår en verksamhet  som kräver stora resurser, både vad gäller arbetskraft som utrustning; den skulle omfatta  tex. åkerskogsodling,  vattenförsörjning, beskogning och relokering av fauna p.g.a den globala uppvärmningen. Generellt skulle tyngdpunkten förläggas till projekt som stöder socialt och miljömässigt hållbara åtgärder. Dessa projekt skulle samdtidigt  förebygga katastrtrofer och minska fattigdomen."
+
+msgid "We still miss %{count} of the 100.000.000."
+msgstr "Vi saknar ytterligare%(mängd) av 100.000.000"
+
+msgid "We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible."
+msgstr "Vi föreslår att Förenta Nationerna så fort som möjligt presenterar ett världsomfattande initiativ för omgruppering av världens militära makter till nya betydelsefulla miljöbetingade uppgifter."
+
+msgid ""We the undersigned addressees turn to you because of our concern at the state of the global environment. In many parts of the world the deterioration of the environment can be linked directly to social problems among the local population."
+msgstr "Vi, undertecknade  vänder oss till er i vår oro över den globala miljön. I många delar av världen kan försämringen av miljön direkt kopplas till de sociala problemen."
+
+msgid "Would you like to have the initiative in your language – please, contact us!"
+msgstr "Om du vill ha initiativet på ditt språk - var god, kontakta oss!"
+
+msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
+msgstr "Efter undertecknandet kan du delta i diskussionen. Du kommer att få ett separat meddelande av detta via e-mail"
+
+msgid "You can now add a comment."
+msgstr "Nu kan du tillägga en kommentar"
+
+msgid "You have added %{count} comments."
+msgstr "Du har bidragit med %(count) kommentarer"
+
+msgid "You have been invited to Save the World - Unite the Armies by %{name}."
+msgstr "Du har blivit inbjuden till Save the World - United the Armies genom %(name)"
+
+msgid "You have helped campaign by having %{count} people signed after you."
+msgstr "Du har hjälpt kampanjen genom att%{count} människor har undertecknat efter dig."
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Your friends email address"
+msgstr "Din väns e-mail adress"
+
+msgid "Your support has been registered %{name}!"
+msgstr "Ditt stöd har registrerats%(name)!"
+
+msgid "Your supporter number is %{count}."
+msgstr "Ditt stödnummer är%(count)"
+
+msgid "days"
+msgstr "dagar"
+
+msgid "minutes"
+msgstr "minuter"
+
+msgid "professor"
+msgstr "professor"
+
+msgid "seconds"
+msgstr "sekunder"

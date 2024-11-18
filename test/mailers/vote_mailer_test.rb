@@ -24,6 +24,9 @@ class VoteMailerTest < ActionMailer::TestCase
     vote = votes(:vote_1)
     email = VoteMailer.sign_up(vote).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
+
+    puts _("Thank you for signing the Unite the Armies petition")
+
     assert_equal "Kiitokset allekirjoituksesta ja mahdollisuus auttaa", email.subject
   end
 

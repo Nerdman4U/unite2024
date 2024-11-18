@@ -54,7 +54,6 @@ gem 'time_difference'
 gem 'email_validator'
 #gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -77,6 +76,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'gettext'
 end
 
 group :test do

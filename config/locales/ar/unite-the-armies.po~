@@ -147,7 +147,7 @@ msgid "Google+"
 msgstr "الجوجل+"
 
 msgid "Greetings %{name}!"
-msgstr "تحيات %(الإسم)!"
+msgstr "تحيات %{name}!"
 
 msgid "Happy mankind"
 msgstr "الجنس البشري السعيد"
@@ -326,7 +326,7 @@ msgid "Thank you for your contribution to the Save the World - Unite The Armies!
 msgstr "شكراً على مشاركتك في إنقاد العالم – وحّد الجيوش! "
 
 msgid "Thank you for your support %{name}!"
-msgstr "شكراً على دعمك % (الإسم)!"
+msgstr "شكراً على دعمك %{name}!"
 
 msgid "Thank you for your vote!"
 msgstr "شكراً على صوتك"
@@ -452,7 +452,7 @@ msgstr "نقترح إتخاذ تدابير على مشاريع تتطلب موا
 
 msgid "We still miss %{count} of the 100.000.000."
 msgstr 
-"لا يزال ينقصنا في %(العد)البالغ مجموعه 000 0000 100 "
+"لا يزال ينقصنا في %{count} البالغ مجموعه 000 0000 100 "
 msgid ""
 "We suggest the United Nations presents a global initiative for a redeployment "
 "of the world’s armed forces into the new significant environmental tasks as so"
@@ -479,13 +479,13 @@ msgid "You can now add a comment."
 msgstr "والآن يمكنك أن تضيف تعليقات"
 
 msgid "You have added %{count} comments."
-msgstr "أضفت % من التعليقات"
+msgstr "أضفت %{count} من التعليقات"
 
 msgid "You have been invited to Save the World - Unite the Armies by %{name}."
-msgstr "كنت مدعواً لإنقاذ العالم – وحّد الجيوش %(بإسم)"
+msgstr "كنت مدعواً لإنقاذ العالم – وحّد الجيوش %{name}"
 
 msgid "You have helped campaign by having %{count} people signed after you."
-msgstr "ساعدت على الحملة بالعد % ووقّع الناس بعدك"
+msgstr "ساعدت على الحملة بالعد %{count} ووقّع الناس بعدك"
 
 msgid "YouTube"
 msgstr "يوتيوب"
@@ -494,10 +494,10 @@ msgid "Your friends email address"
 msgstr "عنوان البريد الإلكتروني أصديقائك/ صديقاتك"
 
 msgid "Your support has been registered %{name}!"
-msgstr "تم تسجيل دعمك % (الإسم)!"
+msgstr "تم تسجيل دعمك %{name}!!"
 
 msgid "Your supporter number is %{count}."
-msgstr "رقم ترتيب دعمك هو %(العد)"
+msgstr "رقم ترتيب دعمك هو %{count}"
 
 msgid "days"
 msgstr "أيام"
