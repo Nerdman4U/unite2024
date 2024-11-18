@@ -34,16 +34,16 @@ class VoteTest < ActiveSupport::TestCase
     assert_not @vote.save, "Save vote without email_confirmation"
   end
 
-  test 'should not save with short name' do
-    # 16.9.2015/jto People can have very short names...
-    #
-    # @vote.name = "f"
-    # assert_not @vote.save, "Save vote with too short name"
-    # @vote.name = "fo"
-    # assert_not @vote.save, "Save vote with too short name"
-    # @vote.name = "foo"
-    # assert_not @vote.save, "Save vote with too short name"
-  end
+  # test 'should not save with short name' do
+  #   # 16.9.2015/jto People can have very short names...
+  #   #
+  #   # @vote.name = "f"
+  #   # assert_not @vote.save, "Save vote with too short name"
+  #   # @vote.name = "fo"
+  #   # assert_not @vote.save, "Save vote with too short name"
+  #   # @vote.name = "foo"
+  #   # assert_not @vote.save, "Save vote with too short name"
+  # end
 
   test 'should not save with wrong email confirmation' do
     @vote.email_confirmation = "asdf@foobar.com"
