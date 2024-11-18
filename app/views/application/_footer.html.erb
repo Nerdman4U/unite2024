@@ -4,7 +4,7 @@
     <div class="row">
       <div class="column width-4">
         <div class="widget">
-          <%= link_to "http://www.vesl.fi/", target: "_blank" do %>
+          <%= link_to VESL_URL, target: "_blank" do %>
               <h4 class="widget-title">
                 <%= _("The Green Association for the Protection of Life") %>
               </h4>
@@ -12,7 +12,7 @@
           <% end %>
         </div>
         <div class="widget">
-          <%= link_to "http://tekniikkaelamaapalvelemaan.fi/", target: "_blank" do %>
+          <%= link_to TEKNIIKKAELAMAAPALVELEMAAN_URL, target: "_blank" do %>
               <h4 class="widget-title">
                 <%= _("Technology for Life") %>
               </h4>
@@ -25,7 +25,7 @@
           <h4 class="widget-title"><%= _("About Us") %></h4>
           <ul class="list-group small">
             <li>
-              <%= link_to _("The Green Association for the Protection of Life"), "http://www.vesl.fi/", target: "_blank" %>
+              <%= link_to _("The Green Association for the Protection of Life"), VESL_URL, target: "_blank" %>
             </li>
             <li><span class="post-info"><span class="post-date">
                   Anyara Granskog
@@ -114,7 +114,7 @@
             <thead>
               <tr class="recent_votes_header">
                 <th><%= _("Country") %></td>
-                <th><%= _("Name") %></td>                
+                <th><%= _("Name") %></td>
               </tr>
             </thead>
             <tbody></tbody>
@@ -125,7 +125,7 @@
       <div class="column width-1">
         <ul class="social-list list-horizontal pull-right clear-float-on-mobile">
           <li>
-            <%= link_to "https://www.facebook.com/unitethearmiesnow", target: "_blank" do %>
+            <%= link_to UNITE_FACEBOOK_URL, target: "_blank" do %>
                 <span class="icon-facebook-with-circle medium"></span>
             <% end %>
           </li>
@@ -135,12 +135,12 @@
             </a>
           </li>
           <li>
-            <%= link_to "https://www.youtube.com/channel/UCbBytuGB3cDGyJ2RCSWpovw", target: "_blank" do %>
+            <%= link_to UNITE_YOUTUBE_URL, target: "_blank" do %>
                 <span class="icon-youtube-with-circle  medium"></span>
             <% end %>
           </li>
           <li>
-            <%= link_to "https://plus.google.com/u/0/b/110514912421465474435/110514912421465474435/about/p/pub", target: "_blank" do %>
+            <%= link_to UNITE_GOOGLEPLUS_URL, target: "_blank" do %>
                 <span class="icon-google-with-circle medium"></span>
             <% end %>
           </li>
@@ -154,7 +154,7 @@
   <div class="footer-top">
     <div class="row">
       <div class="column width-12 center">
-        <%= (_('Would you like to help the campaign by doing voluntary programming? Great! Fork the code from %{github}.') % { github: link_to("Github", "https://github.com/ekpaloheimo/unite", target: "_blank")}).html_safe   %>
+        <%= (_('Would you like to help the campaign by doing voluntary programming? Great! Fork the code from %{github}.') % { github: link_to("Github", GITHUB_URL, target: "_blank")}).html_safe   %>
       </div>
     </div>
   </div>
