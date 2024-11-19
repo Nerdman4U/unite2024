@@ -24,15 +24,14 @@
   var recently_added_votes_path = '<%= recently_added_votes_path(format: :json) %>'
 </script>
 
+<%= javascript_importmap_tags %>
+
 <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
 <%= stylesheet_link_tag 'flags.css', "data-turbo-track": "reload" %>
 <%# stylesheet_link_tag 'bootstrap-3.3.4.css', "data-turbo-track": "reload" %>
 
 <%= javascript_include_tag 'jquery' %>
 <%= javascript_include_tag 'jquery_ujs' %>
-<%= javascript_include_tag 'underscore-1.8.3' %>
-<%= javascript_include_tag 'backbone-1.6.0' %>
-<%= javascript_include_tag 'unite-the-armies.js' %>
 <%= javascript_include_tag 'countries' %>
 <%= javascript_include_tag 'timber.master.min.js' %>
 <%= javascript_include_tag 'flash_messages' %>
@@ -43,14 +42,7 @@
 <%= javascript_include_tag 'responsive-nav' %>
 <%= javascript_include_tag 'responsiveslides.min' %>
 <%= javascript_include_tag 'slideshow.js' %>
-<%= javascript_include_tag 'templates/votes/index.jst.eco', extname: false %>
-<%= javascript_include_tag 'templates/votes/show.jst.eco', extname: false %>
-<%= javascript_include_tag 'collections/votes.js' %>
-<%= javascript_include_tag 'models/vote.js' %>
-<%= javascript_include_tag 'views/votes/votes_index.js' %>
-<%= javascript_include_tag 'views/votes/votes_show.js' %>
-<%= javascript_include_tag 'routers/votes_router.js' %>
-<%= javascript_include_tag 'unite-the-armies-core.js' %>
+<%= javascript_include_tag 'application', type: 'module' %>
 
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
