@@ -4,10 +4,10 @@
 <meta name="twitter:widgets:theme" content="light">
 
 <meta property="og:type"          content="website" />
-<meta property="og:title"         content="Save the Planet - Unite the Armies!" />
-<meta property="og:description"   content="Radical actions are urgently needed to save our planet. STOP THE DISASTER – NOW!" />
-<meta property="og:url"           content="http://www.unite-the-armies.org" />
-<meta property="og:image"         content="<%= image_url("ua-banner.jpg") %>" />
+<meta property="og:title"         content="<%= UNITE_TITLE %>" />
+<meta property="og:description"   content="<%= UNITE_DESCRIPTION %>" />
+<meta property="og:url"           content="<%= UNITE_ROOT_URL %>" />
+<meta property="og:image"         content="<%= image_url(UNITE_LOGO) %>" />
 
 <link rel="shortcut icon" type="image/x-icon" href="/images/theme-mountain-favicon.ico">
 
@@ -28,15 +28,9 @@
 
 <%= javascript_include_tag 'jquery' %>
 <%= javascript_include_tag 'jquery_ujs' %>
-<%= javascript_include_tag 'underscore-esm-min' %>
-<%= javascript_include_tag 'backbone-min' %>
 <%= javascript_include_tag 'countries' %>
-<!-- <%# javascript_include_tag 'turbolinks' %> -->
 <%= javascript_include_tag 'timber.master.min.js' %>
-<!-- <%# javascript_include_tag 'backbone' %> -->
-<!-- <%# javascript_include_tag 'unite-the-armies' %> -->
 <%= javascript_include_tag 'flash_messages' %>
-<!-- <%# javascript_include_tag 'social-share-button' %> -->
 <%= javascript_include_tag 'jquery.cslider' %>
 <%= javascript_include_tag 'jquery.flexisel' %>
 <%= javascript_include_tag 'modernizr.custom.28468' %>
@@ -44,7 +38,16 @@
 <%= javascript_include_tag 'responsive-nav' %>
 <%= javascript_include_tag 'responsiveslides.min' %>
 <%= javascript_include_tag 'slideshow.js' %>
-<%= javascript_include_tag 'unite-the-armies-core' %>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <%= csrf_meta_tags %>
 

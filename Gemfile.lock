@@ -341,8 +341,6 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     singleton (0.3.0)
-    social-share-button (1.2.4)
-      coffee-rails
     solid_cable (3.0.2)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -455,7 +453,6 @@ DEPENDENCIES
   rubocop-rails-omakase
   sdoc
   selenium-webdriver
-  social-share-button
   solid_cable
   solid_cache
   solid_queue
