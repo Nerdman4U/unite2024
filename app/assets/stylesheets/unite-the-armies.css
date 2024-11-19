@@ -19,8 +19,18 @@ body,
 .footer-top a:not(.button),
 .footer .widget,
 .footer address,
-.header-background .navigation > ul > li > a {
-  color: #333;
+.a {
+  color: #222;
+}
+a {
+  text-decoration: underline;
+}
+.footer {
+  color: #222;
+  font-size: 1.3rem;
+}
+.button {
+  text-decoration: none;
 }
 
 .header-transparent .navigation > ul > li > a {

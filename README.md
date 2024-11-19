@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Would you like to Contribute?
 
-Things you may want to cover:
+1. Translate missing content
+   At some languages there are missing translations. Translation files are located at config/locales/<name>/ and have name unite-the-armies.po. Fill in missing lines and send files to unitethearmies.org.
 
-* Ruby version
+2. Translate to new language
+   Contact us.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. Work with the code
+   If you have ideas how to create better program, contact us. You can fork and send pull request as well.
