@@ -32,6 +32,7 @@
 <%= javascript_include_tag 'jquery_ujs' %>
 <%= javascript_include_tag 'underscore-1.8.3' %>
 <%= javascript_include_tag 'backbone-1.6.0' %>
+<%= javascript_include_tag 'unite-the-armies.js' %>
 <%= javascript_include_tag 'countries' %>
 <%= javascript_include_tag 'timber.master.min.js' %>
 <%= javascript_include_tag 'flash_messages' %>
@@ -42,7 +43,13 @@
 <%= javascript_include_tag 'responsive-nav' %>
 <%= javascript_include_tag 'responsiveslides.min' %>
 <%= javascript_include_tag 'slideshow.js' %>
-<%= javascript_include_tag 'unite-the-armies.js' %>
+<%= javascript_include_tag 'templates/votes/index.jst.eco', extname: false %>
+<%= javascript_include_tag 'templates/votes/show.jst.eco', extname: false %>
+<%= javascript_include_tag 'collections/votes.js' %>
+<%= javascript_include_tag 'models/vote.js' %>
+<%= javascript_include_tag 'views/votes/votes_index.js' %>
+<%= javascript_include_tag 'views/votes/votes_show.js' %>
+<%= javascript_include_tag 'routers/votes_router.js' %>
 <%= javascript_include_tag 'unite-the-armies-core.js' %>
 
 <!-- Load Facebook SDK for JavaScript -->

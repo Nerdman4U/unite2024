@@ -4,6 +4,7 @@ ready = function () {
   function loadVotes() {
     if (!recently_added_votes_path) return;
     $.get(recently_added_votes_path).success(function (data) {
+      console.log("loadVotes()", data);
       recent_votes = new UniteTheArmies.Collections.Votes(data);
       view = new UniteTheArmies.Views.VotesIndex({ collection: recent_votes });
       view.render();
@@ -58,13 +59,13 @@ ready = function () {
   }
 
   loadVotes();
-  setInterval(function () {
-    loadVotes();
-  }, 5000);
-  menuEvents();
-  voteEvents();
-  startShow();
+  // setInterval(function () {
+  //   loadVotes();
+  // }, 5000);
+  //menuEvents();
+  //voteEvents();
+  //startShow();
 };
 
-//$(document).ready(ready);
-//$(document).on('page:load', ready);
+$(document).ready(ready);
+$(document).on("page:load", ready);
