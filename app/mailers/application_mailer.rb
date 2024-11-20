@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "info@unite-the-armies.org"
+  default from: UNITE_THE_ARMIES_EMAIL
   layout 'mailer'
 end
