@@ -14,7 +14,7 @@ class VoteMailerTest < ActionMailer::TestCase
     assert_not ActionMailer::Base.deliveries.empty?
 
     # English letter
-    assert_equal ['info@unite-the-armies.org'], email.from
+    assert_equal ['info@jonitoyryla.eu'], email.from
     assert_equal ['user1@vote-example.com'], email.to
     assert_equal "Thank you for signing the Unite the Armies petition", email.subject
     #assert_equal read_fixture('invite').join, email.body.to_s

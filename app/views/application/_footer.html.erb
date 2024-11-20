@@ -4,14 +4,6 @@
     <div class="row">
       <div class="column width-4">
         <div class="widget">
-          <%= link_to VESL_URL, target: "_blank" do %>
-              <h4 class="widget-title">
-                <%= _(VESL_NAME) %>
-              </h4>
-              <%= image_tag "veslogo-scaled.jpg", alt: _(VESL_NAME) %>
-          <% end %>
-        </div>
-        <div class="widget">
           <%= link_to TEP_URL, target: "_blank" do %>
               <h4 class="widget-title">
                 <%= _(TEP_NAME) %>
@@ -24,9 +16,6 @@
         <div class="widget">
           <h4 class="widget-title"><%= _("About Us") %></h4>
           <ul class="list-group small">
-            <li>
-              <%= link_to _(VESL_NAME), VESL_URL, target: "_blank" %>
-            </li>
             <li><span class="post-info"><span class="post-date">
                   Anyara Granskog
                 </span></span></li>
@@ -100,10 +89,12 @@
                   Michael Wynne-Ellis
                 </span></span></li>
           </ul>
+          <!--
           <p>
             <%= _("Contact our Campaign Assistant") %>:<br>
             <a class="button small" style="color:#333 !important" href="mailto:<%= CAMPAIGN_ASSISTANT_EMAIL %>"><%= CAMPAIGN_ASSISTANT_EMAIL %></a>
           </p>
+          -->
         </div>
       </div>
       <div class="column width-3" style="padding-left: 0">

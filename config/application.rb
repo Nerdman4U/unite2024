@@ -45,8 +45,8 @@ module UniteTheArmiesOrg
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'unite-the-armies.org',
-      user_name:            ENV["GMAIL_USERNAME"],
-      password:             ENV["GMAIL_PASSWORD"],
+      user_name:            ENV["UNITE_GMAIL_USERNAME"],
+      password:             ENV["UNITE_GMAIL_PASSWORD"],
       authentication:       'plain',
       enable_starttls_auto: true
     }
