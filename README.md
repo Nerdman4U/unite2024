@@ -1,12 +1,45 @@
 # README
 
-## Would you like to Contribute?
+Unite the Armies - Save the Planet needs Your help.
+
+## Contribute
+
+### Translate
 
 1. Translate missing content
+
    At some languages there are missing translations. Translation files are located at config/locales/<name>/ and have name unite-the-armies.po. Fill in missing lines and send files to unitethearmies.org.
 
-2. Translate to new language
+2. Translate new language
+
    Contact us.
 
-3. Work with the code
-   If you have ideas how to create better program, contact us. You can fork and send pull request as well.
+### Code
+
+If you have ideas how to make project amazing, feel free to fork.
+
+#### Commiting
+
+Commitizen settings are at .cz.yaml.
+
+- cz commit
+- cz bump
+
+#### Localization
+
+- $ rake gettext:find
+- Edit po files
+- $ rake gettext:pack#### Tests
+
+#### Tests
+
+- $ rails test
+
+#### Deployment
+
+Environment:
+
+- UNITE_GMAIL_USERNAME, UNITE_GMAIL_PASSWORD
+- RECAPTHA_PRIVATE_KEY
+
+- $ cap production deploy
