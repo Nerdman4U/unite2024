@@ -71,8 +71,8 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   config.after_initialize do
-    config.x.backup_email = UNITE_THE_ARMIES_TEST_EMAIL
+    config.x.backup_email = ENV['UNITE_BACKUP_EMAIL_DEVELOPMENT']
     config.x.send_count = 100
-    config.x.comment_target_email = UNITE_THE_ARMIES_TEST_EMAIL
+    config.x.comment_target_email = ENV['UNITE_BACKUP_EMAIL_DEVELOPMENT']
   end
 end

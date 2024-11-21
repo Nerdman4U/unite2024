@@ -16,7 +16,7 @@ Unite the Armies - Save the Planet needs Your help.
 
 ### Code
 
-If you have ideas how to make project amazing, feel free to fork.
+If you have ideas how to make project amazing, contact us!
 
 #### Commiting
 
