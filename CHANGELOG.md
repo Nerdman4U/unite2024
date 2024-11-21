@@ -1,3 +1,9 @@
+## 1.11.0 (2024-11-21)
+
+### Feat
+
+- **config**: Reading backup email from environment
+
 ## 1.10.1 (2024-11-21)
 
 ### Fix
