@@ -2,6 +2,7 @@ class UniteTheArmies {
   constructor() {}
   loadVotes() {
     if (!recently_added_votes_path) return;
+    if (unite_state !== "ready") return;
     fetch(recently_added_votes_path)
       .then((response) => response.json())
       .then((data) => {

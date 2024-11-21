@@ -25,4 +25,15 @@ class UaSetting < ApplicationRecord
     self.vote_count = my_count
     save
   end
+
+  def version
+    require 'yaml'
+    if File.exist?('.cz.yaml')
+      data = open('.cz.yaml').read()
+      data = YAML.load(data)
+      data["commitizen"]["version"]
+    else
+      "unknown"
+    end
+  end
 end
