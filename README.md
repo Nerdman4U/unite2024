@@ -1,6 +1,8 @@
 # README
 
-Unite the Armies - Save the Planet needs Your help.
+<p align="center"><h1>Unite the Armies - Save the Planet needs Your help.</h1></p>
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Contribute
 
