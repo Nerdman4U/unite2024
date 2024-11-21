@@ -1,18 +1,23 @@
-var site;
-
-ready = function () {
-  function loadVotes() {
+class UniteTheArmies {
+  constructor() {}
+  loadVotes() {
     if (!recently_added_votes_path) return;
-    $.get(recently_added_votes_path).success(function (data) {
-      console.log("loadVotes()", data);
-      recent_votes = new UniteTheArmies.Collections.Votes(data);
-      view = new UniteTheArmies.Views.VotesIndex({ collection: recent_votes });
-      view.render();
-      $("#recent_votes tbody").replaceWith(view.$el.html());
-    });
+    fetch(recently_added_votes_path)
+      .then((response) => response.json())
+      .then((data) => {
+        let result = "";
+        data.forEach(function (vote) {
+          let tmpl_row = `<tr>
+            <td><image class="flag_small ${vote.country}"/></td>
+            <td>${vote.name}</td>
+          </tr>`;
+          result += tmpl_row;
+        });
+        $("#recent_votes tbody").replaceWith(result);
+      });
   }
 
-  function voteEvents() {
+  voteEvents() {
     $("a#new_vote").on("ajax:success", function (evt, data, status, xhr) {
       $("div.modal-body").html(data);
       $("form#new_vote").on("ajax:success", function (evt, data, status, xhr) {
@@ -24,7 +29,7 @@ ready = function () {
     $("a#new_vote").on("ajax:error", function (evt, data, status, xhr) {});
   }
 
-  function menuEvents() {
+  menuEvents() {
     if ($("#pull").length < 1) return;
     var pull = $("#pull");
     menu = $("nav ul");
@@ -41,7 +46,7 @@ ready = function () {
     });
   }
 
-  function startShow() {
+  startShow() {
     if ($("#slider4").length < 1) return;
     $("#slider4").responsiveSlides({
       auto: true,
@@ -57,15 +62,17 @@ ready = function () {
       },
     });
   }
+}
 
-  loadVotes();
-  // setInterval(function () {
-  //   loadVotes();
-  // }, 5000);
-  //menuEvents();
-  //voteEvents();
-  //startShow();
-};
+// loadVotes();
+// setInterval(function () {
+// loadVotes();
+// }, 5000);
+//menuEvents();
+//voteEvents();
+//startShow();
 
-$(document).ready(ready);
-$(document).on("page:load", ready);
+// $(document).ready(ready);
+// $(document).on("page:load", ready);
+
+export default UniteTheArmies;
