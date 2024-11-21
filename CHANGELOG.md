@@ -1,3 +1,13 @@
+## 1.12.0 (2024-11-21)
+
+### Feat
+
+- **config**: disabled cache using database
+
+### Fix
+
+- **database**: missing migration files
+
 ## 1.11.0 (2024-11-21)
 
 ### Feat
