@@ -1,3 +1,15 @@
+## 1.15.0 (2024-11-22)
+
+### Feat
+
+- **rake-task**: new rake task to load comments
+- **social-share-buttons**: Added social share button gem back and remove capistrano gems
+- **capistrano**: capistrano bundler
+
+### Fix
+
+- **capistrano**: removed capistrano-rails
+
 ## 1.14.0 (2024-11-22)
 
 ### Feat
