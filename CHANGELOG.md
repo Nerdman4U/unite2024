@@ -1,3 +1,9 @@
+## 1.13.0 (2024-11-22)
+
+### Feat
+
+- **_flags.html.erb**: Force use http instead of https currently
+
 ## 1.12.0 (2024-11-21)
 
 ### Feat
