@@ -55,7 +55,7 @@
     </div>
   </div>
 
-  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">   
+  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
     <div class="row">
       <div class="column width-12">
         <h2><%= _("Add a comment") %></h2>
@@ -72,19 +72,19 @@
       <div class="column width-12">
         <h2><%= _("Share with social media") %></h2>
         <p>
-          <%= social_share_button_tag("Save the Planet - Unite the Armies", url: add_parent_vote_url(t: @vote.md5_secret_token)) %>
+          <%# social_share_button_tag("Save the Planet - Unite the Armies", url: add_parent_vote_url(t: @vote.md5_secret_token)) %>
         </p>
       </div>
     </div>
   </div>
 
-  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">   
+  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
     <div class="row">
       <div class="column width-12">
         <h2><%= _("Share email with your friends") %></h2>
         <p>
           <%= _("Invite your friends. Fill out a form below and information will be sent to given email") %>
-        </p> 
+        </p>
         <%= render partial: "share_vote" %>
       </div>
     </div>
