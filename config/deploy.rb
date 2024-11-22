@@ -36,7 +36,7 @@ namespace :deploy do
 end
 
 before 'deploy:starting', 'deploy:test'
-after 'deploy', 'deploy:install'
+#after 'deploy', 'deploy:install'
 
 # after :restart, :clear_cache do
 #   on roles(:web), in: :groups, limit: 3, wait: 10 do

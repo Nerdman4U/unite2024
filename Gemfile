@@ -73,9 +73,9 @@ group :development do
   gem "web-console"
   # gem "mina"
   gem 'capistrano'
-  gem 'capistrano-rails'
+  #gem 'capistrano-rails'
   gem 'capistrano-passenger'
-  gem 'capistrano-bundler'
+  #gem 'capistrano-bundler'
   gem 'gettext'
 end
 
