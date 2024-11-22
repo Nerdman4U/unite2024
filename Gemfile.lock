@@ -437,6 +437,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   capistrano
+  capistrano-bundler
   capistrano-passenger
   capistrano-rails
   capybara

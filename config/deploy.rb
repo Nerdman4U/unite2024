@@ -5,8 +5,9 @@ lock "~> 3.19.2"
 
 set :application, 'unite-the-armies-2024'
 set :repo_url, "git@github.com:Nerdman4U/unite2024.git"
-set :linked_files, fetch(:linked_files, []).push('config/credentials.yml.enc','public/googleca9639854eea1a9b.html', 'config/local_env.yml', 'config/master.key')
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+append :linked_files, 'config/credentials.yml.enc','public/googleca9639854eea1a9b.html', 'config/local_env.yml', 'config/master.key'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system'
+append :linked_dirs, '.bundle'
 set :keep_releases, 5
 set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
 set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
@@ -16,8 +17,8 @@ namespace :deploy do
   task :install do
     on roles(:all) do
       within release_path do
-        # NOTE below: deploy:install rake task found at lib/tasks/deploy.rake
-        execute "bin/rails", 'deploy:install'
+        execute "bin/rails", 'deploy:precompile'
+        execute "bin/rails", 'deploy:restart'
       end
     end
   end

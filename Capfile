@@ -5,6 +5,7 @@ require "capistrano/setup"
 require "capistrano/deploy"
 # NOTE (below): uses sprocets, fails when trying to find manifest file.
 # require "capistrano/rails"
+require 'capistrano/bundler'
 
 # Load the SCM plugin appropriate to your project:
 #

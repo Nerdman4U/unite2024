@@ -75,6 +75,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'capistrano-bundler'
   gem 'gettext'
 end
 
