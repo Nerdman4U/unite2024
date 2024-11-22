@@ -3,6 +3,8 @@ require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
+# NOTE (below): uses sprocets, fails when trying to find manifest file.
+# require "capistrano/rails"
 
 # Load the SCM plugin appropriate to your project:
 #

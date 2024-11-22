@@ -16,12 +16,25 @@ namespace :deploy do
   task :install do
     on roles(:all) do
       within release_path do
+        # NOTE below: deploy:install rake task found at lib/tasks/deploy.rake
         execute "bin/rails", 'deploy:install'
       end
     end
   end
+
+  desc "Test"
+  task :test do
+    on roles :all do
+      run_locally do
+        execute "bin/rails", "test"
+        execute "bin/rails", "test:system"
+      end
+    end
+  end
+
 end
 
+before 'deploy:starting', 'deploy:test'
 after 'deploy', 'deploy:install'
 
 # after :restart, :clear_cache do
@@ -33,14 +46,6 @@ after 'deploy', 'deploy:install'
 #   end
 # end
 
-#   desc "Run tests"
-#   task :run_test do
-#     on roles :all do
-#       within release_path do
-#         execute :rake, :test
-#       end
-#     end
-#   end
 
 #   desc "Symlink shared config files"
 #   task :symlink_bundler do
