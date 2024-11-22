@@ -20,3 +20,4 @@ UNITE_DOWNLOAD_URL = "http://unite-the-armies.org/en/download"
 CAMPAIGN_ASSISTANT_EMAIL = "info@jonitoyryla.eu"
 UNITE_SENT_COUNT = 100
 UNITE_APPLICATION_STATE = 'ready' # ready: load votes
+UNITE_APPLICATION_PROTOCOL = 'http'
