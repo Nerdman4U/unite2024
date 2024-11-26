@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2016_01_02_171656) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_26_074015) do
   create_table "comments", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
     t.string "topic"
     t.text "body"
@@ -49,5 +49,6 @@ ActiveRecord::Schema[8.0].define(version: 2016_01_02_171656) do
     t.integer "vote_id"
     t.integer "votes_count"
     t.string "md5_secret_token"
+    t.boolean "spam", default: false, null: false
   end
 end

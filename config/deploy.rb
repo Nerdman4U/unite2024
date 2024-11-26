@@ -33,6 +33,15 @@ namespace :deploy do
     end
   end
 
+  desc "Migrate"
+  task :migrate do
+    on roles :all do
+      within release_path do
+        execute "bin/rails", 'db:migrate'
+      end
+    end
+  end
+
 end
 
 before 'deploy:starting', 'deploy:test'

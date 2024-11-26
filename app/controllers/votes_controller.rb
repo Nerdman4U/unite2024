@@ -64,6 +64,12 @@ class VotesController < ApplicationController
     @vote.ip = request.env["REMOTE_ADDR"]
     @vote.bypass_humanizer = true if Rails.env.test?
 
+    unless @vote.email === @vote.email_confirmation
+      flash[:error] = _("Emails do not match")
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
     unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
       redirect_to new_vote_path(locale: locale)
       return
@@ -124,7 +130,7 @@ class VotesController < ApplicationController
 
   # Do not return votes which has created_at in future
   def recently_added
-    @votes = Vote.select(:id, :country,:name, :created_at).where("created_at <= ?", Time.now).last(6)
+    @votes = Vote.select(:id, :country,:name, :created_at).where("created_at <= ? AND spam = false", Time.now).last(6)
     votes = @votes.map do |vote|
       vote_h = vote.attributes.to_h
       vote_h[:ago] = vote.ago
