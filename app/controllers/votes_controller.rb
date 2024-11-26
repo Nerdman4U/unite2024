@@ -60,15 +60,15 @@ class VotesController < ApplicationController
 
   # If session votes[:parent_id] exists, add parent to this vote
   def create
-    @vote = Vote.new(vote_params)
-    @vote.ip = request.env["REMOTE_ADDR"]
-    @vote.bypass_humanizer = true if Rails.env.test?
-
-    unless @vote.email === @vote.email_confirmation
+    unless vote_params[:email_confirmation] === vote_params[:email]
       flash[:error] = _("Emails do not match")
       redirect_to new_vote_path(locale: locale)
       return
     end
+
+    @vote = Vote.new(vote_params)
+    @vote.ip = request.env["REMOTE_ADDR"]
+    @vote.bypass_humanizer = true if Rails.env.test?
 
     unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
       redirect_to new_vote_path(locale: locale)
