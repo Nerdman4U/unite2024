@@ -113,6 +113,12 @@ class VoteTest < ActiveSupport::TestCase
     assert_not ActionMailer::Base.deliveries.empty?
   end
 
+  test 'should not change md5 secret token if exists' do
+    token = @vote.md5_secret_token
+    @vote.save
+    assert_equal @vote.md5_secret_token, token
+  end
+
   # TODO
   # test 'should increment counter cache' do
   #   vote = votes("vote_1")

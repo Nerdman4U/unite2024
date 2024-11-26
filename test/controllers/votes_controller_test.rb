@@ -165,4 +165,13 @@ class VotesControllerTest < ActionController::TestCase
     assert_equal I18n.locale, :en
   end
 
+  test 'should confirm email address' do
+    vote = votes("vote_1")
+    get :confirm, params: {secret_confirm_hash: vote.secret_confirm_hash}
+    vote.reload
+
+    assert vote.email_confirmed
+    assert_redirected_to vote_path(locale: "en", secret_token: vote.md5_secret_token)
+  end
+
 end

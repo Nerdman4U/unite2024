@@ -2,7 +2,7 @@ class UaSetting < ApplicationRecord
   @@instance = nil
 
   def self.instance
-    @@instance ||= UaSetting.first
+    @@instance ||= first || new
   end
 
   # Send backup email when VoteCount.total is bigger than

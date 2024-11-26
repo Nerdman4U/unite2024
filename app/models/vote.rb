@@ -76,6 +76,7 @@ class Vote < ApplicationRecord
   # We do not allow duplicate tokens, lets be sure there is no equal
   # token already in database.
   def add_secret_token
+    return if secret_token
     while token = SecureRandom.hex(64) do
       if Vote.where(secret_token: token).blank?
         require 'digest/md5'

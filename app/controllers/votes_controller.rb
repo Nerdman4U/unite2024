@@ -157,8 +157,25 @@ class VotesController < ApplicationController
     @votes_count = @vote.votes_count ||= 0
   end
 
-  private
+  # Link is sent to given email. User has to confirm that email exists.
+  def confirm
+    vote = Vote.where(secret_confirm_hash: params[:secret_confirm_hash]).first
+    unless vote
+      redirect_to locale_root_path
+    end
+    if vote.email_confirmed
+      redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
+    end
 
+    vote.email_confirmation = vote.email
+    vote.email_confirmed = Time.now
+    vote.save
+    flash[:success] = _("Your email has been confirmed")
+    redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
+
+  end
+
+  private
 
   # TODO: return default country instead of nil.
   def country_code
