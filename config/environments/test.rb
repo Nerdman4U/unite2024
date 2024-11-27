@@ -35,6 +35,8 @@ Rails.application.configure do
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
+  # https://guides.rubyonrails.org/v8.0/testing.html#testing-your-mailers
+  ActionMailer::Base.delivery_method = :test
 
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "example.com" }
