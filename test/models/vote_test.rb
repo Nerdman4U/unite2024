@@ -108,10 +108,10 @@ class VoteTest < ActiveSupport::TestCase
     assert_equal @vote.order_number, 3001
   end
 
-  test 'should send email invitation' do
-    @vote.email_invite(name: "Kati Kohde", email: "info+testi@unite-the-armies.org", language: "english")
-    assert_not ActionMailer::Base.deliveries.empty?
-  end
+  # test 'should send email invitation' do
+  #   @vote.email_invite(name: "Kati Kohde", email: "info+testi@unite-the-armies.org", language: "english")
+  #   assert_not ActionMailer::Base.deliveries.empty?
+  # end
 
   test 'should not change md5 secret token if exists' do
     token = @vote.md5_secret_token

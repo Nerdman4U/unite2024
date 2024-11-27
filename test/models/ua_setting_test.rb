@@ -1,6 +1,7 @@
 require 'test_helper'
 
-class UaSettingTest < ActiveSupport::TestCase
+class UaSettingTest < ActionMailer::TestCase
+  include ActionMailer::TestHelper
 
   test 'should send email' do
     uas = UaSetting.instance
@@ -8,11 +9,13 @@ class UaSettingTest < ActiveSupport::TestCase
     uas.vote_count = 0
     uas.save
 
-    uas.send!
+    assert_emails 0
+    assert_emails 1 do
+      uas.send!
+    end
 
     assert_not uas.sent_at.blank?
     assert_equal uas.vote_count, VoteCount.total
-    assert_not ActionMailer::Base.deliveries.empty?      
   end
 
 end

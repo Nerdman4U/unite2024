@@ -1,13 +1,14 @@
 require 'test_helper'
 
-class VotesControllerTest < ActionController::TestCase
+class VotesControllerTest < ActionDispatch::IntegrationTest
+  #include ActionDispatch::Integration
 
   def json_response
     ActiveSupport::JSON.decode @response.body
   end
 
   def setup
-    session[:locale] = :en
+    session.exists? : session[:locale] = :en ? session = {:locale => :en}
   end
 
   test 'should route' do
@@ -23,21 +24,25 @@ class VotesControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get new_vote_url
     assert_response :success
   end
 
   test "should get index" do
-    get :index
+    get votes_url
     assert_response :success
   end
 
   # /votes/recently_added
   test 'should get recent votes as json' do
-    get :recently_added, format: :json, params: { locale: "en" }
+    get recently_added_votes_path, params: { locale: "en", format: "json" }
     assert_response :success
     assert json_response.class == Array
     assert json_response[0]["id"]
+    assert json_response[0]["country"]
+    assert json_response[0]["name"]
+    assert json_response[0]["created_at"]
+    assert json_response[0]["ago"]
   end
 
   test 'should route vote path with secret token' do
@@ -57,7 +62,7 @@ class VotesControllerTest < ActionController::TestCase
       country: "fi"
     }
     assert_difference("Vote.count") do
-      post :create, params: { vote: values }
+      post votes_path, params: { vote: values }
     end
     vote = assigns(:vote)
     assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
@@ -90,7 +95,7 @@ class VotesControllerTest < ActionController::TestCase
   end
 
   test 'should add parent vote id to session' do
-    post :add_parent, params: { t: votes("vote_1").md5_secret_token }
+    post add_parent_vote_path, params: { t: votes("vote_1").md5_secret_token }
     assert_redirected_to new_vote_path(locale: "en")
     assert session[:parent_vote_id]
   end
@@ -104,7 +109,7 @@ class VotesControllerTest < ActionController::TestCase
       country: "fi"
     }
     assert_difference("Vote.count") do
-      post :create, params: { vote: values }
+      post votes_path, params: { vote: values }
     end
     assert_equal assigns(:vote).vote_id, votes("vote_1").id
     assert_not session[:parent_vote_id]
@@ -118,7 +123,7 @@ class VotesControllerTest < ActionController::TestCase
       country: "fi",
     }
     assert_no_difference("Vote.count") do
-      post :create, params: { vote: values }
+      post votes_path, params: { vote: values }
     end
   end
 
@@ -146,7 +151,7 @@ class VotesControllerTest < ActionController::TestCase
       email: "testi@yeah.foo",
       language: "english"
     }
-    post :email_invite, params: options
+    post email_invite_path, params: options
     assert !ActionMailer::Base.deliveries.empty?
     assert_equal I18n.locale, :en
   end
@@ -160,7 +165,7 @@ class VotesControllerTest < ActionController::TestCase
       email: "testi@yeah.foo",
       language: "arabic"
     }
-    post :email_invite, params: options
+    post email_invite_path, params: options
     assert !ActionMailer::Base.deliveries.empty?
     assert_equal I18n.locale, :en
   end
