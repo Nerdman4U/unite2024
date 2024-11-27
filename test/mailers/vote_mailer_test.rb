@@ -11,7 +11,7 @@ class VoteMailerTest < ActionMailer::TestCase
     I18n.locale = :en
     vote = votes(:vote_1)
     email = VoteMailer.sign_up(vote).deliver_now
-    assert_not ActionMailer::Base.deliveries.empty?
+    assert_emails 1
 
     # English letter
     assert_equal ['info@jonitoyryla.eu'], email.from
@@ -23,7 +23,7 @@ class VoteMailerTest < ActionMailer::TestCase
     I18n.locale = :fi
     vote = votes(:vote_1)
     email = VoteMailer.sign_up(vote).deliver_now
-    assert_not ActionMailer::Base.deliveries.empty?
+    assert_emails 2
     assert_equal "Kiitokset allekirjoituksesta ja mahdollisuus auttaa", email.subject
   end
 
@@ -31,7 +31,7 @@ class VoteMailerTest < ActionMailer::TestCase
     I18n.locale = :en
     vote = votes(:vote_1)
     email = VoteMailer.email_invite(inviter_name: "Kalle Kutsuja", name: "Joni Töyrylä", email: "info@jonitoyryla.eu", language: "english", token: vote.md5_secret_token).deliver_now
-    assert_not ActionMailer::Base.deliveries.empty?
+    assert_emails 1
   end
 
 end

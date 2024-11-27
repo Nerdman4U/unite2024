@@ -1,6 +1,7 @@
 require 'test_helper'
 
-class VoteTest < ActiveSupport::TestCase
+class VoteTest < ActionMailer::TestCase
+  include ActionMailer::TestHelper
 
   def setup
     I18n.locale = :en
@@ -108,10 +109,15 @@ class VoteTest < ActiveSupport::TestCase
     assert_equal @vote.order_number, 3001
   end
 
-  # test 'should send email invitation' do
-  #   @vote.email_invite(name: "Kati Kohde", email: "info+testi@unite-the-armies.org", language: "english")
-  #   assert_not ActionMailer::Base.deliveries.empty?
-  # end
+  test 'should send email invitation' do
+    @vote.email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
+    assert_emails 1
+  end
+
+  test 'should send email invitation in arabic' do
+    @vote.email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
+    assert_emails 1
+  end
 
   test 'should not change md5 secret token if exists' do
     token = @vote.md5_secret_token

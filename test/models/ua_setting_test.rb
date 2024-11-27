@@ -10,9 +10,8 @@ class UaSettingTest < ActionMailer::TestCase
     uas.save
 
     assert_emails 0
-    assert_emails 1 do
-      uas.send!
-    end
+    uas.send!
+    assert_emails 1
 
     assert_not uas.sent_at.blank?
     assert_equal uas.vote_count, VoteCount.total
