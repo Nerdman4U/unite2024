@@ -52,6 +52,12 @@ class VoteMailer < ApplicationMailer
     mail(to: mail_to, subject: "Unite The Armies - uusi kommentti")
     I18n.locale = old_locale
   end
+
+  # Confirm that email used voting exists
+  def confirmation(vote)
+    @vote = vote
+    mail(to: vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
+  end
 end
 
 

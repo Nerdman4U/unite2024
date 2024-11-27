@@ -18,6 +18,7 @@ class Vote < ApplicationRecord
   after_initialize :strip_email
   after_initialize :downcase_country_code
   before_save :add_secret_token
+  before_save :add_secret_confirm_hash
   before_save :add_vote_count
 
   has_many :votes, foreign_key: :vote_id
@@ -86,6 +87,10 @@ class Vote < ApplicationRecord
         break
       end
     end
+  end
+
+  def add_secret_confirm_hash
+    self.secret_confirm_hash = Digest::MD5.hexdigest("confirm: #{Time.now}")
   end
 
   def email_invite options

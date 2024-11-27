@@ -119,6 +119,12 @@ class VoteTest < ActiveSupport::TestCase
     assert_equal @vote.md5_secret_token, token
   end
 
+  test 'should have secret confirm hash' do
+    @vote.save
+    assert @vote.secret_confirm_hash
+  end
+
+
   # TODO
   # test 'should increment counter cache' do
   #   vote = votes("vote_1")

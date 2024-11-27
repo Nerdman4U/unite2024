@@ -172,7 +172,6 @@ class VotesController < ApplicationController
     vote.save
     flash[:success] = _("Your email has been confirmed")
     redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
-
   end
 
   private

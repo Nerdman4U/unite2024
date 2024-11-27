@@ -1,0 +1,10 @@
+<h1>
+  <%= _("We received a vote from email address: %{email}.") % {email: @vote.email} %>
+</h1>
+<h2>
+  <%=  _("To vote you still need to verify your vote by clicking link below. If you did not vote, ignore this email.") " %>
+</h2>
+
+<p>
+  <a href="<%= confirm_vote_url(secret_confirm_hash: @vote.secret_confirm_hash) %>">Vote</a>
+</p>
