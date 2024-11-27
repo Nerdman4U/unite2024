@@ -40,18 +40,21 @@ module UniteTheArmiesOrg
     #   end if File.exists?(env_file)
     # end
 
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      domain:               'unite-the-armies.org',
-      user_name:            ENV["UNITE_GMAIL_USERNAME"],
-      password:             ENV["UNITE_GMAIL_PASSWORD"],
-      authentication:       'plain',
-      enable_starttls_auto: true
-    }
-
     config.admin_hash = "26d438f70627d0a01a9435d3675a6902"
+
+    config.after_initialize do
+      domain = Rails.env.production? ? UNITE_DOMAIN_DEVELOPMENT : UNITE_DOMAIN_PRODUCTION
+      config.action_mailer.delivery_method = :smtp
+      config.action_mailer.smtp_settings = {
+        address:              'smtp.gmail.com',
+        port:                 587,
+        domain:               domain,
+        user_name:            ENV["UNITE_GMAIL_USERNAME"],
+        password:             ENV["UNITE_GMAIL_PASSWORD"],
+        authentication:       'plain',
+        enable_starttls_auto: true
+      }
+    end
 
   end
 end
