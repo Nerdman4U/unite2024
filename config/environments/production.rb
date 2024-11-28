@@ -60,6 +60,8 @@ Rails.application.configure do
 
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "example.com" }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
@@ -90,8 +92,8 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.after_initialize do
-    config.x.backup_email = ENV['UNITE_BACKUP_EMAIL_PRODUCTION']
+    config.x.backup_email = UNITE_BACKUP_EMAIL_PRODUCTION
     config.x.send_count = 100
-    config.x.comment_target_email = ENV['UNITE_BACKUP_EMAIL_PRODUCTION']
+    config.x.comment_target_email = UNITE_BACKUP_EMAIL_PRODUCTION
   end
 end

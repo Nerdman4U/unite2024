@@ -25,13 +25,13 @@ module UniteTheArmiesOrg
     # config.eager_load_paths << Rails.root.join("extras")
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
-    #config.i18n.default_locale = :en
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}").to_s]
+    # config.i18n.default_locale = :en
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
 
-    config.action_mailer.default_url_options = { host: 'unite-the-armies.org' }
+    config.action_mailer.default_url_options = { host: "unite-the-armies.org" }
 
     # config.before_configuration do
     #   env_file = File.join(Rails.root, 'config', 'local_env.yml')
@@ -40,22 +40,26 @@ module UniteTheArmiesOrg
     #   end if File.exists?(env_file)
     # end
 
-    config.unite.admin_hash = ENV["UNITE_ADMIN_HASH"]
-    #config.unite.google_app_password = ENV["UNITE_GOOGLE_APP_PASSWORD"]
+    # https://guides.rubyonrails.org/configuring.html#custom-configuration
+    config.x.admin_hash = ENV["UNITE_ADMIN_HASH"]
+    # config.x.google_app_password = ENV["UNITE_GOOGLE_APP_PASSWORD"]
 
-    config.after_initialize do
-      domain = Rails.env.production? ? UNITE_DOMAIN_PRODUCTION : UNITE_DOMAIN_DEVELOPMENT
-      config.action_mailer.delivery_method = :smtp
-      config.action_mailer.smtp_settings = {
-        address:              'smtp.gmail.com',
-        port:                 587,
-        domain:               domain,
-        user_name:            ENV["UNITE_GMAIL_USERNAME"],
-        password:             ENV["UNITE_GOOGLE_APP_PASSWORD"],
-        authentication:       'plain',
-        enable_starttls_auto: true
-      }
-    end
-
+    # Mailer settings are empty if after_initialize block is used at production mode.
+    #
+    # config.after_initialize do
+    #   domain = Rails.env.production? ? UNITE_DOMAIN_PRODUCTION : UNITE_DOMAIN_DEVELOPMENT
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              "smtp.gmail.com",
+      port:                 587,
+      domain:               "unite.jonitoyryla.eu",
+      user_name:            ENV["UNITE_GMAIL_USERNAME"],
+      password:             ENV["UNITE_GOOGLE_APP_PASSWORD"],
+      authentication:       "plain",
+      enable_starttls:      true,
+      open_timeout:         5,
+      read_timeout:         5
+    }
+    # end
   end
 end

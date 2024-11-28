@@ -38,21 +38,21 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # From old unite-the-armies
-gem 'fast_gettext'
-gem 'gettext_i18n_rails'
-gem 'mysql2'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'http_accept_language'
-gem 'humanizer'
-gem 'acts_as_singleton'
-gem 'httparty'
-gem 'loofah'
-gem 'sdoc'
-gem 'time_difference'
-gem 'email_validator'
-gem 'social-share-button'
-#gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+gem "fast_gettext"
+gem "gettext_i18n_rails"
+gem "mysql2"
+gem "coffee-rails"
+gem "jquery-rails"
+gem "http_accept_language"
+gem "humanizer"
+gem "acts_as_singleton"
+gem "httparty"
+gem "loofah"
+gem "sdoc"
+gem "time_difference"
+gem "email_validator"
+gem "social-share-button"
+# gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -73,11 +73,16 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   # gem "mina"
-  gem 'capistrano'
-  #gem 'capistrano-rails'
-  gem 'capistrano-passenger'
-  #gem 'capistrano-bundler'
-  gem 'gettext'
+  gem "capistrano"
+  # gem 'capistrano-rails'
+  gem "capistrano-passenger"
+  # gem 'capistrano-bundler'
+  gem "gettext"
+
+  # debug with Shopify.ruby-lsp extension (vscode)
+  gem "ruby-debug-ide"
+  gem "debase"
+  gem "ruby-lsp-rails"
 end
 
 group :test do

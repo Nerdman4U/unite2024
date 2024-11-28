@@ -1,5 +1,10 @@
 # coding: utf-8
+
 class WelcomeController < ApplicationController
+  # *************  ✨ Codeium Command ⭐  *************/
+  # The index action serves as the main entry point for the WelcomeController,
+  # rendering the default view for the homepage.
+  # ******  8b1714b4-b23a-40eb-aa2c-57929f5a2dce  *******/
   def index
   end
 
@@ -10,9 +15,9 @@ class WelcomeController < ApplicationController
   end
 
   def admin
-    if params[:admin_hash] != Rails.application.config.unite.admin_hash
+    if params[:admin_hash] != Rails.application.config.x.admin_hash
       redirect_to :root
-      return
+      nil
     end
   end
 
@@ -20,7 +25,7 @@ class WelcomeController < ApplicationController
   #
   # Modify created_at value so that new votes has created_at value in future.
   def admin_upload
-    if params[:admin_hash] != Rails.application.config.unite.admin_hash
+    if params[:admin_hash] != Rails.application.config.x.admin_hash
       redirect_to :root
       return
     end
@@ -66,13 +71,12 @@ class WelcomeController < ApplicationController
 
   # Data is a list of vote items read from csv. Every vote should have
   # name, email and country in that order.
-  def filter_csv data
+  def filter_csv(data)
     data.select do |items|
       return false unless items.kind_of?(Array)
       filtered = items.select { |a| !a.blank? }
-      #puts "filtered: #{filtered.inspect}"
+      # puts "filtered: #{filtered.inspect}"
       filtered && filtered.size === 3
     end
   end
-
 end
