@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
   end
 
   def admin
-    if params[:admin_hash] != Rails.application.config.admin_hash
+    if params[:admin_hash] != Rails.application.config.unite.admin_hash
       redirect_to :root
       return
     end
@@ -20,7 +20,7 @@ class WelcomeController < ApplicationController
   #
   # Modify created_at value so that new votes has created_at value in future.
   def admin_upload
-    if params[:admin_hash] != Rails.application.config.admin_hash
+    if params[:admin_hash] != Rails.application.config.unite.admin_hash
       redirect_to :root
       return
     end

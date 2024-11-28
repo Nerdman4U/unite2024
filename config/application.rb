@@ -40,11 +40,11 @@ module UniteTheArmiesOrg
     #   end if File.exists?(env_file)
     # end
 
-    config.admin_hash = "26d438f70627d0a01a9435d3675a6902"
-    #config.unite_google_app_password = ENV["UNITE_GOOGLE_APP_PASSWORD"]
+    config.unite.admin_hash = ENV["UNITE_ADMIN_HASH"]
+    #config.unite.google_app_password = ENV["UNITE_GOOGLE_APP_PASSWORD"]
 
     config.after_initialize do
-      domain = Rails.env.production? ? UNITE_DOMAIN_DEVELOPMENT : UNITE_DOMAIN_PRODUCTION
+      domain = Rails.env.production? ? UNITE_DOMAIN_PRODUCTION : UNITE_DOMAIN_DEVELOPMENT
       config.action_mailer.delivery_method = :smtp
       config.action_mailer.smtp_settings = {
         address:              'smtp.gmail.com',
