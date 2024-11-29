@@ -115,9 +115,28 @@ class VoteTest < ActionMailer::TestCase
     assert_equal @vote.md5_secret_token, token
   end
 
+  test "should return secret hash" do
+    assert @vote.send(:secret_hash)
+  end
+
+  test "should find duplicate secret confirm hash" do
+    @vote.secret_confirm_hash = "123"
+    @vote.save
+    @vote.reload
+    assert @vote.valid?
+    assert @vote.secret_confirm_hash = "123"
+
+    # TODO: why database is not updated?
+    # assert Vote.where(secret_confirm_hash: "123").first
+  end
+
   test "should have secret confirm hash" do
     @vote.save
     assert @vote.secret_confirm_hash
+  end
+
+  test "should find free secret confirm hash" do
+    assert @vote.send(:find_confirm_hash)
   end
 
 

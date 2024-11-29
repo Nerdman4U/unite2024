@@ -87,8 +87,9 @@ class Vote < ApplicationRecord
     end
   end
 
+  # Secret confirm hash is used to validate an email. It has to be unique.
   def add_secret_confirm_hash
-    self.secret_confirm_hash = Digest::MD5.hexdigest("confirm: #{Time.now}")
+    self.secret_confirm_hash = find_confirm_hash
   end
 
   def email_invite(options)
@@ -97,5 +98,23 @@ class Vote < ApplicationRecord
     return unless options[:language]
     options = options.merge(inviter_name: name, token: md5_secret_token)
     VoteMailer.email_invite(options).deliver_now
+  end
+
+  def self.duplicate_confirm_hash?(token)
+    !!Vote.where(secret_confirm_hash: token).first
+  end
+
+  private
+
+  def secret_hash
+    token = "secret: #{Time.now} #{rand(10000)}"
+    # puts "secret_hash: #{token}"
+    Digest::MD5.hexdigest(token)
+  end
+
+  def find_confirm_hash
+    while token = secret_hash do
+      return token unless Vote.duplicate_confirm_hash?(token)
+    end
   end
 end
