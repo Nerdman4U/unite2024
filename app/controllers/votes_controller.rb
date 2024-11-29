@@ -137,7 +137,7 @@ class VotesController < ApplicationController
 
   # Do not return votes which has created_at in future
   def recently_added
-    @votes = Vote.select(:id, :country, :name, :created_at).where("created_at <= ? AND spam = false", Time.now).last(6)
+    @votes = Vote.select(:id, :country, :name, :created_at).where("email_confirmed IS NOT NULL").order(created_at: :desc).limit(6)
     votes = @votes.map do |vote|
       vote_h = vote.attributes.to_h
       vote_h[:ago] = vote.ago

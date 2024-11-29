@@ -34,11 +34,15 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     get recently_added_votes_path, params: { locale: "en", format: "json" }
     assert_response :success
     assert json_response.class == Array
+    assert_not json_response.blank?
+    assert json_response.size == 6
     assert json_response[0]["id"]
     assert json_response[0]["country"]
     assert json_response[0]["name"]
     assert json_response[0]["created_at"]
     assert json_response[0]["ago"]
+    # uneven votes are not confirmed so it should not be returned
+    assert_nil json_response.map { |x| x["name"] }.find { |n| n === "vote997" }
   end
 
   test "should route vote path with secret token" do
