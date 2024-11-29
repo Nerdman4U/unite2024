@@ -26,7 +26,9 @@ namespace :fix do
 
     to_be_deleted.each do |id|
       puts "destroy #{id}"
-      Vote.find_by_id(id).destroy
+      v = Vote.find_by_id(id)
+      v.spam = true
+      v.save
     end
   end
 end
