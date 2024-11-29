@@ -15,11 +15,17 @@ class VotesController < ApplicationController
     end
   end
 
-  # Share only with ajax
+  # Send email invitation from a vote view
   def email_invite
     @vote = Vote.where(md5_secret_token: params[:t]).first
-    unless @vote
+    unless @vote.valid?
       flash[:error] = _("There was an error")
+      head :bad_request
+      return
+    end
+
+    if params[:email] != params[:email_repeat]
+      flash[:error] = _("Emails do not match")
       head :bad_request
       return
     end

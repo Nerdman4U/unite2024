@@ -143,19 +143,40 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   #   assert_nil @controller.send(:country_code)
   # end
 
-  # test 'should send email invite' do
-  #   require 'digest/md5'
-  #   digest = Digest::MD5.hexdigest("secret1")
-  #   options = {
-  #     t: digest,
-  #     name: "Testaaja",
-  #     email: "testi@yeah.foo",
-  #     language: "english"
-  #   }
-  #   post email_invite_path, params: options
-  #   assert_emails 1
-  #   assert_equal I18n.locale, :en
-  # end
+  test "should send email invite" do
+    require "digest/md5"
+    digest = Digest::MD5.hexdigest("secret1")
+    options = {
+      t: digest,
+      name: "Testaaja",
+      email: "testi@yeah.foo",
+      email_repeat: "testi@yeah.foo",
+      language: "english"
+    }
+    post email_invite_votes_path, params: options
+
+    assert_response :success
+    assert_equal I18n.locale, :en
+    assert_equal flash[:success], "Invitation has been sent, thank you!"
+  end
+
+  test "should not send email invite with wrong repeat" do
+    require "digest/md5"
+    digest = Digest::MD5.hexdigest("secret1")
+    options = {
+      t: digest,
+      name: "Testaaja",
+      email: "testi@yeah.foo",
+      email_repeat: "testi2@yeah.foo",
+      language: "english"
+    }
+    post email_invite_votes_path, params: options
+
+    assert_response :bad_request
+    assert_equal I18n.locale, :en
+    assert_nil flash[:success]
+    assert_equal flash[:error], "Emails do not match"
+  end
 
   # test 'should send email invite in arabic' do
   #   require 'digest/md5'
