@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit]
+  before_action :set_comment, only: [ :show, :edit ]
 
   # GET /comments
   # GET /comments.json
@@ -107,6 +107,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:topic, :body, :email, :email_confirmation, :theme, :language, :name, :humanizer_answer, :humanizer_question_id)
+      params.require(:comment).permit(:topic, :body, :email, :email_repeat, :theme, :language, :name, :humanizer_answer, :humanizer_question_id)
     end
 end

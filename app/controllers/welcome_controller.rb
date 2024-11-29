@@ -51,7 +51,6 @@ class WelcomeController < ApplicationController
       values = {
         name: vote[0].strip,
         email: vote[1].strip,
-        email_confirmation: vote[1].strip,
         country: vote[2].strip,
         ip: ip,
         created_at: new_created_at

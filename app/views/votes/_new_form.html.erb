@@ -1,13 +1,13 @@
 <div class="new_vote_form">
-<% 
-   remote = request.xhr? ? true : false   
+<%
+   remote = request.xhr? ? true : false
 %>
 
 <%= form_for @vote, url: {action: "create"}, html: {class: "nifty_form"}, remote: remote do |f| %>
 <% if @vote.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(@vote.errors.count, "error") %> 
+      <%= pluralize(@vote.errors.count, "error") %>
       prohibited this vote from being saved:
     </h2>
     <ul>
@@ -16,7 +16,7 @@
       <% end %>
     </ul>
   </div>
-<% end %>  
+<% end %>
 
 <div id="sign" class="ua-sign-the-petition">
   <h1><%= _("Support the Initiative") %></h1>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= _("Email Confirmation") %> (*) </br>
-    <%= f.text_field :email_confirmation, :class => "form-control" %>
+    <%= f.text_field :email_repeat, :class => "form-control" %>
   </div>
   <div class="field">
     <%= _("Country") %> (*)
@@ -41,7 +41,7 @@
   <div class="field">
     <%= f.select :country, options_for_select([["", "", {:selected => true, :disabled => true, :hidden => true}]] + Country.for_select, country_code), {}, :class => "form-control" %>
   </div></br>
-  
+
   <div class="field">
     <div class="g-recaptcha" data-sitekey="6LfwgBQTAAAAAJrdJfpdvnMhibW4iUFJRdlK0ZXb"></div>
   </div>

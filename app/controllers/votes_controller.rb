@@ -60,7 +60,7 @@ class VotesController < ApplicationController
 
   # If session votes[:parent_id] exists, add parent to this vote
   def create
-    unless vote_params[:email_confirmation] === vote_params[:email]
+    unless vote_params[:email_repeat] === vote_params[:email]
       flash[:error] = _("Emails do not match")
       redirect_to new_vote_path(locale: locale)
       return
@@ -114,8 +114,9 @@ class VotesController < ApplicationController
             flash[:success] = _("Thank you for your vote!")
             redirect_to vote_path(locale: locale, secret_token: @vote.secret_token)
           else
-            #flash[:error] = "There was an error while adding your vote"
-            #redirect_to new_vote_path(locale: locale, anchor: "sign")
+            # flash[:error] = "There was an error while adding your vote"
+            # redirect_to new_vote_path(locale: locale, anchor: "sign")
+            Rails.logger.error("There was an error while adding vote, params: #{vote_params.inspect} errors: #{@vote.errors.inspect}")
             render :new
           end
         end
@@ -125,18 +126,18 @@ class VotesController < ApplicationController
 
   def index
     @votes = VoteCount.all
-    @sorted_votes = @votes.sort { |a,b| b.count <=> a.count }
+    @sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
   end
 
   # Do not return votes which has created_at in future
   def recently_added
-    @votes = Vote.select(:id, :country,:name, :created_at).where("created_at <= ? AND spam = false", Time.now).last(6)
+    @votes = Vote.select(:id, :country, :name, :created_at).where("created_at <= ? AND spam = false", Time.now).last(6)
     votes = @votes.map do |vote|
       vote_h = vote.attributes.to_h
       vote_h[:ago] = vote.ago
       vote_h
     end
-    render :json => votes.to_json
+    render json: votes.to_json
   end
 
   def clear
@@ -167,7 +168,6 @@ class VotesController < ApplicationController
       redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
     end
 
-    vote.email_confirmation = vote.email
     vote.email_confirmed = Time.now
     vote.save
     flash[:success] = _("Your email has been confirmed")
@@ -183,7 +183,7 @@ class VotesController < ApplicationController
     return nil if vote.blank?
     country_code = vote[:country] if vote.has_key?(:country)
     return nil if country_code.blank?
-    #return request[:vote][:country] if request[:vote] and request[:vote][:country]
+    # return request[:vote][:country] if request[:vote] and request[:vote][:country]
     country_code
   end
 
@@ -197,7 +197,6 @@ class VotesController < ApplicationController
   end
 
   def vote_params
-    params.require(:vote).permit(:name, :email, :email_confirmation, :country, :humanizer_answer, :humanizer_question_id)
+    params.require(:vote).permit(:name, :email, :email_repeat, :country, :humanizer_answer, :humanizer_question_id)
   end
-
 end

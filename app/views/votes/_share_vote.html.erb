@@ -2,7 +2,7 @@
 <% if @vote.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(@vote.errors.count, "error") %> 
+      <%= pluralize(@vote.errors.count, "error") %>
       prohibited this vote from being saved:
     </h2>
     <ul>
@@ -11,7 +11,7 @@
       <% end %>
     </ul>
   </div>
-<% end %>  
+<% end %>
 
 <div>
   <%= hidden_field_tag(:t, @vote.md5_secret_token) %>
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= label_tag _("Email Confirmation") + " *" %>
-    <%= text_field_tag :email_confirmation, nil, :class => "form-control", :style => "color: black !important" %>
+    <%= text_field_tag :email_repeat, nil, :class => "form-control", :style => "color: black !important" %>
   </div>
   <div class="field">
     <div class="g-recaptcha" data-sitekey="6LfwgBQTAAAAAJrdJfpdvnMhibW4iUFJRdlK0ZXb"></div>

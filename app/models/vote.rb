@@ -1,18 +1,19 @@
 require "ostruct"
+require "digest/md5"
 
 class Vote < ApplicationRecord
   # include Humanizer
   # require_human_on :create, :unless => :bypass_humanizer
   attr_accessor :bypass_humanizer
   attr_reader :ago
+  attr_accessor :email_repeat
 
   validates :name, presence: true
   validates :country, presence: true
   validates :email, confirmation: true
   validates :email, presence: true, uniqueness: true, email: true
-  validates :email_confirmation, presence: true
   validates :ip, presence: true
-  validates_format_of :ip, :with => /\A(\d{1,3}\.){3}\d{1,3}\z/
+  validates_format_of :ip, with: /\A(\d{1,3}\.){3}\d{1,3}\z/
   validate :validate_country_code
 
   after_initialize :strip_email
@@ -23,8 +24,7 @@ class Vote < ApplicationRecord
 
   has_many :votes, foreign_key: :vote_id
   has_many :comments, foreign_key: :vote_id
-  #belongs_to :vote, counter_cache: true
-
+  # belongs_to :vote, counter_cache: true
 
   def ago
     showHours = I18n.locale == :en || I18n.locale == :fi
@@ -49,7 +49,6 @@ class Vote < ApplicationRecord
   # Strip email of whitespace
   def strip_email
     self.email = email.strip if self.has_attribute?(:email) && email
-    self.email_confirmation.strip! if email_confirmation
   end
 
   # Country code is always saved with downcased letters
@@ -80,7 +79,6 @@ class Vote < ApplicationRecord
     return if secret_token
     while token = SecureRandom.hex(64) do
       if Vote.where(secret_token: token).blank?
-        require 'digest/md5'
         digest = Digest::MD5.hexdigest(token)
         self.secret_token = token
         self.md5_secret_token = digest
@@ -93,12 +91,11 @@ class Vote < ApplicationRecord
     self.secret_confirm_hash = Digest::MD5.hexdigest("confirm: #{Time.now}")
   end
 
-  def email_invite options
+  def email_invite(options)
     return unless options[:name]
     return unless options[:email]
     return unless options[:language]
     options = options.merge(inviter_name: name, token: md5_secret_token)
     VoteMailer.email_invite(options).deliver_now
   end
-
 end

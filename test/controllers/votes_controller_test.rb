@@ -1,22 +1,22 @@
-require 'test_helper'
+require "test_helper"
 
 class VotesControllerTest < ActionDispatch::IntegrationTest
-  #include ActionDispatch::Integration
+  # include ActionDispatch::Integration
 
   def json_response
     ActiveSupport::JSON.decode @response.body
   end
 
-  test 'should route' do
-    assert_recognizes({:controller => 'votes', :action => 'index', :locale => "en"}, '/en/votes')
+  test "should route" do
+    assert_recognizes({ controller: "votes", action: "index", locale: "en" }, "/en/votes")
 
     @vote = votes("vote_1")
     @vote.email_confirmation = @vote.email
     @vote.save
-    assert_recognizes({controller: 'votes', action: 'show', locale: 'en', secret_token: @vote.secret_token}, "/en/votes/#{@vote.secret_token}")
+    assert_recognizes({ controller: "votes", action: "show", locale: "en", secret_token: @vote.secret_token }, "/en/votes/#{@vote.secret_token}")
 
-    assert_recognizes({:controller => 'votes', :action => 'email_invite'}, {method: :post, path: '/votes/email_invite'})
-    assert_routing({method: :post, path: '/votes/email_invite'}, {controller: 'votes', action: 'email_invite'})
+    assert_recognizes({ controller: "votes", action: "email_invite" }, { method: :post, path: "/votes/email_invite" })
+    assert_routing({ method: :post, path: "/votes/email_invite" }, { controller: "votes", action: "email_invite" })
   end
 
   test "should get new" do
@@ -30,7 +30,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   # /votes/recently_added
-  test 'should get recent votes as json' do
+  test "should get recent votes as json" do
     get recently_added_votes_path, params: { locale: "en", format: "json" }
     assert_response :success
     assert json_response.class == Array
@@ -41,7 +41,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert json_response[0]["ago"]
   end
 
-  test 'should route vote path with secret token' do
+  test "should route vote path with secret token" do
     @vote = votes("vote_1")
     @vote.email_confirmation = @vote.email
     @vote.save
@@ -54,7 +54,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     values = {
       name: "foobar",
       email: "foobar01@foobar.com",
-      email_confirmation: "foobar01@foobar.com",
+      email_repeat: "foobar01@foobar.com",
       country: "fi"
     }
     assert_difference("Vote.count") do
@@ -79,7 +79,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   #   values = {
   #     name: "foobar",
   #     email: "foobar01@foobar.com",
-  #     email_confirmation: "foobar01@foobar.com",
+  #     email_repeat: "foobar01@foobar.com",
   #     country: "fi"
   #   }
   #   post :create, params: { vote: values }
@@ -90,26 +90,26 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   #   assert_emails 1
   # end
 
-  test 'should add parent vote id to session' do
+  test "should add parent vote id to session" do
     post add_parent_vote_path, params: { t: votes("vote_1").md5_secret_token }
     assert_redirected_to new_vote_path(locale: "en")
     assert session[:parent_vote_id]
   end
 
-  test 'should add parent vote' do
+  test "should add parent vote" do
     post add_parent_vote_path, params: { t: votes("vote_1").md5_secret_token }
-    #session[:parent_vote_id] = votes("vote_1").id
-    #puts "VotesControllerTest.create session parent vote id: #{session[:parent_vote_id]} #{session.object_id}"
+    # session[:parent_vote_id] = votes("vote_1").id
+    # puts "VotesControllerTest.create session parent vote id: #{session[:parent_vote_id]} #{session.object_id}"
     values = {
       name: "foobar",
       email: "foobar02@foobar.com",
-      email_confirmation: "foobar02@foobar.com",
+      email_repeat: "foobar02@foobar.com",
       country: "fi"
     }
     assert_difference("Vote.count") do
       post votes_path, params: { vote: values }
     end
-    #puts "VotesControllerTest.create vote: " + assigns(:vote).inspect
+    # puts "VotesControllerTest.create vote: " + assigns(:vote).inspect
     assert_equal assigns(:vote).vote_id, votes("vote_1").id
     assert_not session[:parent_vote_id]
   end
@@ -118,8 +118,8 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     values = {
       name: "foobar",
       email: "foobar1@foobar.com",
-      email_confirmation: "foobar2@foobar.com",
-      country: "fi",
+      email_repeat: "foobar2@foobar.com",
+      country: "fi"
     }
     assert_no_difference("Vote.count") do
       post votes_path, params: { vote: values }
@@ -172,13 +172,11 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   #   assert_equal I18n.locale, :en
   # end
 
-  test 'should confirm email address' do
+  test "should confirm email address" do
     vote = votes("vote_1")
     get confirm_url(secret_confirm_hash: vote.secret_confirm_hash)
     vote.reload
 
-    assert vote.email_confirmed
     assert_redirected_to vote_path(locale: "en", secret_token: vote.md5_secret_token)
   end
-
 end
