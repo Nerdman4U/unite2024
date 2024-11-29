@@ -1,12 +1,12 @@
 namespace :fix do
   desc "print folder"
-  task :print => :environment do
+  task print: :environment do
     system("ls bin")
   end
 
   desc "fix spam"
-  task :spam => :environment do
-    emails = ["iuabvt@evnfas.com",
+  task spam: :environment do
+    emails = [ "iuabvt@evnfas.com",
     "zgecgh@qyeyls.com",
     "wcsjrm@usttwl.com",
     "jblrkf@yatfna.com",
@@ -134,7 +134,7 @@ namespace :fix do
     "catelync0u94bze@outlook.com",
     "lecia178gy87ewj1517q@outlook.com",
     "nlaisa4ye4snl1o2@outlook.com",
-    "phucy52mu5u297n@outlook.com"]
+    "phucy52mu5u297n@outlook.com" ]
 
     Vote.all.each do |vote|
       if emails.include?(vote.email)
@@ -144,6 +144,5 @@ namespace :fix do
         puts vote.email
       end
     end
-
   end
 end
