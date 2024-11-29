@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-require 'test_helper'
+
+require "test_helper"
 
 class WelcomeControllerTest < ActionController::TestCase
-
   def teardown
     # Clear all unsend invitation mails
     ActionMailer::Base.deliveries.clear
@@ -27,30 +27,30 @@ class WelcomeControllerTest < ActionController::TestCase
   # test "should localize" do
   # end
 
-  test 'should not get admin index with wrong hash' do
+  test "should not get admin index with wrong hash" do
     get :admin, params: { admin_hash: "foobar" }
     assert_response :redirect
   end
 
-  test 'should get admin page' do
-    get :admin, params: { admin_hash: Rails.application.config.admin_hash }
+  test "should get admin page" do
+    get :admin, params: { admin_hash: Rails.application.config.x.admin_hash }
     assert_response :success
   end
 
-  test 'should parse CSV- file' do
-    admin_csv = fixture_file_upload('admin_csv','text/plain')
+  test "should parse CSV- file" do
+    admin_csv = fixture_file_upload("admin_csv", "text/plain")
     assert_difference("Vote.count", 2) do
-      post :admin_upload, params: { admin_hash: Rails.application.config.admin_hash, admin_csv: admin_csv }
+      post :admin_upload, params: { admin_hash: Rails.application.config.x.admin_hash, admin_csv: admin_csv }
     end
 
     # TODO
     # assert_not ActionMailer::Base.deliveries.empty?
   end
 
-  test 'should not add votes if csv is nil' do
+  test "should not add votes if csv is nil" do
     admin_csv = nil
     assert_no_difference("Vote.count") do
-      post :admin_upload, params: { admin_hash: Rails.application.config.admin_hash, admin_csv: admin_csv }
+      post :admin_upload, params: { admin_hash: Rails.application.config.x.admin_hash, admin_csv: admin_csv }
     end
     # assert ActionMailer::Base.deliveries.empty?
   end
@@ -69,5 +69,4 @@ class WelcomeControllerTest < ActionController::TestCase
   #   #assert filtered
   #   #assert_equal filtered.size, 2
   # end
-
 end
