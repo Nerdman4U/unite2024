@@ -1,3 +1,9 @@
+## 1.20.0 (2024-12-03)
+
+### Feat
+
+- **downloads**: download material is now stored locally
+
 ## 1.19.0 (2024-12-03)
 
 ### Feat
