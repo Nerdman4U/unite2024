@@ -1,3 +1,10 @@
+## 1.19.0 (2024-12-03)
+
+### Feat
+
+- **locales-and-captcha**: default locales, tests, private method for captcha
+- **VoteCount**: target vote count rised to million
+
 ## 1.18.0 (2024-12-03)
 
 ### Feat
