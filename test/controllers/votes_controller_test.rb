@@ -69,6 +69,42 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert flash[:success], "Thank you for your vote!"
   end
 
+  test "should not create vote if emails do not match" do
+    values = {
+      name: "foobar",
+      email: "foobar1@foobar.com",
+      email_repeat: "foobar2@foobar.com",
+      country: "fi"
+    }
+    assert_no_difference("Vote.count") do
+      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
+    end
+    assert_equal flash[:error], "Emails do not match"
+    assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
+  end
+
+  test "should not create vote if email is invalid" do
+    values = {
+      name: "foobar",
+      email: "foobar1",
+      email_repeat: "foobar1",
+      country: "fi"
+    }
+
+    assert_no_difference("Vote.count") do
+      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
+    end
+    assert_equal flash[:error], "Email is invalid"
+    assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
+  end
+
+  test "should have correct locale" do
+    assert_equal :en, I18n.locale
+    assert_equal :en, I18n.default_locale
+    assert_equal "en", FastGettext.locale
+    assert_equal "en", FastGettext.default_locale
+  end
+
   # test 'should send backup mail after creating vote' do
   #   uas = UaSetting.instance
   #   uas.sent_at = nil
@@ -116,18 +152,6 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     # puts "VotesControllerTest.create vote: " + assigns(:vote).inspect
     assert_equal assigns(:vote).vote_id, votes("vote_1").id
     assert_not session[:parent_vote_id]
-  end
-
-  test "should flash error if invalid vote" do
-    values = {
-      name: "foobar",
-      email: "foobar1@foobar.com",
-      email_repeat: "foobar2@foobar.com",
-      country: "fi"
-    }
-    assert_no_difference("Vote.count") do
-      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
-    end
   end
 
   # test 'should return correct language code' do

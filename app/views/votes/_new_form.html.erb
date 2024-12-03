@@ -4,19 +4,6 @@
 %>
 
 <%= form_for @vote, url: {action: "create"}, html: {class: "nifty_form"}, remote: remote do |f| %>
-<% if @vote.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@vote.errors.count, "error") %>
-      prohibited this vote from being saved:
-    </h2>
-    <ul>
-      <% @vote.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 
 <div id="sign" class="ua-sign-the-petition">
   <h1><%= _("Support the Initiative") %></h1>
@@ -43,7 +30,7 @@
   </div></br>
 
   <div class="field">
-    <div class="g-recaptcha" data-sitekey="6LfwgBQTAAAAAJrdJfpdvnMhibW4iUFJRdlK0ZXb"></div>
+    <div class="g-recaptcha" data-sitekey="<%= UNITE_RECAPTCHA_PUBLIC_KEY %>"></div>
   </div>
 
   <div class="field"><%= _("You can also contribute to the discussion after signing. You will get a separate message of that by email.") %></div>
@@ -57,7 +44,7 @@
       <%= link_to votes_path(locale: locale), { :class => "button large bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
           <span class="icon-add-user left"></span>
 
-          <p>Katso ketkä ovat kannattaneet!</p>
+          <p><%= _("See who have already voted!") %></p>
       <% end %>
     </div>
   <% end %>

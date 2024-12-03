@@ -31,7 +31,7 @@ Commitizen settings are at .cz.yaml.
 
 - $ rake gettext:find
 - Edit po files
-- $ rake gettext:pack#### Tests
+- $ rake gettext:pack
 
 #### Tests
 

@@ -72,8 +72,6 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    acts_as_singleton (0.0.8)
-      activerecord (>= 3.1.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     airbrussh (1.5.3)
@@ -163,7 +161,6 @@ GEM
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    humanizer (2.7.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.3)
@@ -359,8 +356,6 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     singleton (0.3.0)
-    social-share-button (1.2.4)
-      coffee-rails
     solid_cable (3.0.2)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -446,7 +441,6 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  acts_as_singleton
   bootsnap
   brakeman
   capistrano
@@ -462,7 +456,6 @@ DEPENDENCIES
   gettext_i18n_rails
   http_accept_language
   httparty
-  humanizer
   importmap-rails
   jbuilder
   jquery-rails
@@ -478,7 +471,6 @@ DEPENDENCIES
   ruby-lsp-rails
   sdoc
   selenium-webdriver
-  social-share-button
   solid_cable
   solid_cache
   solid_queue

@@ -80,6 +80,18 @@ class VotesController < ApplicationController
     end
 
     @vote = Vote.new(vote_params)
+
+    unless @vote.valid?
+      error = []
+      @vote.errors.full_messages.each do |msg|
+        error << msg
+      end
+
+      flash[:error] = error[0]
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
     @vote.ip = request.env["REMOTE_ADDR"]
     @vote.bypass_humanizer = true if Rails.env.test?
 
