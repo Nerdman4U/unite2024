@@ -1,3 +1,9 @@
+## 1.17.0 (2024-12-03)
+
+### Feat
+
+- **config**: I18n default locales, fast gettext locale, removed social share buttons and humanizer gems
+
 ## 1.16.0 (2024-12-03)
 
 ### Feat
