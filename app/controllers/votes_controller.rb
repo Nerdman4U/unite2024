@@ -30,7 +30,14 @@ class VotesController < ApplicationController
       return
     end
 
-    unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
+    if params["g-recaptcha-response"].blank?
+      flash[:error] = _("There was an error with human verifying")
+      head :bad_request
+      return
+    end
+
+    # Verify human when not test mode
+    if !Rails.env.test? && !RecaptchaVerifier.verify(params["g-recaptcha-response"])
       flash[:error] = _("There was an error with human verifying")
       head :bad_request
       return
@@ -76,7 +83,14 @@ class VotesController < ApplicationController
     @vote.ip = request.env["REMOTE_ADDR"]
     @vote.bypass_humanizer = true if Rails.env.test?
 
-    unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
+    captcha = params["g-recaptcha-response"]
+    if captcha.blank?
+      flash[:error] = _("There was an error with human verifying")
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
+    if !Rails.env.test? && !RecaptchaVerifier.verify(captcha)
       redirect_to new_vote_path(locale: locale)
       return
     end
@@ -203,6 +217,6 @@ class VotesController < ApplicationController
   end
 
   def vote_params
-    params.require(:vote).permit(:name, :email, :email_repeat, :country, :humanizer_answer, :humanizer_question_id)
+    params.require(:vote).permit(:name, :email, :email_repeat, :country)
   end
 end

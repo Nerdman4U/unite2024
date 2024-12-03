@@ -62,7 +62,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       country: "fi"
     }
     assert_difference("Vote.count") do
-      post votes_path, params: { vote: values }
+      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     vote = assigns(:vote)
     assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
@@ -111,7 +111,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       country: "fi"
     }
     assert_difference("Vote.count") do
-      post votes_path, params: { vote: values }
+      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     # puts "VotesControllerTest.create vote: " + assigns(:vote).inspect
     assert_equal assigns(:vote).vote_id, votes("vote_1").id
@@ -126,7 +126,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       country: "fi"
     }
     assert_no_difference("Vote.count") do
-      post votes_path, params: { vote: values }
+      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
   end
 
@@ -155,7 +155,8 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       name: "Testaaja",
       email: "testi@yeah.foo",
       email_repeat: "testi@yeah.foo",
-      language: "english"
+      language: "english",
+      "g-recaptcha-response": "valid"
     }
     post email_invite_votes_path, params: options
 
@@ -172,7 +173,8 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       name: "Testaaja",
       email: "testi@yeah.foo",
       email_repeat: "testi2@yeah.foo",
-      language: "english"
+      language: "english",
+      "g-recaptcha-response": "valid"
     }
     post email_invite_votes_path, params: options
 
