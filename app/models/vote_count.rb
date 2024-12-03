@@ -16,7 +16,7 @@ class VoteCount < ApplicationRecord
     end
   end
 
-  def self.add_vote vote
+  def self.add_vote(vote)
     vote_count = where(country: vote.country).first ||
       new(country: vote.country.downcase, count: 1)
     vote_count.count += 1 unless vote_count.new_record?
@@ -29,7 +29,7 @@ class VoteCount < ApplicationRecord
   end
 
   def self.target_vote_count
-    100000
+    1000000
   end
 
   def self.clear_values
@@ -78,7 +78,7 @@ class VoteCount < ApplicationRecord
   # maximum percent is 10 and this value is shown at the top of the view
   # and has 100% width.
   # current: current country percent of all votes.
-  def calculate_diagram_width max, current
+  def calculate_diagram_width(max, current)
     return 0 if current <= 0
     (current.to_f/max.to_f * 1000).to_i / 10.0
   end
@@ -86,6 +86,4 @@ class VoteCount < ApplicationRecord
   def diagram_width
     calculate_diagram_width(max_percent_of_total, percent_of_total)
   end
-
-
 end
