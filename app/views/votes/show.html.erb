@@ -30,14 +30,17 @@
   <div id="featured-trips" class="section-block replicable-content">
     <div class="row">
       <div class="column width-4">
-	<div class="feature-column small left">
-          <p><%= _("Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends.") %> </p>
+      	<div class="feature-column small left">
+          <p><%= _("Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!") %>
         </div>
       </div>
       <div class="column width-4">
-	<div class="feature-column small left">
+	    <div class="feature-column small left">
           <%= _("Your supporter number is %{count}.") % {count: number_with_delimiter(@vote.order_number)} %>
-          <%= _("We still miss %{count} of the %{target}.") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
+          <%= _("Together, we can easily achieve %{target} signatures globally – let’s spread the word!") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
+
+          <%# _("Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends.") %>
+          <%# _("We still miss %{count} of the %{target}.") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
         </div>
       </div>
       <div class="column width-4">
@@ -58,6 +61,16 @@
   <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
     <div class="row">
       <div class="column width-12">
+        <h2><%= _("More material") %></h2>
+        <p><%= _("Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign.") %></p>
+        <p><%= link_to _("Download"), download_url(locale: locale) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block grid-container fade-in-progressively bkg-grey-ultralight" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+    <div class="row">
+      <div class="column width-12">
         <h2><%= _("Add a comment") %></h2>
         <p>
           <%= _("You can now add a comment.") %>
@@ -67,7 +80,7 @@
     </div>
   </div>
 
-  <div class="section-block replicable-content bkg-grey-ultralight">
+  <div class="section-block replicable-content bkg-charcoal color-white">
     <div class="row">
       <div class="column width-12">
         <h2><%= _("Share with social media") %></h2>
@@ -78,7 +91,7 @@
     </div>
   </div>
 
-  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+  <div class="section-block grid-container fade-in-progressively bkg-grey-ultralight" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
     <div class="row">
       <div class="column width-12">
         <h2><%= _("Share email with your friends") %></h2>
@@ -88,6 +101,7 @@
         <%= render partial: "share_vote" %>
       </div>
     </div>
-
   </div>
+
+
 </div>

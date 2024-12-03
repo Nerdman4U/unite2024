@@ -16,6 +16,8 @@ class VoteCount < ApplicationRecord
     end
   end
 
+  # Add vote to given country
+  # @return   how many votes added to given country
   def self.add_vote(vote)
     vote_count = where(country: vote.country).first ||
       new(country: vote.country.downcase, count: 1)

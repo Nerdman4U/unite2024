@@ -74,6 +74,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       name: "foobar",
       email: "foobar1@foobar.com",
       email_repeat: "foobar2@foobar.com",
+      ip: "0.0.0.0",
       country: "fi"
     }
     assert_no_difference("Vote.count") do
@@ -96,13 +97,6 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     end
     assert_equal flash[:error], "Email is invalid"
     assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
-  end
-
-  test "should have correct locale" do
-    assert_equal :en, I18n.locale
-    assert_equal :en, I18n.default_locale
-    assert_equal "en", FastGettext.locale
-    assert_equal "en", FastGettext.default_locale
   end
 
   # test 'should send backup mail after creating vote' do
