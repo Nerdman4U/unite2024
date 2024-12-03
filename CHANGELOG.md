@@ -1,3 +1,10 @@
+## 1.18.0 (2024-12-03)
+
+### Feat
+
+- **new-vote**: some error messages fixed
+- **locales**: gettext find and pack
+
 ## 1.17.0 (2024-12-03)
 
 ### Feat
