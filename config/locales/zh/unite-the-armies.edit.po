@@ -80,11 +80,11 @@ msgstr "评论成功"
 msgid "Comments"
 msgstr "评论"
 
-msgid "Contact our Campaign Assistant"
+msgid "Confirm Your vote for Unite the Armies - Save the Planet"
 msgstr ""
 
-msgid "Continue"
-msgstr "继续"
+msgid "Contact our Campaign Assistant"
+msgstr ""
 
 msgid "Country"
 msgstr "国家"
@@ -100,6 +100,10 @@ msgstr "电子邮件"
 
 msgid "Email Confirmation"
 msgstr "电子邮件确认"
+
+#, fuzzy
+msgid "Emails do not match"
+msgstr "电子邮件"
 
 msgid "English"
 msgstr "英文"
@@ -240,6 +244,9 @@ msgstr "拯救地球"
 msgid "See link below for a printable pamphlet and other campaign material. You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper."
 msgstr ""
 
+msgid "See who have already voted!"
+msgstr ""
+
 msgid "Send"
 msgstr "发送"
 
@@ -249,9 +256,6 @@ msgstr "用电子邮件分享给您的朋友\""
 msgid "Share with social media"
 msgstr "分享到媒体"
 
-msgid "Sign"
-msgstr "加入"
-
 msgid "Signatures! Let’s work further!"
 msgstr "让我们行动起来"
 
@@ -260,9 +264,6 @@ msgstr "西班牙语"
 
 msgid "State of the global environment"
 msgstr "全球环境状况"
-
-msgid "Statistics"
-msgstr "统计数据"
 
 msgid "Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention."
 msgstr "这类恶性问题正加快恶化，并且往往产生相互作用、彼此加剧的严重性。我们担忧这一过程会在人们的忽视中一直发展至无可挽回的地步，之后便再也不能经由人力干预得到逆转，甚至无法遏止。"
@@ -285,12 +286,6 @@ msgstr "支持者"
 msgid "Swedish"
 msgstr ""
 
-msgid "Technical realization 6.2015 - 10.2018"
-msgstr ""
-
-msgid "Technology for Life"
-msgstr ""
-
 msgid "Thank you for signing the Unite the Armies petition"
 msgstr ""
 
@@ -305,9 +300,6 @@ msgstr "感谢您的投票"
 
 msgid "Thank you in any case for signing the petition,"
 msgstr ""
-
-msgid "The Green Association for the Protection of Life"
-msgstr "绿色生命保护组织"
 
 msgid "The Suggested task must benefit the whole world."
 msgstr "你的建议必须对全世界都有益处"
@@ -357,17 +349,14 @@ msgstr "致联合国秘书长及秘书处："
 msgid "To the material page"
 msgstr ""
 
+msgid "To vote you still need to verify your vote by clicking link below. If you did not vote, ignore this email."
+msgstr ""
+
 msgid "Topic"
 msgstr "题目"
 
 msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
 msgstr "每年全球的军力开支预计为1.5万亿美元。透视这笔开支，与之相比，为整个撒哈拉沙漠植树造林的预算成本仅占全球军力开支的六分之一。上述例证很好阐释了一旦相关政治问题得以解决，在这一问题上采取行动将有巨大的发展潜力。"
-
-msgid "Unite the Armies to Save Life – not to Kill!"
-msgstr "联合军队来保护生命—不要杀戮。"
-
-msgid "Video"
-msgstr "视频"
 
 msgid "Water"
 msgstr "水"
@@ -393,6 +382,9 @@ msgstr "我们必须保护地球上丰富多彩的生命。"
 msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
 msgstr "我们提议联合国开展行动，大规模调动人力物力资源，包括在全球变暖加剧的情况下开展农林业项目以及森林和动植物迁移项目。此类项目能够帮助避免最可怕的灾难；它们还可以帮助建立并维护生态和社会稳定，同时通过使用当地劳动力而促进本土就业。"
 
+msgid "We received a vote from email address: %{email}."
+msgstr ""
+
 msgid "We still miss %{count} of the %{target}."
 msgstr "我们目前仍缺少%{count}达到%{target}个投票"
 
@@ -404,9 +396,6 @@ msgstr "我们出于对全球环境的殷切关心，特此向您寻求帮助。
 
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "你想要一份你自己语言的倡议书----请不要犹豫，与我们联系！"
-
-msgid "Would you like to help the campaign by doing voluntary programming? Great! Fork the code from %{github}."
-msgstr ""
 
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "加入后你也可以加入讨论。你会收到一封有关这个活动的邮件。"
@@ -422,6 +411,9 @@ msgstr "%{name} 邀请您参与我们的 “拯救我们的世界 – 联合我�
 
 msgid "You have helped campaign by having %{count} people signed after you."
 msgstr "因为您的参与，已经有 %{count} 人在您之后进行了投票"
+
+msgid "Your email has been confirmed"
+msgstr ""
 
 msgid "Your friends email address"
 msgstr "你朋友的电子邮箱"
@@ -448,9 +440,6 @@ msgstr ""
 msgid "hours"
 msgstr ""
 
-msgid "http://unite-the-armies.org/en/download"
-msgstr ""
-
 msgid "https://www.dropbox.com/sh/u5gnv99jy2tj6bu/AAAwbxfS04f6sGzSGky0_sZMa?dl=0"
 msgstr ""
 
@@ -474,6 +463,24 @@ msgstr "秒"
 
 msgid "sincerely,"
 msgstr ""
+
+#~ msgid "Continue"
+#~ msgstr "继续"
+
+#~ msgid "Sign"
+#~ msgstr "加入"
+
+#~ msgid "Statistics"
+#~ msgstr "统计数据"
+
+#~ msgid "The Green Association for the Protection of Life"
+#~ msgstr "绿色生命保护组织"
+
+#~ msgid "Unite the Armies to Save Life – not to Kill!"
+#~ msgstr "联合军队来保护生命—不要杀戮。"
+
+#~ msgid "Video"
+#~ msgstr "视频"
 
 #~ msgid "Technical realization"
 #~ msgstr "技术实现"

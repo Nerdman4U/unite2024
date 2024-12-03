@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unite-the-armies 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-12 12:13+0300\n"
-"PO-Revision-Date: 2018-10-12 12:13+0300\n"
+"POT-Creation-Date: 2024-12-03 08:58+0200\n"
+"PO-Revision-Date: 2024-12-03 08:58+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -81,10 +81,10 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-msgid "Contact our Campaign Assistant"
+msgid "Confirm Your vote for Unite the Armies - Save the Planet"
 msgstr ""
 
-msgid "Continue"
+msgid "Contact our Campaign Assistant"
 msgstr ""
 
 msgid "Country"
@@ -100,6 +100,9 @@ msgid "Email"
 msgstr ""
 
 msgid "Email Confirmation"
+msgstr ""
+
+msgid "Emails do not match"
 msgstr ""
 
 msgid "English"
@@ -240,6 +243,9 @@ msgstr ""
 msgid "See link below for a printable pamphlet and other campaign material. You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper."
 msgstr ""
 
+msgid "See who have already voted!"
+msgstr ""
+
 msgid "Send"
 msgstr ""
 
@@ -249,9 +255,6 @@ msgstr ""
 msgid "Share with social media"
 msgstr ""
 
-msgid "Sign"
-msgstr ""
-
 msgid "Signatures! Let’s work further!"
 msgstr ""
 
@@ -259,9 +262,6 @@ msgid "Spanish"
 msgstr ""
 
 msgid "State of the global environment"
-msgstr ""
-
-msgid "Statistics"
 msgstr ""
 
 msgid "Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention."
@@ -285,12 +285,6 @@ msgstr ""
 msgid "Swedish"
 msgstr ""
 
-msgid "Technical realization 6.2015 - 10.2018"
-msgstr ""
-
-msgid "Technology for Life"
-msgstr ""
-
 msgid "Thank you for signing the Unite the Armies petition"
 msgstr ""
 
@@ -304,9 +298,6 @@ msgid "Thank you for your vote!"
 msgstr ""
 
 msgid "Thank you in any case for signing the petition,"
-msgstr ""
-
-msgid "The Green Association for the Protection of Life"
 msgstr ""
 
 msgid "The Suggested task must benefit the whole world."
@@ -357,16 +348,13 @@ msgstr ""
 msgid "To the material page"
 msgstr ""
 
+msgid "To vote you still need to verify your vote by clicking link below. If you did not vote, ignore this email."
+msgstr ""
+
 msgid "Topic"
 msgstr ""
 
 msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
-msgstr ""
-
-msgid "Unite the Armies to Save Life – not to Kill!"
-msgstr ""
-
-msgid "Video"
 msgstr ""
 
 msgid "Water"
@@ -393,6 +381,9 @@ msgstr ""
 msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
 msgstr ""
 
+msgid "We received a vote from email address: %{email}."
+msgstr ""
+
 msgid "We still miss %{count} of the %{target}."
 msgstr ""
 
@@ -403,9 +394,6 @@ msgid "We the undersigned addressees turn to you because of our concern at the s
 msgstr ""
 
 msgid "Would you like to have the initiative in your language – please, contact us!"
-msgstr ""
-
-msgid "Would you like to help the campaign by doing voluntary programming? Great! Fork the code from %{github}."
 msgstr ""
 
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
@@ -421,6 +409,9 @@ msgid "You have been invited to Save the World - Unite the Armies by %{name}."
 msgstr ""
 
 msgid "You have helped campaign by having %{count} people signed after you."
+msgstr ""
+
+msgid "Your email has been confirmed"
 msgstr ""
 
 msgid "Your friends email address"
@@ -445,9 +436,6 @@ msgid "hour"
 msgstr ""
 
 msgid "hours"
-msgstr ""
-
-msgid "http://unite-the-armies.org/en/download"
 msgstr ""
 
 msgid "https://www.dropbox.com/sh/u5gnv99jy2tj6bu/AAAwbxfS04f6sGzSGky0_sZMa?dl=0"

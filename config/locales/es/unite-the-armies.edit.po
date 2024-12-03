@@ -79,11 +79,11 @@ msgstr "El comentario fue creado en forma exitosa"
 msgid "Comments"
 msgstr "Comentarios"
 
-msgid "Contact our Campaign Assistant"
+msgid "Confirm Your vote for Unite the Armies - Save the Planet"
 msgstr ""
 
-msgid "Continue"
-msgstr "Continua"
+msgid "Contact our Campaign Assistant"
+msgstr ""
 
 msgid "Country"
 msgstr "País"
@@ -99,6 +99,10 @@ msgstr "Correo electrónico"
 
 msgid "Email Confirmation"
 msgstr "Confirmar correo"
+
+#, fuzzy
+msgid "Emails do not match"
+msgstr "Correo electrónico"
 
 msgid "English"
 msgstr "Inglés"
@@ -239,6 +243,9 @@ msgstr "!Salvar el planeta!"
 msgid "See link below for a printable pamphlet and other campaign material. You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper."
 msgstr ""
 
+msgid "See who have already voted!"
+msgstr ""
+
 msgid "Send"
 msgstr "Envía"
 
@@ -248,9 +255,6 @@ msgstr "Compartir con correo electrónico"
 msgid "Share with social media"
 msgstr "Compartir en las redes sociales"
 
-msgid "Sign"
-msgstr "Firma"
-
 msgid "Signatures! Let’s work further!"
 msgstr "!Firmantes! !Sigamos trabajando!"
 
@@ -259,9 +263,6 @@ msgstr "Español"
 
 msgid "State of the global environment"
 msgstr "Estado del medio ambiente global"
-
-msgid "Statistics"
-msgstr "Estadísticas"
 
 msgid "Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention."
 msgstr "Estos acontecimientos tan dañinos se han acelerado, y a menudo agravado, mutuamente. Es de temer que este proceso pueda alcanzar un inadvertido ‘punto de no retorno’ tras el cual ya no pueda ser revertido, o ni siquiera detenido, por la intervención humana."
@@ -285,12 +286,6 @@ msgstr "Partidarios"
 msgid "Swedish"
 msgstr "Español"
 
-msgid "Technical realization 6.2015 - 10.2018"
-msgstr ""
-
-msgid "Technology for Life"
-msgstr ""
-
 msgid "Thank you for signing the Unite the Armies petition"
 msgstr ""
 
@@ -305,9 +300,6 @@ msgstr "Gracias por tu voto"
 
 msgid "Thank you in any case for signing the petition,"
 msgstr ""
-
-msgid "The Green Association for the Protection of Life"
-msgstr "La Asociación Verde para la protección de la vida"
 
 msgid "The Suggested task must benefit the whole world."
 msgstr "La tarea sugerida debe benificiar al mundo entero."
@@ -357,17 +349,14 @@ msgstr "Al Secretario General y al Secretariado de las Naciones Unidas."
 msgid "To the material page"
 msgstr ""
 
+msgid "To vote you still need to verify your vote by clicking link below. If you did not vote, ignore this email."
+msgstr ""
+
 msgid "Topic"
 msgstr "Tópicos"
 
 msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
 msgstr "El gasto total en armamento mundial gira en torno a los 1’5 billones anuales; tal gasto puede ser puesto en perspectiva comparándolo con el coste estimado de la reforestación de todo el desierto del Sáhara, que supondría una sexta parte del gasto anual en armamento mundial. Este ejemplo ilustra claramente el alcance del potencial necesario para actuar en este asunto, si se encontrara la voluntad política."
-
-msgid "Unite the Armies to Save Life – not to Kill!"
-msgstr "!Unificar los Ejércitos para Salvar Vidas- no para Matar!"
-
-msgid "Video"
-msgstr "Video"
 
 msgid "Water"
 msgstr "Agua"
@@ -393,6 +382,9 @@ msgstr "Tenemos que defender la Riqueza de nuestro Planeta"
 msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
 msgstr "Proponemos acciones en proyectos que requieran recursos a gran escala, tanto de mano de obra como de equipamiento; estos incluirían proyectos agroforestales y reubicación de bosques, plantas y animales con miras a evitar el calentamiento global. Tales proyectos ayudarían a evitar las peores catástrofes; también ayudarían y fomentarían la estabilidad social y el empleo a nivel local, suponiendo que se empleara mano de obra local."
 
+msgid "We received a vote from email address: %{email}."
+msgstr ""
+
 msgid "We still miss %{count} of the %{target}."
 msgstr "Todavía nos falta %{count} de los %{target}."
 
@@ -404,9 +396,6 @@ msgstr "Nosotros, los abajo firmantes, nos  dirigimos a ustedes a causa de nuest
 
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "Si quieres expresar tu iniciativa en tu propio idioma, por favor,!contáctanos!"
-
-msgid "Would you like to help the campaign by doing voluntary programming? Great! Fork the code from %{github}."
-msgstr ""
 
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "Después de firmar, puedes contribuir a la discusión. Sobre esto te enviaremos un correo electrónico por separado"
@@ -422,6 +411,9 @@ msgstr "Tú has sido invitado a la campaña Salvar el Planeta- Unificar los Ejé
 
 msgid "You have helped campaign by having %{count} people signed after you."
 msgstr "Tú has contribuido a la campaña al motivar %{count} personas a firmar"
+
+msgid "Your email has been confirmed"
+msgstr ""
 
 msgid "Your friends email address"
 msgstr "Correos electrónicos de tus amigos"
@@ -448,9 +440,6 @@ msgstr ""
 msgid "hours"
 msgstr ""
 
-msgid "http://unite-the-armies.org/en/download"
-msgstr ""
-
 msgid "https://www.dropbox.com/sh/u5gnv99jy2tj6bu/AAAwbxfS04f6sGzSGky0_sZMa?dl=0"
 msgstr ""
 
@@ -474,6 +463,24 @@ msgstr "Segundos"
 
 msgid "sincerely,"
 msgstr ""
+
+#~ msgid "Continue"
+#~ msgstr "Continua"
+
+#~ msgid "Sign"
+#~ msgstr "Firma"
+
+#~ msgid "Statistics"
+#~ msgstr "Estadísticas"
+
+#~ msgid "The Green Association for the Protection of Life"
+#~ msgstr "La Asociación Verde para la protección de la vida"
+
+#~ msgid "Unite the Armies to Save Life – not to Kill!"
+#~ msgstr "!Unificar los Ejércitos para Salvar Vidas- no para Matar!"
+
+#~ msgid "Video"
+#~ msgstr "Video"
 
 #~ msgid "Technical realization"
 #~ msgstr "Realización técnica"
