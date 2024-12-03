@@ -1,3 +1,37 @@
+## 1.16.0 (2024-12-03)
+
+### Feat
+
+- **votes_controller**: only confirmed votes listed at recent votes
+- **vote**: Secret confirm hash tests, some problems with fixtures
+- **renamed-a-variable**: Email confirmation renamed to email_repeat, linter also found something
+- **confirm_emails.rake**: Set current votes confirmed with current timestamp
+- **debugger**: Debugger support for vscode and smtp working production mode
+- **test.rb**: Hopefully not anymore sending emails when running mailer tests
+- **test**: some tests updated, some commented out
+- **vote**: confirm vote with confirmation email from given address, not yet working
+- **application.rb**: SMTP settings
+- **Vote**: Confirm email address used to vote
+- **votes_controller**: Emails confirmation fix and spam flag
+
+### Fix
+
+- **recaptcha**: working now
+- **VoteMailer**: linting and removed extra variable
+- **votes_controller**: recent votes wont list spam and duplicates are marked as spam instead destroyed
+- **email-invite**: repeat email when send invite from show vote
+- **fix.rake**: using ruby 1.9 syntax
+- **test**: fixed config used in test file
+- **admin**: admin hash to environment, using unite- namespace at config, fixed domain for development/production
+- **constants**: production mode domain
+- **application.rb**: Google app password
+- **vote**: Check that email is typed two times correctly
+- **deploy.rb**: Stage and rails_env
+
+### Refactor
+
+- **tests**: Updating tests, not working
+
 ## 1.15.0 (2024-11-22)
 
 ### Feat
