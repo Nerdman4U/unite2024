@@ -1,8 +1,8 @@
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-top">
+  <div class="container footer-top">
     <div class="row">
-      <div class="column width-4">
+      <div class="col-3">
         <div class="widget">
           <%= link_to TEP_URL, target: "_blank" do %>
               <h4 class="widget-title">
@@ -12,7 +12,7 @@
           <% end %>
         </div>
       </div>
-      <div class="column width-4">
+      <div class="col-4">
         <div class="widget">
           <h4 class="widget-title"><%= _("About Us") %></h4>
           <ul class="list-group small">
@@ -97,7 +97,7 @@
           -->
         </div>
       </div>
-      <div class="column width-3" style="padding-left: 0">
+      <div class="col-3" style="padding-left: 0">
         <div class="widget">
           <h4 class="widget-title"><%= _("Recent Votes") %></h4>
           <!--div id="recent_votes"></div-->
@@ -113,7 +113,7 @@
 
         </div>
       </div>
-      <div class="column width-1">
+      <div class="col-1">
         <ul class="social-list list-horizontal pull-right clear-float-on-mobile">
           <li>
             <%= link_to UNITE_FACEBOOK_URL, target: "_blank" do %>
@@ -142,14 +142,14 @@
 </footer>
 
 <footer class="footer">
-  <div class="footer-top">
+  <div class="container footer-top">
     <div class="row">
     <!-- <div class="column width-12 center"> -->
-      <div class="column width-4 left">
+      <div class="col-4 left">
         v.<%= Rails.application.config.version %> with Ruby 3.3.6, Rails 8.0
       </div>
-
-      <div class="column width-8 right">
+      <div class="col-3"></div>
+      <div class="col-4 right">
         <%= link_to("Github", GITHUB_URL, target: "_blank") %>
       </div>
     </div>

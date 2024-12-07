@@ -4,11 +4,25 @@ body {
 
 .alert {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 100;
+  right: 100;
   z-index: 1000;
-  top: 1em;
+  top: 10em;
   text-align: center;
+  .btn-close {
+    position: absolute;
+    right: 0;
+    z-index: 1001;
+  }
+}
+
+/* Bootstrap 5.3.3 aligns row differently and causes layout issues with old theme (theme.core.min) css */
+.row {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.header .header-inner {
+  width: inherit;
 }
 
 /* skin-barber-shop.css defines many texts as grey, change them to black */

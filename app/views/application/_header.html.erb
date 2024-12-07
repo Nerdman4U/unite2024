@@ -1,20 +1,22 @@
 <!-- Header -->
-<header class="header header-fixed header-fixed-on-mobile header-transparent" data-sticky-threshold="window-height" data-bkg-threshold="100">
-  <div class="header-inner">
+<header class="header header-fixed header-fixed-on-mobile header-transparent">
+  <!-- Positioned absolutely -->
+  <div class="share-buttons">
+    <!-- Your share button code -->
+    <div class="fb-share-button"
+      data-href="<%= UNITE_ROOT_URL%>"
+      data-layout="button">
+    </div>
+    <div>
+      <a class="twitter share-button" href="http://twitter.com/intent/tweet?text=Sign%20an%20appeal%20for%20the%20UN%20to%20ask%20armies%20to%20participate%20on%20the%20preventive%20work%20against%20climate%20catastrophe.%20http%3A%2F%2Funite-the-armies.org%2F">
+       Tweet
+      </a>
+    </div>
+  </div>
+
+  <div class="container header-inner">
     <div class="row nav-bar">
-      <div class="share-buttons">
-        <!-- Your share button code -->
-        <div class="fb-share-button"
-          data-href="<%= UNITE_ROOT_URL%>"
-          data-layout="button">
-        </div>
-        <div>
-          <a class="twitter share-button" href="http://twitter.com/intent/tweet?text=Sign%20an%20appeal%20for%20the%20UN%20to%20ask%20armies%20to%20participate%20on%20the%20preventive%20work%20against%20climate%20catastrophe.%20http%3A%2F%2Funite-the-armies.org%2F">
-           Tweet
-          </a>
-        </div>
-      </div>
-      <div class="column width-12 nav-bar-inner">
+      <div class="col-12 nav-bar-inner">
         <div class="logo" id="logo123">
           <div class="logo-inner">
             <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>

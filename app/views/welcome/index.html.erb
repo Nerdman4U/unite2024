@@ -4,9 +4,9 @@
     <ul class="tms-slides">
       <li class="tms-slide" data-image data-force-fit>
         <div class="tms-content">
-          <div class="tms-content-inner center left-on-mobile v-align-middle">
+          <div class="container tms-content-inner center left-on-mobile v-align-middle">
             <div class="row">
-              <div class="column width-12">
+              <div class="col-12">
                 <h1 class="tms-caption title-xlarge color-white lspacing-medium mb-20 weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
                   <%= _("Save the planet") %>
                 </h1>
@@ -38,16 +38,16 @@
     <li data-image-src="/images/frontpage-slides/slide-5.jpg"/>
     <li data-image-src="/images/frontpage-slides/slide-6.jpg"/>
   </ol>
-  <div style="display: flex; align-items: center;" id="slideshow-caption" class="feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
+  <div style="display: flex; align-items: center;" id="slideshow-caption" class="container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
     <div style="">
-      <div class="column width-12 center">
+      <div class="col-12 center">
         <h2 class="mb-30" style="font-size: 2.0em; text-align: left; ">
           <span>
             <%= _("First Aid") %> <%= _("To Our Common World") %>
           </span>
         </h2>
       </div>
-      <div class="column width-12 left">
+      <div class="col-12 left">
         <p class="mb-30"
            style="font-size: 1.5em; text-transform: uppercase; text-align: left;">
           <span>
@@ -122,12 +122,11 @@
 
 <!-- columnit -->
 <section>
-  <div class="section-block replicable-content bkg-charcoal color-white">
-
+  <div class="container section-block replicable-content bkg-charcoal color-white">
     <div class="row">
-      <div class="column width-12">
+      <div class="col-12">
         <div class="row">
-          <div class="column width-6">
+          <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:-30px;" data-threshold="1">
               <div style="margin: 20px 0;">
                 <%= image_tag "barber-shop/pollution.jpg", alt:"" %>
@@ -140,7 +139,7 @@
               </div>
             </div>
           </div>
-          <div class="column width-6">
+          <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:200ms;" data-threshold="1">
               <div style="margin: 20px 0;">
                 <%= image_tag "barber-shop/nowater.jpg", alt:"" %>
@@ -151,8 +150,12 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
         <div class="row">
-          <div class="column width-6">
+          <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:-30px;delay:400ms;" data-threshold="1">
               <div style="margin:20px 0;">
                 <%= image_tag "barber-shop/trash.jpg", alt:"" %>
@@ -163,7 +166,7 @@
               </div>
             </div>
           </div>
-          <div class="column width-6">
+          <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:600ms;" data-threshold="1">
               <div style="margin: 20px 0;">
                 <%= image_tag "barber-shop/polars.jpg", alt:"" %>
@@ -181,9 +184,9 @@
 </section>
 
 <!-- Feature Section 1 -->
-<section class="section-block feature-1 bkg-beige">
+<section class="container section-block feature-1 bkg-beige">
   <div class="row no-padding-bottom">
-    <div class="column width-6 offset-3">
+    <div class="col-12 offset-3">
       <div class="feature-content">
         <div class="feature-content-inner">
           <%= link_to appeal_path(locale: locale), { :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>

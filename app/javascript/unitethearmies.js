@@ -65,15 +65,4 @@ class UniteTheArmies {
   }
 }
 
-// loadVotes();
-// setInterval(function () {
-// loadVotes();
-// }, 5000);
-//menuEvents();
-//voteEvents();
-//startShow();
-
-// $(document).ready(ready);
-// $(document).on("page:load", ready);
-
 export default UniteTheArmies;
