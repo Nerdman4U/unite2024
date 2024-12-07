@@ -20,6 +20,7 @@ body {
 .row {
   margin-left: auto !important;
   margin-right: auto !important;
+  width: inherit;
 }
 .header .header-inner {
   width: inherit;

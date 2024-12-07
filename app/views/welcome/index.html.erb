@@ -61,74 +61,15 @@
   </div>
 </div>
 
-<!-- Leffa -->
-<!--section-- id="leffa">
-  <div class="section-block replicable-content bkg-grey-ultralight">
-    <div class="row">
-      <div class="column width-6 offset-3 center">
-        <h2 class="mb-30">
-          <%= _("First Aid") %> <%= _("To Our Common World") %>
-        </h2>
-      </div>
-      <div class="column width-6 offset-3 left">
-        <p class="mb-30"
-           style="text-align:center;">
-          <%= _("There is a hidden potential at hand: the national armies.") %>
-          <strong><%= _("We have to give the armies a new, positive task.") %></strong>
-          <%= _("In these pages we collect support for a global initiative.") %>
-          <br>
-        </p>
-      </div>
-      <div class="column width-10 offset-1">
-        <div class="thumbnail">
-          <%
-            if locale == :fi
-              url = "https://player.vimeo.com/video/153508732?autoplay=false"
-            elsif locale == :es
-              url = "https://player.vimeo.com/video/153508813?autoplay=false"
-            elsif locale == :zh
-              url = "https://player.vimeo.com/video/153508814?autoplay=false"
-            elsif locale == :ru
-              url = "https://player.vimeo.com/video/153508816?autoplay=false"
-            elsif locale == :fr
-              url = "https://player.vimeo.com/video/153508812?autoplay=false"
-            elsif locale == :ar
-              url = "https://player.vimeo.com/video/160513218?autoplay=false"
-            else
-              url = "https://player.vimeo.com/video/153508772?autoplay=false"
-            end
-          %>
-          <iframe src="<%= url %>" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-          <% if false %>
-              <%= image_tag "barber-shop/vimeo_bg.jpg", alt:"", width:1440, height:700 %>
-              <div class="caption-over-outer">
-                <div class="caption-over-inner center color-white">
-                  <div class="row">
-                    <div class="column width-12">
-                      <a href="<%= url %>" data-image-url="#" data-caption="<%= _("We have to give the armies a new, positive task") %>" class="lightbox-link icon-play icon-circled border-white color-white color-hover-white bkg-hover-beige circled large">
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section-->
-<!-- Leffa End -->
-
 <!-- columnit -->
-<section>
-  <div class="container section-block replicable-content bkg-charcoal color-white">
+<section class="bkg-charcoal color-white">
+  <div class="container section-block replicable-content">
     <div class="row">
       <div class="col-12">
         <div class="row">
           <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:-30px;" data-threshold="1">
-              <div style="margin: 20px 0;">
+              <div class="mt-5">
                 <%= image_tag "barber-shop/pollution.jpg", alt:"" %>
               </div>
               <div class="feature-text">
@@ -141,7 +82,7 @@
           </div>
           <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:200ms;" data-threshold="1">
-              <div style="margin: 20px 0;">
+              <div class="mt-5">
                 <%= image_tag "barber-shop/nowater.jpg", alt:"" %>
               </div> <div class="feature-text">
               <h5><%= _("Water is the Mother of Life – we all need it!") %></h5>
@@ -154,10 +95,10 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <div class="row">
+        <div class="row text-center">
           <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:-30px;delay:400ms;" data-threshold="1">
-              <div style="margin:20px 0;">
+              <div class="mt-5">
                 <%= image_tag "barber-shop/trash.jpg", alt:"" %>
               </div>
               <div class="feature-text">
@@ -168,7 +109,7 @@
           </div>
           <div class="col-5">
             <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:600ms;" data-threshold="1">
-              <div style="margin: 20px 0;">
+              <div class="mt-5">
                 <%= image_tag "barber-shop/polars.jpg", alt:"" %>
               </div>
               <div class="feature-text">
@@ -183,10 +124,40 @@
   </div>
 </section>
 
-<!-- Feature Section 1 -->
-<section class="container section-block feature-1 bkg-beige">
-  <div class="row no-padding-bottom">
-    <div class="col-12 offset-3">
+<%
+  if locale == :fi
+    url = "https://player.vimeo.com/video/153508732?autoplay=false"
+    video_id = "153508732"
+  elsif locale == :es
+    url = "https://player.vimeo.com/video/153508813?autoplay=false"
+    video_id = "153508813"
+  elsif locale == :zh
+    url = "https://player.vimeo.com/video/153508814?autoplay=false"
+    video_id = "153508814"
+  elsif locale == :ru
+    url = "https://player.vimeo.com/video/153508816?autoplay=false"
+    video_id = "153508816"
+  elsif locale == :fr
+    url = "https://player.vimeo.com/video/153508812?autoplay=false"
+    video_id = "153508812"
+  elsif locale == :ar
+    url = "https://player.vimeo.com/video/160513218?autoplay=false"
+    video_id = "160513218"
+  else
+    url = "https://player.vimeo.com/video/153508772?autoplay=false"
+    video_id = "153508772"
+  end
+%>
+<section class="section-block">
+<div style="padding:80% 0 0 0;position:relative;">
+  <iframe src="https://player.vimeo.com/video/<%= video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+</section>
+
+<section class="section-block">
+  <div class="row">
+    <div class="col-4">
       <div class="feature-content">
         <div class="feature-content-inner">
           <%= link_to appeal_path(locale: locale), { :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
