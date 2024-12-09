@@ -1,3 +1,9 @@
+## 1.21.1 (2024-12-09)
+
+### Fix
+
+- **footer**: Remove Googleplus icon
+
 ## 1.21.0 (2024-12-09)
 
 ### Feat
