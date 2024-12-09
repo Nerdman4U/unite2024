@@ -30,50 +30,6 @@ body {
   background-color: cornflowerblue;
 }
 
-/* skin-barber-shop.css defines many texts as grey, change them to black */
-body,
-.post-info,
-.footer .widget-title,
-.footer .widget-title a,
-.footer-top a:not(.button),
-.footer .widget,
-.footer address,
-.a {
-  color: #222;
-}
-a {
-  text-decoration: underline;
-}
-.footer {
-  color: #222;
-  font-size: 1.3rem;
-}
-.button {
-  text-decoration: none;
-}
-
-.header-transparent .navigation > ul > li > a {
-  opacity: 1;
-}
-
-.table,
-th,
-td {
-  border: 0 !important;
-}
-.table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > thead > tr > th {
-  border-top: 1px solid #ddd !important;
-  line-height: 1.42857;
-  padding: 8px;
-  vertical-align: top;
-}
-
-.comment-area {
-  display: none;
-}
-
 /* Make the input fields and the country selector look the same */
 input[type="text"].form-control,
 select#vote_country {
