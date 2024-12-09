@@ -1,3 +1,20 @@
+## 1.21.0 (2024-12-09)
+
+### Feat
+
+- **Show-vote**: Bootstrap cols and proper color variables
+- **Views**: Bootstrap cols and updated styles
+- **views**: Bootstrap cols, votes list with bootstrap cols
+- **theme.core**: Unminified and removed troublesome before settings on rows
+- **views**: Added bootstrap 5 col-x css selectors
+- **footer**: copyright, css fixes, removed overlay navigation partial
+
+### Fix
+
+- **votes-list**: bootstrap cols
+- **appeal**: columns fixed
+- **header**: Added missing element properties for to make header background change
+
 ## 1.20.0 (2024-12-03)
 
 ### Feat
