@@ -27,7 +27,15 @@ body {
 }
 
 .votes:hover {
-  background-color: cornflowerblue;
+  background-color: var(--bs-gray-200);
+}
+
+/* theme.core:2751 adds default border to table */
+.widget table {
+  border: none;
+  td {
+    border: none;
+  }
 }
 
 /* Make the input fields and the country selector look the same */

@@ -115,7 +115,7 @@ h6 {
 .footer .widget-title a {
   font-size: 1.6rem;
   letter-spacing: 0;
-  color: #999;
+  color: var(--bs-dark);
 }
 .sidebar .widget-title,
 .sidebar .widget-title a {
@@ -129,19 +129,19 @@ h6 {
 .overlay-navigation-wrapper .widget-title,
 .overlay-navigation-wrapper .widget-title a {
   font-size: 1.4rem;
-  color: #999;
+  color: var(--bs-dark);
 }
 
 /* Link Colors */
 a,
 p a,
 .box a:not(.button) {
-  color: #232323;
+  color: var(--bs-dark);
 }
 .sidebar .widget a,
 .shop .product-summary a,
 .shop .cart-overview a {
-  color: #666;
+  color: var(--bs-grey);
 }
 a:hover,
 .box a:not(.button):hover,
@@ -2197,7 +2197,6 @@ h4.project-title {
   margin-bottom: 2rem;
   font-size: 1.1rem;
   font-weight: 400;
-  color: #999;
 }
 .post-info.boxed {
   width: 100%;
@@ -2697,7 +2696,6 @@ textarea.required-field {
 .footer .widget,
 .footer address {
   font-size: 1.3rem;
-  color: #999;
   text-transform: none;
   font-style: normal;
 }
@@ -2730,7 +2728,6 @@ textarea.required-field {
 .footer {
   width: 100%;
   background: #fff;
-  color: #666;
   z-index: 1;
 }
 .footer [class*="content-grid"] {
