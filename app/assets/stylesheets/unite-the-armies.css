@@ -26,6 +26,10 @@ body {
   width: inherit;
 }
 
+.votes:hover {
+  background-color: cornflowerblue;
+}
+
 /* skin-barber-shop.css defines many texts as grey, change them to black */
 body,
 .post-info,

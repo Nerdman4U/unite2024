@@ -1,35 +1,34 @@
 <!-- Content -->
-
-  <!-- Fullscreen Slider Section -->
-  <section class="section-block featured-media tm-slider-parallax-container">
-    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
-      <ul class="tms-slides">
-        <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.3">
-          <div class="tms-content">
-            <div class="tms-content-inner center left-on-mobile v-align-middle">
-              <div class="row">
-                <div class="column width-12">
-                  <h1 class="tms-caption title-large color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;"
-                      data-no-scale>
-                    <%= _("%{count} votes") % { count: number_with_delimiter(VoteCount.total) } %>
-                  </h1>
-                  <div class="clear"></div>
-                  <h5 class="tms-caption color-white lspacing-medium mt-20"
-                      data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-                    <%= _("More work must be done") %>
-                  </h5>
-                </div>
+<!-- Fullscreen Slider Section -->
+<section class="section-block featured-media tm-slider-parallax-container">
+  <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
+    <ul class="tms-slides">
+      <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.3">
+        <div class="tms-content">
+          <div class="tms-content-inner center left-on-mobile v-align-middle">
+            <div class="row">
+              <div class="column width-12">
+                <h1 class="tms-caption title-large color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;"
+                    data-no-scale>
+                  <%= _("%{count} votes") % { count: number_with_delimiter(VoteCount.total) } %>
+                </h1>
+                <div class="clear"></div>
+                <h5 class="tms-caption color-white lspacing-medium mt-20"
+                    data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+                  <%= _("More work must be done") %>
+                </h5>
               </div>
             </div>
           </div>
-          <img data-src="/images/frontpage-slides/slide-2.jpg" src="/images/blank.png" alt=""/>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <!-- Fullscreen Slider Section End -->
+        </div>
+        <img data-src="/images/frontpage-slides/slide-2.jpg" src="/images/blank.png" alt=""/>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- Fullscreen Slider Section End -->
 
-   <% if locale == :fi %>
+  <% if locale == :fi %>
   <!-- Feature Column Section -->
       <section>
         <div id="featured-trips" class="section-block replicable-content">
@@ -37,9 +36,7 @@
             <div class="col-12">
               <div class="feature-column small center">
                 <div class="feature-text">
-                  <h5 class="text-uppercase text-small weight-light">Seuraavat, eri aloja edustavat, merkittävät professorit ovat antaneet vetoomukselle kannatuksensa:
-                  </h5>
-
+                  <h5 class="text-uppercase text-small weight-light">Seuraavat, eri aloja edustavat, merkittävät professorit ovat antaneet vetoomukselle kannatuksensa:</h5>
                 </div>
               </div>
             </div>
@@ -162,7 +159,6 @@
             </div>
           </div>
         </div>
-
       </section>
 
       <section>
@@ -175,27 +171,19 @@
           </div>
         </div>
       </section>
+  <% end %>
 
-<!-- Feature Column Section end -->
-<% end %>
-
-  <!-- Show country votes -->
-  <section class="section-block feature-1" style="min-height: 200px">
-    <div class="row no-padding-bottom">
-      <table id="country_votes_table" class="table" style="table-layout: fixed; width: 100%">
-        <% @sorted_votes.each do |vote_count| %>
-            <tr>
-              <td class="country_flag"><%= image_tag "blank.gif", :class => ["flag_small", vote_count.country] %></td>
-              <td class="country"><%= Country.code_to_name(vote_count.country) %></td>
-              <td class="vote_percentage">
-                <div style="width:<%= vote_count.diagram_width %>%; height:30px; background:green"/>
-              </td>
-              <td class="vote_count"><%= number_with_delimiter(vote_count.count) %></td>
-            </tr>
-        <% end %>
-      </table>
+<!-- Show country votes -->
+<section class="container section-block feature-1" style="min-height: 200px">
+  <% @sorted_votes.each do |vote_count| %>
+    <div class="row mb-1 p-2 votes">
+      <div class="col-1 country_flag"><%= image_tag "blank.gif", :class => ["flag_small", vote_count.country] %></div>
+      <div class="col-2 country"><%= Country.code_to_name(vote_count.country) %></div>
+      <div class="col-8 vote_percentage">
+        <div style="width:<%= vote_count.diagram_width %>%; height:30px" class="bg-success"> </div>
+      </div>
+      <div class="col-1 vote_count"><%= number_with_delimiter(vote_count.count) %></div>
     </div>
-  </section>
-
+  <% end %>
+</section>
 <!-- Content End -->
-
