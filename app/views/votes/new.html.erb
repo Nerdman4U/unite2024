@@ -9,7 +9,7 @@
           <div class="tms-content">
             <div class="tms-content-inner center left-on-mobile v-align-middle">
               <div class="row">
-                <div class="column width-12">
+                <div class="col-12">
                   <h1 class="tms-caption title-xlarge color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;"
                       data-no-scale>
                     <%= _("Support") %>
@@ -29,28 +29,28 @@
     </div>
   </section>
   <!-- Fullscreen Slider Section End -->
-
-  
 </div>
 <!-- Content End -->
 
 <!-- Feature Section 1 -->
 <section class="section-block feature-1 bkg-white">
   <div class="row no-padding-bottom">
-    <div class="column width-6 offset-3">
+    <div class="col-6 offset-3">
       <div class="feature-content">
-	<div class="feature-content-inner">
-	  
+        <div class="feature-content-inner">
           <%= render partial: "new_form" %>
-          
-	</div>
+        </div>
       </div>
     </div>
   </div>
-  
 </section>
 <!-- Feature Section 1 End -->
 
-
-
-
+<section class="section-block feature-1 bkg-grey">
+  <div>
+    <%= link_to votes_path(locale: locale), { :class => "button large bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
+      <span class="icon-add-user left"></span>
+      <p><%= _("See who have already voted!") %></p>
+    <% end %>
+  </div>
+</section>
