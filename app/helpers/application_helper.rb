@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def flash_messages
-    flash[:success] = _("Thank you for your vote!")
+    # flash[:success] = _("Thank you for your vote!")
     flash.map do |name, msg|
       flash_classes = [ "alert alert-dismissable fade show", bootstrap_class_for(name.to_sym) ]
       content_tag(:div, class: flash_classes, role: "alert", onclick: "unite.closeFlash()") do
