@@ -307,13 +307,13 @@ body.boxed .wrapper-inner {
 .v-align-bottom .background-on-mobile {
   margin-bottom: -2rem;
 }
-.hide {
+/* .hide {
   display: none !important;
   visibility: hidden;
 }
 .show {
   display: block !important;
-}
+} */
 .mobile .hide-on-mobile,
 .mobile .hide-on-mobile * {
   display: none !important;

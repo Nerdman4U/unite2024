@@ -3,16 +3,19 @@ body {
 }
 
 .alert {
-  position: absolute;
-  left: 100;
-  right: 100;
+  position: absolute !important;
+  left: 0;
+  right: 0;
   z-index: 1000;
   top: 10em;
   text-align: center;
-  .btn-close {
+  .btn {
     position: absolute;
-    right: 0;
+    right: 1em;
     z-index: 1001;
+  }
+  .alert-heading {
+    padding: 0.5em;
   }
 }
 

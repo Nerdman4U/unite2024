@@ -1,5 +1,8 @@
 class UniteTheArmies {
   constructor() {}
+  closeFlash() {
+    $(".alert").hide();
+  }
   loadVotes() {
     if (!recently_added_votes_path) return;
     if (unite_state !== "ready") return;
