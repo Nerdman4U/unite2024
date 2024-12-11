@@ -3,6 +3,7 @@
 namespace :fix do
   desc "fix spam"
   task spam: :environment do
+    Rails.logger.level = Logger::DEBUG
     emails = [ "iuabvt@evnfas.com",
     "zgecgh@qyeyls.com",
     "wcsjrm@usttwl.com",
@@ -133,13 +134,12 @@ namespace :fix do
     "nlaisa4ye4snl1o2@outlook.com",
     "phucy52mu5u297n@outlook.com" ]
 
-    Vote.all.each do |vote|
-      if emails.include?(vote.email)
-        vote.email_confirmation = vote.email
-        vote.spam = true
-        vote.save
-        puts vote.email
-      end
+    Vote.where(email: emails, spam: false).each do |vote|
+      next unless emails.include?(vote.email)
+      vote.email_confirmation = vote.email
+      vote.spam = true
+      vote.save
+      puts vote.email
     end
   end
 end

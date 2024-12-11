@@ -1,0 +1,5 @@
+# Run before launch new (2024) version.
+rails fix:spam
+rails fix:duplicate_votes
+rails fix:confirm_emails
+rails fix:vote_counts
