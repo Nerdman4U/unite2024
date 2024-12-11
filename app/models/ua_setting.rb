@@ -31,9 +31,9 @@ class UaSetting < ApplicationRecord
   end
 
   def version
-    require 'yaml'
-    if File.exist?('.cz.yaml')
-      data = open('.cz.yaml').read()
+    require "yaml"
+    if File.exist?(".cz.yaml")
+      data = open(".cz.yaml").read()
       data = YAML.load(data)
       data["commitizen"]["version"]
     else

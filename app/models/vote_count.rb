@@ -41,7 +41,7 @@ class VoteCount < ApplicationRecord
 
   # Count of all votes in all countries
   #
-  # CACHE !!!
+  # TODO: CACHE !!!
   def self.total
     @@total ||= all.map(&:count).reduce(:+)
   end
