@@ -1,3 +1,7 @@
+## Flag duplicate email votes as spam.
+#
+# This may have happened if email has different letter sizes.
+#
 require "ostruct"
 namespace :fix do
   desc "Remove duplicate votes"

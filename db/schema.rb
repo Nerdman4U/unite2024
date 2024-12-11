@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_26_120055) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_11_083932) do
   create_table "comments", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
     t.string "topic"
     t.text "body"
@@ -25,7 +25,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_26_120055) do
   create_table "ua_settings", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
     t.datetime "sent_at", precision: nil
     t.integer "vote_count"
-    t.integer "sent_count"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
   end

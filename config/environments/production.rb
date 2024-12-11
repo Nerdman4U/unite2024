@@ -93,7 +93,7 @@ Rails.application.configure do
 
   config.after_initialize do
     config.x.backup_email = UNITE_BACKUP_EMAIL_PRODUCTION
-    config.x.send_count = 100
+    config.x.sent_count = 100
     config.x.comment_target_email = UNITE_BACKUP_EMAIL_PRODUCTION
   end
 end

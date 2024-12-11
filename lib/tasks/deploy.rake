@@ -14,7 +14,4 @@ namespace :deploy do
   task :restart do
     system("passenger-config restart-app /var/www/unitethearmies.org/")
   end
-
 end
-
-

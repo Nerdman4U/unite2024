@@ -1,3 +1,22 @@
+## UaSetting
+#
+# This model holds settings for Unite The Armies.
+#
+# Database:
+# - sent_at: Time when last backup email was sent.
+# - vote_count: total amount of votes after last message.
+# - sent_count: UNUSED?
+#
+# Config files:
+# - config/environments : x.send_count
+#   - how many votes until message is sent to administrator.
+#   => this is used at votes_controller.
+#
+# Problems:
+# - if votes are removed how to find new votes with small ids?
+#   => votes are not removed.
+#   - should select data ordered by created_at, this should solve.
+
 class UaSetting < ApplicationRecord
   @@instance = nil
 

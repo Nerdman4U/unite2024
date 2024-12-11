@@ -1,6 +1,8 @@
+## Load comments from database and save to file
+#
 namespace :comments do
   desc "Load comments"
-  task :load => :environment do
+  task load: :environment do
     comments = Comment.all
 
     data = []
@@ -19,6 +21,5 @@ updated_at: #{comment.updated_at}
     end
 
     File.write("comments.txt", data.join("\n"))
-
   end
 end

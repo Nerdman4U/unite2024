@@ -1,9 +1,6 @@
+## Flag spam votes as spam
+#
 namespace :fix do
-  desc "print folder"
-  task print: :environment do
-    system("ls bin")
-  end
-
   desc "fix spam"
   task spam: :environment do
     emails = [ "iuabvt@evnfas.com",
