@@ -35,15 +35,15 @@ class VoteCount < ApplicationRecord
   end
 
   def self.clear_values
-    @@total = nil
+    Rails.cache.delete("vote_count_total")
     @@max = nil
   end
 
   # Count of all votes in all countries
-  #
-  # TODO: CACHE !!!
   def self.total
-    @@total ||= all.map(&:count).reduce(:+)
+    Rails.cache.fetch("vote_count_total") do
+      all.map(&:count).reduce(:+)
+    end
   end
 
   # Vote count of most votes country

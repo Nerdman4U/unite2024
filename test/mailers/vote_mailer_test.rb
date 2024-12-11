@@ -33,4 +33,16 @@ class VoteMailerTest < ActionMailer::TestCase
     VoteMailer.email_invite(inviter_name: "Kalle Kutsuja", name: "Joni Töyrylä", email: "info@jonitoyryla.eu", language: "english", token: vote.md5_secret_token).deliver_now
     assert_emails 1
   end
+
+
+  # TODO: fix. Base.deliveries seems to be sometimes empty and
+  # sometimes not...
+  #
+  # test 'should send names after 100 new votes' do
+  #   vote_count = VoteCount.where(:country => "FI").first
+  #   vote_count.count = 99
+  #   vote = votes(:vote_1)
+  #   VoteCount.add_vote(vote)
+  #   assert_not ActionMailer::Base.deliveries.empty?
+  # end
 end
