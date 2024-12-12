@@ -3,12 +3,7 @@
 <% require 'digest/md5' %>
 
 <% 1000.times do |n| %>
-  <% t = Time.now - (n*100000) %>
-  <%
-    if n % 2 == 1
-      t = nil
-    end
-  %>
+  <% t = Time.now - (n * 1.month) %>
   vote_<%= n %>:
     name: <%= "vote#{n}" %>
     email: <%= "user#{n}@vote-example.com" %>

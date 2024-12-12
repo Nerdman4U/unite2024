@@ -34,16 +34,14 @@ class VoteMailerTest < ActionMailer::TestCase
     assert_emails 1
   end
 
+  test "should send new vote emails to admins" do
+    uas = UaSetting.instance
+    uas.sent_at = Time.now - 1.year
 
-  # TODO: fix. Base.deliveries seems to be sometimes empty and
-  # sometimes not...
-  #
-  test "should send names after 100 new votes" do
-    vote_count = VoteCount.where(country: "FI").first
-    puts "vote_count: #{vote_count.inspect}"
-    vote_count.count = 99
-    vote = votes(:vote_1)
-    VoteCount.add_vote(vote)
-    assert_not ActionMailer::Base.deliveries.empty?
+    Vote.emails_to_admins
+
+    uas = UaSetting.instance
+    assert uas.sent_at < Time.now
+    assert_emails 1
   end
 end

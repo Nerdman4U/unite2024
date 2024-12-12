@@ -28,16 +28,16 @@ class VoteMailer < ApplicationMailer
     I18n.locale = old_locale
   end
 
-  def vote_backup(votes_to)
-    # allekirjoittajat xx - yy esim. 1200-1300
-
-    unless votes_to
-      Rails.logger.error("Votes_to is blank")
+  # Send vote emails to admins
+  #
+  # After config.sent_count new votes, vote emails are sent as a list to admins.
+  def emails_to_admins(votes)
+    unless votes
+      Rails.logger.error("Votes is blank")
       return
     end
 
-    votes_from = UaSetting.instance.sent_at || Vote.first.created_at
-    @votes = Vote.where(created_at: votes_from..votes_to).order(:created_at)
+    @votes = votes
 
     mail_to = Rails.configuration.x.backup_email
     mail(to: mail_to, subject: "Unite The Armies - allekirjoittajat", cc: "info@jonitoyryla.eu")

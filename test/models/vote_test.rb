@@ -9,6 +9,10 @@ class VoteTest < ActionMailer::TestCase
     @vote.email = "invalid@vote-example.com"
     @vote.email_repeat = @vote.email
     @vote.bypass_humanizer = true
+
+    uas = UaSetting.instance
+    uas.sent_at = Vote.first.created_at
+    uas.save
   end
 
   def teardown
@@ -145,6 +149,30 @@ class VoteTest < ActionMailer::TestCase
     assert @vote.send(:find_confirm_hash)
   end
 
+  test "should have votes to be send to admins" do
+    # Vote.all.order(created_at: :asc).each do |vote|
+    #   puts "#{vote.id} #{vote.created_at}"
+    # end
+    uas = UaSetting.instance
+    uas.sent_at = nil
+    uas.save
+    # puts "VoteTest votes_from: #{Vote.votes_from} uas.sent_at: #{uas.sent_at}"
+    votes = Vote.votes_to_be_send_to_admins
+    # votes.each do |vote|
+    #   puts "#{vote.id} #{vote.created_at}"
+    # end
+    assert votes
+    assert_equal votes.size, 1000
+
+    uas = UaSetting.instance
+    uas.sent_at = Time.now - 1.year
+    votes = Vote.votes_to_be_send_to_admins
+    assert votes
+    assert_equal votes.size, 12
+
+    # Fixture votes are added once per month. All 12 should be in same year.
+    assert_equal votes.map { |v| v.created_at.year }.uniq.size, 1
+  end
 
   # TODO
   # test 'should increment counter cache' do

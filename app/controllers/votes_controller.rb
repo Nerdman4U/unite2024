@@ -108,11 +108,7 @@ class VotesController < ApplicationController
 
       # If sent_count amount of votes is added after last backup email,
       # send a backup email.
-      uas = UaSetting.instance
-      total = uas.vote_count.to_i + Rails.configuration.x.sent_count
-      if VoteCount.total >= total
-        uas.send!
-      end
+      Vote.emails_to_admins
     end
 
     respond_to do |format|
@@ -181,9 +177,11 @@ class VotesController < ApplicationController
     vote = Vote.where(secret_confirm_hash: params[:secret_confirm_hash]).first
     unless vote
       redirect_to locale_root_path
+      return
     end
     if vote.email_confirmed
       redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
+      return
     end
 
     vote.email_confirmed = Time.now
