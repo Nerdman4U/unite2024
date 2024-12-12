@@ -1,3 +1,9 @@
+## 1.23.2 (2024-12-12)
+
+### Fix
+
+- **overlay-menu**: removed and renamed logo id
+
 ## 1.23.1 (2024-12-12)
 
 ### Fix

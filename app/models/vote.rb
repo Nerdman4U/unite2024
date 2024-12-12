@@ -119,7 +119,7 @@ class Vote < ApplicationRecord
     # If VoteCount.total is smaller, exit because there are not enough votes yet.
     total = uas.vote_count.to_i + Rails.configuration.x.sent_count
     return nil unless VoteCount.total >= total
-    # puts "Vote.send_emails total: #{total} VoteCount.total: #{VoteCount.total}"
+    # puts "Vote.emails_to_admins OK total: #{total} VoteCount.total: #{VoteCount.total}"
 
     votes = votes_to_be_send_to_admins
     # puts "Vote.send_emails votes.size: #{votes}"

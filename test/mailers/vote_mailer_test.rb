@@ -38,7 +38,9 @@ class VoteMailerTest < ActionMailer::TestCase
     uas = UaSetting.instance
     uas.sent_at = Time.now - 1.year
 
-    Vote.emails_to_admins
+    # Vote.emails_to_admins
+    votes = votes(:vote_1, :vote_2)
+    VoteMailer.emails_to_admins(votes).deliver_now
 
     uas = UaSetting.instance
     assert uas.sent_at < Time.now

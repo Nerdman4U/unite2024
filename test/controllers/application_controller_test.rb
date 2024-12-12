@@ -3,6 +3,10 @@
 require "test_helper"
 
 class ApplicationControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    I18n.locale = :en
+  end
+
   test "should have correct locale" do
     assert_equal :en, I18n.locale
     assert_equal :en, I18n.default_locale
