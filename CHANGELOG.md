@@ -1,3 +1,9 @@
+## 1.23.1 (2024-12-12)
+
+### Fix
+
+- **vote-emails-to-admins**: Added mailer tests
+
 ## 1.23.0 (2024-12-12)
 
 ### Feat
