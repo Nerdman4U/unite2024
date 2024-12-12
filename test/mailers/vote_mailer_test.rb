@@ -38,11 +38,12 @@ class VoteMailerTest < ActionMailer::TestCase
   # TODO: fix. Base.deliveries seems to be sometimes empty and
   # sometimes not...
   #
-  # test 'should send names after 100 new votes' do
-  #   vote_count = VoteCount.where(:country => "FI").first
-  #   vote_count.count = 99
-  #   vote = votes(:vote_1)
-  #   VoteCount.add_vote(vote)
-  #   assert_not ActionMailer::Base.deliveries.empty?
-  # end
+  test "should send names after 100 new votes" do
+    vote_count = VoteCount.where(country: "FI").first
+    puts "vote_count: #{vote_count.inspect}"
+    vote_count.count = 99
+    vote = votes(:vote_1)
+    VoteCount.add_vote(vote)
+    assert_not ActionMailer::Base.deliveries.empty?
+  end
 end

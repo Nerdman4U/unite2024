@@ -74,6 +74,12 @@ class VoteTest < ActionMailer::TestCase
     vote_count = VoteCount.where(country: @vote.country).first
     assert vote_count
     assert_equal vote_count.count, 1001
+
+    # Multiple saves should not add vote count.
+    @vote.save
+    vote_count = VoteCount.where(country: @vote.country).first
+    assert vote_count
+    assert_equal vote_count.count, 1001
   end
 
   test "should calculate ago" do
