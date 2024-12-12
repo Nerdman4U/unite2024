@@ -1,8 +1,7 @@
 class VoteMailer < ApplicationMailer
-
   def sign_up(vote)
     @vote = vote
-    attachments.inline['earth.jpg'] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
+    attachments.inline["earth.jpg"] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
     mail(to: vote.email, subject: _("Thank you for signing the Unite the Armies petition"))
   end
 
@@ -25,11 +24,11 @@ class VoteMailer < ApplicationMailer
       return
     end
     I18n.locale = value
-    mail(to: email, subject: _('Invitation to Save the World - Unite the Armies'))
+    mail(to: email, subject: _("Invitation to Save the World - Unite the Armies"))
     I18n.locale = old_locale
   end
 
-  def vote_backup votes_to
+  def vote_backup(votes_to)
     # allekirjoittajat xx - yy esim. 1200-1300
 
     unless votes_to
@@ -59,5 +58,3 @@ class VoteMailer < ApplicationMailer
     mail(to: vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
   end
 end
-
-

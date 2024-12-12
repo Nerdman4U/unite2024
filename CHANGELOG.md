@@ -1,3 +1,12 @@
+## 1.23.0 (2024-12-12)
+
+### Feat
+
+- **Vote**: Multiple saves do not add vote count
+- **VoteCount**: Total votes cached. Also linter made changes
+- **tasks**: rake tasks and script to run all tasks when deploying first time with old data
+- **Vote-counts**: Task to count votes, removed sent_count from ua_settings table and renamed send to sent
+
 ## 1.22.0 (2024-12-10)
 
 ### Feat
