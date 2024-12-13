@@ -1,3 +1,9 @@
+## 1.24.0 (2024-12-13)
+
+### Feat
+
+- **constants**: unified unite emails
+
 ## 1.23.2 (2024-12-12)
 
 ### Fix
