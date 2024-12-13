@@ -92,8 +92,8 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.after_initialize do
-    config.x.backup_email = UNITE_BACKUP_EMAIL_PRODUCTION
+    config.x.backup_email = UNITE_CAMPAIGN_ASSISTANT_EMAIL
     config.x.sent_count = 100
-    config.x.comment_target_email = UNITE_BACKUP_EMAIL_PRODUCTION
+    config.x.comment_target_email = UNITE_CAMPAIGN_ASSISTANT_EMAIL
   end
 end

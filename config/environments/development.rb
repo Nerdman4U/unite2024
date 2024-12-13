@@ -72,8 +72,8 @@ Rails.application.configure do
 
   # https://guides.rubyonrails.org/configuring.html#custom-configuration
   config.after_initialize do
-    config.x.backup_email = UNITE_BACKUP_EMAIL_DEVELOPMENT
+    config.x.backup_email = UNITE_CAMPAIGN_ASSISTANT_EMAIL_TEST
     config.x.sent_count = 100
-    config.x.comment_target_email = UNITE_BACKUP_EMAIL_DEVELOPMENT
+    config.x.comment_target_email = UNITE_CAMPAIGN_ASSISTANT_EMAIL_TEST
   end
 end

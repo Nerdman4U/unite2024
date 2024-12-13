@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: UNITE_THE_ARMIES_EMAIL
-  layout 'mailer'
+  default from: UNITE_CAMPAIGN_ASSISTANT_EMAIL
+  layout "mailer"
 end
