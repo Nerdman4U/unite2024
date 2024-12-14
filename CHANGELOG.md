@@ -1,3 +1,13 @@
+## 1.26.0 (2024-12-14)
+
+### Feat
+
+- **token**: Secret token with jwt library, confirm vote working
+
+### Fix
+
+- **confirm-email**: letter content and unite title
+
 ## 1.25.0 (2024-12-14)
 
 ### Feat
