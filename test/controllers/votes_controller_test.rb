@@ -80,7 +80,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference("Vote.count") do
       post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
-    assert_equal flash[:error], "Emails do not match"
+    assert_equal flash[:warning], "Emails do not match"
     assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
   end
 
@@ -95,8 +95,9 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference("Vote.count") do
       post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
-    assert_equal flash[:error], "Email is invalid"
-    assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
+    assert_equal flash[:warning], "Email is invalid"
+    # assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
+    assert_response :bad_request
   end
 
   # test 'should send backup mail after creating vote' do
@@ -199,7 +200,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_response :bad_request
     assert_equal I18n.locale, :en
     assert_nil flash[:success]
-    assert_equal flash[:error], "Emails do not match"
+    assert_equal flash[:warning], "Emails do not match"
   end
 
   # test 'should send email invite in arabic' do
