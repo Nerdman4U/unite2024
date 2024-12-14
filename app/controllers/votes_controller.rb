@@ -78,6 +78,11 @@ class VotesController < ApplicationController
       return
     end
 
+    if request.xhr?
+      head :gone
+      return
+    end
+
     @vote = Vote.new(vote_params)
     @vote.ip = request.env["REMOTE_ADDR"]
 
@@ -116,26 +121,17 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       format.html do
-        if request.xhr?
-          if @vote.valid?
-            VoteMailer.sign_up(@vote).deliver_later
-            flash[:success] = _("Thank you for your vote!")
-            head :ok
-          else
-            flash[:warning] = _("There was an error while adding your vote")
-            head :bad_request
-          end
+        if @vote.valid?
+          VoteMailer.sign_up(@vote).deliver_later
+          # flash[:success] = _("Thank you for your vote!")
+          # redirect_to vote_path(locale: locale, secret_token: @vote.secret_token)
+          flash[:info] = _("Your vote is added but email is not yet confirmed. Please check your email.")
+          redirect_to waiting_path(email: @vote.email)
         else
-          if @vote.valid?
-            VoteMailer.sign_up(@vote).deliver_later
-            flash[:success] = _("Thank you for your vote!")
-            redirect_to vote_path(locale: locale, secret_token: @vote.secret_token)
-          else
-            flash[:warning] = "There was an error while adding your vote"
-            # redirect_to new_vote_path(locale: locale, anchor: "sign")
-            Rails.logger.error("There was an error while adding vote, params: #{vote_params.inspect} errors: #{@vote.errors.inspect}")
-            render :new
-          end
+          flash[:warning] = "There was an error while adding your vote"
+          # redirect_to new_vote_path(locale: locale, anchor: "sign")
+          Rails.logger.error("There was an error while adding vote, params: #{vote_params.inspect} errors: #{@vote.errors.inspect}")
+          render :new
         end
       end
     end

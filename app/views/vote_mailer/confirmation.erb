@@ -1,10 +1,14 @@
-<h1>
-  <%= _("We received a vote from email address: %{email}.") % {email: @vote.email} %>
-</h1>
-<h2>
-  <%=  _("To vote you still need to verify your vote by clicking link below. If you did not vote, ignore this email.") " %>
-</h2>
-
 <p>
-  <a href="<%= confirm_vote_url(secret_confirm_hash: @vote.secret_confirm_hash) %>">Vote</a>
+  <h1>Dear <%= @vote.name %></h1>
+  <p>Thank you for voting up initiative to Unite the Armies and Save the Planet. We’re excited to have you on board. Here are your account details: </p>
+  <p>Email: <%= @vote.email %>
+  <p>Vote: </p>
+  <p>Please verify your email address by clicking <a href="<%= confirm_vote_url(secret_confirm_hash: @vote.secret_confirm_hash) %>">here</a></p>
+  <p>If you did not vote at URL delete this email.</p>
+  <p>Thank you for once again registering for our [website/event]. In case of any questions, contact support at [support email address].</p>
+  <p>
+    Best regards,<br/>
+    Joni Töyrylä<br/>
+    Unite the Armies
+  </p>
 </p>

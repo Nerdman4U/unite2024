@@ -65,8 +65,10 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     vote = assigns(:vote)
-    assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
-    assert flash[:success], "Thank you for your vote!"
+    # assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
+    # assert flash[:success], "Thank you for your vote!"
+    assert flash[:info], "Your vote is added but email is not yet confirmed. Please check your email."
+    assert_redirected_to waiting_path(email: vote.email)
   end
 
   test "should not create vote if emails do not match" do
@@ -98,6 +100,20 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:warning], "Email is invalid"
     # assert_redirected_to new_vote_path(locale: FastGettext.default_locale)
     assert_response :bad_request
+  end
+
+  # Xhr responses are now removed because i dont remember why they exists.
+  test "should not create vote if ajax request" do
+    values = {
+      name: "foobar",
+      email: "foobar1@foobar.com",
+      email_repeat: "foobar1@foobar.com",
+      country: "fi"
+    }
+    assert_no_difference("Vote.count") do
+      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }, xhr: true
+    end
+    assert_response :gone
   end
 
   # test 'should send backup mail after creating vote' do
