@@ -1,4 +1,4 @@
-UNITE_TITLE = "Save the Planet - Unite the Armies!"
+UNITE_TITLE = "Save the Planet - Unite the Armies"
 UNITE_ROOT_URL = "http://unitethearmies.org"
 UNITE_LOGO = "logo.png"
 UNITE_LOGO_DARK = "logo-dark.png"
