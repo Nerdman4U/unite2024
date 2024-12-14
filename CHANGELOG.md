@@ -1,3 +1,13 @@
+## 1.25.0 (2024-12-14)
+
+### Feat
+
+- **votes_controller**: Confirm vote email, waiting view, system test for voting
+
+### Fix
+
+- **votes_controller**: Send bad request if failing
+
 ## 1.24.1 (2024-12-14)
 
 ### Fix
