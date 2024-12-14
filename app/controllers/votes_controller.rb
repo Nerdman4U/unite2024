@@ -19,19 +19,19 @@ class VotesController < ApplicationController
   def email_invite
     @vote = Vote.where(md5_secret_token: params[:t]).first
     unless @vote.valid?
-      flash[:error] = _("There was an error")
+      flash[:warning] = _("There was an error")
       head :bad_request
       return
     end
 
     if params[:email] != params[:email_repeat]
-      flash[:error] = _("Emails do not match")
+      flash[:warning] = _("Emails do not match")
       head :bad_request
       return
     end
 
     unless verify_captcha
-      flash[:error] = _("There was an error with human verifying")
+      flash[:warning] = _("There was an error with human verifying")
       head :bad_request
       return
     end
@@ -45,7 +45,7 @@ class VotesController < ApplicationController
           flash[:success] = _("Invitation has been sent, thank you!")
           head :ok
         else
-          flash[:error] = _("There was an error")
+          flash[:warning] = _("There was an error")
           head :bad_request
         end
       end
@@ -67,13 +67,13 @@ class VotesController < ApplicationController
   # If session votes[:parent_id] exists, add parent to this vote
   def create
     unless vote_params[:email_repeat] === vote_params[:email]
-      flash[:error] = _("Emails do not match")
+      flash[:warning] = _("Emails do not match")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
     unless verify_captcha
-      flash[:error] = _("There was an error with human verifying")
+      flash[:warning] = _("There was an error with human verifying")
       redirect_to new_vote_path(locale: locale)
       return
     end
@@ -87,8 +87,10 @@ class VotesController < ApplicationController
         error << msg
       end
 
-      flash[:error] = error[0]
-      redirect_to new_vote_path(locale: locale)
+      flash[:warning] = error.join(", ")
+      # redirect_to new_vote_path(locale: locale)
+
+      render :new
       return
     end
 
@@ -97,6 +99,7 @@ class VotesController < ApplicationController
     # votes association.
     if session[:parent_vote_id]
       parent_vote = Vote.where(id: session[:parent_vote_id])[0]
+      # should parent_vote be confirmed vote?
       parent_vote.votes << @vote if parent_vote
     end
 
@@ -119,7 +122,7 @@ class VotesController < ApplicationController
             flash[:success] = _("Thank you for your vote!")
             head :ok
           else
-            flash[:error] = _("There was an error while adding your vote")
+            flash[:warning] = _("There was an error while adding your vote")
             head :bad_request
           end
         else
@@ -128,7 +131,7 @@ class VotesController < ApplicationController
             flash[:success] = _("Thank you for your vote!")
             redirect_to vote_path(locale: locale, secret_token: @vote.secret_token)
           else
-            # flash[:error] = "There was an error while adding your vote"
+            flash[:warning] = "There was an error while adding your vote"
             # redirect_to new_vote_path(locale: locale, anchor: "sign")
             Rails.logger.error("There was an error while adding vote, params: #{vote_params.inspect} errors: #{@vote.errors.inspect}")
             render :new
@@ -136,6 +139,31 @@ class VotesController < ApplicationController
         end
       end
     end
+  end
+
+  # Info page to go confirm email
+  #
+  # Parameters:
+  # - email
+  def waiting
+    unless params[:email]
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("Vote.waiting: No email")
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
+    votes = Vote.where(email: params[:email])
+    unless votes.count == 1
+      flash[:warning] = _("Email is already registered.")
+      Rails.logger.error("Vote.waiting: Email is already registered.")
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
+    @vote = votes.first
+
+    VoteMailer.confirmation(@vote).deliver_later
   end
 
   def index

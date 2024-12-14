@@ -1,9 +1,13 @@
 module ApplicationHelper
   BOOTSTRAP_FLASH_MSG = {
+    primary: "alert-primary",
+    secondary: "alert-secondary",
     success: "alert-success",
-    error: "alert-error",
-    alert: "alert-block",
-    notice: "alert-info"
+    danger: "alert-danger",
+    warning: "alert-warning",
+    info: "alert-info",
+    light: "alert-light",
+    dark: "alert-dark"
   }
 
   def bootstrap_class_for(flash_type)
