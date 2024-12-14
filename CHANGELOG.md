@@ -1,3 +1,10 @@
+## 1.24.1 (2024-12-14)
+
+### Fix
+
+- **votes_controller_test**: Test for previous change
+- **flash**: Proper bootstrap alert css classes
+
 ## 1.24.0 (2024-12-13)
 
 ### Feat
