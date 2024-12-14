@@ -22,7 +22,7 @@
     <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
       <div class="row">
         <div class="column width-12">
-          <h1><%= _("Material") %></h1>
+          <h1><%= _("Material") + " " + _("(finnish)") %></h1>
           <p><%= _("You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper.") %> </p>
           <p>
             <%= link_to(image_tag("signatures.png", width: 100, height: 100), "/pdf/guide_to_gathering_signatures.pdf", id: "guide_to_gathering") %>
@@ -30,8 +30,6 @@
             <%= link_to(image_tag("poster.png", width: 100, height: 100), "/pdf/unite_the_armies_poster.pdf", id: "poster") %>
             <%= link_to(image_tag("collection-form.png", width: 100, height: 100), "/pdf/unite_the_armies_signature_collection_form.pdf", id: "signature_collection") %>
           </p>
-          <%# link_to _("To the material page"), 'https://www.dropbox.com/sh/u5gnv99jy2tj6bu/AAAwbxfS04f6sGzSGky0_sZMa?dl=0', class: "button large", target: "_blank", style: "color:#333 !important" %>
-
         </div>
       </div>
     </div>

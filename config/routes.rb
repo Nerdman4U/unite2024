@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   get "votes/recently_added" => "votes#recently_added", as: :recently_added_votes
-  get "votes/confirm/:secret_confirm_hash" => "votes#confirm", as: :confirm
 
   post "votes/add_parent" => "votes#add_parent", as: :add_parent_vote
   post "votes/email_invite" => "votes#email_invite", as: :email_invite_votes
@@ -16,7 +15,8 @@ Rails.application.routes.draw do
     resources :votes, only: [ :new, :index, :create ]
     resources :comments, only: [ :new, :index, :create ]
     get "votes/waiting" => "votes#waiting", as: :waiting
-    get "votes/:secret_token" => "votes#show", as: :vote
+    get "votes/confirm/:token" => "votes#confirm", as: :confirm, constraints: { token: /[^\/]+/ }
+    get "votes/:token" => "votes#show", as: :vote, constraints: { token: /[^\/]+/ }
     get "download" => "welcome#download", as: :download # only finnish
   end
 

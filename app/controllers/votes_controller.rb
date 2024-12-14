@@ -17,25 +17,45 @@ class VotesController < ApplicationController
 
   # Send email invitation from a vote view
   def email_invite
-    @vote = Vote.where(md5_secret_token: params[:t]).first
-    unless @vote.valid?
+    unless encoded_token = params[:token]
+      Rails.logger.debug("VotesController#email_invite: No token")
+      redirect_to locale_root_path
+      return
+    end
+
+    decoded_token = decode_token(encoded_token)
+    unless decoded_token
+      Rails.logger.debug("VotesController#email_invite: Invalid token, token: #{decoded_token}")
+      redirect_to locale_root_path
+    end
+
+    vote_id = decoded_token["vote_id"]
+    unless vote_id
+      Rails.logger.debug("VotesController#email_invite: vote_id: #{vote_id}, decoded_token: #{decoded_token}")
+      redirect_to locale_root_path
+    end
+
+    vote = Vote.find_by_id(vote_id)
+    unless vote && vote.valid?
       flash[:warning] = _("There was an error")
-      head :bad_request
+      redirect_to locale_root_path
       return
     end
 
     if params[:email] != params[:email_repeat]
+      Rails.logger.debug("VotesController#email_invite: Emails do not match")
       flash[:warning] = _("Emails do not match")
-      head :bad_request
+      redirect_to locale_root_path
       return
     end
 
     unless verify_captcha
       flash[:warning] = _("There was an error with human verifying")
-      head :bad_request
+      redirect_to locale_root_path
       return
     end
 
+    @vote = vote
     # Share a vote with ActionMailer. If everything is ok, return 200.
     @share_valid = @vote.email_invite(params)
 
@@ -53,14 +73,19 @@ class VotesController < ApplicationController
   end
 
   # Add parent vote id to session and redirect to new vote.
-  #
-  # Use md5 crypted secret token in parameters, this way token cannot be
-  # used as a part of the url.
   def add_parent
-    vote = Vote.where(md5_secret_token: params[:t]).first
+    decoded_token = decode_token(params[:token])
+    unless decoded_token
+      Rails.logger.error("Vote#add_parent: Invalid token, token: #{params[:token]}")
+      redirect_to locale_root_path
+      return
+    end
+
+    vote = Vote.where(id: decoded_token["vote_id"]).first
     if vote
       session[:parent_vote_id] = vote.id
     end
+
     redirect_to action: :new, locale: locale
   end
 
@@ -122,9 +147,8 @@ class VotesController < ApplicationController
     respond_to do |format|
       format.html do
         if @vote.valid?
-          VoteMailer.sign_up(@vote).deliver_later
           # flash[:success] = _("Thank you for your vote!")
-          # redirect_to vote_path(locale: locale, secret_token: @vote.secret_token)
+
           flash[:info] = _("Your vote is added but email is not yet confirmed. Please check your email.")
           redirect_to waiting_path(email: @vote.email)
         else
@@ -183,7 +207,24 @@ class VotesController < ApplicationController
   end
 
   def show
-    @vote = Vote.where(secret_token: params[:secret_token]).first
+    decoded_token = decode_token(params[:token])
+    unless decoded_token
+      Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
+      redirect_to locale_root_path
+      return
+    end
+    vote = Vote.where(id: decoded_token["vote_id"]).first
+    unless vote
+      flash[:warning] = _("There was an error")
+      redirect_to locale_root_path, status: :bad_request
+      return
+    end
+    unless vote.email_confirmed
+      redirect_to locale_root_path
+      return
+    end
+
+    @vote = Vote.where(id: decoded_token["vote_id"]).first
     if @vote.blank?
       redirect_to votes_path(locale: locale)
       return
@@ -198,20 +239,29 @@ class VotesController < ApplicationController
 
   # Link is sent to given email. User has to confirm that email exists.
   def confirm
-    vote = Vote.where(secret_confirm_hash: params[:secret_confirm_hash]).first
-    unless vote
+    decoded_token = decode_token(params[:token])
+    unless decoded_token
+      Rails.logger.error("Vote#confirm: Invalid token, token: #{params[:token]}")
       redirect_to locale_root_path
       return
     end
+    vote = Vote.where(id: decoded_token["vote_id"]).first
+    unless vote
+      flash[:warning] = _("There was an error")
+      redirect_to locale_root_path, status: :bad_request
+      return
+    end
     if vote.email_confirmed
-      redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
+      redirect_to vote_path(locale: locale, token: vote.encoded_payload)
       return
     end
 
     vote.email_confirmed = Time.now
     vote.save
+
+    VoteMailer.sign_up(vote).deliver_later
     flash[:success] = _("Your email has been confirmed")
-    redirect_to vote_path(locale: locale, secret_token: vote.md5_secret_token)
+     redirect_to vote_path(locale: locale, token: vote.encoded_payload)
   end
 
   private

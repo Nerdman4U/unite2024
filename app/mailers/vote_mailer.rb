@@ -11,11 +11,26 @@ class VoteMailer < ApplicationMailer
   # email: email of the invited
   # language: language of the invitation letter
   def email_invite(options)
-    return unless @inviter_name = options[:inviter_name]
-    return unless @name = options[:name]
-    return unless email = options[:email]
-    return unless language = options[:language]
-    return unless @token = options[:token]
+    unless @inviter_name = options[:inviter_name]
+      Rails.logger.error("No inviter name")
+      return
+    end
+    unless @name = options[:name]
+      Rails.logger.error("No name")
+      return
+    end
+    unless email = options[:email]
+      Rails.logger.error("No email")
+      return
+    end
+    unless language = options[:language]
+      Rails.logger.error("No language")
+      return
+    end
+    unless @token = options[:token]
+      Rails.logger.error("No token")
+      return
+    end
 
     old_locale = I18n.locale
     value = Language.locale(language.to_s)
@@ -24,7 +39,7 @@ class VoteMailer < ApplicationMailer
       return
     end
     I18n.locale = value
-    mail(to: email, subject: _("Invitation to Save the World - Unite the Armies"))
+    mail(to: email, subject: _(UNITE_TITLE))
     I18n.locale = old_locale
   end
 

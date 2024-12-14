@@ -95,58 +95,36 @@ class VoteTest < ActionMailer::TestCase
   test "should have secret token" do
     @vote.save
     assert @vote.secret_token
+    assert_nil @vote.md5_secret_token
+    assert_nil @vote.secret_confirm_hash
   end
 
-  test "should have MD5 secret token" do
-    @vote.save
-    require "digest/md5"
-    digest = Digest::MD5.hexdigest(@vote.secret_token)
-    assert_equal @vote.md5_secret_token, digest
+  test "should get encoded payload" do
+    encoded_payload = votes("vote_1").encoded_payload
+    assert encoded_payload
+
+    # JWT.decode is used at token_helper.rb
+    decoded = JWT.decode(encoded_payload, ENV["UNITE_SECRET_KEY"], true, algorithm: "HS256")[0]
+    assert decoded["vote_id"], votes("vote_1").id
+
+    # should get same payload as before
+    encoded_payload2 = votes("vote_1").encoded_payload
+    assert_equal encoded_payload, encoded_payload2
   end
 
-  test "should have number" do
+  test "should have order number" do
     @vote.save
     assert_equal @vote.order_number, 3001
   end
 
   test "should send email invitation" do
-    @vote.email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
+    votes("vote_1").email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
     assert_emails 1
   end
 
   test "should send email invitation in arabic" do
-    @vote.email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
+    votes("vote_1").email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
     assert_emails 1
-  end
-
-  test "should not change md5 secret token if exists" do
-    token = @vote.md5_secret_token
-    @vote.save
-    assert_equal @vote.md5_secret_token, token
-  end
-
-  test "should return secret hash" do
-    assert @vote.send(:secret_hash)
-  end
-
-  test "should find duplicate secret confirm hash" do
-    @vote.secret_confirm_hash = "123"
-    @vote.save
-    @vote.reload
-    assert @vote.valid?
-    assert @vote.secret_confirm_hash = "123"
-
-    # TODO: why database is not updated?
-    # assert Vote.where(secret_confirm_hash: "123").first
-  end
-
-  test "should have secret confirm hash" do
-    @vote.save
-    assert @vote.secret_confirm_hash
-  end
-
-  test "should find free secret confirm hash" do
-    assert @vote.send(:find_confirm_hash)
   end
 
   test "should have votes to be send to admins" do

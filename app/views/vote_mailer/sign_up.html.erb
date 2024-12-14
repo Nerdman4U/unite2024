@@ -6,7 +6,7 @@
 <p><%= link_to _("Download"), download_url(locale: locale) %></p>
 
 <p><%= _("If you click the link below, you’ll find your personal supporter page. If you so wish, you can spread awareness of our campaign via that page, so that the number of those who have signed via your link is recorded there. The best supporters shall be rewarded.") %></p>
-<a href="<%= vote_url(secret_token: @vote.secret_token, locale: locale)  %>"><%= _("My supporter page") %></a>
+<a href="<%= vote_url(token: @vote.encoded_payload, locale: locale)  %>"><%= _("My supporter page") %></a>
 <p>
   <%= _("Thank you in any case for signing the petition,") %>
   <br/>

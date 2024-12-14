@@ -8,13 +8,9 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should route" do
+    vote = votes("vote_1")
     assert_recognizes({ controller: "votes", action: "index", locale: "en" }, "/en/votes")
-
-    @vote = votes("vote_1")
-    @vote.email_confirmation = @vote.email
-    @vote.save
-    assert_recognizes({ controller: "votes", action: "show", locale: "en", secret_token: @vote.secret_token }, "/en/votes/#{@vote.secret_token}")
-
+    assert_recognizes({ controller: "votes", action: "show", locale: "en", token: vote.encoded_payload }, "/en/votes/#{vote.encoded_payload}")
     assert_recognizes({ controller: "votes", action: "email_invite" }, { method: :post, path: "/votes/email_invite" })
     assert_routing({ method: :post, path: "/votes/email_invite" }, { controller: "votes", action: "email_invite" })
   end
@@ -142,15 +138,16 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should add parent vote id to session" do
-    post add_parent_vote_path, params: { t: votes("vote_1").md5_secret_token }
+    vote = votes("vote_1")
+    post add_parent_vote_path, params: { token: vote.encoded_payload }
     assert_redirected_to new_vote_path(locale: "en")
     assert session[:parent_vote_id]
   end
 
   test "should add parent vote" do
-    post add_parent_vote_path, params: { t: votes("vote_1").md5_secret_token }
-    # session[:parent_vote_id] = votes("vote_1").id
-    # puts "VotesControllerTest.create session parent vote id: #{session[:parent_vote_id]} #{session.object_id}"
+    vote = votes("vote_1")
+    post add_parent_vote_path, params: { token: vote.encoded_payload }
+
     values = {
       name: "foobar",
       email: "foobar02@foobar.com",
@@ -183,10 +180,9 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should send email invite" do
-    require "digest/md5"
-    digest = Digest::MD5.hexdigest("secret1")
+    vote = votes("vote_1")
     options = {
-      t: digest,
+      token: vote.encoded_payload,
       name: "Testaaja",
       email: "testi@yeah.foo",
       email_repeat: "testi@yeah.foo",
@@ -201,10 +197,9 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not send email invite with wrong repeat" do
-    require "digest/md5"
-    digest = Digest::MD5.hexdigest("secret1")
+    vote = votes("vote_1")
     options = {
-      t: digest,
+      token: vote.encoded_payload,
       name: "Testaaja",
       email: "testi@yeah.foo",
       email_repeat: "testi2@yeah.foo",
@@ -213,32 +208,15 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     }
     post email_invite_votes_path, params: options
 
-    assert_response :bad_request
+    assert_response :redirect
     assert_equal I18n.locale, :en
     assert_nil flash[:success]
     assert_equal flash[:warning], "Emails do not match"
   end
 
-  # test 'should send email invite in arabic' do
-  #   require 'digest/md5'
-  #   digest = Digest::MD5.hexdigest("secret1")
-  #   options = {
-  #     t: digest,
-  #     name: "Testaaja",
-  #     email: "testi@yeah.foo",
-  #     language: "arabic"
-  #   }
-  #   assert_emails 0
-  #   post email_invite_votes_path, params: options
-  #   assert_emails 1
-  #   assert_equal I18n.locale, :en
-  # end
-
   test "should confirm email address" do
     vote = votes("vote_1")
-    get confirm_url(secret_confirm_hash: vote.secret_confirm_hash)
-    vote.reload
-
-    assert_redirected_to vote_path(locale: "en", secret_token: vote.md5_secret_token)
+    get confirm_url(token: vote.encoded_payload)
+    assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
   end
 end

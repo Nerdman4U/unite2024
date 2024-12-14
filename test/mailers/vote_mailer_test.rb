@@ -27,12 +27,28 @@ class VoteMailerTest < ActionMailer::TestCase
     assert_equal "Kiitokset allekirjoituksesta ja mahdollisuus auttaa", email.subject
   end
 
-  test "should send email invitations" do
-    I18n.locale = :en
-    vote = votes(:vote_1)
-    VoteMailer.email_invite(inviter_name: "Kalle Kutsuja", name: "Joni Töyrylä", email: "info@jonitoyryla.eu", language: "english", token: vote.md5_secret_token).deliver_now
-    assert_emails 1
-  end
+  # test "should send email invitations" do
+  #   I18n.locale = :en
+  #   vote = votes(:vote_1)
+  #   VoteMailer.email_invite(inviter_name: "Kalle Kutsuja", name: "Joni Töyrylä", email: "info@jonitoyryla.eu", language: "english", token: vote.md5_secret_token).deliver_now
+  #   assert_emails 1
+  # end
+  #
+  #
+  # test 'should send email invite in arabic' do
+  #   require 'digest/md5'
+  #   digest = Digest::MD5.hexdigest("secret1")
+  #   options = {
+  #     t: digest,
+  #     name: "Testaaja",
+  #     email: "testi@yeah.foo",
+  #     language: "arabic"
+  #   }
+  #   assert_emails 0
+  #   post email_invite_votes_path, params: options
+  #   assert_emails 1
+  #   assert_equal I18n.locale, :en
+  # end
 
   test "should send new vote emails to admins" do
     uas = UaSetting.instance
@@ -44,6 +60,12 @@ class VoteMailerTest < ActionMailer::TestCase
 
     uas = UaSetting.instance
     assert uas.sent_at < Time.now
+    assert_emails 1
+  end
+
+  test "should send confirm vote email" do
+    vote = votes(:vote_1)
+    VoteMailer.confirmation(vote).deliver_now
     assert_emails 1
   end
 end

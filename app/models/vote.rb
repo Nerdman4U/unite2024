@@ -18,13 +18,14 @@ class Vote < ApplicationRecord
 
   after_initialize :strip_email
   after_initialize :downcase_country_code
-  before_save :add_secret_token
-  before_save :add_secret_confirm_hash
   before_save :add_vote_count
 
   has_many :votes, foreign_key: :vote_id
   has_many :comments, foreign_key: :vote_id
   # belongs_to :vote, counter_cache: true
+
+  # before_save :add_secret_token
+  # before_save :add_secret_confirm_hash
 
   def ago
     showHours = I18n.locale == :en || I18n.locale == :fi
@@ -79,11 +80,11 @@ class Vote < ApplicationRecord
   # token already in database.
   def add_secret_token
     return if secret_token
-    while token = SecureRandom.hex(64) do
+    while token = get_secret_token do
       if Vote.where(secret_token: token).blank?
-        digest = Digest::MD5.hexdigest(token)
+        # digest = Digest::MD5.hexdigest(token)
         self.secret_token = token
-        self.md5_secret_token = digest
+        # self.md5_secret_token = digest
         break
       end
     end
@@ -95,10 +96,23 @@ class Vote < ApplicationRecord
   end
 
   def email_invite(options)
-    return unless options[:name]
-    return unless options[:email]
-    return unless options[:language]
-    options = options.merge(inviter_name: name, token: md5_secret_token)
+    unless options[:name]
+      Rails.logger.error("No name")
+      return
+    end
+    unless options[:email]
+      Rails.logger.error("No email")
+      return
+    end
+    unless options[:language]
+      Rails.logger.error("No language")
+      return
+    end
+    if self.new_record?
+      Rails.logger.error("Cannot email invite for new record")
+      return
+    end
+    options = options.merge(inviter_name: name, token: self.encoded_payload)
     VoteMailer.email_invite(options).deliver_now
   end
 
@@ -143,13 +157,31 @@ class Vote < ApplicationRecord
     Vote.where(created_at: votes_from..votes_to).order(:created_at)
   end
 
+  def encoded_payload
+    return nil if self.new_record?
+    payload = {
+      vote_id: id,
+      exp: (Time.now + 1.week).to_i # This sets the expiration time
+    }
+    JWT.encode(payload, ENV["UNITE_SECRET_KEY"], "HS256")
+  end
+
   private
 
+  # DEPRECATED
   def secret_hash
     token = "secret: #{Time.now} #{rand(10000)}"
     # puts "secret_hash: #{token}"
     Digest::MD5.hexdigest(token)
   end
+
+  def get_secret_token
+    SecureRandom.hex(64)
+  end
+
+  # def get_public_token
+  #   Digest::MD5.hexdigest(self.secret_token  + "public amazing secret 416")
+  # end
 
   def find_confirm_hash
     while token = secret_hash do

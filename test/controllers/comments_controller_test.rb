@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CommentsControllerTest < ActionController::TestCase
   setup do
@@ -9,11 +9,11 @@ class CommentsControllerTest < ActionController::TestCase
     session[:locale] = :en
   end
 
-  #test "should get index" do
+  # test "should get index" do
   #  get :index
   #  assert_response :success
   #  assert_not_nil assigns(:comments)
-  #end
+  # end
 
   test "should get new" do
     vote = votes("vote_1")
@@ -27,17 +27,16 @@ class CommentsControllerTest < ActionController::TestCase
     vote = votes("vote_1")
     session[:current_vote_id] = vote.id
 
-    assert_difference('Comment.count') do
-      email = "test02@test.fi"
+    assert_difference("Comment.count") do
       post :create, params: { comment: {
         body: @comment.body,
         language: @comment.language,
         topic: @comment.topic,
         ip: "0.0.0.0",
         theme: "water"
-      }}
+      } }
     end
-    assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
+    assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
     @comment.destroy
   end
 
@@ -46,19 +45,17 @@ class CommentsControllerTest < ActionController::TestCase
     vote = votes("vote_1")
     session[:current_vote_id] = vote.id
 
-    assert_difference('Comment.count') do
-      email = "test02@test.fi"
+    assert_difference("Comment.count") do
       post :create, params: { comment: {
         body: @comment.body,
         language: @comment.language,
         topic: @comment.topic,
         ip: "0.0.0.0",
         theme: "water"
-      }}
+      } }
     end
 
-    # TODO
-    # assert_redirected_to vote_path(locale: "ar", secret_token: vote.secret_token)
+    assert_redirected_to vote_path(locale: "ar", token: vote.encoded_payload)
     @comment.destroy
   end
 

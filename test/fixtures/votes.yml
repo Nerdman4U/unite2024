@@ -10,8 +10,6 @@
     country: "FI"
     ip: <%= "127.#{(rand * 255).round}.#{(rand * 255).round}.#{(rand * 255).round}" %>
     secret_token: <%= "secret#{n}" %>
-    md5_secret_token: <%= Digest::MD5.hexdigest("secret#{n}") %>
-    secret_confirm_hash: <%= Digest::MD5.hexdigest("confirm#{n}") %>
     email_confirmed: <%= t %>
     created_at: <%= t || Time.now %>
 <% end %>

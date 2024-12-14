@@ -66,7 +66,7 @@ class CommentsController < ApplicationController
         msg = _("Comment was successfully created.")
         values = {
           locale: locale,
-          secret_token: vote.secret_token
+          token: vote.encoded_payload
         }
         format.html { redirect_to vote_path(values), notice: msg }
       else
@@ -107,6 +107,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:topic, :body, :email, :email_repeat, :theme, :language, :name, :humanizer_answer, :humanizer_question_id)
+      params.require(:comment).permit(:topic, :body, :email, :email_repeat, :theme, :language, :name)
     end
 end
