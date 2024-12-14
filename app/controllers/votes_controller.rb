@@ -90,7 +90,7 @@ class VotesController < ApplicationController
       flash[:warning] = error.join(", ")
       # redirect_to new_vote_path(locale: locale)
 
-      render :new
+      render :new, status: :bad_request
       return
     end
 
