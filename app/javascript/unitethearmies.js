@@ -4,9 +4,8 @@ class UniteTheArmies {
     $(".alert").hide();
   }
   loadVotes() {
-    if (!recently_added_votes_path) return;
-    if (unite_state !== "ready") return;
-    fetch(recently_added_votes_path)
+    if (!RUN_RECENT_VOTES) return;
+    fetch("/votes/recently_added.json")
       .then((response) => response.json())
       .then((data) => {
         let result = "";

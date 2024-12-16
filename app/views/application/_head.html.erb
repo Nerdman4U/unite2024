@@ -14,15 +14,10 @@
 <!-- Font -->
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700%7CRoboto:300,400,500,700' rel='stylesheet' type='text/css'>
 
-<!--[if lt IE 9]>
-  <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<title><%= _("Save the Planet - Unite the Armies!") %></title>
+<title><%= _(UNITE_TITLE) %>!</title>
 
 <script>
-  var unite_state = "<%= UNITE_APPLICATION_STATE %>";
-  var recently_added_votes_path = '<%= recently_added_votes_path(format: :json) %>'
+  RUN_RECENT_VOTES = <%= ENV['UNITE_RUN_RECENT_VOTES'] %>;
 </script>
 
 <%= javascript_importmap_tags %>
