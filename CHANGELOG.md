@@ -1,3 +1,9 @@
+## 1.28.0 (2024-12-16)
+
+### Feat
+
+- **constants**: UNITE_RUN_RECENT_VOTES from ENV. Title from constants
+
 ## 1.27.0 (2024-12-16)
 
 ### Feat
