@@ -1,0 +1,221 @@
+Joni Töyrylä
+
+
+Table of Contents
+─────────────────
+
+1. Unite The Armies
+.. 1. Uusi
+.. 2. Muistiinpanoja
+.. 3. Muutoksia
+.. 4. Päiväkirja
+..... 1. 2024
+
+
+1 Unite The Armies
+══════════════════
+
+  Päivitetään projekti ruby 3.3.6 ja rails 8.0 versioille.
+
+
+1.1 Uusi
+────────
+
+  Generoidaan vielä uusi sovellus.
+  • generoidaan jokainen kontrolleri, modeli ja lisään niihin vanhaa
+    koodia.
+  • uusi deployment
+  • ☐ uudet testit
+    • ☐ sql queryt näkyville testatessa
+    • ☐ modelien testaus peritään actionMailerista, ei
+      ActiveSupportista mahdollisesti ajatus olisi testata vain
+      mailerit, ei modeleissa olevia mailerin toimintaa.  =>
+      generoidaan myöhemmin testit uusiksi ja mailer testit
+      nähtävästi vain sellaisenaan.
+    • ☐ votesControllerTest kuinkas header accept-language asetetaan
+      että voi testata meneekö oikeaan lokaleen
+
+
+1.2 Muistiinpanoja
+──────────────────
+
+  <https://guides.rubyonrails.org/debugging_rails_applications.html>
+
+
+1.3 Muutoksia
+─────────────
+
+  • ☐ logger
+    • kuinkas saa lokista virheet kätevästi => pitäisi testata
+      development modessa log_leveliä joka tulostaa vain errorit
+      tms. eli että ei tule kauheaa kaatoa vaan vain muutama rivi…
+  • ☐ javascript
+    • ☐ turha pois, konvertoidaan uudeksi ecmaksi
+    • ☐ unitethearmies.js tarvitaanko muita kuin loadVotes?
+  • ☐ vimeo siirretään videot palvelimelle…
+  • ☐ vote belongs_to vote :counter_cache vote_test.rb:124
+  • ☐ ./log mitenkäs rotaatio
+  • ☐ Cache ja Queue config.cache_store on kommentoitu koska en saa
+    luotua taulua schemasta, production modessa hajoaa.  => schema on
+    database dump eikä siitä voi luoda taulua.
+  • ☐ test
+    • ☐ system
+      • ☐ create vote
+      • ☐ flash messageista
+      • ☐ show vote
+      • ☐ invite äänestä, olet äänessä, käytä ääntä (create, show,
+        invite)
+    • ☐ vote_test:secret_confirm_hash minkä takia vote objektiin
+      (fixture) tallennettu tieto ei löydy ORM:in metodeita
+      käyttäen? eli fixture on vai ei ole synkronoitu tietokannan
+      kanssa?
+    • ☐ admin upload upload fixture on näemmä muuttunut
+  • ☐ UaSetting
+    • ☐ nimeäminen varmaan on jokin paremmalta kuulostava nimi
+      olemassa, setting on ainakin väärin, pitäisi vähintään olla
+      "settings".
+      • pitää olla kannassa koska lähetettyjen mailien datetime
+        täytyy aina saada talteen.
+      • miksi ei voisi olla vain "Settings", voi tulla namespace
+        ongelemia (?)
+
+
+1.4 Päiväkirja
+──────────────
+
+1.4.1 2024
+╌╌╌╌╌╌╌╌╌╌
+
+◊ 1.4.1.1 12
+
+  ◊ 1.4.1.1.1 16
+
+
+  ◊ 1.4.1.1.2 14
+
+
+  ◊ 1.4.1.1.3 13
+
+
+  ◊ 1.4.1.1.4 12
+
+
+  ◊ 1.4.1.1.5 11
+
+    Huom.  RAILS_ENV=production rails db:migrate RAILS_ENV=production
+    script/data_setup
+
+    • ☑ äänimäärät votes/ laskee kuinka?  ua_settings vote_count??
+      • ☑ VoteCount
+        • ☑ total Redis cache
+      • ☑ taskit
+        • ☑ laske äänet lasketaan Vote.languagen perusteella
+          VoteCountsiin määrät.  task/vote_counts.rb
+      • ☑ send/sent_count config/environments ja models/ua_settings.rb
+        ja initializers/settings.rb
+        • ☑ UaSetting.send_count poistettu
+        ua_settings.sent_count: kuinka monen uuden äänen jälkeen
+        lähetetään viesti.
+
+
+  ◊ 1.4.1.1.6 10
+
+    • ☐ flash
+      • ☐ automaattisesti katoava
+    • ☐ votes ääneen kytketyt äänet?
+    • ☐ kommentit
+      • ☐ kommentin vahvistaminen
+
+
+  ◊ 1.4.1.1.7 9
+
+
+  ◊ 1.4.1.1.8 7
+
+
+  ◊ 1.4.1.1.9 6
+
+    Hyvää Itsenäisyyspäivää!
+
+
+  ◊ 1.4.1.1.10 3
+
+
+  ◊ 1.4.1.1.11 2
+
+
+◊ 1.4.1.2 11
+
+  ◊ 1.4.1.2.1 29
+
+
+  ◊ 1.4.1.2.2 28
+
+
+  ◊ 1.4.1.2.3 27
+
+    • ☐ Rails 8.1
+      <https://rubyonrails.org/2024/9/27/rails-8-beta1-no-paas-required>
+      • ☐ Kamal
+      • ☐ SQLLite
+        • ☐ dump json:siksi mysql data
+        • ☐ mysql -> SQLLite
+        • ☐ import
+    • ☑ topic save the world - unite the armies unite the armies - save
+      the planet (?)
+
+
+  ◊ 1.4.1.2.4 26
+
+    • ☑ deploy rake ja fix tuotannossa scriptin kautta… tässä tulikin
+      ongelmia kun rails ajetaan development modessa jos taskina on
+      db:migrate (?)
+      • täytyy nyt ajaa käsin db:migrate ja mahdolliset muut taskit.
+      => kun perusjutut toimii niin deployment täytyy vaihtaa
+      dockeriksi
+    • ☑ Vote.create
+      • ☑ validaatiovirheistä tulee virheilmoitus formin sisään, tämä
+        pitäisi muuttaa flash messageksi => hyvä puoli on että tämä
+        ei kadota formia
+    • ☑ flash viestejä ei voi sulkea
+    • ☒ email
+      • ☑ ei varmennettu vote jos menee vote urliin, lähetetään
+        confirm email uudestaan
+      • ☐ croniin vanhojen votejen poisto eli jos ei ole vahvistettu
+    • ☐ token mitä md5_secret_token tekee?
+
+
+  ◊ 1.4.1.2.5 22
+
+
+  ◊ 1.4.1.2.6 21
+
+
+  ◊ 1.4.1.2.7 20
+
+
+  ◊ 1.4.1.2.8 19
+
+
+  ◊ 1.4.1.2.9 18
+
+
+  ◊ 1.4.1.2.10 15
+
+    <https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/apache/oss/bionic/deploy_app.html>
+    sudo /usr/bin/passenger-config validate-install sudo
+    /usr/sbin/passenger-memory-stats passenger-config about ruby-command
+    ENV['GEM_HOME'] = "/home/jto/.gem/ruby/3.3.6/gems" ENV['GEM_PATH'] =
+    "/home/jto/.gem/ruby/3.3.6/gems"
+
+
+  ◊ 1.4.1.2.11 14
+
+
+  ◊ 1.4.1.2.12 13
+
+
+  ◊ 1.4.1.2.13 12
+
+
+  ◊ 1.4.1.2.14 11
