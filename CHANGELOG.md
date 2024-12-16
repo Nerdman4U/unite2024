@@ -1,3 +1,9 @@
+## 1.27.0 (2024-12-16)
+
+### Feat
+
+- **VoteMailer**: Confirmation email with url and waiting action test
+
 ## 1.26.0 (2024-12-14)
 
 ### Feat
