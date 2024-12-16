@@ -1,3 +1,9 @@
+## 1.29.0 (2024-12-16)
+
+### Feat
+
+- **Mailers**: Using "with" to pass parameters
+
 ## 1.28.0 (2024-12-16)
 
 ### Feat
