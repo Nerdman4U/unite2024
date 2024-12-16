@@ -113,7 +113,7 @@ class Vote < ApplicationRecord
       return
     end
     options = options.merge(inviter_name: name, token: self.encoded_payload)
-    VoteMailer.email_invite(options).deliver_now
+    VoteMailer.with(options: options).email_invite.deliver_now
   end
 
   def self.duplicate_confirm_hash?(token)
@@ -138,7 +138,7 @@ class Vote < ApplicationRecord
     votes = votes_to_be_send_to_admins
     # puts "Vote.send_emails votes.size: #{votes}"
 
-    VoteMailer.emails_to_admins(votes).deliver_now
+    VoteMailer.with(votes: votes).emails_to_admins.deliver_now
 
     uas.sent_at = Time.now
     uas.vote_count = VoteCount.total

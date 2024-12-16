@@ -257,7 +257,7 @@ class VotesController < ApplicationController
     vote.email_confirmed = Time.now
     vote.save
 
-    VoteMailer.sign_up(vote).deliver_later
+    VoteMailer.with(vote: vote).sign_up.deliver_later
     flash[:success] = _("Your email has been confirmed")
      redirect_to vote_path(locale: locale, token: vote.encoded_payload)
   end

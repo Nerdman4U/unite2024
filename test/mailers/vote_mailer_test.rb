@@ -10,7 +10,7 @@ class VoteMailerTest < ActionMailer::TestCase
   test "should send sign up mail" do
     I18n.locale = :en
     vote = votes(:vote_1)
-    email = VoteMailer.sign_up(vote).deliver_now
+    email = VoteMailer.with(vote: vote).sign_up.deliver_now
     assert_emails 1
 
     # English letter
@@ -22,7 +22,7 @@ class VoteMailerTest < ActionMailer::TestCase
     # Finnish letter
     I18n.locale = :fi
     vote = votes(:vote_1)
-    email = VoteMailer.sign_up(vote).deliver_now
+    email = VoteMailer.with(vote: vote).sign_up.deliver_now
     assert_emails 2
     assert_equal "Kiitokset allekirjoituksesta ja mahdollisuus auttaa", email.subject
   end
@@ -56,7 +56,7 @@ class VoteMailerTest < ActionMailer::TestCase
 
     # Vote.emails_to_admins
     votes = votes(:vote_1, :vote_2)
-    VoteMailer.emails_to_admins(votes).deliver_now
+    VoteMailer.with(votes: votes).emails_to_admins.deliver_now
 
     uas = UaSetting.instance
     assert uas.sent_at < Time.now

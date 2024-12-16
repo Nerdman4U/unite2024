@@ -1,8 +1,12 @@
 class VoteMailer < ApplicationMailer
-  def sign_up(vote)
-    @vote = vote
+  def sign_up
+    @vote = params[:vote]
+    unless @vote
+      Rails.logger.error("Vote is blank")
+      return
+    end
     attachments.inline["earth.jpg"] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
-    mail(to: vote.email, subject: _("Thank you for signing the Unite the Armies petition"))
+    mail(to: @vote.email, subject: _("Thank you for signing the Unite the Armies petition"))
   end
 
   # = params
@@ -10,7 +14,12 @@ class VoteMailer < ApplicationMailer
   # name: name of the invited
   # email: email of the invited
   # language: language of the invitation letter
-  def email_invite(options)
+  def email_invite
+    options = params[:options]
+    unless options
+      Rails.logger.error("No options")
+      return
+    end
     unless @inviter_name = options[:inviter_name]
       Rails.logger.error("No inviter name")
       return
@@ -46,20 +55,24 @@ class VoteMailer < ApplicationMailer
   # Send vote emails to admins
   #
   # After config.sent_count new votes, vote emails are sent as a list to admins.
-  def emails_to_admins(votes)
-    unless votes
+  def emails_to_admins
+    @votes = params[:votes]
+    unless @votes
       Rails.logger.error("Votes is blank")
       return
     end
-
-    @votes = votes
 
     mail_to = Rails.configuration.x.backup_email
     mail(to: mail_to, subject: "Unite The Armies - allekirjoittajat", cc: "info@jonitoyryla.eu")
   end
 
-  def new_comment(comment)
-    @comment = comment
+  def new_comment
+    @comment = params[:comment]
+    unless @comment
+      Rails.logger.error("Comment is blank")
+      return
+    end
+
     old_locale = I18n.locale
     I18n.locale = "fi"
     mail_to = Rails.configuration.x.comment_target_email
@@ -71,6 +84,15 @@ class VoteMailer < ApplicationMailer
   def confirmation
     @vote = params[:vote]
     @url = params[:url]
+
+    unless @vote
+      Rails.logger.error("Vote is blank")
+      return
+    end
+    unless @url
+      Rails.logger.error("Url is blank")
+      return
+    end
     mail(to: @vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
   end
 end
