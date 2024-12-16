@@ -181,9 +181,7 @@ class VotesController < ApplicationController
       return
     end
 
-    @vote = votes.first
-
-    VoteMailer.confirmation(@vote).deliver_later
+     VoteMailer.with(vote: votes.first, url: base_url).confirmation.deliver_now
   end
 
   def index

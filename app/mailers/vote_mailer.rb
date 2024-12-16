@@ -68,8 +68,9 @@ class VoteMailer < ApplicationMailer
   end
 
   # Confirm that email used voting exists
-  def confirmation(vote)
-    @vote = vote
-    mail(to: vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
+  def confirmation
+    @vote = params[:vote]
+    @url = params[:url]
+    mail(to: @vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
   end
 end

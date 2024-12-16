@@ -219,4 +219,10 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     get confirm_url(token: vote.encoded_payload)
     assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
   end
+
+  test "should get waiting page" do
+    vote = votes("vote_1")
+    get waiting_url(email: vote.email)
+    assert_response :success
+  end
 end

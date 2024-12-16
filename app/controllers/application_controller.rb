@@ -47,4 +47,8 @@ class ApplicationController < ActionController::Base
     return nil if request.env["HTTP_ACCEPT_LANGUAGE"].blank?
     request.env["HTTP_ACCEPT_LANGUAGE"].scan(/^[a-z]{2}/).first
   end
+
+  def base_url
+    request.scheme + "://" + request.host
+  end
 end
