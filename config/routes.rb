@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get "appeal" => "welcome#appeal", as: :appeal
     resources :votes, only: [ :new, :index, :create ]
     resources :comments, only: [ :new, :index, :create ]
-    get "votes/waiting" => "votes#waiting", as: :waiting
+    get "votes/waiting/:id" => "votes#waiting", as: :waiting
     get "votes/confirm/:token" => "votes#confirm", as: :confirm, constraints: { token: /[^\/]+/ }
     get "votes/:token" => "votes#show", as: :vote, constraints: { token: /[^\/]+/ }
     get "download" => "welcome#download", as: :download # only finnish

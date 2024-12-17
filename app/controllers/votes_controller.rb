@@ -150,7 +150,7 @@ class VotesController < ApplicationController
           # flash[:success] = _("Thank you for your vote!")
 
           flash[:info] = _("Your vote is added but email is not yet confirmed. Please check your email.")
-          redirect_to waiting_path(email: @vote.email)
+          redirect_to waiting_path(locale: locale, id: @vote.id)
         else
           flash[:warning] = "There was an error while adding your vote"
           # redirect_to new_vote_path(locale: locale, anchor: "sign")
@@ -166,22 +166,58 @@ class VotesController < ApplicationController
   # Parameters:
   # - email
   def waiting
-    unless params[:email]
+    unless params[:id]
       flash[:warning] = _("There was an error")
       Rails.logger.error("Vote.waiting: No email")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
-    votes = Vote.where(email: params[:email])
-    unless votes.count == 1
+    begin
+      vote_id = params[:id].to_i
+    rescue
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("Vote.waiting: Invalid email")
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
+    vote = Vote.find_by_id(vote_id)
+    unless vote
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("Vote.waiting: Vote not found")
+      redirect_to new_vote_path(locale: locale)
+      return
+    end
+
+    if vote.email_confirmed
       flash[:warning] = _("Email is already registered.")
       Rails.logger.error("Vote.waiting: Email is already registered.")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
-     VoteMailer.with(vote: votes.first, url: base_url).confirmation.deliver_now
+    # Send confirm emails only once per 5 minutes
+    #
+    # TODO:
+    # => testi && siirrä helperiin (?)
+    # confirm_email_sent = session[:confirm_email_sent].try(:to_time)
+    # if confirm_email_sent && Time.now - confirm_email_sent < 5.minutes
+    #   wait_left = (5.minutes - (Time.now - confirm_email_sent)) / 60
+    #   wait_left_minutes = wait_left.to_i
+    #   wait_left_seconds = ((wait_left - wait_left_minutes)*60).to_i
+    #   puts "wait_left: #{wait_left}, wait_left_minutes: #{wait_left_minutes}, wait_left_seconds: #{wait_left_seconds}"
+    #   flash[:warning] = _("Please wait #{wait_left_minutes}min #{wait_left_seconds.to_i}sec before sending another email")
+    #   return
+    # end
+
+    if wtl = helpers.waiting_time_left
+      flash[:warning] = _("Please wait #{wtl[:min]}min #{wtl[:sec]}sec before sending another email")
+      return
+    end
+    session[:confirm_email_sent] = Time.now
+
+    VoteMailer.with(vote: vote, url: base_url).confirmation.deliver_now
   end
 
   def index

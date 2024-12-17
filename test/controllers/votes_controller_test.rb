@@ -61,10 +61,9 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     vote = assigns(:vote)
-    # assert_redirected_to vote_path(locale: "en", secret_token: vote.secret_token)
-    # assert flash[:success], "Thank you for your vote!"
+
     assert flash[:info], "Your vote is added but email is not yet confirmed. Please check your email."
-    assert_redirected_to waiting_path(email: vote.email)
+    assert_redirected_to waiting_path(locale: "en", id: vote.id)
   end
 
   test "should not create vote if emails do not match" do
@@ -220,9 +219,32 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
   end
 
+  # TODO:
+  # How to test helper method "waiting_time_left"?
+  # - should set session before test request
+  # - should assert helper method response hash
+  # test "should get waiting time left" do
+  #   vote = votes("vote_1")
+  #   vote.email_confirmed = Time.now - 1.minutes
+  #   vote.save
+  # end
   test "should get waiting page" do
     vote = votes("vote_1")
-    get waiting_url(email: vote.email)
+    vote.email_confirmed = nil
+    vote.save
+
+    # Should not print waiting time flash when get waiting_url first time.
+    get waiting_url(id: vote.id)
+    assert css_select(".alert").blank?
+
+    sleep 1
+
+    # Should get flash when get waiting_url second time.
+    get waiting_url(id: vote.id)
+
     assert_response :success
+    assert_dom ".alert" do
+      assert_dom ".alert-heading", text: /^Please wait/
+    end
   end
 end
