@@ -1,3 +1,9 @@
+## 1.32.0 (2024-12-17)
+
+### Feat
+
+- **new-vote**: Slower animation. Added sunrise image to slider and removed unused video view
+
 ## 1.31.1 (2024-12-17)
 
 ### Fix
