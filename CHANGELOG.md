@@ -1,3 +1,13 @@
+## 1.30.0 (2024-12-17)
+
+### Feat
+
+- **VotesHelper**: waiting_time_left helper method to calculate offset before send new confirmation email
+
+### Fix
+
+- **Waiting.erb**: Better header text
+
 ## 1.29.0 (2024-12-16)
 
 ### Feat
