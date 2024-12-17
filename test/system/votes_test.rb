@@ -17,7 +17,7 @@ class VotesTest < ApplicationSystemTestCase
 
     click_on "Send"
 
-    assert_selector "h1", text: "Waiting...".upcase
+    assert_selector "h1", text: "confirm email sent!".upcase
     assert_selector ".alert-info", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase
   end
 
