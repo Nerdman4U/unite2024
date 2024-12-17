@@ -1,3 +1,9 @@
+## 1.31.0 (2024-12-17)
+
+### Feat
+
+- **Images**: new images, renamed some slides
+
 ## 1.30.0 (2024-12-17)
 
 ### Feat
