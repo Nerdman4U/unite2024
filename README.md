@@ -45,3 +45,15 @@ Environment:
 - RECAPTHA_PRIVATE_KEY
 
 - $ cap production deploy
+
+## Thanks!
+
+### Pixabay
+
+- vieleineinerhuelle
+- Wolfgang65
+- many others!
+
+### kuviasuomesta.fi
+
+- Roine Piirainen
