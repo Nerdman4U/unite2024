@@ -29,10 +29,11 @@ namespace :fix do
     end
 
     to_be_deleted.each do |id|
-      puts "destroy #{id}"
       v = Vote.find_by_id(id)
-      v.spam = true
-      v.save
+      puts "Removing duplicate vote: #{id} #{v.email}"
+      # v.spam = true
+      # v.save
+      v.destroy
     end
   end
 end
