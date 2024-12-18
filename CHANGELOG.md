@@ -1,3 +1,14 @@
+## 1.33.0 (2024-12-18)
+
+### Feat
+
+- **tokens_controller**: Get vote token by email. If vote id is at session, can go back to vote from index
+
+### Fix
+
+- **unitethearmies.js**: Recent votes env flag check properly if zero
+- **rake-tasks**: confirm already added emails working, duplicate votes are now removed again
+
 ## 1.32.0 (2024-12-17)
 
 ### Feat
