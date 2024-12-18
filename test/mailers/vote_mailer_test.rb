@@ -68,4 +68,10 @@ class VoteMailerTest < ActionMailer::TestCase
     VoteMailer.with(vote: vote, url: "http://example.com").confirmation.deliver_now
     assert_emails 1
   end
+
+  test "should send token" do
+    vote = votes(:vote_1)
+    VoteMailer.with(vote: vote).token.deliver_now
+    assert_emails 1
+  end
 end

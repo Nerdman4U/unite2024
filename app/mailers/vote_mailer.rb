@@ -76,7 +76,7 @@ class VoteMailer < ApplicationMailer
     old_locale = I18n.locale
     I18n.locale = "fi"
     mail_to = Rails.configuration.x.comment_target_email
-    mail(to: mail_to, subject: "Unite The Armies - uusi kommentti")
+    mail(to: mail_to, subject: _("Unite The Armies - new comment"))
     I18n.locale = old_locale
   end
 
@@ -84,7 +84,6 @@ class VoteMailer < ApplicationMailer
   def confirmation
     @vote = params[:vote]
     @url = params[:url]
-
     unless @vote
       Rails.logger.error("Vote is blank")
       return
@@ -94,5 +93,15 @@ class VoteMailer < ApplicationMailer
       return
     end
     mail(to: @vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
+  end
+
+  def token
+    @vote = params[:vote]
+    attachments.inline["earth.jpg"] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
+    unless @vote
+      Rails.logger.error("Vote is blank")
+      return
+    end
+    mail(to: @vote.email, subject: _("Your vote for Unite the Armies - Save the Planet"))
   end
 end

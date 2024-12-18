@@ -17,6 +17,7 @@ UNITE_SENT_COUNT = 100
 UNITE_RUN_RECENT_VOTES = 1
 UNITE_APPLICATION_PROTOCOL = "http"
 UNITE_RECAPTCHA_PUBLIC_KEY = "6LfwgBQTAAAAAJrdJfpdvnMhibW4iUFJRdlK0ZXb"
+UNITE_SIGNATURE_TITLE = "The Unite the Armies campaign team"
 GITHUB_URL = "https://github.com/Nerdman4U/unite2024"
 VESL_URL = "https://www.vesl.fi"
 VESL_NAME = "The Green Association for the Protection of Life"

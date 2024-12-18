@@ -241,10 +241,16 @@ class VotesController < ApplicationController
   end
 
   def show
+    token = params[:token]
+    unless token
+      redirect_to new_token_url
+      return
+    end
     decoded_token = decode_token(params[:token])
     unless decoded_token
       Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
-      redirect_to locale_root_path
+      redirect_to new_token_url
+      # redirect_to locale_root_path
       return
     end
     vote = Vote.where(id: decoded_token["vote_id"]).first
