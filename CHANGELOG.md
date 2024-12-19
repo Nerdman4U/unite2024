@@ -1,3 +1,19 @@
+## 1.34.0 (2024-12-19)
+
+### Feat
+
+- **voting**: Logout. New token, show vote and logout icons. Testing header positions so that main image can be better seen
+- **votes_show**: background image and header position
+- **welcome_helper**: heart icon to show vote link
+
+### Fix
+
+- **token_controller**: token is now created create action instead of mailer view
+
+### Refactor
+
+- **vote**: Removed old token methods
+
 ## 1.33.0 (2024-12-18)
 
 ### Feat
