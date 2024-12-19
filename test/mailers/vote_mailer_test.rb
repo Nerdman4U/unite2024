@@ -71,7 +71,8 @@ class VoteMailerTest < ActionMailer::TestCase
 
   test "should send token" do
     vote = votes(:vote_1)
-    VoteMailer.with(vote: vote).token.deliver_now
+    token = vote.encoded_payload
+    VoteMailer.with(vote: vote, token: token).token.deliver_now
     assert_emails 1
   end
 end

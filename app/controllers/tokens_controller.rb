@@ -26,7 +26,9 @@ class TokensController < ApplicationController
       return
     end
 
-    VoteMailer.with(vote: vote).token.deliver_later
+    token = vote.encoded_payload
+    VoteMailer.with(vote: vote, token: token).token.deliver_later
+    # VoteMailer.with(vote: vote).token.deliver_later
 
     flash[:success] = _("Token has been sent to your email")
     redirect_to locale_root_path

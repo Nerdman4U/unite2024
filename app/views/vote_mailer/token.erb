@@ -1,6 +1,6 @@
 <h1><%= _("Your vote") %> </h1>
 <%= image_tag attachments['earth.jpg'].url, style: "float:right" -%>
-<p><a href="<%= vote_url(token: @vote.encoded_payload, locale: locale)  %>"><%= _("My supporter page") %></a></p>
+<p><a href="<%= vote_url(token: @token, locale: locale)  %>"><%= _("My supporter page") %></a></p>
 <p><%= _(UNITE_SIGNATURE_TITLE) %></p>
 <p><%= link_to UNITE_ROOT_URL, UNITE_ROOT_URL %></p>
 <br/>

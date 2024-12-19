@@ -97,9 +97,14 @@ class VoteMailer < ApplicationMailer
 
   def token
     @vote = params[:vote]
+    @token = params[:token]
     attachments.inline["earth.jpg"] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
     unless @vote
       Rails.logger.error("Vote is blank")
+      return
+    end
+    unless @token
+      Rails.logger.error("Token is blank")
       return
     end
     mail(to: @vote.email, subject: _("Your vote for Unite the Armies - Save the Planet"))
