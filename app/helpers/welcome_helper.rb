@@ -8,7 +8,7 @@ module WelcomeHelper
     end
 
     link_to vote_url(token: token), target: "_blank" do
-      tag :span, class: "icon-twitter-with-circle medium"
+      tag :span, class: "icon-heart medium"
     end
   end
 end
