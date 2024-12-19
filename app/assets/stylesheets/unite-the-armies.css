@@ -19,6 +19,16 @@ body {
   }
 }
 
+.section-block-pt {
+  background: white;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  padding-top: 2em;
+}
+
 /* Bootstrap 5.3.3 aligns row differently and causes layout issues with old theme (theme.core.min) css */
 .row {
   margin-left: auto !important;

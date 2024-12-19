@@ -133,7 +133,7 @@ class VotesController < ApplicationController
       parent_vote.votes << @vote if parent_vote
     end
 
-    @vote.save if @vote.new_record?
+    @vote.save
 
     # Remove session key after succesfull save
     if @vote.valid?

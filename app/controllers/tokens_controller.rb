@@ -30,7 +30,12 @@ class TokensController < ApplicationController
     VoteMailer.with(vote: vote, token: token).token.deliver_later
     # VoteMailer.with(vote: vote).token.deliver_later
 
-    flash[:success] = _("Token has been sent to your email")
+    flash[:success] = _("Your private link has been sent to your email")
+    redirect_to locale_root_path
+  end
+
+  def destroy
+    session[:current_vote_id] = nil
     redirect_to locale_root_path
   end
 end

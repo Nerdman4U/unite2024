@@ -14,7 +14,7 @@ class TokensControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_dom ".alert" do
-      assert_dom ".alert-heading", text: /^Token has been sent/
+      assert_dom ".alert-heading", text: /^Your private link has been sent to your email/
     end
   end
 end

@@ -118,6 +118,11 @@
           <li>
             <%= link_to_vote %>
           </li>
+          <% if logged_in %>
+            <li>
+              <%= link_to_logout %>
+            </li>
+          <% end %>
           <li>
             <%= link_to UNITE_FACEBOOK_URL, target: "_blank" do %>
                 <span class="icon-facebook-with-circle medium"></span>

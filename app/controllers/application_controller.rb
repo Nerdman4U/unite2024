@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   after_action :add_flash_to_header
   before_action :set_locale
 
+  helper_method :logged_in
+
   private
 
   def add_flash_to_header
@@ -50,5 +52,9 @@ class ApplicationController < ActionController::Base
 
   def base_url
     request.scheme + "://" + request.host
+  end
+
+  def logged_in
+    !!session[:current_vote_id]
   end
 end

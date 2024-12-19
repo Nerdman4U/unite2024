@@ -16,6 +16,21 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should not be logged in" do
+    get root_path
+    assert_select ".navigation .logout", :count == 0
+  end
+
+  test "should be logged in" do
+    vote = votes("vote_1")
+    get vote_path(token: vote.encoded_payload)
+    assert_response :success
+    assert_select ".navigation .logout"
+    assert_select ".navigation .logout" do |a|
+      assert_equal a.text, _("Logout")
+    end
+  end
+
   test "should get index with default locale" do
     get root_path
     assert_equal I18n.locale, :en
@@ -25,9 +40,6 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_select "title", "Save the Planet - Unite the Armies!"
   end
-
-  # test "should localize" do
-  # end
 
   test "should not get admin index with wrong hash" do
     get admin_index_url admin_hash: "foobar"

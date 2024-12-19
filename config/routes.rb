@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "admin/:admin_hash" => "welcome#admin", as: :admin_index
   post "admin/:admin_hash" => "welcome#admin_upload", as: :admin_upload
 
+  delete "tokens" => "tokens#destroy", as: :logout
+
   scope "(:locale)" do
     get "" => "welcome#index", as: :locale_root
     get "appeal" => "welcome#appeal", as: :appeal
