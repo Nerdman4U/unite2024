@@ -32,7 +32,7 @@ module UniteTheArmiesOrg
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
 
-    config.action_mailer.default_url_options = { host: "unite-the-armies.org" }
+    config.action_mailer.default_url_options = { host: "unitethearmies.org" }
 
     # config.before_configuration do
     #   env_file = File.join(Rails.root, 'config', 'local_env.yml')
@@ -53,7 +53,7 @@ module UniteTheArmiesOrg
     config.action_mailer.smtp_settings = {
       address:              "smtp.gmail.com",
       port:                 587,
-      domain:               "unite.jonitoyryla.eu",
+      domain:               "unitethearmies.org",
       user_name:            ENV["UNITE_GMAIL_USERNAME"],
       password:             ENV["UNITE_GOOGLE_APP_PASSWORD"],
       authentication:       "plain",

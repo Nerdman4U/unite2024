@@ -65,7 +65,9 @@ class VoteMailerTest < ActionMailer::TestCase
 
   test "should send confirm vote email" do
     vote = votes(:vote_1)
-    VoteMailer.with(vote: vote, url: "http://example.com").confirmation.deliver_now
+    url = "http://example.com"
+    confirm_url = "http://example.com/confirm"
+    VoteMailer.with(vote: vote, url: url, confirm_url: confirm_url).confirmation.deliver_now
     assert_emails 1
   end
 

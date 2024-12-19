@@ -3,7 +3,7 @@
 
   <p>We are happy to inform that we have received your vote for the <%= UNITE_TITLE.upcase %>.</p>
 
-  <p>Please verify your email address by clicking <a href="<%= confirm_url(token: @vote.encoded_payload) %>">here</a>.</p>
+  <p>Please verify your email address by clicking <a href="<%= @confirm_url %>">here</a>.</p>
 
   <p>If you did not vote feel free to delete this email.</p>
 

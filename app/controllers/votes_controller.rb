@@ -217,7 +217,8 @@ class VotesController < ApplicationController
     end
     session[:confirm_email_sent] = Time.now
 
-    VoteMailer.with(vote: vote, url: base_url).confirmation.deliver_now
+    confirm_url = confirm_url(token: vote.encoded_payload)
+    VoteMailer.with(vote: vote, url: base_url, confirm_url: confirm_url).confirmation.deliver_now
   end
 
   def index

@@ -84,12 +84,17 @@ class VoteMailer < ApplicationMailer
   def confirmation
     @vote = params[:vote]
     @url = params[:url]
+    @confirm_url = params[:confirm_url]
     unless @vote
       Rails.logger.error("Vote is blank")
       return
     end
     unless @url
       Rails.logger.error("Url is blank")
+      return
+    end
+    unless @confirm_url
+      Rails.logger.error("Confirm url is blank")
       return
     end
     mail(to: @vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
