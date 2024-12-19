@@ -52,6 +52,7 @@ Environment:
 
 - vieleineinerhuelle
 - Wolfgang65
+- JamesDeMers
 - many others!
 
 ### kuviasuomesta.fi
