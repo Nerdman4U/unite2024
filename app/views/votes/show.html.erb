@@ -8,24 +8,29 @@
           <div class="tms-content">
             <div class="tms-content-inner center left-on-mobile v-align-middle">
               <div class="row">
-                <div class="col-12">
-                  <h1 class="tms-caption title-xlarge color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
-                    <%= _("Thank you for your support %{name}") % {name: @vote.name} %>
-                  </h1>
-                  <div class="clear"></div>
-                  <h5 class="tms-caption color-white lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-                    <%= _("This is your private vote") %>
-                  </h5>
-                </div>
               </div>
             </div>
           </div>
-          <img data-src="/images/frontpage-slides/slide-5.jpg" src="/images/blank.png" alt=""/>
+          <img data-src="/images/frontpage-slides/bridge-park-garden-japanese.jpg" src="/images/blank.png" alt=""/>
         </li>
       </ul>
     </div>
   </section>
   <!-- Fullscreen Slider Section End -->
+
+  <section class="section-block">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title-xlarge color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+          <%= _("Thank you for your support %{name}") % {name: @vote.name} %>
+        </h1>
+        <div class="clear"></div>
+        <h5 class="color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+          <%= _("This is your private vote") %>
+        </h5>
+      </div>
+    </div>
+  </section>
 
   <div id="featured-trips" class="section-block replicable-content">
     <div class="row">
