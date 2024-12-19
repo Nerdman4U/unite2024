@@ -88,25 +88,62 @@ Table of Contents
 
 ◊ 1.4.1.1 12
 
-  ◊ 1.4.1.1.1 18
+  ◊ 1.4.1.1.1 19
+
+    • ☑ mailer confirm url on väärin tuotannossa:
+      testi.unitethearmies.org pitäisi olla.  => tällä kokemuksella
+      näyttää siltä että mailerin viewissä path kadottaa vhostin eli
+      toimii kun confirm_url kutsutaan controllerissa ja osoite
+      viedään parametrina mailerille.
+      • ☐ onko muita kuin confirm vote?
+    • ☑ votes
+      • ☑ show ikoni
+      • ☑ show, uusi taustakuva
+      • ☑ logout
+        • ☑ voisi ilmestyä scrollatessa oikealle?  tai headeriin
+    • ☒ layout
+      • ☐ sharebuttons saisiko fixed positiolla scrollaamaan sivussa?
+      • ☑ section_block_pt jos header onkin kuvan alapuolella
+    • ☐ test
+      • ☐ VoteTest#test_should_have_votes_to_be_send_to_admins
+        [test/models/vote_test.rb:149]: epäonnistuu randomisti
+    • ☐ ikonit nyt käytössä icomoon.  <https://icomoon.io/ultimate#free>
+      <https://icomoon.io/docs#packs> voisi vaihtaa bootstrappiin…
+      vai?  <https://icons.getbootstrap.com/#install>
 
 
-  ◊ 1.4.1.1.2 17
+  ◊ 1.4.1.1.2 18
+
+    • ☒ votes
+      • ☑ my vote- linkki
+        • ☑ indexissä linkki
+        • ☑ vie voteen jos sessiossa on avain
+      • ☒ show
+        • ☑ jos ei ole tokenia, täytyy näyttää formi
+        • ☑ jos ei ole aktivoitu, täytyy ohjata waiting- actioniin.
+        • ☐ logout nappi joka tyhjentää session tarvittaessa.
+      • ☐ ääneen kytketyt äänet?
+      • ☐ email
+        • ☐ attachment lisää jokaiseen postaukseen maapallo
+        • ☐ similar should have similar layout
 
 
-  ◊ 1.4.1.1.3 16
+  ◊ 1.4.1.1.3 17
 
 
-  ◊ 1.4.1.1.4 14
+  ◊ 1.4.1.1.4 16
 
 
-  ◊ 1.4.1.1.5 13
+  ◊ 1.4.1.1.5 14
 
 
-  ◊ 1.4.1.1.6 12
+  ◊ 1.4.1.1.6 13
 
 
-  ◊ 1.4.1.1.7 11
+  ◊ 1.4.1.1.7 12
+
+
+  ◊ 1.4.1.1.8 11
 
     Huom.  RAILS_ENV=production rails db:migrate RAILS_ENV=production
     script/data_setup
@@ -124,24 +161,24 @@ Table of Contents
         lähetetään viesti.
 
 
-  ◊ 1.4.1.1.8 10
+  ◊ 1.4.1.1.9 10
 
 
-  ◊ 1.4.1.1.9 9
+  ◊ 1.4.1.1.10 9
 
 
-  ◊ 1.4.1.1.10 7
+  ◊ 1.4.1.1.11 7
 
 
-  ◊ 1.4.1.1.11 6
+  ◊ 1.4.1.1.12 6
 
     Hyvää Itsenäisyyspäivää!
 
 
-  ◊ 1.4.1.1.12 3
+  ◊ 1.4.1.1.13 3
 
 
-  ◊ 1.4.1.1.13 2
+  ◊ 1.4.1.1.14 2
 
 
 ◊ 1.4.1.2 11
