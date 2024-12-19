@@ -76,25 +76,6 @@ class Vote < ApplicationRecord
     self.order_number = VoteCount.total
   end
 
-  # We do not allow duplicate tokens, lets be sure there is no equal
-  # token already in database.
-  def add_secret_token
-    return if secret_token
-    while token = get_secret_token do
-      if Vote.where(secret_token: token).blank?
-        # digest = Digest::MD5.hexdigest(token)
-        self.secret_token = token
-        # self.md5_secret_token = digest
-        break
-      end
-    end
-  end
-
-  # Secret confirm hash is used to validate an email. It has to be unique.
-  def add_secret_confirm_hash
-    self.secret_confirm_hash = find_confirm_hash
-  end
-
   def email_invite(options)
     unless options[:name]
       Rails.logger.error("No name")
@@ -167,25 +148,4 @@ class Vote < ApplicationRecord
   end
 
   private
-
-  # DEPRECATED
-  def secret_hash
-    token = "secret: #{Time.now} #{rand(10000)}"
-    # puts "secret_hash: #{token}"
-    Digest::MD5.hexdigest(token)
-  end
-
-  def get_secret_token
-    SecureRandom.hex(64)
-  end
-
-  # def get_public_token
-  #   Digest::MD5.hexdigest(self.secret_token  + "public amazing secret 416")
-  # end
-
-  def find_confirm_hash
-    while token = secret_hash do
-      return token unless Vote.duplicate_confirm_hash?(token)
-    end
-  end
 end
