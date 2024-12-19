@@ -1,3 +1,9 @@
+## 1.35.0 (2024-12-19)
+
+### Feat
+
+- **vote_mailer**: confirm vote url as parameter
+
 ## 1.34.0 (2024-12-19)
 
 ### Feat
