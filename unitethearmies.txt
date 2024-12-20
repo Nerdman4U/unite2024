@@ -83,6 +83,48 @@ Table of Contents
 1.4 Päiväkirja
 ──────────────
 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Headline          Time                                           
+  ──────────────────────────────────────────────────────────────────
+   *Total time*      *4d 10:06*                                     
+  ──────────────────────────────────────────────────────────────────
+   Unite The Armies  4d 10:06                                       
+   Päiväkirja                  4d 10:06                           
+     2024                                4d 10:06                 
+       12                                          1d 17:04       
+         19                                                  4:34 
+         18                                                  2:45 
+         17                                                  2:21 
+         16                                                  3:49 
+         14                                                  5:33 
+         13                                                  1:39 
+         12                                                  2:50 
+         11                                                  3:13 
+         10                                                  1:39 
+         9                                                   4:13 
+         7                                                   3:34 
+         6                                                   0:14 
+         3                                                   3:12 
+         2                                                   1:28 
+       11                                          2d 17:02       
+         29                                                  4:58 
+         28                                                  3:52 
+         27                                                  4:59 
+         26                                                  4:56 
+         22                                                  3:39 
+         21                                                  4:50 
+         20                                                  4:00 
+         19                                                  7:06 
+         18                                                  4:25 
+         15                                                  4:52 
+         14                                                  2:54 
+         13                                                  6:00 
+         12                                                  5:06 
+         11                                                  3:25 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Table 1: Clock summary at [2024-12-20 Fri 09:45]
+
+
 1.4.1 2024
 ╌╌╌╌╌╌╌╌╌╌
 
@@ -130,17 +172,93 @@ Table of Contents
 
   ◊ 1.4.1.1.3 17
 
+    • ☑ waiting
+      • ☑ background image => lisätty pari kuvaa ja nimetty
+      • ☑ waiting time => how to test private method of controller?
+        seems difficult.  howabout helper method.  => result should
+        be "4min 32sec"
+
 
   ◊ 1.4.1.1.4 16
+
+    • ☑ aikataulu
+      • ☑ export Laitan tämän muistiinpanon myös githubiin jos vaikka
+        joku haluaa katsoa mitä on tehty.
+    • ☑ waiting
+      • ☑ täytyy estää spammays
+      • ☑ waiting using vote id
+    • ☑ mailerit
+      • ☑ refactor käyttämään with metodia rails 8 tyyliin
+    • ☑ recent votes
+      • ☑ application_state muutetaan UNITE_RUN_RECENT_VOTES
+      • ☑ env pitäisikö kuitenkin olla ympäristömuuttuja… ei tarvitse
+        kommitoida aina muutosta vahingossa, tuotannossa tod näk ei
+        ikinä tarvitse muuttaa mutta eihän se haittaakkaan…
+        UNITE_RUN_RECENT_VOTES = 0/1 => jos puuttuu, ei juokse
+    • ☑ recently_added_votes_path (js) tarvitseeko olla?  => pois
+    • ☑ example.com miksi edelleen redirect testissä on example.com:iin?
+      => request.host on testissä example.com
+      <https://github.com/rspec/rspec-rails/issues/1275> antaa olla.
+      => development modessa on <http://localhost> (lokaalisti) =>
+      testissä <http://example.com>
+    • ☑ confirm emailissa nykyinen request url, eli localhost, testi.*
+      tai unite…  => mailer parametrit nykyään
+      mailer.with(a:b,…).method
 
 
   ◊ 1.4.1.1.5 14
 
+    • ☐ confirm confirm vote path väärin testissä => unitethearmies.org,
+      pitäisi olla testi.unitethearmies.org
+    • ☑ capcha invalid domain testi.unitethearmies.org
+    • deploy jos lisää uusia gemejä, pitää käsin installoida MUT
+      tarkoitus on siirtyä uuteen deploymenttiin…
+    • ☐ vote
+      • ☐ confirmed ikoni hieno ikoni kertomaan että ääni on
+        vahvistettu.
+    • ☐ redirect votes_controller testi email repeat epäonnistuu oikein
+      mutta redirect on example.com (?). on siis locale_root_path.
+    • ☑ invitations
+      • ☑ testi kommentoitu
+    • ☑ token
+      • ☑ JWT kirjasto
+    • ☑ flash
+      • ☑ bootstrap css luokat päivitetty
+    • ☑ äänen vahvistaminen
+      • ☑ email
+      • ☑ route
+      • ☑ sign_up vie
+      • ☑ poista cache niin VoteCount on nyt cachessa…
+      • ☑ testit
+        • ☑ VoteMailer.confirmation => ei ohjaa voteen
+        • ☑ system: create vote
+    • ☑ sähköposti älä käytä info+123@jonitoyryla.eu vaan
+      jonitoyryla2+123@gmail.com koska jokerin (?) mailforward ei
+      nähtävästi erota plussalla lisättyä tekstiä vaan käsittelee
+      osoitteet eri osoitteina.
+
 
   ◊ 1.4.1.1.6 13
 
+    • ☑ säätöä
+
 
   ◊ 1.4.1.1.7 12
+
+    • ☑ testit
+      • ☑ virhe "satunnaisesti"
+        ApplicationControllerTest#test_should_have_correct_locale
+        [test/controllers/application_controller_test.rb:7]
+    • ☑ vote count if vote is saved multiple times, vote count is added
+      also multiple times.
+    • ☑ vote backup
+      • ☑ nimeäminen kyseessä ei ole backup vaan sähköpostien
+        lähettäminen
+      • ☑ refactor
+        • ☑ tapahtuu nyt kontrollerissa ja UaSettingsissä >
+          Vote.emails_to_admins
+        • ☑ testit Kaikki mailer testit täytyy olla vastaavissa
+          mailer_test tiedostoissa.
 
 
   ◊ 1.4.1.1.8 11
@@ -163,30 +281,101 @@ Table of Contents
 
   ◊ 1.4.1.1.9 10
 
+    • ☑ flash message
+      • ☑ nappi paremmin
+
 
   ◊ 1.4.1.1.10 9
 
+    • ☑ Header animaatio meni bootstrapin myötä rikki
+      • tarvitsee olla timber.master.min.js kirjasto…
+      • puuttui data- attribuutit
+    • ☑ pikkukuvat täytyy keskittää
+      • ☑ col-6,col-6 jos useampia vierekkäisiä soluja, niin tasa 12
+        menee eri riveille.
+        • theme.core:79 ja toinen vähän myöhemmin on kommentoitu,
+          .row before määritteet kolahtaa uuden bootstrapin kanssa.
+    • ☑ merge
+    • ☑ deployment … edelleen capistrano.
+    • ☑ domain
+    • ☐ vimeo vimeo embed vaatii padding 80%
+      • ☐ siirto youtubeen?
+    • ☑ recent votes bootstrap row/col
+
 
   ◊ 1.4.1.1.11 7
+
+    • ☑ flash ilmoituksen sulkeminen / ajastus
+    • ☑ Bootstrap
+    • ☑ Marssivideo
+    • ☐ Vimeo Täytyy siirtää Unite the Armies- käyttäjälle Youtubeen.
 
 
   ◊ 1.4.1.1.12 6
 
     Hyvää Itsenäisyyspäivää!
+    • ☑ ikonit paremmin
 
 
   ◊ 1.4.1.1.13 3
 
+    • ☑ captcha tuotannossa
+    • ☑ 1 error prohibited this vote from being saved: => ei lokalisoitu
+      => new ja share partiaalien message nyt flash + gettext.
+    • ☑ dropbox url on lokalisoitu jossain…
+    • ☑ kielivalinta Jos ei ole valittu, pitäisi valita default. Nyt
+      download => vie indexiin…
+      • ☑ testi siirretty application controller testeihin.
+    • ☑ materiaali ladattavissa suoraan sivulta
+
 
   ◊ 1.4.1.1.14 2
+
+    • ☑ testit
+      • ☑ sql queryt näkyville testatessa ne onkin log/ hakemistossa
+    • ☑ captcha verifier ei toimi. muutinko koodia googlen palvelussa?
+      => recaptcha nähtävästi palauttaa nykyään tyhjän merkkijonon kun
+      aikaisemmin ei palauttanut mitään.
 
 
 ◊ 1.4.1.2 11
 
   ◊ 1.4.1.2.1 29
 
+    • ☑ ainoastaan vahvistetut äänet näkyviin recent votessa
+      • ☑ testi
+      • ☑ tuotanto
+    • ☑ olemassaoleviin ääniin confirm_hash fix:set_confirmed
+    • ☑ confirm vote
+      • ☑ test fikstuurien kanssa ongelmia
+      • ☑ task set current votes as confirmed $ rails
+        fix:set_confirmed
+    • ☑ email_repeat email_confirmation => email_repeat
+    • ☑ email invite email_repeat tarkistus puuttuu
+    • ☑ duplicate email poistetaan duplikaatit $ rails
+      fix:duplicate_votes
+
 
   ◊ 1.4.1.2.2 28
+
+    • ☑ Errno::ECONNREFUSED (Connection refused - connect(2) for
+      "localhost" port 25).  smpt kirjastossa
+      net-smtp-0.5.0/lib/net/smtp.rb parametrit tyhjiä, development
+      modessa oikein…
+      • johtui siis siitä että config.after_initialize blokissa oleva
+        smtp konffaus ei production modessa toimi vaan kaikki arvot on
+        tyhjiä…
+    • ☑ smtpauthenticationError: eli user/pass smtp ei hyväksytty
+      config.after_initialize ei production modessa aseta smtp
+      asetuksia…
+    • ☑ VSCode debugger sain toimimaan $ bundle exec rdbg -O -n -c –
+      bin/rails server -p 3000
+      • valitse vscode valikosta "attach debugger". Toimii!
+
+    Yritän estää dockeria käynnistymästä koneen käynnistyessä.
+    • systemctl status docker.socket
+    • systemctl status docker.service
+    • systemctl status docker => käynnistyy edelleen (docker engine?)
 
 
   ◊ 1.4.1.2.3 27
@@ -200,6 +389,18 @@ Table of Contents
         • ☐ import
     • ☑ topic save the world - unite the armies unite the armies - save
       the planet (?)
+
+    • votes kontrollerin testaus nyt hyytyy koska sessio joka löytyy
+      testissä ei enää ole olemassa kontrollerissa, voipi johtua siitä
+      että rails 8:ssa on muuttunut
+      • ☑ on. eli integration testauksessa täytyy tehdä vastaavat
+        requestit joissa sessio asetetaan, ei "käsin".
+      • ☑ ei maileja testatessa nähtävästi on konffaus muuttunut… tällä
+        toimii
+        <https://guides.rubyonrails.org/v8.0/testing.html#testing-your-mailers>
+    • ☑ smtp ainakin lähtee koneelta, smtp_settings.domain oli väärin.
+      • ☑ domain constant
+    • ☑ test testatessa EI pitäisi oikeasti lähteä maileja.
 
 
   ◊ 1.4.1.2.4 26
@@ -221,20 +422,94 @@ Table of Contents
       • ☐ croniin vanhojen votejen poisto eli jos ei ole vahvistettu
     • ☐ token mitä md5_secret_token tekee?
 
+    • ☑ confirm email
+      • ☑ confirm_secret_hash
+      • ☑ vote.email_confirmed:boolean tätä ei pitäisi sekoittaa
+        email_confirmation parametriin, joka ei tallennu kantaan
+        mutta joka on uudelleen kirjoitettu email…
+      • ☑ mailer: confirm email
+      • ☑ gmail uusi email: unitethearmiessavetheplanet@gmail.com
+    • ☑ workspace folder nimeäminen takaisin
+    • ☑ https config.ssl poistettu production configista… vaihda
+      takaisin config.ssl kun toimii palvelimella.
+    • ☑ ActionController::InvalidAuthenticityToken Origin header did not
+      match request.base_url (?)  => production modessa poistettu ssl-
+      käytöstä.
+    • ☑ spam
+      • ☑ lisätään spam boolean voteen ja task jolla nykyiset spam
+        viestit merkitään ja ohitetaan spam recent_votes listassa
+      • pitäisi ohittaa kaikissa listoissa tietysti
+      • voisi tehdä rails tapaan accessorin vai mikä lie nimi oli
+    • ☑ gmail smtp ei toimi, ei voi toimia koska 2-vaiheista
+      tunnistautumista ei ole päällä
+      • ☑ 2-vaiheinen
+
 
   ◊ 1.4.1.2.5 22
+
+    • ☑ äänestys
+      • ☑ captcha uikuttaa
+    • ☑ kommentit tiedostoon
+    • ☑ deployment kokeilin capistrano-rails, capistrano-bundler gemejä
+      mutta tuli vaikeuksia palvelimella polkujen yms. kanssa. Otin
+      pois tässä vaiheessa.
+    • ☑ system test tehdään testi että lippulinkkien protokolla on
+      oikein. Selenium ei toiminut, tuli timeout virhe, cuprite toimi.
+    • ☑ https pois tässä vaiheessa => linkeissä pitäisi huomioida nyt
+      UNITE_APPLICATION_PROTOCOL.
 
 
   ◊ 1.4.1.2.6 21
 
+    • ☑ deploy commitizen, README
+    • ☑ production ongelma rails 8 database cache_storage kaatoi koska
+      taulua ei ole luotu, en saa jostain syystä luotua schemasta
+      taulua joten kommentoin pois.
+    • ☑ Viimeisimmät äänet backbone/underscore pois ja jokin
+      mahdollisimman simppeli tilalle…  jQuery?
+
 
   ◊ 1.4.1.2.7 20
+
+    • ☑ rails new –webpack react jälleen uusi rails projekti, kopsattu
+      kaikki ja testit läpi… puuttuu deployment
+    • ☑ react hello world.  …onpas raskasta työstää vote loopin takia
+      koko palvelu javascriptiksi, toisaalta sen voisi huvin vuoksi
+      tehdä. Täytyy nyt aluksi tehdä kuitekin vain loop-update
+      esim. jqueryllä ja jättää react hautumaan.
 
 
   ◊ 1.4.1.2.8 19
 
+    • ☑ facebook ja twitter linkit vaan enpä saanut riviin, olkoon
+      pystypäin tässä vaiheessa.  => poistettu social-share-buttons
+      gem koska näytti vanhentuneelta.
+    • ☑ javascript virheet
+
+    React? React tuntuu vaikealta uusien asioiden keskellä, myös
+    liioitellulta koska tällä hetkellä riittäisi vain saada uusien
+    äänien looppaus toimimaan. Mahdollisesti kuitenkin
+    backbone/underscore. Mahdollisesti vanha versio, koska uusi
+    underscore aiheutti virheen…  => ei vain oikein toimi, index.jst.eco
+    templatet backbonessa aiheuttaa syntaxErrorin…
+    • ☑ React lopultakin ilman javascript virheitä.
+
 
   ◊ 1.4.1.2.9 18
+
+    • ☑ liput
+    • ☑ github linkin url plus muita linkkejä constants.rb
+      initializeriin.
+    • ☑ deploy viimeistely
+      • ☑ bundle install
+      • ☑ RAILS_ENV=production rails assets:precompile
+      • ☑ passenger restart
+    • ☑ lokalisointi TODO: toimii mutta joitain käännöksiä ei löydy
+      (?). Jouduin lisäämään application.rb initializeriin
+      I18N.available_locales = :en jolloin kaikki localet lähtivät
+      toimimaan…
+    • ☑ comments controller test redirect language based on session
+      falls to english.
 
 
   ◊ 1.4.1.2.10 15
@@ -245,14 +520,79 @@ Table of Contents
     ENV['GEM_HOME'] = "/home/jto/.gem/ruby/3.3.6/gems" ENV['GEM_PATH'] =
     "/home/jto/.gem/ruby/3.3.6/gems"
 
+    • ☑ Lailalle vastaus
+    • ☑ testit
+      • ☑ Vote
+      • ☑ VoteCount
+      • ☑ UASetting
+      • ☑ RecaptchaVerifier
+      • ☑ Language
+      • ☑ Country
+      • ☑ Comment
+    • ☑ initializers/email_validator.rb
+    • ☑ welcome controller test
+    • ☑ passenger ei löydä asennettuja gemejä gempath ei voi olla jto
+      kotihakemisto kun passenger ajetaan ei käyttäjänä.
+
 
   ◊ 1.4.1.2.11 14
+
+    • ☑ passenger asennettu ohjeen mukaan, ylimääräinen gem poistettu.
+    • ☑ apache passenger, apache toimii mutta production modessa ei
+      käynnisty rails…
+    • ☑ toimii tuotantomodessa kehityspalvelimella johtui database.yml
+      muutoksista rails8:ssa sekä credentials tiedostosta puuttuvasta
+      käyttäjätilistä.
+    • ☑ julkaisu
+
+    Puutteita:
+    • ☑ deploy.rb precompile assets ei toimi Mahdollisesti on väärässä
+      hakemistossa kun komento ajetaan.
 
 
   ◊ 1.4.1.2.12 13
 
+    • ☑ deploy
+      • ☑ rvm ja ruby serverillä
+      • ☑ mina asennettu
+    • ☑ cap deploy production/staging /var/www/unitethearmies.org
+      /var/www/test.unitethearmies.org
+    • ☑ argh. päivitin passengeria ja boottasin apachen niin
+      taxomageia.pro katosi. Mutta sain vielä muistilohkosta kaivettua
+      ymmärrystä ja juuri ja juuri palvelun raahattua näyttämölle, eli
+      toimii! huh.
+
+    Vaihdoin takaisin capistranoon ja passengeriin. Capistrano siis
+    automatisoi tietojen siirron. Passenger käynnistää railsin.
+    • secrets.yml on vanhentunut rails5+ versiosta alkaen, käytössä on
+      kryptattu config/credentials.yml.enc.
+
+    Onglemia:
+    • Jostain syystä tuotannossa tiedosto ei aukea vaikka master.key on
+      sama kuin työkoneella.
+    • development/test ympäristöt toimivat mutta productionissa tulee
+      outo virhe, the 'cable' database is not configured for the
+      production environment.
+
 
   ◊ 1.4.1.2.13 12
 
+    Katsotaanpas jos saisin jotain eloa javascripteihin… onnistui.
+    • ☑ eloa javascripteihin assets pipeline tutkimusta, erillisesti
+      importatut tiedostot, puuttuu unite-the-armies.js + "core",
+      lienee oleellinen. Maapallo näkyy nyt.
+    Partiaaleja, mysql2 gem. Tyylitiedostoja. Assets pipeline moottori
+    on vaihtunut juuri rails8:ssa.
+
 
   ◊ 1.4.1.2.14 11
+
+    • ☑ Eka onnistunut boottaus
+    • ☑ Visual Studio Code projekti
+    • ☑ Rails boottaus
+    • ☑ Alustavia kokeiluja Joitain tiedostoja siirretty, fast_gettext
+      gem asennettu. Request jumauttaa rails serveriprosessin.
+    • ☑ Ruby ja Rails asennettu. Rvm pitää asentaa ilman sudoa. Se ei
+      asennu ilman sudoa jos käyttäjä ei ole rvm ryhmässä. Käyttäjä ei
+      päivity prosessin ryhmään ilman REBOOT:tia, eli logout ei
+      riittänyt vaikka ohjeessa näin sanottiin.
