@@ -1,18 +1,18 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
-<meta name="twitter:widgets:theme" content="light">
-
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport" />
+<meta name="twitter:widgets:theme" content="light" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="<%= UNITE_TITLE %>" />
 <meta property="og:description"   content="<%= UNITE_DESCRIPTION %>" />
 <meta property="og:url"           content="<%= UNITE_ROOT_URL %>" />
 <meta property="og:image"         content="<%= image_url(UNITE_LOGO) %>" />
+<%= csrf_meta_tags %>
 
-<link rel="shortcut icon" type="image/x-icon" href="/images/theme-mountain-favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href=<%= image_path("theme-mountain-favicon.ico") %> />
 
 <!-- Font -->
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700%7CRoboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700%7CRoboto:300,400,500,700' rel='stylesheet' type='text/css' />
 
 <title><%= _(UNITE_TITLE) %>!</title>
 
@@ -20,27 +20,9 @@
   RUN_RECENT_VOTES = <%= ENV['UNITE_RUN_RECENT_VOTES'] %>;
 </script>
 
-<%= javascript_importmap_tags %>
-
-<%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-<%= stylesheet_link_tag 'flags.css', "data-turbo-track": "reload" %>
-<%= stylesheet_link_tag 'bootstrap.min.css', "data-turbo-track": "reload" %>
-
-<%= javascript_include_tag 'jquery' %>
-<%= javascript_include_tag 'jquery_ujs' %>
-<%= javascript_include_tag 'countries' %>
-<%= javascript_include_tag 'bootstrap.min.js' %>
-<%= javascript_include_tag 'timber.master.min.js' %>
-<%= javascript_include_tag 'flash_messages' %>
-<%= javascript_include_tag 'jquery.cslider' %>
-<%= javascript_include_tag 'jquery.flexisel' %>
-<%= javascript_include_tag 'modernizr.custom.28468' %>
-<%= javascript_include_tag 'owl.carousel.js' %>
-<%= javascript_include_tag 'responsive-nav' %>
-<%= javascript_include_tag 'responsiveslides.min' %>
-<%= javascript_include_tag 'slideshow.js' %>
-<%= javascript_include_tag 'unitethearmies', type: 'module' %>
-<%= javascript_include_tag 'start', type: 'module' %>
+<%= stylesheet_link_tag :app %>
+<%= stylesheet_link_tag 'flags' %>
+<%= stylesheet_link_tag 'bootstrap.min' %>
 
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -51,8 +33,6 @@ js = d.createElement(s); js.id = id;
 js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-<%= csrf_meta_tags %>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -10,28 +10,32 @@
             <div class="tms-content-inner center left-on-mobile v-align-middle">
               <div class="row">
                 <div class="col-12">
-                  <h1 class="tms-caption title-xlarge color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:3000ms;easing:easeFastSlow;"
-                      data-no-scale>
-                    <%= _("Support") %>
-                  </h1>
-                  <div class="clear"></div>
-                  <h5 class="tms-caption color-white lspacing-medium mt-20"
-                      data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-                    <%= _("Radical actions are urgently needed to save our planet.") %>
-                  </h5>
                 </div>
               </div>
             </div>
           </div>
-          <img data-src="/images/frontpage-slides/lenkki-pitkospuilla.jpg" src="/images/blank.png" alt=""/>
+          <img data-src=<%= image_path("frontpage-slides/lenkki-pitkospuilla.jpg") %> src=<%= image_path("blank.gif") %> alt="<%= _("Duckboard") %>"/>
         </li>
       </ul>
     </div>
   </section>
   <!-- Fullscreen Slider Section End -->
 </div>
-<!-- Content End -->
 
+<!-- Content End -->
+<section class="section-block-pt feature-1 bkg-white">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="title-xlarge color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+        <%= _("Support") %>
+      </h1>
+      <div class="clear"></div>
+      <h5 class="color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+        <%= _("Radical actions are urgently needed to save our planet.") %>
+      </h5>
+    </div>
+  </div>
+</section>
 <!-- Feature Section 1 -->
 <section class="section-block feature-1 bkg-white">
   <div class="row no-padding-bottom">

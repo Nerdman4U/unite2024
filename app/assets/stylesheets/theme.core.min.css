@@ -40,6 +40,7 @@ body {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .wrapper {
   width: 100%;
@@ -47,6 +48,7 @@ body {
   margin-left: auto;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .wrapper-inner {
   max-width: 100%;
@@ -731,6 +733,7 @@ body.boxed .wrapper-inner {
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .side-navigation-wrapper.active {
   visibility: visible;
@@ -1203,6 +1206,7 @@ a.overlay-info:hover {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .thumbnail:hover .overlay-info,
 .thumbnail:hover img {
@@ -2632,7 +2636,6 @@ ol [class*="icon-"] {
   font-size: 1.2rem;
   font-weight: normal;
   text-decoration: none;
-  vertical-align: middle;
   display: block;
   color: #666666;
   background-color: #eeeeee;
@@ -3152,9 +3155,11 @@ table.table {
   background: #eeeeee;
   overflow: hidden;
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 }
 .aux-navigation-active .progress-bar {
   -webkit-mask-image: none;
+  mask-image: none;
 }
 .bar {
   width: 100%;
@@ -3163,6 +3168,7 @@ table.table {
   border: 1px solid #d0d0d0;
   background: #d0d0d0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .progress-bar-label {
   margin-bottom: 0.8rem;
@@ -3213,9 +3219,11 @@ table.table {
   overflow: hidden;
   position: relative;
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 }
 .aux-navigation-active .range-slider {
   -webkit-mask-image: none;
+  mask-image: none;
 }
 .range-active-segment {
   width: 100%;
@@ -3224,6 +3232,7 @@ table.table {
   border: 1px solid #d0d0d0;
   background: #d0d0d0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   position: absolute;
   z-index: 0;
 }
@@ -3713,18 +3722,16 @@ pre code {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/entypo.eot?-r9lvae");
-  src: url("../fonts/entypo.eot?#iefix-r9lvae") format("embedded-opentype"),
-    url("../fonts/entypo.woff?-r9lvae") format("woff"),
-    url("../fonts/entypo.ttf?-r9lvae") format("truetype"),
-    url("../fonts/entypo.svg?-r9lvae#icomoon") format("svg");
+  src: "/fonts/entypo.eot";
+  src: "/fonts/entypo.eot" format("embedded-opentype"),
+    "/fonts/entypo.woff" format("woff"), "/fonts/entypo.ttf" format("truetype"),
+    "/fonts/entypo.svg" format("svg");
   font-weight: normal;
   font-style: normal;
 }
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: "icomoon";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5911,8 +5918,6 @@ a {
     vertical-align: top;
     margin-right: -0.4rem;
   }
-  .table:not(.non-responsive) > tbody > tr > td {
-  }
   .table:not(.non-responsive) tr > td:last-child {
     border-bottom: none;
   }
@@ -6367,7 +6372,7 @@ a {
   -o-animation: preloader 1s ease infinite;
   animation: preloader 1s ease infinite;
 }
-@-webkit-keyframes "preloader" {
+@-webkit-keyframes preloader {
   from {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -6377,7 +6382,7 @@ a {
     -webkit-transform: scale(0);
   }
 }
-@keyframes "preloader" {
+@keyframes preloader {
   from {
     opacity: 1;
     transform: scale(1);
@@ -6390,7 +6395,7 @@ a {
 .tms-caption {
   width: auto;
   display: inline-block !important;
-  background-image: url(../images/blank.png);
+  background-image: url(blank.gif);
   opacity: 0;
   position: absolute;
   z-index: 2;
@@ -6575,18 +6580,17 @@ a {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/entypo.eot?-r9lvae");
-  src: url("../fonts/entypo.eot?#iefix-r9lvae") format("embedded-opentype"),
-    url("../fonts/entypo.woff?-r9lvae") format("woff"),
-    url("../fonts/entypo.ttf?-r9lvae") format("truetype"),
-    url("../fonts/entypo.svg?-r9lvae#icomoon") format("svg");
+  src: "/fonts/entypo.eot";
+  src: "/fonts/entypo.eot?#iefix-r9lvae" format("embedded-opentype"),
+    "/fonts/entypo.woff?-r9lvae" format("woff"),
+    "/fonts/entypo.ttf?-r9lvae" format("truetype"),
+    "/fonts/entypo.svg?-r9lvae#icomoon" format("svg");
   font-weight: normal;
   font-style: normal;
 }
 [class^="tms-arrow-nav"]:before,
 [class*="tms-arrow-nav"]:before {
   font-family: "icomoon";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -6622,6 +6626,7 @@ a {
   position: fixed;
   z-index: 1000;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 #tm-lightbox.tml-modal-mode {
   background: rgba(0, 0, 0, 0.2);
@@ -6633,6 +6638,7 @@ a {
   opacity: 0;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .tml-modal-mode .modal-dialog {
   background: #fff;
@@ -6703,7 +6709,7 @@ a {
   -o-animation: preloader 1s ease infinite;
   animation: preloader 1s ease infinite;
 }
-@-webkit-keyframes "preloader" {
+@-webkit-keyframes preloader {
   from {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -6713,7 +6719,7 @@ a {
     -webkit-transform: scale(0);
   }
 }
-@keyframes "preloader" {
+@keyframes preloader {
   from {
     opacity: 1;
     transform: scale(1);
@@ -6730,6 +6736,7 @@ a {
   text-align: center;
   opacity: 0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-text-size-adjust: none;
   -moz-text-size-adjust: none;
   -ms-text-size-adjust: none;
@@ -6856,18 +6863,17 @@ a {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/entypo.eot?-r9lvae");
-  src: url("../fonts/entypo.eot?#iefix-r9lvae") format("embedded-opentype"),
-    url("../fonts/entypo.woff?-r9lvae") format("woff"),
-    url("../fonts/entypo.ttf?-r9lvae") format("truetype"),
-    url("../fonts/entypo.svg?-r9lvae#icomoon") format("svg");
+  src: "/fonts/entypo.eot?-r9lvae";
+  src: "/fonts/entypo.eot?#iefix-r9lvae" format("embedded-opentype"),
+    "/fonts/entypo.woff?-r9lvae" format("woff"),
+    "/fonts/entypo.ttf?-r9lvae" format("truetype"),
+    "/fonts/entypo.svg?-r9lvae#icomoon" format("svg");
   font-weight: normal;
   font-style: normal;
 }
 [class^="tml-nav"]:before,
 [class*="tml-nav"]:before {
   font-family: "icomoon";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -6921,6 +6927,7 @@ a {
   left: 0;
   z-index: 0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .tmp-content {
   display: table;
@@ -6956,6 +6963,7 @@ a {
   position: absolute;
   opacity: 1;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .tm-loader,
 .tm-loader #circle {
@@ -6980,7 +6988,7 @@ a {
   -o-animation: preloader 1s ease infinite;
   animation: preloader 1s ease infinite;
 }
-@-webkit-keyframes "preloader" {
+@-webkit-keyframes preloader {
   from {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -6990,7 +6998,7 @@ a {
     -webkit-transform: scale(0);
   }
 }
-@keyframes "preloader" {
+@keyframes preloader {
   from {
     opacity: 1;
     transform: scale(1);
@@ -7513,7 +7521,7 @@ body.boxed .grid-container.small-margins.full-width > .row > .column {
 }
 .header-transparent .header-inner {
   background-color: transparent;
-  background-image: url(../images/blank.png);
+  background-image: url(blank.gif);
 }
 .header-absolute {
   position: absolute;
@@ -7542,6 +7550,7 @@ body.boxed .grid-container.small-margins.full-width > .row > .column {
   position: relative;
   z-index: 100;
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .header-sticky .header-inner {
   width: 100%;
@@ -8132,7 +8141,7 @@ body.boxed .header .header-inner {
 }
 .intro-title-2 {
   height: 40rem;
-  background-image: url(../images/slider/slide-9-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -8160,7 +8169,7 @@ body.boxed .header .header-inner {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .intro-title-2 {
-    background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 [class*="hero-"] > .row,
@@ -8241,7 +8250,7 @@ body.boxed
   height: 50rem;
   text-align: left;
   color: #fff;
-  background-image: url(../images/slider/slide-2-fs-hp.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
 }
 .hero-2 h2,
@@ -8252,7 +8261,7 @@ body.boxed
   height: 50rem;
   text-align: left;
   display: table;
-  background-image: url(../images/slider/slide-5-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   position: relative;
 }
@@ -8320,7 +8329,7 @@ body.boxed
   height: 50rem;
   text-align: left;
   color: #fff;
-  background-image: url(../images/slider/slide-9-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   position: relative;
 }
@@ -8369,7 +8378,7 @@ body.boxed
 .hero-5 > .row:after {
   width: 50%;
   height: 100%;
-  background-image: url(../images/slider/slide-9-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   content: "";
   position: absolute;
@@ -8462,7 +8471,7 @@ body.boxed .hero-6 {
 .hero-7 > .row:before {
   width: 50%;
   height: 100%;
-  background-image: url(../images/slider/slide-9-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   content: "";
   position: absolute;
@@ -8714,16 +8723,16 @@ body.boxed .hero-7 .media-column > * {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .hero-2 {
-    background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
   .hero-3 {
-    background-image: url(../images/slider/slide-5-fw@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
   .hero-4 {
-    background-image: url(../images/slider/dev-video-cta-3@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
   .hero-5 .hero-content.background-image {
-    background-image: url(../images/slider/slide-9-fw@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 .feature-content,
@@ -9048,7 +9057,7 @@ body.boxed .hero-7 .media-column > * {
   bottom: -1.3rem;
 }
 .signup-2 {
-  background-image: url(../images/slider/slide-5-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -9066,7 +9075,7 @@ body.boxed .hero-7 .media-column > * {
   width: 100%;
 }
 .signup-3 {
-  background-image: url(../images/slider/slide-5-fw.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -9140,7 +9149,7 @@ body.boxed .hero-7 .media-column > * {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .signup-2 {
-    background-image: url(../images/slider/slide-5-fw@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 .testimonial-1 h6 {
@@ -9238,7 +9247,7 @@ body.boxed .hero-7 .media-column > * {
 }
 .testimonial-5 {
   color: #fff;
-  background-image: url(../images/slider/slide-2-fs-hp.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -9334,7 +9343,7 @@ body.boxed .hero-7 .media-column > * {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .testimonial-5 {
-    background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 [class*="team-"] .signature {
@@ -9436,7 +9445,7 @@ body.boxed .hero-7 .media-column > * {
   background: #e7e7e7;
 }
 .team-3 {
-  background-image: url(../images/team/page-01-bg.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -9824,7 +9833,7 @@ body.boxed .team-3 {
   opacity: 0.5;
 }
 .logos-2 {
-  background-image: url(../images/slider/slide-5-fw@2x.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -9980,7 +9989,7 @@ body.boxed .team-3 {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .logos-2 {
-    background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 .clients-1 {
@@ -10079,7 +10088,7 @@ body.boxed .social-2 {
 }
 .social-3 {
   text-align: center;
-  background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -10154,7 +10163,7 @@ body.boxed .social-2 {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .social-3 {
-    background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 [class*="stats-"] > .row,
@@ -10192,7 +10201,7 @@ body.boxed .social-2 {
 }
 .stats-1 {
   color: #fff;
-  background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -10356,7 +10365,7 @@ body.boxed .social-2 {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .stats-1 {
-    background-image: url(../images/slider/slide-2-fs-hp@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 .section-block.fullscreen-sections-wrapper,
@@ -10410,6 +10419,7 @@ body.boxed .fullscreen-section {
   height: 100%;
   position: absolute;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   top: 0;
   left: 0;
 }
@@ -10447,6 +10457,7 @@ body.boxed .fullscreen-section {
   -webkit-transition-duration: 600ms;
   transition-duration: 600ms;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .fs-bullet-nav {
   width: 0.8rem;
@@ -10521,17 +10532,17 @@ body.boxed .fullscreen-section .fullscreen-inner {
   height: 100vh;
 }
 .coming-soon-1 .background-image {
-  background-image: url(../images/fullscreen/coming-soon-1.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
 }
 .coming-soon-2 .background-image {
-  background-image: url(../images/fullscreen/coming-soon-1.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
 }
 .coming-soon-2 h1 {
   font-size: 10rem;
   line-height: 1;
 }
 .error-404 .background-image {
-  background-image: url(../images/fullscreen/coming-soon-1.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
 }
 .error-404 h1 {
   font-size: 15rem;
@@ -10546,7 +10557,7 @@ body.boxed .fullscreen-section .fullscreen-inner {
   width: 100%;
 }
 .error-500 .background-image {
-  background-image: url(../images/fullscreen/coming-soon-1.jpg);
+  background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
 }
 .error-500 h1 {
   font-size: 15rem;
@@ -10659,16 +10670,16 @@ body.boxed .fullscreen-section .fullscreen-inner {
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .coming-soon-1 .background-image {
-    background-image: url(../images/fullscreen/coming-soon-1@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
   .coming-soon-2 .background-image {
-    background-image: url(../images/fullscreen/coming-soon-1@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
   .error-404 .background-image {
-    background-image: url(../images/fullscreen/coming-soon-1@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
   .error-500 .background-image {
-    background-image: url(../images/fullscreen/coming-soon-1@2x.jpg);
+    background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
 .pagination-previous.disabled,
@@ -10735,6 +10746,7 @@ body.boxed .fullscreen-section .fullscreen-inner {
   background-size: cover;
   background-position: center;
   -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 body.boxed .pagination-2 {
   padding-left: 0;
@@ -11272,7 +11284,7 @@ body.boxed .footer .footer-bottom {
   -webkit-transition-property: transform;
   transition-property: transform;
   -webkit-transition-duration: 200ms;
-  transform-transition-duration: 200ms;
+  transition-duration: 200ms;
 }
 .post-love a:hover [class*="icon-"],
 .post-comment a:hover [class*="icon-"] {
@@ -12090,7 +12102,7 @@ body.boxed .blog-masonry.full-width [class*="content-grid"] {
 }
 .nav-block .cart-overview .view-cart,
 .nav-block .cart-overview .checkout {
-  display: inline-block;
+  display: block;
   float: left;
 }
 .nav-block .cart-overview .view-cart:not(.button),

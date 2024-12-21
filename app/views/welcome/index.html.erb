@@ -22,7 +22,7 @@
             </div>
           </div>
         </div>
-        <img data-src="/images/slide-1-fs.jpg" data-retina src="/images/blank.png" alt=""/>
+        <img data-src=<%= image_path("earth-bg.jpg") %> data-retina src=<%= image_path("blank.gif") %> alt="The Earth"/>
       </li>
     </ul>
   </div>
@@ -31,13 +31,13 @@
 
 <div class="section-block bkg-charcoal m-0 p-0 overflow-hidden">
   <ol class="slideshow" style="height: 66vw; min-height: 300pt;" data-interval="5">
-    <li data-image-src="/images/frontpage-slides/slide-2.jpg" data-class="black-text"/>
-    <li data-image-src="/images/frontpage-slides/viidakko.jpg" data-class="black-text"/>
-    <li data-image-src="/images/frontpage-slides/tyyni-jarvenselka.jpg" data-class="black-text"/>
-    <li data-image-src="/images/frontpage-slides/talvi18.jpg" data-class="black-text"/>
-    <li data-image-src="/images/frontpage-slides/slide-5.jpg"/>
-    <li data-image-src="/images/frontpage-slides/slide-6.jpg"/>
-    <li data-image-src="/images/frontpage-slides/sunrise-on-the-sea.jpg"/>
+    <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text"/>
+    <li data-image-src=<%= image_path("frontpage-slides/viidakko.jpg") %> data-class="black-text"/>
+    <li data-image-src=<%= image_path("frontpage-slides/tyyni-jarvenselka.jpg") %> data-class="black-text"/>
+    <li data-image-src=<%= image_path("frontpage-slides/talvi18.jpg") %> data-class="black-text"/>
+    <li data-image-src=<%= image_path("frontpage-slides/avaruus.jpg") %> />
+    <li data-image-src=<%= image_path("frontpage-slides/autumn-shore.jpg") %> />
+    <li data-image-src=<%= image_path("frontpage-slides/sunrise-on-the-sea.jpg") %> />
   </ol>
   <div style="display: flex; align-items: center;" id="slideshow-caption" class="container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
     <div style="">
@@ -68,7 +68,7 @@
           <div class="col-6">
             <div class="feature-column large center horizon" data-animate-in="transX:-30px;" data-threshold="1">
               <div class="mt-5">
-                <%= image_tag "barber-shop/pollution.jpg", alt:_('Pollution') %>
+                <%= image_tag "pollution.jpg", alt:_('Pollution') %>
               </div>
               <div class="feature-text">
                 <h2 class="h2 mt-2"><%= _("Air pollution is a global Challenge!") %></h2>
@@ -79,7 +79,7 @@
           <div class="col-6">
             <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:200ms;" data-threshold="1">
               <div class="mt-5">
-                <%= image_tag "barber-shop/nowater.jpg", alt:"" %>
+                <%= image_tag "nowater.jpg", alt:"" %>
               </div>
               <div class="feature-text">
                 <h2 class="h2 mt-2"><%= _("Water is the Mother of Life – we all need it!") %></h2>
@@ -96,7 +96,7 @@
           <div class="col-6">
             <div class="feature-column large center horizon" data-animate-in="transX:-30px;delay:400ms;" data-threshold="1">
               <div class="mt-5">
-                <%= image_tag "barber-shop/trash.jpg", alt:"" %>
+                <%= image_tag "trash.jpg", alt:"" %>
               </div>
               <div class="feature-text">
                 <h2 class="h2 mt-2"><%= _("Millions of Tons of Plastic Waste on the Shores and Oceans!") %></h2>
@@ -107,7 +107,7 @@
           <div class="col-6">
             <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:600ms;" data-threshold="1">
               <div class="mt-5">
-                <%= image_tag "barber-shop/polars.jpg", alt:"" %>
+                <%= image_tag "polars.jpg", alt:"" %>
               </div>
               <div class="feature-text">
                 <h2  class="h2 mt-2"><%= _("We must defend Life's Richness on our Planet!") %></h2>
