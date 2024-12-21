@@ -1,3 +1,10 @@
+## 1.36.0 (2024-12-21)
+
+### Feat
+
+- **favicon.ico**: new favicon, the earth
+- **assets**: Megacommit of assets because paths and locations did change. Removed images from public
+
 ## 1.35.0 (2024-12-19)
 
 ### Feat
