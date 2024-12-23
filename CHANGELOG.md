@@ -1,3 +1,9 @@
+## 1.38.0 (2024-12-23)
+
+### Feat
+
+- **footer**: Bootstrap icons at footer
+
 ## 1.37.0 (2024-12-23)
 
 ### Feat
