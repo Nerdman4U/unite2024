@@ -1,3 +1,10 @@
+## 1.39.0 (2024-12-23)
+
+### Feat
+
+- Deployment tasks to install and migrate
+- Bootstrap icons, fixed indentation
+
 ## 1.38.0 (2024-12-23)
 
 ### Feat
