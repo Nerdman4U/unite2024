@@ -11,6 +11,11 @@ namespace :deploy do
     system("RAILS_ENV=production bin/rails assets:precompile")
   end
 
+  desc "Migrate"
+  task :migrate do
+    system("RAILS_ENV=production bin/rails db:migrate")
+  end
+
   task :restart do
     system("passenger-config restart-app /var/www/unitethearmies.org/")
   end
