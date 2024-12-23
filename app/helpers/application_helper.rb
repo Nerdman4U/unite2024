@@ -24,9 +24,13 @@ module ApplicationHelper
     end.join.html_safe
   end
 
+  ## Link to Token
+  #
+  # <i> needs to be ended with </i>. Currenly, by default, tag-helper.i ends <i> as <i/> which is not enough
+  # because icons are multiplied (maybe because of bootstrap?). This why tag.i has empty content (by having do end).
   def link_to_token
     link_to new_token_url do
-      tag :span, class: "icon-flower medium", title: _("Get to your private vote")
+      tag.i class: "bi bi-flower1", title: _("To your private vote") do end
     end
   end
 
@@ -42,13 +46,13 @@ module ApplicationHelper
 
     token = vote.encoded_payload
     link_to vote_url(token: token) do
-      tag :span, class: "icon-heart medium", title: _("Your private vote")
+      tag :i, class: "bi bi-chat-square", title: _("Your private vote")
     end
   end
 
   def link_to_logout
     link_to logout_url, method: :delete do
-      tag :span, class: "icon-bell medium", title: _("Logout")
+      tag :i, class: "bi bi-box-arrow-right", title: _("Logout")
     end
   end
 end

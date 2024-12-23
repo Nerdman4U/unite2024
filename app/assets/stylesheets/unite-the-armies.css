@@ -19,6 +19,11 @@ body {
   }
 }
 
+.bi {
+  font-size: 2rem;
+  color: cornflowerblue;
+}
+
 .section-block-pt {
   background: white;
   width: 100%;
