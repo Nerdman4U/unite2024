@@ -1628,12 +1628,6 @@ body,
   border: none;
 }
 
-/* Slider Buttons */
-.tm-slider-container .button {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
 /* Mobile Slider & Parallax */
 .mobile .featured-media,
 .mobile .parallax.fixed-height {

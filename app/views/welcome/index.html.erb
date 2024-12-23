@@ -7,15 +7,19 @@
           <div class="container tms-content-inner center left-on-mobile v-align-middle">
             <div class="row">
               <div class="col-12">
-                <h1 class="tms-caption title-xlarge color-white lspacing-medium mb-20 weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+                <h1 class="fw-bold fs-10 position-static color-white tms-caption lspacing-medium mb-20 weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
                   <%= _("Save the planet") %>
                 </h1>
 
-                <h5 class="tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+                <h5 class="fw-bold fs-5 position-static tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
                   <%= _("Give the armies a new, positive task: protect the environment") %>
                 </h5>
                 <div class="clear"></div>
-                <%= link_to new_vote_path(locale: locale, anchor: "sign"), :class => "tms-caption text-decoration-none button large bkg-white thick bkg-hover-beige color-black color-hover-white text-uppercase no-margin-bottom text-uppercase", data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;", no_scale: true, no_turbolink: true } do %>
+                <%= link_to new_vote_path(locale: locale, anchor: "sign"),
+                  # "button xlarge bkg-black bkg-hover-grey-ultralight color-white color-hover-black text-uppercase shadow rounded"
+                  :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
+                  data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;",
+                  no_scale: true, no_turbolink: true } do %>
                     <%= _("Support now") %>
                 <% end %>
               </div>
@@ -121,54 +125,31 @@
   </div>
 </section>
 
-<%
-  if locale == :fi
-    url = "https://player.vimeo.com/video/153508732?autoplay=false"
-    video_id = "153508732"
-  elsif locale == :es
-    url = "https://player.vimeo.com/video/153508813?autoplay=false"
-    video_id = "153508813"
-  elsif locale == :zh
-    url = "https://player.vimeo.com/video/153508814?autoplay=false"
-    video_id = "153508814"
-  elsif locale == :ru
-    url = "https://player.vimeo.com/video/153508816?autoplay=false"
-    video_id = "153508816"
-  elsif locale == :fr
-    url = "https://player.vimeo.com/video/153508812?autoplay=false"
-    video_id = "153508812"
-  elsif locale == :ar
-    url = "https://player.vimeo.com/video/160513218?autoplay=false"
-    video_id = "160513218"
-  else
-    url = "https://player.vimeo.com/video/153508772?autoplay=false"
-    video_id = "153508772"
-  end
-%>
 <section class="section-block">
   <div style="padding:80% 0 0 0;position:relative;">
-    <iframe src="https://player.vimeo.com/video/<%= video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
+    <iframe src="https://player.vimeo.com/video/<%= unite_video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
   </div>
   <script src="https://player.vimeo.com/api/player.js"></script>
 </section>
 
-<section class="section-block">
+<section class="section-block feature-2 bkg-grey">
   <div class="row">
-    <div class="col-12 text-center">
-      <div class="feature-content">
-        <div class="feature-content-inner">
-          <%= link_to appeal_path(locale: locale), { :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
-              <span class="icon-info-with-circle left"></span>
-              <%= _("Read more") %>
-          <% end %>
-
-          <%= link_to new_vote_path(locale: locale), { :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
-              <span class="icon-add-user left"></span>
-              <%= _("Support now") %>
-          <% end %>
-        </div>
-      </div>
+    <div class="col-12">
+      <%= link_to appeal_path(locale: locale),
+        { :class => button_black } do
+          content = tag.span class: "bi bi-info-circle align-middle" do " " end
+          content << _("Read more")
+          content
+        end
+      %>
+      <%= link_to new_vote_path(locale: locale),
+        { :class => button_black } do
+          content = tag.span class: "bi bi-person-add align-middle" do " " end
+          content << _("Support now")
+          content
+        end
+      %>
     </div>
   </div>
 </section>
-<!-- Feature Section 1 End -->
+

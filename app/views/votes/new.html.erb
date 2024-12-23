@@ -36,6 +36,7 @@
     </div>
   </div>
 </section>
+
 <!-- Feature Section 1 -->
 <section class="section-block feature-1 bkg-white">
   <div class="row no-padding-bottom">
@@ -50,11 +51,13 @@
 </section>
 <!-- Feature Section 1 End -->
 
-<section class="section-block feature-1 bkg-grey">
-  <div>
-    <%= link_to votes_path(locale: locale), { :class => "button large bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }} do %>
-      <span class="icon-add-user left"></span>
-      <p><%= _("See who have already voted!") %></p>
-    <% end %>
+<section class="section-block feature-2 bkg-grey">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
+        <span class="bi bi-person-arms-up align-middle"></span>
+        <%= _("See who have already voted!") %>
+      <% end %>
+    </div>
   </div>
 </section>

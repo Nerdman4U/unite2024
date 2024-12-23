@@ -24,6 +24,45 @@ body {
   color: cornflowerblue;
 }
 
+.bkg-cornflowerblue {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+.bkg-hover-cornflowerblue:hover {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+.button {
+  text-decoration: none;
+}
+
+.fs-10 {
+  font-size: 8rem;
+  line-height: 1;
+}
+.px-6 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+.py-4-5 {
+  padding-top: 1.9rem;
+  padding-bottom: 1.9rem;
+}
+
+.lspacing-small {
+  letter-spacing: 0.2rem;
+}
+.lspacing-medium {
+  letter-spacing: 0.3rem;
+}
+.lspacing-large {
+  letter-spacing: 0.5rem;
+}
+.lspacing-xlarge {
+  letter-spacing: 0.8rem;
+}
+
 .section-block-pt {
   background: white;
   width: 100%;
@@ -80,9 +119,6 @@ select#vote_country:focus {
   height: auto;
   margin-top: 50pt;
   margin-bottom: 0;
-}
-
-#slideshow-caption span {
 }
 
 #slideshow-caption h2 {

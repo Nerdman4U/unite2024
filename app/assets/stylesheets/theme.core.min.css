@@ -1774,7 +1774,7 @@ button [class*="icon-"].right,
 input[type="submit"]::-moz-focus-inner {
   border: 0 !important;
 }
-button.rounded,
+/* button.rounded,
 .button.rounded {
   border-radius: 0.3rem;
 }
@@ -1791,7 +1791,7 @@ button.shadow,
 button.hard-shadow,
 .button.hard-shadow {
   border-bottom: 3px solid rgba(0, 0, 0, 0.15);
-}
+} */
 button.disabled,
 .button.disabled {
   cursor: default;
@@ -5025,7 +5025,7 @@ pre code {
 .icon-circled {
   border-radius: 10rem;
 }
-[class*="border-"].padded,
+/* [class*="border-"].padded,
 [class*="bkg-"].padded {
   padding: 1rem 2rem;
 }
@@ -5053,7 +5053,7 @@ pre code {
 [class*="border-"].thick,
 [class*="border-"].thick * {
   border-width: 0.2rem;
-}
+} */
 .border-turquoise {
   border-color: #00a186;
 }
