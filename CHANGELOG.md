@@ -1,3 +1,9 @@
+## 1.41.0 (2024-12-24)
+
+### Feat
+
+- **_share_vote.html.erb**: Styles and text
+
 ## 1.40.0 (2024-12-24)
 
 ### Feat
