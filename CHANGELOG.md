@@ -1,3 +1,9 @@
+## 1.42.0 (2024-12-24)
+
+### Feat
+
+- **_header.html.erb**: Removed facebook and twitter share buttons
+
 ## 1.41.0 (2024-12-24)
 
 ### Feat
