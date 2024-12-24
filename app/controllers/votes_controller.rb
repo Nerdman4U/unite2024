@@ -197,20 +197,6 @@ class VotesController < ApplicationController
       return
     end
 
-    # Send confirm emails only once per 5 minutes
-    #
-    # TODO:
-    # => testi && siirrä helperiin (?)
-    # confirm_email_sent = session[:confirm_email_sent].try(:to_time)
-    # if confirm_email_sent && Time.now - confirm_email_sent < 5.minutes
-    #   wait_left = (5.minutes - (Time.now - confirm_email_sent)) / 60
-    #   wait_left_minutes = wait_left.to_i
-    #   wait_left_seconds = ((wait_left - wait_left_minutes)*60).to_i
-    #   puts "wait_left: #{wait_left}, wait_left_minutes: #{wait_left_minutes}, wait_left_seconds: #{wait_left_seconds}"
-    #   flash[:warning] = _("Please wait #{wait_left_minutes}min #{wait_left_seconds.to_i}sec before sending another email")
-    #   return
-    # end
-
     if wtl = helpers.waiting_time_left
       flash[:warning] = _("Please wait #{wtl[:min]}min #{wtl[:sec]}sec before sending another email")
       return
