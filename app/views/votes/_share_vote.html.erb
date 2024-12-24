@@ -1,28 +1,27 @@
 <%= form_tag email_invite_votes_path, remote: true do %>
-  <div>
-    <%= hidden_field_tag(:t, @vote.md5_secret_token) %>
-    <div class="field">
-      <%= label_tag _("Choose the language of the invitation letter") %>
-      <%= select_tag :language, options_for_select(Language.translated_select_options), :class => "form-control" %>
-    </div>
-    <div class="field">
-      <%= label_tag _("Name of your friend") + " *" %>
-      <%= text_field_tag :name, nil, :class => "form-control", :style => "color: black !important" %>
-    </div>
-    <div class="field">
-      <%= label_tag _("Your friends email address") + " *" %>
-      <%= text_field_tag :email, nil, :class => "form-control", :style => "color: black !important" %>
-    </div>
-    <div class="field">
-      <%= label_tag _("Email Confirmation") + " *" %>
-      <%= text_field_tag :email_repeat, nil, :class => "form-control", :style => "color: black !important" %>
-    </div>
-    <div class="field">
-      <div class="g-recaptcha" data-sitekey="<%= UNITE_RECAPTCHA_PUBLIC_KEY %>">></div>
-    </div>
-    <div class="field">
-      <%= submit_tag _("Send"), :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90" %>
-    </div>
+<div>
+  <%= hidden_field_tag(:t, @vote.md5_secret_token) %>
+  <div class="mb-3">
+    <%= label_tag :language, _("Choose the language of the invitation letter") %>
+    <%= select_tag :language, options_for_select(Language.translated_select_options), :class => "form-control" %>
   </div>
+  <div class="mb-3">
+    <%= label_tag :name, _("Name of your friend") + " *" %>
+    <%= text_field_tag :name, nil, :class => "form-control", :style => "color: black !important" %>
+  </div>
+  <div class="mb-3">
+    <%= label_tag :email, _("Your friends email address") + " *" %>
+    <%= text_field_tag :email, nil, :class => "form-control", :style => "color: black !important" %>
+  </div>
+  <div class="mb-3">
+    <%= label_tag :email_repeat, _("Your friends email address again") + " *" %>
+    <%= text_field_tag :email_repeat, nil, :class => "form-control", :style => "color: black !important" %>
+  </div>
+  <div class="mb-3">
+    <div class="g-recaptcha" data-sitekey="<%= UNITE_RECAPTCHA_PUBLIC_KEY %>">></div>
+  </div>
+  <div class="mb-3">
+    <%= submit_tag _("Send"), :class => button_white %>
+  </div>
+</div>
 <% end %>
-

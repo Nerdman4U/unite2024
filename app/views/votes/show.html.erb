@@ -54,8 +54,8 @@
       </div>
       <div class="col-4">
         <div class="blockquote feature-column small left">
-          <p><%= ("Read comments give by previous voters.") %></p>
-          <p><%= _("Join the discussion in Discord.") %></p>
+          <p><%= ("Read anonymous comments given by previous voters.") %></p>
+          <p><%= _("Join the discussion on Discord.") %></p>
           <p><%= _("You can also add Your own %s!" % tag.u(link_to(_("comment"), new_comment_path))).html_safe %></p>
         </div>
       </div>
@@ -99,6 +99,8 @@
     </div>
   </div>
 
+  <%
+=begin%>
   <div class="section-block bg-dark text-light">
     <div class="row">
       <div class="col-12">
@@ -109,18 +111,21 @@
       </div>
     </div>
   </div>
+  <%
+=end%>
 
-  <div class="section-block bg-light text-dark">
+  <div class="section-block bg-dark text-light">
     <div class="row">
       <div class="col-12">
-        <h2 class="h2"><%= _("Share email with your friends") %></h2>
-        <p class="blockquote">
-          <%= _("Invite your friends. Fill out a form below and information will be sent to given email") %>
-        </p>
+        <h2 class="h2"><%= _("Share the opportunity to vote with your friends!") %></h2>
         <%= render partial: "share_vote" %>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <p><%= _("After your friends have voted, you will receive an email with the results and see their votes on this page.") %></p>
+      </div>
+    </div>
   </div>
-
 
 </div>
