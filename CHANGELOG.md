@@ -1,3 +1,13 @@
+## 1.40.0 (2024-12-24)
+
+### Feat
+
+- **votes/show.html.erb**: More information, bootstrap styles
+
+### Refactor
+
+- **VotesController**: removed unused confirm email time block
+
 ## 1.39.0 (2024-12-23)
 
 ### Feat
