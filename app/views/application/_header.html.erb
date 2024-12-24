@@ -1,18 +1,20 @@
 <!-- Header -->
 <header class="header header-fixed header-fixed-on-mobile header-transparent" data-sticky-threshold="window-height" data-bkg-threshold="100">
   <!-- Positioned absolutely -->
+  <%
+=begin%>
   <div class="share-buttons">
     <!-- Your share button code -->
-    <div class="fb-share-button"
-      data-href="<%= UNITE_ROOT_URL%>"
-      data-layout="button">
+    <div class="fb-share-button" data-href="<%= UNITE_ROOT_URL%>" data-layout="button">
     </div>
     <div>
       <a class="twitter share-button" href="http://twitter.com/intent/tweet?text=Sign%20an%20appeal%20for%20the%20UN%20to%20ask%20armies%20to%20participate%20on%20the%20preventive%20work%20against%20climate%20catastrophe.%20http%3A%2F%2Funite-the-armies.org%2F">
-       Tweet
+        Tweet
       </a>
     </div>
   </div>
+  <%
+=end%>
 
   <div class="container header-inner">
     <div class="row nav-bar">
@@ -35,9 +37,9 @@
               <%= link_to _("Support now"), new_vote_path(locale: locale), :class => "contains-sub-menu", data: { :no_turbolink => true } %>
             </li>
             <% if logged_in %>
-              <li>
-                <%= link_to _("Logout"), logout_path, method: :delete, class: "logout contains-sub-menu", data: { no_turbolink: true } %>
-              </li>
+            <li>
+              <%= link_to _("Logout"), logout_path, method: :delete, class: "logout contains-sub-menu", data: { no_turbolink: true } %>
+            </li>
             <% end %>
 
             <%= render partial: "flags" %>
