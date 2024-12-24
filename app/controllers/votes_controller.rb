@@ -262,6 +262,7 @@ class VotesController < ApplicationController
     session[:current_vote_id] = @vote.id
 
     @votes_count = @vote.votes_count ||= 0
+    @comments_count = @vote.comments.size ||= 0
   end
 
   # Link is sent to given email. User has to confirm that email exists.
@@ -323,4 +324,5 @@ class VotesController < ApplicationController
     return false if captcha.blank?
     RecaptchaVerifier.verify(captcha)
   end
+
 end

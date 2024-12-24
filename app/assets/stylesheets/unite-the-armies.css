@@ -19,6 +19,8 @@ body {
   }
 }
 
+/* Bootstrap */
+
 .bi {
   font-size: 2rem;
   color: cornflowerblue;
@@ -32,6 +34,15 @@ body {
   background-color: cornflowerblue;
   border-color: cornflowerblue;
 }
+
+.text-light a {
+  color: var(--bs-light);
+}
+.text-dark a {
+  color: var(--bs-dark);
+}
+
+/*  */
 
 .button {
   text-decoration: none;

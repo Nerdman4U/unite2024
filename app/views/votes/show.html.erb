@@ -11,81 +11,95 @@
               </div>
             </div>
           </div>
-          <img data-src=<%= image_path("frontpage-slides/bridge-park-garden-japanese.jpg") %> src=<%= image_path("blank.gif") %> alt=<%= _("Japanese bridge park garden") %>/>
+          <img data-src=<%= image_path("frontpage-slides/bridge-park-garden-japanese.jpg") %> src=<%= image_path("blank.gif") %> alt=<%= _("Japanese bridge park garden") %> />
         </li>
       </ul>
     </div>
   </section>
   <!-- Fullscreen Slider Section End -->
 
-  <section class="section-block-pt feature-1 bkg-white">
+  <section class="section-block-pt feature-1 bg-light text-dark">
     <div class="row">
       <div class="col-12">
-        <h1 class="title-xlarge color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
-          <%= _("Thank you for your support %{name}") % {name: @vote.name} %>
+        <h1 class="title-xlarge text-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+          <%= _("Thank you for your support %{name}") % {name: sanitize(@vote.name)} %>
         </h1>
         <div class="clear"></div>
         <h5 class="color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-          <%= _("This is your private vote") %>
+          <%= _("This is your private vote (%s)") % sanitize(@vote.email) %>
         </h5>
       </div>
     </div>
   </section>
 
-  <div id="featured-trips" class="section-block replicable-content">
+  <div class="section-block bg-light text-dark">
     <div class="row">
       <div class="col-4">
-      	<div class="blockquote feature-column small left">
+        <div class="blockquote feature-column small left">
           <p><%= _("Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!") %>
+          <p><%= _("You can invite your friends, colleagues and family to sign the petition by using a form below. You can also share this vote in social media.") %></p>
+          <p><i class="bi-heart-fill" style="font-size: 2rem; color: cornflowerblue;"></i></p>
+          <p>
+            <%= _("Signatures! Let’s work further!") %>
+          </p>
         </div>
       </div>
       <div class="col-4">
-	    <div class="blockquote feature-column small left">
-          <%= _("Your supporter number is %{count}.") % {count: number_with_delimiter(@vote.order_number)} %>
-          <%= _("Together, we can easily achieve %{target} signatures globally – let’s spread the word!") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
-
-          <%# _("Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends.") %>
-          <%# _("We still miss %{count} of the %{target}.") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
+        <div class="blockquote feature-column small left">
+          <p><%= _("Your supporter number is %{count}.") % {count: number_with_delimiter(@vote.order_number)} %>
+            <%= _("Together, we can easily achieve %{target} signatures globally!") % {count: number_with_delimiter(@vote.votes_missed), target: number_with_delimiter(VoteCount.target_vote_count)} %>
+          </p>
+          <p><%= _("let’s spread the word!") %></p>
         </div>
       </div>
       <div class="col-4">
-	      <div class="blockquote feature-column small left">
-          <% if locale == :en || locale == :fi %>
-              <%= _("Thank you for spreading the word! Click") %>
-              <a class="show-on-click" href="#" onclick="event.preventDefault()"><%= _("here") %><span><%= number_with_delimiter(@votes_count) %></span></a><%= _("if you wish see how many people have signed by following your personal invitation.") %>
-          <% else %>
-              <%= _("You have helped campaign by having %{count} people signed after you.") % {count: number_with_delimiter(@votes_count)} %>
-              <%= _("You have added %{count} comments.") % {count: number_with_delimiter(@vote.comments.size)} %>
-              <%= _("Signatures! Let’s work further!") %>
-          <% end %>
+        <div class="blockquote feature-column small left">
+          <p><%= ("Read comments give by previous voters.") %></p>
+          <p><%= _("Join the discussion in Discord.") %></p>
+          <p><%= _("You can also add Your own %s!" % tag.u(link_to(_("comment"), new_comment_path))).html_safe %></p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+  <% if @vote.votes_count > 0 %>
+  <div class="section-block bg-light text-dark">
+    <div class="row">
+      <div class="col-4 fs-1">
+        <%= _("You have helped campaign by having %{count} people signed after you.") %  {count: number_with_delimiter(@votes_count)} %>
+      </div>
+      <div class="col-4 fs-1">
+        <%= _("You have added %{count} comments.") % {count: number_with_delimiter(@comments_count)} %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="section-block bg-dark text-light">
     <div class="row">
       <div class="col-12">
         <h2 class="h2"><%= _("More material") %></h2>
         <p class="blockquote"><%= _("Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign.") %></p>
-        <p><u><%= link_to _("Download"), download_url(locale: locale) %></u></p>
+        <p><%= _("Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future.") %>
+        <p><u><%= link_to _("To download page (in finnish)"), download_path(locale: locale) %></u></p>
       </div>
     </div>
   </div>
 
-  <div class="section-block grid-container fade-in-progressively bkg-grey-ultralight" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+  <div class="section-block bg-light text-dark">
     <div class="row">
       <div class="col-12">
         <h2 class="h2"><%= _("Add a comment") %></h2>
         <p class="blockquote">
           <%= _("You can now add a comment.") %>
         </p>
-        <%= button_tag(_("Comment"), :class => "button xlarge bkg-black thick bkg-hover-white color-white color-hover-black text-uppercase mb-90", :data => { :no_turbolink => true }, onClick: "window.location='#{new_comment_path}'") %>
+        <p><u><%= link_to _("To comment page"), new_comment_path %></u></p>
+
       </div>
     </div>
   </div>
 
-  <div class="section-block replicable-content bkg-charcoal color-white">
+  <div class="section-block bg-dark text-light">
     <div class="row">
       <div class="col-12">
         <h2 class="h2"><%= _("Share with social media") %></h2>
@@ -96,7 +110,7 @@
     </div>
   </div>
 
-  <div class="section-block grid-container fade-in-progressively bkg-grey-ultralight" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+  <div class="section-block bg-light text-dark">
     <div class="row">
       <div class="col-12">
         <h2 class="h2"><%= _("Share email with your friends") %></h2>

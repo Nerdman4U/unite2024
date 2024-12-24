@@ -5571,9 +5571,9 @@ pre code {
   background-color: #bb0000;
   color: #ffffff;
 }
-[class*="color-"] * {
+/* [class*="color-"] * {
   color: inherit !important;
-}
+} */
 .color-turquoise {
   color: #00a186;
 }
