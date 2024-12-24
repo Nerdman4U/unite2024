@@ -14,7 +14,7 @@
               </div>
             </div>
           </div>
-          <img data-src=<%= image_path("frontpage-slides/lenkki-pitkospuilla.jpg") %> src=<%= image_path("blank.gif") %> alt="<%= _("Duckboard") %>"/>
+          <img data-src=<%= image_path("frontpage-slides/lenkki-pitkospuilla.jpg") %> src=<%= image_path("blank.gif") %> alt="<%= _("Duckboard") %>" />
         </li>
       </ul>
     </div>
@@ -51,12 +51,12 @@
 </section>
 <!-- Feature Section 1 End -->
 
-<section class="section-block feature-2 bkg-grey">
+<section class="section-block feature-2 bg-dark">
   <div class="row">
     <div class="col-12">
       <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
-        <span class="bi bi-person-arms-up align-middle"></span>
-        <%= _("See who have already voted!") %>
+      <span class="bi bi-person-arms-up align-middle"></span>
+      <%= _("See who have already voted!") %>
       <% end %>
     </div>
   </div>

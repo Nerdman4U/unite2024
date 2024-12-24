@@ -55,20 +55,15 @@ module ApplicationHelper
   end
 
   def button_white
-    skin_barber_shop_removed = "button tms-caption thick "
-    skin_barder_shop_stays = "bkg-cornflowerblue bkg-hover-white color-black color-hover-black text-uppercase "
-    # bootstrap = "py-4 px-6 fw-bold fs-3 position-static text-decoration-none shadow rounded border border-light opacity-100"
+    # skin_barber_shop_removed = "button tms-caption thick "
+    skin_barder_shop_stays = "bkg-white bkg-hover-black color-black color-hover-white text-uppercase "
     bootstrap = "py-4-5 px-6 fs-4 position-static opacity-100 shadow border border-2 border-light rounded"
     skin_barder_shop_stays + bootstrap
   end
 
-  def button_test
-    "button tms-caption thick bkg-black bkg-hover-cornflowerblue color-white color-hover-white text-uppercase py-4-5 px-6 fs-4 position-static opacity-100 shadow border border-2 border-light rounded"
-  end
-
   def button_black
-    skin_barber_shop_removed = "button tms-caption thick "
-    skin_barder_shop_stays = "bkg-cornflowerblue bkg-hover-black color-white color-hover-white text-uppercase "
+    # skin_barber_shop_removed = "button tms-caption thick "
+    skin_barder_shop_stays = "bkg-black bkg-hover-white color-white color-hover-black text-uppercase "
     bootstrap = "py-4-5 px-6 fs-4 position-static opacity-100 shadow border border-2 border-light rounded"
     skin_barder_shop_stays + bootstrap
   end
@@ -104,4 +99,5 @@ module ApplicationHelper
   def unite_video_url
     vimeo_stuff[0]
   end
+
 end

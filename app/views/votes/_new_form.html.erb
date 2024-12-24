@@ -1,41 +1,33 @@
 <div class="new_vote_form">
-<%
+  <%
    remote = request.xhr? ? true : false
-%>
-
-<%= form_for @vote, url: {action: "create"}, html: {class: "nifty_form"}, remote: remote do |f| %>
-  <div id="sign" class="ua-sign-the-petition mb-5">
+  %>
+  <%= form_for @vote, url: {action: "create"}, html: {class: "nifty_form"}, remote: remote do |f| %>
+  <div id="sign" class="mb-5">
     <p class="lead"><%= _("We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible.") %></p>
-
-    <div class="field">
-      <%= _("Name") %> (*) </br>
-      <%= f.text_field :name, :class => "form-control" %>
+    <div class="mb-3">
+      <%= f.label :name, _("Name (*)") %>
+      <%= f.text_field :name, :class => "form-control", :placeholder => _("Your name") %>
     </div>
-    <div class="field">
-      <%= _("Email") %> (*) </br>
-      <%= f.text_field :email, :class => "form-control" %>
+    <div class="mb-3">
+      <%= f.label :email, _("Email (*)") %>
+      <%= f.text_field :email, :class => "form-control", :placeholder => _("Your email") %>
     </div>
-    <div class="field">
-      <%= _("Email Confirmation") %> (*) </br>
-      <%= f.text_field :email_repeat, :class => "form-control" %>
+    <div class="mb-3">
+      <%= f.label :email_repeat, _("Email Confirmation (*)") %>
+      <%= f.text_field :email_repeat, :class => "form-control", :placeholder => _("Repeat your email") %>
     </div>
-    <div class="field">
-      <%= _("Country") %> (*)
-    </div>
-    <div class="field">
+    <div class="mb-3">
+      <%= f.label :country, _("Country (*)") %>
       <%= f.select :country, options_for_select([["", "", {:selected => true, :disabled => true, :hidden => true}]] + Country.for_select, country_code), {}, :class => "form-control" %>
-    </div></br>
-
-    <div class="field">
+    </div>
+    <div class="mb-3">
       <div class="g-recaptcha" data-sitekey="<%= UNITE_RECAPTCHA_PUBLIC_KEY %>"></div>
     </div>
-
-    <div class="field blockquote"><%= _("You can also contribute to the discussion after signing. You will get a separate message of that by email.") %></div>
-
-    <div class="actions">
-      <%= f.submit _("Send"), :class => "btn btn-primary btn-lg form-control" %>
-    </div>
+    <p class="text-start">
+      <%= f.submit _("Send"), :class => "btn btn-primary" %>
+    </p>
+    <p><%= _("You can also contribute to the discussion after signing. You will get a separate message of that by email.") %></p>
   </div>
-<% end %>
-
+  <% end %>
 </div>

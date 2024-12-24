@@ -20,13 +20,13 @@
                   :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
                   data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;",
                   no_scale: true, no_turbolink: true } do %>
-                    <%= _("Support now") %>
+                <%= _("Support now") %>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-        <img data-src=<%= image_path("earth-bg.jpg") %> data-retina src=<%= image_path("blank.gif") %> alt="The Earth"/>
+        <img data-src=<%= image_path("earth-bg.jpg") %> data-retina src=<%= image_path("blank.gif") %> alt="The Earth" />
       </li>
     </ul>
   </div>
@@ -35,10 +35,10 @@
 
 <div class="section-block bkg-charcoal m-0 p-0 overflow-hidden">
   <ol class="slideshow" style="height: 66vw; min-height: 300pt;" data-interval="5">
-    <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text"/>
-    <li data-image-src=<%= image_path("frontpage-slides/viidakko.jpg") %> data-class="black-text"/>
-    <li data-image-src=<%= image_path("frontpage-slides/tyyni-jarvenselka.jpg") %> data-class="black-text"/>
-    <li data-image-src=<%= image_path("frontpage-slides/talvi18.jpg") %> data-class="black-text"/>
+    <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("frontpage-slides/viidakko.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("frontpage-slides/tyyni-jarvenselka.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("frontpage-slides/talvi18.jpg") %> data-class="black-text" />
     <li data-image-src=<%= image_path("frontpage-slides/avaruus.jpg") %> />
     <li data-image-src=<%= image_path("frontpage-slides/autumn-shore.jpg") %> />
     <li data-image-src=<%= image_path("frontpage-slides/sunrise-on-the-sea.jpg") %> />
@@ -114,7 +114,7 @@
                 <%= image_tag "polars.jpg", alt:"" %>
               </div>
               <div class="feature-text">
-                <h2  class="h2 mt-2"><%= _("We must defend Life's Richness on our Planet!") %></h2>
+                <h2 class="h2 mt-2"><%= _("We must defend Life's Richness on our Planet!") %></h2>
                 <p class="blockquote"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
               </div>
             </div>
@@ -132,7 +132,7 @@
   <script src="https://player.vimeo.com/api/player.js"></script>
 </section>
 
-<section class="section-block feature-2 bkg-grey">
+<section class="section-block feature-2 bg-dark">
   <div class="row">
     <div class="col-12">
       <%= link_to appeal_path(locale: locale),
@@ -152,4 +152,3 @@
     </div>
   </div>
 </section>
-
