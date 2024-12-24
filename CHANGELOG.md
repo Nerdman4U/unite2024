@@ -1,3 +1,13 @@
+## 1.43.0 (2024-12-24)
+
+### Feat
+
+- Animations for headers below image
+- show_link_to_vote? helper method for footer
+- Button css fixes
+- **_footer.html.erb**: Ruby and Rails version
+- **votes/show.html.erb**: Comments column and more polished english
+
 ## 1.42.0 (2024-12-24)
 
 ### Feat
