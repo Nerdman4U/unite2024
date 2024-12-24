@@ -99,5 +99,7 @@ module ApplicationHelper
   def unite_video_url
     vimeo_stuff[0]
   end
-
+  def show_link_to_vote?
+    !((controller.controller_name == "votes") && (controller.action_name == "show"))
+  end
 end

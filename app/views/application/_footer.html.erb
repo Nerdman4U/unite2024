@@ -115,7 +115,7 @@
       </div>
       <div class="col-1">
         <ul class="social-list list-horizontal pull-right clear-float-on-mobile">
-          <% if !(controller.controller_name == "votes" || controller.action_name == "show") %>
+          <% if show_link_to_vote? %>
           <li>
             <%= link_to_vote %>
           </li>
