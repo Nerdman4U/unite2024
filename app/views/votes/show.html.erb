@@ -77,11 +77,18 @@
 
   <div class="section-block bg-dark text-light">
     <div class="row">
-      <div class="col-12">
+      <div class="col-6">
         <h2 class="h2"><%= _("More material") %></h2>
         <p class="blockquote"><%= _("Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign.") %></p>
         <p><%= _("Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future.") %>
         <p><u><%= link_to _("To download page (in finnish)"), download_path(locale: locale) %></u></p>
+      </div>
+      <div class="col-6">
+        <h2 class="h2"><%= _("Comments") %></h2>
+        <p class="blockquote">
+          <%= _("View anonymous comments given by previous voters.") %>
+        </p>
+        <p><u><%= link_to _("To comments"), new_vote_path %></u></p>
       </div>
     </div>
   </div>
@@ -123,7 +130,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <p><%= _("After your friends have voted, you will receive an email with the results and see their votes on this page.") %></p>
+        <p><%= _("Once your friend has cast their vote, you'll receive an email with the results and be able to view their votes on this page.") %></p>
       </div>
     </div>
   </div>
