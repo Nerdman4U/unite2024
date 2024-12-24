@@ -21,11 +21,10 @@
   <section class="section-block-pt feature-1 bg-light text-dark">
     <div class="row">
       <div class="col-12">
-        <h1 class="title-xlarge text-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+        <h1 class="animated-h1 fs-10 text-dark lspacing-medium no-margin-bottom weight-bold">
           <%= _("Thank you for your support %{name}") % {name: sanitize(@vote.name)} %>
         </h1>
-        <div class="clear"></div>
-        <h5 class="color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+        <h5 class="animated-h5 color-dark lspacing-medium mt-20">
           <%= _("This is your private vote (%s)") % sanitize(@vote.email) %>
         </h5>
       </div>
