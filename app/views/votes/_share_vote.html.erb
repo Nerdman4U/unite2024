@@ -1,6 +1,6 @@
-<%= form_tag invite_path, remote: true do %>
+<%= form_tag invite_path do %>
 <div>
-  <%= hidden_field_tag(:t, @vote.md5_secret_token) %>
+  <%= hidden_field_tag(:token, @vote.encoded_payload) %>
   <div class="mb-3">
     <%= label_tag :language, _("Choose the language of the invitation letter") %>
     <%= select_tag :language, options_for_select(Language.translated_select_options), :class => "form-control" %>

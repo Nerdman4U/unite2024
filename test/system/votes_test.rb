@@ -32,19 +32,56 @@ class VotesTest < ApplicationSystemTestCase
     assert_selector ".alert-success", text: "Your email has been confirmed".upcase
   end
 
-  test "Inviting" do
+  test "Should invite" do
     vote = votes("vote_1")
     token = vote.encoded_payload
 
     visit vote_url(token: token)
     assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
 
-    select "Finland", from: "vote_country"
-    fill_in "vote_name", with: "Kutsutaan Kari"
-    fill_in "vote_email", with: "kari@example.com"
-    fill_in "vote_email_repeat", with: "kari@example.com"
+    select "English", from: "language"
+    fill_in "name", with: "Kutsutaan Kari"
+    fill_in "email", with: "kari@example.com"
+    fill_in "email_repeat", with: "kari@example.com"
     click_on "Send"
 
+    assert_selector ".alert-success", text: "Invitation has been sent, thank you!".upcase
+  end
+
+  test "Should not invite if email repeat does not match" do
+    vote = votes("vote_1")
+    token = vote.encoded_payload
+
+    visit vote_url(token: token)
+    assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
+
+    select "English", from: "language"
+    fill_in "name", with: "Kutsutaan Kari"
+    fill_in "email", with: "kari@example.com"
+    fill_in "email_repeat", with: "kari@example.com2"
+    click_on "Send"
+
+    assert_selector "h1", text: "Save the Planet".upcase
+    assert_selector ".alert-warning", text: "Emails do not match".upcase
+  end
+
+  test "Should not invite if vote is not found" do
+    vote = votes("vote_1")
+    token = vote.encoded_payload
+
+    visit vote_url(token: token)
+    assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
+
+    vote.destroy
+
+    select "English", from: "language"
+    fill_in "name", with: "Kutsutaan Kari"
+    fill_in "email", with: "kari@example.com"
+    fill_in "email_repeat", with: "kari@example.com2"
+    click_on "Send"
+
+    assert_selector "h1", text: "Save the Planet".upcase
+    assert_selector ".alert-warning", text: "there was an error".upcase
   end
 
 end

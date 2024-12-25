@@ -60,32 +60,36 @@ class VotesController < ApplicationController
   # Send email invitation from a vote view
   def invite
     unless encoded_token = params[:token]
-      Rails.logger.debug("VotesController#invite: No token")
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("VotesController#invite: No token")
       redirect_to locale_root_path
       return
     end
 
     decoded_token = decode_token(encoded_token)
     unless decoded_token
-      Rails.logger.debug("VotesController#invite: Invalid token, decoded_token: #{decoded_token}")
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("VotesController#invite: Invalid token, decoded_token: #{decoded_token}")
       redirect_to locale_root_path
     end
 
     vote_id = decoded_token["vote_id"]
     unless vote_id
-      Rails.logger.debug("VotesController#invite: vote_id: #{vote_id}, decoded_token: #{decoded_token}")
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("VotesController#invite: vote_id: #{vote_id}, decoded_token: #{decoded_token}")
       redirect_to locale_root_path
     end
 
     vote = Vote.find_by_id(vote_id)
     unless vote && vote.valid?
       flash[:warning] = _("There was an error")
+      Rails.logger.error("VotesController#invite: Vote not found")
       redirect_to locale_root_path
       return
     end
 
     if params[:email] != params[:email_repeat]
-      Rails.logger.debug("VotesController#invite: Emails do not match")
+      Rails.logger.error("VotesController#invite: Emails do not match")
       flash[:warning] = _("Emails do not match")
       redirect_to locale_root_path
       return
@@ -105,10 +109,10 @@ class VotesController < ApplicationController
       format.html do
         if @share_valid
           flash[:success] = _("Invitation has been sent, thank you!")
-          head :ok
+          redirect_to vote_path(token: encoded_token)
         else
           flash[:warning] = _("There was an error")
-          head :bad_request
+          redirect_to vote_path(token: encoded_token)
         end
       end
     end

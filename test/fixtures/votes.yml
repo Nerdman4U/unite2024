@@ -5,7 +5,7 @@
 <% 1000.times do |n| %>
   <% t = Time.now - (n * 1.month) %>
   vote_<%= n %>:
-    name: <%= "vote#{n}" %>
+    name: <%= "vote#{n} (name)" %>
     email: <%= "user#{n}@vote-example.com" %>
     country: "FI"
     ip: <%= "127.#{(rand * 255).round}.#{(rand * 255).round}.#{(rand * 255).round}" %>
