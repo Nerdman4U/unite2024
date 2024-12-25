@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root "welcome#index"
-
   get "votes/recently_added" => "votes#recently_added", as: :recently_added_votes
-
-  post "votes/add_parent" => "votes#add_parent", as: :add_parent_vote
+  get "votes/add_parent" => "votes#add_parent", as: :add_parent_vote
   post "votes/invite" => "votes#invite", as: :invite
 
   get "admin/:admin_hash" => "welcome#admin", as: :admin_index

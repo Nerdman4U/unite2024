@@ -22,9 +22,9 @@ class Vote < ApplicationRecord
 
   has_many :votes, foreign_key: :vote_id
   has_many :comments, foreign_key: :vote_id
-  # belongs_to :vote, counter_cache: true
+  belongs_to :vote, optional: true #, counter_cache: true
 
-  # before_save :add_secret_token
+  before_save :add_secret_token
   # before_save :add_secret_confirm_hash
 
   def ago
@@ -93,7 +93,7 @@ class Vote < ApplicationRecord
       Rails.logger.error("Cannot email invite for new record")
       return
     end
-    options = options.merge(inviter_name: name, token: self.encoded_payload)
+    options = options.merge(inviter_name: name, token: self.md5_secret_token)
     VoteMailer.with(options: options).invite.deliver_now
   end
 
@@ -148,4 +148,19 @@ class Vote < ApplicationRecord
   end
 
   private
+
+  # We do not allow duplicate tokens, lets be sure there is no equal
+  # token already in database.
+  def add_secret_token
+    while token = SecureRandom.hex(64) do
+      if Vote.where(secret_token: token).blank?
+        require 'digest/md5'
+        digest = Digest::MD5.hexdigest(token)
+        self.secret_token = token
+        self.md5_secret_token = digest
+        break
+      end
+    end
+  end
+
 end

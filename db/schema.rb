@@ -51,5 +51,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_11_083932) do
     t.boolean "spam", default: false, null: false
     t.string "secret_confirm_hash"
     t.datetime "email_confirmed"
+    t.index ["vote_id"], name: "fk_rails_c77b988d56"
   end
 end

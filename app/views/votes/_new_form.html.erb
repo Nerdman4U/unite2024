@@ -1,8 +1,10 @@
 <div class="new_vote_form">
-  <%
-   remote = request.xhr? ? true : false
-  %>
-  <%= form_for @vote, url: {action: "create"}, html: {class: "nifty_form"}, remote: remote do |f| %>
+  <%= form_with model: @vote, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+
+  <% if @parent_vote %>
+  <%= hidden_field_tag :parent_vote, @parent_vote.md5_secret_token %>
+  <% end %>
+
   <div id="sign" class="mb-5">
     <p class="lead"><%= _("We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible.") %></p>
     <div class="mb-3">

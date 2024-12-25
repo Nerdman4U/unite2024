@@ -10,6 +10,8 @@ class VotesController < ApplicationController
   def new
     clear
     @vote = Vote.new
+    @parent_vote = Vote.where(md5_secret_token: params[:parent_vote], spam: false).where.not(:email_confirmed => nil).first if params[:parent_vote]
+
     respond_to do |format|
       format.html do
         if request.xhr?
@@ -29,7 +31,6 @@ class VotesController < ApplicationController
     unless decoded_token
       Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
       redirect_to new_token_url
-      # redirect_to locale_root_path
       return
     end
     vote = Vote.where(id: decoded_token["vote_id"]).first
@@ -53,37 +54,14 @@ class VotesController < ApplicationController
     # this vote.
     session[:current_vote_id] = @vote.id
 
-    @votes_count = @vote.votes_count ||= 0
+    @votes_count = @vote.votes.size ||= 0
     @comments_count = @vote.comments.size ||= 0
   end
 
   # Send email invitation from a vote view
   def invite
-    unless encoded_token = params[:token]
-      flash[:warning] = _("There was an error")
-      Rails.logger.error("VotesController#invite: No token")
-      redirect_to locale_root_path
-      return
-    end
-
-    decoded_token = decode_token(encoded_token)
-    unless decoded_token
-      flash[:warning] = _("There was an error")
-      Rails.logger.error("VotesController#invite: Invalid token, decoded_token: #{decoded_token}")
-      redirect_to locale_root_path
-    end
-
-    vote_id = decoded_token["vote_id"]
-    unless vote_id
-      flash[:warning] = _("There was an error")
-      Rails.logger.error("VotesController#invite: vote_id: #{vote_id}, decoded_token: #{decoded_token}")
-      redirect_to locale_root_path
-    end
-
-    vote = Vote.find_by_id(vote_id)
-    unless vote && vote.valid?
-      flash[:warning] = _("There was an error")
-      Rails.logger.error("VotesController#invite: Vote not found")
+    unless logged_in
+      flash[:warning] = _("You need to be logged in")
       redirect_to locale_root_path
       return
     end
@@ -91,7 +69,15 @@ class VotesController < ApplicationController
     if params[:email] != params[:email_repeat]
       Rails.logger.error("VotesController#invite: Emails do not match")
       flash[:warning] = _("Emails do not match")
-      redirect_to locale_root_path
+      # redirect_to locale_root_path
+      redirect_to vote_path(locale: locale, token: current_vote.encoded_payload)
+      return
+    end
+
+    if params[:email].blank? || params[:email].match(URI::MailTo::EMAIL_REGEXP).nil?
+      Rails.logger.error("VotesController#invite: Invalid email")
+      flash[:warning] = _("Email is not valid")
+      redirect_to vote_path(locale: locale, token: current_vote.encoded_payload)
       return
     end
 
@@ -101,7 +87,13 @@ class VotesController < ApplicationController
       return
     end
 
-    @vote = vote
+    unless @vote = current_vote
+      flash[:warning] = _("There was an error")
+      Rails.logger.error("VotesController#invite: Vote not found")
+      redirect_to locale_root_path
+      return
+    end
+
     # Share a vote with ActionMailer. If everything is ok, return 200.
     @share_valid = @vote.invite(params)
 
@@ -109,35 +101,36 @@ class VotesController < ApplicationController
       format.html do
         if @share_valid
           flash[:success] = _("Invitation has been sent, thank you!")
-          redirect_to vote_path(token: encoded_token)
+          redirect_to vote_path(locale: locale, token: @vote.encoded_payload)
         else
           flash[:warning] = _("There was an error")
-          redirect_to vote_path(token: encoded_token)
+          redirect_to vote_path(locale: locale, token: @vote.encoded_payload)
         end
       end
     end
   end
 
-  # Add parent vote id to session and redirect to new vote.
-  def add_parent
-    decoded_token = decode_token(params[:token])
-    unless decoded_token
-      Rails.logger.error("Vote#add_parent: Invalid token, token: #{params[:token]}")
-      redirect_to locale_root_path
-      return
-    end
+  # # Add parent vote id to session and redirect to new vote.
+  # def add_parent
+  #   unless token = params[:token]
+  #     Rails.logger.error("Vote#add_parent: Invalid token, token: #{params[:token]}")
+  #     flash[:warning] = _("There was an error")
+  #     redirect_to locale_root_path
+  #     return
+  #   end
 
-    vote = Vote.where(id: decoded_token["vote_id"]).first
-    if vote
-      session[:parent_vote_id] = vote.id
-    end
+  #   vote = Vote.where(md5_secret_token: token).first
+  #   if vote
+  #     session[:parent_vote_id] = vote.id
+  #   end
 
-    redirect_to action: :new, locale: locale
-  end
+  #   redirect_to action: :new, locale: locale
+  # end
 
   # If session votes[:parent_id] exists, add parent to this vote
   def create
-    unless vote_params[:email_repeat] === vote_params[:email]
+    if params[:vote][:email] != params[:vote][:email_repeat]
+      Rails.logger.error("Vote#create: Emails do not match")
       flash[:warning] = _("Emails do not match")
       redirect_to new_vote_path(locale: locale)
       return
@@ -149,52 +142,38 @@ class VotesController < ApplicationController
       return
     end
 
-    if request.xhr?
-      head :gone
-      return
-    end
-
     @vote = Vote.new(vote_params)
     @vote.ip = request.env["REMOTE_ADDR"]
+    @vote.save
 
-    unless @vote.valid?
-      error = []
-      @vote.errors.full_messages.each do |msg|
-        error << msg
-      end
-
-      flash[:warning] = error.join(", ")
-      # redirect_to new_vote_path(locale: locale)
-
-      render :new, status: :bad_request
-      return
-    end
-
-
-    # If session contains parent vote id, add this vote to parent vote
-    # votes association.
-    if session[:parent_vote_id]
-      parent_vote = Vote.where(id: session[:parent_vote_id])[0]
-      # should parent_vote be confirmed vote?
+    if params[:parent_vote]
+      parent_vote = Vote.where(md5_secret_token: params[:parent_vote], spam: false).where.not(:email_confirmed => nil).first
       parent_vote.votes << @vote if parent_vote
     end
 
-    @vote.save
-
-    # Remove session key after succesfull save
-    if @vote.valid?
-      session.delete :parent_vote_id
-
-      # If sent_count amount of votes is added after last backup email,
-      # send a backup email.
-      Vote.emails_to_admins
+    unless @vote.valid?
+      # TODO: localized?
+      Rails.logger.error("Vote#create: Invalid vote, errors: #{@vote.errors.full_messages}")
+      flash[:warning] = @vote.errors.full_messages.join(", ")
+      redirect_to new_vote_path(locale: locale)
+      # render :new, status: :bad_request <= kumpi parempi?
+      return
     end
+
+    # New vote has been added.
+    #
+    # 1) Notify admins
+    # If sent_count amount of votes is added after last backup email,
+    # send a backup email.
+    #
+    # 2) Nofity parent vote
+    # If parent vote exists, notify owner.
+    #
+    Vote.emails_to_admins
 
     respond_to do |format|
       format.html do
         if @vote.valid?
-          # flash[:success] = _("Thank you for your vote!")
-
           flash[:info] = _("Your vote is added but email is not yet confirmed. Please check your email.")
           redirect_to waiting_path(locale: locale, id: @vote.id)
         else

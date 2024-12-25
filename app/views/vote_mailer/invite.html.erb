@@ -12,5 +12,5 @@
 
 <p class="lead"><%= _("Save the World! Act Now!") %></p>
 <p>
-  <a href="<%= add_parent_vote_url(t: @token) %>">Vote</a>
+  <a href="<%= new_vote_url(parent_vote: @token) %>">Vote</a>
 </p>

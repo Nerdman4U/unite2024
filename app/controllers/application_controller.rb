@@ -57,4 +57,10 @@ class ApplicationController < ActionController::Base
   def logged_in
     !!session[:current_vote_id]
   end
+
+  def current_vote
+    return unless session[:current_vote_id]
+    Vote.where(id: session[:current_vote_id]).first
+  end
+
 end

@@ -24,4 +24,5 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     get root_url locale: "foobar"
     assert_equal I18n.locale, :en
   end
+
 end

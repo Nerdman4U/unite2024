@@ -1,27 +1,26 @@
-<%= form_tag invite_path do %>
+<%= form_with url: invite_path, method: :post do |form| %>
 <div>
-  <%= hidden_field_tag(:token, @vote.encoded_payload) %>
   <div class="mb-3">
-    <%= label_tag :language, _("Choose the language of the invitation letter") %>
-    <%= select_tag :language, options_for_select(Language.translated_select_options), :class => "form-control" %>
+    <%= form.label :language, _("Choose the language of the invitation letter") %>
+    <%= form.select :language, options_for_select(Language.translated_select_options), :class => "form-control" %>
   </div>
   <div class="mb-3">
-    <%= label_tag :name, _("Name of your friend") + " *" %>
-    <%= text_field_tag :name, nil, :class => "form-control", :style => "color: black !important" %>
+    <%= form.label :name, _("Name of your friend") + " *" %>
+    <%= form.text_field :name, :class => "form-control", :style => "color: black !important", :placeholder => _("Type your friend's name") %>
   </div>
   <div class="mb-3">
-    <%= label_tag :email, _("Your friends email address") + " *" %>
-    <%= text_field_tag :email, nil, :class => "form-control", :style => "color: black !important" %>
+    <%= form.label :email, _("Your friends email address") + " *" %>
+    <%= form.text_field :email, :class => "form-control", :style => "color: black !important", :placeholder => _("Type your friend's email") %>
   </div>
   <div class="mb-3">
-    <%= label_tag :email_repeat, _("Your friends email address again") + " *" %>
-    <%= text_field_tag :email_repeat, nil, :class => "form-control", :style => "color: black !important" %>
+    <%= form.label :email_repeat, _("Your friends email address again") + " *" %>
+    <%= form.text_field :email_repeat, :class => "form-control", :style => "color: black !important", :placeholder => _("Type your friend's email again") %>
   </div>
   <div class="mb-3">
     <div class="g-recaptcha" data-sitekey="<%= UNITE_RECAPTCHA_PUBLIC_KEY %>"></div>
   </div>
   <div class="mb-3">
-    <%= submit_tag _("Send"), :class => "btn btn-primary" %>
+    <%= form.submit _("Send"), :class => "btn btn-primary" %>
   </div>
 </div>
 <% end %>

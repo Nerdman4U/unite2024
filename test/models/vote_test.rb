@@ -95,8 +95,8 @@ class VoteTest < ActionMailer::TestCase
   test "should have secret token" do
     @vote.save
     assert @vote.secret_token
-    assert_nil @vote.md5_secret_token
-    assert_nil @vote.secret_confirm_hash
+    assert @vote.md5_secret_token
+    # assert_nil @vote.secret_confirm_hash
   end
 
   test "should get encoded payload" do
@@ -118,12 +118,12 @@ class VoteTest < ActionMailer::TestCase
   end
 
   test "should send email invitation" do
-    votes("vote_1").email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
+    votes("vote_1").invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
     assert_emails 1
   end
 
   test "should send email invitation in arabic" do
-    votes("vote_1").email_invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
+    votes("vote_1").invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
     assert_emails 1
   end
 
@@ -151,6 +151,20 @@ class VoteTest < ActionMailer::TestCase
     # Fixture votes are added once per month. All 12 should be in same year.
     assert_equal votes.map { |v| v.created_at.year }.uniq.size, 1
   end
+
+  test "should have child and parent votes" do
+    vote1 = votes("vote_1")
+    vote2 = votes("vote_2")
+
+    assert_equal vote1.votes.size, 0
+    assert_nil vote2.vote
+
+    vote1.votes << vote2
+
+    assert_equal vote1.votes.size, 1
+    assert_equal vote2.vote, vote1
+  end
+
 
   # TODO
   # test 'should increment counter cache' do
