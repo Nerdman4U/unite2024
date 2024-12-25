@@ -31,4 +31,20 @@ class VotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
     assert_selector ".alert-success", text: "Your email has been confirmed".upcase
   end
+
+  test "Inviting" do
+    vote = votes("vote_1")
+    token = vote.encoded_payload
+
+    visit vote_url(token: token)
+    assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
+
+    select "Finland", from: "vote_country"
+    fill_in "vote_name", with: "Kutsutaan Kari"
+    fill_in "vote_email", with: "kari@example.com"
+    fill_in "vote_email_repeat", with: "kari@example.com"
+    click_on "Send"
+
+  end
+
 end

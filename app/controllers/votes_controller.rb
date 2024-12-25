@@ -2,9 +2,13 @@ class VotesController < ApplicationController
   helper_method :country_code
   helper_method :country_votes
 
+  def index
+    @votes = VoteCount.all
+    @sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
+  end
+
   def new
     clear
-
     @vote = Vote.new
     respond_to do |format|
       format.html do
@@ -15,23 +19,61 @@ class VotesController < ApplicationController
     end
   end
 
+  def show
+    token = params[:token]
+    unless token
+      redirect_to new_token_url
+      return
+    end
+    decoded_token = decode_token(params[:token])
+    unless decoded_token
+      Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
+      redirect_to new_token_url
+      # redirect_to locale_root_path
+      return
+    end
+    vote = Vote.where(id: decoded_token["vote_id"]).first
+    unless vote
+      flash[:warning] = _("There was an error")
+      redirect_to locale_root_path, status: :bad_request
+      return
+    end
+    unless vote.email_confirmed
+      redirect_to locale_root_path
+      return
+    end
+
+    @vote = Vote.where(id: decoded_token["vote_id"]).first
+    if @vote.blank?
+      redirect_to votes_path(locale: locale)
+      return
+    end
+
+    # Store current vote to session to allow commenting in contex of
+    # this vote.
+    session[:current_vote_id] = @vote.id
+
+    @votes_count = @vote.votes_count ||= 0
+    @comments_count = @vote.comments.size ||= 0
+  end
+
   # Send email invitation from a vote view
-  def email_invite
+  def invite
     unless encoded_token = params[:token]
-      Rails.logger.debug("VotesController#email_invite: No token")
+      Rails.logger.debug("VotesController#invite: No token")
       redirect_to locale_root_path
       return
     end
 
     decoded_token = decode_token(encoded_token)
     unless decoded_token
-      Rails.logger.debug("VotesController#email_invite: Invalid token, token: #{decoded_token}")
+      Rails.logger.debug("VotesController#invite: Invalid token, decoded_token: #{decoded_token}")
       redirect_to locale_root_path
     end
 
     vote_id = decoded_token["vote_id"]
     unless vote_id
-      Rails.logger.debug("VotesController#email_invite: vote_id: #{vote_id}, decoded_token: #{decoded_token}")
+      Rails.logger.debug("VotesController#invite: vote_id: #{vote_id}, decoded_token: #{decoded_token}")
       redirect_to locale_root_path
     end
 
@@ -43,7 +85,7 @@ class VotesController < ApplicationController
     end
 
     if params[:email] != params[:email_repeat]
-      Rails.logger.debug("VotesController#email_invite: Emails do not match")
+      Rails.logger.debug("VotesController#invite: Emails do not match")
       flash[:warning] = _("Emails do not match")
       redirect_to locale_root_path
       return
@@ -57,7 +99,7 @@ class VotesController < ApplicationController
 
     @vote = vote
     # Share a vote with ActionMailer. If everything is ok, return 200.
-    @share_valid = @vote.email_invite(params)
+    @share_valid = @vote.invite(params)
 
     respond_to do |format|
       format.html do
@@ -207,11 +249,6 @@ class VotesController < ApplicationController
     VoteMailer.with(vote: vote, url: base_url, confirm_url: confirm_url).confirmation.deliver_now
   end
 
-  def index
-    @votes = VoteCount.all
-    @sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
-  end
-
   # Do not return votes which has created_at in future
   def recently_added
     @votes = Vote.select(:id, :country, :name, :created_at).where("email_confirmed IS NOT NULL and spam = 0").order(created_at: :desc).limit(6)
@@ -221,48 +258,6 @@ class VotesController < ApplicationController
       vote_h
     end
     render json: votes.to_json
-  end
-
-  def clear
-    session.delete :current_vote_id
-  end
-
-  def show
-    token = params[:token]
-    unless token
-      redirect_to new_token_url
-      return
-    end
-    decoded_token = decode_token(params[:token])
-    unless decoded_token
-      Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
-      redirect_to new_token_url
-      # redirect_to locale_root_path
-      return
-    end
-    vote = Vote.where(id: decoded_token["vote_id"]).first
-    unless vote
-      flash[:warning] = _("There was an error")
-      redirect_to locale_root_path, status: :bad_request
-      return
-    end
-    unless vote.email_confirmed
-      redirect_to locale_root_path
-      return
-    end
-
-    @vote = Vote.where(id: decoded_token["vote_id"]).first
-    if @vote.blank?
-      redirect_to votes_path(locale: locale)
-      return
-    end
-
-    # Store current vote to session to allow commenting in contex of
-    # this vote.
-    session[:current_vote_id] = @vote.id
-
-    @votes_count = @vote.votes_count ||= 0
-    @comments_count = @vote.comments.size ||= 0
   end
 
   # Link is sent to given email. User has to confirm that email exists.
@@ -323,6 +318,10 @@ class VotesController < ApplicationController
     return true if Rails.env.test?
     return false if captcha.blank?
     RecaptchaVerifier.verify(captcha)
+  end
+
+  def clear
+    session.delete :current_vote_id
   end
 
 end

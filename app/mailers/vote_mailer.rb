@@ -14,7 +14,7 @@ class VoteMailer < ApplicationMailer
   # name: name of the invited
   # email: email of the invited
   # language: language of the invitation letter
-  def email_invite
+  def invite
     options = params[:options]
     unless options
       Rails.logger.error("No options")

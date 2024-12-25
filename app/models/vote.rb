@@ -76,7 +76,7 @@ class Vote < ApplicationRecord
     self.order_number = VoteCount.total
   end
 
-  def email_invite(options)
+  def invite(options)
     unless options[:name]
       Rails.logger.error("No name")
       return
@@ -94,7 +94,7 @@ class Vote < ApplicationRecord
       return
     end
     options = options.merge(inviter_name: name, token: self.encoded_payload)
-    VoteMailer.with(options: options).email_invite.deliver_now
+    VoteMailer.with(options: options).invite.deliver_now
   end
 
   def self.duplicate_confirm_hash?(token)
