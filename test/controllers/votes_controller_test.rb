@@ -159,6 +159,8 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should not send email invite with wrong repeat" do
     vote = votes("vote_1")
+    get vote_path(locale: "en", token: vote.encoded_payload)
+
     options = {
       token: vote.encoded_payload,
       name: "Testaaja",
@@ -181,15 +183,6 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
   end
 
-  # TODO:
-  # How to test helper method "waiting_time_left"?
-  # - should set session before test request
-  # - should assert helper method response hash
-  # test "should get waiting time left" do
-  #   vote = votes("vote_1")
-  #   vote.email_confirmed = Time.now - 1.minutes
-  #   vote.save
-  # end
   test "should get waiting page" do
     vote = votes("vote_1")
     vote.email_confirmed = nil
