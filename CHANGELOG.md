@@ -1,3 +1,9 @@
+## 1.44.0 (2024-12-25)
+
+### Feat
+
+- email_invite renamed to invite
+
 ## 1.43.0 (2024-12-24)
 
 ### Feat
