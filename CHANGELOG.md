@@ -1,3 +1,9 @@
+## 1.48.0 (2024-12-26)
+
+### Feat
+
+- **models/vote.rb**: Four model scopes
+
 ## 1.47.0 (2024-12-26)
 
 ### Feat
