@@ -36,7 +36,7 @@
             <li>
               <%= link_to _("Support now"), new_vote_path(locale: locale), :class => "contains-sub-menu", data: { :no_turbolink => true } %>
             </li>
-            <% if logged_in %>
+            <% if logged_in? %>
             <li>
               <%= link_to _("Logout"), logout_path, method: :delete, class: "logout contains-sub-menu", data: { no_turbolink: true } %>
             </li>

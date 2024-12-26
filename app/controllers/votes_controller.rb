@@ -14,7 +14,6 @@ class VotesController < ApplicationController
   # - parent_vote :: public_token of parent vote
   #
   def new
-    clear
     @vote = Vote.new
     @parent_vote = Vote.unspam.confirmed.find_by_md5_secret_token(params[:parent_vote]) if params[:parent_vote]
 
@@ -66,7 +65,7 @@ class VotesController < ApplicationController
 
   # Send email invitation from a vote view
   def invite
-    unless logged_in
+    unless logged_in?
       flash[:warning] = _("You need to be logged in")
       redirect_to locale_root_path
       return
@@ -127,6 +126,8 @@ class VotesController < ApplicationController
   # - parent_vote :: public_token of parent vote
   #
   def create
+    logout!
+
     if params[:vote][:email] != params[:vote][:email_repeat]
       Rails.logger.error("Vote#create: Emails do not match")
       flash[:warning] = _("Emails do not match")
@@ -290,10 +291,6 @@ class VotesController < ApplicationController
     return true if Rails.env.test?
     return false if captcha.blank?
     RecaptchaVerifier.verify(captcha)
-  end
-
-  def clear
-    session.delete :current_vote_id
   end
 
 end

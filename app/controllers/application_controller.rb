@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   after_action :add_flash_to_header
   before_action :set_locale
 
-  helper_method :logged_in
+  helper_method :logged_in?
 
   private
 
@@ -54,13 +54,19 @@ class ApplicationController < ActionController::Base
     request.scheme + "://" + request.host
   end
 
-  def logged_in
+  def logged_in?
     !!session[:current_vote_id]
   end
 
   def current_vote
     return unless session[:current_vote_id]
     Vote.where(id: session[:current_vote_id]).first
+  end
+
+  def logout!
+    return unless logged_in?
+    session.delete :current_vote_id
+    reset_session
   end
 
 end

@@ -35,7 +35,9 @@ class TokensController < ApplicationController
   end
 
   def destroy
-    session[:current_vote_id] = nil
+    logout!
+
+    flash[:success] = _("You have been logged out")
     redirect_to locale_root_path
   end
 end
