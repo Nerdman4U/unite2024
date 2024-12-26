@@ -1,3 +1,13 @@
+## 1.47.0 (2024-12-26)
+
+### Feat
+
+- Using private and public tokens. Welcome action uses also token instead of id
+
+### Fix
+
+- **votes_controller_test.rb**: Needs to be logged in before invite
+
 ## 1.46.0 (2024-12-25)
 
 ### Feat
