@@ -2,8 +2,11 @@ require "ostruct"
 require "digest/md5"
 
 class Vote < ApplicationRecord
-  # include Humanizer
-  # require_human_on :create, :unless => :bypass_humanizer
+  scope :spam, -> { where(spam: true) }
+  scope :unspam, -> { where(spam: false) }
+  scope :confirmed, -> { where.not(email_confirmed: nil) }
+  scope :unconfirmed, -> { where(email_confirmed: nil) }
+
   attr_accessor :bypass_humanizer
   attr_reader :ago
   attr_accessor :email_repeat

@@ -34,6 +34,12 @@ class VoteTest < ActionMailer::TestCase
     assert_not @vote.save, "Save vote without email"
   end
 
+  test "should find with spam scope" do
+    assert Vote.count > 0
+    assert Vote.spam.count == 0
+    assert Vote.unspam.count > 0, "All votes where spam?"
+  end
+
   # test 'should not save with short name' do
   #   # 16.9.2015/jto People can have very short names...
   #   #

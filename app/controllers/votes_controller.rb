@@ -16,7 +16,7 @@ class VotesController < ApplicationController
   def new
     clear
     @vote = Vote.new
-    @parent_vote = Vote.where(md5_secret_token: params[:parent_vote], spam: false).where.not(:email_confirmed => nil).first if params[:parent_vote]
+    @parent_vote = Vote.unspam.confirmed.find_by_md5_secret_token(params[:parent_vote]) if params[:parent_vote]
 
     respond_to do |format|
       format.html do
@@ -144,18 +144,17 @@ class VotesController < ApplicationController
     @vote.ip = request.env["REMOTE_ADDR"]
     @vote.save
 
-    if params[:parent_vote]
-      parent_vote = Vote.where(md5_secret_token: params[:parent_vote], spam: false).where.not(:email_confirmed => nil).first
-      parent_vote.votes << @vote if parent_vote
-    end
-
     unless @vote.valid?
-      # TODO: localized?
       Rails.logger.error("Vote#create: Invalid vote, errors: #{@vote.errors.full_messages}")
       flash[:warning] = @vote.errors.full_messages.join(", ")
       redirect_to new_vote_path(locale: locale)
       # render :new, status: :bad_request <= kumpi parempi?
       return
+    end
+
+    if params[:parent_vote]
+      parent_vote = Vote.unspam.confirmed.find_by_md5_secret_token(params[:parent_vote])
+      parent_vote.votes << @vote if parent_vote
     end
 
     # New vote has been added.
@@ -196,7 +195,8 @@ class VotesController < ApplicationController
       return
     end
 
-    vote = Vote.where(md5_secret_token: params[:token], spam: false, email_confirmed: nil).first
+    # vote = Vote.where(md5_secret_token: params[:token], spam: false, email_confirmed: nil).first
+    vote = Vote.unspam.unconfirmed.find_by_md5_secret_token(params[:token])
     unless vote
       flash[:warning] = _("There was an error")
       Rails.logger.error("Vote.waiting: Vote not found")
