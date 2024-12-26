@@ -75,7 +75,7 @@ class VoteMailer < ApplicationMailer
 
     old_locale = I18n.locale
     I18n.locale = "fi"
-    mail_to = Rails.configuration.x.comment_target_email
+    mail_to = Rails.configuration.x.comment_email_to
     mail(to: mail_to, subject: _("Unite The Armies - new comment"))
     I18n.locale = old_locale
   end

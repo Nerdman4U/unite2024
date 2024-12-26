@@ -106,39 +106,6 @@ class Vote < ApplicationRecord
     !!Vote.where(secret_confirm_hash: token).first
   end
 
-  # Send vote emails to admins.
-  #
-  # Send config.sent_count new emails to admins.
-  #
-  def self.emails_to_admins
-    uas = UaSetting.instance
-    return nil if Rails.configuration.x.sent_count.blank?
-
-    # How many votes has already sent plus votes to be send
-    #
-    # If VoteCount.total is smaller, exit because there are not enough votes yet.
-    total = uas.vote_count.to_i + Rails.configuration.x.sent_count
-    return nil unless VoteCount.total >= total
-    # puts "Vote.emails_to_admins OK total: #{total} VoteCount.total: #{VoteCount.total}"
-
-    votes = votes_to_be_send_to_admins
-    # puts "Vote.send_emails votes.size: #{votes}"
-
-    VoteMailer.with(votes: votes).emails_to_admins.deliver_now
-
-    uas.sent_at = Time.now
-    uas.vote_count = VoteCount.total
-    uas.save
-  end
-
-  def self.votes_from
-    UaSetting.instance.sent_at || Vote.order(:created_at).first.created_at
-  end
-
-  def self.votes_to_be_send_to_admins(votes_to = Time.now)
-    Vote.where(created_at: votes_from..votes_to).order(:created_at)
-  end
-
   def encoded_payload
     return nil if self.new_record?
     payload = {

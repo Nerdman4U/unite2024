@@ -4,8 +4,8 @@
 #
 # Database:
 # - sent_at: Time when last backup email was sent.
-# - vote_count: total amount of votes after last message.
-# - sent_count: UNUSED?
+# - vote_count: DEPRECATED
+# - sent_count: DEPRECATED
 #
 # Config files:
 # - config/environments : x.send_count
@@ -24,30 +24,27 @@ class UaSetting < ApplicationRecord
     @@instance ||= first || new
   end
 
-  # Send backup email when VoteCount.total is bigger than
-  # UaSetting.vote_count + UaSetting.sent_count...
+  ## Votes after notify
   #
-  # By default send backup email always after 100 new votes. Pick votes
-  # from database using UaSetting.sent_at timestamp (newer should be
-  # sent).
-  #
-  # This method does not check if sending should happend, this must
-  # happen in controller. This method only sets new values and sends
-  # email.
-  # def send!
-  #   begin
-  #     my_time = Time.now
-  #     my_count = VoteCount.total
+  # Return votes to be send to admins in next notify email.
+  # self.sent_at: time when last notify email was sent.
+  def votes_after_notify
+    return Vote.all if self.sent_at.nil?
+    Vote.where("created_at > ?", self.sent_at).order(created_at: :desc)
+  end
 
-  #     VoteMailer.vote_backup(my_time).deliver_now
+  def send_notify_email!
+    return unless send_notify_email?
+    uas = UaSetting.instance
+    VoteMailer.with(votes: votes_after_notify).emails_to_admins.deliver_now
+    self.sent_at = Time.now
+    self.save
+  end
 
-  #     self.sent_at = my_time
-  #     self.vote_count = my_count
-  #     save
-  #   rescue
-  #     Rails.logger.error("Failed to send backup email: #{$!}")
-  #   end
-  # end
+  def send_notify_email?
+    return false if Rails.configuration.x.votes_in_notify_email.blank?
+    Rails.configuration.x.votes_in_notify_email.to_i - votes_after_notify.count < 1
+  end
 
   def version
     require "yaml"

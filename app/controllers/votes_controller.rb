@@ -167,7 +167,8 @@ class VotesController < ApplicationController
     # 2) Nofity parent vote
     # If parent vote exists, notify owner.
     #
-    Vote.emails_to_admins
+    uas = UaSetting.instance
+    uas.send_notify_email!
 
     respond_to do |format|
       format.html do

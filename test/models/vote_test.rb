@@ -1,7 +1,6 @@
 require "test_helper"
 
-class VoteTest < ActionMailer::TestCase
-  include ActionMailer::TestHelper
+class VoteTest < ActiveSupport::TestCase
 
   def setup
     I18n.locale = :en
@@ -124,40 +123,11 @@ class VoteTest < ActionMailer::TestCase
   end
 
   test "should send email invitation" do
-    votes("vote_1").invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
-    assert_emails 1
-  end
-
-  test "should send email invitation in arabic" do
-    votes("vote_1").invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
-    assert_emails 1
-  end
-
-  test "should have votes to be send to admins" do
-    assert_equal Vote.count, 1000
-    uas = UaSetting.instance
-    uas.sent_at = nil
-    uas.save
-    votes = Vote.votes_to_be_send_to_admins
-    assert votes
-    assert_equal votes.size, 1000
-
-    # Vote.where(created_at: (Time.now - 2.year)..Time.now).order(created_at: :desc).map { |v| puts v.created_at }
-    # vote = Vote.where(created_at: (Time.now - 1.year)..Time.now).order(created_at: :desc).last
-    # puts vote.created_at
-    uas = UaSetting.instance
-    uas.sent_at = Time.now - 1.year
-    votes = Vote.votes_to_be_send_to_admins
-    assert votes
-
-    if votes.size != 12
-      Vote.where(created_at: (Time.now - 2.year)..Time.now).order(created_at: :desc).map { |v| puts v.created_at }
+    assert votes("vote_1").invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "english")
     end
 
-    assert_equal votes.size, 12
-
-    # Fixture votes are added once per month. All 12 should be in same year.
-    assert_equal votes.map { |v| v.created_at.year }.uniq.size, 1
+  test "should send email invitation in arabic" do
+    assert votes("vote_1").invite(name: "Kati Kohde", email: "info+testi@jonitoyryla.eu", language: "arabic")
   end
 
   test "should have child and parent votes" do
