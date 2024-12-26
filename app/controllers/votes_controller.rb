@@ -7,6 +7,12 @@ class VotesController < ApplicationController
     @sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
   end
 
+  ## Create a new vote
+  #
+  # Parameters:
+  # - vote
+  # - parent_vote :: public_token of parent vote
+  #
   def new
     clear
     @vote = Vote.new
@@ -110,24 +116,16 @@ class VotesController < ApplicationController
     end
   end
 
-  # # Add parent vote id to session and redirect to new vote.
-  # def add_parent
-  #   unless token = params[:token]
-  #     Rails.logger.error("Vote#add_parent: Invalid token, token: #{params[:token]}")
-  #     flash[:warning] = _("There was an error")
-  #     redirect_to locale_root_path
-  #     return
-  #   end
-
-  #   vote = Vote.where(md5_secret_token: token).first
-  #   if vote
-  #     session[:parent_vote_id] = vote.id
-  #   end
-
-  #   redirect_to action: :new, locale: locale
-  # end
-
-  # If session votes[:parent_id] exists, add parent to this vote
+  ## Create a new vote
+  #
+  # Parameters:
+  # - vote
+  #   - email
+  #   - email_repeat
+  #   - country
+  #   - name
+  # - parent_vote :: public_token of parent vote
+  #
   def create
     if params[:vote][:email] != params[:vote][:email_repeat]
       Rails.logger.error("Vote#create: Emails do not match")
@@ -175,7 +173,7 @@ class VotesController < ApplicationController
       format.html do
         if @vote.valid?
           flash[:info] = _("Your vote is added but email is not yet confirmed. Please check your email.")
-          redirect_to waiting_path(locale: locale, id: @vote.id)
+          redirect_to waiting_path(locale: locale, token: @vote.public_token)
         else
           flash[:warning] = "There was an error while adding your vote"
           # redirect_to new_vote_path(locale: locale, anchor: "sign")
@@ -191,23 +189,14 @@ class VotesController < ApplicationController
   # Parameters:
   # - email
   def waiting
-    unless params[:id]
+    unless params[:token]
       flash[:warning] = _("There was an error")
-      Rails.logger.error("Vote.waiting: No email")
+      Rails.logger.error("Vote.waiting: No token")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
-    begin
-      vote_id = params[:id].to_i
-    rescue
-      flash[:warning] = _("There was an error")
-      Rails.logger.error("Vote.waiting: Invalid email")
-      redirect_to new_vote_path(locale: locale)
-      return
-    end
-
-    vote = Vote.find_by_id(vote_id)
+    vote = Vote.where(md5_secret_token: params[:token], spam: false, email_confirmed: nil).first
     unless vote
       flash[:warning] = _("There was an error")
       Rails.logger.error("Vote.waiting: Vote not found")

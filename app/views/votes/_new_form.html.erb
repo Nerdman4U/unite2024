@@ -2,7 +2,7 @@
   <%= form_with model: @vote, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
 
   <% if @parent_vote %>
-  <%= hidden_field_tag :parent_vote, @parent_vote.md5_secret_token %>
+  <%= hidden_field_tag :parent_vote, @parent_vote.public_token %>
   <% end %>
 
   <div id="sign" class="mb-5">

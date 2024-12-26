@@ -24,7 +24,9 @@ class Vote < ApplicationRecord
   has_many :comments, foreign_key: :vote_id
   belongs_to :vote, optional: true #, counter_cache: true
 
-  before_save :add_secret_token
+  before_save :set_private_token # votes.secret_token
+  before_save :set_public_token # votes.md5_secret_token
+  # before_save :add_secret_token
   # before_save :add_secret_confirm_hash
 
   def ago
@@ -93,7 +95,7 @@ class Vote < ApplicationRecord
       Rails.logger.error("Cannot email invite for new record")
       return
     end
-    options = options.merge(inviter_name: name, token: self.md5_secret_token)
+    options = options.merge(inviter_name: name, token: self.public_token)
     VoteMailer.with(options: options).invite.deliver_now
   end
 
@@ -131,10 +133,6 @@ class Vote < ApplicationRecord
   end
 
   def self.votes_to_be_send_to_admins(votes_to = Time.now)
-    # Time range of votes to be sent.
-    # puts "Vote.send_emails votes_from: #{votes_from} votes_to: #{votes_to}"
-
-    # Votes to be send.
     Vote.where(created_at: votes_from..votes_to).order(:created_at)
   end
 
@@ -147,20 +145,42 @@ class Vote < ApplicationRecord
     JWT.encode(payload, ENV["UNITE_SECRET_KEY"], "HS256")
   end
 
+  def private_token
+    self.secret_token
+  end
+
+  def public_token
+    self.md5_secret_token
+  end
+
   private
 
-  # We do not allow duplicate tokens, lets be sure there is no equal
-  # token already in database.
-  def add_secret_token
-    while token = SecureRandom.hex(64) do
-      if Vote.where(secret_token: token).blank?
-        require 'digest/md5'
-        digest = Digest::MD5.hexdigest(token)
-        self.secret_token = token
-        self.md5_secret_token = digest
-        break
-      end
-    end
+  def make_public_token token
+    Digest::MD5.hexdigest(token)
   end
+  def make_private_token
+    SecureRandom.hex(4) + Time.now.to_i.to_s[-4,4]
+  end
+  def set_private_token
+    self.secret_token = make_private_token
+  end
+  def set_public_token
+    raise "secret_token is nil" if secret_token.nil?
+    self.md5_secret_token = make_public_token(secret_token)
+  end
+
+  # # We do not allow duplicate tokens, lets be sure there is no equal
+  # # token already in database.
+  # def add_secret_token
+  #   while token = SecureRandom.hex(64) do
+  #     if Vote.where(secret_token: token).blank?
+  #       require 'digest/md5'
+  #       digest = Digest::MD5.hexdigest(token)
+  #       self.secret_token = token
+  #       self.md5_secret_token = digest
+  #       break
+  #     end
+  #   end
+  # end
 
 end

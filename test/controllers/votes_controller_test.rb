@@ -63,7 +63,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     vote = assigns(:vote)
 
     assert flash[:info], "Your vote is added but email is not yet confirmed. Please check your email."
-    assert_redirected_to waiting_path(locale: "en", id: vote.id)
+    assert_redirected_to waiting_path(locale: "en", token: vote.public_token)
   end
 
   test "should not create vote if emails do not match" do
@@ -189,13 +189,13 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     vote.save
 
     # Should not print waiting time flash when get waiting_url first time.
-    get waiting_url(id: vote.id)
+    get waiting_url token: vote.public_token
     assert css_select(".alert").blank?
 
     sleep 1
 
     # Should get flash when get waiting_url second time.
-    get waiting_url(id: vote.id)
+    get waiting_url token: vote.public_token
 
     assert_response :success
     assert_dom ".alert" do

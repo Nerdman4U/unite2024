@@ -128,24 +128,26 @@ class VoteTest < ActionMailer::TestCase
   end
 
   test "should have votes to be send to admins" do
-    # Vote.all.order(created_at: :asc).each do |vote|
-    #   puts "#{vote.id} #{vote.created_at}"
-    # end
+    assert_equal Vote.count, 1000
     uas = UaSetting.instance
     uas.sent_at = nil
     uas.save
-    # puts "VoteTest votes_from: #{Vote.votes_from} uas.sent_at: #{uas.sent_at}"
     votes = Vote.votes_to_be_send_to_admins
-    # votes.each do |vote|
-    #   puts "#{vote.id} #{vote.created_at}"
-    # end
     assert votes
     assert_equal votes.size, 1000
 
+    # Vote.where(created_at: (Time.now - 2.year)..Time.now).order(created_at: :desc).map { |v| puts v.created_at }
+    # vote = Vote.where(created_at: (Time.now - 1.year)..Time.now).order(created_at: :desc).last
+    # puts vote.created_at
     uas = UaSetting.instance
     uas.sent_at = Time.now - 1.year
     votes = Vote.votes_to_be_send_to_admins
     assert votes
+
+    if votes.size != 12
+      Vote.where(created_at: (Time.now - 2.year)..Time.now).order(created_at: :desc).map { |v| puts v.created_at }
+    end
+
     assert_equal votes.size, 12
 
     # Fixture votes are added once per month. All 12 should be in same year.
@@ -165,6 +167,26 @@ class VoteTest < ActionMailer::TestCase
     assert_equal vote2.vote, vote1
   end
 
+  test "should make private token" do
+    assert votes("vote_1").send(:make_private_token)
+    assert_equal votes("vote_1").send(:make_private_token).size, 12
+  end
+
+  test "should make public token from private" do
+    require 'digest/md5'
+
+    vote = votes("vote_1")
+    private_token = vote.send(:make_private_token)
+    public_token = vote.send(:make_public_token, private_token)
+
+    assert_equal public_token, Digest::MD5.hexdigest(private_token)
+  end
+
+  test "should have private and public token in database" do
+    vote = votes("vote_1")
+    assert vote.send(:private_token)
+    assert vote.send(:public_token)
+  end
 
   # TODO
   # test 'should increment counter cache' do
