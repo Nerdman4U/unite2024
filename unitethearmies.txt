@@ -150,7 +150,7 @@ Table of Contents
 1.3.2 26.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  • ☒ vote
+  • ☑ vote
     • ☑ private ja public token
     • ☑ welcome partial public token instead of id.
     • ☑ finders / scopes kuinka saisi tämän:
@@ -158,12 +158,12 @@ Table of Contents
       email_confirmed: nil) muotoon: class Vote
       find_by_public_token: XXX end >
       Vote.find_by_public_token(token) => hakee + spam:false, jne.
-    • ☐ mailer testit vote_test.rb:ssä on vielä pari mailer testiä ja
+    • ☑ mailer testit vote_test.rb:ssä on vielä pari mailer testiä ja
       luokka peritään mailer test::casesta.
   • ☑ session reset_session logouttiin, eli tekee uuden session ja
     sessio id:n.
-  • ☐ UaSetting
-    • ☐ admin notify kama tänne testeineen.
+  • ☑ UaSetting
+    • ☑ admin notify kama tänne testeineen.
   • ☑ Config
     • ☑ x.sent_count parempi nimi olkoon: votes_in_notify_email
   • ☑ task
