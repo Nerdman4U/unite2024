@@ -28,17 +28,20 @@
         <nav class="navigation nav-block primary-navigation nav-right no-margin-right">
           <ul>
             <li>
-              <%= link_to _("Supporters"), votes_path(locale: locale), :class => "contains-sub-menu", data: { :no_turbolink => true } %>
+              <%= link_to _("Supporters"), votes_path(locale: locale) %>
             </li>
             <li>
-              <%= link_to _("Read more"), appeal_path(locale: locale), :class => "contains-sub-menu", data: { :no_turbolink => true } %>
+              <%= link_to _("Read more"), appeal_path(locale: locale) %>
             </li>
             <li>
-              <%= link_to _("Support now"), new_vote_path(locale: locale), :class => "contains-sub-menu", data: { :no_turbolink => true } %>
+              <%= link_to _("Support now"), new_vote_path %>
             </li>
             <% if logged_in? %>
             <li>
-              <%= link_to _("Logout"), logout_path, method: :delete, class: "logout contains-sub-menu", data: { no_turbolink: true } %>
+              <%= link_to _("Login"), vote_path(token: current_vote.encoded_payload) %>
+            </li>
+            <li>
+              <%= link_to _("Logout"), logout_path, method: :delete %>
             </li>
             <% end %>
 

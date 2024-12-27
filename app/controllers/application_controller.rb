@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   helper_method :logged_in?
+  helper_method :current_vote
 
   private
 
