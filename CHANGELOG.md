@@ -1,3 +1,13 @@
+## 1.50.0 (2024-12-27)
+
+### Feat
+
+- **application_system_test_case.rb**: MobileSystemTestCase
+
+### Fix
+
+- Special case if vote is missing while session has logged in
+
 ## 1.49.0 (2024-12-27)
 
 ### Feat
