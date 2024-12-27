@@ -60,8 +60,13 @@ class ApplicationController < ActionController::Base
   end
 
   def current_vote
-    return unless session[:current_vote_id]
-    Vote.where(id: session[:current_vote_id]).first
+    return unless logged_in?
+    begin
+      Vote.where(id: session[:current_vote_id]).first
+    rescue
+      logout
+      nil
+    end
   end
 
   def logout!

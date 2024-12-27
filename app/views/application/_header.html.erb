@@ -36,12 +36,12 @@
             <li>
               <%= link_to _("Support now"), new_vote_path %>
             </li>
-            <% if logged_in? %>
+            <% if logged_in? && current_vote %>
             <li>
               <%= link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
             </li>
             <li>
-              <%= link_to _("Logout"), logout_path, method: :delete %>
+              <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>
             </li>
             <% end %>
 
