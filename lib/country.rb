@@ -1,4 +1,4 @@
-class Country < ApplicationRecord
+class Country
 
   def self.names
     from_disc.map { |x| x[1] }
