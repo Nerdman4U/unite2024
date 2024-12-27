@@ -9,39 +9,40 @@ Table of Contents
 .. 2. Muutoksia
 .. 3. Päiväkirja
 ..... 1. clock
-..... 2. 26.12.2024
-..... 3. 25.12.2024
-..... 4. 24.12.2024
-..... 5. 23.12.2024
-..... 6. 21.12.2024
-..... 7. 19.12.2024
-..... 8. 18.12.2024
-..... 9. 17.12.2024
-..... 10. 16.12.2024
-..... 11. 14.12.2024
-..... 12. 13.12.2024
-..... 13. 12.12.2024
-..... 14. 11.12.2024
-..... 15. 10.12.2024
-..... 16. 9.12.2024
-..... 17. 7.12.2024
-..... 18. 6.12.2024
-..... 19. 3.12.2024
-..... 20. 2.12.2024
-..... 21. 29.11.2024
-..... 22. 28.11.2024
-..... 23. 27.11.2024
-..... 24. 26.11.2024
-..... 25. 22.11.2024
-..... 26. 21.11.2024
-..... 27. 20.11.2024
-..... 28. 19.11.2024
-..... 29. 18.11.2024
-..... 30. 15.11.2024
-..... 31. 14.11.2024
-..... 32. 13.11.2024
-..... 33. 12.11.2024
-..... 34. 11.11.2024
+..... 2. 27.12.2024
+..... 3. 26.12.2024
+..... 4. 25.12.2024
+..... 5. 24.12.2024
+..... 6. 23.12.2024
+..... 7. 21.12.2024
+..... 8. 19.12.2024
+..... 9. 18.12.2024
+..... 10. 17.12.2024
+..... 11. 16.12.2024
+..... 12. 14.12.2024
+..... 13. 13.12.2024
+..... 14. 12.12.2024
+..... 15. 11.12.2024
+..... 16. 10.12.2024
+..... 17. 9.12.2024
+..... 18. 7.12.2024
+..... 19. 6.12.2024
+..... 20. 3.12.2024
+..... 21. 2.12.2024
+..... 22. 29.11.2024
+..... 23. 28.11.2024
+..... 24. 27.11.2024
+..... 25. 26.11.2024
+..... 26. 22.11.2024
+..... 27. 21.11.2024
+..... 28. 20.11.2024
+..... 29. 19.11.2024
+..... 30. 18.11.2024
+..... 31. 15.11.2024
+..... 32. 14.11.2024
+..... 33. 13.11.2024
+..... 34. 12.11.2024
+..... 35. 11.11.2024
 
 
 1 Unite The Armies
@@ -103,52 +104,103 @@ Table of Contents
 1.3.1 clock
 ╌╌╌╌╌╌╌╌╌╌╌
 
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Headline          Time                      
-  ─────────────────────────────────────────────
-   *Total time*      *6d 7:38*                 
-  ─────────────────────────────────────────────
-   Unite The Armies  6d 7:38                   
-   Päiväkirja                 6d 7:38        
-     26.12.2024                         3:57 
-     25.12.2024                         7:31 
-     24.12.2024                        21:56 
-     23.12.2024                         5:59 
-     21.12.2024                         6:09 
-     19.12.2024                         4:34 
-     18.12.2024                         2:45 
-     17.12.2024                         2:21 
-     16.12.2024                         3:49 
-     14.12.2024                         5:33 
-     13.12.2024                         1:39 
-     12.12.2024                         2:50 
-     11.12.2024                         3:13 
-     10.12.2024                         1:39 
-     9.12.2024                          4:13 
-     7.12.2024                          3:34 
-     6.12.2024                          0:14 
-     3.12.2024                          3:12 
-     2.12.2024                          1:28 
-     29.11.2024                         4:58 
-     28.11.2024                         3:52 
-     27.11.2024                         4:59 
-     26.11.2024                         4:56 
-     22.11.2024                         3:39 
-     21.11.2024                         4:50 
-     20.11.2024                         4:00 
-     19.11.2024                         7:06 
-     18.11.2024                         4:25 
-     15.11.2024                         4:52 
-     14.11.2024                         2:54 
-     13.11.2024                         6:00 
-     12.11.2024                         5:06 
-     11.11.2024                         3:25 
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Table 1: Clock summary at [2024-12-26 Thu 13:10]
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Headline          Time                        
+  ───────────────────────────────────────────────
+   *Total time*      *6d 15:46*                  
+  ───────────────────────────────────────────────
+   Unite The Armies  6d 15:46                    
+   Päiväkirja                  6d 15:46        
+     27.12.2024                           8:08 
+     26.12.2024                           3:57 
+     25.12.2024                           7:31 
+     24.12.2024                          21:56 
+     23.12.2024                           5:59 
+     21.12.2024                           6:09 
+     19.12.2024                           4:34 
+     18.12.2024                           2:45 
+     17.12.2024                           2:21 
+     16.12.2024                           3:49 
+     14.12.2024                           5:33 
+     13.12.2024                           1:39 
+     12.12.2024                           2:50 
+     11.12.2024                           3:13 
+     10.12.2024                           1:39 
+     9.12.2024                            4:13 
+     7.12.2024                            3:34 
+     6.12.2024                            0:14 
+     3.12.2024                            3:12 
+     2.12.2024                            1:28 
+     29.11.2024                           4:58 
+     28.11.2024                           3:52 
+     27.11.2024                           4:59 
+     26.11.2024                           4:56 
+     22.11.2024                           3:39 
+     21.11.2024                           4:50 
+     20.11.2024                           4:00 
+     19.11.2024                           7:06 
+     18.11.2024                           4:25 
+     15.11.2024                           4:52 
+     14.11.2024                           2:54 
+     13.11.2024                           6:00 
+     12.11.2024                           5:06 
+     11.11.2024                           3:25 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Table 1: Clock summary at [2024-12-27 Fri 18:26]
 
 
-1.3.2 26.12.2024
+1.3.2 27.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ footer pientä ulkoasusäätöä.
+  • ☐ recent votes onkin table
+  • ☐ tms-arrow-nav kun sliderissa on usampi slide niin js tulostaa
+    napit, vaan ei löydy äkkiseltään että mistä kun ikonit on rikki,
+    pitäisi muuttaa bootstrap ikoneiksi…
+  • ☑ slider
+    • ☑ helper
+      • ☑ perustoiminta
+      • ☑ jatko eli parametrina blokilta lista slideista: [{link:
+        link,…},…]
+  • ☒ responsive
+    • ☑ vw tyyleissä on nyt ufs, um, up, umx, ymy, upy, upx, h1+
+    • ☐ header sivun alussa on header vertikaalisesti keskitetty
+      (tms-content-inner). resize event handler laskee aina
+      elementtien leveydet ja korkeudet jonka mukaan asemoituu… eli
+      pitää purkaa pois nämä kaikki.
+  • ☐ comment#new
+    • ☐ värkkäys
+  • ☑ lib models
+    • ☑ country, language ja recaptcha libiiin
+    • ☑ loadpathiin
+  • ☑ accessibility
+    • ☑ resoluutio äkkiseltään jos ruutua alkaa pienentää niin =>
+      täytyy ruveta käyttämään viewport kokoja kaikkialla, tuntuisi
+      toimivan.
+      • ☑ header katoaa
+      • ☑ alakerran napit limittyy
+      • ☑ footer ei oikein näytä hyvältä
+  • ☐ test:system
+    • ☐ headerin koko ja käyttäytyminen täytyy siis tehdä testi joka
+      testaa että header pysyy yhdellä rivillä, cuprite ehkä osaa
+      testata eri resoluutioilla
+  • ☐ font joitain fontteja ladataan googlesta, täytyisi tietysti olla
+    lokaalisti..
+  • ☐ teema voisi olla ideaa myös alkaa siirtämään toimintoja uuteen
+    teemaan
+    esim. <https://www.elegantthemes.com/gallery/divi/?theme=Divi>
+    • vanha js pois
+    • headerin ja login javascript täytyy tutkia ja kuitenkin ottaa
+      uuteen teemaan…
+    • samoin tms-slide ja ul käyttö, nuo javascriptit
+    • ☐ responsive marginals onko mahdollista? nyt on isoja tyhjiä
+      välejä ulkoasun takia, pitäisi tietysti skaalautua.
+
+
+1.3.3 26.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Autocomplete ctrl-K ja ctrl-. tai tabilla
 
   • ☑ vote
     • ☑ private ja public token
@@ -174,15 +226,15 @@ Table of Contents
   • ☐ UaSetting täytyy muuttaa nimi, UniteSettings (?), AppSettings (?)
 
 
-1.3.3 25.12.2024
+1.3.4 25.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  • ☐ vote
+  • ☒ vote
     • ☐ show section taustavärit pitäisi olla automaattisesti
       vuorotellen, esim. jos linkitettyjä ääniä on tai ei ole.
-    • ☐ emails_to_admins => rename notify_admins
-    • ☐ scopes
-      • ☐ Vote.find_confirmed
+    • ☑ emails_to_admins => rename notify_admins
+    • ☑ scopes
+      • ☑ Vote.find_confirmed
         <https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/>
     • ☐ save login voisi olla mahdollisuus tallentaa login
       ko. koneelle että ei tarvitse aina rampata spostissa.
@@ -195,11 +247,11 @@ Table of Contents
       tokenilla.  => md5_secret_token mutta koko action on turha,
       voi viedä parametrina suoraan new:lle.
     • ☑ email view invite url suoraan new:lle
-  • ☐ waiting
-    • ☐ token käytössä vote_id, käytetään kuitenkin md5 tokenia.
+  • ☑ waiting
+    • ☑ token käytössä vote_id, käytetään kuitenkin md5 tokenia.
 
 
-1.3.4 24.12.2024
+1.3.5 24.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ votes#show
@@ -219,7 +271,7 @@ Table of Contents
   • ☐ päätelaitteet pitäisi alkaa testaamaan myös erilaisilla…
 
 
-1.3.5 23.12.2024
+1.3.6 23.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   seuraavaksi:
@@ -237,7 +289,7 @@ Table of Contents
     • ☑ send login link
 
 
-1.3.6 21.12.2024
+1.3.7 21.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ assets kauhea säätö
@@ -247,7 +299,7 @@ Table of Contents
     • ☑ maapallo
 
 
-1.3.7 19.12.2024
+1.3.8 19.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☐ varoituksia
@@ -281,7 +333,7 @@ Table of Contents
     testi.unitethearmies.org)
 
 
-1.3.8 18.12.2024
+1.3.9 18.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ votes
@@ -298,8 +350,8 @@ Table of Contents
       • ☐ similar should have similar layout
 
 
-1.3.9 17.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.3.10 17.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ waiting
     • ☑ background image => lisätty pari kuvaa ja nimetty
@@ -308,7 +360,7 @@ Table of Contents
       "4min 32sec"
 
 
-1.3.10 16.12.2024
+1.3.11 16.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ aikataulu
@@ -335,7 +387,7 @@ Table of Contents
     unite…  => mailer parametrit nykyään mailer.with(a:b,…).method
 
 
-1.3.11 14.12.2024
+1.3.12 14.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ confirm confirm vote path väärin testissä => unitethearmies.org,
@@ -366,13 +418,13 @@ Table of Contents
     osoitteet eri osoitteina.
 
 
-1.3.12 13.12.2024
+1.3.13 13.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ säätöä
 
 
-1.3.13 12.12.2024
+1.3.14 12.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ testit
@@ -391,7 +443,7 @@ Table of Contents
         mailer_test tiedostoissa.
 
 
-1.3.14 11.12.2024
+1.3.15 11.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Huom.  RAILS_ENV=production rails db:migrate RAILS_ENV=production
@@ -410,14 +462,14 @@ Table of Contents
       lähetetään viesti.
 
 
-1.3.15 10.12.2024
+1.3.16 10.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flash message
     • ☑ nappi paremmin
 
 
-1.3.16 9.12.2024
+1.3.17 9.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Header animaatio meni bootstrapin myötä rikki
@@ -436,7 +488,7 @@ Table of Contents
   • ☑ recent votes bootstrap row/col
 
 
-1.3.17 7.12.2024
+1.3.18 7.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flash ilmoituksen sulkeminen / ajastus
@@ -445,14 +497,14 @@ Table of Contents
   • ☐ Vimeo Täytyy siirtää Unite the Armies- käyttäjälle Youtubeen.
 
 
-1.3.18 6.12.2024
+1.3.19 6.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Hyvää Itsenäisyyspäivää!
   • ☑ ikonit paremmin
 
 
-1.3.19 3.12.2024
+1.3.20 3.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ captcha tuotannossa
@@ -465,7 +517,7 @@ Table of Contents
   • ☑ materiaali ladattavissa suoraan sivulta
 
 
-1.3.20 2.12.2024
+1.3.21 2.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ testit
@@ -475,7 +527,7 @@ Table of Contents
     aikaisemmin ei palauttanut mitään.
 
 
-1.3.21 29.11.2024
+1.3.22 29.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ ainoastaan vahvistetut äänet näkyviin recent votessa
@@ -490,7 +542,7 @@ Table of Contents
   • ☑ duplicate email poistetaan duplikaatit $ rails fix:duplicate_votes
 
 
-1.3.22 28.11.2024
+1.3.23 28.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Errno::ECONNREFUSED (Connection refused - connect(2) for
@@ -513,7 +565,7 @@ Table of Contents
   • systemctl status docker => käynnistyy edelleen (docker engine?)
 
 
-1.3.23 27.11.2024
+1.3.24 27.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☐ Rails 8.1
@@ -538,7 +590,7 @@ Table of Contents
   • ☑ test testatessa EI pitäisi oikeasti lähteä maileja.
 
 
-1.3.24 26.11.2024
+1.3.25 26.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy rake ja fix tuotannossa scriptin kautta… tässä tulikin
@@ -580,7 +632,7 @@ Table of Contents
     • ☑ 2-vaiheinen
 
 
-1.3.25 22.11.2024
+1.3.26 22.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ äänestys
@@ -595,7 +647,7 @@ Table of Contents
     UNITE_APPLICATION_PROTOCOL.
 
 
-1.3.26 21.11.2024
+1.3.27 21.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy commitizen, README
@@ -606,7 +658,7 @@ Table of Contents
     mahdollisimman simppeli tilalle…  jQuery?
 
 
-1.3.27 20.11.2024
+1.3.28 20.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ rails new –webpack react jälleen uusi rails projekti, kopsattu
@@ -617,7 +669,7 @@ Table of Contents
     esim. jqueryllä ja jättää react hautumaan.
 
 
-1.3.28 19.11.2024
+1.3.29 19.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ facebook ja twitter linkit vaan enpä saanut riviin, olkoon
@@ -634,7 +686,7 @@ Table of Contents
   • ☑ React lopultakin ilman javascript virheitä.
 
 
-1.3.29 18.11.2024
+1.3.30 18.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ liput
@@ -651,7 +703,7 @@ Table of Contents
     to english.
 
 
-1.3.30 15.11.2024
+1.3.31 15.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   <https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/apache/oss/bionic/deploy_app.html>
@@ -675,7 +727,7 @@ Table of Contents
     kotihakemisto kun passenger ajetaan ei käyttäjänä.
 
 
-1.3.31 14.11.2024
+1.3.32 14.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ passenger asennettu ohjeen mukaan, ylimääräinen gem poistettu.
@@ -691,7 +743,7 @@ Table of Contents
     hakemistossa kun komento ajetaan.
 
 
-1.3.32 13.11.2024
+1.3.33 13.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy
@@ -717,7 +769,7 @@ Table of Contents
     environment.
 
 
-1.3.33 12.11.2024
+1.3.34 12.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Katsotaanpas jos saisin jotain eloa javascripteihin… onnistui.
@@ -728,7 +780,7 @@ Table of Contents
   vaihtunut juuri rails8:ssa.
 
 
-1.3.34 11.11.2024
+1.3.35 11.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Eka onnistunut boottaus
