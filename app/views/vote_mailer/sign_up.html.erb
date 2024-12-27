@@ -3,16 +3,16 @@
 <p><%= _("Our campaign promotes a petition sent to the United Nations to deploy the world’s armies into environmental work to protect the diversity of the global ecosystem and win the battle against climate change.") %></p>
 <p><%= _("It’s common practice in many countries that armies are called in to assist those affected by sudden environmental disasters. It would be a logical extension of this practice to employ such a resource in counteracting the somewhat more gradual but much larger-scale catastrophes – this with the help, it is to be hoped, of local NGOs – and that is the aim of our campaign.") %></p>
 <p><%= _("Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign.") %></p>
-<p><%= link_to _("Download"), download_url(locale: locale) %></p>
+<p><%= link_to _("Material"), material_url(locale: locale) %></p>
 
 <p><%= _("If you click the link below, you’ll find your personal supporter page. If you so wish, you can spread awareness of our campaign via that page, so that the number of those who have signed via your link is recorded there. The best supporters shall be rewarded.") %></p>
 <a href="<%= vote_url(token: @vote.encoded_payload, locale: locale)  %>"><%= _("My supporter page") %></a>
 <p>
   <%= _("Thank you in any case for signing the petition,") %>
-  <br/>
+  <br />
   <%= _("sincerely,") %>
 </p>
 <p><%= _(UNITE_SIGNATURE_TITLE) %></p>
 <p><%= link_to UNITE_ROOT_URL, UNITE_ROOT_URL %></p>
-<br/>
-<br/>
+<br />
+<br />

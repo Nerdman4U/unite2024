@@ -12,8 +12,20 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?
   helper_method :current_vote
+  helper_method :country_code
 
   private
+
+  # TODO: return default country instead of nil.
+  def country_code
+    return nil unless request.params
+    vote = request.params[:vote] if request.params.has_key?(:vote)
+    return nil if vote.blank?
+    country_code = vote[:country] if vote.has_key?(:country)
+    return nil if country_code.blank?
+    # return request[:vote][:country] if request[:vote] and request[:vote][:country]
+    country_code
+  end
 
   def add_flash_to_header
     # only run this in case it's an Ajax request.

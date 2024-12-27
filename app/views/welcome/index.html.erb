@@ -1,36 +1,17 @@
 <!-- Fullscreen Slider Section -->
-<section class="section-block featured-media window-height tm-slider-parallax-container">
-  <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
-    <ul class="tms-slides">
-      <li class="tms-slide" data-image data-force-fit>
-        <div class="tms-content">
-          <div class="container tms-content-inner center left-on-mobile v-align-middle">
-            <div class="row">
-              <div class="col-12">
-                <h1 class="fw-bold fs-10 position-static color-white tms-caption lspacing-medium mb-20 weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
-                  <%= _("Save the planet") %>
-                </h1>
-
-                <h5 class="fw-bold fs-5 position-static tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-                  <%= _("Give the armies a new, positive task: protect the environment") %>
-                </h5>
-                <div class="clear"></div>
-                <%= link_to new_vote_path(locale: locale, anchor: "sign"),
-                  # "button xlarge bkg-black bkg-hover-grey-ultralight color-white color-hover-black text-uppercase shadow rounded"
-                  :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
-                  data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;",
-                  no_scale: true, no_turbolink: true } do %>
-                <%= _("Support now") %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img data-src=<%= image_path("earth-bg.jpg") %> data-retina src=<%= image_path("blank.gif") %> alt="The Earth" />
-      </li>
-    </ul>
-  </div>
-</section>
+<%= fs_slider do
+[{
+  link: link_to(new_vote_path(locale: locale, anchor: "sign"),
+            :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
+            data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;",
+            no_scale: true, no_turbolink: true }) { _("Support now") },
+  topic_1: _("Save the planet"),
+  topic_2: _("Give the armies a new, positive task: protect the environment"),
+  img: image_path("earth-bg.jpg"),
+  img_blank: image_path("blank.gif")
+}]
+end
+%>
 <!-- Fullscreen Slider Section End -->
 
 <div class="section-block bkg-charcoal m-0 p-0 overflow-hidden">
@@ -45,12 +26,12 @@
   </ol>
   <div style="display: flex; align-items: center;" id="slideshow-caption" class="container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
     <div style="">
-      <div class="col-12 text-start">
-        <h2 class="mb-30 fs-3">
+      <div class="col-9 offset-1 text-start">
+        <h2 class="b-30 fs-3">
           <span><%= _("First Aid") %> <%= _("To Our Common World") %></span>
         </h2>
       </div>
-      <div class="col-12 text-start">
+      <div class="col-9 offset-1 text-start">
         <p class="mb-30 fs-4 text-uppercase">
           <span>
             <%= _("There is a hidden potential at hand: the national armies.") %>
@@ -134,7 +115,7 @@
 
 <section class="section-block feature-2 bg-dark">
   <div class="row">
-    <div class="col-12">
+    <div class="col-9 offset-1">
       <%= link_to appeal_path(locale: locale),
         { :class => button_black } do
           content = tag.span class: "bi bi-info-circle align-middle" do " " end

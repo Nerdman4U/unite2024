@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-  helper_method :country_code
   helper_method :country_votes
 
   def index
@@ -262,17 +261,6 @@ class VotesController < ApplicationController
   end
 
   private
-
-  # TODO: return default country instead of nil.
-  def country_code
-    return nil unless request.params
-    vote = request.params[:vote] if request.params.has_key?(:vote)
-    return nil if vote.blank?
-    country_code = vote[:country] if vote.has_key?(:country)
-    return nil if country_code.blank?
-    # return request[:vote][:country] if request[:vote] and request[:vote][:country]
-    country_code
-  end
 
   def language_code
     return "en" unless language_code_full

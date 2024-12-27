@@ -2,61 +2,56 @@
 <div class="content clearfix">
 
   <!-- Fullscreen Slider Section -->
-  <section class="section-block featured-media tm-slider-parallax-container">
-    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
-      <ul class="tms-slides">
-        <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.0">
-          <div class="tms-content">
-            <div class="tms-content-inner center left-on-mobile v-align-middle">
-              <div class="row">
-                <div class="col-12">
-                </div>
-              </div>
-            </div>
-          </div>
-          <img data-src=<%= image_path("frontpage-slides/lenkki-pitkospuilla.jpg") %> src=<%= image_path("blank.gif") %> alt="<%= _("Duckboard") %>" />
-        </li>
-      </ul>
+  <%= slider_section do
+  [{
+    link: "",
+    topic_1: "",
+    topic_2: "",
+    img: image_path("frontpage-slides/lenkki-pitkospuilla.jpg"),
+    img_alt: _("At duckboard"),
+    img_blank: image_path("blank.gif")
+  }]
+  end
+  %>
+  <!-- Fullscreen Slider Section End -->
+
+  <!-- Content End -->
+  <section class="section-block-pt feature-1 bg-white upx-8">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="animated-h1 fs-10 color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+          <%= _("Support") %>
+        </h1>
+        <h5 class="animated-h5 color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+          <%= _("Radical actions are urgently needed to save our planet.") %>
+        </h5>
+      </div>
     </div>
   </section>
-  <!-- Fullscreen Slider Section End -->
-</div>
 
-<!-- Content End -->
-<section class="section-block-pt feature-1 bkg-white">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="animated-h1 fs-10 color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
-        <%= _("Support") %>
-      </h1>
-      <h5 class="animated-h5 color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-        <%= _("Radical actions are urgently needed to save our planet.") %>
-      </h5>
-    </div>
-  </div>
-</section>
-
-<!-- Feature Section 1 -->
-<section class="section-block feature-1 bkg-white">
-  <div class="row no-padding-bottom">
-    <div class="col-6 offset-3">
-      <div class="feature-content">
-        <div class="feature-content-inner">
-          <%= render partial: "new_form" %>
+  <!-- Feature Section 1 -->
+  <section class="section-block feature-1 bg-white">
+    <div class="row no-padding-bottom">
+      <div class="col-6 offset-3">
+        <div class="feature-content">
+          <div class="feature-content-inner">
+            <%= render partial: "new_form" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Feature Section 1 End -->
+  </section>
+  <!-- Feature Section 1 End -->
 
-<section class="section-block feature-2 bg-dark">
-  <div class="row">
-    <div class="col-12">
-      <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
-      <span class="bi bi-person-arms-up align-middle"></span>
-      <%= _("See who have already voted!") %>
-      <% end %>
+  <section class="section-block feature-2 bg-dark upx-8">
+    <div class="row">
+      <div class="col-12">
+        <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
+        <span class="bi bi-person-arms-up align-middle"></span>
+        <%= _("See who have already voted!") %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</div>

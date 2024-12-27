@@ -57,14 +57,14 @@ module ApplicationHelper
   def button_white
     # skin_barber_shop_removed = "button tms-caption thick "
     skin_barder_shop_stays = "bkg-white bkg-hover-black color-black color-hover-white text-uppercase "
-    bootstrap = "py-4-5 px-6 fs-4 position-static opacity-100 shadow border border-2 border-light rounded"
+    bootstrap = "upy-2 upx-3 ufs-2 position-static opacity-100 shadow border border-2 border-light rounded"
     skin_barder_shop_stays + bootstrap
   end
 
   def button_black
     # skin_barber_shop_removed = "button tms-caption thick "
     skin_barder_shop_stays = "bkg-black bkg-hover-white color-white color-hover-black text-uppercase "
-    bootstrap = "py-4-5 px-6 fs-4 position-static opacity-100 shadow border border-2 border-light rounded"
+    bootstrap = "upy-2 upx-3 ufs-2 position-static opacity-100 shadow border border-2 border-light rounded"
     skin_barder_shop_stays + bootstrap
   end
 
@@ -101,5 +101,65 @@ module ApplicationHelper
   end
   def show_link_to_vote?
     !((controller.controller_name == "votes") && (controller.action_name == "show"))
+  end
+
+  def slide_section slide
+    result = <<~SECTION
+    <li class="tms-slide" data-image data-force-fit>
+    <div class="tms-content">
+      <div class="container tms-content-inner center left-on-mobile v-align-middle">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="fw-bold fs-10 position-static color-white tms-caption lspacing-medium mb-20 weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+              #{slide[:topic_1]}
+            </h1>
+            <div class="clear"></div>
+
+            <h5 class="fw-bold fs-5 position-static tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+              #{slide[:topic_2]}
+            </h5>
+            <div class="clear"></div>
+            #{slide[:link]}
+          </div>
+        </div>
+      </div>
+    </div>
+    <img data-src=#{slide[:img]} data-retina src=#{slide[:img_blank]} alt="#{slide[:img_alt] || _("Slideshow image")}" />
+  </li>
+    SECTION
+
+    return result
+  end
+
+  ## Full screen slider
+  def fs_slider &block
+    raw_slider(["window-height"], &block)
+  end
+  def slider &block
+    raw_slider(&block)
+  end
+  alias :slider_section :slider
+  def raw_slider section_classes=[]
+    puts "asdf #{section_classes.inspect}"
+    slides = yield
+
+    slide_html = []
+    slides.map { |option|
+      slide_html << slide_section(option)
+    }
+
+    slides_str = slide_html.join
+
+    result = <<~SECTION
+    <section class="section-block featured-media tm-slider-parallax-container #{section_classes.join(" ")}">
+  <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
+    <ul class="tms-slides">
+      #{slides_str}
+    </ul>
+  </div>
+</section>
+    SECTION
+
+    return result.html_safe
   end
 end

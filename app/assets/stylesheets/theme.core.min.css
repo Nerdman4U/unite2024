@@ -59,25 +59,25 @@ body {
 body.boxed .wrapper-inner {
   max-width: 114rem;
 }
-.row {
+/* .row {
   width: 100%;
   max-width: 114rem;
   margin-right: auto;
   margin-left: auto;
   margin-top: 0;
   margin-bottom: 0;
-}
+} */
 .ie-browser .row {
   max-width: 1140px;
 }
 .row.full-width {
   max-width: 100%;
 }
-.row .row {
+/* .row .row {
   width: auto;
   margin-right: -1.5rem;
   margin-left: -1.5rem;
-}
+} */
 /* .row:before,
 .row:after {
   content: ".";

@@ -547,14 +547,14 @@ body,
   top: 51.9rem;
 }
 
-/* Intial Height */
+/* Intial Height
 .header .logo,
 .header .header-inner .navigation > ul > li,
 .header .header-inner .navigation > ul > li > a:not(.button),
 .header .header-inner .dropdown > .nav-icon {
   height: 8rem;
   line-height: 8rem;
-}
+} */
 
 /* Compacted Height */
 .header-compact .logo,

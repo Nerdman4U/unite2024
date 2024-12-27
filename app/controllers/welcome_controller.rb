@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
   def appeal
   end
 
-  def download
+  def material
   end
 
   def admin

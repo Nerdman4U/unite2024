@@ -1,174 +1,156 @@
 <!-- Content -->
-<!-- Fullscreen Slider Section -->
-<section class="section-block featured-media tm-slider-parallax-container">
-  <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
-    <ul class="tms-slides">
-      <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.3">
-        <div class="tms-content">
-          <div class="tms-content-inner center left-on-mobile v-align-middle">
-            <div class="row">
-              <div class="column width-12">
-                <h1 class="tms-caption title-large color-white lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;"
-                    data-no-scale>
-                  <%= _("%{count} votes") % { count: number_with_delimiter(VoteCount.total) } %>
-                </h1>
-                <div class="clear"></div>
-                <h5 class="tms-caption color-white lspacing-medium mt-20"
-                    data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-                  <%= _("More work must be done") %>
-                </h5>
-              </div>
-            </div>
+<div class="content clearfix">
+  <!-- Fullscreen Slider Section -->
+  <%= slider_section do
+  [{
+    link: "",
+    topic_1: _("%{count} votes") % { count: number_with_delimiter(VoteCount.total) },
+    topic_2: _("More work must be done"),
+    img: image_path("frontpage-slides/forest.jpg"),
+    img_blank: image_path("blank.gif")
+  }]
+  end
+  %>
+  <!-- Fullscreen Slider Section End -->
+
+  <% if locale == :fi %>
+  <!-- Feature Column Section -->
+  <section class="section-block bg-white upx-8">
+    <div class="row">
+      <div class="col-12">
+        <div class="feature-column small center">
+          <div class="feature-text">
+            <h5 class="text-uppercase text-small weight-light">Seuraavat, eri aloja edustavat, merkittävät professorit ovat antaneet vetoomukselle kannatuksensa:</h5>
           </div>
         </div>
-        <img data-src=<%= image_path("frontpage-slides/forest.jpg" ) %> src=<%= image_path("blank.gif") %> alt=<%= _("Forest") %>/>
-      </li>
-    </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="feature-column small center">
+          <div class="feature-text">
+            <p class="mb-mobile-30 blockquote">
+              Mikael Fortelius, evoluutiopaleontologia<br>
+              Pekka Kauppi, ympäristönsuojelu <br>
+              Anto Leikola, oppihistoria <br>
+              Pentti Murole, kaupunkisuunnittelu <br>
+              Heikki Palva, arabian kieli <br>
+              Juha Pentikäinen, pohjoinen etnografia <br></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="feature-column small center">
+          <div class="feature-text">
+            <p class="mb-mobile-30 blockquote">
+              Eero Saksela, lääketiede <br>
+              Jan Söderlund, arkkitehtuuri <br>
+              Peter Tigerstedt, kasvitiede <br>
+              Tuija Vihavainen, puutekniikka <br>
+              Reijo Vihko, lääketiede <br>
+              Yrjö Wiherheimo, teollinen muotoilu </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="featured-trips" class="section-block replicable-content">
+  <div class="row">
+    <div class="col-12">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <h5 class="text-uppercase text-small weight-light">Seuraavat suomalaiset kirjailijat ja suomentajat ovat antaneet vetoomukselle kannatuksensa:</h5>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
-<!-- Fullscreen Slider Section End -->
+  <div class="row">
+    <div class="col-6">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <p class="mb-mobile-30 blockquote">
+            Maikki Harjanne, kirjailija<br />
+            Arto Häilä, suomentaja<br />
+            Timo Hännikäinen, kirjailija<br />
+            Risto Isomäki, kirjailija<br />
+            Tiina Krohn, kirjailija<br />
+            Pentti Linkola, kirjailija<br />
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <p class="mb-mobile-30 blockquote">
+            Harri Manner, kirjailija<br>
+            Hannu Mäkelä, kirjailija<br>
+            Kimmo Pietiläinen, suomentaja<br>
+            Mauno Saari, kirjailija<br>
+            Hannu Salama, kirjailija<br>
+            Kaari Utrio, kirjailija</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="featured-trips" class="section-block replicable-content">
+  <div class="row">
+    <div class="col-12">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <h5 class="text-uppercase text-small weight-light">Seuraavat merkittävät entiset kansanedustajat
+            ovat allekirjoittaneet vetoomuksen:</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <p class="mb-mobile-30 blockquote">
+            Claes Andersson<br />
+            Sirpa Asko-Seljavaara<br />
+            Mikko Elo<br />
+            Heidi Hautala<br />
+            Timo Juurikkala<br />
+            Risto Kuisma<br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <p class="mb-mobile-30 blockquote">
+            Kalle Könkkölä<br />
+            Markku Laukkanen<br />
+            Outi Ojala<br />
+            Kati Peltola<br />
+            Pentti Tiusanen<br />
+            Marjatta Vehkaoja<br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
 
-<% if locale == :fi %>
-<!-- Feature Column Section -->
-    <section>
-      <div id="featured-trips" class="section-block replicable-content">
-        <div class="row">
-          <div class="col-12">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <h5 class="text-uppercase text-small weight-light">Seuraavat, eri aloja edustavat, merkittävät professorit ovat antaneet vetoomukselle kannatuksensa:</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <p class="mb-mobile-30 blockquote">
-                  Mikael Fortelius, evoluutiopaleontologia<br>
-                  Pekka Kauppi, ympäristönsuojelu <br>
-                  Anto Leikola, oppihistoria <br>
-                  Pentti Murole, kaupunkisuunnittelu <br>
-                  Heikki Palva, arabian kieli <br>
-                  Juha Pentikäinen, pohjoinen etnografia <br></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <p class="mb-mobile-30 blockquote">
-                  Eero Saksela, lääketiede <br>
-                  Jan Söderlund, arkkitehtuuri <br>
-                  Peter Tigerstedt, kasvitiede <br>
-                  Tuija Vihavainen, puutekniikka <br>
-                  Reijo Vihko, lääketiede <br>
-                  Yrjö Wiherheimo, teollinen muotoilu </p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <section class="section-block upx-8 bg-white">
+    <div class="row">
+      <div class="col-12">
+        <%= link_to new_vote_path(locale: locale), { :class => button_black} do %>
+        <span class="bi bi-person-add align-middle"></span>
+        <%= _("Support now") %>
+        <% end %>
       </div>
-      <div id="featured-trips" class="section-block replicable-content">
-        <div class="row">
-          <div class="col-12">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <h5 class="text-uppercase text-small weight-light">Seuraavat suomalaiset kirjailijat ja suomentajat ovat antaneet vetoomukselle kannatuksensa:</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <p class="mb-mobile-30 blockquote">
-                  Maikki Harjanne, kirjailija<br/>
-                  Arto Häilä, suomentaja<br/>
-                  Timo Hännikäinen, kirjailija<br/>
-                  Risto Isomäki, kirjailija<br/>
-                  Tiina Krohn, kirjailija<br/>
-                  Pentti Linkola, kirjailija<br/>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <p class="mb-mobile-30 blockquote">
-                  Harri Manner, kirjailija<br>
-                  Hannu Mäkelä, kirjailija<br>
-                  Kimmo Pietiläinen, suomentaja<br>
-                  Mauno Saari, kirjailija<br>
-                  Hannu Salama, kirjailija<br>
-                  Kaari Utrio, kirjailija</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="featured-trips" class="section-block replicable-content">
-        <div class="row">
-          <div class="col-12">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <h5 class="text-uppercase text-small weight-light">Seuraavat merkittävät entiset kansanedustajat
-                  ovat allekirjoittaneet vetoomuksen:</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <p class="mb-mobile-30 blockquote">
-                  Claes Andersson<br/>
-                  Sirpa Asko-Seljavaara<br/>
-                  Mikko Elo<br/>
-                  Heidi Hautala<br/>
-                  Timo Juurikkala<br/>
-                  Risto Kuisma<br/>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-column small center">
-              <div class="feature-text">
-                <p class="mb-mobile-30 blockquote">
-                  Kalle Könkkölä<br/>
-                  Markku Laukkanen<br/>
-                  Outi Ojala<br/>
-                  Kati Peltola<br/>
-                  Pentti Tiusanen<br/>
-                  Marjatta Vehkaoja<br/>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div id="featured-trips" class="section-block bkg-beige">
-        <div class="row">
-          <div class="col-12">
-            <%= link_to new_vote_path(locale: locale), { :class => button_black} do %>
-                <span class="bi bi-person-add align-middle"></span>
-                <%= _("Support now") %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </section>
-<% end %>
+    </div>
+  </section>
+  <% end %>
 
-<!-- Show country votes -->
-<section class="container section-block feature-1 mb-5">
-  <% @sorted_votes.each do |vote_count| %>
+  <!-- Show country votes -->
+  <section class="section-block bg-white upb-3 upx-8">
+    <% @sorted_votes.each do |vote_count| %>
     <div class="row m-2 p-2 votes">
       <div class="col-1 country_flag"><%= image_tag "blank.gif", :class => ["flag_small", vote_count.country] %></div>
       <div class="col-2 country"><%= Country.code_to_name(vote_count.country) %></div>
@@ -177,21 +159,22 @@
       </div>
       <div class="col-1 vote_count"><%= number_with_delimiter(vote_count.count) %></div>
     </div>
-  <% end %>
-</section>
-<!-- Content End -->
+    <% end %>
+  </section>
+  <!-- Content End -->
 
-<section class="section-block feature-2 bkg-beige">
-  <div class="row">
-    <div class="col-12">
-      <div class="feature-content">
-        <div class="feature-content-inner">
-          <%= link_to new_vote_path(locale: locale), { :class => button_black } do %>
-              <span class="bi bi-person-add align-middle"></span>
-              <%= _("Support now") %>
-          <% end %>
+  <section class="section-block bg-white upx-8">
+    <div class="row">
+      <div class="col-12">
+        <div class="feature-content">
+          <div class="feature-content-inner">
+            <%= link_to new_vote_path(locale: locale), { :class => button_black } do %>
+            <span class="bi bi-person-add align-middle"></span>
+            <%= _("Support now") %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

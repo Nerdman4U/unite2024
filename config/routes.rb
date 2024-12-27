@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get "votes/waiting/:token" => "votes#waiting", as: :waiting
     get "votes/confirm/:token" => "votes#confirm", as: :confirm, constraints: { token: /[^\/]+/ }
     get "votes/:token" => "votes#show", as: :vote, constraints: { token: /[^\/]+/ }
-    get "download" => "welcome#download", as: :download # only finnish
+    get "material" => "welcome#material", as: :material # mostly finnish
   end
 
   get "up" => "rails/health#show", as: :rails_health_check

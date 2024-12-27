@@ -1,36 +1,28 @@
 <!-- Content -->
 <div class="content clearfix">
-
-  <!-- Fullscreen Slider Section -->
-  <section class="section-block featured-media tm-slider-parallax-container">
-    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
-      <ul class="tms-slides">
-        <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.0">
-          <div class="tms-content">
-            <div class="tms-content-inner center left-on-mobile v-align-middle">
-              <div class="row">
-                <div class="col-12">
-                </div>
-              </div>
-            </div>
-          </div>
-          <img data-src=<%= image_path("frontpage-slides/luminen-puu.jpg") %> src=<%= image_path("blank.gif") %> alt=<%= _("Snowy tree") %> />
-        </li>
-      </ul>
-    </div>
-  </section>
-  <!-- Fullscreen Slider Section End -->
+  <!-- Slider Section -->
+  <%= slider do
+  [{
+    link: "",
+    topic_1: _("Get to your private vote"),
+    topic_2: "",
+    img: image_path("frontpage-slides/luminen-puu.jpg"),
+    img_alt: _("At duckboard"),
+    img_blank: image_path("blank.gif")
+  }]
+  end
+  %>
+  <!-- Slider Section End -->
 
   <section class="section-block-pt feature-1 bkg-white">
     <div class="row">
       <div class="col-12">
         <h1 class="title-xlarge color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
-          <%= _("Get to your private vote") %>
         </h1>
         <div class="clear"></div>
-        <h5 class="color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+        <p class="fs-2 color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
           <%= _("Type your email you used at vote. Link to your private vote will be sent to your mailbox.") %>
-        </h5>
+          </h5>
       </div>
     </div>
   </section>
@@ -43,14 +35,14 @@
         <div class="feature-content">
           <div class="feature-content-inner">
             <%= form_with url: "/tokens", method: :post, id: "TokenForm" do |form| %>
-              <div class="row">
-                <div class="col-10">
-                  <%= form.email_field :email %>
-                </div>
-                <div class="col-2">
-                  <%= form.submit "Send" %>
-                </div>
+            <div class="row">
+              <div class="col-10">
+                <%= form.email_field :email %>
               </div>
+              <div class="col-2">
+                <%= form.submit "Send" %>
+              </div>
+            </div>
             <% end %>
           </div>
         </div>
@@ -61,5 +53,3 @@
 
 </div>
 <!-- Content End -->
-
-
