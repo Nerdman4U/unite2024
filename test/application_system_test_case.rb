@@ -6,3 +6,17 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :cuprite
 
 end
+
+class MobileSystemTestCase < ApplicationSystemTestCase
+  def setup
+    # Setup actions specific to mobile system tests can be added here
+    resize_window_to_mobile
+  end
+
+  private
+
+  def resize_window_to_mobile
+    page.driver.browser.manage.window.resize_to(375, 667)
+  end
+
+end

@@ -1,3 +1,15 @@
+## 1.49.0 (2024-12-27)
+
+### Feat
+
+- **header**: Added login link to header
+- Notify email methods in UaSetting. Notify rake task.
+- Logged_in? and logout!
+
+### Fix
+
+- **header**: My vote instead Login
+
 ## 1.48.0 (2024-12-26)
 
 ### Feat
