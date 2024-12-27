@@ -1,3 +1,11 @@
+## 1.51.0 (2024-12-27)
+
+### Feat
+
+- diary
+- Slides helpers, theme layout changes
+- Langugea, Recaptcha and Country under lib
+
 ## 1.50.0 (2024-12-27)
 
 ### Feat
