@@ -140,7 +140,6 @@ module ApplicationHelper
   end
   alias :slider_section :slider
   def raw_slider section_classes=[]
-    puts "asdf #{section_classes.inspect}"
     slides = yield
 
     slide_html = []

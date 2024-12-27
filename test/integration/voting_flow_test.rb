@@ -22,7 +22,7 @@ class VotingFlowTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "h1", "Confirm email sent!"
+    assert_select "h1", "Confirm email sent"
 
     vote = Vote.last
     assert_equal vote.name, "John Doe"

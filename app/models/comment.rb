@@ -39,13 +39,4 @@ class Comment < ApplicationRecord
     VoteMailer.with(comment: self).new_comment.deliver_now
   end
 
-  def self.translated_themes
-    {
-      "administration" => _("Administration"),
-      "water" => _("Water"),
-      "climate" => _("Climate"),
-      "plastic-waste" => _("Plastic Waste"),
-      "protected-areas" => _("Protected Areas")
-    }
-  end
 end
