@@ -38,7 +38,7 @@
             </li>
             <% if logged_in? %>
             <li>
-              <%= link_to _("Login"), vote_path(token: current_vote.encoded_payload) %>
+              <%= link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
             </li>
             <li>
               <%= link_to _("Logout"), logout_path, method: :delete %>
