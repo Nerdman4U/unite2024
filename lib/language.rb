@@ -12,38 +12,29 @@ class Language
   }
 
   # Valid UN language literals.
-  def self.names
-    %w[arabic chinese english french russian spanish]
-  end
-  def self.translated_names
+  def self.un_languages
     {
-      "arabic" => _("Arabic"),
-      "chinese" => _("Chinese"),
-      "english" => _("English"),
-      "french" => _("French"),
-      "russian" => _("Russian"),
-      "spanish" => _("Spanish"),
-      "finnish" => _("Finnish"),
-      "german" => _("German"),
-      "swedish" => _("Swedish")
+      arabic: _("Arabic"),
+      chinese: _("Chinese"),
+      english: _("English"),
+      french: _("French"),
+      russian: _("Russian"),
+      spanish: _("Spanish"),
+      finnish: _("Finnish"),
+      german: _("German"),
+      swedish: _("Swedish")
     }
   end
 
-  # Return a list of 2 item lists.
-  #
-  # First item is a translated humanized literal to be used as a select
-  # option topic. Second item is a option identifier to be stored.
-  def self.translated_select_options
-    names.map do |name|
-      translated_names[name].humanize
-    end.zip(names).sort do |a, b|
-      a[0] <=> b[0]
-    end
+  def self.sorted_un_languages
+    un_languages.keys.sort { |a, b| a[0] <=> b[0] }.map { |k| [k, un_languages[k]] }
   end
 
   # Return a locale symbol for language name
   def self.locale(value)
-    value = value.to_s
-    LOCALES[value]
+    return :en if value.blank?
+    return :en unless value.is_a?(String)
+    return :en unless LOCALES[value.to_s]
+    LOCALES[value.to_s]
   end
 end
