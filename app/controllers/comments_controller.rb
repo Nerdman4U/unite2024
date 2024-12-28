@@ -37,14 +37,14 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-    @comment.ip = request.env["REMOTE_ADDR"]
-    @comment.bypass_humanizer = true if Rails.env.test?
-
     unless session[:current_vote_id]
       redirect_to new_vote_path(locale: locale)
       return
     end
+
+    @comment = Comment.new(comment_params)
+    @comment.ip = request.env["REMOTE_ADDR"]
+    @comment.bypass_humanizer = true if Rails.env.test?
 
     unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
       redirect_to new_vote_path(locale: locale)

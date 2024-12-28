@@ -31,7 +31,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test "should be valid with correct language" do
-    Language.names.each do |name|
+    Language.un_languages.keys.each do |name|
       @comment.language = name
       assert @comment.valid?, @comment.errors.full_messages
     end
@@ -46,7 +46,7 @@ class CommentTest < ActiveSupport::TestCase
 
   test "should be valid with correct theme" do
     themes = %w(administration water climate plastic-waste protected-areas)
-    themes.each do |theme|     
+    themes.each do |theme|
       @comment.theme = theme
       assert @comment.valid?, @comment.errors.full_messages
     end

@@ -26,8 +26,12 @@ class Language
     }
   end
 
+  ## Return a list of 2 item lists.
+  #
+  # First item is language identifier.
+  # Second item is a translated humanized literal.
   def self.sorted_un_languages
-    un_languages.keys.sort { |a, b| a[0] <=> b[0] }.map { |k| [k, un_languages[k]] }
+    un_languages.keys.sort { |a, b| a[0] <=> b[0] }.map { |k| [un_languages[k], k] }
   end
 
   # Return a locale symbol for language name
@@ -37,4 +41,14 @@ class Language
     return :en unless LOCALES[value.to_s]
     LOCALES[value.to_s]
   end
+
+  def self.translate(*args)
+    raise ArgumentError if args.size != 2
+    current_locale = FastGettext.locale
+    FastGettext.locale = args[0]
+    translated = _(args[1])
+    FastGettext.locale = current_locale
+    translated
+  end
+
 end

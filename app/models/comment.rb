@@ -30,7 +30,7 @@ class Comment < ApplicationRecord
   end
 
   def validate_language_literal
-    if Language.names.index(language).nil?
+    if Language.un_languages[language.to_sym].nil?
       errors.add(:language, "is not valid")
     end
   end
@@ -38,5 +38,10 @@ class Comment < ApplicationRecord
   def email_comment
     VoteMailer.with(comment: self).new_comment.deliver_now
   end
+
+  def language_name
+    Language.un_languages[language.to_sym]
+  end
+
 
 end

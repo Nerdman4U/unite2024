@@ -43,8 +43,22 @@ class LanguageTest < ActiveSupport::TestCase
 
   test 'should return sorted UN languages' do
     values = Language.sorted_un_languages
-    assert_equal "Arabic", values[0][1]
+    assert_equal "Arabic", values[0][0]
+    assert_equal :arabic, values[0][1]
     assert values.size, 9
+  end
+
+  test 'should translate with given locale' do
+    assert_equal "Árabe", Language.translate("es", "Arabic")
+    assert_equal "Árabe", Language.translate(:es, "Arabic")
+    assert_equal "Arabic", Language.translate(:en, "Arabic")
+    assert_raise ArgumentError do
+      Language.translate("foo")
+    end
+    assert_raise ArgumentError do
+      Language.translate
+    end
+
   end
 
 end

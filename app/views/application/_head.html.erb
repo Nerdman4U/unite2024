@@ -2,11 +2,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport" />
 <meta name="twitter:widgets:theme" content="light" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="<%= UNITE_TITLE %>" />
-<meta property="og:description"   content="<%= UNITE_DESCRIPTION %>" />
-<meta property="og:url"           content="<%= UNITE_ROOT_URL %>" />
-<meta property="og:image"         content="<%= image_url(UNITE_LOGO) %>" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="<%= UNITE_TITLE %>" />
+<meta property="og:description" content="<%= UNITE_DESCRIPTION %>" />
+<meta property="og:url" content="<%= UNITE_ROOT_URL %>" />
+<meta property="og:image" content="<%= image_url(UNITE_LOGO) %>" />
 <%= csrf_meta_tags %>
 
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -18,28 +18,38 @@
 <title><%= _(UNITE_TITLE) %>!</title>
 
 <script>
-  RUN_RECENT_VOTES = <%= ENV['UNITE_RUN_RECENT_VOTES'] %>;
+  RUN_RECENT_VOTES = < %= ENV['UNITE_RUN_RECENT_VOTES'] % > ;
 </script>
 
-<%= stylesheet_link_tag :app %>
+<%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
 <%= stylesheet_link_tag 'flags' %>
 <%= stylesheet_link_tag 'bootstrap.min' %>
 
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-10604388-4', 'auto');
   ga('send', 'pageview');

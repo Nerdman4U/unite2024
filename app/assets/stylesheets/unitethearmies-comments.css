@@ -1,0 +1,95 @@
+.comment-form {
+  margin-bottom: 2rem;
+
+  .topic_container,
+  .language_container {
+    cursor: pointer;
+    writing-mode: horizontal-tb;
+    display: inline-table;
+    border-image-slice: 12 12 12 12;
+    border-image-width: 12px 12px 12px 12px;
+    border-image-outset: 1vw;
+    border-image-repeat: repeat repeat;
+    border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-2.png");
+    border-style: solid;
+    margin: 1.5vw;
+  }
+  .topic_container:hover,
+  .language_container:hover {
+    border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
+  }
+
+  .topic_container {
+    width: 20vw;
+    height: 20vw;
+    .topic {
+      display: table-cell;
+      vertical-align: top;
+      padding: 1vw;
+    }
+  }
+
+  .language_container {
+    width: 10vw;
+    height: 10vw;
+    .language {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .topic_text {
+    display: none;
+  }
+  .topic_header {
+    vertical-align: top;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1.5vw;
+  }
+  .topic_description {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1.2vw;
+  }
+
+  .topic_administration {
+    background: url("administration.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .topic_administration:hover .topic_text {
+    display: inline;
+  }
+
+  .topic_water {
+    background: url("water.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .topic_water:hover .topic_text {
+    display: inline;
+  }
+
+  .topic_climate {
+    background: url("climate.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .topic_climate:hover .topic_text {
+    display: inline;
+  }
+
+  .topic_plastic-waste {
+    background: url("plastic-waste.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .topic_plastic-waste:hover .topic_text {
+    display: inline;
+  }
+
+  .topic_protected-areas {
+    background: url("protected-areas.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .topic_protected-areas:hover .topic_text {
+    display: inline;
+  }
+}
