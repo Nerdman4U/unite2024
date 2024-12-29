@@ -38,7 +38,7 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
 
   test "should have correct title" do
     get root_path
-    assert_select "title", "Save the Planet - Unite the Armies!"
+    assert_select "title", "Home (Save the Planet - Unite the Armies)"
   end
 
   test "should not get admin index with wrong hash" do

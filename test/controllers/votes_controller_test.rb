@@ -202,4 +202,32 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       assert_dom ".alert-heading", text: /^Please wait/
     end
   end
+
+  test "should have proper title in english" do
+    vote = votes("vote_1")
+
+    # ROOT
+    get root_path
+    assert_dom "title", text: "Home (Save the Planet - Unite the Armies)"
+    get locale_root_path
+    assert_dom "title", text: "Home (Save the Planet - Unite the Armies)"
+
+    # VOTES
+    get votes_path #  without locale goes to root path
+    assert_dom "title", text: "Home (Save the Planet - Unite the Armies)"
+
+    get vote_path(locale: "en", token: vote.encoded_payload)
+    assert_dom "title", text: "My vote (Save the Planet - Unite the Armies)"
+
+    get votes_path(locale: "en")
+    assert_dom "title", text: "List of votes (Save the Planet - Unite the Armies)"
+
+    get new_vote_path(locale: "en")
+    assert_dom "title", text: "New vote (Save the Planet - Unite the Armies)"
+
+    # COMMENTS
+    get new_comment_path
+    assert_dom "title", text: "New comment (Save the Planet - Unite the Armies)"
+
+  end
 end

@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :current_vote
   helper_method :country_code
+  helper_method :unitethearmies_title
 
   private
 
@@ -87,4 +88,40 @@ class ApplicationController < ActionController::Base
     reset_session
   end
 
+  def unitethearmies_title
+    topic = _(UNITE_TITLE)
+    subtopic = case controller_name
+    when "votes"
+      case action_name
+      when "show"
+        subtopic = _("My vote")
+      when "new"
+        subtopic = _("New vote")
+      when "index"
+        subtopic = _("List of votes")
+      end
+    when "welcome"
+      case action_name
+      when "index"
+        subtopic = _("Home")
+      when "appeal"
+        subtopic = _("Appeal")
+      when "material"
+        subtopic = _("Material")
+      end
+
+    when "comments"
+      case action_name
+      when "index"
+        subtopic = _("Comments")
+      when "new"
+        subtopic = _("New comment")
+      when "show"
+        subtopic = _("Comment")
+      end
+    end
+    #puts "controller: #{controller_name.inspect} action: #{action_name.inspect}"
+    #puts "subtopic: #{subtopic.inspect}"
+    subtopic.blank? ? topic : "#{subtopic} (#{topic})"
+  end
 end
