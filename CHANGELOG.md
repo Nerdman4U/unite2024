@@ -1,3 +1,16 @@
+## 1.52.0 (2024-12-29)
+
+### Feat
+
+- **application_controller.rb**: Open graph tags
+- Page title update
+- Add comment update, not working yet
+
+### Fix
+
+- **Language**: Sorted UN languages, rewritten methods
+- Typos and other fixes
+
 ## 1.51.0 (2024-12-27)
 
 ### Feat
