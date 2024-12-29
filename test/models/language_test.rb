@@ -58,7 +58,9 @@ class LanguageTest < ActiveSupport::TestCase
     assert_raise ArgumentError do
       Language.translate
     end
-
   end
 
+  test "should return a list of locales" do
+    assert_equal Language.locales_list, ["ar", "de", "en", "es", "fi", "fr", "ru", "se", "zh"]
+  end
 end

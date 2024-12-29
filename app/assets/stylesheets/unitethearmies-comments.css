@@ -1,3 +1,7 @@
+:root {
+  --uni-blue-rgb: #32a1ce;
+}
+
 .comment-form {
   margin-bottom: 2rem;
 
@@ -15,7 +19,9 @@
     margin: 1.5vw;
   }
   .topic_container:hover,
-  .language_container:hover {
+  .language_container:hover,
+  .comment_active,
+  .language_active {
     border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
   }
 
@@ -30,8 +36,8 @@
   }
 
   .language_container {
-    width: 10vw;
-    height: 10vw;
+    width: 18vw;
+    height: 18vw;
     .language {
       display: table-cell;
       vertical-align: middle;
@@ -91,5 +97,15 @@
   }
   .topic_protected-areas:hover .topic_text {
     display: inline;
+  }
+
+  .comment_description {
+    font-size: 2vw;
+    color: var(--bs-blue);
+    text-emphasis-color: var(--uni-blue-rgb);
+    border: 1vw double var(--uni-blue-rgb);
+    padding: 1vw;
+    font-style: italic;
+    display: none;
   }
 }

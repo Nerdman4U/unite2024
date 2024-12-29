@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%= render partial: "head" %>
-  </head>
-  <body class="shop home-page">
-    <%= javascript_include_tag 'jquery' %>
-    <%= javascript_include_tag 'jquery_ujs' %>
-    <%= javascript_include_tag 'countries' %>
-    <%= javascript_include_tag 'bootstrap.min.js' %>
-    <%= javascript_include_tag 'timber.master.min.js' %>
-    <%= javascript_include_tag 'flash_messages' %>
-    <%= javascript_include_tag 'jquery.cslider' %>
-    <%= javascript_include_tag 'jquery.flexisel' %>
-    <%= javascript_include_tag 'modernizr.custom.28468' %>
-    <%= javascript_include_tag 'owl.carousel.js' %>
-    <%= javascript_include_tag 'responsive-nav' %>
-    <%= javascript_include_tag 'responsiveslides.min' %>
-    <%= javascript_include_tag 'slideshow.js' %>
-    <%= javascript_include_tag 'unitethearmies', type: 'module' %>
-    <%= javascript_include_tag 'start', type: 'module' %>
 
-    <%= flash_messages %>
-    <%# render partial: "overlay_navigation" %>
-    <div class="wrapper reveal-side-navigation">
-      <div class="wrapper-inner">
-        <%= render partial: "header" %>
-        <div class="content clearfix">
-          <%= yield %>
-        </div>
-        <%= content_for?(:footer) ? yield(:footer) : render(partial: "footer") %>
+<head>
+  <%= render partial: "head" %>
+</head>
+
+<body class="shop home-page">
+  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'jquery_ujs' %>
+  <%= javascript_include_tag 'countries' %>
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+  <%= javascript_include_tag 'timber.master.min.js' %>
+  <%= javascript_include_tag 'jquery.cslider' %>
+  <%= javascript_include_tag 'jquery.flexisel' %>
+  <%= javascript_include_tag 'modernizr.custom.28468' %>
+  <%= javascript_include_tag 'owl.carousel.js' %>
+  <%= javascript_include_tag 'responsive-nav' %>
+  <%= javascript_include_tag 'responsiveslides.min' %>
+  <%= javascript_include_tag 'slideshow.js' %>
+  <%= javascript_include_tag 'unitethearmies', type: 'module' %>
+  <%= javascript_include_tag 'start', type: 'module' %>
+  <% if controller_name == "comments" %>
+  <%= javascript_include_tag 'unitethearmies/comment.js' %>
+  <% end %>
+
+  <%= flash_messages %>
+  <%# render partial: "overlay_navigation" %>
+  <div class="wrapper reveal-side-navigation">
+    <div class="wrapper-inner">
+      <%= render partial: "header" %>
+      <div class="content clearfix">
+        <%= yield %>
       </div>
+      <%= content_for?(:footer) ? yield(:footer) : render(partial: "footer") %>
     </div>
-  </body>
-</html>
+  </div>
+</body>
 
+</html>

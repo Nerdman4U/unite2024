@@ -1,8 +1,13 @@
-<!-- Content -->
-<div class="content clearfix">
+<%# frozen_string_literal: true %>
 
-  <!-- Slider Section -->
-  <%= slider do
+<!-- Content -->
+<script>
+  let topic_details = JSON.parse('<%= topics_to_js %>')
+  let comment = new Comment();
+</script>
+
+<!-- Slider Section -->
+<%= slider do
 [{
   link: "",
   topic_1: _("Comments"),
@@ -14,39 +19,39 @@
 end
 %>
 
-  <section class="section-block bkg-white">
-    <div class="row no-padding-bottom">
-      <div class="col-9 offset-1 text-center">
-        <h2 class="upb-3"><%= _("Rules for Comments") %></h2>
-        <ul class="text-start mb-5">
-          <li class="ufs-0-9 upy-1"><%= _("Suggest a new task for the Action of the United Armies not presented here.") %></li>
-          <li class="ufs-0-9 upy-1"><%= _("Positive initiations will be published.") %></li>
-          <li class="ufs-0-9 upy-1"><%= _("The Suggested task must benefit the whole world.") %></li>
-          <li class="ufs-0-9 upy-1"><%= _("Present the task with max. 1000 characters.") %></li>
-          <li class="ufs-0-9 upy-1"><%= _("Make the initiative using some of the UN:s official languages (6).") %></li>
-          <li class="ufs-0-9 upy-1"><%= _("Would you like to have the initiative in your language – please, contact us!") %></li>
-        </ul>
-      </div>
+<section class="section-block bkg-white">
+  <div class="row no-padding-bottom">
+    <div class="col-9 offset-1 text-center">
+      <h2 class="upb-3"><%= _("Rules for Comments") %></h2>
+      <ul class="text-start mb-5">
+        <li class="ufs-0-9 upy-1"><%= _("Suggest a new task for the Action of the United Armies not presented here.") %></li>
+        <li class="ufs-0-9 upy-1"><%= _("Positive initiations will be published.") %></li>
+        <li class="ufs-0-9 upy-1"><%= _("The Suggested task must benefit the whole world.") %></li>
+        <li class="ufs-0-9 upy-1"><%= _("Present the task with max. 1000 characters.") %></li>
+        <li class="ufs-0-9 upy-1"><%= _("Make the initiative using some of the UN:s official languages (6).") %></li>
+        <li class="ufs-0-9 upy-1"><%= _("Would you like to have the initiative in your language – please, contact us!") %></li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-block feature-2 bg-white">
-    <div class="row">
-      <div class="col-9 offset-1 text-center">
-        <%= render 'new_form' %>
-      </div>
+<section class="section-block feature-2 bg-white">
+  <div class="row">
+    <div class="col-9 offset-1 text-center">
+      <%= render 'new_form' %>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-block feature-2 bg-white">
-    <div class="row">
-      <div class="col-9 offset-1 upy-3">
-        <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
-        <span class="bi bi-person-arms-up align-middle"></span>
-        <%= _("See current comments") %>
-        <% end %>
-      </div>
+<section class="section-block feature-2 bg-white">
+  <div class="row">
+    <div class="col-9 offset-1 upy-3">
+      <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
+      <span class="bi bi-person-arms-up align-middle"></span>
+      <%= _("See current comments") %>
+      <% end %>
     </div>
-  </section>
+  </div>
+</section>
 
 </div>

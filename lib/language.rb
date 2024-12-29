@@ -19,10 +19,7 @@ class Language
       english: _("English"),
       french: _("French"),
       russian: _("Russian"),
-      spanish: _("Spanish"),
-      finnish: _("Finnish"),
-      german: _("German"),
-      swedish: _("Swedish")
+      spanish: _("Spanish")
     }
   end
 
@@ -31,7 +28,7 @@ class Language
   # First item is language identifier.
   # Second item is a translated humanized literal.
   def self.sorted_un_languages
-    un_languages.keys.sort { |a, b| a[0] <=> b[0] }.map { |k| [un_languages[k], k] }
+    un_languages.keys.sort { |a, b| a <=> b }.map { |k| [un_languages[k], k] }
   end
 
   # Return a locale symbol for language name
@@ -49,6 +46,10 @@ class Language
     translated = _(args[1])
     FastGettext.locale = current_locale
     translated
+  end
+
+  def self.locales_list
+    LOCALES.values.map { |l| l.to_s }.sort { |a, b| a <=> b }
   end
 
 end

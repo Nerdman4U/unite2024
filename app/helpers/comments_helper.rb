@@ -20,9 +20,25 @@ module CommentsHelper
     }
   end
 
+  ## Topics to javascript
+  # this is printed at comments/new.
+  def topics_to_js
+    result = {}
+    topics.keys.sort { |a, b| a <=> b }.map { |key|
+      result[key] = {
+        header: topics[key][:header],
+        description: topics[key][:description]
+      }
+    }
+    result.to_json.html_safe
+  end
+
+  ## Comment languages
+  #
+  # TODO: could be only translated text "In english", "Suomeksi", ...
   def comment_language lang
     result = <<~HTML
-    <div class="language_container">
+    <div class="language_container" onclick='comment.setLanguage(this, "#{lang[0]}","#{lang[1]}")'>
       <div class="language">
         <p>#{lang[1]}</p>
         <p>#{Language.translate(lang[0], "Save the planet") }</p>
@@ -40,7 +56,7 @@ module CommentsHelper
 
   def comment_topic topic
     result = <<~HTML
-    <div class="topic_container topic_#{topic}" title="#{topic}">
+    <div class="topic_container topic_#{topic}" title="#{topic}" onclick="comment.setTopic(this, '#{topic}')">
       <div class="topic">
       <div class="topic_text">
         <p class="topic_header">#{topics[topic][:header]}</p>

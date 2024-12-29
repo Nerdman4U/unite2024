@@ -34,3 +34,30 @@
   }
 }
 /* End New Animations */
+
+input,
+textarea,
+button,
+a {
+  -webkit-transition-property: background, border-color, color, opacity;
+  transition-property: background, border-color, color, opacity;
+  -webkit-transition-duration: 3000ms;
+  transition-duration: 3000ms;
+}
+.unitethearmies-form {
+  textarea {
+    border-color: var(--bs-light);
+  }
+  textarea:hover,
+  textarea:focus,
+  textarea:active {
+    border-color: var(--bs-blue);
+  }
+}
+
+.unitethearmies-border-blue {
+  border-color: #1d6ea3;
+}
+.unitethearmies-border-hover-blue:hover {
+  border-color: var(--bs-blue);
+}
