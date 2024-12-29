@@ -25,4 +25,21 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     assert_equal I18n.locale, :en
   end
 
+  test "should have correct open graph protocol values" do
+    get locale_root_url locale: :en
+
+    assert_dom("meta[property='og:title']") { |elem| assert_equal elem.attr("content").value, "Home (Save the Planet - Unite the Armies)" }
+    assert_dom "meta[property='og:type']" do |elem| assert_equal elem.attr("content").value, "website" end
+    assert_dom "meta[property='og:url']" do |elem| assert_equal elem.attr("content").value, "http://www.example.com/en" end
+    assert_dom "meta[property='og:image']" do |elem| assert_equal elem.attr("content").value, "http://www.example.com/assets/logo-8067e3b5.png" end
+    assert_dom "meta[property='og:locale']" do |elem| assert_equal elem.attr("content").value, "en" end # assert_dom "meta[property='og:locale']", content: "en"
+    assert_dom "meta[property='og:locale:alternate']" do |elems|
+      assert_equal elems.length, Language.locales_list.length
+      elems.each do |elem|
+        assert(Language.locales_list.any? { |locale| elem.attr("content") == locale })
+      end
+      assert_not(["foobar","asdf"].any? { |locale| elems.attr("content") == locale })
+    end
+  end
+
 end
