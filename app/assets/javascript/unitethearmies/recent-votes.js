@@ -14,19 +14,19 @@ class RecentVotes {
     if (!this.doLoad()) {
       return;
     }
-    console.log("recent:", RUN_RECENT_VOTES, this.doLoad());
     fetch("/votes/recently_added.json")
       .then((response) => response.json())
       .then((data) => {
         let result = "";
         data.forEach(function (vote) {
-          let tmpl_row = `<tr>
-            <td><image class="flag_small ${vote.country}"/></td>
-            <td>${vote.name}</td>
-          </tr>`;
+          let tmpl_row = `<div class="row">
+            <div class="col-2"><image class="flag_small ${vote.country}"/></div>
+            <div class="col-10">${vote.name}</div>
+          </div>`;
           result += tmpl_row;
         });
-        $("#recent_votes tbody").replaceWith(result);
+        $("#recent_votes").replaceWith(result);
+        $("#recent_votes_container").show();
       });
   }
 }

@@ -452,12 +452,12 @@ body.boxed .wrapper-inner {
   display: inline-block !important;
   vertical-align: top;
 }
-.navigation > ul > li > a {
+/* .navigation > ul > li > a {
   padding: 0 1.5rem;
   background-color: rgba(0, 0, 0, 0);
   line-height: 5rem;
-}
-.navigation ul li a,
+} */
+/* .navigation ul li a,
 .navigation .dropdown-list:not(.custom-content) li a {
   font-size: 1.1rem;
   color: #878787;
@@ -674,7 +674,7 @@ body.boxed .wrapper-inner {
 }
 .navigation-hide a:hover {
   color: #fff;
-}
+} */
 .mobile .logo.logo-center {
   float: left;
 }
@@ -1958,7 +1958,7 @@ button.disabled:hover,
 .dropdown.rounded button {
   border-radius: 0.3rem;
 }
-ul,
+/* ul,
 ol {
   margin: 0 0 3rem 0;
   padding: 0;
@@ -2165,7 +2165,7 @@ ol [class*="icon-"] {
 .list-group.boxed[class*="border-"].thick,
 .list-group.boxed[class*="border-"]:hover {
   border-width: 0;
-}
+} */
 
 /* This caused the last footer icon (google+) to be rendered on different line.
    .list-horizontal li{ display:inline-block }
@@ -7030,15 +7030,15 @@ body.boxed {
 body.boxed .wrapper-inner {
   background-color: #fff;
 }
-.section-block {
+/* .section-block {
   width: 100%;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  /* padding-top: 7rem;
+  padding-bottom: 7rem; */
   background-size: cover;
   background-position: center;
   position: relative;
   z-index: 1;
-}
+} */
 .replicable-content {
   padding-bottom: 4rem;
 }
@@ -7568,7 +7568,7 @@ body.boxed .header .header-inner {
   margin-left: auto;
   margin-right: auto;
 }
-.header .logo,
+/* .header .logo,
 .header .header-inner .navigation > ul > li,
 .header .header-inner .navigation > ul > li > a:not(.button),
 .header .header-inner .dropdown > .nav-icon {
@@ -7581,11 +7581,11 @@ body.boxed .header .header-inner {
 .header-compact .header-inner .dropdown > .nav-icon {
   height: 6rem;
   line-height: 6rem;
-}
-.header .logo,
+} */
+/* .header .logo,
 .header .header-inner .navigation > ul > li {
   display: table;
-}
+} */
 .header .v-align-middle,
 .header .logo-inner {
   height: 100%;
@@ -11097,7 +11097,7 @@ body.boxed .footer .footer-bottom {
 .footer {
   background-color: #222;
 }
-.footer .footer-top {
+/* .footer .footer-top {
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
@@ -11105,7 +11105,7 @@ body.boxed .footer .footer-bottom {
   width: 17rem;
   margin-bottom: 1rem;
   display: inline-block;
-}
+} */
 .footer .footer-text {
   margin-top: 0.5rem;
   text-transform: uppercase;

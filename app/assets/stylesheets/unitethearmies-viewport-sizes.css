@@ -1,87 +1,87 @@
 /* Font sizes */
 .ufs-10 {
-  font-size: 10vw !important;
-}
-.ufs-9 {
-  font-size: 9vw !important;
-}
-.ufs-8 {
-  font-size: 8vw !important;
-}
-.ufs-7 {
-  font-size: 7vw !important;
-}
-.ufs-6 {
   font-size: 6vw !important;
 }
-.ufs-5 {
+.ufs-9 {
+  font-size: 5.5vw !important;
+}
+.ufs-8 {
   font-size: 5vw !important;
 }
-.ufs-4 {
+.ufs-7 {
+  font-size: 4.5vw !important;
+}
+.ufs-6 {
   font-size: 4vw !important;
 }
-.ufs-3-5 {
+.ufs-5 {
   font-size: 3.5vw !important;
 }
-.ufs-3 {
+.ufs-4 {
   font-size: 3vw !important;
 }
-.ufs-2 {
+.ufs-3-5 {
+  font-size: 2.5vw !important;
+}
+.ufs-3 {
   font-size: 2vw !important;
 }
-.ufs-1-9 {
-  font-size: 1.9vw !important;
-}
-.ufs-1-8 {
-  font-size: 1.8vw !important;
-}
-.ufs-1-7 {
-  font-size: 1.7vw !important;
-}
-.ufs-1-6 {
+.ufs-2 {
   font-size: 1.6vw !important;
 }
-.ufs-1-5 {
+.ufs-1-9 {
   font-size: 1.5vw !important;
 }
-.ufs-1-4 {
+.ufs-1-8 {
   font-size: 1.4vw !important;
 }
-.ufs-1-3 {
+.ufs-1-7 {
   font-size: 1.3vw !important;
 }
-.ufs-1-2 {
+.ufs-1-6 {
   font-size: 1.2vw !important;
 }
-.ufs-1 {
+.ufs-1-5 {
+  font-size: 1.1vw !important;
+}
+.ufs-1-4 {
   font-size: 1vw !important;
 }
-.ufs-0-9 {
+.ufs-1-3 {
   font-size: 0.9vw !important;
 }
-.ufs-0-8 {
+.ufs-1-2 {
   font-size: 0.8vw !important;
 }
-.ufs-0-7 {
+.ufs-1 {
+  font-size: 0.75vw !important;
+}
+.ufs-0-9 {
   font-size: 0.7vw !important;
+}
+.ufs-0-8 {
+  font-size: 0.68vw !important;
+}
+.ufs-0-7 {
+  font-size: 0.63vw !important;
 }
 .ufs-0-6 {
   font-size: 0.6vw !important;
 }
 .ufs-0-5 {
-  font-size: 0.5vw !important;
+  font-size: 0.55vw !important;
 }
 .ufs-0-4 {
-  font-size: 0.4vw !important;
+  font-size: 0.5vw !important;
 }
 .ufs-0-3 {
-  font-size: 0.3vw !important;
+  font-size: 0.45vw !important;
 }
 .ufs-0-2 {
-  font-size: 0.2vw !important;
+  font-size: 0.4vw !important;
 }
 .ufs-0-1 {
-  font-size: 0.1vw !important;
+  font-size: 0.3vw !important;
 }
 
 /* Padding */
@@ -472,20 +472,20 @@
 /* Header */
 
 h1 {
-  font-size: 4vw !important;
-}
-h2 {
   font-size: 3vw !important;
 }
-h3 {
-  font-size: 2.5vw !important;
-}
-h4 {
+h2 {
   font-size: 2vw !important;
 }
-h5 {
+h3 {
   font-size: 1.5vw !important;
 }
+h4 {
+  font-size: 1vw !important;
+}
+h5 {
+  font-size: 0.8vw !important;
+}
 h6 {
-  font-size: 1.2vw !important;
+  font-size: 0.6vw !important;
 }

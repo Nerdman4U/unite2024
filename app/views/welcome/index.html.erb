@@ -13,8 +13,6 @@
 end
 %>
 <!-- Fullscreen Slider Section End -->
-<a href="testi.com">testi</a>
-
 <div class="section-block bkg-charcoal m-0 p-0 overflow-hidden">
   <ol class="slideshow" style="height: 66vw; min-height: 300pt;" data-interval="5">
     <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text" />
@@ -25,15 +23,17 @@ end
     <li data-image-src=<%= image_path("frontpage-slides/autumn-shore.jpg") %> />
     <li data-image-src=<%= image_path("frontpage-slides/sunrise-on-the-sea.jpg") %> />
   </ol>
-  <div style="display: flex; align-items: center;" id="slideshow-caption" class="container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
-    <div style="">
-      <div class="col-9 offset-1 text-start">
-        <h2 class="b-30 fs-3">
+  <div id="slideshow-caption" class="umx-5 container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
+    <div class="row ">
+      <div class="col-12 text-start">
+        <h2 class="umb-2 ufs-4">
           <span><%= _("First Aid") %> <%= _("To Our Common World") %></span>
         </h2>
       </div>
-      <div class="col-9 offset-1 text-start">
-        <p class="mb-30 fs-4 text-uppercase">
+    </div>
+    <div class="row">
+      <div class="col-12 text-start">
+        <p class="umb-2 ufs-1-5 text-uppercase">
           <span>
             <%= _("There is a hidden potential at hand: the national armies.") %>
             <%= _("We have to give the armies a new, positive task.") %>
@@ -46,60 +46,50 @@ end
 </div>
 
 <!-- columnit -->
-<section class="section-block bkg-white color-dark">
-  <div class="replicable-content">
-    <div class="row">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-6">
-            <div class="feature-column large center horizon" data-animate-in="transX:-30px;" data-threshold="1">
-              <div class="mt-5">
-                <%= image_tag "pollution.jpg", alt:_('Pollution') %>
-              </div>
-              <div class="feature-text">
-                <h2 class="h2 mt-2"><%= _("Air pollution is a global Challenge!") %></h2>
-                <p class="blockquote"><%= _("The resources and capacity of the United Armies must be directed to reforestation of the deserts.") %></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:200ms;" data-threshold="1">
-              <div class="mt-5">
-                <%= image_tag "nowater.jpg", alt:"" %>
-              </div>
-              <div class="feature-text">
-                <h2 class="h2 mt-2"><%= _("Water is the Mother of Life – we all need it!") %></h2>
-                <p class="blockquote"><%= _("The United Armies must ensure sufficient water availability everywhere for the needs of people and life.") %></p>
-              </div>
-            </div>
-          </div>
+<section class="section-block bkg-white color-dark upx-8">
+  <div class="row">
+    <div class="col-6">
+      <div class="feature-column large center horizon" data-animate-in="transX:-30px;" data-threshold="1">
+        <div class="umy-3">
+          <%= image_tag "pollution.jpg", alt:_('Pollution') %>
+        </div>
+        <div class="feature-text">
+          <h2 class="umy-1"><%= _("Air pollution is a global Challenge!") %></h2>
+          <p class="blockquote"><%= _("The resources and capacity of the United Armies must be directed to reforestation of the deserts.") %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:200ms;" data-threshold="1">
+        <div class="umy-3">
+          <%= image_tag "nowater.jpg", alt:"" %>
+        </div>
+        <div class="feature-text">
+          <h2 class="umy-1"><%= _("Water is the Mother of Life – we all need it!") %></h2>
+          <p class="blockquote"><%= _("The United Armies must ensure sufficient water availability everywhere for the needs of people and life.") %></p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        <div class="row text-center">
-          <div class="col-6">
-            <div class="feature-column large center horizon" data-animate-in="transX:-30px;delay:400ms;" data-threshold="1">
-              <div class="mt-5">
-                <%= image_tag "trash.jpg", alt:"" %>
-              </div>
-              <div class="feature-text">
-                <h2 class="h2 mt-2"><%= _("Millions of Tons of Plastic Waste on the Shores and Oceans!") %></h2>
-                <p class="blockquote"><%= _("The United Armies must collect the plastic waste from the oceans and shores.") %></p>
-              </div>
-            </div>
+      <div class="col-6">
+        <div class="feature-column large center horizon" data-animate-in="transX:-30px;delay:400ms;" data-threshold="1">
+          <div class="umy-3">
+            <%= image_tag "trash.jpg", alt:"" %>
           </div>
-          <div class="col-6">
-            <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:600ms;" data-threshold="1">
-              <div class="mt-5">
-                <%= image_tag "polars.jpg", alt:"" %>
-              </div>
-              <div class="feature-text">
-                <h2 class="h2 mt-2"><%= _("We must defend Life's Richness on our Planet!") %></h2>
-                <p class="blockquote"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
-              </div>
-            </div>
+          <div class="feature-text">
+            <h2 class="umy-1"><%= _("Millions of Tons of Plastic Waste on the Shores and Oceans!") %></h2>
+            <p class="blockquote"><%= _("The United Armies must collect the plastic waste from the oceans and shores.") %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:600ms;" data-threshold="1">
+          <div class="umy-3">
+            <%= image_tag "polars.jpg", alt:"" %>
+          </div>
+          <div class="feature-text">
+            <h2 class="umy-1"><%= _("We must defend Life's Richness on our Planet!") %></h2>
+            <p class="blockquote"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
           </div>
         </div>
       </div>
@@ -107,14 +97,14 @@ end
   </div>
 </section>
 
-<section class="section-block">
+<section class="section-block bg-white">
   <div style="padding:80% 0 0 0;position:relative;">
     <iframe src="https://player.vimeo.com/video/<%= unite_video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
   </div>
   <script src="https://player.vimeo.com/api/player.js"></script>
 </section>
 
-<section class="section-block feature-2 bg-dark">
+<section class="section-block feature-2 bg-white upx-8 upt-8">
   <div class="row">
     <div class="col-9 offset-1">
       <%= link_to appeal_path(locale: locale),

@@ -18,7 +18,7 @@ module ApplicationHelper
     # flash[:success] = _("Thank you for your vote!")
     flash.map do |name, msg|
       flash_classes = [ "alert alert-dismissable fade show", bootstrap_class_for(name.to_sym) ]
-      content_tag(:div, class: flash_classes, role: "alert", onclick: "unite.closeFlash()") do
+      content_tag(:div, class: flash_classes, role: "alert", onClick: "$(this).hide()") do
         content_tag(:h2, class: "h2 alert-heading") do msg end
       end
     end.join.html_safe
@@ -28,7 +28,8 @@ module ApplicationHelper
   #
   def link_to_token
     link_to new_token_url do
-      tag.i class: "bi bi-flower1", title: _("To your private vote")
+      # tag.i class: "bi bi-flower1", title: _("To your private vote")
+      _("My vote")
     end
   end
 
@@ -44,13 +45,15 @@ module ApplicationHelper
 
     token = vote.encoded_payload
     link_to vote_url(token: token) do
-      tag.i class: "bi bi-chat-square", title: _("Your private vote")
+      # tag.i class: "bi bi-chat-square", title: _("Your private vote")
+      _("My vote")
     end
   end
 
   def link_to_logout
     link_to logout_url, method: :delete do
-      tag.i class: "bi bi-box-arrow-right", title: _("Logout")
+      # tag.i class: "bi bi-box-arrow-right", title: _("Logout")
+      _("Logout")
     end
   end
 
@@ -159,6 +162,21 @@ module ApplicationHelper
 </section>
     SECTION
 
-    return result.html_safe
+    result.html_safe
   end
+
+  def campaign_assistant
+    result = <<~HTML
+    <p>
+      #{_("Contact our Campaign Assistant")}:<br>
+      <a class="button small" style="color:#333 !important" href="mailto:#{UNITE_CAMPAIGN_ASSISTANT_EMAIL}">#{UNITE_CAMPAIGN_ASSISTANT_EMAIL}</a>
+    </p>
+    HTML
+    result.html_safe
+  end
+
+  def copyright
+    "&copy; 2015-#{Time.now.year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved.".html_safe
+  end
+
 end

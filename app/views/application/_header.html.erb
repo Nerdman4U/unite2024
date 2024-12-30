@@ -27,8 +27,8 @@
         </div>
         <nav class="navigation nav-block primary-navigation nav-right no-margin-right">
           <ul>
-            <li class="ufs-1">
-              <%= link_to _("Supporters"), votes_path(locale: locale), :class => "ufs-1" %>
+            <li>
+              <%= link_to _("Supporters"), votes_path(locale: locale) %>
             </li>
             <li>
               <%= link_to _("Read more"), appeal_path(locale: locale) %>
@@ -38,7 +38,8 @@
             </li>
             <% if logged_in? && current_vote %>
             <li>
-              <%= link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
+              <%= link_to_vote %>
+              <%# link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
             </li>
             <li>
               <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>

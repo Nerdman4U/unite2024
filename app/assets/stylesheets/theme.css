@@ -446,7 +446,7 @@ body,
 */
 
 /* Unique Template Padding & Margins */
-.section-block,
+/* .section-block,
 .fullscreen-section .fullscreen-inner,
 .pagination-2 .pagination-next,
 .row.xlarge {
@@ -457,7 +457,7 @@ body,
 .row.xlarge.replicable-content {
   padding-top: 11rem;
   padding-bottom: 8rem;
-}
+} */
 .section-block.slanted-top:before {
   width: 100%;
   height: 12rem;
@@ -471,10 +471,10 @@ body,
   transform: skewY(-4.5deg);
   z-index: 5;
 }
-.footer .footer-top {
+/* .footer .footer-top {
   padding-top: 9rem;
   padding-bottom: 5rem;
-}
+} */
 .grid-filter-menu {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -727,7 +727,7 @@ body,
 */
 
 /* Padding & Margins */
-.header .logo-center ~ .navigation.nav-center {
+/* .header .logo-center ~ .navigation.nav-center {
   padding-top: 0.5rem;
 }
 .header .logo-center ~ .navigation.nav-center > ul > li > a {
@@ -742,10 +742,10 @@ body,
   font-weight: 700;
   letter-spacing: 0;
   text-decoration: underline;
-}
+} */
 
 /* Header Initial & Active Nav Colors */
-.header .navigation > ul > li > a {
+/* .header .navigation > ul > li > a {
   color: #999;
   opacity: 1;
 }
@@ -758,6 +758,7 @@ body,
   color: #000;
   opacity: 0.6;
 }
+*/
 
 /* Transparent Header Initial, Hover & Current Nav Colors */
 .header-transparent .navigation > ul > li > a {

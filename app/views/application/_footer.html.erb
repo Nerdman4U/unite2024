@@ -1,116 +1,114 @@
 <!-- Footer -->
-<footer class="footer">
-  <div class="container footer-top">
-    <div class="row">
-      <div class="col-3">
-        <div class="widget upx-1">
-          <%= link_to TEP_URL, target: "_blank" do %>
-          <h5 class="widget-title"><%= _(TEP_NAME) %></h5>
-          <%= image_tag "teplogo-scaled.jpg", alt: _(TEP_NAME) %>
-          <% end %>
+<footer class="footer upx-8 upt-5">
+  <div class="row">
+    <div class="col-4 text-center">
+      <h5 class="text-start upb-2"><%= _("About Us") %></h5>
+      <div class="row">
+        <div class="col-5">
+          <div class="text-center">
+            <%= link_to TEP_URL, target: "_blank" do %>
+            <%= image_tag "teplogo-scaled.jpg", alt: _(TEP_NAME) %>
+            <p class="ufs-1"><%= _(TEP_NAME) %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-7">
+          <div class="upx-1">
+            <ul class="ufs-1">
+              <li><span>Anyara Granskog</span></li>
+              <li><span>Valtteri Hirvonen</span></li>
+              <li><span>Hayang Hu</span></li>
+              <li><span>Elli Kempas</span></li>
+              <li><span>Ulla Klötzer</span></li>
+              <li><span>Riikka Kämppi</span></li>
+              <li><span>Lea Launokari</span></li>
+              <li><span>Pekka Lehtinen</span></li>
+              <li><span>Ulf Lindström</span></li>
+              <li><span>Pentti Linkola</span></li>
+              <li><span>Harriet Lonka</span></li>
+              <li><span>Tommi Lukkarinen</span></li>
+              <li><span>Mika Mattila</span></li>
+              <li><span>Nina Motaleff</span></li>
+              <li><span>Saku Mättö</span></li>
+              <li><span>Aurora Paloheimo</span></li>
+              <li><span>Eero Paloheimo</span></li>
+              <li><span>Kimmo Pietiläinen</span></li>
+              <li><span>Sanna Saastamoinen-Barrois</span></li>
+              <li><span>Emmi Seppänen</span></li>
+              <li><span>Adrian Soto</span></li>
+              <li><span>Joni Töyrylä</span></li>
+              <li><span>Tere Vadén</span></li>
+              <li><span>Michael Wynne-Ellis</span></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="widget upx-1">
-          <h5 class="widget-title"><%= _("About Us") %></h5>
-          <ul class="ufs-1 px-0">
-            <li><span>Anyara Granskog</span></li>
-            <li><span>Valtteri Hirvonen (the landscape photos)</span></li>
-            <li><span>Hayang Hu</span></li>
-            <li><span>Elli Kempas</span></li>
-            <li><span>Ulla Klötzer</span></li>
-            <li><span>Riikka Kämppi</span></li>
-            <li><span>Lea Launokari</span></li>
-            <li><span>Pekka Lehtinen</span></li>
-            <li><span>Ulf Lindström</span></li>
-            <li><span>Pentti Linkola</span></li>
-            <li><span>Harriet Lonka</span></li>
-            <li><span>Tommi Lukkarinen</span></li>
-            <li><span>Mika Mattila</span></li>
-            <li><span>Nina Motaleff</span></li>
-            <li><span>Saku Mättö</span></li>
-            <li><span>Aurora Paloheimo</span></li>
-            <li><span>Eero Paloheimo</span></li>
-            <li><span>Kimmo Pietiläinen</span></li>
-            <li><span>Sanna Saastamoinen-Barrois</span></li>
-            <li><span>Emmi Seppänen</span></li>
-            <li><span>Adrian Soto</span></li>
-            <li><span>Joni Töyrylä</span></li>
-            <li><span>Tere Vadén</span></li>
-            <li><span>Michael Wynne-Ellis</span></li>
-          </ul>
-          <!--
-          <p>
-            <%= _("Contact our Campaign Assistant") %>:<br>
-            <a class="button small" style="color:#333 !important" href="mailto:<%= UNITE_CAMPAIGN_ASSISTANT_EMAIL %>"><%= UNITE_CAMPAIGN_ASSISTANT_EMAIL %></a>
-          </p>
-          -->
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="widget upx-1">
-          <h5 class="widget-title"><%= _("Recent Votes") %></h5>
-          <table id="recent_votes" class="table">
-            <thead>
-              <tr class="recent_votes_header">
-                <th><%= _("Country") %></td>
-                <th><%= _("Name") %></td>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+    </div>
 
+    <div class="col-2 text-center">
+      <h5 class="upb-2"><%= _("Reach Us") %></h5>
+      <ul class="p-0">
+        <li>
+          <%= link_to UNITE_FACEBOOK_URL, target: "_blank" do %>
+          <i class="bi bi-facebook"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to UNITE_ROOT_URL, target: "_blank" do %>
+          <i class="bi bi-twitter-x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to UNITE_YOUTUBE_URL, target: "_blank" do %>
+          <i class="bi bi-youtube"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to GITHUB_URL, target: "_blank" do %>
+          <i class="bi bi-github"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-4 text-center">
+      <h5 class="upb-2"><%= _("Navigate site") %></h5>
+      <ul class="p-0">
+        <% if show_link_to_vote? %>
+        <li>
+          <%= link_to_vote %>
+        </li>
+        <% end %>
+        <% if logged_in? %>
+        <li>
+          <%= link_to_logout %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-2 text-center">
+      <h5 class="upb-2"><%= _("Recent Votes") %></h5>
+      <div id="recent_votes_container" style="display:none">
+        <div id="recent_votes" class="text-end">
+          <div class="row">
+            <div class="col-2"><%= _("Country") %></div>
+            <div class="col-10"><%= _("Name") %></div>
+          </div>
         </div>
-      </div>
-      <div class="col-1">
-        <ul class="social-list list-horizontal pull-right clear-float-on-mobile upx-1 umt-2">
-          <% if show_link_to_vote? %>
-          <li>
-            <%= link_to_vote %>
-          </li>
-          <% end %>
-          <% if logged_in? %>
-          <li>
-            <%= link_to_logout %>
-          </li>
-          <% end %>
-          <li>
-            <%= link_to UNITE_FACEBOOK_URL, target: "_blank" do %>
-            <i class="bi bi-facebook"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to UNITE_ROOT_URL, target: "_blank" do %>
-            <i class="bi bi-twitter-x"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to UNITE_YOUTUBE_URL, target: "_blank" do %>
-            <i class="bi bi-youtube"></i>
-            <% end %>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
 </footer>
 
-<footer class="footer">
-  <div class="container footer-top">
-    <div class="row">
-      <!-- <div class="column width-12 center"> -->
-      <div class="col-4 left">
-        v.<%= Rails.application.config.version %> with Ruby <%= RUBY_VERSION %>, Rails <%= Rails.version %>
-      </div>
-      <div class="col-3"></div>
-      <div class="col-4 right">
-        <%= link_to("Github", GITHUB_URL, target: "_blank") %>
-      </div>
+<footer class="footer upx-8">
+  <div class="row upy-3">
+    <div class="col-6 left ufs-0-5">
+      Save the Planet - Unite the Armies v.<%= Rails.application.config.version %> with Ruby <%= RUBY_VERSION %>, Rails <%= Rails.version %>
     </div>
-    <div class="row">
-      <div class="col">
-        &copy; 2015-2024 UNITE THE ARMIES. All Rights Reserved.
-      </div>
+    <div class="col-6 right ufs-0-5">
+      <%= copyright %>
     </div>
   </div>
+
 </footer>
