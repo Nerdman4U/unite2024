@@ -124,4 +124,10 @@ class ApplicationController < ActionController::Base
     #puts "subtopic: #{subtopic.inspect}"
     subtopic.blank? ? topic : "#{subtopic} (#{topic})"
   end
+
+  def validation_errors model
+    return "" if model.nil?
+    return "" if model.errors.empty?
+    model.errors.full_messages.join(", ")
+  end
 end

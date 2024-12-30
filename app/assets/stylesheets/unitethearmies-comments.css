@@ -5,7 +5,7 @@
 .comment-form {
   margin-bottom: 2rem;
 
-  .topic_container,
+  .theme_container,
   .language_container {
     cursor: pointer;
     writing-mode: horizontal-tb;
@@ -18,85 +18,82 @@
     border-style: solid;
     margin: 1.5vw;
   }
-  .topic_container:hover,
+
+  .theme_container:hover,
   .language_container:hover,
-  .comment_active,
+  .theme_active,
   .language_active {
     border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
   }
 
-  .topic_container {
+  .theme_container {
     width: 20vw;
     height: 20vw;
-    .topic {
-      display: table-cell;
-      vertical-align: top;
+    .theme_text {
+      display: none;
       padding: 1vw;
     }
   }
 
   .language_container {
-    width: 18vw;
-    height: 18vw;
-    .language {
+    width: 8vw;
+    height: 8vw;
+    .language_text {
       display: table-cell;
       vertical-align: middle;
     }
   }
 
-  .topic_text {
+  .theme_text {
     display: none;
   }
-  .topic_header {
+
+  .theme_header {
     vertical-align: top;
     color: white;
     letter-spacing: 2px;
     font-size: 1.5vw;
   }
-  .topic_description {
+
+  .theme_description {
     color: white;
     letter-spacing: 2px;
     font-size: 1.2vw;
   }
 
-  .topic_administration {
+  .theme_administration:hover .theme_text,
+  .theme_water:hover .theme_text,
+  .theme_climate:hover .theme_text,
+  .theme_plastic-waste:hover .theme_text,
+  .theme_protected-areas:hover .theme_text {
+    display: none;
+  }
+
+  .theme_administration {
     background: url("administration.jpg") no-repeat center center;
-    background-size: cover;
-  }
-  .topic_administration:hover .topic_text {
-    display: inline;
   }
 
-  .topic_water {
+  .theme_water {
     background: url("water.jpg") no-repeat center center;
-    background-size: cover;
-  }
-  .topic_water:hover .topic_text {
-    display: inline;
   }
 
-  .topic_climate {
+  .theme_climate {
     background: url("climate.jpg") no-repeat center center;
-    background-size: cover;
-  }
-  .topic_climate:hover .topic_text {
-    display: inline;
   }
 
-  .topic_plastic-waste {
+  .theme_plastic-waste {
     background: url("plastic-waste.jpg") no-repeat center center;
-    background-size: cover;
-  }
-  .topic_plastic-waste:hover .topic_text {
-    display: inline;
   }
 
-  .topic_protected-areas {
+  .theme_protected-areas {
     background: url("protected-areas.jpg") no-repeat center center;
-    background-size: cover;
   }
-  .topic_protected-areas:hover .topic_text {
-    display: inline;
+  .theme_administration,
+  .theme_water,
+  .theme_climate,
+  .theme_plastic-waste,
+  .theme_protected-areas {
+    background-size: cover;
   }
 
   .comment_description {

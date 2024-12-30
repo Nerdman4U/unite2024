@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_11_083932) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_30_093716) do
   create_table "comments", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
     t.string "topic"
     t.text "body"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_11_083932) do
     t.string "ip"
     t.string "theme"
     t.integer "vote_id"
+    t.boolean "anonymous"
   end
 
   create_table "ua_settings", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|

@@ -57,4 +57,36 @@ class CommentTest < ActiveSupport::TestCase
     assert_not @comment.valid?
   end
 
+  test 'should validate language literal' do
+    @comment.language = 'foo'
+    assert_not @comment.valid?
+
+    @comment.language = nil
+    assert_not @comment.valid?
+  end
+
+  test 'should return language name' do
+    @comment.language = 'english'
+    assert_equal 'English', @comment.language_name
+
+    @comment.language = nil
+    assert_nil @comment.language_name
+  end
+
+  test 'should validate theme' do
+    @comment.theme = 'foo'
+    assert_not @comment.valid?
+    assert @comment.errors[:theme].present?
+    assert @comment.errors[:theme].include? "is not valid"
+
+    @comment.theme = nil
+    assert_not @comment.valid?
+    assert @comment.errors[:theme].present?
+    assert @comment.errors[:theme].include? "You need to select a theme before posting a comment."
+
+    @comment.theme = 'climate'
+    assert @comment.valid?
+  end
+
+
 end

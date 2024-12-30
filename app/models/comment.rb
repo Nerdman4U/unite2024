@@ -23,14 +23,20 @@ class Comment < ApplicationRecord
   end
 
   def validate_theme
+    if theme.blank?
+      return errors.add(:theme, message: "You need to select a theme before posting a comment.")
+    end
     themes = %w[administration water climate plastic-waste protected-areas]
-    if themes.index(theme).nil?
+    unless themes.any? { |t| t == theme }
       errors.add(:theme, "is not valid")
     end
   end
 
   def validate_language_literal
-    if Language.un_languages[language.to_sym].nil?
+    if language.blank?
+      return errors.add(:language, message: "You need to select language before posting a comment.")
+    end
+    unless Language.un_languages.keys.any? { |t| t == language.to_sym }
       errors.add(:language, "is not valid")
     end
   end
@@ -40,6 +46,7 @@ class Comment < ApplicationRecord
   end
 
   def language_name
+    return nil if language.blank?
     Language.un_languages[language.to_sym]
   end
 

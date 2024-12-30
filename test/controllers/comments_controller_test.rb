@@ -9,12 +9,6 @@ class CommentsControllerTest < ActionController::TestCase
     session[:locale] = :en
   end
 
-  # test "should get index" do
-  #  get :index
-  #  assert_response :success
-  #  assert_not_nil assigns(:comments)
-  # end
-
   test "should get new" do
     vote = votes("vote_1")
     session[:current_vote_id] = vote.id
@@ -31,13 +25,59 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, params: { comment: {
         body: @comment.body,
         language: @comment.language,
-        topic: @comment.topic,
-        ip: "0.0.0.0",
+        theme: "water",
+        anonymous: true
+      } }
+    end
+
+    assert flash[:success], _("Your comment has been sent")
+    assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
+  end
+
+  test "should not create comment unless logged in" do
+    assert_no_difference("Comment.count") do
+      post :create, params: { comment: {
+        body: @comment.body,
+        language: @comment.language,
+        theme: "water",
+        anonymous: true
+      } }
+    end
+    assert flash[:error], "You need to be logged in"
+    assert_redirected_to new_vote_path(locale: "en")
+  end
+
+  test "should not create comment if vote is not found" do
+    vote = votes("vote_1")
+    session[:current_vote_id] = vote.id
+    vote.destroy
+
+    assert_no_difference("Comment.count") do
+      post :create, params: { comment: {
+        body: @comment.body,
+        language: @comment.language,
         theme: "water"
       } }
     end
-    assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
-    @comment.destroy
+
+    assert flash[:error], "There was an error"
+    assert_redirected_to locale_root_path(locale: "en")
+  end
+
+  test "should not create comment if missing parameters" do
+    vote = votes("vote_1")
+    session[:current_vote_id] = vote.id
+
+    assert_no_difference("Comment.count") do
+      post :create, params: { comment: {
+        body: @comment.body,
+        language: "english",
+        theme: nil
+      } }
+    end
+
+    assert flash[:warning], "You need to select a theme before posting a comment"
+    assert :bad_request
   end
 
   test "should create comment in arabic" do
@@ -49,43 +89,13 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, params: { comment: {
         body: @comment.body,
         language: @comment.language,
-        topic: @comment.topic,
-        ip: "0.0.0.0",
         theme: "water"
       } }
     end
 
+    assert flash[:success], _("Your comment has been sent")
     assert_redirected_to vote_path(locale: "ar", token: vote.encoded_payload)
     @comment.destroy
   end
 
-  # test "should show comment" do
-  #   get :show, id: @comment
-  #   assert_response :success
-  # end
-
-  # test "should get edit" do
-  #   get :edit, id: @comment
-  #   assert_response :success
-  # end
-
-  # test "should update comment" do
-  #   patch :update, id: @comment, comment: {
-  #     body: @comment.body,
-  #     email: "test03@test.fi",
-  #     email_confirmation: "test03@test.fi",
-  #     language: @comment.language,
-  #     name: @comment.name,
-  #     topic: @comment.topic
-  #   }
-  #   assert_redirected_to comment_path(assigns(:comment))
-  # end
-
-  # test "should destroy comment" do
-  #   assert_difference('Comment.count', -1) do
-  #     delete :destroy, id: @comment
-  #   end
-
-  #   assert_redirected_to comments_path
-  # end
 end

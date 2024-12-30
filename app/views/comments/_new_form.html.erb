@@ -2,8 +2,9 @@
 
   <h2 class="h2 upb-3"><%= _("Add a comment") %></h2>
 
-  <%= form_with model: Comment.new, html: {class: "unitethearmies-form"} do |f| %>
+  <%= form_with model: Comment.new, html: {class: "unitethearmies-form", id: "CommentForm"}, action: comments_path, method: :post, "onsubmit": "comment.send()" do |f| %>
   <section class="umb-3">
+    <%= f.hidden_field :language %>
     <div><%= f.label :language, _("Choose the language"), class: "ufs-1-5" %></div>
     <div class="row umb-3">
       <div class="col-12">
@@ -13,10 +14,11 @@
   </section>
 
   <section class="umb-3">
-    <div><%= f.label :language, _("Choose a topic"), class: "ufs-1-5" %></div>
+    <%= f.hidden_field :theme %>
+    <div><%= f.label :theme, _("Choose a theme"), class: "ufs-1-5" %></div>
     <div class="row umb-3">
       <div class="col-12">
-        <%= comment_topics %>
+        <%= comment_themes %>
       </div>
     </div>
   </section>
@@ -33,7 +35,7 @@
     <div class="row umb-3">
       <div class="col-12">
         <%= f.label :body, _('Comment (max 1000 characters)')%>
-        <%= f.text_area :body, :class => "form-control-lg ufs-1-5 border-4 rounded", rows: 5, :placeholder => _("Your comment") %>
+        <%= f.text_area :body, :class => "form-control-lg ufs-1-5 border-4 rounded comment_body", rows: 5, :placeholder => _("Your comment") %>
       </div>
     </div>
 

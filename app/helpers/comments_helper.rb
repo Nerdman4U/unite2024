@@ -1,6 +1,6 @@
 module CommentsHelper
 
-  def topics
+  def themes
     {
       "administration" => {
         header: "Administration", description: _("The activities of the United Armies must be controlled by a common, international organ.")
@@ -20,14 +20,14 @@ module CommentsHelper
     }
   end
 
-  ## Topics to javascript
+  ## themes to javascript
   # this is printed at comments/new.
-  def topics_to_js
+  def themes_to_js
     result = {}
-    topics.keys.sort { |a, b| a <=> b }.map { |key|
+    themes.keys.sort { |a, b| a <=> b }.map { |key|
       result[key] = {
-        header: topics[key][:header],
-        description: topics[key][:description]
+        header: themes[key][:header],
+        description: themes[key][:description]
       }
     }
     result.to_json.html_safe
@@ -38,8 +38,8 @@ module CommentsHelper
   # TODO: could be only translated text "In english", "Suomeksi", ...
   def comment_language lang
     result = <<~HTML
-    <div class="language_container" onclick='comment.setLanguage(this, "#{lang[0]}","#{lang[1]}")'>
-      <div class="language">
+    <div class="language_container" id="language_#{lang[1]}" onclick='comment.setLanguage(this, "#{lang[0]}","#{lang[1]}")'>
+      <div class="language_text">
         <p>#{lang[1]}</p>
         <p>#{Language.translate(lang[0], "Save the planet") }</p>
       </div>
@@ -54,13 +54,13 @@ module CommentsHelper
     end.join.html_safe
   end
 
-  def comment_topic topic
+  def comment_theme theme
     result = <<~HTML
-    <div class="topic_container topic_#{topic}" title="#{topic}" onclick="comment.setTopic(this, '#{topic}')">
-      <div class="topic">
-      <div class="topic_text">
-        <p class="topic_header">#{topics[topic][:header]}</p>
-        <p class="topic_description">#{topics[topic][:description]}</p>
+    <div class="theme_container theme_#{theme}" title="#{theme}" onclick="comment.setTheme(this, '#{theme}')">
+      <div class="theme">
+      <div class="theme_text">
+        <p class="theme_header">#{themes[theme][:header]}</p>
+        <!-- <p class="theme_description">#{themes[theme][:description]}</p> -->
       </div>
       </div>
     </div>
@@ -68,9 +68,9 @@ module CommentsHelper
     result.html_safe
   end
 
-  def comment_topics
-    topics.keys.map do |topic|
-      comment_topic topic
+  def comment_themes
+    themes.keys.map do |theme|
+      comment_theme theme
     end.join.html_safe
   end
 

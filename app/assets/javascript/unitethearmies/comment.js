@@ -2,12 +2,18 @@ class Comment {
   constructor() {
     // Language identifier and name in english.
     this.data = {
-      language_identifier: null,
+      language: null,
       language_name: null,
-      topic: null,
+      theme: null,
       comment: null,
       email: null,
     };
+  }
+
+  send() {
+    $("#comment_form").find('input[name="language"]').val(this.data.language);
+    $("#comment_form").find('input[name="theme"]').val(this.data.theme);
+    $("#comment_form").submit();
   }
 
   set language_identifier(language) {
@@ -26,6 +32,8 @@ class Comment {
   setLanguage(el, name, identifier) {
     this.data.language_identifier = identifier;
     this.data.language_name = name;
+    $("#comment_language").val(identifier);
+    console.log($("#comment_language"));
     $(".language_active").each(function () {
       $(this).removeClass("language_active");
     });
@@ -33,19 +41,20 @@ class Comment {
     this.setConclusion();
   }
 
-  set topic(topic) {
-    this.data.topic = topic;
+  set theme(theme) {
+    this.data.theme = theme;
   }
-  get topic() {
-    return this.data.topic;
+  get theme() {
+    return this.data.theme;
   }
 
-  setTopic(el, topic) {
-    this.data.topic = topic;
-    $(".comment_active").each(function () {
-      $(this).removeClass("comment_active");
+  setTheme(el, theme) {
+    this.data.theme = theme;
+    $("#comment_theme").val(theme);
+    $(".theme_active").each(function () {
+      $(this).removeClass("theme_active");
     });
-    $(el).addClass("comment_active");
+    $(el).addClass("theme_active");
     this.setConclusion();
     this.showDescription();
   }
@@ -66,14 +75,14 @@ class Comment {
 
   conclusion() {
     let result = "";
-    if (this.topic && this.language_name) {
-      result = `Your comment is about ${this.topic}, and it is written in ${this.language_name}.`;
-    } else if (this.topic) {
-      result = `Your comment is about ${this.topic}. You have not selected language.`;
+    if (this.theme && this.language_name) {
+      result = `Your comment is about ${this.theme}, and it is written in ${this.language_name}.`;
+    } else if (this.theme) {
+      result = `Your comment is about ${this.theme}. You have not selected language.`;
     } else if (this.language_name) {
-      result = `Your comment is written in ${this.language_name}, but you have not selected topic.`;
+      result = `Your comment is written in ${this.language_name}, but you have not selected theme.`;
     } else {
-      result = `You have not selected topic nor language.`;
+      result = `You have not selected theme nor language.`;
     }
     return result;
   }
@@ -83,7 +92,7 @@ class Comment {
   }
 
   showDescription() {
-    let details = topic_details[this.topic];
+    let details = theme_details[this.theme];
     if (!details) {
       return;
     }

@@ -146,7 +146,7 @@ class VotesController < ApplicationController
 
     unless @vote.valid?
       Rails.logger.error("Vote#create: Invalid vote, errors: #{@vote.errors.full_messages}")
-      flash[:warning] = @vote.errors.full_messages.join(", ")
+      flash[:warning] = validation_errors(@vote)
       redirect_to new_vote_path(locale: locale)
       # render :new, status: :bad_request <= kumpi parempi?
       return

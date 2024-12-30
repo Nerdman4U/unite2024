@@ -1,19 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [ :show, :edit ]
 
-  # GET /comments
-  # GET /comments.json
-  # def index
-  #  @comments = Comment.all
-  #  render layout: "simple_layout"
-  # end
-
-  # GET /comments/1
-  # GET /comments/1.json
-  # def show
-  # end
-
-  # GET /comments/new
   def new
     unless session[:current_vote_id]
       redirect_to new_vote_path(locale: locale)
@@ -30,74 +17,52 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  # GET /comments/1/edit
-  # def edit
-  # end
-
-  # POST /comments
-  # POST /comments.json
   def create
     unless session[:current_vote_id]
-      redirect_to new_vote_path(locale: locale)
-      return
-    end
-
-    @comment = Comment.new(comment_params)
-    @comment.ip = request.env["REMOTE_ADDR"]
-    @comment.bypass_humanizer = true if Rails.env.test?
-
-    unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
+      flash[:error] = _("You need to be logged in")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
     vote = Vote.where(id: session[:current_vote_id]).first
     unless vote
-      redirect_to new_vote_path(locale: locale)
+      flash[:error] = _("There was an error")
+      Rails.logger.error("Comment#create: Vote not found")
+      redirect_to locale_root_path(locale: locale)
       return
     end
 
+    unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
+      Rails.logger.error("Comment#create: Human verification failed")
+      flash[:warning] = _("There was an error with human verifying")
+      redirect_to new_comment_path(locale: locale)
+      return
+    end
+
+    @comment = Comment.new(comment_params)
+    @comment.ip = request.env["REMOTE_ADDR"]
+    @comment.bypass_humanizer = true if Rails.env.test?
     @vote = vote
     @comment.vote = vote
 
+    unless @comment.valid?
+      Rails.logger.error("Comment#create: Invalid comment")
+      flash[:warning] = validation_errors(@comment)
+      Rails.logger.error(validation_errors(@comment))
+      redirect_to new_comment_path(locale: locale)
+      return
+    end
+
+    @comment.save
+    @comment.email_comment
+
     respond_to do |format|
-      if @comment.save
-        @comment.email_comment
-        msg = _("Comment was successfully created.")
-        values = {
-          locale: locale,
-          token: vote.encoded_payload
-        }
-        format.html { redirect_to vote_path(values), notice: msg }
-      else
-        format.html { render :new }
-      end
+      format.html {
+        flash[:success] = _("Your comment has been sent")
+        redirect_to vote_path(locale: locale, token: vote.encoded_payload), notice: _("Comment was successfully created.")
+      }
     end
   end
-
-  # PATCH/PUT /comments/1
-  # PATCH/PUT /comments/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @comment.update(comment_params)
-  #       format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @comment }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @comment.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # DELETE /comments/1
-  # DELETE /comments/1.json
-  # def destroy
-  #   @comment.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -107,6 +72,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:topic, :body, :email, :email_repeat, :theme, :language, :name)
+      params.require(:comment).permit(:language, :theme, :body, :anonymous)
     end
 end
