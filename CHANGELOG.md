@@ -1,3 +1,15 @@
+## 1.53.0 (2024-12-30)
+
+### Feat
+
+- Posting a comment, new field - anonymous - added to database
+- **votes/show.html.erb**: Red heart icon
+- Comments update, not yet working
+
+### Fix
+
+- Layout fixes. Studying how to remove core theme
+
 ## 1.52.0 (2024-12-29)
 
 ### Feat
