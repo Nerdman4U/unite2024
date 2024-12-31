@@ -1,3 +1,9 @@
+## 1.55.1 (2024-12-31)
+
+### Fix
+
+- **comment_test.rb**: Default locale at setup
+
 ## 1.55.0 (2024-12-31)
 
 ### Feat
