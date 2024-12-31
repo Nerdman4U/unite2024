@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_vote
   helper_method :country_code
   helper_method :unitethearmies_title
+  helper_method :production_server?
 
   private
 
@@ -129,5 +130,10 @@ class ApplicationController < ActionController::Base
     return "" if model.nil?
     return "" if model.errors.empty?
     model.errors.full_messages.join(", ")
+  end
+
+  def production_server?
+    raise InternalServerError unless request.hostname
+    !request.hostname.match?("localhost")
   end
 end

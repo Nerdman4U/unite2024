@@ -42,4 +42,17 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "should detect production server" do
+    get locale_root_url locale: :en
+
+    @controller.request.stub(:hostname, "localhost") do
+      assert_equal @controller.request.hostname, "localhost"
+      assert_equal @controller.send(:production_server?), false
+    end
+
+    @controller.request.stub(:hostname, "www.example.com") do
+      assert_equal @controller.request.hostname, "www.example.com"
+      assert_equal @controller.send(:production_server?), true
+    end
+  end
 end

@@ -47,6 +47,7 @@
 <%= stylesheet_link_tag 'flags' %>
 <%= stylesheet_link_tag 'bootstrap.min' %>
 
+<% unless request.hostname == "localhost" %>
 <script>
   (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -63,6 +64,7 @@
   ga('create', 'UA-10604388-4', 'auto');
   ga('send', 'pageview');
 </script>
+<% end %>
 
 <!-- reCAPTCHA -->
 <% recaplocale = (locale == "zh") ? "zh-CH" : locale %>
