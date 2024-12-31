@@ -1,8 +1,5 @@
-<!-- Content -->
-<div class="content clearfix">
-
-  <!-- Fullscreen Slider Section -->
-  <%= slider_section do
+<!-- Fullscreen Slider Section -->
+<%= slider_section do
   [{
     link: "",
     topic_1: "",
@@ -13,45 +10,43 @@
   }]
   end
   %>
-  <!-- Fullscreen Slider Section End -->
+<!-- Fullscreen Slider Section End -->
 
-  <!-- Content End -->
-  <section class="section-block-pt feature-1 bg-white upx-8 upy-8">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="animated-h1 fs-10 color-dark lspacing-medium no-margin-bottom weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
-          <%= _("Support") %>
-        </h1>
-        <h5 class="animated-h5 color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-          <%= _("Radical actions are urgently needed to save our planet.") %>
-        </h5>
-      </div>
+<!-- Content End -->
+<section class="section-block-pt feature-1 bg-white upx-8 upy-8">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="animated-h1 fs-10 color-dark lspacing-medium">
+        <%= _("Support") %>
+      </h1>
+      <h5 class="animated-h5 color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+        <%= _("Radical actions are urgently needed to save our planet.") %>
+      </h5>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Feature Section 1 -->
-  <section class="section-block feature-1 bg-white color-dark upx-8 upy-8">
-    <div class="row no-padding-bottom">
-      <div class="col-6 offset-3">
-        <div class="feature-content">
-          <div class="feature-content-inner">
-            <%= render partial: "new_form" %>
-          </div>
+<!-- Feature Section 1 -->
+<section class="section-block feature-1 bg-white color-dark upx-8 upy-8">
+  <div class="row no-padding-bottom">
+    <div class="col-6 offset-3">
+      <div class="feature-content">
+        <div class="feature-content-inner">
+          <%= render partial: "new_form" %>
         </div>
       </div>
     </div>
-  </section>
-  <!-- Feature Section 1 End -->
+  </div>
+</section>
+<!-- Feature Section 1 End -->
 
-  <section class="section-block feature-2 bg-secondary upx-8 upy-8">
-    <div class="row">
-      <div class="col-12">
-        <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
-        <span class="bi bi-person-arms-up align-middle"></span>
-        <%= _("See who have already voted!") %>
-        <% end %>
-      </div>
+<section class="section-block feature-2 bg-secondary upx-8 upy-8">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to votes_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
+      <span class="bi bi-person-arms-up align-middle"></span>
+      <%= _("See who have already voted!") %>
+      <% end %>
     </div>
-  </section>
-
-</div>
+  </div>
+</section>

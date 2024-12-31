@@ -108,7 +108,7 @@ module ApplicationHelper
 
   def slide_section slide
     result = <<~SECTION
-    <li class="tms-slide" data-image data-force-fit>
+  <li class="tms-slide" data-image data-force-fit>
     <div class="tms-content">
       <div class="container tms-content-inner center left-on-mobile v-align-middle">
         <div class="row">
@@ -135,8 +135,9 @@ module ApplicationHelper
   end
 
   ## Full screen slider
-  def fs_slider &block
-    raw_slider(["window-height"], &block)
+  def fs_slider section_classes=[], &block
+    # raw_slider(["window-height"], &block)
+    raw_slider(section_classes + ["unite-screenheight-100"], &block)
   end
   def slider &block
     raw_slider(&block)
@@ -151,9 +152,9 @@ module ApplicationHelper
     }
 
     slides_str = slide_html.join
-
+    # full-width-slider
     result = <<~SECTION
-    <section class="section-block featured-media tm-slider-parallax-container #{section_classes.join(" ")}">
+    <section class="unite-slider-container section-block featured-media tm-slider-parallax-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
   <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
     <ul class="tms-slides">
       #{slides_str}

@@ -47,7 +47,7 @@
 <%= stylesheet_link_tag 'flags' %>
 <%= stylesheet_link_tag 'bootstrap.min' %>
 
-<% unless request.hostname == "localhost" %>
+<% if production_server? %>
 <script>
   (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
