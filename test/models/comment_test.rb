@@ -3,6 +3,8 @@ require 'test_helper'
 class CommentTest < ActiveSupport::TestCase
 
   def setup
+    I18n.locale = :en
+
     @comment = comments("one")
     @comment.bypass_humanizer = true
     @comment.vote = votes("vote_1")
