@@ -1,3 +1,10 @@
+## 1.55.0 (2024-12-31)
+
+### Feat
+
+- Layout update
+- Check production server and print Google Analytics only at production server
+
 ## 1.54.0 (2024-12-31)
 
 ### Feat
