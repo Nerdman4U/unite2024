@@ -1,3 +1,9 @@
+## 1.56.1 (2025-01-01)
+
+### Fix
+
+- Two bugs from previous commit fixed
+
 ## 1.56.0 (2025-01-01)
 
 ### Feat
