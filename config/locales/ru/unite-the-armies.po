@@ -597,7 +597,6 @@ msgstr "Французский"
 msgid "in German"
 msgstr ""
 
-#, fuzzy
 msgid "in Russian"
 msgstr "в России"
 

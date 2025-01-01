@@ -570,7 +570,6 @@ msgstr ""
 msgid "hours"
 msgstr ""
 
-#, fuzzy
 msgid "in Arabic"
 msgstr "باللغة العربية"
 
@@ -625,6 +624,3 @@ msgstr "ثوان"
 
 msgid "sincerely,"
 msgstr ""
-
-#~ msgid "in arabic"
-#~ msgstr "باللغة العربية"

@@ -23,17 +23,30 @@ class LocalesTest < ApplicationSystemTestCase
     visit locale_root_path(locale: :de)
     assert_selector "h1", text: "Den Planeten retten".upcase
 
-    visit locale_root_path(locale: :se)
+    visit locale_root_path(locale: :sv)
     assert_selector "h1", text: "Rädda planeten".upcase
 
     visit locale_root_path(locale: :fi)
     assert_selector "h1", text: "pelasta maailma".upcase
   end
 
-  test "locale links at header are not https" do
+  test "should have main navigation" do
+    visit locale_root_path(locale: :en)
+    assert_selector "header a", text: "باللغة العربية".upcase
+    assert_selector "header a", text: "中文".upcase
+    assert_selector "header a", text: "in English".upcase
+    assert_selector "header a", text: "en francés".upcase
+    assert_selector "header a", text: "в России".upcase
+    assert_selector "header a", text: "en español".upcase
+    assert_selector "header a", text: "suomeksi".upcase
+    assert_selector "header a", text: "auf Deutsch".upcase
+    assert_selector "header a", text: "på svenska".upcase
+  end
+
+  test "should have locale links at header http" do
     visit locale_root_path(locale: :en)
 
-    click_link "Arabic"
+    click_link "in English"
 
     assert_not current_url.match? "https"
   end

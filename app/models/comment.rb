@@ -47,7 +47,7 @@ class Comment < ApplicationRecord
 
   def language_name
     return nil if language.blank?
-    return nil unless Language::LOCALES[language]
+    return nil unless Language::LOCALES[language.to_sym]
     language.capitalize
   end
 

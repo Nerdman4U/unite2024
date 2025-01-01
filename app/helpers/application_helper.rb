@@ -178,35 +178,35 @@ module ApplicationHelper
     ui_locale = FastGettext.locale
 
     case identifier
-    when "arabic"
+    when :arabic
       loc = :ar
       FastGettext.locale = loc
       name = _("in Arabic")
-    when "chinese"
+    when :chinese
       loc = :zh
       FastGettext.locale = loc
       name = _("in Chinese")
-    when "french"
+    when :french
       loc = :fr
       FastGettext.locale = loc
       name = _("in French")
-    when "russian"
+    when :russian
       loc = :ru
       FastGettext.locale = loc
       name = _("in Russian")
-    when "spanish"
+    when :spanish
       loc = :es
       FastGettext.locale = loc
       name = _("in Spanish")
-    when "finnish"
+    when :finnish
       loc = :fi
       FastGettext.locale = loc
       name = _("in Finnish")
-    when "german"
+    when :german
       loc = :de
       FastGettext.locale = loc
       name = _("in German")
-    when "swedish"
+    when :swedish
       loc = :sv
       FastGettext.locale = loc
       name = _("in Swedish")

@@ -1,14 +1,14 @@
 class Language
   LOCALES = {
-    "arabic" => :ar,
-    "chinese" => :zh,
-    "english" => :en,
-    "french" => :fr,
-    "russian" => :ru,
-    "spanish" => :es,
-    "finnish" => :fi,
-    "german" => :de,
-    "swedish" => :se
+    arabic: :ar,
+    chinese: :zh,
+    english: :en,
+    french: :fr,
+    russian: :ru,
+    spanish: :es,
+    finnish: :fi,
+    german: :de,
+    swedish: :sv
   }
 
   # Valid UN language literals.
@@ -17,7 +17,7 @@ class Language
   end
 
   def self.valid_un_language? identifier
-    un_languages.include?(identifier)
+    un_languages.include?(identifier.to_s)
   end
 
   ## Return a list of 2 item lists.
@@ -30,8 +30,8 @@ class Language
   def self.locale(value)
     return :en if value.blank?
     return :en unless value.is_a?(String)
-    return :en unless LOCALES[value.to_s]
-    LOCALES[value.to_s]
+    return :en unless LOCALES[value.to_sym]
+    LOCALES[value.to_sym]
   end
 
   def self.translate(*args)

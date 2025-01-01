@@ -16,7 +16,7 @@ class LanguageTest < ActiveSupport::TestCase
     assert_equal Language.locale("spanish"), :es
     assert_equal Language.locale("finnish"), :fi
     assert_equal Language.locale("german"), :de
-    assert_equal Language.locale("swedish"), :se
+    assert_equal Language.locale("swedish"), :sv
   end
 
   test 'should return en for incorrect language name' do
@@ -44,6 +44,6 @@ class LanguageTest < ActiveSupport::TestCase
   end
 
   test "should return a list of locales" do
-    assert_equal Language.locales_list, ["ar", "de", "en", "es", "fi", "fr", "ru", "se", "zh"]
+    assert_equal Language.locales_list, ["ar", "de", "en", "es", "fi", "fr", "ru", "sv", "zh"]
   end
 end
