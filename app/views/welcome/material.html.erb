@@ -15,19 +15,27 @@
   <!-- Fullscreen Slider Section End -->
 
   <section>
-    <div class="upx-8 section-block grid-container fade-in-progressively bg-dark color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+    <div class="animated-block upx-8 upy-4 section-block bg-black color-white">
       <div class="row">
         <div class="col-12">
-          <h2><%= _("Material") + " " + _("(mostly finnish)") %></h1>
-            <p><%= _("You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper.") %> </p>
-            <p>
+          <h1 class="animated-h1"><%= _("Material") %></h1>
+          <p><%= _("Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future.") %>
+          <p><%= _("You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper.") %> </p>
+          <div class="d-flex umy-2">
+            <div class="upr-2">
               <%= link_to(image_tag("signatures.png", width: 100, height: 100), "/pdf/guide_to_gathering_signatures.pdf", id: "guide_to_gathering") %>
+            </div>
+            <div class="upr-2">
               <%= link_to(image_tag("pamphlet.png", width: 100, height: 100), "/pdf/unite_the_armies_pamphlet.pdf", id: "pamphlet") %>
+            </div>
+            <div class="upr-2">
               <%= link_to(image_tag("poster.png", width: 100, height: 100), "/pdf/unite_the_armies_poster.pdf", id: "poster") %>
+            </div>
+            <div class="upr-2">
               <%= link_to(image_tag("collection-form.png", width: 100, height: 100), "/pdf/unite_the_armies_signature_collection_form.pdf", id: "signature_collection") %>
-            </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 </div>

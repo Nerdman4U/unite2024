@@ -327,3 +327,63 @@ a.show-on-click:focus span {
   position: relative;
   z-index: 1;
 }
+
+input,
+textarea,
+button,
+a {
+  -webkit-transition-property: background, border-color, color, opacity;
+  transition-property: background, border-color, color, opacity;
+  -webkit-transition-duration: 3000ms;
+  transition-duration: 3000ms;
+}
+.unitethearmies-form {
+  textarea {
+    border-color: var(--bs-light);
+  }
+  textarea:hover,
+  textarea:focus,
+  textarea:active {
+    border-color: var(--bs-blue);
+  }
+}
+
+.unitethearmies-border-blue {
+  border-color: #1d6ea3;
+}
+.unitethearmies-border-hover-blue:hover {
+  border-color: var(--bs-blue);
+}
+
+.section-block.feature-1 {
+  position: relative;
+  text-align: center;
+}
+
+.section-block.feature-2 {
+  position: relative;
+}
+
+.feature-content,
+.feature-image,
+.feature-slider {
+  width: 100%;
+  height: 100%;
+  display: table;
+  table-layout: fixed;
+}
+.feature-content-inner,
+.feature-image-inner,
+.feature-slider-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.feature-slider .tm-slider-container {
+  width: 100% !important;
+}
+.feature-slider .tms-pagination {
+  bottom: 0;
+}
+.feature-content-inner *:first-child {
+  margin-top: 0;
+}

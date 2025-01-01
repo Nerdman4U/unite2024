@@ -1,7 +1,5 @@
-<!-- Content -->
-<div class="content clearfix">
-  <!-- Fullscreen Slider Section -->
-  <%= slider_section do
+<!-- Fullscreen Slider Section -->
+<%= slider_section do
   [{
     link: "",
     topic_1: _("%{count} votes") % { count: number_with_delimiter(VoteCount.total) },
@@ -11,16 +9,55 @@
   }]
   end
   %>
-  <!-- Fullscreen Slider Section End -->
+<!-- Fullscreen Slider Section End -->
 
-  <% if locale == :fi %>
-  <!-- Feature Column Section -->
-  <section class="section-block bg-white upx-8 upy-5">
+<% if locale == :fi %>
+<!-- Feature Column Section -->
+<section class="section-block bg-white upx-8 upy-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <h5 class="text-uppercase text-small weight-light">Seuraavat, eri aloja edustavat, merkittävät professorit ovat antaneet vetoomukselle kannatuksensa:</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row upb-5">
+    <div class="col-6">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <p class="mb-mobile-30 blockquote">
+            Mikael Fortelius, evoluutiopaleontologia<br>
+            Pekka Kauppi, ympäristönsuojelu <br>
+            Anto Leikola, oppihistoria <br>
+            Pentti Murole, kaupunkisuunnittelu <br>
+            Heikki Palva, arabian kieli <br>
+            Juha Pentikäinen, pohjoinen etnografia <br></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="feature-column small center">
+        <div class="feature-text">
+          <p class="mb-mobile-30 blockquote">
+            Eero Saksela, lääketiede <br>
+            Jan Söderlund, arkkitehtuuri <br>
+            Peter Tigerstedt, kasvitiede <br>
+            Tuija Vihavainen, puutekniikka <br>
+            Reijo Vihko, lääketiede <br>
+            Yrjö Wiherheimo, teollinen muotoilu </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
     <div class="row">
       <div class="col-12">
         <div class="feature-column small center">
           <div class="feature-text">
-            <h5 class="text-uppercase text-small weight-light">Seuraavat, eri aloja edustavat, merkittävät professorit ovat antaneet vetoomukselle kannatuksensa:</h5>
+            <h5 class="text-uppercase text-small weight-light">Seuraavat suomalaiset kirjailijat ja suomentajat ovat antaneet vetoomukselle kannatuksensa:</h5>
           </div>
         </div>
       </div>
@@ -30,12 +67,12 @@
         <div class="feature-column small center">
           <div class="feature-text">
             <p class="mb-mobile-30 blockquote">
-              Mikael Fortelius, evoluutiopaleontologia<br>
-              Pekka Kauppi, ympäristönsuojelu <br>
-              Anto Leikola, oppihistoria <br>
-              Pentti Murole, kaupunkisuunnittelu <br>
-              Heikki Palva, arabian kieli <br>
-              Juha Pentikäinen, pohjoinen etnografia <br></p>
+              Maikki Harjanne, kirjailija<br />
+              Arto Häilä, suomentaja<br />
+              Timo Hännikäinen, kirjailija<br />
+              Risto Isomäki, kirjailija<br />
+              Tiina Krohn, kirjailija<br />
+              Pentti Linkola, kirjailija<br />
           </div>
         </div>
       </div>
@@ -43,140 +80,96 @@
         <div class="feature-column small center">
           <div class="feature-text">
             <p class="mb-mobile-30 blockquote">
-              Eero Saksela, lääketiede <br>
-              Jan Söderlund, arkkitehtuuri <br>
-              Peter Tigerstedt, kasvitiede <br>
-              Tuija Vihavainen, puutekniikka <br>
-              Reijo Vihko, lääketiede <br>
-              Yrjö Wiherheimo, teollinen muotoilu </p>
+              Harri Manner, kirjailija<br>
+              Hannu Mäkelä, kirjailija<br>
+              Kimmo Pietiläinen, suomentaja<br>
+              Mauno Saari, kirjailija<br>
+              Hannu Salama, kirjailija<br>
+              Kaari Utrio, kirjailija</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="section-block">
-      <div class="row">
-        <div class="col-12">
-          <div class="feature-column small center">
-            <div class="feature-text">
-              <h5 class="text-uppercase text-small weight-light">Seuraavat suomalaiset kirjailijat ja suomentajat ovat antaneet vetoomukselle kannatuksensa:</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row upb-5">
-        <div class="col-6">
-          <div class="feature-column small center">
-            <div class="feature-text">
-              <p class="mb-mobile-30 blockquote">
-                Maikki Harjanne, kirjailija<br />
-                Arto Häilä, suomentaja<br />
-                Timo Hännikäinen, kirjailija<br />
-                Risto Isomäki, kirjailija<br />
-                Tiina Krohn, kirjailija<br />
-                Pentti Linkola, kirjailija<br />
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="feature-column small center">
-            <div class="feature-text">
-              <p class="mb-mobile-30 blockquote">
-                Harri Manner, kirjailija<br>
-                Hannu Mäkelä, kirjailija<br>
-                Kimmo Pietiläinen, suomentaja<br>
-                Mauno Saari, kirjailija<br>
-                Hannu Salama, kirjailija<br>
-                Kaari Utrio, kirjailija</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="row">
-        <div class="col-12">
-          <div class="feature-column small center">
-            <div class="feature-text">
-              <h5 class="text-uppercase text-small weight-light">Seuraavat merkittävät entiset kansanedustajat
-                ovat allekirjoittaneet vetoomuksen:</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row upb-5">
-        <div class="col-6">
-          <div class="feature-column small center">
-            <div class="feature-text">
-              <p class="mb-mobile-30 blockquote">
-                Claes Andersson<br />
-                Sirpa Asko-Seljavaara<br />
-                Mikko Elo<br />
-                Heidi Hautala<br />
-                Timo Juurikkala<br />
-                Risto Kuisma<br />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="feature-column small center">
-            <div class="feature-text">
-              <p class="mb-mobile-30 blockquote">
-                Kalle Könkkölä<br />
-                Markku Laukkanen<br />
-                Outi Ojala<br />
-                Kati Peltola<br />
-                Pentti Tiusanen<br />
-                Marjatta Vehkaoja<br />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block upx-8 bg-secondary upy-8">
+  <div class="section-block">
     <div class="row">
       <div class="col-12">
-        <%= link_to new_vote_path(locale: locale), { :class => button_black} do %>
-        <span class="bi bi-person-add align-middle"></span>
-        <%= _("Support now") %>
-        <% end %>
+        <div class="feature-column small center">
+          <div class="feature-text">
+            <h5 class="text-uppercase text-small weight-light">Seuraavat merkittävät entiset kansanedustajat
+              ovat allekirjoittaneet vetoomuksen:</h5>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="row upb-5">
+      <div class="col-6">
+        <div class="feature-column small center">
+          <div class="feature-text">
+            <p class="mb-mobile-30 blockquote">
+              Claes Andersson<br />
+              Sirpa Asko-Seljavaara<br />
+              Mikko Elo<br />
+              Heidi Hautala<br />
+              Timo Juurikkala<br />
+              Risto Kuisma<br />
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="feature-column small center">
+          <div class="feature-text">
+            <p class="mb-mobile-30 blockquote">
+              Kalle Könkkölä<br />
+              Markku Laukkanen<br />
+              Outi Ojala<br />
+              Kati Peltola<br />
+              Pentti Tiusanen<br />
+              Marjatta Vehkaoja<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block upx-8 bg-secondary upy-8">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to new_vote_path(locale: locale), { :class => button_black} do %>
+      <span class="bi bi-person-add align-middle"></span>
+      <%= _("Support now") %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<!-- Show country votes -->
+<section class="section-block bg-white upy-8 upx-8">
+  <% @sorted_votes.each do |vote_count| %>
+  <div class="row m-2 p-2 votes">
+    <div class="col-1 country_flag"><%= image_tag "blank.gif", :class => ["flag_small", vote_count.country] %></div>
+    <div class="col-2 country"><%= Country.code_to_name(vote_count.country) %></div>
+    <div class="col-8 vote_percentage">
+      <div style="width:<%= vote_count.diagram_width %>%; height:30px" class="bg-success"> </div>
+    </div>
+    <div class="col-1 vote_count"><%= number_with_delimiter(vote_count.count) %></div>
+  </div>
   <% end %>
+</section>
+<!-- Content End -->
 
-  <!-- Show country votes -->
-  <section class="section-block bg-white upy-8 upx-8">
-    <% @sorted_votes.each do |vote_count| %>
-    <div class="row m-2 p-2 votes">
-      <div class="col-1 country_flag"><%= image_tag "blank.gif", :class => ["flag_small", vote_count.country] %></div>
-      <div class="col-2 country"><%= Country.code_to_name(vote_count.country) %></div>
-      <div class="col-8 vote_percentage">
-        <div style="width:<%= vote_count.diagram_width %>%; height:30px" class="bg-success"> </div>
-      </div>
-      <div class="col-1 vote_count"><%= number_with_delimiter(vote_count.count) %></div>
+<section class="section-block bg-secondary upy-8 upx-8">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to new_vote_path(locale: locale), { :class => button_black } do %>
+      <span class="bi bi-person-add"></span>
+      <%= _("Support now") %>
+      <% end %>
     </div>
-    <% end %>
-  </section>
-  <!-- Content End -->
-
-  <section class="section-block bg-secondary upy-8 upx-8">
-    <div class="row">
-      <div class="col-12">
-        <div class="feature-content">
-          <div class="feature-content-inner">
-            <%= link_to new_vote_path(locale: locale), { :class => button_black } do %>
-            <span class="bi bi-person-add align-middle"></span>
-            <%= _("Support now") %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  </div>
+</section>

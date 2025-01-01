@@ -8732,7 +8732,7 @@ body.boxed .hero-7 .media-column > * {
     background-image: url(frontpage-slides/sunrise-on-the-sea.jpg);
   }
 }
-.feature-content,
+/* .feature-content,
 .feature-image,
 .feature-slider {
   width: 100%;
@@ -8754,19 +8754,19 @@ body.boxed .hero-7 .media-column > * {
 }
 .feature-content-inner *:first-child {
   margin-top: 0;
-}
-.section-block.feature-1 {
+} */
+/* .section-block.feature-1 {
   padding-bottom: 0;
 }
 .feature-1 {
   text-align: center;
-}
-.section-block.feature-2 {
+} */
+/* .section-block.feature-2 {
   padding-bottom: 0;
-}
-.feature-2 {
+} */
+/* .feature-2 {
   position: relative;
-}
+} */
 .feature-2 .feature-image {
   width: 170%;
 }

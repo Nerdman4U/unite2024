@@ -34,12 +34,7 @@ module ApplicationHelper
   end
 
   def link_to_vote
-    vote_id = session[:current_vote_id]
-    unless vote_id
-     return link_to_token
-    end
-    vote = Vote.find_by_id(vote_id)
-    unless vote
+    unless logged_in? && vote = current_vote
      return link_to_token
     end
 
@@ -110,15 +105,14 @@ module ApplicationHelper
     result = <<~SECTION
   <li class="tms-slide" data-image data-force-fit>
     <div class="tms-content">
-      <div class="container tms-content-inner center left-on-mobile v-align-middle">
+      <div class="tms-content-inner center left-on-mobile v-align-middle">
         <div class="row">
           <div class="col-12 text-center">
-            <h1 class="fw-bold fs-10 position-static color-white tms-caption lspacing-medium mb-20 weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+            <h1 class="ufs-2 position-static color-white tms-caption lspacing-medium weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
               #{slide[:topic_1]}
             </h1>
             <div class="clear"></div>
-
-            <h5 class="fw-bold fs-5 position-static tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+            <h5 class="ufs-1 position-static tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
               #{slide[:topic_2]}
             </h5>
             <div class="clear"></div>

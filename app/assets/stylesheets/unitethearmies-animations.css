@@ -3,20 +3,21 @@
 
 .animated-h1 {
   animation-name: animated-h1;
-  animation-duration: 4s;
+  animation-duration: 2s;
   transition-timing-function: ease-out;
 }
 
 @keyframes animated-h1 {
   from {
-    opacity: 0;
-    scale: 0;
+    opacity: 0.6;
+    scale: 0.7;
   }
   to {
     opacity: 1;
     scale: 1;
   }
 }
+
 .animated-h5 {
   animation-name: animated-h5;
   animation-duration: 4s;
@@ -33,31 +34,18 @@
     scale: 1;
   }
 }
-/* End New Animations */
 
-input,
-textarea,
-button,
-a {
-  -webkit-transition-property: background, border-color, color, opacity;
-  transition-property: background, border-color, color, opacity;
-  -webkit-transition-duration: 3000ms;
-  transition-duration: 3000ms;
-}
-.unitethearmies-form {
-  textarea {
-    border-color: var(--bs-light);
-  }
-  textarea:hover,
-  textarea:focus,
-  textarea:active {
-    border-color: var(--bs-blue);
-  }
-}
+.animated-block {
+  animation-name: animated-block;
+  animation-duration: 4s;
+  transition-timing-function: ease-in;
 
-.unitethearmies-border-blue {
-  border-color: #1d6ea3;
-}
-.unitethearmies-border-hover-blue:hover {
-  border-color: var(--bs-blue);
+  @keyframes animated-block {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
