@@ -60,6 +60,8 @@ gem "email_validator"
 # New gems
 gem "bcrypt"
 gem "jwt"
+gem "flag-icons-rails"
+gem "dartsass-rails", "~> 0.5.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -96,5 +98,3 @@ group :test do
   gem "cuprite"
 end
 
-# SCSS support - maybe not needed
-# gem "dartsass-rails", "~> 0.5.1"
