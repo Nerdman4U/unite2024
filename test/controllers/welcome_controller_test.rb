@@ -25,8 +25,8 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     vote = votes("vote_1")
     get vote_path(token: vote.encoded_payload)
     assert_response :success
-    assert_select ".navigation .logout"
-    assert_select ".navigation .logout" do |a|
+    assert_select "header .logout"
+    assert_select "header .logout" do |a|
       assert_equal a.text, _("Logout")
     end
   end
