@@ -29,22 +29,22 @@ msgstr "%{count} supporters"
 msgid "About Us"
 msgstr ""
 
-msgid "Add"
-msgstr ""
-
 msgid "Add a comment"
-msgstr ""
-
-msgid "Administration"
 msgstr ""
 
 msgid "Air pollution is a global Challenge!"
 msgstr ""
 
+msgid "Anonymous?"
+msgstr ""
+
+msgid "Appeal"
+msgstr ""
+
 msgid "Arabic"
 msgstr ""
 
-msgid "Are you a programmer who knows Rails? The campaign page source code is free and we hope that someone with such skills could help out with programming. If even a couple volunteers are found, the work to come is minimal. Consider dropping us a line! Check our GitHub repository:"
+msgid "At duckboard"
 msgstr ""
 
 msgid "Background"
@@ -56,16 +56,13 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
+msgid "Choose a theme"
+msgstr ""
+
 msgid "Choose the language"
 msgstr ""
 
 msgid "Choose the language of the invitation letter"
-msgstr ""
-
-msgid "Choose the topic"
-msgstr ""
-
-msgid "Climate"
 msgstr ""
 
 msgid "Comment"
@@ -83,22 +80,46 @@ msgstr ""
 msgid "Confirm Your vote for Unite the Armies - Save the Planet"
 msgstr ""
 
+msgid "Confirm email sent"
+msgstr ""
+
 msgid "Contact our Campaign Assistant"
 msgstr ""
 
 msgid "Country"
 msgstr ""
 
+msgid "Country (*)"
+msgstr ""
+
 msgid "Created at"
 msgstr ""
 
-msgid "Do not share this direct link with anybody. Instead, you can use a form below to share a public version of this vote with your friends."
-msgstr "Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!"
+msgid "Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!"
+msgstr ""
+
+msgid "Download"
+msgstr ""
 
 msgid "Email"
 msgstr ""
 
-msgid "Email Confirmation"
+msgid "Email (*)"
+msgstr ""
+
+msgid "Email Confirmation (*)"
+msgstr ""
+
+msgid "Email is already registered."
+msgstr ""
+
+msgid "Email is not confirmed"
+msgstr ""
+
+msgid "Email is not valid"
+msgstr ""
+
+msgid "Email was not found"
 msgstr ""
 
 msgid "Emails do not match"
@@ -110,10 +131,19 @@ msgstr ""
 msgid "Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign."
 msgstr ""
 
+msgid "Factory"
+msgstr ""
+
 msgid "Finnish"
 msgstr ""
 
 msgid "First Aid"
+msgstr ""
+
+msgid "First Aid 1"
+msgstr ""
+
+msgid "First Aid 2"
 msgstr ""
 
 msgid "French"
@@ -122,13 +152,23 @@ msgstr ""
 msgid "German"
 msgstr ""
 
+#, fuzzy
+msgid "Get to your private vote"
+msgstr "This is your private support page"
+
 msgid "Give the armies a new, positive task: protect the environment"
 msgstr "Give the armies of the world a new, positive task: to protect the environment"
+
+msgid "Go to your mailbox and click confirmation link on email we just have sent!"
+msgstr ""
 
 msgid "Greetings %{name}!"
 msgstr ""
 
 msgid "Helsinki, 4.11.2014"
+msgstr ""
+
+msgid "Home"
 msgstr ""
 
 msgid "IP"
@@ -149,22 +189,28 @@ msgstr ""
 msgid "Invitation has been sent, thank you!"
 msgstr ""
 
-msgid "Invitation to Save the World - Unite the Armies"
-msgstr ""
-
-msgid "Invite your friends. Fill out a form below and information will be sent to given email"
-msgstr "Invite your friends. Fill out a form below and information will be sent to given email."
-
 msgid "It is accepted that the military are called to assist the areas affected by sudden disasters. The same power should be used to defend us against gradual disasters."
 msgstr "It is currently commonly accepted that the military are called to assist the areas affected by sudden disasters. That assistance should also be used to defend us against gradual disasters."
 
 msgid "It’s common practice in many countries that armies are called in to assist those affected by sudden environmental disasters. It would be a logical extension of this practice to employ such a resource in counteracting the somewhat more gradual but much larger-scale catastrophes – this with the help, it is to be hoped, of local NGOs – and that is the aim of our campaign."
 msgstr ""
 
+msgid "Japanese bridge park garden"
+msgstr ""
+
+msgid "Join the discussion on Discord."
+msgstr ""
+
 msgid "Language"
 msgstr ""
 
+msgid "List of votes"
+msgstr ""
+
 msgid "Listing comments"
+msgstr ""
+
+msgid "Logout"
 msgstr ""
 
 msgid "Make an initiative for the action of the United Armies."
@@ -182,28 +228,52 @@ msgstr ""
 msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
 msgstr "Millions of Tons of Plastic Waste on the Shores and in the Oceans!"
 
+msgid "More material"
+msgstr ""
+
 msgid "More work must be done"
 msgstr "Great! Spread the word."
 
 msgid "My supporter page"
 msgstr ""
 
+msgid "My vote"
+msgstr ""
+
 msgid "Name"
+msgstr ""
+
+msgid "Name (*)"
 msgstr ""
 
 msgid "Name of your friend"
 msgstr ""
 
+msgid "Navigate site"
+msgstr ""
+
+msgid "New comment"
+msgstr ""
+
 msgid "New global role for the Military"
 msgstr "A new global role for the Military"
 
+msgid "New vote"
+msgstr ""
+
 msgid "On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs."
+msgstr ""
+
+msgid "Once your friend has cast their vote, you'll receive an email with the results and be able to view their votes on this page."
 msgstr ""
 
 msgid "Our campaign promotes a petition sent to the United Nations to deploy the world’s armies into environmental work to protect the diversity of the global ecosystem and win the battle against climate change."
 msgstr ""
 
-msgid "Plastic Waste"
+msgid "Please check your email"
+msgstr ""
+
+msgid "Pollution"
 msgstr ""
 
 msgid "Positive initiations will be published."
@@ -212,10 +282,10 @@ msgstr ""
 msgid "Present the task with max. 1000 characters."
 msgstr ""
 
-msgid "Protected Areas"
+msgid "Radical actions are urgently needed to save our planet."
 msgstr ""
 
-msgid "Radical actions are urgently needed to save our planet."
+msgid "Reach Us"
 msgstr ""
 
 msgid "Read more"
@@ -225,13 +295,13 @@ msgstr ""
 msgid "Recent Votes"
 msgstr "%{count} supporters"
 
+msgid "Repeat your email"
+msgstr ""
+
 msgid "Rules for Comments"
 msgstr ""
 
 msgid "Russian"
-msgstr ""
-
-msgid "Save the Planet - Unite the Armies!"
 msgstr ""
 
 msgid "Save the World! Act Now!"
@@ -240,7 +310,7 @@ msgstr ""
 msgid "Save the planet"
 msgstr ""
 
-msgid "See link below for a printable pamphlet and other campaign material. You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper."
+msgid "See current comments"
 msgstr ""
 
 msgid "See who have already voted!"
@@ -249,13 +319,19 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-msgid "Share email with your friends"
+msgid "Send!"
 msgstr ""
 
-msgid "Share with social media"
+msgid "Share the opportunity to vote with your friends!"
 msgstr ""
 
 msgid "Signatures! Let’s work further!"
+msgstr ""
+
+msgid "Slideshow image"
+msgstr ""
+
+msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
 msgstr ""
 
 msgid "Spanish"
@@ -276,9 +352,6 @@ msgstr ""
 msgid "Support now"
 msgstr ""
 
-msgid "Support the Initiative"
-msgstr ""
-
 msgid "Supporters"
 msgstr ""
 
@@ -288,22 +361,13 @@ msgstr ""
 msgid "Thank you for signing the Unite the Armies petition"
 msgstr ""
 
-msgid "Thank you for spreading the word! Click"
-msgstr ""
-
 msgid "Thank you for your support %{name}"
-msgstr ""
-
-msgid "Thank you for your vote!"
 msgstr ""
 
 msgid "Thank you in any case for signing the petition,"
 msgstr ""
 
 msgid "The Suggested task must benefit the whole world."
-msgstr ""
-
-msgid "The Unite the Armies campaign team"
 msgstr ""
 
 msgid "The United Armies must collect the plastic waste from the oceans and shores."
@@ -330,25 +394,29 @@ msgstr "There is a hidden potential at our disposal: the national armies."
 msgid "There was an error"
 msgstr ""
 
-msgid "There was an error while adding your vote"
-msgstr ""
-
 msgid "There was an error with human verifying"
 msgstr ""
 
-msgid "This is your private vote"
+#, fuzzy
+msgid "This is your private vote (%s)"
 msgstr "This is your private support page"
 
 msgid "To Our Common World"
 msgstr "For Our Common World"
 
+msgid "To comment page"
+msgstr ""
+
+msgid "To comments"
+msgstr ""
+
+msgid "To material page (in finnish)"
+msgstr ""
+
 msgid "To the Secretary-General and Secretariat of the United Nations"
 msgstr ""
 
-msgid "To the material page"
-msgstr ""
-
-msgid "To vote you still need to verify your vote by clicking link below. If you did not vote, ignore this email."
+msgid "Together, we can easily achieve %{target} signatures globally!"
 msgstr ""
 
 msgid "Topic"
@@ -357,16 +425,28 @@ msgstr ""
 msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
 msgstr ""
 
-msgid "Water"
+msgid "Type your email used while voting. Link to your private vote will be sent to your mailbox."
+msgstr ""
+
+msgid "Type your friend's email"
+msgstr ""
+
+msgid "Type your friend's email again"
+msgstr ""
+
+msgid "Type your friend's name"
+msgstr ""
+
+msgid "Unite The Armies - new comment"
+msgstr ""
+
+msgid "View anonymous comments given by previous voters."
 msgstr ""
 
 msgid "Water is the Mother of Life – we all need it!"
 msgstr ""
 
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
-msgstr ""
-
-msgid "We have to give the armies a new, positive task"
 msgstr ""
 
 msgid "We have to give the armies a new, positive task."
@@ -381,22 +461,25 @@ msgstr "We must defend the diversity of life on our planet!"
 msgid "We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor."
 msgstr ""
 
-msgid "We received a vote from email address: %{email}."
-msgstr ""
-
-msgid "We still miss %{count} of the %{target}."
-msgstr "Together, we can easily achieve %{target} signatures globally – let’s spread the word!"
-
 msgid "We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces into the new significant environmental tasks as soon as possible."
 msgstr "We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces towards significant environmental tasks as soon as possible."
 
 msgid "We the undersigned addressees turn to you because of our concern at the state of the global environment. In many parts of the world the deterioration of the environment can be linked directly to social problems among the local population."
 msgstr ""
 
+msgid "Wildlife Park Wolf"
+msgstr ""
+
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr ""
 
+msgid "You can also add Your own %s!"
+msgstr ""
+
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
+msgstr ""
+
+msgid "You can invite your friends, colleagues and family to sign the petition by using a form below. You can also share this vote in social media."
 msgstr ""
 
 msgid "You can now add a comment."
@@ -408,7 +491,25 @@ msgstr ""
 msgid "You have been invited to Save the World - Unite the Armies by %{name}."
 msgstr ""
 
+msgid "You have been logged out"
+msgstr ""
+
 msgid "You have helped campaign by having %{count} people signed after you."
+msgstr ""
+
+msgid "You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper."
+msgstr ""
+
+msgid "You need to be logged in"
+msgstr ""
+
+msgid "Your comment"
+msgstr ""
+
+msgid "Your comment has been sent"
+msgstr ""
+
+msgid "Your email"
 msgstr ""
 
 msgid "Your email has been confirmed"
@@ -417,19 +518,38 @@ msgstr ""
 msgid "Your friends email address"
 msgstr "Your friend’s email address"
 
+#, fuzzy
+msgid "Your friends email address again"
+msgstr "Your friend’s email address"
+
+msgid "Your name"
+msgstr ""
+
+msgid "Your private link has been sent to your email"
+msgstr ""
+
 msgid "Your support has been registered %{name}!"
 msgstr ""
 
 msgid "Your supporter number is %{count}."
 msgstr "You are supporter number %{count}."
 
+msgid "Your vote"
+msgstr ""
+
+msgid "Your vote for Unite the Armies - Save the Planet"
+msgstr ""
+
+msgid "Your vote is added but email is not yet confirmed. Please check your email."
+msgstr ""
+
+msgid "comment"
+msgstr ""
+
 msgid "day"
 msgstr ""
 
 msgid "days"
-msgstr ""
-
-msgid "here"
 msgstr ""
 
 msgid "hour"
@@ -438,11 +558,35 @@ msgstr ""
 msgid "hours"
 msgstr ""
 
-msgid "https://www.dropbox.com/sh/u5gnv99jy2tj6bu/AAAwbxfS04f6sGzSGky0_sZMa?dl=0"
+msgid "in Arabic"
 msgstr ""
 
-msgid "if you wish see how many people have signed by following your personal invitation."
-msgstr " if you wish see how many people have signed by following your personal invitation."
+msgid "in Chinese"
+msgstr ""
+
+msgid "in English"
+msgstr ""
+
+msgid "in Finnish"
+msgstr ""
+
+msgid "in French"
+msgstr ""
+
+msgid "in German"
+msgstr ""
+
+msgid "in Russian"
+msgstr ""
+
+msgid "in Spanish"
+msgstr ""
+
+msgid "in Swedish"
+msgstr ""
+
+msgid "let’s spread the word!"
+msgstr ""
 
 msgid "minute"
 msgstr ""

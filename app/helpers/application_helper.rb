@@ -174,4 +174,70 @@ module ApplicationHelper
     "&copy; 2015-#{Time.now.year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved.".html_safe
   end
 
+  def language_item identifier
+    ui_locale = FastGettext.locale
+
+    case identifier
+    when "arabic"
+      loc = :ar
+      FastGettext.locale = loc
+      name = _("in Arabic")
+    when "chinese"
+      loc = :zh
+      FastGettext.locale = loc
+      name = _("in Chinese")
+    when "french"
+      loc = :fr
+      FastGettext.locale = loc
+      name = _("in French")
+    when "russian"
+      loc = :ru
+      FastGettext.locale = loc
+      name = _("in Russian")
+    when "spanish"
+      loc = :es
+      FastGettext.locale = loc
+      name = _("in Spanish")
+    when "finnish"
+      loc = :fi
+      FastGettext.locale = loc
+      name = _("in Finnish")
+    when "german"
+      loc = :de
+      FastGettext.locale = loc
+      name = _("in German")
+    when "swedish"
+      loc = :sv
+      FastGettext.locale = loc
+      name = _("in Swedish")
+    else
+      loc = :en
+      FastGettext.locale = loc
+      name = _("in English")
+    end
+
+    FastGettext.locale = ui_locale
+
+    tag.li class: "select-language" do
+      tag.a target: "_top", href: url_for(only_path: false, locale: loc, protocol: UNITE_APPLICATION_PROTOCOL) do
+        name
+      end
+    end
+# <li>
+#   <a target="_top" href="#{url_for only_path: false, locale: :ar, protocol: UNITE_APPLICATION_PROTOCOL}" onclick="window.location = $(this).attr('href')">
+#   </a>
+# </li>
+  end
+
+  def language_selection
+    result = tag.ul class: "language-selection" do
+      Language::LOCALES.keys.map do |identifier|
+        language_item identifier
+      end.join.html_safe
+    end
+
+
+    result
+  end
+
 end

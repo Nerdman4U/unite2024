@@ -16,16 +16,18 @@
 =end%>
 
   <div class="container header-inner">
-    <div class="row nav-bar">
-      <div class="col-10 offset-1 nav-bar-inner">
+    <div class="row nav-bar  upx-8">
+      <div class="col-3 nav-bar-inner ">
         <div class="logo" id="logo">
           <div class="logo-inner">
             <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
             <%= link_to image_tag(UNITE_LOGO, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
           </div>
         </div>
-        <nav class="navigation nav-block primary-navigation nav-right no-margin-right">
-          <ul>
+      </div>
+      <div class="col-9">
+        <nav class="nav-block primary-navigation text-end">
+          <ul class="p-0 m-0">
             <li>
               <%= link_to _("Supporters"), votes_path(locale: locale) %>
             </li>
@@ -44,9 +46,11 @@
               <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>
             </li>
             <% end %>
-
-            <%= render partial: "flags" %>
           </ul>
+        </nav>
+
+        <nav class="nav-block primary-navigation text-end">
+          <%= language_selection %>
         </nav>
       </div>
     </div>
