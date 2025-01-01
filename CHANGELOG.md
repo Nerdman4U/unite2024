@@ -1,3 +1,14 @@
+## 1.57.0 (2025-01-01)
+
+### Feat
+
+- Rails edge \o/
+- Fixed padding for welcome index bottom button area
+
+### Fix
+
+- **Language**: Simplified code
+
 ## 1.56.1 (2025-01-01)
 
 ### Fix
