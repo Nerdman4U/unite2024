@@ -36,7 +36,7 @@ class Comment < ApplicationRecord
     if language.blank?
       return errors.add(:language, message: "You need to select language before posting a comment.")
     end
-    unless Language.un_languages.keys.any? { |t| t == language.to_sym }
+    unless Language.valid_un_language? language
       errors.add(:language, "is not valid")
     end
   end
@@ -47,7 +47,8 @@ class Comment < ApplicationRecord
 
   def language_name
     return nil if language.blank?
-    Language.un_languages[language.to_sym]
+    return nil unless Language::LOCALES[language]
+    language.capitalize
   end
 
 

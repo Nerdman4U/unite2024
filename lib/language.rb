@@ -13,22 +13,17 @@ class Language
 
   # Valid UN language literals.
   def self.un_languages
-    {
-      arabic: _("Arabic"),
-      chinese: _("Chinese"),
-      english: _("English"),
-      french: _("French"),
-      russian: _("Russian"),
-      spanish: _("Spanish")
-    }
+    %w(arabic chinese english french russian spanish)
+  end
+
+  def self.valid_un_language? identifier
+    un_languages.include?(identifier)
   end
 
   ## Return a list of 2 item lists.
   #
-  # First item is language identifier.
-  # Second item is a translated humanized literal.
   def self.sorted_un_languages
-    un_languages.keys.sort { |a, b| a <=> b }.map { |k| [un_languages[k], k] }
+    un_languages.sort { |a, b| a <=> b }.map { |k| [k.capitalize, k.to_sym] }
   end
 
   # Return a locale symbol for language name

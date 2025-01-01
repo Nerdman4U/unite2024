@@ -33,9 +33,9 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test "should be valid with correct language" do
-    Language.un_languages.keys.each do |name|
-      @comment.language = name
-      assert @comment.valid?, @comment.errors.full_messages
+    Language.un_languages.each do |identifier|
+      @comment.language = identifier
+      assert @comment.valid?
     end
   end
 

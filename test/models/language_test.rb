@@ -7,23 +7,6 @@ class LanguageTest < ActiveSupport::TestCase
     I18n.locale = "en"
   end
 
-  test 'should return translated UN languages' do
-    I18n.locale = "es"
-    values = Language.un_languages
-    correct_values = [
-      ["Árabe", :arabic],
-      ["Chino", :chinese],
-      ["Español", :spanish],
-      ["Francés", :french],
-      ["Inglés", :english],
-      ["Ruso", :russian]
-    ]
-
-    correct_values.each do |correct_value|
-      assert_equal correct_value[0], values[correct_value[1]]
-    end
-  end
-
   test 'should return correct locale for language name' do
     assert_equal Language.locale("arabic"), :ar
     assert_equal Language.locale("chinese"), :zh
