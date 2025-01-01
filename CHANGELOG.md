@@ -1,3 +1,13 @@
+## 1.58.0 (2025-01-01)
+
+### Feat
+
+- Using language names instead flags in navigation
+
+### Fix
+
+- testfile update
+
 ## 1.57.0 (2025-01-01)
 
 ### Feat
