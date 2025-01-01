@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   include TokenHelper
 
+  around_action :user_tagged_logging
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
@@ -17,6 +19,19 @@ class ApplicationController < ActionController::Base
   helper_method :production_server?
 
   private
+
+  def user_tagged_logging
+    if logged_in?
+      logger.tagged(current_vote.email) do
+        yield
+      end
+    else
+      logger.tagged('Anonymous') do
+        yield
+      end
+    end
+
+  end
 
   # TODO: return default country instead of nil.
   def country_code

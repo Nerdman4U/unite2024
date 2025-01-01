@@ -2,13 +2,15 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [ :show, :edit ]
 
   def new
-    unless session[:current_vote_id]
+    unless logged_in?
+      Rails.logger.warning("Comment#new: Not logged in")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
     vote = Vote.where(id: session[:current_vote_id]).first
     unless vote
+      Rails.logger.error("Comment#new: Vote not found")
       redirect_to new_vote_path(locale: locale)
       return
     end
