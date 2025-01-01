@@ -20,8 +20,8 @@ class RecentVotes {
         let result = "";
         data.forEach(function (vote) {
           let tmpl_row = `<div class="row">
-            <div class="col-2"><image class="flag_small ${vote.country}"/></div>
-            <div class="col-10">${vote.name}</div>
+            <div class="col-2 offset-8"><image class="flag_small ${vote.country}"/></div>
+            <div class="col-2">${vote.name}</div>
           </div>`;
           result += tmpl_row;
         });

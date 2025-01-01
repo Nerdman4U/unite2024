@@ -387,3 +387,7 @@ a {
 .feature-content-inner *:first-child {
   margin-top: 0;
 }
+
+footer div {
+  /* border: 3px solid red; */
+}

@@ -3338,7 +3338,7 @@ hr[class*="border-"].dotted {
   border-bottom-style: none !important;
   border-left-style: none !important;
 }
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -3496,7 +3496,7 @@ small {
 }
 .text-shadow {
   text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
-}
+} */
 [class*="lspacing-"] p,
 [class*="lspacing-"] span,
 [class*="lspacing-"] a {

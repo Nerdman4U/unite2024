@@ -1,18 +1,32 @@
 <!-- Footer -->
 <footer class="footer upx-8 upt-5">
+  <div class="row border-bottom ">
+    <div class="col-4">
+      <h5 class="text-start"><%= _("About Us") %></h5>
+    </div>
+    <div class="col-2">
+      <h5 class="text-start"><%= _("Reach Us") %></h5>
+    </div>
+    <div class="col-2">
+      <h5 class="text-start"><%= _("Navigate site") %></h5>
+    </div>
+    <div class="col-4 order-last">
+      <h5 class="text-end"><%= _("Recent Votes") %></h5>
+    </div>
+  </div>
+
   <div class="row">
-    <div class="col-4 text-center">
-      <h5 class="text-start upb-2"><%= _("About Us") %></h5>
+    <div class="col-4 pt-4">
       <div class="row">
-        <div class="col-5">
-          <div class="text-center">
+        <div class="col-5 p-0">
+          <div>
             <%= link_to TEP_URL, target: "_blank" do %>
             <%= image_tag "teplogo-scaled.jpg", alt: _(TEP_NAME) %>
             <p class="ufs-1"><%= _(TEP_NAME) %></p>
             <% end %>
           </div>
         </div>
-        <div class="col-7">
+        <div class="col-7 p-0">
           <div class="upx-1">
             <ul class="ufs-1">
               <li><span>Anyara Granskog</span></li>
@@ -45,8 +59,7 @@
       </div>
     </div>
 
-    <div class="col-2 text-center">
-      <h5 class="upb-2"><%= _("Reach Us") %></h5>
+    <div class="col-2 pt-4">
       <ul class="p-0">
         <li>
           <%= link_to UNITE_FACEBOOK_URL, target: "_blank" do %>
@@ -71,8 +84,7 @@
       </ul>
     </div>
 
-    <div class="col-4 text-center">
-      <h5 class="upb-2"><%= _("Navigate site") %></h5>
+    <div class="col-2 pt-4">
       <ul class="p-0">
         <% if show_link_to_vote? %>
         <li>
@@ -87,8 +99,7 @@
       </ul>
     </div>
 
-    <div class="col-2 text-center">
-      <h5 class="upb-2"><%= _("Recent Votes") %></h5>
+    <div class="col-4 order-last text-end pt-4">
       <div id="recent_votes_container" style="display:none">
         <div id="recent_votes" class="text-end">
           <div class="row">
