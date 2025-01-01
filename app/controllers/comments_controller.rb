@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def new
     unless logged_in?
-      Rails.logger.warning("Comment#new: Not logged in")
+      Rails.logger.warn("Comment#new: Not logged in")
       redirect_to new_vote_path(locale: locale)
       return
     end

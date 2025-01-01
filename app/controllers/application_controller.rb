@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   private
 
   def user_tagged_logging
-    if logged_in?
+    if logged_in? && current_vote
       logger.tagged(current_vote.email) do
         yield
       end
