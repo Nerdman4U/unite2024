@@ -1,3 +1,16 @@
+## 1.56.0 (2025-01-01)
+
+### Feat
+
+- **footer**: Footer layout and recent votes table update
+- Layout fixes
+- Studying Rails configuration options
+- Added user email to logs if logged in
+
+### Fix
+
+- **_head.html.erb**: Recent votes flag to integer
+
 ## 1.55.1 (2024-12-31)
 
 ### Fix
