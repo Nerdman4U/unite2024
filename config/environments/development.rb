@@ -76,4 +76,10 @@ Rails.application.configure do
     config.x.notify_email_to = UNITE_CAMPAIGN_ASSISTANT_EMAIL
     config.x.votes_in_notify_email = 100
   end
+
+  # config.log_tags = [ Proc.new { |request|
+  #   request.request_id
+  #   # request.env["SERVER_NAME"]
+  # }]
+
 end

@@ -96,4 +96,10 @@ Rails.application.configure do
     config.x.notify_email_to = UNITE_CAMPAIGN_ASSISTANT_EMAIL
     config.x.votes_in_notify_email = 100
   end
+
+  ## Bugger logs before writing
+  # config.autoflush_log = true
+
+  # :debug, :info, :warn, :error, :fatal, and :unknown.
+  config.log_level = :error
 end

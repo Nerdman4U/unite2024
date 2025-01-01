@@ -47,7 +47,6 @@ module UniteTheArmiesOrg
 
     # https://guides.rubyonrails.org/configuring.html#custom-configuration
     config.x.admin_hash = ENV["UNITE_ADMIN_HASH"]
-    # config.x.google_app_password = ENV["UNITE_GOOGLE_APP_PASSWORD"]
 
     # Mailer settings are empty if after_initialize block is used at production mode.
     #
@@ -65,6 +64,11 @@ module UniteTheArmiesOrg
       open_timeout:         5,
       read_timeout:         5
     }
-    # end
+
+    config.filter_parameters += [:email_repeat]
+    # config.force_ssl = true
+
   end
+
+
 end
