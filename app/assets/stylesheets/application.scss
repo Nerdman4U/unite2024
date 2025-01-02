@@ -1,8 +1,21 @@
 // Sassy
-@import "flag-icons-rails/flag-icon.scss";
 
-header {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-}
+/*
+ * TODO:
+ * Cannot seem to get this to work, application.css is empty after request.
+ * - alternative: i will process scss manually to manual-flag-icons.css and use that.
+ *
+ **/
+
+// @import "flag-icons-rails/flag-icon.scss";
+// $font-stack: Helvetica, sans-serif;
+// $primary-color: green !important;
+// body {
+//   font: 100% $font-stack;
+//   color: $primary-color;
+// }
+// header {
+//   background-color: #f8f8f8;
+//   border-bottom: 1px solid #ccc;
+//   padding: 10px;
+// }

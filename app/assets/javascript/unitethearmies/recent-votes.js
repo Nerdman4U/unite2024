@@ -18,15 +18,16 @@ class RecentVotes {
       .then((response) => response.json())
       .then((data) => {
         let result = "";
-        data.forEach(function (vote) {
-          let tmpl_row = `<div class="row">
-            <div class="col-2 offset-8">
-              <span class="flag-icon flag-icon-by"></span>
+        for (let vote of data) {
+          let tmpl_row = `<div class="row recent-vote">
+            <div class="col-4">
+              <span class="flag-icon flag-icon-${vote.country}"></span>
             </div>
-            <div class="col-2">${vote.name}</div>
+            <div class="col-4">1 hour ago</div>
+            <div class="col-4">${vote.name}</div>
           </div>`;
           result += tmpl_row;
-        });
+        }
         $("#recent_votes").replaceWith(result);
         $("#recent_votes_container").show();
       });
