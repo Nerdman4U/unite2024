@@ -136,12 +136,12 @@ h6 {
 a,
 p a,
 .box a:not(.button) {
-  color: var(--bs-dark);
+  /* color: var(--bs-dark); */
 }
 .sidebar .widget a,
 .shop .product-summary a,
 .shop .cart-overview a {
-  color: var(--bs-grey);
+  /* color: var(--bs-grey); */
 }
 a:hover,
 .box a:not(.button):hover,

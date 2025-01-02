@@ -108,7 +108,7 @@ module ApplicationHelper
       <div class="tms-content-inner center left-on-mobile v-align-middle">
         <div class="row">
           <div class="col-12 text-center">
-            <h1 class="ufs-2 position-static color-white tms-caption lspacing-medium weight-bold" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+            <h1 class="ufs-2 position-static color-white tms-caption lspacing-medium" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
               #{slide[:topic_1]}
             </h1>
             <div class="clear"></div>
