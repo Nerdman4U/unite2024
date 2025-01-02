@@ -10,7 +10,10 @@ Copyright: Save the Planet - Unite the Armies
 1. Main Elements
 2. Header
 3. Footer
-
+4. Media Queries
+5. Print
+6. Slider
+7. Recent Votes
 
 Based on Sartre Skin Barber Shop by ThemeMountain.
 
@@ -20,7 +23,12 @@ Based on Sartre Skin Barber Shop by ThemeMountain.
 */
 
 body {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  /* font-family: "Roboto", "Helvetica Neue", sans-serif; */
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+  overflow-x: hidden !important;
+  overflow-y: scroll;
 }
 
 footer a,
@@ -51,6 +59,18 @@ ol.upper-roman {
 }
 ol.lower-alpha {
   list-style: lower-alpha inside;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
 }
 
 /*
@@ -260,4 +280,18 @@ ol.lower-alpha {
 }
 .nav-bar .logo img {
   margin-top: -4px;
+}
+
+/*
+-----------------------------------------------------------------
+* 7. Recent Votes
+-----------------------------------------------------------------
+*/
+#recent_votes_container .flag-icon,
+.country_flag .flag-icon {
+  height: 3vw;
+  width: 4vw;
+}
+#recent_votes_container .recent-vote:hover {
+  background-color: var(--bs-focus-ring-color);
 }

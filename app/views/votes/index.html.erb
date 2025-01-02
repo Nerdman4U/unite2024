@@ -152,7 +152,10 @@
 <section class="section-block bg-white upy-8 upx-8">
   <% @sorted_votes.each do |vote_count| %>
   <div class="row m-2 p-2 votes">
-    <div class="col-1 country_flag"><%= image_tag "blank.gif", :class => ["flag_small", vote_count.country] %></div>
+    <div class="col-1 country_flag">
+      <span class="flag-icon flag-icon-<%= vote_count.country %>"></span>
+      <%# image_tag "blank.gif", :class => ["flag_small", vote_count.country] %>
+    </div>
     <div class="col-2 country"><%= Country.code_to_name(vote_count.country) %></div>
     <div class="col-8 vote_percentage">
       <div style="width:<%= vote_count.diagram_width %>%; height:30px" class="bg-success"> </div>

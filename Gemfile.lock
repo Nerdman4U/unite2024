@@ -148,6 +148,9 @@ GEM
     cuprite (0.15.1)
       capybara (~> 3.0)
       ferrum (~> 0.15.0)
+    dartsass-rails (0.5.1)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.4.1)
     debase (0.2.7)
       debase-ruby_core_source (>= 3.3.6)
@@ -171,6 +174,18 @@ GEM
       concurrent-ruby (~> 1.1)
       webrick (~> 1.7)
       websocket-driver (~> 0.7)
+    ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux-musl)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
+    ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86-linux-gnu)
+    ffi (1.17.1-x86-linux-musl)
+    ffi (1.17.1-x86_64-darwin)
+    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
+    flag-icons-rails (3.4.6.1)
+      sass-rails
     forwardable (1.3.3)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
@@ -185,6 +200,24 @@ GEM
       fast_gettext (>= 0.9.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (4.29.2)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-x86-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
     http_accept_language (2.1.1)
     httparty (0.22.0)
       csv
@@ -352,6 +385,36 @@ GEM
       ruby-lsp (>= 0.22.0, < 0.23.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
+    sass-embedded (1.83.0-aarch64-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-aarch64-linux-musl)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm-linux-gnueabihf)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm-linux-musleabihf)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm64-darwin)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86-linux-musl)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-darwin)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-linux-musl)
+      google-protobuf (~> 4.28)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     sdoc (2.6.1)
       rdoc (>= 5.0)
     securerandom (0.4.1)
@@ -379,6 +442,13 @@ GEM
       railties (>= 7.1)
       thor (~> 1.3.1)
     sorbet-runtime (0.5.11670)
+    sprockets (4.2.1)
+      concurrent-ruby (~> 1.0)
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.5.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      sprockets (>= 3.0.0)
     sqlite3 (2.2.0-aarch64-linux-gnu)
     sqlite3 (2.2.0-aarch64-linux-musl)
     sqlite3 (2.2.0-arm-linux-gnu)
@@ -405,6 +475,7 @@ GEM
     thruster (0.1.8-arm64-darwin)
     thruster (0.1.8-x86_64-darwin)
     thruster (0.1.8-x86_64-linux)
+    tilt (2.5.0)
     time_difference (0.5.0)
       activesupport
     timeout (0.4.3)
@@ -455,10 +526,12 @@ DEPENDENCIES
   capybara
   coffee-rails
   cuprite
+  dartsass-rails (~> 0.5.1)
   debase
   debug
   email_validator
   fast_gettext
+  flag-icons-rails
   gettext
   gettext_i18n_rails
   http_accept_language

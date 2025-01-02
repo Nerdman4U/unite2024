@@ -42,14 +42,14 @@ Copyright: ThemeMountain
 [1. Typography]
 */
 
-body {
+/* body {
   font-family: "Lato", "Helvetica Neue", sans-serif;
   letter-spacing: 0;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.8;
   color: #666;
-}
+} */
 h1,
 h2,
 h3,
@@ -68,7 +68,7 @@ textarea,
 .counter,
 .side-navigation > ul > li > a,
 .overlay-navigation > ul > li > a {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  /* font-family: "Roboto", "Helvetica Neue", sans-serif; */
 }
 
 /* Titles */
@@ -78,12 +78,12 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1;
+  /* line-height: 1;
   font-weight: 500;
   text-transform: uppercase;
-  color: #000;
+  color: #000; */
 }
-h1 a:hover,
+/* h1 a:hover,
 h2 a:hover,
 h3 a:hover,
 h4 a:hover,
@@ -108,10 +108,10 @@ h5 {
 }
 h6 {
   font-size: 1.2rem;
-}
+} */
 
 /* Widget Titles */
-.footer .widget-title,
+/* .footer .widget-title,
 .footer .widget-title a {
   font-size: 1.6rem;
   letter-spacing: 0;
@@ -130,7 +130,7 @@ h6 {
 .overlay-navigation-wrapper .widget-title a {
   font-size: 1.4rem;
   color: var(--bs-dark);
-}
+} */
 
 /* Link Colors */
 a,
