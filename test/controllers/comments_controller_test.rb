@@ -30,7 +30,7 @@ class CommentsControllerTest < ActionController::TestCase
       } }
     end
 
-    assert flash[:success], _("Your comment has been sent")
+    assert flash[:success], ["Your comment has been sent"]
     assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
   end
 
@@ -43,7 +43,7 @@ class CommentsControllerTest < ActionController::TestCase
         anonymous: true
       } }
     end
-    assert flash[:error], "You need to be logged in"
+    assert flash[:danger], ["You need to be logged in"]
     assert_redirected_to new_vote_path(locale: "en")
   end
 
@@ -60,7 +60,7 @@ class CommentsControllerTest < ActionController::TestCase
       } }
     end
 
-    assert flash[:error], "There was an error"
+    assert_equal flash[:danger], ["There was an error"]
     assert_redirected_to locale_root_path(locale: "en")
   end
 

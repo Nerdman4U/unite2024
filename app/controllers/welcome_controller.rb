@@ -32,7 +32,7 @@ class WelcomeController < ApplicationController
 
     admin_csv = params[:admin_csv]
     if admin_csv.blank?
-      flash[:error] = "Valitse tiedosto ja paina vasta sitten lähetä-nappia"
+      add_flash :error, "Valitse tiedosto ja paina vasta sitten lähetä-nappia"
       render "admin"
       return
     end
@@ -62,7 +62,7 @@ class WelcomeController < ApplicationController
       end
     end
 
-    flash[:success] = "Tiedosto ladattu järjestelmään, kiitos työstäsi ympäristön puolesta!"
+    add_flash :success, "Tiedosto ladattu järjestelmään, kiitos työstäsi ympäristön puolesta!"
     render "admin"
   end
 

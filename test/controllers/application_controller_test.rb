@@ -55,4 +55,38 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
       assert_equal @controller.send(:production_server?), true
     end
   end
+
+  test "should add flash message" do
+    get locale_root_url locale: :en
+
+    result = @controller.send(:add_flash, :invalid_type, "There was a success")
+    assert_nil @controller.flash[:invalid_type]
+    assert_equal result, false
+
+    @controller.send(:add_flash, :success, "There was a success")
+    assert_equal @controller.flash[:success], ["There was a success"]
+
+    @controller.send(:add_flash, :success, "There was a success")
+    assert_equal @controller.flash[:success], ["There was a success", "There was a success"]
+
+    @controller.send(:add_flash, :danger, "There was an error")
+    assert_equal @controller.flash[:danger], ["There was an error"]
+
+    @controller.send(:add_flash, :warning, "There was an error")
+    assert_equal @controller.flash[:warning], ["There was an error"]
+
+    @controller.send(:add_flash, :warning, ["There was an error"])
+    assert_equal @controller.flash[:warning], ["There was an error", "There was an error"]
+
+    @controller.flash[:warning] = nil
+    @controller.send(:add_flash, :warning, [["There was an "],"error"])
+    assert_equal @controller.flash[:warning], ["There was an error"]
+
+    @controller.send(:add_flash, :warning, nil)
+    assert_equal @controller.flash[:warning], ["There was an error"]
+
+    @controller.send(:add_flash, :warning, "")
+    assert_equal @controller.flash[:warning], ["There was an error"]
+
+  end
 end

@@ -1,17 +1,23 @@
-.alert {
+.flash_container {
   position: absolute !important;
-  left: 0;
-  right: 0;
+  left: 1vw;
+  right: 1vw;
   z-index: 1000;
   top: 10em;
-  text-align: center;
-  .btn {
-    position: absolute;
-    right: 1em;
-    z-index: 1001;
-  }
-  .alert-heading {
-    padding: 0.5em;
+
+  ul {
+    text-align: center;
+    padding: 0;
+    li {
+      padding: 1vw;
+      color: var(--bs-alert-color);
+      background-color: var(--bs-alert-bg);
+      border: 1px solid var(--bs-alert-border-color);
+      text-transform: uppercase;
+      a {
+        color: var(--bs-alert-link-color);
+      }
+    }
   }
 }
 

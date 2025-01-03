@@ -13,8 +13,8 @@ class TokensControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to locale_root_path
     follow_redirect!
 
-    assert_dom ".alert" do
-      assert_dom ".alert-heading", text: /^Your private link has been sent to your email/
+    assert_dom ".flash_container" do
+      assert_dom "li", text: /^Your private link has been sent to your email/
     end
   end
 end

@@ -21,14 +21,14 @@ class CommentsController < ApplicationController
 
   def create
     unless session[:current_vote_id]
-      flash[:error] = _("You need to be logged in")
+      add_flash :danger, _("You need to be logged in")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
     vote = Vote.where(id: session[:current_vote_id]).first
     unless vote
-      flash[:error] = _("There was an error")
+      add_flash :danger, _("There was an error")
       Rails.logger.error("Comment#create: Vote not found")
       redirect_to locale_root_path(locale: locale)
       return
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
 
     unless RecaptchaVerifier.verify(params["g-recaptcha-response"])
       Rails.logger.error("Comment#create: Human verification failed")
-      flash[:warning] = _("There was an error with human verifying")
+      add_flash :warning, _("There was an error with human verifying")
       redirect_to new_comment_path(locale: locale)
       return
     end
@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
 
     unless @comment.valid?
       Rails.logger.error("Comment#create: Invalid comment")
-      flash[:warning] = validation_errors(@comment)
+      add_flash :warning, validation_errors(@comment)
       Rails.logger.error(validation_errors(@comment))
       redirect_to new_comment_path(locale: locale)
       return
@@ -60,7 +60,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html {
-        flash[:success] = _("Your comment has been sent")
+        add_flash :success, _("Your comment has been sent")
         redirect_to vote_path(locale: locale, token: vote.encoded_payload), notice: _("Comment was successfully created.")
       }
     end

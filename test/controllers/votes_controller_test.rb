@@ -62,7 +62,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     end
     vote = assigns(:vote)
 
-    assert flash[:info], "Your vote is added but email is not yet confirmed. Please check your email."
+    assert flash[:info], ["Your vote is added but email is not yet confirmed. Please check your email."]
     assert_redirected_to waiting_path(locale: "en", token: vote.public_token)
   end
 
@@ -76,7 +76,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference("Vote.count") do
       post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
-    assert_equal flash[:warning], "Emails do not match"
+    assert_equal flash[:warning], ["Emails do not match"]
     assert_redirected_to new_vote_path(locale: "en")
   end
 
@@ -92,7 +92,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
 
-    assert_equal flash[:warning], "Email is invalid"
+    assert_equal flash[:warning], ["Email is invalid"]
     assert_redirected_to new_vote_path(locale: "en")
   end
 
@@ -154,7 +154,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to vote_path(locale: "en", token: vote.encoded_payload)
     assert_equal I18n.locale, :en
-    assert_equal flash[:success], "Invitation has been sent, thank you!"
+    assert_equal flash[:success], ["Invitation has been sent, thank you!"]
   end
 
   test "should not send email invite with wrong repeat" do
@@ -174,7 +174,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert_equal I18n.locale, :en
     assert_nil flash[:success]
-    assert_equal flash[:warning], "Emails do not match"
+    assert_equal flash[:warning], ["Emails do not match"]
   end
 
   test "should confirm email address" do
@@ -198,8 +198,8 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     get waiting_url token: vote.public_token
 
     assert_response :success
-    assert_dom ".alert" do
-      assert_dom ".alert-heading", text: /^Please wait/
+    assert_dom ".flash_container" do
+      assert_dom "li", text: /^Please wait/
     end
   end
 

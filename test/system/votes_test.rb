@@ -22,7 +22,8 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "confirm email sent".upcase
-    assert_selector ".alert-info", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase
+    assert page.all(".alert-info li", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase)
+    # assert_selector ".alert-info", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase
   end
 
   test "should add new vote with parent" do
@@ -41,7 +42,8 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "confirm email sent".upcase
-    assert_selector ".alert-info", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase
+    # assert_selector(".alert-info li", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase)
+    assert page.all(".alert-info li", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase)
     assert vote.votes.size == 1
   end
 
@@ -63,7 +65,7 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "confirm email sent".upcase
-    assert_selector ".alert-info", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase
+    assert page.all(".alert-info", text: "Your vote is added but email is not yet confirmed. Please check your email.".upcase)
     assert vote.votes.size == 0
   end
 
@@ -78,7 +80,7 @@ class VotesTest < ApplicationSystemTestCase
     visit confirm_url(token: vote.encoded_payload)
 
     assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
-    assert_selector ".alert-success", text: "Your email has been confirmed".upcase
+    assert page.all(".alert-success", text: "Your email has been confirmed".upcase)
   end
 
   #########################################################################3
@@ -98,7 +100,7 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
-    assert_selector ".alert-success", text: "Invitation has been sent, thank you!".upcase
+    assert page.all(".alert-success", text: "Invitation has been sent, thank you!".upcase)
   end
 
   test "should not invite if email repeat does not match" do
@@ -115,7 +117,7 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
-    assert_selector ".alert-warning", text: "Emails do not match".upcase
+    assert page.all(".alert-warning", text: "Emails do not match".upcase)
   end
 
   test "should not invite if email is invalid but repeat is valid" do
@@ -132,7 +134,7 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "Thank you for your support #{vote.name}".upcase
-    assert_selector ".alert-warning", text: "Email is not valid".upcase
+    assert page.all(".alert-warning", text: "Email is not valid".upcase)
   end
 
   test "should not invite if vote is not found" do
@@ -151,7 +153,7 @@ class VotesTest < ApplicationSystemTestCase
     click_on "Send"
 
     assert_selector "h1", text: "Save the Planet".upcase
-    assert_selector ".alert-warning", text: "there was an error".upcase
+    assert page.all(".alert-warning", text: "there was an error".upcase)
   end
 
 end

@@ -1,27 +1,21 @@
 module ApplicationHelper
-  BOOTSTRAP_FLASH_MSG = {
-    primary: "alert-primary",
-    secondary: "alert-secondary",
-    success: "alert-success",
-    danger: "alert-danger",
-    warning: "alert-warning",
-    info: "alert-info",
-    light: "alert-light",
-    dark: "alert-dark"
-  }
-
-  def bootstrap_class_for(flash_type)
-    BOOTSTRAP_FLASH_MSG.fetch(flash_type, flash_type.to_s)
-  end
-
   def flash_messages
-    # flash[:success] = _("Thank you for your vote!")
-    flash.map do |name, msg|
-      flash_classes = [ "alert alert-dismissable fade show", bootstrap_class_for(name.to_sym) ]
-      content_tag(:div, class: flash_classes, role: "alert", onClick: "$(this).hide()") do
-        content_tag(:h2, class: "h2 alert-heading") do msg end
-      end
-    end.join.html_safe
+    # flash[:success] = [_("There was a success")] || flash[:success] << _("There was a success")
+    # flash[:success] << _("There was a success")
+    # flash[:warning] = [_("There was a warning")]
+    # flash[:danger] = [_("There was a danger")]
+    # flash[:info] = [_("There was an info")]
+
+    content_tag :div, class: "flash_container" do
+      final = ApplicationController::FLASH_TYPES.map do |type|
+        next unless flash[type].present?
+        result = tag.ul class: "alert-#{type}", role: "alert" do
+          flash[type].map do |msg|
+            tag.li class: "h2", onClick: "$(this).hide()" do msg end
+          end.join.html_safe
+        end.html_safe
+      end.join.html_safe
+    end.html_safe
   end
 
   ## Link to Token

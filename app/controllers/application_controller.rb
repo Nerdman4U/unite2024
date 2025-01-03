@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  FLASH_TYPES = [:success, :warning, :danger, :info]
+
   include TokenHelper
 
   around_action :user_tagged_logging
@@ -150,5 +152,25 @@ class ApplicationController < ActionController::Base
   def production_server?
     raise InternalServerError unless request.hostname
     !request.hostname.match?("localhost")
+  end
+
+  # Add flash message
+  #
+  # flash[:type] is an array to allow multiple messages of the same type.
+  #
+  # @param [Symbol] type
+  # @param [String] full_message A Message
+  # @return [Boolean]
+  def add_flash type, full_message
+    return false if type.blank?
+    return false if full_message.blank?
+    return false unless FLASH_TYPES.include?(type)
+
+    if full_message.is_a?(Array)
+        full_message.flatten!
+        full_message = full_message.join("")
+    end
+
+    flash[type] = flash[type] ? flash[type] << full_message : [full_message]
   end
 end
