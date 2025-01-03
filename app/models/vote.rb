@@ -29,14 +29,24 @@ class Vote < ApplicationRecord
 
   before_save :set_private_token # votes.secret_token
   before_save :set_public_token # votes.md5_secret_token
-  # before_save :add_secret_token
-  # before_save :add_secret_confirm_hash
 
+  # Ago
+  #
+  # How long ago vote was created as a humanized string.
+  #
+  # @return [string]
   def ago
     showHours = I18n.locale == :en || I18n.locale == :fi
     diff = TimeDifference.between(Time.zone.now, created_at).in_each_component
     diff = OpenStruct.new(diff)
-    if diff.seconds < 60
+    # puts "Diff diff.seconds: #{diff.seconds} diff.minutes: #{diff.minutes} diff.hours: #{diff.hours} diff.days: #{diff.days}"
+    if created_at > Time.now
+      ago = nil
+      ago_string = "Now"
+    elsif diff.seconds < 30
+      ago = nil
+      ago_string = "Now"
+    elsif diff.seconds < 60
       ago = "%.0f" % diff.seconds.floor
       ago_string = diff.seconds < 2 ? _("second") : _("seconds")
     elsif diff.minutes < 60
@@ -45,11 +55,17 @@ class Vote < ApplicationRecord
     elsif diff.hours < 24 && showHours
       ago = "%.0f" % diff.hours.floor
       ago_string = diff.hours < 2 ? _("hour") : _("hours")
+    elsif diff.days < 2
+      ago = nil
+      ago_string = _("Yesterday")
+    elsif diff.days <= 7
+      ago = "%.0f" % diff.days.floor
+      ago_string = _("days")
     else
-      ago = showHours ? ("%.0f" % diff.days.floor) : ("%.2f" % diff.days)
-      ago_string = diff.days < 2 ? _("day") : _("days")
+      ago = nil
+      ago_string = _("More than a week.")
     end
-    "#{ago} #{ago_string}"
+    [ago, ago_string].filter(&:present?).join(" ")
   end
 
   # Strip email of whitespace

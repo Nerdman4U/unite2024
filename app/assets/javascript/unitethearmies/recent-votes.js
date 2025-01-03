@@ -23,7 +23,7 @@ class RecentVotes {
             <div class="col-4">
               <span class="flag-icon flag-icon-${vote.country}"></span>
             </div>
-            <div class="col-4">1 hour ago</div>
+            <div class="col-4">${vote.ago}</div>
             <div class="col-4">${vote.name}</div>
           </div>`;
           result += tmpl_row;

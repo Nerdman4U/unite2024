@@ -4,6 +4,8 @@ class VoteTest < ActiveSupport::TestCase
 
   def setup
     I18n.locale = :en
+
+    # This is new record.
     @vote = votes("vote_1").dup
     @vote.email = "invalid@vote-example.com"
     @vote.email_repeat = @vote.email
@@ -92,9 +94,70 @@ class VoteTest < ActiveSupport::TestCase
   end
 
   test "should calculate ago" do
-    @vote.save
-    assert @vote.ago
-    assert @vote.ago.match(/second/)
+    vote = votes("vote_1")
+    assert vote.created_at
+    assert vote.ago
+
+    vote.created_at = Time.now + 1.minute
+    vote.save
+    assert_equal vote.ago, "Now"
+
+    vote.created_at = Time.now - 3.seconds
+    vote.save
+    assert_equal vote.ago, "Now"
+
+    vote.created_at = Time.now - 40.seconds
+    vote.save
+    assert_equal vote.ago, "40 seconds"
+
+    vote.created_at = Time.now - 30.minutes
+    vote.save
+    assert_equal vote.ago, "30 minutes"
+
+    vote.created_at = Time.now - 3.hours
+    vote.save
+    assert_equal vote.ago, "3 hours"
+
+    vote.created_at = Time.now - 3.hours - 30.minutes
+    vote.save
+    # assert_equal vote.ago, "3 hours 30 minutes"
+    assert_equal vote.ago, "3 hours"
+
+    vote.created_at = Time.now - 3.hours - 60.minutes
+    vote.save
+    assert_equal vote.ago, "4 hours"
+
+    vote.created_at = Time.now - 23.hours
+    vote.save
+    assert_equal vote.ago, "23 hours"
+
+    vote.created_at = Time.now - 1.day
+    vote.save
+    assert_equal vote.ago, "Yesterday"
+
+    vote.created_at = Time.now - 1.day - 4.hours
+    vote.save
+    assert_equal vote.ago, "Yesterday"
+
+    vote.created_at = Time.now - 1.day - 23.hours
+    vote.save
+    assert_equal vote.ago, "Yesterday"
+
+    vote.created_at = Time.now - 3.days
+    vote.save
+    assert_equal vote.ago, "3 days"
+
+    vote.created_at = Time.now - 3.days - 23.hours
+    vote.save
+    assert_equal vote.ago, "3 days"
+
+    vote.created_at = Time.now - 7.days
+    vote.save
+    assert_equal vote.ago, "7 days"
+
+    vote.created_at = Time.now - 8.days
+    vote.save
+    assert_equal vote.ago, "More than a week."
   end
 
   test "should have secret token" do
