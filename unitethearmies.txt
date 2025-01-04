@@ -9,44 +9,48 @@ Table of Contents
 .. 2. Muutoksia
 .. 3. Päiväkirja
 ..... 1. clock
-..... 2. 31.12.2024
-..... 3. 30.12.2024
-..... 4. 29.12.2024
-..... 5. 28.12.2024
-..... 6. 27.12.2024
-..... 7. 26.12.2024
-..... 8. 25.12.2024
-..... 9. 24.12.2024
-..... 10. 23.12.2024
-..... 11. 21.12.2024
-..... 12. 19.12.2024
-..... 13. 18.12.2024
-..... 14. 17.12.2024
-..... 15. 16.12.2024
-..... 16. 14.12.2024
-..... 17. 13.12.2024
-..... 18. 12.12.2024
-..... 19. 11.12.2024
-..... 20. 10.12.2024
-..... 21. 9.12.2024
-..... 22. 7.12.2024
-..... 23. 6.12.2024
-..... 24. 3.12.2024
-..... 25. 2.12.2024
-..... 26. 29.11.2024
-..... 27. 28.11.2024
-..... 28. 27.11.2024
-..... 29. 26.11.2024
-..... 30. 22.11.2024
-..... 31. 21.11.2024
-..... 32. 20.11.2024
-..... 33. 19.11.2024
-..... 34. 18.11.2024
-..... 35. 15.11.2024
-..... 36. 14.11.2024
-..... 37. 13.11.2024
-..... 38. 12.11.2024
-..... 39. 11.11.2024
+..... 2. 4.1.2025
+..... 3. 3.1.2025
+..... 4. 2.1.2025
+..... 5. 1.1.2025
+..... 6. 31.12.2024
+..... 7. 30.12.2024
+..... 8. 29.12.2024
+..... 9. 28.12.2024
+..... 10. 27.12.2024
+..... 11. 26.12.2024
+..... 12. 25.12.2024
+..... 13. 24.12.2024
+..... 14. 23.12.2024
+..... 15. 21.12.2024
+..... 16. 19.12.2024
+..... 17. 18.12.2024
+..... 18. 17.12.2024
+..... 19. 16.12.2024
+..... 20. 14.12.2024
+..... 21. 13.12.2024
+..... 22. 12.12.2024
+..... 23. 11.12.2024
+..... 24. 10.12.2024
+..... 25. 9.12.2024
+..... 26. 7.12.2024
+..... 27. 6.12.2024
+..... 28. 3.12.2024
+..... 29. 2.12.2024
+..... 30. 29.11.2024
+..... 31. 28.11.2024
+..... 32. 27.11.2024
+..... 33. 26.11.2024
+..... 34. 22.11.2024
+..... 35. 21.11.2024
+..... 36. 20.11.2024
+..... 37. 19.11.2024
+..... 38. 18.11.2024
+..... 39. 15.11.2024
+..... 40. 14.11.2024
+..... 41. 13.11.2024
+..... 42. 12.11.2024
+..... 43. 11.11.2024
 
 
 1 Unite The Armies
@@ -153,7 +157,57 @@ Table of Contents
   Table 1: Clock summary at [2024-12-27 Fri 18:26]
 
 
-1.3.2 31.12.2024
+1.3.2 4.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ javascript
+    • ☑ header
+    • ☐ slider
+  • ☑ header
+    • ☑ height js pois
+  • ☒ tests
+    • ☑ etusivun ensimmäinen mobiilitesti kielet, linkit pois ja
+      mobiilinavigointinappi
+      • ☑ media query
+    • ☐ site-prism gem uusi branch ja kokeilu.
+
+
+1.3.3 3.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ julkaisuun
+    • ☑ flash useita viestejä per tyyppi
+    • ☐ under construction
+    • ☐ deployment with dropbox
+    • ☐ email layout
+    • ☑ recent votes
+      • ☑ ago maksimi lienee "yli viikko"
+    • ☐ why vote
+  • ☐ tuotanto
+    • ☐ lokirotaatio
+
+
+1.3.4 2.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ sass, flags-gem oukkidoukki, nyt täytyy tutkia mites sass lähtee
+    toimintaan => ei onnistunut mutta sain generoitua tavallisen css
+    tiedoston
+
+
+1.3.5 1.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Tehdäänpäs vielä hetki.
+  • ☑ languages main branchiin ja kielenkäännökset googlella.
+  • ☑ rails 8.1
+
+  • ☑ sass propsaft, sass ja gemien tyylit, kuinka suapi?  =>
+    manuaalisesti
+  • ☑ tutkin Rails konfigurointia
+
+
+1.3.6 31.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   timber:r.694 timber:r.800
@@ -161,7 +215,7 @@ Table of Contents
   tms-content, height => header vw tms-content-inner, valign => pois,
   display: block tms-slides: top: 3vw;
 
-  • ☐ liput pois ja tilalle kielet
+  • ☑ liput pois ja tilalle kielet
   • ☑ js
     • ☑ full-width-slider jos css luokan (application_helper) poistan
       niin jääpi kuva näkymäti
@@ -173,10 +227,10 @@ Table of Contents
       header ja feature-media height edelleen js:stä.
 
 
-1.3.3 30.12.2024
+1.3.7 30.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  • ☐ flags varmaan löytyy päivitetty kirjasto
+  • ☑ flags varmaan löytyy päivitetty kirjasto (recent votes)
 
   • ☒ comments#new
     • ☑ post
@@ -199,7 +253,7 @@ Table of Contents
       ominaan.
 
 
-1.3.4 29.12.2024
+1.3.8 29.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ comment#new
@@ -207,8 +261,8 @@ Table of Contents
   • ☑ title
     • ☑ laitetaanpa titleen controller action
     • ☑ headiin og parametrit <https://ogp.me>
-  • ☐ testi
-    • ☐ language ja country libin alle
+  • ☑ testi
+    • ☑ language ja country libin alle
   • ☐ logo ei ole kummonen
   • ☐ moduli voisi olla libin alla olevat modelit UniteTheArmies-
     moduulissa.
@@ -232,7 +286,7 @@ Table of Contents
   testataan.
 
 
-1.3.5 28.12.2024
+1.3.9 28.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ comment#new
@@ -243,8 +297,8 @@ Table of Contents
       onkohan monikot millä tavalla tällä hetkellä?
 
 
-1.3.6 27.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.3.10 27.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ footer pientä ulkoasusäätöä.
   • ☐ recent votes onkin table
@@ -289,8 +343,8 @@ Table of Contents
       välejä ulkoasun takia, pitäisi tietysti skaalautua.
 
 
-1.3.7 26.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.3.11 26.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Autocomplete ctrl-K ja ctrl-. tai tabilla
 
@@ -318,8 +372,8 @@ Table of Contents
   • ☐ UaSetting täytyy muuttaa nimi, UniteSettings (?), AppSettings (?)
 
 
-1.3.8 25.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.3.12 25.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ vote
     • ☐ show section taustavärit pitäisi olla automaattisesti
@@ -343,16 +397,14 @@ Table of Contents
     • ☑ token käytössä vote_id, käytetään kuitenkin md5 tokenia.
 
 
-1.3.9 24.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.3.13 24.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ votes#show
     • ☑ email should be shown
     • ☑ amount of invites (iso numero)
     • ☑ amount of comments
     • ☐ sliding title
-  • ☐ recent votes
-    • ☐ ago
   • ☐ tailwindcss tämäkin vaihtoehto olisi, kumpi on parempi?
   • ☐ bootstrap
     • ☐ ikonit lokaalisti
@@ -363,7 +415,7 @@ Table of Contents
   • ☐ päätelaitteet pitäisi alkaa testaamaan myös erilaisilla…
 
 
-1.3.10 23.12.2024
+1.3.14 23.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   seuraavaksi:
@@ -381,7 +433,7 @@ Table of Contents
     • ☑ send login link
 
 
-1.3.11 21.12.2024
+1.3.15 21.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ assets kauhea säätö
@@ -391,7 +443,7 @@ Table of Contents
     • ☑ maapallo
 
 
-1.3.12 19.12.2024
+1.3.16 19.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☐ varoituksia
@@ -425,7 +477,7 @@ Table of Contents
     testi.unitethearmies.org)
 
 
-1.3.13 18.12.2024
+1.3.17 18.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ votes
@@ -442,7 +494,7 @@ Table of Contents
       • ☐ similar should have similar layout
 
 
-1.3.14 17.12.2024
+1.3.18 17.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ waiting
@@ -452,7 +504,7 @@ Table of Contents
       "4min 32sec"
 
 
-1.3.15 16.12.2024
+1.3.19 16.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ aikataulu
@@ -479,7 +531,7 @@ Table of Contents
     unite…  => mailer parametrit nykyään mailer.with(a:b,…).method
 
 
-1.3.16 14.12.2024
+1.3.20 14.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ confirm confirm vote path väärin testissä => unitethearmies.org,
@@ -510,13 +562,13 @@ Table of Contents
     osoitteet eri osoitteina.
 
 
-1.3.17 13.12.2024
+1.3.21 13.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ säätöä
 
 
-1.3.18 12.12.2024
+1.3.22 12.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ testit
@@ -535,7 +587,7 @@ Table of Contents
         mailer_test tiedostoissa.
 
 
-1.3.19 11.12.2024
+1.3.23 11.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Huom.  RAILS_ENV=production rails db:migrate RAILS_ENV=production
@@ -554,14 +606,14 @@ Table of Contents
       lähetetään viesti.
 
 
-1.3.20 10.12.2024
+1.3.24 10.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flash message
     • ☑ nappi paremmin
 
 
-1.3.21 9.12.2024
+1.3.25 9.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Header animaatio meni bootstrapin myötä rikki
@@ -580,7 +632,7 @@ Table of Contents
   • ☑ recent votes bootstrap row/col
 
 
-1.3.22 7.12.2024
+1.3.26 7.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flash ilmoituksen sulkeminen / ajastus
@@ -589,14 +641,14 @@ Table of Contents
   • ☐ Vimeo Täytyy siirtää Unite the Armies- käyttäjälle Youtubeen.
 
 
-1.3.23 6.12.2024
+1.3.27 6.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Hyvää Itsenäisyyspäivää!
   • ☑ ikonit paremmin
 
 
-1.3.24 3.12.2024
+1.3.28 3.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ captcha tuotannossa
@@ -609,7 +661,7 @@ Table of Contents
   • ☑ materiaali ladattavissa suoraan sivulta
 
 
-1.3.25 2.12.2024
+1.3.29 2.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ testit
@@ -619,7 +671,7 @@ Table of Contents
     aikaisemmin ei palauttanut mitään.
 
 
-1.3.26 29.11.2024
+1.3.30 29.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ ainoastaan vahvistetut äänet näkyviin recent votessa
@@ -634,7 +686,7 @@ Table of Contents
   • ☑ duplicate email poistetaan duplikaatit $ rails fix:duplicate_votes
 
 
-1.3.27 28.11.2024
+1.3.31 28.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Errno::ECONNREFUSED (Connection refused - connect(2) for
@@ -657,7 +709,7 @@ Table of Contents
   • systemctl status docker => käynnistyy edelleen (docker engine?)
 
 
-1.3.28 27.11.2024
+1.3.32 27.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☐ Rails 8.1
@@ -682,7 +734,7 @@ Table of Contents
   • ☑ test testatessa EI pitäisi oikeasti lähteä maileja.
 
 
-1.3.29 26.11.2024
+1.3.33 26.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy rake ja fix tuotannossa scriptin kautta… tässä tulikin
@@ -724,7 +776,7 @@ Table of Contents
     • ☑ 2-vaiheinen
 
 
-1.3.30 22.11.2024
+1.3.34 22.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ äänestys
@@ -739,7 +791,7 @@ Table of Contents
     UNITE_APPLICATION_PROTOCOL.
 
 
-1.3.31 21.11.2024
+1.3.35 21.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy commitizen, README
@@ -750,7 +802,7 @@ Table of Contents
     mahdollisimman simppeli tilalle…  jQuery?
 
 
-1.3.32 20.11.2024
+1.3.36 20.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ rails new –webpack react jälleen uusi rails projekti, kopsattu
@@ -761,7 +813,7 @@ Table of Contents
     esim. jqueryllä ja jättää react hautumaan.
 
 
-1.3.33 19.11.2024
+1.3.37 19.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ facebook ja twitter linkit vaan enpä saanut riviin, olkoon
@@ -778,7 +830,7 @@ Table of Contents
   • ☑ React lopultakin ilman javascript virheitä.
 
 
-1.3.34 18.11.2024
+1.3.38 18.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ liput
@@ -795,7 +847,7 @@ Table of Contents
     to english.
 
 
-1.3.35 15.11.2024
+1.3.39 15.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   <https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/apache/oss/bionic/deploy_app.html>
@@ -819,7 +871,7 @@ Table of Contents
     kotihakemisto kun passenger ajetaan ei käyttäjänä.
 
 
-1.3.36 14.11.2024
+1.3.40 14.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ passenger asennettu ohjeen mukaan, ylimääräinen gem poistettu.
@@ -835,7 +887,7 @@ Table of Contents
     hakemistossa kun komento ajetaan.
 
 
-1.3.37 13.11.2024
+1.3.41 13.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy
@@ -861,7 +913,7 @@ Table of Contents
     environment.
 
 
-1.3.38 12.11.2024
+1.3.42 12.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Katsotaanpas jos saisin jotain eloa javascripteihin… onnistui.
@@ -872,7 +924,7 @@ Table of Contents
   vaihtunut juuri rails8:ssa.
 
 
-1.3.39 11.11.2024
+1.3.43 11.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Eka onnistunut boottaus
