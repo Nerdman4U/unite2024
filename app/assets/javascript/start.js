@@ -7,5 +7,14 @@ $(function () {
   setInterval(function () {
     unite.loadVotes();
   }, 5000);
+});
 
+$(window).scroll(function () {
+  let unite = window.unite;
+  unite.toggleHeaderBackground();
+});
+
+$(window).resize(function () {
+  let unite = window.unite;
+  //unite.toggleHeaderBackground();
 });

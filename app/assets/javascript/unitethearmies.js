@@ -63,6 +63,14 @@ class UniteTheArmies {
     return this.data.comment;
   }
 
+  toggleHeaderBackground() {
+    if ($(window).scrollTop() > $(".header").height()) {
+      $('.header').addClass('header-background');
+    } else {
+      $('.header').removeClass('header-background');
+    }
+  }
+
 }
 
 export default UniteTheArmies;

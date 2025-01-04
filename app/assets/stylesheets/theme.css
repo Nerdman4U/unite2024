@@ -566,23 +566,23 @@ body,
 }
 
 /* Header Initial Styling */
-.header .header-inner {
+/* .header .header-inner {
   background-color: #fff;
   border-bottom: none;
   border-bottom: 1px solid transparent;
 }
 .header .header-inner > .nav-bar {
-  /*border-bottom: 1px solid #eee;*/
-}
+  border-bottom: 1px solid #eee;
+} */
 
 /* Transparent Header Initial & Active Nav Colors */
-.header-transparent .header-inner {
+/* .header-transparent .header-inner {
   background-color: transparent;
-  /*border-bottom: 1px solid rgba(255,255,255, 0.2);*/
+  border-bottom: 1px solid rgba(255,255,255, 0.2);
 }
 .header-transparent .header-inner > .nav-bar {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* Background Header - On Scroll! */
 .header-background .header-inner {
@@ -611,7 +611,7 @@ body,
 .mobile .header + .content {
   padding-top: 0;
 }
-@media only screen and (max-width: 960px) {
+/* @media only screen and (max-width: 960px) {
   .header .header,
   .header .header-inner,
   .header.header-transparent .header-inner {
@@ -623,7 +623,7 @@ body,
   .header .header-inner > .nav-bar {
     padding: 0;
   }
-}
+} */
 
 /*------------------------------------------------------------------
 [5. Header Logo]
@@ -640,7 +640,7 @@ body,
 }
 
 /* Initial Logo Styling */
-.header .logo a {
+/* .header .logo a {
   display: block !important;
   position: absolute;
   top: 0;
@@ -657,7 +657,7 @@ body,
 }
 .header .logo a + a {
   display: none !important;
-}
+} */
 
 /* Transparent Header Show Light Logo
 .header-transparent .logo a:first-child {
@@ -704,7 +704,7 @@ body,
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-@media only screen and (max-width: 960px) {
+/* @media only screen and (max-width: 960px) {
   .header .logo-inner {
     display: table-cell;
     vertical-align: middle;
@@ -721,7 +721,7 @@ body,
   .header .logo a:last-child {
     display: none !important;
   }
-}
+} */
 
 /*------------------------------------------------------------------
 [6. Header Navigation]
@@ -1596,9 +1596,9 @@ body,
 .featured-media .tm-slider-container .tms-pagination {
   opacity: 1;
 }
-.featured-media .tm-slider-container {
+/* .featured-media .tm-slider-container {
   background-color: #000;
-}
+} */
 .featured-media .tms-progress-bar {
   /*display: none !important;*/
 }

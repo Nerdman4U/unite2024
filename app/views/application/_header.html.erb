@@ -1,58 +1,65 @@
-<header class="header header-fixed header-fixed-on-mobile header-transparent" data-sticky-threshold="window-height" data-bkg-threshold="100">
-  <!-- Positioned absolutely -->
-  <%
+ <%
 =begin%>
-  <div class="share-buttons">
-    <!-- Your share button code -->
-    <div class="fb-share-button" data-href="<%= UNITE_ROOT_URL%>" data-layout="button">
-    </div>
-    <div>
-      <a class="twitter share-button" href="http://twitter.com/intent/tweet?text=Sign%20an%20appeal%20for%20the%20UN%20to%20ask%20armies%20to%20participate%20on%20the%20preventive%20work%20against%20climate%20catastrophe.%20http%3A%2F%2Funite-the-armies.org%2F">
-        Tweet
-      </a>
-    </div>
-  </div>
-  <%
+ data-sticky-threshold="window-height" data-bkg-threshold="100"
+ <%
+=end%>
+ <header class="header header-fixed header-fixed-on-mobile header-transparent">
+   <!-- Positioned absolutely -->
+   <%
+=begin%>
+   <div class="share-buttons">
+     <!-- Your share button code -->
+     <div class="fb-share-button" data-href="<%= UNITE_ROOT_URL%>" data-layout="button">
+     </div>
+     <div>
+       <a class="twitter share-button" href="http://twitter.com/intent/tweet?text=Sign%20an%20appeal%20for%20the%20UN%20to%20ask%20armies%20to%20participate%20on%20the%20preventive%20work%20against%20climate%20catastrophe.%20http%3A%2F%2Funite-the-armies.org%2F">
+         Tweet
+       </a>
+     </div>
+   </div>
+   <%
 =end%>
 
-  <div class="container header-inner">
-    <div class="row nav-bar  upx-8">
-      <div class="col-3 nav-bar-inner ">
-        <div class="logo" id="logo">
-          <div class="logo-inner">
-            <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
-            <%= link_to image_tag(UNITE_LOGO, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
-          </div>
-        </div>
-      </div>
-      <div class="col-9">
-        <nav class="nav-block primary-navigation text-end">
-          <ul class="p-0 m-0">
-            <li>
-              <%= link_to _("Supporters"), votes_path(locale: locale) %>
-            </li>
-            <li>
-              <%= link_to _("Read more"), appeal_path(locale: locale) %>
-            </li>
-            <li>
-              <%= link_to _("Support now"), new_vote_path %>
-            </li>
-            <% if logged_in? && current_vote %>
-            <li>
-              <%= link_to_vote %>
-              <%# link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
-            </li>
-            <li>
-              <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>
-            </li>
-            <% end %>
-          </ul>
-        </nav>
+   <div class="container header-inner">
+     <div class="row nav-bar upx-8">
+       <div class="col-3 nav-bar-inner">
+         <div class="logo" id="logo">
+           <div class="logo-inner">
+             <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
+             <%= link_to image_tag(UNITE_LOGO, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
+           </div>
+         </div>
+       </div>
+       <div class="col-9">
 
-        <nav class="nav-block primary-navigation text-end">
-          <%= language_selection %>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
+         <nav class="nav-block primary-navigation text-end upt-1">
+           <ul class="p-0 m-0">
+             <li>
+               <%= link_to _("Supporters"), votes_path(locale: locale) %>
+             </li>
+             <li>
+               <%= link_to _("Read more"), appeal_path(locale: locale) %>
+             </li>
+             <li>
+               <%= link_to _("Support now"), new_vote_path %>
+             </li>
+             <% if logged_in? && current_vote %>
+             <li>
+               <%= link_to_vote %>
+               <%# link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
+             </li>
+             <li>
+               <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>
+             </li>
+             <% end %>
+           </ul>
+         </nav>
+
+         <nav class="nav-block primary-navigation text-end">
+           <%= language_selection %>
+         </nav>
+
+       </div>
+     </div>
+   </div>
+ </header>

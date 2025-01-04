@@ -7,152 +7,60 @@ Copyright: Save the Planet - Unite the Armies
 
 [Table of contents]
 
-1. Main Elements
-2. Header
-3. Footer
-4. Media Queries
-5. Print
-6. Slider
-7. Recent Votes
+1. Construction
+2. Typography
+3. Animation
+4. Color
 
 Based on Sartre Skin Barber Shop by ThemeMountain.
 
 -----------------------------------------------------------------
-* 1. Main Elements
+* 1. Construction
 -----------------------------------------------------------------
 */
 
 body {
-  /* font-family: "Roboto", "Helvetica Neue", sans-serif; */
-  font-family: "Lato", "Helvetica Neue", sans-serif;
-  letter-spacing: 0;
-  font-weight: 400;
   overflow-x: hidden !important;
   overflow-y: scroll;
 }
 
-footer a,
-header a {
-  font-size: 0.7vw;
-}
-
-ul {
-  list-style: none;
-}
-ol {
-  list-style: decimal inside;
-}
-ul.disc {
-  list-style: disc inside;
-}
-ul.circle {
-  list-style: circle inside;
-}
-ul.square {
-  list-style: square inside;
-}
-ol.decimal-leading-zero {
-  list-style: decimal-leading-zero inside;
-}
-ol.upper-roman {
-  list-style: upper-roman inside;
-}
-ol.lower-alpha {
-  list-style: lower-alpha inside;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #000;
-}
-h1 {
-  font-weight: 700;
-}
-
-/*
------------------------------------------------------------------
-* 2. Header
------------------------------------------------------------------
-/* Intial Height */
 .header {
-  height: 5vw;
-  background-color: black;
+  width: 100%;
+  position: relative;
+  height: 8vw;
+  padding: 0.5vw;
+  /* border: 3px solid red; */
 }
-.header .logo,
-.header ul > li,
-.header ul > li > a:not(.button),
-.header .dropdown > .nav-icon {
+
+.header .logo {
   height: 3vw;
   line-height: 3vw;
-}
-.header .logo {
   display: table;
   width: 10vw;
 }
 
-.header ul li {
-  display: inline-block;
-  margin: 0 0.5vw;
-  height: 1vw;
+.header nav:nth-child(2) {
+  padding-top: 0.5vw;
   line-height: 1vw;
 }
 
-.header ul > li > a {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-decoration: underline;
-  color: var(--bs-light);
-}
-.header ul > li > a:hover {
-  color: var(--bs-blue);
+.header-fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.header-background ul > li > a,
-.footer a {
-  color: var(--bs-dark);
+.header ul {
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    margin: 0 0.5vw;
+    height: 0.7vw;
+    line-height: 0.5vw;
+  }
 }
-
-/* Bootstrap 5.3.3 aligns row differently and causes layout issues with old theme (theme.core.min) css */
-/* .row {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: inherit;
-} */
-.header .header-inner {
-  width: inherit;
-}
-
-/*
------------------------------------------------------------------
-* 3. Footer
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 4. Media Queries
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 5. Print
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 6. Slider
------------------------------------------------------------------
-*/
 
 .unite-screenheight-30 {
   height: 30vh;
@@ -162,6 +70,54 @@ h1 {
 }
 .unite-screenheight-100 {
   height: 100vh !important;
+}
+
+.header .logo a {
+  /* display: block !important; */
+  position: absolute;
+  top: 0;
+}
+.header-in .logo a,
+.header-out .logo a {
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+.header .logo a:first-child {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.header .logo a + a {
+  display: none !important;
+}
+
+.header .v-align-middle,
+.header .logo-inner {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+.header .logo-inner {
+  overflow: hidden;
+}
+
+.header .header-inner {
+  max-width: 100%;
+  opacity: 1;
+  position: relative;
+  z-index: 100;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.header-transparent .header-inner {
+  background-color: transparent;
+  background-image: url(blank.gif);
+}
+
+.featured-media .tm-slider-container {
+  background-color: white;
 }
 
 .tms-slides {
@@ -245,7 +201,10 @@ h1 {
 }
 
 .tms-slides {
-  top: 3vw;
+  /* TODO: tästä tulee väli headeriin, voisiko käyttää paddingiä
+     => tms-content-inner: padding-top
+  */
+  /* top: 3vw; */
 }
 
 .tms-content-inner {
@@ -253,8 +212,199 @@ h1 {
   /* vertical-align: middle; */
   /* display: table-cell; */
   display: block;
-  padding-top: 8vw;
+  padding-top: 12vw;
   float: none;
+}
+
+.nav-bar {
+  width: 100%;
+  /* min-height: 5rem; */
+}
+.nav-bar-inner {
+  position: relative;
+}
+.nav-bar .logo {
+  /* height: 5rem; */
+  /* line-height: 5rem; */
+  /* float: left; */
+}
+.nav-bar .logo {
+  margin-right: 3rem;
+}
+.nav-bar .logo img {
+  margin-top: -4px;
+}
+
+@media only screen and (max-width: 960px) {
+  .header {
+    background: none;
+    position: static !important;
+    height: 10vw;
+
+    .header-inner {
+      /* height: 8rem !important; */
+      padding-top: 0;
+      border: none;
+    }
+    .logo-inner {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .logo a {
+      position: relative;
+    }
+    .logo a:first-child {
+      opacity: 1;
+      top: 0;
+      -webkit-transform: translateX(0) !important;
+      transform: translateX(0) !important;
+    }
+    .logo a:first-child {
+      /* display: none !important; */
+    }
+    header .primary-navigation {
+      /* display: none !important; */
+    }
+    .header nav:nth-child(2) {
+      padding-top: 0.1vw;
+      line-height: 0.1vw;
+    }
+  }
+}
+
+/*
+-----------------------------------------------------------------
+* 2. Typography
+*
+* font, letter-spacing, list-style
+-----------------------------------------------------------------
+*/
+
+body {
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+footer a,
+header a {
+  font-size: 0.7vw;
+}
+
+ul {
+  list-style: none;
+}
+ol {
+  list-style: decimal inside;
+}
+ul.disc {
+  list-style: disc inside;
+}
+ul.circle {
+  list-style: circle inside;
+}
+ul.square {
+  list-style: square inside;
+}
+ol.decimal-leading-zero {
+  list-style: decimal-leading-zero inside;
+}
+ol.upper-roman {
+  list-style: upper-roman inside;
+}
+ol.lower-alpha {
+  list-style: lower-alpha inside;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+h1 {
+  font-weight: 700;
+}
+
+.header ul > li > a {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: underline;
+}
+
+/*
+-----------------------------------------------------------------
+* 3. Animation
+-----------------------------------------------------------------
+*/
+
+.header.header-animated {
+  -webkit-transition-property: height, transform, visibility;
+  transition-property: height, transform, visibility;
+}
+
+.header-animated .header-inner,
+.header-animated .header-inner .navigation,
+.header-animated .header-inner .navigation > ul > li,
+.header-animated .header-inner .navigation > ul > li > a,
+.header-animated .dropdown > .nav-icon,
+.header-animated .navigation-show a {
+  -webkit-transition-property: height, background, border, padding, margin,
+    font-size, line-height, color, opacity;
+  transition-property: height, background, border, padding, margin, font-size,
+    color, line-height, opacity;
+}
+.header-animated .logo,
+.header-animated .logo span {
+  -webkit-transition-property: width, height, background, border, padding,
+    margin, font-size, line-height, opacity;
+  transition-property: width, height, background, border, padding, margin,
+    font-size, line-height, opacity;
+}
+.header-animated,
+.header-animated .header-inner,
+.header-animated .header-inner .navigation,
+.header-animated .header-inner .navigation > ul > li,
+.header-animated .header-inner .navigation > ul > li > a,
+.header-animated .dropdown > .nav-icon,
+.header-animated .navigation-show a,
+.header-animated .logo,
+.header-animated .logo span,
+.header-animated .logo a {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.header-hide .header-inner {
+  opacity: 0;
+}
+.header-positioned .header-inner {
+  -webkit-transform: translate3d(0, -10rem, 0);
+  transform: translate3d(0, -10rem, 0);
+}
+.header-in .header-inner,
+.header-out .header-inner {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.header-in .header-inner {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.header-out .header-inner {
+  -webkit-transform: translate3d(0, -10rem, 0);
+  transform: translate3d(0, -10rem, 0);
+}
+.header-in .header-inner .logo,
+.header-in .header-inner .navigation,
+.header-in .navigation-show {
+  transition: none !important;
 }
 
 .header-transparent .logo a:first-child {
@@ -279,24 +429,91 @@ h1 {
   -webkit-transform: translateY(-5rem);
   transform: translateY(-5rem);
 }
-.nav-bar {
-  width: 100%;
-  /* min-height: 5rem; */
+
+/*
+-----------------------------------------------------------------
+* 4. Color
+-----------------------------------------------------------------
+*/
+
+.header {
+  background-color: black;
 }
-.nav-bar-inner {
-  position: relative;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
 }
-.nav-bar .logo {
-  /* height: 5rem; */
-  /* line-height: 5rem; */
-  float: left;
+
+.header ul > li > a:hover {
+  color: var(--bs-blue);
 }
-.nav-bar .logo {
-  margin-right: 3rem;
+.header-background {
+  background-color: var(--bs-light);
 }
-.nav-bar .logo img {
-  margin-top: -4px;
+
+.header ul > li > a {
+  color: var(--bs-light);
 }
+
+.header-background ul > li > a,
+.footer a {
+  color: var(--bs-dark) !important;
+}
+
+@media only screen and (max-width: 960px) {
+  .header .header,
+  .header .header-inner,
+  .header.header-transparent .header-inner {
+    background-color: inherit;
+  }
+  .header .header-inner {
+    border: none;
+  }
+}
+
+/*
+-----------------------------------------------------------------
+* 2. Header
+-----------------------------------------------------------------
+*/
+
+/* Bootstrap 5.3.3 aligns row differently and causes layout issues with old theme (theme.core.min) css */
+/* .row {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: inherit;
+} */
+.header .header-inner {
+  width: inherit;
+}
+
+/*
+-----------------------------------------------------------------
+* 3. Footer
+-----------------------------------------------------------------
+*/
+
+/*
+-----------------------------------------------------------------
+* 4. Media Queries
+-----------------------------------------------------------------
+*/
+
+/*
+-----------------------------------------------------------------
+* 5. Print
+-----------------------------------------------------------------
+*/
+
+/*
+-----------------------------------------------------------------
+* 6. Slider
+-----------------------------------------------------------------
+*/
 
 /*
 -----------------------------------------------------------------
