@@ -1,3 +1,16 @@
+## 1.59.0 (2025-01-05)
+
+### Feat
+
+- **System-tests**: Added SitePrism and some tests
+- Header working better with different resolutions
+- Flash message update
+- Recent votes ago string update
+- **votes_controller.rb**: Using scopes to find votes
+- Link colors and smaller paddings
+- SVG Flag icons in recent votes and votes index
+- Fixed locales and added translations, se is changed to proper identifier sv
+
 ## 1.58.0 (2025-01-01)
 
 ### Feat
