@@ -26,7 +26,6 @@ module UniteTheArmiesOrg
 
     # Autoload models under lib
     # config.autoload_paths << Rails.root.join("lib","models")
-    config.autoload_lib(ignore: %w(tasks))
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path << Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]

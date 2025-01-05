@@ -8,14 +8,14 @@ class TokensController < ApplicationController
     if email.blank?
       Rails.logger.error("Vote#token: Email is blank")
       add_flash :warning, _("There was an error")
-      redirect_to locale_root_path, status: :bad_request
+      redirect_to locale_root_path
       return
     end
     vote = Vote.where(email: email, spam: false).first
     unless vote
       Rails.logger.error("Vote#token: No vote")
       add_flash :warning, _("Email was not found")
-      redirect_to locale_root_path, status: :bad_request
+      redirect_to locale_root_path
       return
     end
     unless vote.email_confirmed

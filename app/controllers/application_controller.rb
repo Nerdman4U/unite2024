@@ -116,7 +116,7 @@ class ApplicationController < ActionController::Base
       when "new"
         subtopic = _("New vote")
       when "index"
-        subtopic = _("List of votes")
+        subtopic = _("a List of votes")
       end
     when "welcome"
       case action_name
@@ -127,7 +127,6 @@ class ApplicationController < ActionController::Base
       when "material"
         subtopic = _("Material")
       end
-
     when "comments"
       case action_name
       when "index"
@@ -137,7 +136,15 @@ class ApplicationController < ActionController::Base
       when "show"
         subtopic = _("Comment")
       end
+    when "tokens"
+      case action_name
+      when "new"
+        subtopic = _("Login")
+      when "index" && method == "DELETE"
+        subtopic = _("Logout")
+      end
     end
+
     #puts "controller: #{controller_name.inspect} action: #{action_name.inspect}"
     #puts "subtopic: #{subtopic.inspect}"
     subtopic.blank? ? topic : "#{subtopic} (#{topic})"

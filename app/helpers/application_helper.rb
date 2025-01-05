@@ -21,7 +21,7 @@ module ApplicationHelper
   ## Link to Token
   #
   def link_to_token
-    link_to new_token_url do
+    link_to new_token_url, class: "login" do
       # tag.i class: "bi bi-flower1", title: _("To your private vote")
       _("My vote")
     end
@@ -33,14 +33,14 @@ module ApplicationHelper
     end
 
     token = vote.encoded_payload
-    link_to vote_url(token: token) do
+    link_to vote_url(token: token), class: "my-vote" do
       # tag.i class: "bi bi-chat-square", title: _("Your private vote")
       _("My vote")
     end
   end
 
   def link_to_logout
-    link_to logout_url, method: :delete do
+    link_to logout_url, method: :delete, class: "logout" do
       # tag.i class: "bi bi-box-arrow-right", title: _("Logout")
       _("Logout")
     end

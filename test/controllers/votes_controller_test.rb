@@ -220,7 +220,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_dom "title", text: "My vote (Save the Planet - Unite the Armies)"
 
     get votes_path(locale: "en")
-    assert_dom "title", text: "List of votes (Save the Planet - Unite the Armies)"
+    assert_dom "title", text: "a List of votes (Save the Planet - Unite the Armies)"
 
     get new_vote_path(locale: "en")
     assert_dom "title", text: "New vote (Save the Planet - Unite the Armies)"

@@ -53,6 +53,9 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = false
 
+  # SitePrism classes
+  config.autoload_paths << Rails.root.join("test/system/prism/")
+
   config.after_initialize do
     config.x.comment_email_to = UNITE_CAMPAIGN_ASSISTANT_EMAIL_TEST
     config.x.notify_email_to = UNITE_CAMPAIGN_ASSISTANT_EMAIL_TEST

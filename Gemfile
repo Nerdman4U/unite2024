@@ -54,7 +54,6 @@ gem "loofah"
 gem "sdoc"
 gem "time_difference"
 gem "email_validator"
-# gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -63,7 +62,6 @@ gem "email_validator"
 gem "bcrypt"
 gem "jwt"
 gem "flag-icons-rails"
-gem "dartsass-rails", "~> 0.5.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -75,6 +73,9 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
   gem "rails-controller-testing"
+
+  # New gems for testing
+  gem "dartsass-rails", "~> 0.5.1"
 end
 
 group :development do
@@ -97,6 +98,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+
+  # New gems for testing
   gem "cuprite"
+  gem "site_prism"
+
 end
 

@@ -425,6 +425,11 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     singleton (0.3.0)
+    site_prism (5.0.4)
+      addressable (~> 2.8, >= 2.8.4)
+      capybara (~> 3.32)
+      site_prism-all_there (> 2, < 5)
+    site_prism-all_there (3.0.6)
     solid_cable (3.0.2)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -551,6 +556,7 @@ DEPENDENCIES
   ruby-lsp-rails
   sdoc
   selenium-webdriver
+  site_prism
   solid_cable
   solid_cache
   solid_queue
