@@ -1,3 +1,9 @@
+## 1.61.0 (2025-01-06)
+
+### Feat
+
+- Language classes for UI and valid UN languages (of the letter)
+
 ## 1.60.0 (2025-01-06)
 
 ### Feat
