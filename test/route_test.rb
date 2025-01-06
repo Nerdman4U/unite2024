@@ -16,13 +16,13 @@ class RouteTest < ActionDispatch::IntegrationTest
   # end
 
   test "should get index with locale" do
-    Language.locales_list.each do |locale|
+    Language::UI.locales.each do |locale|
       assert_routing "/#{locale}", controller: "welcome", action: "index", locale: locale
     end
   end
 
   test "should get route to vote path" do
-    Language.locales_list.each do |locale|
+    Language::UI.locales.each do |locale|
       assert_routing "/#{locale}/votes/my-token", controller: "votes", action: "show", locale: locale, token: "my-token"
     end
   end

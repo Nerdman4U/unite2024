@@ -21,7 +21,7 @@
 <meta property="og:description" content="<%= _(UNITE_DESCRIPTION) %>" />
 <meta property="og:locale" content="<%= FastGettext.locale %>" />
 <meta property="og:determiner" content="the">
-<% Language.locales_list.each do |locale| %>
+<% Language::UI.locales.each do |locale| %>
 <meta property="og:locale:alternate" content="<%= locale %>" />
 <% end %>
 <%

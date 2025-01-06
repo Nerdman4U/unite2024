@@ -42,7 +42,7 @@ class VoteMailer < ApplicationMailer
     end
 
     old_locale = I18n.locale
-    value = Language.locale(language.to_s)
+    value = Language::UI.locale(language.to_s)
     if value.blank?
       Rails.logger.error("No language")
       return

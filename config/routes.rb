@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete "tokens" => "tokens#destroy", as: :logout
   get "up" => "rails/health#show", as: :rails_health_check
 
-  scope "/:locale", defaults: { locale: "en" }, constraints: lambda { |req| req.params[:locale].in? Language::locales_list.map(&:to_s) } do
+  scope "/:locale", defaults: { locale: "en" }, constraints: lambda { |req| req.params[:locale].in? Language::UI.locales.map(&:to_s) } do
     root "welcome#index", as: :locale_root
     get "appeal" => "welcome#appeal", as: :appeal
     resources :votes, only: [ :new, :index ]

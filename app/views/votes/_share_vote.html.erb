@@ -2,7 +2,7 @@
 <div>
   <div class="mb-3">
     <%= form.label :language, _("Choose the language of the invitation letter") %>
-    <%= form.select :language, options_for_select(Language.sorted_un_languages), :class => "form-control" %>
+    <%= form.select :language, options_for_select(Language::UN.sorted_un_languages), :class => "form-control" %>
   </div>
   <div class="mb-3">
     <%= form.label :name, _("Name of your friend") + " *" %>

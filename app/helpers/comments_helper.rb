@@ -41,7 +41,7 @@ module CommentsHelper
     <div class="language_container" id="language_#{lang[1]}" onclick='comment.setLanguage(this, "#{lang[0]}","#{lang[1]}")'>
       <div class="language_text">
         <p>#{lang[1]}</p>
-        <p>#{Language.translate(lang[0], "Save the planet") }</p>
+        <p>#{Language::UI.translate(lang[0], "Save the planet") }</p>
       </div>
     </div>
     HTML
@@ -49,7 +49,7 @@ module CommentsHelper
   end
 
   def comment_languages
-    Language.sorted_un_languages.map do |option|
+    Language::UN.sorted_un_languages.map do |option|
       comment_language option
     end.join.html_safe
   end

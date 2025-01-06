@@ -56,8 +56,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    FastGettext.text_domain = "unite-the-armies"
-    FastGettext.available_locales = Language::LOCALES.values
+    # FastGettext.text_domain = "unite-the-armies"
+    # FastGettext.available_locales = Language::LOCALES.values
 
     # accept only valid locale values
     # loc = Language::LOCALES.values.index(params[:locale].try(:to_sym)).nil? ? nil : params[:locale]

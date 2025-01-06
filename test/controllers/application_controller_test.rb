@@ -34,9 +34,9 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     assert_dom "meta[property='og:image']" do |elem| assert_equal elem.attr("content").value, "http://www.example.com/assets/logo-8067e3b5.png" end
     assert_dom "meta[property='og:locale']" do |elem| assert_equal elem.attr("content").value, "en" end # assert_dom "meta[property='og:locale']", content: "en"
     assert_dom "meta[property='og:locale:alternate']" do |elems|
-      assert_equal elems.length, Language.locales_list.length
+      assert_equal elems.length, Language::UI.locales.length
       elems.each do |elem|
-        assert(Language.locales_list.any? { |locale| elem.attr("content") == locale })
+        assert(Language::UI.locales.any? { |locale| elem.attr("content") == locale })
       end
       assert_not(["foobar","asdf"].any? { |locale| elems.attr("content") == locale })
     end

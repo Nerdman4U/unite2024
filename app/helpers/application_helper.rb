@@ -225,12 +225,10 @@ module ApplicationHelper
 
   def language_selection
     result = tag.ul class: "language-selection" do
-      Language::LOCALES.keys.map do |identifier|
+      Language::UI.identifiers.map do |identifier|
         language_item identifier
       end.join.html_safe
     end
-
-
     result
   end
 
