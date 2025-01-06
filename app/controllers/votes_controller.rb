@@ -149,8 +149,8 @@ class VotesController < ApplicationController
       @vote.errors.full_messages.each do |message|
         add_flash :warning, message
       end
-      redirect_to new_vote_path(locale: locale)
-      # render :new, status: :bad_request <= kumpi parempi?
+      # redirect_to new_vote_path(locale: locale)
+      render :new, status: :bad_request
       return
     end
 
@@ -178,9 +178,8 @@ class VotesController < ApplicationController
           redirect_to waiting_path(locale: locale, token: @vote.public_token)
         else
           add_flash :warning, "There was an error while adding your vote"
-          # redirect_to new_vote_path(locale: locale, anchor: "sign")
           Rails.logger.error("There was an error while adding vote, params: #{vote_params.inspect} errors: #{@vote.errors.inspect}")
-          render :new
+          render :new, status: :bad_request
         end
       end
     end

@@ -7,7 +7,7 @@ class TokensControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create token" do
-    post tokens_url(email: votes("vote_1").email)
+    post create_token_path email: votes("vote_1").email
 
     assert_response :redirect
     assert_redirected_to locale_root_path

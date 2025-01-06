@@ -3,6 +3,10 @@ require "test_helper"
 class VotesControllerTest < ActionDispatch::IntegrationTest
   # include ActionDispatch::Integration
 
+  def setup
+    FastGettext.locale = :en
+  end
+
   def json_response
     ActiveSupport::JSON.decode @response.body
   end
@@ -57,13 +61,32 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       email_repeat: "foobar01@foobar.com",
       country: "fi"
     }
+    assert_equal FastGettext.locale, "en"
     assert_difference("Vote.count") do
-      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
+      post create_vote_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     vote = assigns(:vote)
-
     assert flash[:info], ["Your vote is added but email is not yet confirmed. Please check your email."]
     assert_redirected_to waiting_path(locale: "en", token: vote.public_token)
+
+    get votes_path(locale: "zh")
+
+    # Route to locale path after created vote if locale is set
+    values = {
+      name: "foobar",
+      email: "foobar02@foobar.com",
+      email_repeat: "foobar02@foobar.com",
+      country: "fi"
+    }
+    assert_equal FastGettext.locale, "zh"
+    assert_difference("Vote.count") do
+      post create_vote_path, params: { vote: values, "g-recaptcha-response": "valid" }
+    end
+    vote = assigns(:vote)
+    msg = _("Your vote is added but email is not yet confirmed. Please check your email.")
+    assert flash[:info], [msg]
+    assert_redirected_to waiting_path(locale: "zh", token: vote.public_token)
+
   end
 
   test "should not create vote if emails do not match" do
@@ -74,7 +97,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       country: "fi"
     }
     assert_no_difference("Vote.count") do
-      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
+      post create_vote_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     assert_equal flash[:warning], ["Emails do not match"]
     assert_redirected_to new_vote_path(locale: "en")
@@ -89,11 +112,11 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_no_difference("Vote.count") do
-      post votes_path, params: { vote: values, "g-recaptcha-response": "valid" }
+      post create_vote_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
 
     assert_equal flash[:warning], ["Email is invalid"]
-    assert_redirected_to new_vote_path(locale: "en")
+    assert_response :bad_request
   end
 
   # test 'should send backup mail after creating vote' do
@@ -208,13 +231,16 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
 
     # ROOT
     get root_path
-    assert_dom "title", text: "Home (Save the Planet - Unite the Armies)"
+    assert_redirected_to locale_root_path
     get locale_root_path
     assert_dom "title", text: "Home (Save the Planet - Unite the Armies)"
 
     # VOTES
-    get votes_path #  without locale goes to root path
-    assert_dom "title", text: "Home (Save the Planet - Unite the Armies)"
+    get votes_path # without locale uses default locale (en)
+    assert_dom "title", text: "a List of votes (Save the Planet - Unite the Armies)"
+
+    get votes_path(locale: "wrong") # with wrong locale redirects to locale_root_path
+    assert_redirected_to locale_root_path
 
     get vote_path(locale: "en", token: vote.encoded_payload)
     assert_dom "title", text: "My vote (Save the Planet - Unite the Armies)"

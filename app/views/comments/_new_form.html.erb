@@ -2,7 +2,7 @@
 
   <h2 class="h2 upb-3"><%= _("Add a comment") %></h2>
 
-  <%= form_with model: Comment.new, html: {class: "unitethearmies-form", id: "CommentForm"}, action: comments_path, method: :post, "onsubmit": "comment.send()" do |f| %>
+  <%= form_with model: Comment.new, html: {class: "unitethearmies-form", id: "CommentForm"}, url: create_comment_path, method: :post, "onsubmit": "comment.send()" do |f| %>
   <section class="umb-3">
     <%= f.hidden_field :language %>
     <div><%= f.label :language, _("Choose the language"), class: "ufs-1-5" %></div>

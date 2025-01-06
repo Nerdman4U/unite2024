@@ -5,7 +5,7 @@ class VotingFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "can find voting button" do
-    get "/"
+    get locale_root_path
     assert_response :success
     assert_select "h1", "Save the planet"
     assert_select ".button", "Support now"
@@ -17,8 +17,9 @@ class VotingFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "can vote and confirm" do
-    post votes_path, params: { vote: { name: "John Doe", email: "jdoe@localhost", email_repeat: "jdoe@localhost", country: "fi" } }
-    assert flash[:info].present? # "Your vote is added but email is not yet confirmed. Please check your email."
+    post create_vote_path, params: { vote: { name: "John Doe", email: "jdoe@localhost", email_repeat: "jdoe@localhost", country: "fi" } }
+    assert flash[:info].present?
+    assert_equal flash[:info], ["Your vote is added but email is not yet confirmed. Please check your email."]
     assert_response :redirect
     follow_redirect!
     assert_response :success

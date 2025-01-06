@@ -15,7 +15,7 @@ class CommentsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Thank you".upcase
 
     visit new_comment_url
-    assert_selector "h1", text: "Comments".upcase
+    assert_selector "h1", text: "Leave a comment".upcase
 
     within(".unitethearmies-form") do
       first(".language_container").click

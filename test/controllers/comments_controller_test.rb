@@ -9,12 +9,13 @@ class CommentsControllerTest < ActionController::TestCase
     session[:locale] = :en
   end
 
-  test "should get new" do
+  test "should get new comment" do
     vote = votes("vote_1")
     session[:current_vote_id] = vote.id
 
-    get :new
+    get :new, params: { locale: "en" }
     assert_response :success
+    assert_select "h1", "Leave a comment"
   end
 
   test "should create comment" do
