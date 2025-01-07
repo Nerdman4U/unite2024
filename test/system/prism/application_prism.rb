@@ -28,5 +28,9 @@ class ApplicationPrism
     Pages::TokensNew.new
   end
 
+  def comments_new
+    Pages::CommentsNew.new
+  end
+
 end
 

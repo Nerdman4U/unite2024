@@ -34,4 +34,19 @@ class LoginAndLogoutTest < ApplicationSystemTestCase
     assert page.flash.warning.present?
   end
 
+  test 'should be able to show vote and logout' do
+    vote = votes("vote_1")
+    token = vote.encoded_payload
+    page = @app.votes_show
+    page.load(token: token)
+
+    assert page.displayed?
+    assert page.footer.has_logout_link?
+
+    page.footer.logout_link.click
+
+    page = @app.welcome_index
+    assert page.displayed?
+  end
+
 end
