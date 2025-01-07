@@ -98,7 +98,10 @@ module Language
 
   class UI < Base
     def self.locales
-      unless FastGettext && FastGettext.available_locales
+      # TODO
+      # At system test, while loading routes, FastGettext.available_locales is nil (initializers are not loaded yet).
+      # Rails server and console will work fine.
+      if Rails.env.test? && !FastGettext || !FastGettext.available_locales
         return [ :ar, :zh, :en, :fr, :ru, :es, :de, :sv, :fi ]
       end
       FastGettext.available_locales.map { |l| l.to_s }.sort { |a, b| a <=> b }
