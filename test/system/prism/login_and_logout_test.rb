@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class LoginAndLogout < ApplicationSystemTestCase
+class LoginAndLogoutTest < ApplicationSystemTestCase
 
   def setup
     @app = ApplicationPrism.new
@@ -17,6 +17,7 @@ class LoginAndLogout < ApplicationSystemTestCase
     assert page.displayed?
     assert page.flash.present?
     assert page.flash.success.present?
+    assert page.footer.has_no_logout_link?
   end
 
   test 'should not be able to login with wrong credentials' do

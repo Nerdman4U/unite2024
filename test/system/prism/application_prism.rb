@@ -1,9 +1,17 @@
 class ApplicationPrism
+  def root
+    Pages::Root.new
+  end
+
   def welcome_index
     Pages::WelcomeIndex.new
   end
   def welcome_appeal
     Pages::WelcomeAppeal.new
+  end
+
+  def without_locale
+    Pages::WithoutLocale.new
   end
 
   def votes_index
