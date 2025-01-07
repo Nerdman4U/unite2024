@@ -1,6 +1,8 @@
 <title><%= unitethearmies_title %></title>
 
-<!-- Open Graph tags - https://ogp.me -->
+<!-- Open Graph
+See: https://ogp.me
+-->
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport" />
@@ -29,21 +31,37 @@
 <meta property="og:video" content="">
 <%
 =end%>
-<!-- Open Graph tags end -->
+<!-- /Open Graph -->
 
 <%= csrf_meta_tags %>
 
+<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- /Favicon -->
 
-<!-- Font -->
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700%7CRoboto:300,400,500,700' rel='stylesheet' type='text/css' />
+<!-- Bootstrap Icons
+See: https://icons.getbootstrap.com/
+Todo: locally
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- /Bootstrap Icons -->
+
+<!-- Google Font
+  See: https://pagespeedchecklist.com/asynchronous-google-fonts
+-->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CRoboto:300,400,500,700" rel="stylesheet" type="text/css" media="print" onload="this.onload=null;this.removeAttribute('media');" fetchpriority="high" />
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CRoboto:300,400,500,700">
+</noscript>
+<!-- /Google Font -->
 
 <script>
   RUN_RECENT_VOTES = parseInt("<%= ENV['UNITE_RUN_RECENT_VOTES'] %>")
 </script>
 
+<!-- Propshaft -->
 <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+<!-- /Propshaft -->
 
 <% if production_server? %>
 <script>
