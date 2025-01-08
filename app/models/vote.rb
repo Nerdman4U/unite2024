@@ -144,29 +144,18 @@ class Vote < ApplicationRecord
   def make_public_token token
     Digest::MD5.hexdigest(token)
   end
+
   def make_private_token
     SecureRandom.hex(4) + Time.now.to_i.to_s[-4,4]
   end
+
   def set_private_token
     self.secret_token = make_private_token
   end
+
   def set_public_token
     raise "secret_token is nil" if secret_token.nil?
     self.md5_secret_token = make_public_token(secret_token)
   end
-
-  # # We do not allow duplicate tokens, lets be sure there is no equal
-  # # token already in database.
-  # def add_secret_token
-  #   while token = SecureRandom.hex(64) do
-  #     if Vote.where(secret_token: token).blank?
-  #       require 'digest/md5'
-  #       digest = Digest::MD5.hexdigest(token)
-  #       self.secret_token = token
-  #       self.md5_secret_token = digest
-  #       break
-  #     end
-  #   end
-  # end
 
 end
