@@ -1,3 +1,16 @@
+## 1.62.0 (2025-01-08)
+
+### Feat
+
+- Comment confirmed_at, allowing all UI languages, show random comment at landing page
+- **_head.html.erb**: Asynchronous Google fonts load
+- Tests to show vote, comment and logout
+
+### Fix
+
+- **sitePrism-tests**: Tests are all ran with test:system and working
+- **language.rb**: A small comment about last commit
+
 ## 1.61.0 (2025-01-06)
 
 ### Feat
