@@ -78,6 +78,11 @@ module Language
       locales.map {|locale| LOCALES[locale.to_sym].downcase }
     end
 
+    ## @return [Array] list of [name, identifier(symbol)]
+    def self.sorted_languages
+      names.sort.map { |name| [name, name.downcase.to_sym] }
+    end
+
   end
 
   class UN < Base
@@ -88,11 +93,6 @@ module Language
       raise ArgumentError if locale.blank? || name.blank?
       raise ArgumentError unless self.locales.include?(locale.to_s)
       super
-    end
-
-    ## @return [Array] list of [name, identifier(symbol)]
-    def self.sorted_un_languages
-      names.sort.map { |name| [name, name.downcase.to_sym] }
     end
   end
 

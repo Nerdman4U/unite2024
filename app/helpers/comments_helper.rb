@@ -49,7 +49,7 @@ module CommentsHelper
   end
 
   def comment_languages
-    Language::UN.sorted_un_languages.map do |option|
+    Language::UI.sorted_languages.map do |option|
       comment_language option
     end.join.html_safe
   end

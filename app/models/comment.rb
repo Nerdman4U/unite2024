@@ -1,22 +1,19 @@
 class Comment < ApplicationRecord
-  # include Humanizer
-  attr_accessor :bypass_humanizer
-  # require_human_on :create, :unless => :bypass_humanizer
+  scope :unconfirmed, -> { where(confirmed_at: nil) }
+  scope :confirmed, -> { where.not(confirmed_at: nil) }
 
-  # validates :name, presence: true
   validates :language, presence: true
-  # validates :email, confirmation: true
-  # validates :email, presence: true, uniqueness: true, email: true
-  # validates :email_confirmation, presence: true
   validates :ip, presence: true
   validates_format_of :ip, with: /\A(\d{1,3}\.){3}\d{1,3}\z/
   validates :vote, presence: true
-  validate :validate_language_literal
+  validate :validate_language_identifier
   validate :validate_theme
 
   after_initialize :downcase_theme
 
   belongs_to :vote
+
+  before_save :slugify
 
   def downcase_theme
     self.theme.downcase! unless theme.blank?
@@ -32,11 +29,11 @@ class Comment < ApplicationRecord
     end
   end
 
-  def validate_language_literal
+  def validate_language_identifier
     if language.blank?
       return errors.add(:language, message: "You need to select language before posting a comment.")
     end
-    unless Language::UN.valid_identifier? language
+    unless Language::UI.valid_identifier? language
       errors.add(:language, "is not valid")
     end
   end
@@ -51,5 +48,25 @@ class Comment < ApplicationRecord
     language.capitalize
   end
 
+  def slug
+    body = self.body.unite_escape.downcase.split[0..10].filter(&:present?).join("-")
+    result = [self.theme, body, self.id].join("-")
+    result
+  end
+
+  def slugify
+    self.slug = slug
+  end
+
+  def self.random_comment_for_language language
+    return nil unless Language::UI.valid_identifier? language
+    confirmed.where(language: language).sample
+  end
+
+  def name
+    return "Anonymous" if self.anonymous
+    return "Anonymous" unless self.vote
+    self.vote.name
+  end
 
 end

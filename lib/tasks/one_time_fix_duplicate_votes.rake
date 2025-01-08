@@ -3,7 +3,7 @@
 # This may have happened if email has different letter sizes.
 #
 require "ostruct"
-namespace :fix do
+namespace :fix_once do
   desc "Remove duplicate votes"
   task duplicate_votes: :environment do
     emails = Vote.all.map { |a| [ a.email.downcase, a.id ] }.group_by(&:first)

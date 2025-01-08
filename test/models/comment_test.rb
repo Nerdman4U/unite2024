@@ -6,7 +6,6 @@ class CommentTest < ActiveSupport::TestCase
     I18n.locale = :en
 
     @comment = comments("one")
-    @comment.bypass_humanizer = true
     @comment.vote = votes("vote_1")
   end
 
@@ -59,7 +58,7 @@ class CommentTest < ActiveSupport::TestCase
     assert_not @comment.valid?
   end
 
-  test 'should validate language literal' do
+  test 'should validate language identifier' do
     @comment.language = 'foo'
     assert_not @comment.valid?
 
@@ -90,5 +89,32 @@ class CommentTest < ActiveSupport::TestCase
     assert @comment.valid?
   end
 
+  test 'should make a slug' do
+    assert @comment.slug
+    assert @comment.slug.match(/water-testataan-kommentointia-\d+/), @comment.slug
+    comment2 = comments("two")
+    assert comment2.slug.match(/administration-no-testataan-vaan-lisää-tässä-yksi-kommentti!-\d+/), "comment2.slug: " + comment2.slug
+  end
+
+  test 'should have a slug after save' do
+    @comment.slug = nil
+    @comment.save
+    assert @comment.slug.match(/water-testataan-kommentointia-\d+/), @comment.slug
+  end
+
+  test 'should find confirmed comments' do
+    count1 = Comment.confirmed.count
+    assert count1 > 0
+
+    @comment.confirmed_at = nil
+    @comment.save
+    count2 = Comment.confirmed.count
+    assert count2 < count1
+  end
+
+  test 'should give random comment for language' do
+    assert Comment.random_comment_for_language('english').is_a? Comment
+    assert_nil Comment.random_comment_for_language('arabic')
+  end
 
 end

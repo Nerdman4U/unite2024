@@ -11,6 +11,7 @@ Copyright: Save the Planet - Unite the Armies
 2. Typography
 3. Animation
 4. Color
+5. Decoration
 
 Based on Sartre Skin Barber Shop by ThemeMountain.
 
@@ -235,6 +236,25 @@ body {
   margin-top: -4px;
 }
 
+.random-comment {
+  .random-comment-body {
+    padding: 1vw;
+  }
+  .random-comment-name {
+    letter-spacing: 1.5px;
+  }
+}
+
+.header .header-inner {
+  width: inherit;
+}
+
+#recent_votes_container .flag-icon,
+.country_flag .flag-icon {
+  height: 3vw;
+  width: 4vw;
+}
+
 @media only screen and (max-width: 960px) {
   .header {
     background: none;
@@ -335,6 +355,15 @@ h1 {
   font-weight: 700;
   letter-spacing: 0;
   text-decoration: underline;
+}
+
+.random-comment {
+  .random-comment-body {
+    font-size: 2vw;
+  }
+  .random-comment-name {
+    font-weight: 700;
+  }
 }
 
 /*
@@ -464,6 +493,10 @@ h6 {
   color: var(--bs-dark) !important;
 }
 
+#recent_votes_container .recent-vote:hover {
+  background-color: var(--bs-focus-ring-color);
+}
+
 @media only screen and (max-width: 960px) {
   .header .header,
   .header .header-inner,
@@ -477,54 +510,18 @@ h6 {
 
 /*
 -----------------------------------------------------------------
-* 2. Header
+* 5. Decoration
 -----------------------------------------------------------------
 */
 
-/* Bootstrap 5.3.3 aligns row differently and causes layout issues with old theme (theme.core.min) css */
-/* .row {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: inherit;
-} */
-.header .header-inner {
-  width: inherit;
-}
-
-/*
------------------------------------------------------------------
-* 3. Footer
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 4. Media Queries
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 5. Print
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 6. Slider
------------------------------------------------------------------
-*/
-
-/*
------------------------------------------------------------------
-* 7. Recent Votes
------------------------------------------------------------------
-*/
-#recent_votes_container .flag-icon,
-.country_flag .flag-icon {
-  height: 3vw;
-  width: 4vw;
-}
-#recent_votes_container .recent-vote:hover {
-  background-color: var(--bs-focus-ring-color);
+.random-comment {
+  writing-mode: horizontal-tb;
+  display: inline-table;
+  border-image-slice: 12 12 12 12;
+  border-image-width: 12px 12px 12px 12px;
+  border-image-outset: 1vw;
+  border-image-repeat: repeat repeat;
+  border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-2.png");
+  border-style: solid;
+  padding: 1.5vw;
 }

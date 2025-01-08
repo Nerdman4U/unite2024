@@ -67,4 +67,10 @@ class BrowseSiteTest < ApplicationSystemTestCase
     assert page.header.logo.present?
   end
 
+  test 'should have a comment at welcome page' do
+    page = @app.welcome_index
+    page.load
+    assert page.comment.present?
+  end
+
 end

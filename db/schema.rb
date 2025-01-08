@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_30_093716) do
+ActiveRecord::Schema[8.1].define(version: 2025_01_08_074459) do
   create_table "comments", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
-    t.string "topic"
     t.text "body"
     t.string "language"
     t.datetime "created_at", precision: nil, null: false
@@ -20,7 +19,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_30_093716) do
     t.string "ip"
     t.string "theme"
     t.integer "vote_id"
-    t.boolean "anonymous"
+    t.boolean "anonymous", default: true
+    t.string "slug", null: false
+    t.datetime "confirmed_at"
+    t.index ["slug"], name: "index_comments_on_slug"
   end
 
   create_table "ua_settings", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|

@@ -1,4 +1,4 @@
-namespace :fix do
+namespace :fix_once do
   desc "Set confirmed flag true to current emails"
   task confirm_emails: :environment do
     Vote.where(spam: false, email_confirmed: nil).each do |vote|

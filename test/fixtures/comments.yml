@@ -1,9 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+<%
+date1 = Time.now - 1.year
+date2 = Time.now - 1.day
+%>
+
 one:
-  topic: Kommentti1
+  created_at: <%= date1 %>
+  updated_at: <%= date1 %>
   body: Testataan kommentointia
   language: english
   ip: 0.0.0.0
   theme: water
+  anonymous: true
+  slug: test1
+  confirmed_at: <%= date1 %>
 
+two:
+  created_at: <%= date2 %>
+  updated_at: <%= date2 %>
+  body: 'No testataan "#%&/()=? vaan lisää, tässä yksi kommentti!'
+  language: english
+  ip: 1.2.3.4
+  theme: administration
+  anonymous: false
+  slug: test2
+  confirmed_at: <%= date2 %>

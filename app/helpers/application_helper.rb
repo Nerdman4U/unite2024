@@ -232,4 +232,30 @@ module ApplicationHelper
     result
   end
 
+  ## Random comments
+  #
+  # @param [string] language as an identifier i.e. finnish
+  def random_comment
+    language = Language::UI.identifier locale
+    unless language
+      logger.error("ApplicationHelper#random_comment: Language not found! locale:#{locale}")
+      return
+    end
+
+    comment = Comment.random_comment_for_language language
+    return unless comment.present?
+    tag.div class: "random-comment" do
+      result = []
+      result << tag.div(class: "random-comment-body") do
+        tag.i do
+          comment.body
+        end
+      end
+      result << tag.div(class: "random-comment-name") do
+        comment.name
+      end
+      result.join("\n").html_safe
+    end
+  end
+
 end

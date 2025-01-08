@@ -1,6 +1,6 @@
 ## Flag spam votes as spam
 #
-namespace :fix do
+namespace :fix_once do
   desc "fix spam"
   task spam: :environment do
     Rails.logger.level = Logger::DEBUG

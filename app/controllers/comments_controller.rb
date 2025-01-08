@@ -43,7 +43,6 @@ class CommentsController < ApplicationController
 
     @comment = Comment.new(comment_params)
     @comment.ip = request.env["REMOTE_ADDR"]
-    @comment.bypass_humanizer = true if Rails.env.test?
     @vote = vote
     @comment.vote = vote
 
