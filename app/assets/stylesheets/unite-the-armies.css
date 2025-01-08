@@ -213,7 +213,7 @@ body {
   /* vertical-align: middle; */
   /* display: table-cell; */
   display: block;
-  padding-top: 12vw;
+  padding-top: 20vw;
   float: none;
 }
 
@@ -515,13 +515,22 @@ h6 {
 */
 
 .random-comment {
+  border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
+  padding: 2vw;
+}
+.initiative-presented {
+  border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-3.png");
+  padding: 5vw;
+}
+
+.random-comment,
+.initiative-presented {
   writing-mode: horizontal-tb;
   display: inline-table;
   border-image-slice: 12 12 12 12;
   border-image-width: 12px 12px 12px 12px;
   border-image-outset: 1vw;
   border-image-repeat: repeat repeat;
-  border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-2.png");
   border-style: solid;
-  padding: 1.5vw;
+  border-radius: 5px;
 }
