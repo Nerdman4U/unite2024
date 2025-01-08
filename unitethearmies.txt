@@ -1,0 +1,992 @@
+Joni Töyrylä
+
+
+Table of Contents
+─────────────────
+
+1. Unite The Armies
+.. 1. Muistiinpanoja
+.. 2. Muutoksia
+.. 3. Päiväkirja
+..... 1. clock
+..... 2. 8.1.2025
+..... 3. 7.1.2025
+..... 4. 6.1.2025
+..... 5. 5.1.2025
+..... 6. 4.1.2025
+..... 7. 3.1.2025
+..... 8. 2.1.2025
+..... 9. 1.1.2025
+..... 10. 31.12.2024
+..... 11. 30.12.2024
+..... 12. 29.12.2024
+..... 13. 28.12.2024
+..... 14. 27.12.2024
+..... 15. 26.12.2024
+..... 16. 25.12.2024
+..... 17. 24.12.2024
+..... 18. 23.12.2024
+..... 19. 21.12.2024
+..... 20. 19.12.2024
+..... 21. 18.12.2024
+..... 22. 17.12.2024
+..... 23. 16.12.2024
+..... 24. 14.12.2024
+..... 25. 13.12.2024
+..... 26. 12.12.2024
+..... 27. 11.12.2024
+..... 28. 10.12.2024
+..... 29. 9.12.2024
+..... 30. 7.12.2024
+..... 31. 6.12.2024
+..... 32. 3.12.2024
+..... 33. 2.12.2024
+..... 34. 29.11.2024
+..... 35. 28.11.2024
+..... 36. 27.11.2024
+..... 37. 26.11.2024
+..... 38. 22.11.2024
+..... 39. 21.11.2024
+..... 40. 20.11.2024
+..... 41. 19.11.2024
+..... 42. 18.11.2024
+..... 43. 15.11.2024
+..... 44. 14.11.2024
+..... 45. 13.11.2024
+..... 46. 12.11.2024
+..... 47. 11.11.2024
+
+
+1 Unite The Armies
+══════════════════
+
+  Päivitetään projekti ruby 3.3.6 ja rails 8.0 versioille.
+
+
+1.1 Muistiinpanoja
+──────────────────
+
+  <https://guides.rubyonrails.org/debugging_rails_applications.html>
+  <https://rubyonrails.org/2024/9/27/rails-8-beta1-no-paas-required>
+
+
+1.2 Muutoksia
+─────────────
+
+  • ☐ votesControllerTest kuinkas header accept-language asetetaan että
+    voi testata meneekö oikeaan lokaleen
+  • ☐ logger
+    • kuinkas saa lokista virheet kätevästi => pitäisi testata
+      development modessa log_leveliä joka tulostaa vain errorit
+      tms. eli että ei tule kauheaa kaatoa vaan vain muutama rivi…
+  • ☐ javascript
+    • ☐ turha pois, konvertoidaan uudeksi ecmaksi
+    • ☐ unitethearmies.js tarvitaanko muita kuin loadVotes?
+  • ☐ vimeo siirretään videot palvelimelle…
+  • ☐ vote belongs_to vote :counter_cache vote_test.rb:124
+  • ☐ ./log mitenkäs rotaatio
+  • ☐ Cache ja Queue config.cache_store on kommentoitu koska en saa
+    luotua taulua schemasta, production modessa hajoaa.  => schema on
+    database dump eikä siitä voi luoda taulua.
+  • ☐ test
+    • ☐ system
+      • ☐ create vote
+      • ☐ flash messageista
+      • ☐ show vote
+      • ☐ invite äänestä, olet äänessä, käytä ääntä (create, show,
+        invite)
+    • ☐ vote_test:secret_confirm_hash minkä takia vote objektiin
+      (fixture) tallennettu tieto ei löydy ORM:in metodeita
+      käyttäen? eli fixture on vai ei ole synkronoitu tietokannan
+      kanssa?
+    • ☐ admin upload upload fixture on näemmä muuttunut
+  • ☐ UaSetting
+    • ☐ nimeäminen varmaan on jokin paremmalta kuulostava nimi
+      olemassa, setting on ainakin väärin, pitäisi vähintään olla
+      "settings".
+      • pitää olla kannassa koska lähetettyjen mailien datetime
+        täytyy aina saada talteen.
+      • miksi ei voisi olla vain "Settings", voi tulla namespace
+        ongelemia (?)
+
+
+1.3 Päiväkirja
+──────────────
+
+1.3.1 clock
+╌╌╌╌╌╌╌╌╌╌╌
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Headline          Time                        
+  ───────────────────────────────────────────────
+   *Total time*      *6d 15:46*                  
+  ───────────────────────────────────────────────
+   Unite The Armies  6d 15:46                    
+   Päiväkirja                  6d 15:46        
+     27.12.2024                           8:08 
+     26.12.2024                           3:57 
+     25.12.2024                           7:31 
+     24.12.2024                          21:56 
+     23.12.2024                           5:59 
+     21.12.2024                           6:09 
+     19.12.2024                           4:34 
+     18.12.2024                           2:45 
+     17.12.2024                           2:21 
+     16.12.2024                           3:49 
+     14.12.2024                           5:33 
+     13.12.2024                           1:39 
+     12.12.2024                           2:50 
+     11.12.2024                           3:13 
+     10.12.2024                           1:39 
+     9.12.2024                            4:13 
+     7.12.2024                            3:34 
+     6.12.2024                            0:14 
+     3.12.2024                            3:12 
+     2.12.2024                            1:28 
+     29.11.2024                           4:58 
+     28.11.2024                           3:52 
+     27.11.2024                           4:59 
+     26.11.2024                           4:56 
+     22.11.2024                           3:39 
+     21.11.2024                           4:50 
+     20.11.2024                           4:00 
+     19.11.2024                           7:06 
+     18.11.2024                           4:25 
+     15.11.2024                           4:52 
+     14.11.2024                           2:54 
+     13.11.2024                           6:00 
+     12.11.2024                           5:06 
+     11.11.2024                           3:25 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Table 1: Clock summary at [2024-12-27 Fri 18:26]
+
+
+1.3.2 8.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  >> rails fix_once:anonymous_and_confirmed_at rails
+  >> fix_once:languages_and_confirmed_at
+
+  • ☒ kommentit
+    • ☐ kommentin vahvistaminen
+      • eli siis admin tilasta
+    • ☑ näkyville comment/show/{slug} => show random comment at chosen
+      language at landing page.
+    • ☑ slug
+    • ☑ kielisyys kommentit voi jättää kaikilla käyttöliittymän
+      kielillä (koska esim. paljon suomenkielisiä kommentteja)
+  • ☐ vote
+    • ☐ ääneen kytketyt äänet?
+      • näkyville esim. linkitetyt emailit
+
+
+1.3.3 7.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☐ speed tsekkaus
+    <https://pagespeedchecklist.com/asynchronous-google-fonts>
+    • ☐ taustakuvat kommenttia lisätessä ja random kommentissa
+      • täytyy olla lokaalisti
+    • ☐ bootstrap
+      • ikonit lokaalisti.
+  • ☑ testit SitePrism toimii hienosti.
+    • ☑ äänisivu
+    • ☑ uloskirjautuminen
+    • ☑ kommentointi
+  • ☑ fontit tutkia pittee.
+    <https://developers.google.com/fonts/docs/getting_started>
+    <https://pagespeedchecklist.com/asynchronous-google-fonts>
+
+
+1.3.4 6.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ Language
+    • ☑ UNLanguage ja UILanguage ja testit
+  • ☑ route
+    • ☑ resource :token
+    • ☑ route testit
+
+
+1.3.5 5.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ SitePrism vähän selausta ja kirjautuminen
+  • ☑ rails
+    • ☑ status: bad_request
+
+
+1.3.6 4.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ javascript
+    • ☑ header
+    • ☐ slider
+  • ☑ header
+    • ☑ height js pois
+  • ☑ tests
+    • ☑ etusivun ensimmäinen mobiilitesti kielet, linkit pois ja
+      mobiilinavigointinappi
+      • ☑ media query
+
+
+1.3.7 3.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ julkaisuun
+    • ☑ flash useita viestejä per tyyppi
+    • ☐ under construction
+    • ☐ deployment with dropbox
+    • ☐ email layout
+    • ☑ recent votes
+      • ☑ ago maksimi lienee "yli viikko"
+    • ☐ why vote
+    • ☐ translations
+  • ☐ tuotanto
+    • ☐ lokirotaatio
+
+
+1.3.8 2.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ sass, flags-gem oukkidoukki, nyt täytyy tutkia mites sass lähtee
+    toimintaan => ei onnistunut mutta sain generoitua tavallisen css
+    tiedoston
+
+
+1.3.9 1.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Tehdäänpäs vielä hetki.
+  • ☑ languages main branchiin ja kielenkäännökset googlella.
+  • ☑ rails 8.1
+
+  • ☑ sass propsaft, sass ja gemien tyylit, kuinka suapi?  =>
+    manuaalisesti
+  • ☑ tutkin Rails konfigurointia
+
+
+1.3.10 31.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  timber:r.694 timber:r.800
+
+  tms-content, height => header vw tms-content-inner, valign => pois,
+  display: block tms-slides: top: 3vw;
+
+  • ☑ liput pois ja tilalle kielet
+  • ☑ js
+    • ☑ full-width-slider jos css luokan (application_helper) poistan
+      niin jääpi kuva näkymäti
+    • ☑ käydään läpi javascripta ja slideria otsikko myös pienemmässä,
+      napsautuksella suuremmaksi ilman otsikkoa (eli voi ihailla
+      kuvaa).  jos suurempi kuva, piilotetaan vain otsikot.  =>
+      toimii mutta mobiilikoossa ei vielä toimi
+    • ☑ sekä headeria pitäisi poistaa javascript height asetus.
+      header ja feature-media height edelleen js:stä.
+
+
+1.3.11 30.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ flags varmaan löytyy päivitetty kirjasto (recent votes)
+
+  • ☒ comments#new
+    • ☑ post
+    • ☑ pikkuvirheitä
+      • ☑ flash
+      • ☑ asemointi jos header teksti
+  • ☑ font size
+    • ☑ layout kuntoon
+  • ☑ flash
+    • ☑ sulkeminen
+    • ☑ useat allekkain eri viestit, eri tyypit saman tyypin sisäkkäin
+      listassa.
+  • ☑ vote#show
+    • ☑ punainen sydän
+  • ☑ footer
+    • ☑ my_vote/logout tekstilinkkeinä erillisesti ja external linkit
+      ominaan.
+
+
+1.3.12 29.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ comment#new
+    • ☑ jatko värkkäys
+  • ☑ title
+    • ☑ laitetaanpa titleen controller action
+    • ☑ headiin og parametrit <https://ogp.me>
+  • ☑ testi
+    • ☑ language ja country libin alle
+  • ☐ logo ei ole kummonen
+  • ☐ moduli voisi olla libin alla olevat modelit UniteTheArmies-
+    moduulissa.
+  • ☐ email
+    • ☐ yhtenäinen layout
+    • ☐ assert_dom_email voipi testata emailin bodyn nähtävästi
+      kontrollerista
+  • ☐ Open Graph
+    • ☐ video
+    • ☐ audio
+  • ☐ header tutkiminen
+    • ☐ javascript eli aluksi pitää poimia tarvittavat js:t ja poistaa
+      kaikki muut, kaikki ikkunan muutoksiin reagoivat js:t pois
+
+  opin ruby blokki parametrista että jos metodille vie parametrin ja
+  blokkiparametrin niin jälkimmäinen ei toimi sulkuversiona jos
+  ensimmäinen ei ole sulutettu.
+
+  opin myös rails-dom-testing gemistä että attribuuttien testaamista ei
+  tehdä assert_dom- metodissa ilman uutta blokkia, vain lukumäärä
+  testataan.
+
+
+1.3.13 28.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ comment#new
+    • ☑ värkkäys aloitetaanpa uudella idealla.
+  • ☐ FastGetText
+    • ☐ plural
+      <https://bytesbites.io/2024/06/10/lost-in-translation-using-gettext-as-a-backend-for-i18n-in-rails.html>
+      onkohan monikot millä tavalla tällä hetkellä?
+
+
+1.3.14 27.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ footer pientä ulkoasusäätöä.
+  • ☐ recent votes onkin table
+  • ☐ tms-arrow-nav kun sliderissa on usampi slide niin js tulostaa
+    napit, vaan ei löydy äkkiseltään että mistä kun ikonit on rikki,
+    pitäisi muuttaa bootstrap ikoneiksi…
+  • ☑ slider
+    • ☑ helper
+      • ☑ perustoiminta
+      • ☑ jatko eli parametrina blokilta lista slideista: [{link:
+        link,…},…]
+  • ☒ responsive
+    • ☑ vw tyyleissä on nyt ufs, um, up, umx, ymy, upy, upx, h1+
+    • ☐ header sivun alussa on header vertikaalisesti keskitetty
+      (tms-content-inner). resize event handler laskee aina
+      elementtien leveydet ja korkeudet jonka mukaan asemoituu… eli
+      pitää purkaa pois nämä kaikki.
+  • ☑ lib models
+    • ☑ country, language ja recaptcha libiiin
+    • ☑ loadpathiin
+  • ☑ accessibility
+    • ☑ resoluutio äkkiseltään jos ruutua alkaa pienentää niin =>
+      täytyy ruveta käyttämään viewport kokoja kaikkialla, tuntuisi
+      toimivan.
+      • ☑ header katoaa
+      • ☑ alakerran napit limittyy
+      • ☑ footer ei oikein näytä hyvältä
+  • ☑ test:system
+    • ☑ headerin koko ja käyttäytyminen täytyy siis tehdä testi joka
+      testaa että header pysyy yhdellä rivillä, cuprite ehkä osaa
+      testata eri resoluutioilla
+  • ☑ font joitain fontteja ladataan googlesta, täytyisi tietysti olla
+    lokaalisti..  => asynkroninen lataus
+  • ☑ teema voisi olla ideaa myös alkaa siirtämään toimintoja uuteen
+    teemaan
+    esim. <https://www.elegantthemes.com/gallery/divi/?theme=Divi>
+    • vanha js pois => ei nyt kuitenkaan.
+    • headerin ja login javascript täytyy tutkia ja kuitenkin ottaa
+      uuteen teemaan…
+    • samoin tms-slide ja ul käyttö, nuo javascriptit
+    • ☑ responsive marginals onko mahdollista? nyt on isoja tyhjiä
+      välejä ulkoasun takia, pitäisi tietysti skaalautua.
+
+
+1.3.15 26.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Autocomplete ctrl-K ja ctrl-. tai tabilla
+
+  • ☑ vote
+    • ☑ private ja public token
+    • ☑ welcome partial public token instead of id.
+    • ☑ finders / scopes kuinka saisi tämän:
+      Vote.find_by_md5_secret_token(params[:token], spam: false,
+      email_confirmed: nil) muotoon: class Vote
+      find_by_public_token: XXX end >
+      Vote.find_by_public_token(token) => hakee + spam:false, jne.
+    • ☑ mailer testit vote_test.rb:ssä on vielä pari mailer testiä ja
+      luokka peritään mailer test::casesta.
+  • ☑ session reset_session logouttiin, eli tekee uuden session ja
+    sessio id:n.
+  • ☑ UaSetting
+    • ☑ admin notify kama tänne testeineen.
+  • ☑ Config
+    • ☑ x.sent_count parempi nimi olkoon: votes_in_notify_email
+  • ☑ task
+    • ☑ notify info $ rails <info:notify_admins> > Last notify email
+      has been sent at xxx.  > After that, yyy votes has been
+      added. Next email is sent > when xxx votes (zzz more) is
+      added.  > Total amount of votes is xxx.
+  • ☐ UaSetting täytyy muuttaa nimi, UniteSettings (?), AppSettings (?)
+
+
+1.3.16 25.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ vote
+    • ☐ show section taustavärit pitäisi olla automaattisesti
+      vuorotellen, esim. jos linkitettyjä ääniä on tai ei ole.
+    • ☑ emails_to_admins => rename notify_admins
+    • ☑ scopes
+      • ☑ Vote.find_confirmed
+        <https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/>
+    • ☐ save login voisi olla mahdollisuus tallentaa login
+      ko. koneelle että ei tarvitse aina rampata spostissa.
+  • ☑ invite
+    • ☑ testi
+    • ☑ suomenkieli eipä voikkaan olla kun kutsut lähetetään vain
+      kielillä joilla aloite on lähetetty Yhdistyneille
+      Kansakunnille.
+    • ☑ add_parent täytyy lisätä voten id:llä, ei tietenkään parentin
+      tokenilla.  => md5_secret_token mutta koko action on turha,
+      voi viedä parametrina suoraan new:lle.
+    • ☑ email view invite url suoraan new:lle
+  • ☑ waiting
+    • ☑ token käytössä vote_id, käytetään kuitenkin md5 tokenia.
+
+
+1.3.17 24.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ votes#show
+    • ☑ email should be shown
+    • ☑ amount of invites (iso numero)
+    • ☑ amount of comments
+    • ☐ sliding title
+  • ☐ tailwindcss tämäkin vaihtoehto olisi, kumpi on parempi?
+  • ☐ bootstrap
+    • ☐ ikonit lokaalisti
+  • ☐ discord jossain vaiheessa
+  • ☐ testi
+    • ☐ animaatio pitäisi olla testi joka varmistaa että
+      esim. animaatio toimii yms.
+  • ☑ päätelaitteet pitäisi alkaa testaamaan myös erilaisilla…  =>
+    application ja mobile testaus on.
+
+
+1.3.18 23.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  seuraavaksi:
+  • ☑ icomoon ikonit katosi, jaa-a. Eipä äkkiä nyt löydy syytä, fontit
+    ja kuvat on mutta joku ei ole.  => pitäisikö nyt siirtyä bootstrap
+    ikoneihin?
+    • ☑ bootstrap
+  • ☐ fastbootstrap voisi tästä harkita kokonaan uutta teemaa.
+  • ☐ tms-caption ei voi poistaa koska animaatio ei toimi muuten, täytyy
+    tutkia.
+  • ☐ votes#index ensimmäisen sectionin height asetetaan jossain
+    javascriptissä 600px ja se vaikuttaa myöhemmin että taustakuva
+    scrollaa elementtien takana.
+  • ☑ votes#index
+    • ☑ send login link
+
+
+1.3.19 21.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ assets kauhea säätö
+    • ☑ lokissa kauhea määrä puuttuvia assetseja.
+  • ☑ favicon.ico ei pysty selaimessa katsomaan => pystyy, en vain
+    nähnyt kun katsoin kaksi pikseliä liian alas.
+    • ☑ maapallo
+
+
+1.3.20 19.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☐ varoituksia
+    • ☐ javascript konsolissa
+  • ☐ github pittää olla unitethearmies tms.
+  • ☐ flash
+    • ☐ automaattisesti katoava
+
+  • ☐ mailer confirm url on väärin tuotannossa: testi.unitethearmies.org
+    pitäisi olla.  => tällä kokemuksella näyttää siltä että mailerin
+    viewissä path kadottaa vhostin eli toimii kun confirm_url
+    kutsutaan controllerissa ja osoite viedään parametrina mailerille.
+    • ☐ onko muita kuin confirm vote?
+  • ☑ votes
+    • ☑ show ikoni
+    • ☑ show, uusi taustakuva
+    • ☑ logout
+      • ☑ voisi ilmestyä scrollatessa oikealle?  tai headeriin
+  • ☒ layout
+    • ☐ sharebuttons saisiko fixed positiolla scrollaamaan sivussa?
+    • ☑ section_block_pt jos header onkin kuvan alapuolella
+  • ☑ test
+    • ☑ VoteTest#test_should_have_votes_to_be_send_to_admins
+      [test/models/vote_test.rb:149]: epäonnistuu randomisti
+  • ☑ ikonit nyt käytössä icomoon.  <https://icomoon.io/ultimate#free>
+    <https://icomoon.io/docs#packs> voisi vaihtaa bootstrappiin… vai?
+    <https://icons.getbootstrap.com/#install>
+  • ☑ confirm emailissa confirm vote url on rikki (pitäisi olla
+    testi.unitethearmies.org)
+
+
+1.3.21 18.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☒ votes
+    • ☑ my vote- linkki
+      • ☑ indexissä linkki
+      • ☑ vie voteen jos sessiossa on avain
+    • ☑ show
+      • ☑ jos ei ole tokenia, täytyy näyttää formi
+      • ☑ jos ei ole aktivoitu, täytyy ohjata waiting- actioniin.
+      • ☑ logout nappi joka tyhjentää session tarvittaessa.
+    • ☐ email
+      • ☐ attachment lisää jokaiseen postaukseen maapallo
+      • ☐ similar should have similar layout
+
+
+1.3.22 17.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ waiting
+    • ☑ background image => lisätty pari kuvaa ja nimetty
+    • ☑ waiting time => how to test private method of controller?
+      seems difficult.  howabout helper method.  => result should be
+      "4min 32sec"
+
+
+1.3.23 16.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ aikataulu
+    • ☑ export Laitan tämän muistiinpanon myös githubiin jos vaikka
+      joku haluaa katsoa mitä on tehty.
+  • ☑ waiting
+    • ☑ täytyy estää spammays
+    • ☑ waiting using vote id
+  • ☑ mailerit
+    • ☑ refactor käyttämään with metodia rails 8 tyyliin
+  • ☑ recent votes
+    • ☑ application_state muutetaan UNITE_RUN_RECENT_VOTES
+    • ☑ env pitäisikö kuitenkin olla ympäristömuuttuja… ei tarvitse
+      kommitoida aina muutosta vahingossa, tuotannossa tod näk ei
+      ikinä tarvitse muuttaa mutta eihän se haittaakkaan…
+      UNITE_RUN_RECENT_VOTES = 0/1 => jos puuttuu, ei juokse
+  • ☑ recently_added_votes_path (js) tarvitseeko olla?  => pois
+  • ☑ example.com miksi edelleen redirect testissä on example.com:iin?
+    => request.host on testissä example.com
+    <https://github.com/rspec/rspec-rails/issues/1275> antaa olla.  =>
+    development modessa on <http://localhost> (lokaalisti) => testissä
+    <http://example.com>
+  • ☑ confirm emailissa nykyinen request url, eli localhost, testi.* tai
+    unite…  => mailer parametrit nykyään mailer.with(a:b,…).method
+
+
+1.3.24 14.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ confirm confirm vote path väärin testissä => unitethearmies.org,
+    pitäisi olla testi.unitethearmies.org
+  • ☑ capcha invalid domain testi.unitethearmies.org
+  • deploy jos lisää uusia gemejä, pitää käsin installoida MUT tarkoitus
+    on siirtyä uuteen deploymenttiin…
+  • ☐ vote
+    • ☐ confirmed ikoni hieno ikoni kertomaan että ääni on
+      vahvistettu.
+  • ☑ invitations
+    • ☑ testi kommentoitu
+  • ☑ token
+    • ☑ JWT kirjasto
+  • ☑ flash
+    • ☑ bootstrap css luokat päivitetty
+  • ☑ äänen vahvistaminen
+    • ☑ email
+    • ☑ route
+    • ☑ sign_up vie
+    • ☑ poista cache niin VoteCount on nyt cachessa…
+    • ☑ testit
+      • ☑ VoteMailer.confirmation => ei ohjaa voteen
+      • ☑ system: create vote
+  • ☑ sähköposti älä käytä info+123@jonitoyryla.eu vaan
+    jonitoyryla2+123@gmail.com koska jokerin (?) mailforward ei
+    nähtävästi erota plussalla lisättyä tekstiä vaan käsittelee
+    osoitteet eri osoitteina.
+
+
+1.3.25 13.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ säätöä
+
+
+1.3.26 12.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ testit
+    • ☑ virhe "satunnaisesti"
+      ApplicationControllerTest#test_should_have_correct_locale
+      [test/controllers/application_controller_test.rb:7]
+  • ☑ vote count if vote is saved multiple times, vote count is added
+    also multiple times.
+  • ☑ vote backup
+    • ☑ nimeäminen kyseessä ei ole backup vaan sähköpostien
+      lähettäminen
+    • ☑ refactor
+      • ☑ tapahtuu nyt kontrollerissa ja UaSettingsissä >
+        Vote.emails_to_admins
+      • ☑ testit Kaikki mailer testit täytyy olla vastaavissa
+        mailer_test tiedostoissa.
+
+
+1.3.27 11.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Huom.  RAILS_ENV=production rails db:migrate RAILS_ENV=production
+  script/data_setup
+
+  • ☑ äänimäärät votes/ laskee kuinka?  ua_settings vote_count??
+    • ☑ VoteCount
+      • ☑ total Redis cache
+    • ☑ taskit
+      • ☑ laske äänet lasketaan Vote.languagen perusteella
+        VoteCountsiin määrät.  task/vote_counts.rb
+    • ☑ send/sent_count config/environments ja models/ua_settings.rb
+      ja initializers/settings.rb
+      • ☑ UaSetting.send_count poistettu
+      ua_settings.sent_count: kuinka monen uuden äänen jälkeen
+      lähetetään viesti.
+
+
+1.3.28 10.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ flash message
+    • ☑ nappi paremmin
+
+
+1.3.29 9.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ Header animaatio meni bootstrapin myötä rikki
+    • tarvitsee olla timber.master.min.js kirjasto…
+    • puuttui data- attribuutit
+  • ☑ pikkukuvat täytyy keskittää
+    • ☑ col-6,col-6 jos useampia vierekkäisiä soluja, niin tasa 12
+      menee eri riveille.
+      • theme.core:79 ja toinen vähän myöhemmin on kommentoitu, .row
+        before määritteet kolahtaa uuden bootstrapin kanssa.
+  • ☑ merge
+  • ☑ deployment … edelleen capistrano.
+  • ☑ domain
+  • ☐ vimeo vimeo embed vaatii padding 80%
+    • ☐ siirto youtubeen?
+  • ☑ recent votes bootstrap row/col
+
+
+1.3.30 7.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ flash ilmoituksen sulkeminen / ajastus
+  • ☑ Bootstrap
+  • ☑ Marssivideo
+  • ☐ Vimeo Täytyy siirtää Unite the Armies- käyttäjälle Youtubeen.
+
+
+1.3.31 6.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Hyvää Itsenäisyyspäivää!
+  • ☑ ikonit paremmin
+
+
+1.3.32 3.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ captcha tuotannossa
+  • ☑ 1 error prohibited this vote from being saved: => ei lokalisoitu
+    => new ja share partiaalien message nyt flash + gettext.
+  • ☑ dropbox url on lokalisoitu jossain…
+  • ☑ kielivalinta Jos ei ole valittu, pitäisi valita default. Nyt
+    download => vie indexiin…
+    • ☑ testi siirretty application controller testeihin.
+  • ☑ materiaali ladattavissa suoraan sivulta
+
+
+1.3.33 2.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ testit
+    • ☑ sql queryt näkyville testatessa ne onkin log/ hakemistossa
+  • ☑ captcha verifier ei toimi. muutinko koodia googlen palvelussa?  =>
+    recaptcha nähtävästi palauttaa nykyään tyhjän merkkijonon kun
+    aikaisemmin ei palauttanut mitään.
+
+
+1.3.34 29.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ ainoastaan vahvistetut äänet näkyviin recent votessa
+    • ☑ testi
+    • ☑ tuotanto
+  • ☑ olemassaoleviin ääniin confirm_hash fix:set_confirmed
+  • ☑ confirm vote
+    • ☑ test fikstuurien kanssa ongelmia
+    • ☑ task set current votes as confirmed $ rails fix:set_confirmed
+  • ☑ email_repeat email_confirmation => email_repeat
+  • ☑ email invite email_repeat tarkistus puuttuu
+  • ☑ duplicate email poistetaan duplikaatit $ rails fix:duplicate_votes
+
+
+1.3.35 28.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ Errno::ECONNREFUSED (Connection refused - connect(2) for
+    "localhost" port 25).  smpt kirjastossa
+    net-smtp-0.5.0/lib/net/smtp.rb parametrit tyhjiä, development
+    modessa oikein…
+    • johtui siis siitä että config.after_initialize blokissa oleva
+      smtp konffaus ei production modessa toimi vaan kaikki arvot on
+      tyhjiä…
+  • ☑ smtpauthenticationError: eli user/pass smtp ei hyväksytty
+    config.after_initialize ei production modessa aseta smtp
+    asetuksia…
+  • ☑ VSCode debugger sain toimimaan $ bundle exec rdbg -O -n -c –
+    bin/rails server -p 3000
+    • valitse vscode valikosta "attach debugger". Toimii!
+
+  Yritän estää dockeria käynnistymästä koneen käynnistyessä.
+  • systemctl status docker.socket
+  • systemctl status docker.service
+  • systemctl status docker => käynnistyy edelleen (docker engine?)
+
+
+1.3.36 27.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☐ Rails 8.1
+    • ☐ Kamal
+    • ☐ SQLLite
+      • ☐ dump json:siksi mysql data
+      • ☐ mysql -> SQLLite
+      • ☐ import
+  • ☑ topic save the world - unite the armies unite the armies - save
+    the planet (?)
+
+  • votes kontrollerin testaus nyt hyytyy koska sessio joka löytyy
+    testissä ei enää ole olemassa kontrollerissa, voipi johtua siitä
+    että rails 8:ssa on muuttunut
+    • ☑ on. eli integration testauksessa täytyy tehdä vastaavat
+      requestit joissa sessio asetetaan, ei "käsin".
+    • ☑ ei maileja testatessa nähtävästi on konffaus muuttunut… tällä
+      toimii
+      <https://guides.rubyonrails.org/v8.0/testing.html#testing-your-mailers>
+  • ☑ smtp ainakin lähtee koneelta, smtp_settings.domain oli väärin.
+    • ☑ domain constant
+  • ☑ test testatessa EI pitäisi oikeasti lähteä maileja.
+
+
+1.3.37 26.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ deploy rake ja fix tuotannossa scriptin kautta… tässä tulikin
+    ongelmia kun rails ajetaan development modessa jos taskina on
+    db:migrate (?)
+    • täytyy nyt ajaa käsin db:migrate ja mahdolliset muut taskit.
+    => kun perusjutut toimii niin deployment täytyy vaihtaa dockeriksi
+  • ☑ Vote.create
+    • ☑ validaatiovirheistä tulee virheilmoitus formin sisään, tämä
+      pitäisi muuttaa flash messageksi => hyvä puoli on että tämä ei
+      kadota formia
+  • ☑ flash viestejä ei voi sulkea
+  • ☒ email
+    • ☑ ei varmennettu vote jos menee vote urliin, lähetetään confirm
+      email uudestaan
+    • ☐ croniin vanhojen votejen poisto eli jos ei ole vahvistettu
+  • ☐ token mitä md5_secret_token tekee?
+
+  • ☑ confirm email
+    • ☑ confirm_secret_hash
+    • ☑ vote.email_confirmed:boolean tätä ei pitäisi sekoittaa
+      email_confirmation parametriin, joka ei tallennu kantaan mutta
+      joka on uudelleen kirjoitettu email…
+    • ☑ mailer: confirm email
+    • ☑ gmail uusi email: unitethearmiessavetheplanet@gmail.com
+  • ☑ workspace folder nimeäminen takaisin
+  • ☑ https config.ssl poistettu production configista… vaihda takaisin
+    config.ssl kun toimii palvelimella.
+  • ☑ ActionController::InvalidAuthenticityToken Origin header did not
+    match request.base_url (?)  => production modessa poistettu ssl-
+    käytöstä.
+  • ☑ spam
+    • ☑ lisätään spam boolean voteen ja task jolla nykyiset spam
+      viestit merkitään ja ohitetaan spam recent_votes listassa
+    • pitäisi ohittaa kaikissa listoissa tietysti
+    • voisi tehdä rails tapaan accessorin vai mikä lie nimi oli
+  • ☑ gmail smtp ei toimi, ei voi toimia koska 2-vaiheista
+    tunnistautumista ei ole päällä
+    • ☑ 2-vaiheinen
+
+
+1.3.38 22.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ äänestys
+    • ☑ captcha uikuttaa
+  • ☑ kommentit tiedostoon
+  • ☑ deployment kokeilin capistrano-rails, capistrano-bundler gemejä
+    mutta tuli vaikeuksia palvelimella polkujen yms. kanssa. Otin pois
+    tässä vaiheessa.
+  • ☑ system test tehdään testi että lippulinkkien protokolla on
+    oikein. Selenium ei toiminut, tuli timeout virhe, cuprite toimi.
+  • ☑ https pois tässä vaiheessa => linkeissä pitäisi huomioida nyt
+    UNITE_APPLICATION_PROTOCOL.
+
+
+1.3.39 21.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ deploy commitizen, README
+  • ☑ production ongelma rails 8 database cache_storage kaatoi koska
+    taulua ei ole luotu, en saa jostain syystä luotua schemasta taulua
+    joten kommentoin pois.
+  • ☑ Viimeisimmät äänet backbone/underscore pois ja jokin
+    mahdollisimman simppeli tilalle…  jQuery?
+
+
+1.3.40 20.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ rails new –webpack react jälleen uusi rails projekti, kopsattu
+    kaikki ja testit läpi… puuttuu deployment
+  • ☑ react hello world.  …onpas raskasta työstää vote loopin takia koko
+    palvelu javascriptiksi, toisaalta sen voisi huvin vuoksi
+    tehdä. Täytyy nyt aluksi tehdä kuitekin vain loop-update
+    esim. jqueryllä ja jättää react hautumaan.
+
+
+1.3.41 19.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ facebook ja twitter linkit vaan enpä saanut riviin, olkoon
+    pystypäin tässä vaiheessa.  => poistettu social-share-buttons gem
+    koska näytti vanhentuneelta.
+  • ☑ javascript virheet
+
+  React? React tuntuu vaikealta uusien asioiden keskellä, myös
+  liioitellulta koska tällä hetkellä riittäisi vain saada uusien äänien
+  looppaus toimimaan. Mahdollisesti kuitenkin
+  backbone/underscore. Mahdollisesti vanha versio, koska uusi underscore
+  aiheutti virheen…  => ei vain oikein toimi, index.jst.eco templatet
+  backbonessa aiheuttaa syntaxErrorin…
+  • ☑ React lopultakin ilman javascript virheitä.
+
+
+1.3.42 18.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ liput
+  • ☑ github linkin url plus muita linkkejä constants.rb initializeriin.
+  • ☑ deploy viimeistely
+    • ☑ bundle install
+    • ☑ RAILS_ENV=production rails assets:precompile
+    • ☑ passenger restart
+  • ☑ lokalisointi TODO: toimii mutta joitain käännöksiä ei löydy
+    (?). Jouduin lisäämään application.rb initializeriin
+    I18N.available_locales = :en jolloin kaikki localet lähtivät
+    toimimaan…
+  • ☑ comments controller test redirect language based on session falls
+    to english.
+
+
+1.3.43 15.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  <https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/apache/oss/bionic/deploy_app.html>
+  sudo /usr/bin/passenger-config validate-install sudo
+  /usr/sbin/passenger-memory-stats passenger-config about ruby-command
+  ENV['GEM_HOME'] = "/home/jto/.gem/ruby/3.3.6/gems" ENV['GEM_PATH'] =
+  "/home/jto/.gem/ruby/3.3.6/gems"
+
+  • ☑ Lailalle vastaus
+  • ☑ testit
+    • ☑ Vote
+    • ☑ VoteCount
+    • ☑ UASetting
+    • ☑ RecaptchaVerifier
+    • ☑ Language
+    • ☑ Country
+    • ☑ Comment
+  • ☑ initializers/email_validator.rb
+  • ☑ welcome controller test
+  • ☑ passenger ei löydä asennettuja gemejä gempath ei voi olla jto
+    kotihakemisto kun passenger ajetaan ei käyttäjänä.
+
+
+1.3.44 14.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ passenger asennettu ohjeen mukaan, ylimääräinen gem poistettu.
+  • ☑ apache passenger, apache toimii mutta production modessa ei
+    käynnisty rails…
+  • ☑ toimii tuotantomodessa kehityspalvelimella johtui database.yml
+    muutoksista rails8:ssa sekä credentials tiedostosta puuttuvasta
+    käyttäjätilistä.
+  • ☑ julkaisu
+
+  Puutteita:
+  • ☑ deploy.rb precompile assets ei toimi Mahdollisesti on väärässä
+    hakemistossa kun komento ajetaan.
+
+
+1.3.45 13.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ deploy
+    • ☑ rvm ja ruby serverillä
+    • ☑ mina asennettu
+  • ☑ cap deploy production/staging /var/www/unitethearmies.org
+    /var/www/test.unitethearmies.org
+  • ☑ argh. päivitin passengeria ja boottasin apachen niin
+    taxomageia.pro katosi. Mutta sain vielä muistilohkosta kaivettua
+    ymmärrystä ja juuri ja juuri palvelun raahattua näyttämölle, eli
+    toimii! huh.
+
+  Vaihdoin takaisin capistranoon ja passengeriin. Capistrano siis
+  automatisoi tietojen siirron. Passenger käynnistää railsin.
+  • secrets.yml on vanhentunut rails5+ versiosta alkaen, käytössä on
+    kryptattu config/credentials.yml.enc.
+
+  Onglemia:
+  • Jostain syystä tuotannossa tiedosto ei aukea vaikka master.key on
+    sama kuin työkoneella.
+  • development/test ympäristöt toimivat mutta productionissa tulee outo
+    virhe, the 'cable' database is not configured for the production
+    environment.
+
+
+1.3.46 12.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Katsotaanpas jos saisin jotain eloa javascripteihin… onnistui.
+  • ☑ eloa javascripteihin assets pipeline tutkimusta, erillisesti
+    importatut tiedostot, puuttuu unite-the-armies.js + "core", lienee
+    oleellinen. Maapallo näkyy nyt.
+  Partiaaleja, mysql2 gem. Tyylitiedostoja. Assets pipeline moottori on
+  vaihtunut juuri rails8:ssa.
+
+
+1.3.47 11.11.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ Eka onnistunut boottaus
+  • ☑ Visual Studio Code projekti
+  • ☑ Rails boottaus
+  • ☑ Alustavia kokeiluja Joitain tiedostoja siirretty, fast_gettext gem
+    asennettu. Request jumauttaa rails serveriprosessin.
+  • ☑ Ruby ja Rails asennettu. Rvm pitää asentaa ilman sudoa. Se ei
+    asennu ilman sudoa jos käyttäjä ei ole rvm ryhmässä. Käyttäjä ei
+    päivity prosessin ryhmään ilman REBOOT:tia, eli logout ei
+    riittänyt vaikka ohjeessa näin sanottiin.
