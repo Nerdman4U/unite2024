@@ -1,10 +1,12 @@
 import RecentVotes from RAILS_ASSET_URL("./unitethearmies/recent-votes.js");
 import UniteAnimations from RAILS_ASSET_URL("./unitethearmies/animations.js");
+import SlideShows from RAILS_ASSET_URL("./unitethearmies/slideshows.js");
 
 class UniteTheArmies {
   constructor() {
     this.recent_votes = new RecentVotes();
     this.animations = new UniteAnimations();
+    this.slideshows = new SlideShows()
   }
 
   init() {
@@ -70,6 +72,8 @@ class UniteTheArmies {
       $('.header').removeClass('header-background');
     }
   }
+
+
 
 }
 

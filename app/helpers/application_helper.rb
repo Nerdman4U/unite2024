@@ -146,6 +146,12 @@ module ApplicationHelper
   <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
     <ul class="tms-slides">
       #{slides_str}
+      <a href="#" id="tms-prev" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
+        <i class="bi bi-chevron-compact-left"></i>
+      </a>
+      <a href="#" id="tms-next" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
+        <i class="bi bi-chevron-compact-right"></i>
+      </a>
     </ul>
   </div>
 </section>

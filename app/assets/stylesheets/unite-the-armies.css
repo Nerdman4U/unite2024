@@ -459,6 +459,71 @@ h1 {
   transform: translateY(-5rem);
 }
 
+.slider-nav {
+  margin-top: -2.5rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ccc;
+  font-size: 3rem;
+  text-align: center;
+  line-height: 5rem;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  i {
+    color: white;
+  }
+}
+.slider-nav:hover {
+  width: 7rem;
+  color: #fff;
+}
+
+.slider-nav-next {
+  top: 50%;
+  right: 0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* #tms-next:before {
+  content: "\e644";
+} */
+.slider-nav-prev {
+  top: 50%;
+  left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* #tms-prev:before {
+  content: "\e643";
+} */
+
+/* .tm-slider-container.show-on-hover .tms-arrow-nav,
+.tm-slider-container.show-on-hover .tms-pagination {
+  opacity: 0;
+}
+.tm-slider-container.show-on-hover:hover .tms-arrow-nav,
+.tm-slider-container.show-on-hover:hover .tms-pagination {
+  opacity: 1;
+} */
+/* .tm-slider-container.background-slider .tms-arrow-nav,
+.tm-slider-container.background-slider .tms-pagination {
+  display: none !important;
+} */
+.tms-arrow-nav {
+  -webkit-transition-property: width, background, color, opacity;
+  -moz-transition-property: width, background, color, opacity;
+  -o-transition-property: width, background, color, opacity;
+  -ms-transition-property: width, background, color, opacity;
+  transition-property: width, background, color, opacity;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -ms-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+
 /*
 -----------------------------------------------------------------
 * 4. Color

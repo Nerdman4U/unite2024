@@ -6484,7 +6484,7 @@ a {
     display: none !important;
   }
 }
-.tms-arrow-nav {
+/* .tms-arrow-nav {
   margin-top: -2.5rem;
   width: 5rem;
   height: 5rem;
@@ -6500,8 +6500,8 @@ a {
 .tms-arrow-nav:hover {
   width: 7rem;
   color: #fff;
-}
-#tms-next {
+} */
+/* #tms-next {
   top: 50%;
   right: 0;
   border-top-left-radius: 3px;
@@ -6518,7 +6518,7 @@ a {
 }
 #tms-prev:before {
   content: "\e643";
-}
+} */
 .tms-pagination {
   width: 100%;
   text-align: center;
@@ -6550,7 +6550,8 @@ a {
 .tms-thumb-nav.active {
   opacity: 1;
 }
-.tm-slider-container.show-on-hover .tms-arrow-nav,
+
+/* .tm-slider-container.show-on-hover .tms-arrow-nav,
 .tm-slider-container.show-on-hover .tms-pagination {
   opacity: 0;
 }
@@ -6574,7 +6575,8 @@ a {
   -o-transition-duration: 300ms;
   -ms-transition-duration: 300ms;
   transition-duration: 300ms;
-}
+} */
+
 @font-face {
   font-family: "icomoon";
   src: "/fonts/entypo.eot";
