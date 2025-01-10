@@ -13,8 +13,8 @@ end
 %>
 
 <!-- karuselli -->
-<div class="section-block bkg-charcoal m-0 p-0 overflow-hidden">
-  <ol class="slideshow" style="height: 66vw; min-height: 300pt;" data-interval="5">
+<div class="slideshow-container section-block bkg-charcoal m-0 p-0 overflow-hidden">
+  <ol class="slideshow" style="height: 66vw; min-height: 300pt;" data-interval="5" name="landing-carusel">
     <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text" />
     <li data-image-src=<%= image_path("frontpage-slides/viidakko.jpg") %> data-class="black-text" />
     <li data-image-src=<%= image_path("frontpage-slides/tyyni-jarvenselka.jpg") %> data-class="black-text" />
@@ -23,7 +23,7 @@ end
     <li data-image-src=<%= image_path("frontpage-slides/autumn-shore.jpg") %> />
     <li data-image-src=<%= image_path("frontpage-slides/sunrise-on-the-sea.jpg") %> />
   </ol>
-  <div id="slideshow-caption" class="umx-5 container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
+  <div id="slideshow-caption" data-caption="landing-carusel" class="umx-5 container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
     <div class="row ">
       <div class="col-12 text-start">
         <h2 class="umb-2 ufs-4">

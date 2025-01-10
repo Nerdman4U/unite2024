@@ -141,37 +141,18 @@ module ApplicationHelper
     slides_str = slide_html.join
     # full-width-slider
     result = <<~SECTION
-    <section class="unite-slider-container section-block featured-media tm-slider-parallax-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
-      <div class="tm-slider-container full-width-slider">
-        <ul class="tms-slides">
-          #{slides_str}
-          <a href="#" id="tms-prev" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
-            <i class="bi bi-chevron-compact-left"></i>
-          </a>
-          <a href="#" id="tms-next" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
-            <i class="bi bi-chevron-compact-right"></i>
-          </a>
-        </ul>
-      </div>
+    <section class="slideshow-container unite-slider-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
+      <ul class="slideshow">
+        #{slides_str}
+        <a href="#" id="tms-prev" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
+          <i class="bi bi-chevron-compact-left"></i>
+        </a>
+        <a href="#" id="tms-next" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
+          <i class="bi bi-chevron-compact-right"></i>
+        </a>
+      </ul>
     </section>
     SECTION
-
-    result2 = <<~SECTION
-    <section class="unite-slider-container section-block featured-media tm-slider-parallax-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
-  <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
-    <ul class="tms-slides">
-      #{slides_str}
-      <a href="#" id="tms-prev" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
-        <i class="bi bi-chevron-compact-left"></i>
-      </a>
-      <a href="#" id="tms-next" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
-        <i class="bi bi-chevron-compact-right"></i>
-      </a>
-    </ul>
-  </div>
-</section>
-    SECTION
-
     result.html_safe
   end
 

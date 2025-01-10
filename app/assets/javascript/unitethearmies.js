@@ -1,15 +1,35 @@
 import RecentVotes from RAILS_ASSET_URL("./unitethearmies/recent-votes.js");
-import SlideShows from RAILS_ASSET_URL("./unitethearmies/slideshows.js");
+import SlideShowContainer from RAILS_ASSET_URL("./unitethearmies/slideshowcontainer.js");
 
 class UniteTheArmies {
   constructor() {
     this.recent_votes = new RecentVotes();
-    this.slideshows = new SlideShows()
+    this.slideshowcontainers = [];
+    this.loadSlideShowContainers();
   }
 
   init() {
     this.loadVotes();
     this.removeSliderLoader();
+    this.initSlideShowContainers()
+  }
+
+  loadSlideShowContainers() {
+    this.slideshowcontainers = this.slideShowContainers()
+  }
+  initSlideShowContainers() {
+    for (let c of this.slideshowcontainers) {
+      c.init()
+    }
+  }
+
+  slideShowContainers() {
+    let result =  $(".slideshow-container").map(function(index, el) {
+      let cont = new SlideShowContainer($(el));
+      return cont
+    })
+    console.log('UniteTheArmies#SlideShowContainers', result)
+    return result
   }
 
   loadVotes() {
