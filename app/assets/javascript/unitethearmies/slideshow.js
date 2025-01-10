@@ -1,4 +1,4 @@
-import Slide from RAILS_ASSET_URL('slide.js')
+import { Slide, SlideWithHeaders, SlideWithImage } from RAILS_ASSET_URL('slide.js')
 
 /**
  * SlideShow
@@ -19,21 +19,36 @@ class SlideShow {
     this.current_nro = 1; // 1.st child
     this.current_slide = null;
     this.slides = $([]);
+    this.loadSlideShow();
   }
 
-  init() {
+  decorators() {
+    return this.el.data('decorators') || []
+  }
+
+  loadSlideShow() {
     this.el.children("li").each(
       function (index, el) {
         let slide = new Slide($(el));
+        if (this.decorators().indexOf('headers') > -1) {
+          slide = new SlideWithHeaders(slide)
+        }
+        if (this.decorators().indexOf('image') > -1) {
+          slide = new SlideWithImage(slide)
+        }
         this.slides.push(slide);
       }.bind(this)
     );
+  }
+
+  init() {
     if (this.slides.length < 1) {
       console.error("SlideShow#init No slides!");
       return;
     }
     this.setCurrentSlide(0);
     this.initButtons();
+    this.showButtons()
   }
 
   /**
@@ -78,7 +93,7 @@ class SlideShow {
   buttons() {
     let buttons = this.el.find(".slider-nav");
     if (buttons.length < 1) {
-      console.error("SlideShow#showButtons() Slideshow buttons not found!");
+      // console.error("SlideShow#showButtons() Slideshow buttons not found!");
       return;
     }
     return buttons;

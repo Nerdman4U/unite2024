@@ -142,12 +142,12 @@ module ApplicationHelper
     # full-width-slider
     result = <<~SECTION
     <section class="slideshow-container unite-slider-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
-      <ul class="slideshow">
+      <ul class="slideshow" data-decorators="headers,image">
         #{slides_str}
-        <a href="#" id="tms-prev" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
+        <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
           <i class="bi bi-chevron-compact-left"></i>
         </a>
-        <a href="#" id="tms-next" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
+        <a href="#" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
           <i class="bi bi-chevron-compact-right"></i>
         </a>
       </ul>

@@ -12,6 +12,7 @@
  *
  * => dekoraattori
  */
+
 class Slide {
   /**
    * @param {*} el $(<li>)
@@ -20,59 +21,72 @@ class Slide {
     this.el = el;
     this.init();
   }
+
   init() {}
+  elem() {
+    return this.el;
+  }
+  activate() {
+    console.log("Slide#activate()");
+    this.elem().addClass("active");
+  }
+  deactivate() {
+    this.elem().removeClass("active");
+  }
+}
+
+class SlideWithImage extends Slide {
+  constructor(decorated) {
+    super();
+    this.decorated = decorated;
+    this.createImage();
+  }
+  elem() {
+    return this.decorated.elem();
+  }
+  activate() {
+    console.log("SlideWithImage#activate()");
+    this.showImage();
+    this.decorated.activate();
+  }
+  deactivate() {
+    this.hideImage();
+    this.decorated.deactivate();
+  }
+
+  /**
+   * Create image
+   *
+   * If image src is given as data attribute create element here.
+   *
+   * @returns [elem] $(img) or null
+   * */
+  createImage() {
+    let image_src = this.elem().data("imageSrc");
+    console.log("SlideWithImage#createImage()", image_src);
+    if (!image_src) {
+      return;
+    }
+    let img = $("<img>");
+    img.get(0).src = image_src;
+    console.log("SlideWithImage#createImage()", image_src, img);
+    this.elem().append(img);
+    return img;
+  }
+
+  /** Image
+   *
+   * Find image under list item.
+   *
+   * @returns [elem] $(img) or null
+   */
   image() {
-    return this.el.find("img");
+    return this.elem().find("img");
   }
-  h1() {
-    return this.el.find("h1");
-  }
-  h5() {
-    return this.el.find("h5");
-  }
-  showH1() {
-    if (this.h1().length < 1) return;
-    // console.log("Slide#showH1() 1", this.h1().get(0));
-    this.h1().get(0).style.transition = this.h1().get(0).dataset.transition;
-    this.h1().addClass("show");
-    // data-transition=""opacity:1;scale:1.5px;duration:600ms;easing:easeFastSlow;"
-    //this.h1().get(0).style.transition = "opacity 2s, scale 2s";
-    // this.h1().css("transition-timing-function", "ease-fast-slow");
-    // this.h1().get(0).style.visibility = "visible";
-    // this.h1().get(0).style.opacity = "1";
-    // this.h1().get(0).style.scale = "4";
-    // console.log("Slide#showH1() 2", this.h1().get(0));
-  }
-  hideH1() {
-    if (this.h1().length < 1) return;
-    // console.log("Slide#hideH1() 1", this.h1().get(0));
-    this.h1().removeClass("show");
-    // this.h1().get(0).style.transition = "";
-    // this.h1().get(0).style.visibility = "hidden";
-    // this.h1().get(0).style.opacity = "0";
-    // this.h1().get(0).style.scale = "1";
-    // console.log("Slide#hideH1() 2", this.h1().get(0));
-  }
-  showH5() {
-    if (this.h5().length < 1) return;
-    this.h5().get(0).style.transition = this.h5().get(0).dataset.transition;
-    this.h5().addClass("show");
-    // this.h5().css("transition-timing-function", "ease-fast-slow");
-    // this.h5().get(0).style.visibility = "visible";
-    // this.h5().get(0).style.opacity = "1";
-    // this.h5().get(0).style.scale = "4";
-  }
-  hideH5() {
-    if (this.h5().length < 1) return;
-    this.h5().removeClass("show");
-    // this.h5().get(0).style.transition = "";
-    // this.h5().get(0).style.visibility = "hidden";
-    // this.h5().get(0).style.opacity = "0";
-    // this.h5().get(0).style.scale = "1";
-  }
+
   imageEl() {
     if (!this.image()) {
-      console.error("Slide#imageEl() No image elemenet found! el:", this.el);
+      console.error("Slide#imageEl() No image element found! el:", this.elem());
       return;
     }
     return this.image().get(0);
@@ -86,19 +100,52 @@ class Slide {
   hideImage() {
     this.imageEl().src = "";
   }
+}
+
+class SlideWithHeaders extends Slide {
+  constructor(decorated) {
+    super();
+    this.decorated = decorated;
+    console.log("SlideWithHeaders");
+  }
+  elem() {
+    return this.decorated.elem();
+  }
   activate() {
-    // console.log("Slide#activate()", this.h1().get(0));
-    this.el.addClass("active");
-    this.showImage();
+    console.log("SlideWithHeaders#activate()");
     this.showH1();
     this.showH5();
+    this.decorated.activate();
   }
   deactivate() {
-    this.el.removeClass("active");
-    this.hideImage();
     this.hideH1();
     this.hideH5();
+    this.decorated.deactivate();
+  }
+  h1() {
+    return this.elem().find("h1");
+  }
+  h5() {
+    return this.elem().find("h5");
+  }
+  showH1() {
+    if (this.h1().length < 1) return;
+    this.h1().get(0).style.transition = this.h1().get(0).dataset.transition;
+    this.h1().addClass("show");
+  }
+  hideH1() {
+    if (this.h1().length < 1) return;
+    this.h1().removeClass("show");
+  }
+  showH5() {
+    if (this.h5().length < 1) return;
+    this.h5().get(0).style.transition = this.h5().get(0).dataset.transition;
+    this.h5().addClass("show");
+  }
+  hideH5() {
+    if (this.h5().length < 1) return;
+    this.h5().removeClass("show");
   }
 }
 
-export default Slide;
+export { Slide, SlideWithHeaders, SlideWithImage };
