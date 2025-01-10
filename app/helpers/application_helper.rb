@@ -96,17 +96,18 @@ module ApplicationHelper
   end
 
   def slide_section slide
+    #
     result = <<~SECTION
-  <li class="tms-slide" data-image data-force-fit>
+  <li class="tms-slide tms-forcefit">
     <div class="tms-content">
       <div class="tms-content-inner center left-on-mobile v-align-middle">
         <div class="row">
           <div class="col-12 text-center">
-            <h1 class="ufs-2 position-static color-white tms-caption lspacing-medium" data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;" data-no-scale>
+            <h1 class="ufs-2 position-static color-white lspacing-medium" data-transition="opacity 10s">
               #{slide[:topic_1]}
             </h1>
             <div class="clear"></div>
-            <h5 class="ufs-1 position-static tms-caption color-white lspacing-medium hide-on-mobile" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
+            <h5 class="ufs-1 position-static color-white lspacing-medium" data-transition="opacity 10s">
               #{slide[:topic_2]}
             </h5>
             <div class="clear"></div>
@@ -142,6 +143,22 @@ module ApplicationHelper
     slides_str = slide_html.join
     # full-width-slider
     result = <<~SECTION
+    <section class="unite-slider-container section-block featured-media tm-slider-parallax-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
+      <div class="tm-slider-container full-width-slider">
+        <ul class="tms-slides">
+          #{slides_str}
+          <a href="#" id="tms-prev" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
+            <i class="bi bi-chevron-compact-left"></i>
+          </a>
+          <a href="#" id="tms-next" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
+            <i class="bi bi-chevron-compact-right"></i>
+          </a>
+        </ul>
+      </div>
+    </section>
+    SECTION
+
+    result2 = <<~SECTION
     <section class="unite-slider-container section-block featured-media tm-slider-parallax-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
   <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960">
     <ul class="tms-slides">

@@ -1,15 +1,66 @@
 class Slide {
   /**
-   * @param {*} el <li> element
+   * @param {*} el $(<li>)
    */
   constructor(el) {
     this.el = el;
+    this.init();
+  }
+  init() {}
+  image() {
+    return this.el.find("img");
+  }
+  h1() {
+    return this.el.find("h1");
+  }
+  h5() {
+    return this.el.find("h5");
+  }
+  showH1() {
+    // console.log("Slide#showH1() 1", this.h1().get(0));
+    this.h1().get(0).style.transition = this.h1().get(0).dataset.transition;
+    this.h1().get(0).style.visibility = "visible";
+    this.h1().get(0).style.opacity = "1";
+    // console.log("Slide#showH1() 2", this.h1().get(0));
+  }
+  hideH1() {
+    // console.log("Slide#hideH1() 1", this.h1().get(0));
+    this.h1().get(0).style.transition = "";
+    this.h1().get(0).style.visibility = "hidden";
+    this.h1().get(0).style.opacity = "0";
+    // console.log("Slide#hideH1() 2", this.h1().get(0));
+  }
+  showH5() {
+    this.h5().get(0).style.transition = this.h5().get(0).dataset.transition;
+    this.h5().get(0).style.visibility = "visible";
+    this.h5().get(0).style.opacity = "1";
+  }
+  hideH5() {
+    this.h5().get(0).style.transition = "";
+    this.h5().get(0).style.visibility = "hidden";
+    this.h5().get(0).style.opacity = "0";
+  }
+  imageEl() {
+    return this.image().get(0);
+  }
+  showImage() {
+    this.imageEl().src = this.imageEl().dataset.src;
+  }
+  hideImage() {
+    this.imageEl().src = "";
   }
   activate() {
+    // console.log("Slide#activate()", this.h1().get(0));
     this.el.addClass("active");
+    this.showImage();
+    this.showH1();
+    this.showH5();
   }
   deactivate() {
     this.el.removeClass("active");
+    this.hideImage();
+    this.hideH1();
+    this.hideH5();
   }
 }
 /**
@@ -46,7 +97,18 @@ class SlideShow {
       console.error("SlideShow#init No slides!");
       return;
     }
-    this.current_slide = this.slides[0];
+    this.setCurrentSlide(0);
+  }
+
+  /**
+   * Set current slide
+   *
+   * Set variable and activate.
+   * @param {int} nro
+   */
+  setCurrentSlide(nro) {
+    this.current_slide = this.slides[nro];
+    this.current_slide.activate();
   }
 
   /** Proceed
@@ -56,26 +118,21 @@ class SlideShow {
    * @param {int} nro offset, -1 prev, +1 next
    * @return {Slide}
    */
-  proceed(nro) {
-    nro = parseInt(nro);
-    if (!nro) nro = 0;
-    let slide_nro = (this.current_nro += nro);
+  proceed(offset) {
+    offset = parseInt(offset);
+    if (!offset) offset = 0;
+    let slide_nro = (this.current_nro += offset);
     if (!slide_nro) slide_nro = 1;
     if (slide_nro < 1) slide_nro = 1;
     if (slide_nro > this.slides.length) slide_nro = this.slides.length;
-    // console.log(slide_nro);
-    // let li = this.el.children(`li:nth-child(${slide_nro})`);
-    // if (li.length < 1) {
-    //   console.error("SlideShow#showButtons() Slideshow not found!");
-    //   return;
-    // }
+    // console.log("SlideShow#proceed()", slide_nro, offset);
     this.current_nro = slide_nro;
-    this.current_slide = this.slides[slide_nro - 1];
+    this.setCurrentSlide(slide_nro - 1);
     return this.current_slide;
   }
 
   deactivate() {
-    console.log(this.slides);
+    // console.log("Deactivate()", this.slides);
     this.slides.each(function (index, slide) {
       console.log(slide);
       slide.deactivate();
@@ -103,8 +160,6 @@ class SlideShow {
               console.error("SlideShow#initButtons click: No Slide!");
               return;
             }
-            this.current_slide.activate();
-            console.log(this.current_nro);
           }.bind(this)
         );
       }.bind(this)

@@ -524,6 +524,11 @@ h1 {
   transition-duration: 300ms;
 }
 
+.tms-content-inner h1,
+.tms-content-inner h5 {
+  opacity: 0;
+}
+
 /*
 -----------------------------------------------------------------
 * 4. Color
@@ -598,4 +603,25 @@ h6 {
   border-image-repeat: repeat repeat;
   border-style: solid;
   border-radius: 5px;
+}
+
+/* Unready */
+.tms-caption {
+  width: auto;
+  display: inline-block !important;
+  background-image: url(blank.gif);
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
 }
