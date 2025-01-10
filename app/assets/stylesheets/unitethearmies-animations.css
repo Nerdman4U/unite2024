@@ -35,17 +35,32 @@
   }
 }
 
-.animated-block {
-  animation-name: animated-block;
-  animation-duration: 4s;
+.animated-block-l2r {
+  animation-name: animated-block1;
+  animation-duration: 2s;
   transition-timing-function: ease-in;
+}
 
-  @keyframes animated-block {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+@keyframes animated-block1 {
+  from {
+    transform: translateX(-3vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animated-block-r2l {
+  animation-name: animated-block2;
+  animation-duration: 2s;
+  transition-timing-function: ease-in;
+}
+
+@keyframes animated-block2 {
+  from {
+    transform: translateX(3vw);
+  }
+  to {
+    transform: translateX(0);
   }
 }

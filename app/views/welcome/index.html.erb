@@ -1,4 +1,3 @@
-<!-- Fullscreen Slider Section -->
 <%= fs_slider ["unite-landing"] do
 [{
   link: link_to(new_vote_path(locale: locale, anchor: "sign"),
@@ -12,7 +11,8 @@
 }]
 end
 %>
-<!-- Fullscreen Slider Section End -->
+
+<!-- karuselli -->
 <div class="section-block bkg-charcoal m-0 p-0 overflow-hidden">
   <ol class="slideshow" style="height: 66vw; min-height: 300pt;" data-interval="5">
     <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text" />
@@ -44,12 +44,15 @@ end
     </div>
   </div>
 </div>
+<!-- /karuselli -->
 
-<!-- columnit -->
-<section class="section-block bkg-white color-dark upx-8">
+<!-- info -->
+<%
+=begin%>
+<section class="section-block bg-white color-dark upx-8">
   <div class="row">
     <div class="col-6">
-      <div class="feature-column large center horizon" data-animate-in="transX:-30px;" data-threshold="1">
+      <div class="center animated-block-l2r">
         <div class="umy-3">
           <%= image_tag "pollution.jpg", alt:_('Pollution') %>
         </div>
@@ -60,7 +63,7 @@ end
       </div>
     </div>
     <div class="col-6">
-      <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:200ms;" data-threshold="1">
+      <div class="center animated-block-r2l">
         <div class="umy-3">
           <%= image_tag "nowater.jpg", alt:"" %>
         </div>
@@ -72,7 +75,7 @@ end
     </div>
     <div class="row">
       <div class="col-6">
-        <div class="feature-column large center horizon" data-animate-in="transX:-30px;delay:400ms;" data-threshold="1">
+        <div class="center animated-block-l2r">
           <div class="umy-3">
             <%= image_tag "trash.jpg", alt:"" %>
           </div>
@@ -83,7 +86,7 @@ end
         </div>
       </div>
       <div class="col-6">
-        <div class="feature-column large center horizon" data-animate-in="transX:30px;delay:600ms;" data-threshold="1">
+        <div class="center animated-block-r2l">
           <div class="umy-3">
             <%= image_tag "polars.jpg", alt:"" %>
           </div>
@@ -96,18 +99,26 @@ end
     </div>
   </div>
 </section>
+<%
+=end%>
+<!-- /info -->
 
+<!-- video -->
+<%
+=begin%>
 <section class="section-block bg-white">
   <div style="padding:80% 0 0 0;position:relative;">
     <iframe src="https://player.vimeo.com/video/<%= unite_video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
   </div>
   <script src="https://player.vimeo.com/api/player.js"></script>
 </section>
+<%
+=end%>
+<!-- /video -->
 
 <section class="section-block bg-white upx-8 upy-8">
   <%= random_comment %>
 </section>
-
 
 <section class="section-block feature-2 bg-white upx-8 upy-8">
   <div class="row">
