@@ -524,9 +524,33 @@ h1 {
   transition-duration: 300ms;
 }
 
+.tms-content-inner {
+  margin-top: 5vw;
+}
 .tms-content-inner h1,
 .tms-content-inner h5 {
   opacity: 0;
+}
+
+.tms-content-inner {
+  h1 {
+    /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
+    transform: translateY(-1rem);
+  }
+  h1.show {
+    visibility: visible;
+    opacity: 1;
+    scale: 3;
+  }
+  h5 {
+    /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
+    transform: translateY(1rem);
+  }
+  h5.show {
+    visibility: visible;
+    opacity: 1;
+    scale: 2;
+  }
 }
 
 /*

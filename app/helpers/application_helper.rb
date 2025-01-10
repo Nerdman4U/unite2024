@@ -96,18 +96,17 @@ module ApplicationHelper
   end
 
   def slide_section slide
-    #
     result = <<~SECTION
   <li class="tms-slide tms-forcefit">
     <div class="tms-content">
       <div class="tms-content-inner center left-on-mobile v-align-middle">
         <div class="row">
           <div class="col-12 text-center">
-            <h1 class="ufs-2 position-static color-white lspacing-medium" data-transition="opacity 10s">
+            <h1 class="ufs-2 position-static color-white lspacing-medium" data-transition="opacity 600ms ease-in, scale 2s cubic-bezier(0.9, 0.2, 0.4, 1)">
               #{slide[:topic_1]}
             </h1>
             <div class="clear"></div>
-            <h5 class="ufs-1 position-static color-white lspacing-medium" data-transition="opacity 10s">
+            <h5 class="ufs-1 position-static color-white lspacing-medium" data-transition="opacity 2s ease-in, scale 4s ease-in-out">
               #{slide[:topic_2]}
             </h5>
             <div class="clear"></div>
@@ -119,7 +118,6 @@ module ApplicationHelper
     <img data-src=#{slide[:img]} data-retina src=#{slide[:img_blank]} alt="#{slide[:img_alt] || _("Slideshow image")}" />
   </li>
     SECTION
-
     return result
   end
 
