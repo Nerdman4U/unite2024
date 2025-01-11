@@ -1,4 +1,4 @@
-<%= fs_slider ["unite-landing"] do
+<%#= fs_slider ["unite-landing"] do
 [{
   link: link_to(new_vote_path(locale: locale, anchor: "sign"),
             :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
@@ -13,7 +13,7 @@ end
 %>
 
 <!-- karuselli -->
-<div class="slideshow-container section-block bkg-charcoal m-0 p-0 overflow-hidden">
+<div class="slideshow-container section-block bkg-charcoal m-0 p-0 overflow-hidden" data-decorators="carusel">
   <ol class="slideshow landing-carusel" data-interval="5" data-decorators="">
     <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text" />
     <li data-image-src=<%= image_path("frontpage-slides/viidakko.jpg") %> data-class="black-text" />

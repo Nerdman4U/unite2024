@@ -1,38 +1,71 @@
-import SlideShow from RAILS_ASSET_URL('slideshow.js')
+import { SlideShow, SlideShowCarusel, SlideShowButtons } from RAILS_ASSET_URL('slideshow.js')
 
 /**
- * SlideShowContainer
+ * public: SlideShowContainer.
  *
- * A section or div element containing one more more lists.
- *
+ * A section or div element containing one more more lists. Each list will be
+ * SlideShow and list items Slides.
  */
 class SlideShowContainer {
+
+  /**
+   * public: constructor.
+   *
+   * el      - root element, $(<ul>).
+   * current - order number, starting from 1.
+   */
   constructor(el) {
     this.el = $(el)
-    this.current = 1; // first slideshow container <ul> below this.el.
+    this.current = 1;
+  }
+
+  /**
+   * public: create SlideShow instances.
+   */
+  load() {
     this.loadSlideShows()
   }
 
+  /**
+   * public: initialize this object.
+   *
+   * Currently only initialize created SlideShow instances.
+   */
   init() {
     this.initSlideShows()
   }
 
-  slideShows() {
-    return this.el.find(".slideshow").map(function(index, el) {
-      return new SlideShow($(el))
-    })
-  }
-  loadSlideShows() {
-    this.slideshows = this.slideShows()
-  }
   initSlideShows() {
     this.slideshows.each(function(index, slideshow) { slideshow.init() })
   }
 
+  loadSlideShows() {
+    let decorators = []
+    if (this.el.find('.slider-nav').length > 0) {
+      decorators.push('nav1')
+    }
+    console.log('SlideShowContainer#slideShows() decorators', decorators, this.el)
+    let slideshows = this.el.find(".slideshow").map(function(index, el) {
+      let slideShow = new SlideShow($(el))
+      for (let decorator of decorators) {
+        if (decorator == 'nav1') {
+          console.log('SlideShowContainer#slideShows() slideShow:', slideShow)
+          slideShow = new SlideShowButtons(slideShow);
+        }
+      }
+      slideShow.load()
+      return slideShow;
+    })
+    this.slideshows = slideshows;
+    return slideshows;
+  }
+
   /**
+   * public: Create slideshow.
    *
-   * @param {*} nro
-   * @returns
+   * nro - order number starting from 1.
+   *
+   * Returns SlideShow.
    */
   slideShow(nro) {
     let el = this.el.find(".slideshow:first-child"); // <ul> element

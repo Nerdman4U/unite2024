@@ -1,25 +1,29 @@
 /**
- * Slides and Slide decorators.
+ * public: This file contains Slide and Slide decorator classes.
  *
- * Decorators are to expand Slide structure with elements.
- *
- * Functionality from data- attributes are at base Slide class.
+ * Decorators expand Slide when root element has elements to be used in
+ * decorators. Methods to add functionality from data- attributes are
+ * at Slide.
  */
 
 class Slide {
   /**
-   * @param {*} el $(<li>)
+   * public Slide constructor.
+   *
+   * el  - root $(element)
    */
   constructor(el) {
-    this.el = el;
+    this.el = $(el);
     this.obj = this;
   }
 
   deco() {
     return this.obj;
   }
-  /** Create elements from data attribute values.
+  /**
+   * public: Create elements from data attribute values.
    *
+   * Returns nothing.
    */
   create() {
     this.createImage();
@@ -40,15 +44,20 @@ class Slide {
   }
 
   /**
-   * Create image
+   * public: Create an image element and append it to root element.
    *
-   * If image src is given as data attribute create element here.
+   * This method is used when image source is given as data attribute. If
+   * data is missing, null is returned.
    *
-   * <li data-image-src="path/to/my/image"></li>
-   * =>
-   * <li><img src="path/to/my/image"/></li>
+   * Examples
    *
-   * @returns [elem] $(img) or null
+   *   el: <li data-image-src="path/to/my/image"></li>
+   *   createImage() =>
+   *   <li>
+   *     <img src="path/to/my/image"/>
+   *   </li>
+   *
+   * Returns $(img) or null.
    * */
   createImage() {
     let image_src = this.elem().data("imageSrc");
@@ -57,7 +66,7 @@ class Slide {
     }
     let img = $("<img>");
     img.get(0).src = image_src;
-    console.log("SlideWithImage#createImage()", image_src, img);
+    // console.log("SlideWithImage#createImage()", image_src, img);
     this.elem().append(img);
     return img;
   }
@@ -84,11 +93,9 @@ class SlideWithImage extends Slide {
     this.deco().deactivate();
   }
 
-  /** Image
+  /** public: Find img element.
    *
-   * Find image under list item.
-   *
-   * @returns [elem] $(img) or null
+   * Returns an $(img) element.
    */
   image() {
     return this.elem().find("img");

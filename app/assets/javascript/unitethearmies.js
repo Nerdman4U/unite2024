@@ -5,6 +5,9 @@ class UniteTheArmies {
   constructor() {
     this.recent_votes = new RecentVotes();
     this.slideshowcontainers = [];
+  }
+
+  load() {
     this.loadSlideShowContainers();
   }
 
@@ -14,21 +17,20 @@ class UniteTheArmies {
     this.initSlideShowContainers()
   }
 
-  loadSlideShowContainers() {
-    this.slideshowcontainers = this.slideShowContainers()
-  }
   initSlideShowContainers() {
     for (let c of this.slideshowcontainers) {
       c.init()
     }
   }
 
-  slideShowContainers() {
+  loadSlideShowContainers() {
     let result =  $(".slideshow-container").map(function(index, el) {
       let cont = new SlideShowContainer($(el));
+      cont.load()
       return cont
     })
     console.log('UniteTheArmies#SlideShowContainers', result)
+    this.slideshowcontainers = result;
     return result
   }
 
