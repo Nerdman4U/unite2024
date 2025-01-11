@@ -26,6 +26,12 @@ class SlideShow {
     return this.el.data('decorators') || []
   }
 
+  /**
+   *
+   * TODO: decorators could work automatically by searching
+   * child nodes and decorating based on elements found.
+   *
+   */
   loadSlideShow() {
     this.el.children("li").each(
       function (index, el) {
@@ -46,6 +52,7 @@ class SlideShow {
       console.error("SlideShow#init No slides!");
       return;
     }
+    this.slides.each(function(index, slide) { slide.init() })
     this.setCurrentSlide(0);
     this.initButtons();
     this.showButtons()

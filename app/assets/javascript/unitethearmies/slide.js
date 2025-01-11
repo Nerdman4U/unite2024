@@ -1,16 +1,9 @@
 /**
- * On slideja joissa on
+ * Slides and Slide decorators.
  *
- * - header ja pikkuheader
- * - fullscreen ja pienennetty
- * - joihin kuva lisätään data attribuutista
- * - ja vaikka kuinka paljon muita!
+ * Decorators are to expand Slide structure with elements.
  *
- * esim.
- * - leijuvia slaideja, animoituja kaikin tavoin
- * - interaktiivisia
- *
- * => dekoraattori
+ * Functionality from data- attributes are at base Slide class.
  */
 
 class Slide {
@@ -19,39 +12,31 @@ class Slide {
    */
   constructor(el) {
     this.el = el;
-    this.init();
+    this.obj = this;
   }
 
-  init() {}
+  deco() {
+    return this.obj;
+  }
+  /** Create elements from data attribute values.
+   *
+   */
+  create() {
+    this.createImage();
+  }
+
+  init() {
+    this.create();
+  }
   elem() {
     return this.el;
   }
   activate() {
-    console.log("Slide#activate()");
+    // console.log("Slide#activate()");
     this.elem().addClass("active");
   }
   deactivate() {
     this.elem().removeClass("active");
-  }
-}
-
-class SlideWithImage extends Slide {
-  constructor(decorated) {
-    super();
-    this.decorated = decorated;
-    this.createImage();
-  }
-  elem() {
-    return this.decorated.elem();
-  }
-  activate() {
-    console.log("SlideWithImage#activate()");
-    this.showImage();
-    this.decorated.activate();
-  }
-  deactivate() {
-    this.hideImage();
-    this.decorated.deactivate();
   }
 
   /**
@@ -59,11 +44,14 @@ class SlideWithImage extends Slide {
    *
    * If image src is given as data attribute create element here.
    *
+   * <li data-image-src="path/to/my/image"></li>
+   * =>
+   * <li><img src="path/to/my/image"/></li>
+   *
    * @returns [elem] $(img) or null
    * */
   createImage() {
     let image_src = this.elem().data("imageSrc");
-    console.log("SlideWithImage#createImage()", image_src);
     if (!image_src) {
       return;
     }
@@ -72,6 +60,28 @@ class SlideWithImage extends Slide {
     console.log("SlideWithImage#createImage()", image_src, img);
     this.elem().append(img);
     return img;
+  }
+}
+
+class SlideWithImage extends Slide {
+  constructor(decorated) {
+    super();
+    this.decorated = decorated;
+  }
+  deco() {
+    return this.decorated;
+  }
+  elem() {
+    return this.deco().elem();
+  }
+  activate() {
+    console.log("SlideWithImage#activate()");
+    this.showImage();
+    this.deco().activate();
+  }
+  deactivate() {
+    this.hideImage();
+    this.deco().deactivate();
   }
 
   /** Image
@@ -108,19 +118,22 @@ class SlideWithHeaders extends Slide {
     this.decorated = decorated;
     console.log("SlideWithHeaders");
   }
+  deco() {
+    return this.decorated;
+  }
   elem() {
-    return this.decorated.elem();
+    return this.deco().elem();
   }
   activate() {
     console.log("SlideWithHeaders#activate()");
     this.showH1();
     this.showH5();
-    this.decorated.activate();
+    this.deco().activate();
   }
   deactivate() {
     this.hideH1();
     this.hideH5();
-    this.decorated.deactivate();
+    this.deco().deactivate();
   }
   h1() {
     return this.elem().find("h1");

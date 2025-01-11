@@ -255,6 +255,11 @@ body {
   width: 4vw;
 }
 
+.slideshow.landing-carusel {
+  height: 66vw;
+  min-height: 300pt;
+}
+
 @media only screen and (max-width: 960px) {
   .header {
     background: none;
