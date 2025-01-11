@@ -5,8 +5,12 @@ $(function () {
   unite.load();
   unite.init();
   window.unite = unite;
+  window.funks = [unite.loadVotes]
   setInterval(function () {
-    unite.loadVotes();
+    // for (let f of funks) {
+    //   f().bind(unite)
+    // }
+    unite.loadVotes()
   }, 5000);
 });
 
