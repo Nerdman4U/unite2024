@@ -44,13 +44,20 @@ class SlideShowContainer {
     if (this.el.find('.slider-nav').length > 0) {
       decorators.push('nav1')
     }
-    console.log('SlideShowContainer#slideShows() decorators', decorators, this.el)
+    if (this.el.data('decorators')) {
+      let dec = this.el.data("decorators").split(",").map(function(e) { return $.trim(e) }) || []
+      decorators = decorators.concat(dec)
+    }
+    console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
     let slideshows = this.el.find(".slideshow").map(function(index, el) {
       let slideShow = new SlideShow($(el))
       for (let decorator of decorators) {
-        if (decorator == 'nav1') {
-          console.log('SlideShowContainer#slideShows() slideShow:', slideShow)
-          slideShow = new SlideShowButtons(slideShow);
+        console.log('SlideShowContainer#loadSlideShows() deco:', decorator)
+        switch (decorator) {
+          case 'nav1':
+            slideShow = new SlideShowButtons(slideShow);
+          case 'carusel':
+            slideShow = new SlideShowCarusel(slideShow);
         }
       }
       slideShow.load()

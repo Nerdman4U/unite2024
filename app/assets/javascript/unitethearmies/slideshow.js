@@ -14,16 +14,16 @@ class SlideShow {
    *
    * name          - Just for testing.
    * el            - <ul>- jQuery element.
-   * current_nro   - Order number of current slide.
+   * current_nro   - Order number of current slide, first is 1.
    * current_slide - Slide.
    * decorated     - Slidable instance if decorated later.
    */
   constructor(el) {
     this.name = "core"
-    this.el = $(el); // <ul> element
-    this.current_nro = 1; // 1.st child
-    this.current_slide = null;
-    this.slides = $([]);
+    this.el = $(el);
+    this.current_nro = 1;
+    this._current_slide = $();
+    this._slides = $([]);
     this.decorated = this
   }
 
@@ -33,6 +33,7 @@ class SlideShow {
    * Returns nothing.
    */
   elem() { return this.el }
+  currentSlide() { return this._current_slide; }
 
   /**
    * public: returns SlideShow base class instance when called
@@ -59,12 +60,12 @@ class SlideShow {
    * Returns nothing.
    */
   init() {
-    if (this.slides.length < 1) {
+    if (this.slides().length < 1) {
       console.error("SlideShow#init No slides!");
       return;
     }
-    this.slides.each(function(index, slide) { slide.init() })
-    this.setCurrentSlide(0);
+    this.slides().each(function(index, slide) { slide.init() })
+    this.proceed(0)
   }
 
 
@@ -96,21 +97,13 @@ class SlideShow {
         if (this.decorators().indexOf('image') > -1) {
           slide = new SlideWithImage(slide)
         }
-        this.slides.push(slide);
+        this._slides.push(slide);
       }.bind(this)
     );
   }
 
-  /**
-   * public: Set current slide
-   *
-   * nro - An integer. An order number of a slide.
-   *
-   * Returns nothing.
-   */
-  setCurrentSlide(nro) {
-    this.current_slide = this.slides[nro];
-    this.current_slide.activate();
+  slides() {
+    return this._slides;
   }
 
   /** public: Show new slide.
@@ -118,7 +111,7 @@ class SlideShow {
    * offset - An integer. A number to find next slide, -1 for previous
    *          slide, 1 for next slide.
    *
-   * Returns the current Slide.
+   * Returns nothing.
    */
   proceed(offset) {
     offset = parseInt(offset);
@@ -126,11 +119,31 @@ class SlideShow {
     let slide_nro = (this.current_nro += offset);
     if (!slide_nro) slide_nro = 1;
     if (slide_nro < 1) slide_nro = 1;
-    if (slide_nro > this.slides.length) slide_nro = this.slides.length;
-    // console.log("SlideShow#proceed()", slide_nro, offset);
+    if (slide_nro > this.slides().length) slide_nro = 1
+    console.log("SlideShow#proceed()", slide_nro, offset);
     this.current_nro = slide_nro;
-    this.setCurrentSlide(slide_nro - 1);
-    return this.current_slide;
+    this.setCurrentSlide(slide_nro);
+  }
+
+  /**
+   * public: Set and activates current slide. Use proceed instead.
+   *
+   * nro - An integer. An order number of a slide.
+   *
+   * Returns nothing.
+   */
+  setCurrentSlide(nro) {
+    console.log('SlideShow#setCurrentSlide() nro:', nro)
+    this.deactivateSlides()
+    this._current_slide = this.slides()[nro-1];
+    this._current_slide.activate();
+    console.log('SlideShow#setCurrentSlide() currentSlide():', this.currentSlide().el.get(0))
+  }
+
+  deactivateSlides() {
+    for (let slide of this.slides()) {
+      slide.deactivate()
+    }
   }
 
   /**
@@ -141,9 +154,8 @@ class SlideShow {
    * Returns nothing.
    */
   deactivate() {
-    // console.log("Deactivate()", this.slides);
-    this.slides.each(function (index, slide) {
-      console.log(slide);
+    console.log("SlideShow#deactivate()", this.slides());
+    this.slides().each(function (index, slide) {
       slide.deactivate();
     });
   }
@@ -159,6 +171,7 @@ class SlideShowCarusel extends SlideShow {
     super();
     this.name = "carusel"
     this.decorated = decorated
+    console.log('SlideShowCarusel()')
   }
   deco() { return this.decorated }
   elem() { return this.deco().elem() }
@@ -167,6 +180,21 @@ class SlideShowCarusel extends SlideShow {
   }
   init() {
     this.deco().init()
+  }
+  slides() {
+    return this.deco().slides()
+  }
+  currentSlide() {
+    return this.deco().currentSlide()
+  }
+  setCurretSlide(nro) {
+    return this.deco().setCurrentSlide(nro)
+  }
+  proceed(nro) {
+    return this.deco().proceed(nro)
+  }
+  deactivateSlides() {
+    return this.deco().deactivateSlides()
   }
 }
 
@@ -189,6 +217,21 @@ class SlideShowButtons extends SlideShow {
   }
   load() {
     this.deco().load()
+  }
+  slides() {
+    return this.deco().slides()
+  }
+  currentSlide() {
+    return this.deco().currentSlide()
+  }
+  setCurretSlide(nro) {
+    return this.deco().setCurrentSlide(nro)
+  }
+  proceed(nro) {
+    return this.deco().proceed(nro)
+  }
+  deactivateSlides() {
+    return this.deco().deactivateSlides()
   }
 
   init() {

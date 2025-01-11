@@ -255,9 +255,17 @@ body {
   width: 4vw;
 }
 
-.slideshow.landing-carusel {
+.slideshow.slideshow-landing {
   height: 66vw;
   min-height: 300pt;
+}
+.slideshow.slideshow-carusel li {
+  visibility: hidden;
+  z-index: 0;
+}
+.slideshow.slideshow-carusel li.active {
+  visibility: visible;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 960px) {
