@@ -180,7 +180,11 @@ class SlideShowCarusel extends SlideShow {
   }
   init() {
     this.deco().init()
+    window.funks.push([this.run, this])
   }
+  run() {
+    this.proceed(1)
+   }
   slides() {
     return this.deco().slides()
   }
