@@ -46,18 +46,12 @@ module ApplicationHelper
     end
   end
 
-  def button_white
-    # skin_barber_shop_removed = "button tms-caption thick "
-    skin_barder_shop_stays = "bkg-white bkg-hover-black color-black color-hover-white text-uppercase "
-    bootstrap = "upy-2 upx-3 ufs-2 position-static opacity-100 shadow border border-2 border-light rounded"
-    skin_barder_shop_stays + bootstrap
+  def button_black
+    "button-black up-2 text-uppercase ufs-2 shadow border border-2 border-light rounded text-decoration-none"
   end
 
-  def button_black
-    # skin_barber_shop_removed = "button tms-caption thick "
-    skin_barder_shop_stays = "bkg-black bkg-hover-white color-white color-hover-black text-uppercase "
-    bootstrap = "upy-2 upx-3 ufs-2 position-static opacity-100 shadow border border-2 border-light rounded"
-    skin_barder_shop_stays + bootstrap
+  def button_white
+    "button-white up-2 text-uppercase ufs-2 shadow border border-2 border-dark rounded text-decoration-none"
   end
 
   def vimeo_stuff

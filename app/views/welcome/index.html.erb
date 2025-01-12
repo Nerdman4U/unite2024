@@ -15,6 +15,20 @@
 end
 %>
 
+<section class="section-block bg-white color-black upx-8 upy-8 text-center">
+  <p><%# _("We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces towards significant environmental tasks as soon as possible.") %></p>
+  <h1><%= _("At this site we collect signatures for the initiative sent to the United Nations.") %></h1>
+  <p class="umt-3">
+    <%= link_to new_vote_path(locale: locale),
+        { :class => button_white } do
+          content = tag.span class: "bi bi-person-add align-middle" do " " end
+          content << _("Why vote?")
+          content
+        end
+      %>
+  </p>
+</section>
+
 <!-- karuselli -->
 <div class="slideshow-container section-block bkg-charcoal m-0 p-0 overflow-hidden" data-decorators="carusel">
   <ol class="slideshow slideshow-carusel slideshow-landing" data-interval="5" data-decorators="">

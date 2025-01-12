@@ -658,6 +658,37 @@ h6 {
   background-color: var(--bs-focus-ring-color);
 }
 
+.button-white {
+  color: black;
+  background-color: white;
+  span {
+    transition: color 3s ease-in-out;
+    color: black;
+  }
+}
+.button-white:hover {
+  color: white;
+  background-color: orange;
+  span {
+    color: white;
+  }
+}
+.button-black {
+  color: white;
+  background-color: black;
+  span {
+    transition: color 3s ease-in-out;
+    color: white;
+  }
+}
+.button-black:hover {
+  color: black;
+  background-color: orange;
+  span {
+    color: black;
+  }
+}
+
 @media only screen and (max-width: 960px) {
   .header .header,
   .header .header-inner,
