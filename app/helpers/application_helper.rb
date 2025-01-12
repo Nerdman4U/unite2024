@@ -111,6 +111,7 @@ module ApplicationHelper
     <picture>
       <source media="(max-width: 640px)" srcset="#{slide[:img_mobile]}" />
       <source media="(max-width: 1024px)" srcset="#{slide[:img_tablet]}" />
+      <source media="(max-width: 2048px)" srcset="#{slide[:img_screen]}" />
       <img data-src=#{slide[:img_default]} srcset="#{slide[:img_srcset]}" src="#{slide[:img_blank]}" alt="#{slide[:img_alt] || _("Slideshow image")}" />
     </picture>
   </li>
