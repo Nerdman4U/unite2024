@@ -243,6 +243,7 @@ class SlideShowButtons extends SlideShow {
     this.initButtons();
     this.showButtons();
   }
+
   buttons() {
     console.log('SlideShowButtons#buttons()')
     let buttons = this.elem().find(".slider-nav");

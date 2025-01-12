@@ -1,20 +1,20 @@
-<%= fs_slider do
+<%= fs_slider({show_navigation: true}) do
   [{
     link: "",
     topic_1: _("First Aid 1"),
     topic_2: _("To Our Common World"),
-    img: image_path("frontpage-slides/tyyni-jarvenselka.jpg"),
+    img_default: image_path("slides/tyyni-jarvenselka.jpg"),
     img_blank: image_path("blank.gif")
   },
   {
     link: "",
     topic_1: _("First Aid 2"),
     topic_2: _("To Our Common World"),
-    img: image_path("frontpage-slides/tyyni-jarvenselka.jpg"),
+    img_default: image_path("slides/tyyni-jarvenselka.jpg"),
     img_blank: image_path("blank.gif")
   }]
   end
-  %>
+%>
 
 <!-- Feature Column Section -->
 <div class="section-block upx-8 upy-8">

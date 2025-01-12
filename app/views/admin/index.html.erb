@@ -13,7 +13,7 @@
               </div>
             </div>
           </div>
-          <img data-src=<%= image_path("frontpage-slides/avaruus.jpg") %> src=<%= image_path("blank.gif") %> alt=""/>
+          <img data-src=<%= image_path("slides/avaruus.jpg") %> src=<%= image_path("blank.gif") %> alt="" />
         </li>
       </ul>
     </div>
@@ -34,8 +34,8 @@
         </div>
         <div class="column width-12">
           <%= form_tag("/admin/#{params[:admin_hash]}", multipart: true) do %>
-            <%= file_field_tag(:admin_csv, {style: "width:auto;padding:0;margin:0;"}) %>
-            <%= submit_tag("Lähetä", {style: "color:#333 !important; width:auto; margin:0; padding:0"}) %>
+          <%= file_field_tag(:admin_csv, {style: "width:auto;padding:0;margin:0;"}) %>
+          <%= submit_tag("Lähetä", {style: "color:#333 !important; width:auto; margin:0; padding:0"}) %>
           <% end %>
         </div>
       </div>

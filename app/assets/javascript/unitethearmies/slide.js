@@ -108,6 +108,12 @@ class SlideWithImage extends Slide {
     }
     return this.image().get(0);
   }
+
+  /**
+   * public: make image available by setting src attribute.
+   *
+   * Returns nothing
+   */
   showImage() {
     if (!this.imageEl()) {
       return;
@@ -150,7 +156,7 @@ class SlideWithHeaders extends Slide {
   }
   showH1() {
     if (this.h1().length < 1) return;
-    this.h1().get(0).style.transition = this.h1().get(0).dataset.transition;
+    //this.h1().get(0).style.transition = this.h1().get(0).dataset.transition;
     this.h1().addClass("show");
   }
   hideH1() {
@@ -159,7 +165,7 @@ class SlideWithHeaders extends Slide {
   }
   showH5() {
     if (this.h5().length < 1) return;
-    this.h5().get(0).style.transition = this.h5().get(0).dataset.transition;
+    //this.h5().get(0).style.transition = this.h5().get(0).dataset.transition;
     this.h5().addClass("show");
   }
   hideH5() {

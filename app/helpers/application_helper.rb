@@ -102,11 +102,10 @@ module ApplicationHelper
       <div class="tms-content-inner center left-on-mobile v-align-middle">
         <div class="row">
           <div class="col-12 text-center">
-            <h1 class="ufs-2 position-static color-white lspacing-medium" data-transition="opacity 600ms ease-in, scale 2s cubic-bezier(0.9, 0.2, 0.4, 1)">
+            <h1 class="ufs-2 color-white lspacing-medium">
               #{slide[:topic_1]}
             </h1>
-            <div class="clear"></div>
-            <h5 class="ufs-1 position-static color-white lspacing-medium" data-transition="opacity 2s ease-in, scale 4s ease-in-out">
+            <h5 class="ufs-1 color-white lspacing-medium">
               #{slide[:topic_2]}
             </h5>
             <div class="clear"></div>
@@ -115,45 +114,66 @@ module ApplicationHelper
         </div>
       </div>
     </div>
-    <img data-src=#{slide[:img]} data-retina src=#{slide[:img_blank]} alt="#{slide[:img_alt] || _("Slideshow image")}" />
+    <picture>
+      <source media="(max-width: 640px)" srcset="#{slide[:img_mobile]}" />
+      <source media="(max-width: 1024px)" srcset="#{slide[:img_tablet]}" />
+      <img data-src=#{slide[:img_default]} srcset="#{slide[:img_srcset]}" src="#{slide[:img_blank]}" alt="#{slide[:img_alt] || _("Slideshow image")}" />
+    </picture>
   </li>
     SECTION
     return result
   end
 
-  ## Full screen slider
-  def fs_slider section_classes=[], &block
-    # raw_slider(["window-height"], &block)
-    raw_slider(section_classes + ["unite-screenheight-100"], &block)
+  ##
+  # Fullscreen slider.
+  #
+  # options - Hash options for the slider (default: {})
+  #           :section_classes - Array of additional css classes.
+  #           :show_navigation - Boolean to show navigation buttons
+  #                              (next, prev).
+  #
+  # Returns nothing.
+  def fs_slider options={}, &block
+    options[:section_classes] ||= []
+    options[:section_classes] << "unite-screenheight-100"
+    raw_slider(options, &block)
   end
-  def slider &block
-    raw_slider(&block)
+  def slider options={}, &block
+    options[:section_classes] ||= []
+    options[:section_classes] << "unite-screenheight-50"
+    raw_slider(options, &block)
   end
   alias :slider_section :slider
-  def raw_slider section_classes=[]
+  def raw_slider options={}
+    section_classes = options[:section_classes] || []
+    show_navigation = options[:show_navigation] || false
+
     slides = yield
-
-    slide_html = []
+    slides_html = []
     slides.map { |option|
-      slide_html << slide_section(option)
+      slides_html << slide_section(option)
     }
+    slider_navigation_html = show_navigation ? slider_navitation : ""
 
-    slides_str = slide_html.join
-    # full-width-slider
     result = <<~SECTION
-    <section class="slideshow-container unite-slider-container unite-screenheight-50 #{section_classes.join(" ")}" onclick="window.unite.toggleSliderHeight();">
+    <section class="slideshow-container unite-slider-container #{section_classes.join(" ")}">
       <ul class="slideshow" data-decorators="headers,image">
-        #{slides_str}
-        <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
-          <i class="bi bi-chevron-compact-left"></i>
-        </a>
-        <a href="#" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
-          <i class="bi bi-chevron-compact-right"></i>
-        </a>
+        #{slides_html.join("\n")}
+        #{slider_navigation_html}
       </ul>
     </section>
     SECTION
     result.html_safe
+  end
+  def slider_navitation
+    return <<~HTML
+      <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
+        <i class="bi bi-chevron-compact-left"></i>
+      </a>
+      <a href="#" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
+        <i class="bi bi-chevron-compact-right"></i>
+      </a>
+    HTML
   end
 
   def campaign_assistant

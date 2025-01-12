@@ -1,10 +1,10 @@
 <!-- Fullscreen Slider Section -->
-<%= slider_section do
+<%= slider do
   [{
     link: "",
     topic_1: _("Support"),
     topic_2: _("Radical actions are urgently needed to save our planet."),
-    img: image_path("frontpage-slides/lenkki-pitkospuilla.jpg"),
+    img_default: image_path("slides/lenkki-pitkospuilla.jpg"),
     img_alt: _("At duckboard"),
     img_blank: image_path("blank.gif")
   }]
@@ -12,33 +12,11 @@
   %>
 <!-- Fullscreen Slider Section End -->
 
-<!-- Content End -->
-<%
-=begin%>
-<section class="section-block-pt feature-1 bg-white upx-8 upy-8">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="animated-h1 fs-10 color-dark lspacing-medium">
-        <%=  %>
-      </h1>
-      <h5 class="animated-h5 color-dark lspacing-medium mt-20" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-no-scale>
-        <%=  %>
-      </h5>
-    </div>
-  </div>
-</section>
-<%
-=end%>
-
 <!-- Feature Section 1 -->
 <section class="section-block feature-1 bg-white color-dark upx-8 upy-8">
   <div class="row no-padding-bottom">
     <div class="col-6 offset-3">
-      <div class="feature-content">
-        <div class="feature-content-inner">
-          <%= render partial: "new_form" %>
-        </div>
-      </div>
+      <%= render partial: "new_form" %>
     </div>
   </div>
 </section>

@@ -69,7 +69,7 @@ class UniteTheArmies {
       slider.addClass("unite-screenheight-100");
       this.setSlideCaptions({"opacity": 0})
     }
-    this.removeSliderLoader();
+    // this.removeSliderLoader();
   }
 
   get comment () {

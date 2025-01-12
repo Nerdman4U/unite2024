@@ -1,4 +1,4 @@
-<%= fs_slider ["unite-landing"] do
+<%= fs_slider({section_classes: ["unite-landing"], show_navigation: false}) do
 [{
   link: link_to(new_vote_path(locale: locale, anchor: "sign"),
             :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
@@ -6,7 +6,10 @@
             no_scale: true, no_turbolink: true }) { _("Support now") },
   topic_1: _("Save the planet"),
   topic_2: _("Give the armies a new, positive task: protect the environment"),
-  img: image_path("earth-bg.jpg"),
+  img_srcset: "#{image_path("slides/earth-w1024.jpg")} 1x, #{image_path("slides/earth-w2048@2x.jpg")} 2x, #{image_path("slides/earth-w3072@3x.jpg")} 3x, #{image_path("slides/earth-w4096@4x.jpg")} 4x",
+  img_mobile: image_path("slides/earth-w512.jpg"),
+  img_tablet: image_path("slides/earth-w1024.jpg"),
+  img_default: image_path("slides/earth-w512.jpg"),
   img_blank: image_path("blank.gif")
 }]
 end
@@ -15,13 +18,14 @@ end
 <!-- karuselli -->
 <div class="slideshow-container section-block bkg-charcoal m-0 p-0 overflow-hidden" data-decorators="carusel">
   <ol class="slideshow slideshow-carusel slideshow-landing" data-interval="5" data-decorators="">
-    <li data-image-src=<%= image_path("frontpage-slides/forest.jpg") %> data-class="black-text" />
-    <li data-image-src=<%= image_path("frontpage-slides/viidakko.jpg") %> data-class="black-text" />
-    <li data-image-src=<%= image_path("frontpage-slides/tyyni-jarvenselka.jpg") %> data-class="black-text" />
-    <li data-image-src=<%= image_path("frontpage-slides/talvi18.jpg") %> data-class="black-text" />
-    <li data-image-src=<%= image_path("frontpage-slides/avaruus.jpg") %> />
-    <li data-image-src=<%= image_path("frontpage-slides/autumn-shore.jpg") %> />
-    <li data-image-src=<%= image_path("frontpage-slides/sunrise-on-the-sea.jpg") %> />
+    <li data-image-src=<%= image_path("slides/forest.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("slides/woodland-w1024.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("slides/viidakko.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("slides/tyyni-jarvenselka.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("slides/talvi18.jpg") %> data-class="black-text" />
+    <li data-image-src=<%= image_path("slides/avaruus.jpg") %> />
+    <li data-image-src=<%= image_path("slides/autumn-shore.jpg") %> />
+    <li data-image-src=<%= image_path("slides/sunrise-on-the-sea.jpg") %> />
   </ol>
   <div id="slideshow-caption" data-caption="landing-carusel" class="umx-5 container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
     <div class="row ">
@@ -47,8 +51,6 @@ end
 <!-- /karuselli -->
 
 <!-- info -->
-<%
-=begin%>
 <section class="section-block bg-white color-dark upx-8">
   <div class="row">
     <div class="col-6">
@@ -99,21 +101,14 @@ end
     </div>
   </div>
 </section>
-<%
-=end%>
-<!-- /info -->
 
 <!-- video -->
-<%
-=begin%>
 <section class="section-block bg-white">
   <div style="padding:80% 0 0 0;position:relative;">
     <iframe src="https://player.vimeo.com/video/<%= unite_video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
   </div>
   <script src="https://player.vimeo.com/api/player.js"></script>
 </section>
-<%
-=end%>
 <!-- /video -->
 
 <section class="section-block bg-white upx-8 upy-8">

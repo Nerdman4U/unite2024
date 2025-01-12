@@ -17,6 +17,25 @@ class SlideShowContainer {
   constructor(el) {
     this.el = $(el)
     this.current = 1;
+    this.slideshows = $([]);
+    this.el.on('click', this.toggleSize.bind(this))
+  }
+
+  toggleSize() {
+    let classes = this.el.attr('class').split(' ')
+    if (classes.indexOf('unite-screenheight-50') > -1) {
+      this.el.removeClass('unite-screenheight-50')
+      this.el.addClass('unite-screenheight-100')
+    }
+    else {
+      this.el.removeClass('unite-screenheight-100')
+      this.el.addClass('unite-screenheight-50')
+    }
+
+    console.log('SlideShowContainer#toggleSize()', classes)
+    for (let slideshow of this.slideshows) {
+      slideshow.hideButtons && slideshow.hideButtons()
+    }
   }
 
   /**
@@ -48,7 +67,7 @@ class SlideShowContainer {
       let dec = this.el.data("decorators").split(",").map(function(e) { return $.trim(e) }) || []
       decorators = decorators.concat(dec)
     }
-    console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
+    //console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
     let slideshows = this.el.find(".slideshow").map(function(index, el) {
       let slideShow = new SlideShow($(el))
       for (let decorator of decorators) {
@@ -56,8 +75,10 @@ class SlideShowContainer {
         switch (decorator) {
           case 'nav1':
             slideShow = new SlideShowButtons(slideShow);
+            break;
           case 'carusel':
             slideShow = new SlideShowCarusel(slideShow);
+            break;
         }
       }
       slideShow.load()
