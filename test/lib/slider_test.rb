@@ -9,7 +9,13 @@ class SliderTest < ActiveSupport::TestCase
       type: "standard",
       navigation: false,
       slides: [{
-        name: "seashore"
+        name: "seascape",
+        h1: "testi1",
+        h2: "testi2",
+        type: 'jpg',
+        res: [640,960],
+        default: 960,
+        alt: "testikuva"
       }]
     }
   end
@@ -23,7 +29,7 @@ class SliderTest < ActiveSupport::TestCase
   end
   test "should return slides" do
     slider = Slider.new(@options)
-    assert_equal ["seashore"], slider.slides.map(&:name)
+    assert_equal ["seascape"], slider.slides.map(&:name)
   end
   test "should return fullscreen" do
     slider = Slider.new(@options)
@@ -37,7 +43,30 @@ class SliderTest < ActiveSupport::TestCase
     slider = Slider.new(@options)
     assert_equal false, slider.navigation
   end
-
+  test "should return captions" do
+    slider = Slider.new(@options)
+    assert_equal slider.slides[0].captions, {h1: "testi1", h2: "testi2", h3:nil, h4:nil, h5:nil}
+  end
+  test "should return slide image resolutions" do
+    slider = Slider.new(@options)
+    slide = slider.slides[0]
+    assert_equal slide.res, [640,960]
+  end
+  test "should return slide image type" do
+    slider = Slider.new(@options)
+    slide = slider.slides[0]
+    assert_equal slide.type, 'jpg'
+  end
+  test "should return slide image default resolution" do
+    slider = Slider.new(@options)
+    slide = slider.slides[0]
+    assert_equal slide.default, 960
+  end
+  test "should return image alt text" do
+    slider = Slider.new(@options)
+    slide = slider.slides[0]
+    assert_equal slide.alt, "testikuva"
+  end
 end
 
 

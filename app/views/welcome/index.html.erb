@@ -1,11 +1,12 @@
-<%#= slider_new(@welcome_slider) do end %>
+<%= slider_new(@welcome_slider) do end %>
 
-<%= fs_slider({section_classes: [""], show_navigation: false}) do
+<%#= fs_slider({section_classes: ["slideshow-container-top"], show_navigation: false}) do
 [{
-  link: link_to(new_vote_path(locale: locale, anchor: "sign"),
-            :class => "fw-bold fs-4-5 position-static tms-caption mt-5 button text-decoration-none bkg-white thick bkg-hover-cornflowerblue color-black color-hover-white text-uppercase no-margin-bottom text-uppercase shadow rounded",
-            data: { animate_in: "opacity:0;transY:50px;duration:600ms;delay:400ms;easing:easeFastSlow;",
-            no_scale: true, no_turbolink: true }) { _("Support now") },
+  link: link_to(appeal_path(locale: locale), { class: button_white }) do
+          content = tag.span class: "bi bi-info-circle align-middle" do " " end
+          content << _("Support now")
+          content
+        end,
   topic_1: _("Save the planet"),
   topic_2: _("Give the armies a new, positive task: protect the environment"),
   img_srcset: "#{image_path("slides/earth-w1024.jpg")} 1x, #{image_path("slides/earth-w2048@2x.jpg")} 2x, #{image_path("slides/earth-w3072@3x.jpg")} 3x, #{image_path("slides/earth-w4096@4x.jpg")} 4x",
@@ -18,23 +19,29 @@
 end
 %>
 
-<%
-=begin%>
 <section class="section-block bg-white color-black upx-8 upy-8 text-center">
   <p><%# _("We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces towards significant environmental tasks as soon as possible.") %></p>
   <h1><%= _("At this site we collect signatures for the initiative sent to the United Nations.") %></h1>
   <p class="umt-3">
+    <%= link_to appeal_path(locale: locale),
+        { :class => button_white } do
+          _("Initiative")
+        end
+    %>
+    <%= link_to new_vote_path(locale: locale),
+        { :class => button_white } do
+          _("Why vote?")
+        end
+    %>
     <%= link_to new_vote_path(locale: locale),
         { :class => button_white } do
           content = tag.span class: "bi bi-person-add align-middle" do " " end
-          content << _("Why vote?")
+          content << _("Vote")
           content
         end
-      %>
+    %>
   </p>
 </section>
-<%
-=end%>
 
 <!-- karuselli -->
 <div class="slideshow-container section-block bg-charcoal m-0 p-0 overflow-hidden unite-screenheight-100" data-decorators="carusel">

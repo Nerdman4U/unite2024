@@ -5,6 +5,27 @@ class Slide
   def name
     @options[:name] || "Uninitialized <Slide>"
   end
+  def captions
+    {
+      h1: @options[:h1],
+      h2: @options[:h2],
+      h3: @options[:h3],
+      h4: @options[:h4],
+      h5: @options[:h5],
+    }
+  end
+  def res
+    @options[:res]
+  end
+  def type
+    @options[:type]
+  end
+  def default
+    @options[:default]
+  end
+  def alt
+    @options[:alt]
+  end
 end
 
 class Slider

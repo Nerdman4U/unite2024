@@ -12,7 +12,13 @@ class WelcomeController < ApplicationController
       carousel: false,
       navigation: false,
       slides: [{
-        name: "seashore"
+        name: "seascape",
+        h1: _("Save the planet"),
+        h5: _("Give the armies a new, positive task: protect the environment"),
+        res: [640,960,1024,1280,1920,2048,3072,4096],
+        type: 'jpg',
+        default: 640,
+        alt: _(UNITE_TITLE)
       }]
     })
   end

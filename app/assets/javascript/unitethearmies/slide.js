@@ -115,13 +115,14 @@ class SlideWithImage extends Slide {
    * Returns nothing
    */
   showImage() {
-    if (!this.imageEl()) {
-      return;
-    }
-    this.imageEl().src = this.imageEl().dataset.src;
+    if (!this.imageEl()) return;
+    // this.imageEl().src = this.imageEl().dataset.src;
+    this.image().show();
   }
   hideImage() {
-    this.imageEl().src = "";
+    if (!this.imageEl()) return;
+    // this.imageEl().src = "";
+    this.image().hide();
   }
 }
 

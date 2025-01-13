@@ -91,9 +91,8 @@ module ApplicationHelper
 
   def slide_section slide
     result = <<~SECTION
-  <li class="tms-slide tms-forcefit">
-    <div class="tms-content">
-      <div class="tms-content-inner center left-on-mobile v-align-middle">
+  <li>
+    <div class="slider-content">
         <div class="row">
           <div class="col-12 text-center">
             <h1 class="ufs-2 color-white lspacing-medium">
@@ -103,9 +102,10 @@ module ApplicationHelper
               #{slide[:topic_2]}
             </h5>
             <div class="clear"></div>
+            <div class="umt-5">
             #{slide[:link]}
+            </div>
           </div>
-        </div>
       </div>
     </div>
     <picture>
@@ -173,12 +173,63 @@ module ApplicationHelper
 
   ##
   # public: New slider.
+  #
+  # slider - Slider
+  #
+  # Responsive images are created from Slide.res array (which is a list of
+  # numbers). Last number is used as min-width for source element. First
+  # resolution is used as fallback in img src value.
+  #
+  # Returns slider html for view.
   def slider_new slider, &block
-    tag.section class: "slideshow-container slidehow-container-#{slider.name}", style: "border: 10px solid red; height:20vw" do
-      tag.ul class: "slideshow slideshow-#{slider.type}" do
+    tag.section class: "slideshow-container slideshow-container-top slideshow-container-#{slider.name} unite-screenheight-100" do
+      tag.ul class: "slideshow slideshow-#{slider.type}", "data-decorators": "headers,image" do
+        slider.slides.map do |slide|
+          tag.li do
+            li = []
+            li << tag.div(class: "slider-content") do
+              result = []
+              if slide.captions[:h1]
+                result << tag.h1(class: "ufs-2 color-white lspacing-medium") do
+                  slide.captions[:h1]
+                end
+              end
+              if slide.captions[:h5]
+                result << tag.h5(class: "ufs-1 color-white lspacing-medium") do
+                  slide.captions[:h5]
+                end
+              end
+              result.join.html_safe
+            end
+            li << tag.picture do
+              # slide.res = 640
+              # slide.img_type = 'jpg'
+              # =>
+              # <source media="(max-width: 640px)" srcset="#{slide.name}-w#{res}.img_type" />
+              source = slide.res.map do |r|
+                tag.source(media: "(max-width: #{r}px)", srcset:"#{slide_image_path(slide, r)}")
+              end
+              source << tag.source(media: "(min-width: #{slide.res[-1]}px)", srcset:"#{slide_image_path(slide, slide.res[-1])}")
+              source << image_tag(slide_image_path(slide, slide.default), "alt" => slide.alt)
+              source.join.html_safe
+            end
+            li.join.html_safe
+          end
+        end.join.html_safe
       end
     end
   end
+
+  ## public: Get image path.
+  #
+  # slide - Slide
+  # res   - number i.e. 640
+  #
+  # Returns image path.
+  def slide_image_path slide, res
+    image_path("slides/#{slide.name}-w#{res}.#{slide.type}")
+  end
+
 
   def campaign_assistant
     result = <<~HTML
