@@ -152,7 +152,7 @@ module ApplicationHelper
 
     result = <<~SECTION
     <section class="slideshow-container unite-slider-container #{section_classes.join(" ")}">
-      <ul class="slideshow" data-decorators="headers,image">
+      <ul class="slideshow slideshow-standard" data-decorators="headers,image">
         #{slides_html.join("\n")}
         #{slider_navigation_html}
       </ul>
@@ -169,6 +169,15 @@ module ApplicationHelper
         <i class="bi bi-chevron-compact-right"></i>
       </a>
     HTML
+  end
+
+  ##
+  # public: New slider.
+  def slider_new slider, &block
+    tag.section class: "slideshow-container slidehow-container-#{slider.name}", style: "border: 10px solid red; height:20vw" do
+      tag.ul class: "slideshow slideshow-#{slider.type}" do
+      end
+    end
   end
 
   def campaign_assistant
