@@ -86,17 +86,6 @@ select#vote_country:focus {
   border-color: #777777;
 }
 
-#slideshow-caption {
-  position: absolute;
-  z-index: 3;
-  width: 600px;
-  right: 5%;
-  top: 2.5%;
-  height: auto;
-  margin-top: 50pt;
-  margin-bottom: 0;
-}
-
 #slideshow-caption h2 {
   color: inherit;
   /*    text-shadow:

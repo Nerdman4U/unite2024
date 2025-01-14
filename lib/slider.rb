@@ -1,18 +1,11 @@
+require 'ostruct'
+
 class Slide
   def initialize(options)
     @options = options
   end
   def name
     @options[:name] || "Uninitialized <Slide>"
-  end
-  def captions
-    {
-      h1: @options[:h1],
-      h2: @options[:h2],
-      h3: @options[:h3],
-      h4: @options[:h4],
-      h5: @options[:h5],
-    }
   end
   def res
     @options[:res]
@@ -25,6 +18,12 @@ class Slide
   end
   def alt
     @options[:alt]
+  end
+  def decorators
+    @options[:decorators] || []
+  end
+  def headers
+    OpenStruct.new(@options[:headers] || {})
   end
 end
 
@@ -53,6 +52,21 @@ class Slider
   end
   def type
     @options[:type] || "standard"
+  end
+
+  ## public: Return Slider decorators.
+  #
+  # These are data-decorators values used at javascript classes.
+  #
+  # TODO: Decorator could be automatically added if needed subelements
+  # are found.
+  #
+  # Returns an array of strings.
+  def decorators
+    @options[:decorators] || []
+  end
+  def headers
+    OpenStruct.new(@options[:headers] || {})
   end
 
 end

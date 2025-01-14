@@ -1,23 +1,9 @@
-<%# frozen_string_literal: true %>
+<%= slider_new(@slider) %>
 
-<!-- Content -->
 <script>
   let theme_details = JSON.parse('<%= themes_to_js %>')
   let comment = new Comment();
 </script>
-
-<!-- Slider Section -->
-<%= slider do
-[{
-  link: "",
-  topic_1: _("Leave a comment"),
-  topic_2: _("Make an initiative for the action of the United Armies."),
-  img_default: image_path("slides/tehdas.jpg"),
-  img_alt: _("Factory"),
-  img_blank: image_path("blank.gif")
-}]
-end
-%>
 
 <div>
   <section class="section-block bkg-white upy-8 upx-8">

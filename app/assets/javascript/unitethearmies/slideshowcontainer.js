@@ -52,6 +52,10 @@ class SlideShowContainer {
    */
   init() {
     this.initSlideShows()
+    if (this.headers().length > 0) this.headers().addClass('active')
+  }
+  headers() {
+    return this.el.find('.slideshow-headers')
   }
 
   initSlideShows() {
@@ -76,7 +80,7 @@ class SlideShowContainer {
           case 'nav1':
             slideShow = new SlideShowButtons(slideShow);
             break;
-          case 'carusel':
+          case 'carousel':
             slideShow = new SlideShowCarusel(slideShow);
             break;
         }

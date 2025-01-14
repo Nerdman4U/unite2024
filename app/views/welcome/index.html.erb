@@ -23,12 +23,12 @@ end
   <p><%# _("We suggest the United Nations presents a global initiative for a redeployment of the world’s armed forces towards significant environmental tasks as soon as possible.") %></p>
   <h1><%= _("At this site we collect signatures for the initiative sent to the United Nations.") %></h1>
   <p class="umt-3">
-    <%= link_to appeal_path(locale: locale),
+    <%= link_to initiative_path(locale: locale),
         { :class => button_white } do
           _("Initiative")
         end
     %>
-    <%= link_to new_vote_path(locale: locale),
+    <%= link_to why_vote_path(locale: locale),
         { :class => button_white } do
           _("Why vote?")
         end
@@ -43,10 +43,13 @@ end
   </p>
 </section>
 
+<%= slider_new(@welcome_carousel) do end %>
 
 <!-- karuselli -->
-<div class="slideshow-container section-block bg-charcoal m-0 p-0 overflow-hidden unite-screenheight-100" data-decorators="carusel">
-  <ul class="slideshow slideshow-carusel" data-interval="5" data-decorators="">
+<%
+=begin%>
+<div class="slideshow-container section-block bg-charcoal m-0 p-0 overflow-hidden unite-screenheight-100" data-decorators="carousel">
+  <ul class="slideshow slideshow-carusel" data-interval="5">
     <li data-image-src=<%= image_path("slides/forest.jpg") %> data-class="black-text" />
     <li data-image-src=<%= image_path("slides/woodland-w1024.jpg") %> data-class="black-text" />
     <li data-image-src=<%= image_path("slides/viidakko.jpg") %> data-class="black-text" />
@@ -55,28 +58,30 @@ end
     <li data-image-src=<%= image_path("slides/avaruus.jpg") %> />
     <li data-image-src=<%= image_path("slides/autumn-shore.jpg") %> />
     <li data-image-src=<%= image_path("slides/sunrise-on-the-sea.jpg") %> />
-    </ol>
-    <div id="slideshow-caption" data-caption="landing-carusel" class="umx-5 container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
-      <div class="row ">
-        <div class="col-12 text-start">
-          <h2 class="umb-2 ufs-4">
-            <span><%= _("First Aid") %> <%= _("To Our Common World") %></span>
-          </h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 text-start">
-          <p class="umb-2 ufs-1-5 text-uppercase">
-            <span>
-              <%= _("There is a hidden potential at hand: the national armies.") %>
-              <%= _("We have to give the armies a new, positive task.") %>
-              <%= _("In these pages we collect support for a global initiative.") %>
-            </span>
-          </p>
-        </div>
+  </ul>
+  <div id="slideshow-caption" data-caption="landing-carusel" class="umx-5 container feature-column large center horizon" data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;" data-threshold="1">
+    <div class="row ">
+      <div class="col-12 text-start">
+        <h2 class="umb-2 ufs-4">
+          <span><%= _("First Aid") %> <%= _("To Our Common World") %></span>
+        </h2>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12 text-start">
+        <p class="umb-2 ufs-1-5 text-uppercase">
+          <span>
+            <%= _("There is a hidden potential at hand: the national armies.") %>
+            <%= _("We have to give the armies a new, positive task.") %>
+            <%= _("In these pages we collect support for a global initiative.") %>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
+<%
+=end%>
 <!-- /karuselli -->
 
 <!-- info -->

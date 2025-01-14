@@ -1,19 +1,2 @@
-<!-- Content -->
-<div class="content clearfix">
-
-<!-- Slider Section -->
-<%= slider do
-[{
-  link: "",
-  topic_1: _("Confirm email sent"),
-  topic_2: _("Go to your mailbox and click confirmation link on email we just have sent!"),
-  img_default: image_path("slides/wildlife-park-wolf.jpg"),
-  img_alt: _("Wildlife Park Wolf"),
-  img_blank: image_path("blank.gif")
-}]
-end
-%>
-
-</div>
-<!-- Content End -->
+<%= slider_new(@slider) %>
 

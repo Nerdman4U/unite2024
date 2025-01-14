@@ -3,70 +3,112 @@ require "test_helper"
 class SliderTest < ActiveSupport::TestCase
 
   def setup
-    @options = {
+    @slider_options = {
       name: "welcome",
       fullscreen: true,
       type: "standard",
       navigation: false,
+      headers: {
+        h1: ["testi 10"],
+        h2: ["testi 20"],
+      },
       slides: [{
         name: "seascape",
-        h1: "testi1",
-        h2: "testi2",
+        headers: {
+          h1: ["testi 30"],
+          h2: ["testi 40"],
+        },
         type: 'jpg',
         res: [640,960],
         default: 960,
-        alt: "testikuva"
+        alt: "testikuva",
+        decorators: ['headers', 'image'],
       }]
     }
+
+    @carousel_options = {
+      name: "welcome-carousel",
+      fullscreen: true,
+      type: "carousel",
+      navigation: false,
+      decorators: ['headers', 'image'],
+      headers: {
+        h1: ["testi 11"],
+        h2: ["testi 21"],
+      },
+      slides: [{
+        name: "seascape",
+        headers: {
+          h1: ["testi 31"],
+          h2: ["testi 41"],
+        },
+        res: [640,960,1024,1280,1920,2048,3072,4096],
+        type: 'jpg',
+        default: 640,
+        alt: _(UNITE_TITLE),
+        decorators: ['headers', 'image'],
+      }
+    ]}
+
+    @slider = Slider.new(@slider_options)
+    @carousel = Slider.new(@carousel_options)
   end
+
   test "slider exists" do
-    slider = Slider.new(@options)
-    assert_not_nil slider
+    assert_not_nil @slider
   end
   test "should return name" do
-    slider = Slider.new(@options)
-    assert_equal "welcome", slider.name
+    assert_equal "welcome", @slider.name
   end
   test "should return slides" do
-    slider = Slider.new(@options)
-    assert_equal ["seascape"], slider.slides.map(&:name)
+    assert_equal ["seascape"], @slider.slides.map(&:name)
   end
   test "should return fullscreen" do
-    slider = Slider.new(@options)
-    assert_equal true, slider.fullscreen
+    assert_equal true, @slider.fullscreen
   end
   test "should return type" do
-    slider = Slider.new(@options)
-    assert_equal "standard", slider.type
+    assert_equal "standard", @slider.type
+    assert_equal "carousel", @carousel.type
   end
   test "should return navigation" do
-    slider = Slider.new(@options)
-    assert_equal false, slider.navigation
+    assert_equal false, @slider.navigation
   end
-  test "should return captions" do
-    slider = Slider.new(@options)
-    assert_equal slider.slides[0].captions, {h1: "testi1", h2: "testi2", h3:nil, h4:nil, h5:nil}
+  test "should return headers" do
+    assert @slider.headers[:h1].include? 'testi 10'
+    assert @carousel.headers.h1.include? 'testi 11'
   end
+
+  # SLIDE TESTS
+  # TODO: slide_test
   test "should return slide image resolutions" do
-    slider = Slider.new(@options)
-    slide = slider.slides[0]
+    slide = @slider.slides[0]
     assert_equal slide.res, [640,960]
   end
   test "should return slide image type" do
-    slider = Slider.new(@options)
-    slide = slider.slides[0]
+    slide = @slider.slides[0]
     assert_equal slide.type, 'jpg'
   end
   test "should return slide image default resolution" do
-    slider = Slider.new(@options)
-    slide = slider.slides[0]
+    slide = @slider.slides[0]
     assert_equal slide.default, 960
   end
   test "should return image alt text" do
-    slider = Slider.new(@options)
-    slide = slider.slides[0]
+    slide = @slider.slides[0]
     assert_equal slide.alt, "testikuva"
   end
+  test "should return slide decorators" do
+    slide = @slider.slides[0]
+    assert slide.decorators.include? "headers"
+  end
+  test "should return slide headers" do
+    slide = @slider.slides[0]
+    assert slide.headers[:h1].include? 'testi 30'
+
+    assert slide.headers.h1.present?
+    assert slide.headers.h3.blank?
+
+  end
+
 end
 
 

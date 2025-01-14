@@ -1,5 +1,22 @@
 class TokensController < ApplicationController
   def new
+    @slider = Slider.new({
+      name: "new_token",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "winter-trail",
+        headers: {
+          h1: [_("Get to your private vote")],
+        },
+        res: [640,960,1024,1280,1920,2048,3072,4000,5000,6000],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Snowy tree"),
+        decorators: ["headers", "image"]
+      }]
+    })
+
   end
 
   # Create token to view private vote.

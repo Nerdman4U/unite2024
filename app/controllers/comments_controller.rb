@@ -8,6 +8,24 @@ class CommentsController < ApplicationController
       return
     end
 
+    @slider = Slider.new({
+      name: "comment",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "tehdas",
+        headers: {
+          h1: [_("Leave a comment")],
+          h2: [_("Make an initiative for the action of the United Armies.")]
+        },
+        res: [640,960,1024,1280,1920,2048],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Factory"),
+        decorators: ["headers", "image"]
+      }]
+    })
+
     vote = Vote.where(id: session[:current_vote_id]).first
     unless vote
       Rails.logger.error("Comment#new: Vote not found")

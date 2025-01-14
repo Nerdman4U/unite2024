@@ -1,4 +1,6 @@
-<%= fs_slider({show_navigation: true}) do
+<%= slider_new(@slider) %>
+
+<%# fs_slider({show_navigation: true}) do
   [{
     link: "",
     topic_1: _("First Aid 1"),
@@ -51,6 +53,13 @@
   </div>
 </div>
 
+<div class="section-block container-fluid text-center upb-3">
+  <%= link_to initiative_path(locale: locale), { class: button_white, style: "display:inline-block;width:100%" } do %>
+  <!-- <span class="bi bi-person-add align-middle"></span> -->
+  <%= _("Read the Initiative") %>
+  <% end %>
+</div>
+
 <div class="section-block replicable-content upx-8 upy-8">
   <div class="row">
     <div class="col-6 text-center">
@@ -78,41 +87,12 @@
   </div>
 </div>
 
-<!-- kirje -->
-<div class="section-block replicable-content upx-8 upy-8">
-  <div class="row">
-    <div class="col-10 offset-1 offset-right-1 initiative-presented ">
-      <h1><%= _("Initiative presented to the United Nations:") %></h1>
-      <p class="lead ufs-2">
-        <%= _("To the Secretary-General and Secretariat of the United Nations") %><br />
-        <%= _("Helsinki, 4.11.2014") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("We the undersigned addressees turn to you because of our concern at the state of the global environment. In many parts of the world the deterioration of the environment can be linked directly to social problems among the local population.") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("Such harmful developments have accelerated and often aggravated one another. It is to be feared that this process may reach unnoticed a ‘point of no return’, after which it can no longer be reversed, or even arrested, by human intervention.") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present.") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("We propose action on projects requiring large-scale resources, both of manpower and equipment; these would include agro-forestry projects, forest, plant and animal relocations in the wake of global warming. Such projects would assist in averting the worst catastrophes; they would also aid and foster ecological and social stability, and employment at the local level, assuming the use of local labor.") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found.") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs.") %>
-      </p>
-      <p class="ufs-1-5">
-        <%= _("We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace.") %>
-      </p>
-      <br>
-    </div>
-  </div>
+<div class="section-block container-fluid text-center upb-3">
+  <%= link_to initiative_path(locale: locale), { class: button_white, style: "display:inline-block;width:100%" } do %>
+  <!-- <span class="bi bi-person-add align-middle"></span> -->
+  <%= _("Read the Initiative") %>
+  <% end %>
 </div>
-<!-- /kirje -->
 
 <section class="section-block feature-2 bg-white upy-8 upx-8 color-white">
   <div class="row">

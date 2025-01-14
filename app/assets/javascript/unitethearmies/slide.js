@@ -139,7 +139,7 @@ class SlideWithHeaders extends Slide {
     return this.deco().elem();
   }
   activate() {
-    console.log("SlideWithHeaders#activate()");
+    // console.log("SlideWithHeaders#activate()");
     this.showHeader("h1");
     this.showHeader("h2");
     this.showHeader("h3");

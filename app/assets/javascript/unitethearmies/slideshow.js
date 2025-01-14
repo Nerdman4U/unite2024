@@ -65,9 +65,9 @@ class SlideShow {
       return;
     }
     this.slides().each(function(index, slide) { slide.init() })
+
     this.proceed(0)
   }
-
 
   /** deprecated: Slide decorators
    *
@@ -90,11 +90,19 @@ class SlideShow {
   loadSlideShow() {
     this.elem().children("li").each(
       function (index, el) {
+        // TODO: new Slide($(el), slide_options) <= mis o nää?
         let slide = new Slide($(el));
-        if (this.decorators().indexOf('headers') > -1) {
+        let decorators = $(el).data('decorators') || []
+        // console.log('SlideShow#loadSlideShow() decorators:', decorators)
+        // decorators = $(decorators)
+        // console.log('SlideShow#loadSlideShow() decorators[0]:', decorators[0])
+        // => undefined (?)
+
+        if (decorators.indexOf('headers') > -1) {
           slide = new SlideWithHeaders(slide)
+          console.log('SlideShow#loadSlideShow() headers!')
         }
-        if (this.decorators().indexOf('image') > -1) {
+        if (decorators.indexOf('image') > -1) {
           slide = new SlideWithImage(slide)
         }
         this._slides.push(slide);
@@ -164,7 +172,9 @@ class SlideShow {
 /**
  * public: Carusel decorator.
  *
- * Carusel adds image change based on timer.
+ * Changes images on 5s interval.
+ *
+ * TODO: more options.
  */
 class SlideShowCarusel extends SlideShow {
   constructor(decorated) {

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   scope "/:locale", defaults: { locale: "en" }, constraints: lambda { |req| req.params[:locale].in? Language::UI.locales.map(&:to_s) } do
     root "welcome#index", as: :locale_root
     get "appeal" => "welcome#appeal", as: :appeal
+    get "why_vote" => "welcome#why_vote", as: :why_vote
+    get "initiative" => "welcome#initiative", as: :initiative
     resources :votes, only: [ :new, :index ]
     resources :votes, only: [ :show ], as: :vote, constraints: { token: /[^\/]+/ }, param: "token"
     resources :comments, only: [ :new, :show, :index ], constraints: { id: /\d+/ }

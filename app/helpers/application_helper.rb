@@ -184,26 +184,30 @@ module ApplicationHelper
   #
   # Returns slider html for view.
   def slider_new slider, &block
-    tag.section class: "slideshow-container slideshow-container-top slideshow-container-#{slider.name} unite-screenheight-100" do
-      tag.ul class: "slideshow slideshow-#{slider.type}", "data-decorators": "headers,image" do
+    return "" unless slider
+    return "" if slider.slides.empty?
+
+    tag.section class: "slideshow-container slideshow-container-top slideshow-container-#{slider.name} unite-screenheight-100", "data-decorators": slider.decorators.join(", ") do
+      slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}" do
         slider.slides.map do |slide|
-          tag.li do
-            li = []
-            li << tag.div(class: "slider-content") do
-              result = []
-              if slide.captions[:h1]
-                result << tag.h1(class: "ufs-2 color-white lspacing-medium") do
-                  slide.captions[:h1]
+          # TODO: slide.decorators.join(",")
+          tag.li "data-decorators": slide.decorators.join(", ") do
+            li_result = []
+            li_result << tag.div(class: "slider-content") do
+              content_result = []
+              if slide.headers.h1.present?
+                content_result << tag.h1(class: "ufs-1-5 color-white lspacing-medium") do
+                  slide.headers.h1.join(" ")
                 end
               end
-              if slide.captions[:h2]
-                result << tag.h2(class: "ufs-1 color-white lspacing-medium") do
-                  slide.captions[:h2]
+              if slide.headers.h2.present?
+                content_result << tag.h2(class: "ufs-1 color-white lspacing-medium") do
+                  slide.headers.h2.join(" ")
                 end
               end
-              result.join.html_safe
+              content_result.join.html_safe
             end
-            li << tag.picture do
+            li_result << tag.picture do
               # slide.res = 640
               # slide.img_type = 'jpg'
               # =>
@@ -215,9 +219,29 @@ module ApplicationHelper
               source << image_tag(slide_image_path(slide, slide.default), "alt" => slide.alt)
               source.join.html_safe
             end
-            li.join.html_safe
+            li_result.join.html_safe
           end
         end.join.html_safe
+      end
+      slideshow_result << tag.div(class: "slideshow-headers umx-5 text-center") do
+        headers_result = []
+        # TODO: if h1 then ...
+        if slider.headers.h1.present?
+          headers_result << tag.h1 do
+            slider.headers.h1.join(" ")
+          end
+        end
+        if slider.headers.h2.present?
+          headers_result << tag.h2 do
+            slider.headers.h2.join(", ")
+          end
+        end
+        if slider.headers.h3.present?
+          headers_result <<  tag.h3 do
+            slider.headers.h3.join(", ")
+          end
+        end
+        headers_result.join.html_safe
       end
     end
   end

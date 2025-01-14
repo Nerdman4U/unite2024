@@ -2,6 +2,25 @@ class VotesController < ApplicationController
   helper_method :country_votes
 
   def index
+    # number_with_delimiter(VoteCount.total)
+    @slider = Slider.new({
+      name: "votes",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "forest",
+        headers: {
+          h1: [_("%{count} votes") % { count: VoteCount.total }],
+          h2: [_("More work must be done")]
+        },
+        res: [640,960,1024,1280,1920,2048],
+        type: 'jpg',
+        default: 640,
+        alt: _("Forest"),
+        decorators: ["headers", "image"]
+      }]
+    })
+
     @votes = VoteCount.all
     @sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
   end
@@ -13,6 +32,24 @@ class VotesController < ApplicationController
   # - parent_vote :: public_token of parent vote
   #
   def new
+    @slider = Slider.new({
+      name: "new_vote",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "lenkki-pitkospuilla",
+        headers: {
+          h1: [_("Support")],
+          h2: [_("Radical actions are urgently needed to save our planet.")]
+        },
+        res: [640,960,1024,1280,1920,2048],
+        type: 'jpg',
+        default: 640,
+        alt: _("At Duckboard"),
+        decorators: ["headers", "image"]
+      }]
+    })
+
     @vote = Vote.new
     @parent_vote = Vote.unspam.confirmed.find_by_md5_secret_token(params[:parent_vote]) if params[:parent_vote]
 
@@ -53,6 +90,24 @@ class VotesController < ApplicationController
       redirect_to votes_path(locale: locale)
       return
     end
+
+    @slider = Slider.new({
+      name: "new_vote",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "bridge-park-garden-japanese",
+        headers: {
+          h1: [_("Thank you for your support %{name}") % {name: @vote.name}],
+          h2: [_("This is your private vote (%s)") % @vote.email]
+        },
+        res: [640,960,1024,1280,1920,2048],
+        type: 'jpg',
+        default: 640,
+        alt: _("Japanese bridge park garden"),
+        decorators: ["headers", "image"]
+      }]
+    })
 
     # Store current vote to session to allow commenting in contex of
     # this vote.
@@ -212,6 +267,24 @@ class VotesController < ApplicationController
       redirect_to new_vote_path(locale: locale)
       return
     end
+
+    @slider = Slider.new({
+      name: "waiting",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "wildlife-park-wolf",
+        headers: {
+          h1: [_("Confirm email sent")],
+          h2: [_("Go to your mailbox and click confirmation link on email we just have sent!")]
+        },
+        res: [640,960,1024,1280,1920,2048],
+        type: 'jpg',
+        default: 640,
+        alt: _("Wildlife Park Wolf"),
+        decorators: ["headers", "image"]
+      }]
+    })
 
     if wtl = helpers.waiting_time_left
       add_flash :warning, _("Please wait #{wtl[:min]}min #{wtl[:sec]}sec before sending another email")
