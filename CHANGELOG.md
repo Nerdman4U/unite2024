@@ -1,3 +1,32 @@
+## 1.63.0 (2025-01-14)
+
+### Feat
+
+- Sliders working, new quality images
+- Slider headers update
+- Slider class, improved slider helper to support responsive images
+- Slider refactoring, new image
+- Added a bit larger landing image for resolutions max 2048w
+- New informative sentence at landing top, buttons css update
+- Sliders basics ok, added images with different resolutions
+- Slider carusel interval working
+- Testing how to change images intervally at carousel
+- SlideShow proceed fixes, Carusel decorator
+- Comments and load functions out fron constructors
+- Slideshow Slide upgrade from data without decorator
+- Slide decorators
+- More work with slider js class
+- Animated info divs
+- Moved styles to css file
+- Slider working
+- Slider javascript study and update
+- Initiative text border image and landing page header padding
+
+### Fix
+
+- Style fixes, mainly to header
+- **header.html.erb**: Added missing locale parameter to link
+
 ## 1.62.0 (2025-01-08)
 
 ### Feat
