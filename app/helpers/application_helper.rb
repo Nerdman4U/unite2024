@@ -139,6 +139,7 @@ module ApplicationHelper
     raw_slider(options, &block)
   end
   alias :slider_section :slider
+
   def raw_slider options={}
     section_classes = options[:section_classes] || []
     show_navigation = options[:show_navigation] || false
@@ -160,6 +161,7 @@ module ApplicationHelper
     SECTION
     result.html_safe
   end
+
   def slider_navitation
     return <<~HTML
       <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
@@ -194,9 +196,9 @@ module ApplicationHelper
                   slide.captions[:h1]
                 end
               end
-              if slide.captions[:h5]
-                result << tag.h5(class: "ufs-1 color-white lspacing-medium") do
-                  slide.captions[:h5]
+              if slide.captions[:h2]
+                result << tag.h2(class: "ufs-1 color-white lspacing-medium") do
+                  slide.captions[:h2]
                 end
               end
               result.join.html_safe

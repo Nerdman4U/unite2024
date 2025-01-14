@@ -290,10 +290,16 @@ body {
     display: block;
     transition: opacity 600ms ease-in, scale 2s cubic-bezier(0.9, 0.2, 0.4, 1);
   }
+  h2,
+  h3,
+  h4,
   h5 {
     /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
     transform: translateY(1rem);
   }
+  h2.show,
+  h3.show,
+  h4.show,
   h5.show {
     visibility: visible;
     opacity: 1;

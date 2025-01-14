@@ -140,38 +140,32 @@ class SlideWithHeaders extends Slide {
   }
   activate() {
     console.log("SlideWithHeaders#activate()");
-    this.showH1();
-    this.showH5();
+    this.showHeader("h1");
+    this.showHeader("h2");
+    this.showHeader("h3");
+    this.showHeader("h4");
+    this.showHeader("h5");
     this.deco().activate();
   }
   deactivate() {
-    this.hideH1();
-    this.hideH5();
+    this.hideHeader("h1");
+    this.hideHeader("h2");
+    this.hideHeader("h3");
+    this.hideHeader("h4");
+    this.hideHeader("h5");
     this.deco().deactivate();
   }
-  h1() {
-    return this.elem().find("h1");
-  }
-  h5() {
-    return this.elem().find("h5");
-  }
-  showH1() {
-    if (this.h1().length < 1) return;
+
+  showHeader(h) {
+    let el = this.elem().find(h);
+    if (el.length < 1) return;
     //this.h1().get(0).style.transition = this.h1().get(0).dataset.transition;
-    this.h1().addClass("show");
+    el.addClass("show");
   }
-  hideH1() {
-    if (this.h1().length < 1) return;
-    this.h1().removeClass("show");
-  }
-  showH5() {
-    if (this.h5().length < 1) return;
-    //this.h5().get(0).style.transition = this.h5().get(0).dataset.transition;
-    this.h5().addClass("show");
-  }
-  hideH5() {
-    if (this.h5().length < 1) return;
-    this.h5().removeClass("show");
+  hideHeader(h) {
+    let el = this.elem().find(h);
+    if (el.length < 1) return;
+    el.removeClass("show");
   }
 }
 
