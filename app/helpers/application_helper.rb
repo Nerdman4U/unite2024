@@ -321,7 +321,7 @@ module ApplicationHelper
 
     comment = Comment.random_comment_for_language language
     return unless comment.present?
-    tag.div class: "random-comment" do
+    tag.div class: "container-fluid random-comment" do
       result = []
       result << tag.div(class: "random-comment-body") do
         tag.i do

@@ -5,7 +5,7 @@
   <%= render partial: "head" %>
 </head>
 
-<body class="shop home-page">
+<body>
   <%= javascript_include_tag 'jquery' %>
   <%= javascript_include_tag 'countries' %>
   <%= javascript_include_tag 'bootstrap.min.js' %>
@@ -22,7 +22,7 @@
   <div class="wrapper reveal-side-navigation">
     <div class="wrapper-inner">
       <%= render partial: "header" %>
-      <div class="content clearfix">
+      <div class="content">
         <%= yield %>
       </div>
       <%= content_for?(:footer) ? yield(:footer) : render(partial: "footer") %>
