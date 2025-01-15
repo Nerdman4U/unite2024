@@ -182,6 +182,12 @@ module ApplicationHelper
   # numbers). Last number is used as min-width for source element. First
   # resolution is used as fallback in img src value.
   #
+  # TODO:
+  # - this is actually "slideshow_container".
+  # - every container can contain multiple slideshows.
+  # - SlideShowContainer could contain navigation to choose slideshows.
+  # => def slideshows(slideshows, &block)
+  #
   # Returns slider html for view.
   def slider_new slider, &block
     return "" unless slider

@@ -19,7 +19,7 @@ class SlideShow {
    * decorated     - Slidable instance if decorated later.
    */
   constructor(el) {
-    this.name = "core"
+    this._name = "core"
     this.el = $(el);
     this.current_nro = 1;
     this._current_slide = $();
@@ -34,6 +34,7 @@ class SlideShow {
    */
   elem() { return this.el }
   currentSlide() { return this._current_slide; }
+  name() { return this._name }
 
   /**
    * public: returns SlideShow base class instance when called
@@ -179,12 +180,13 @@ class SlideShow {
 class SlideShowCarusel extends SlideShow {
   constructor(decorated) {
     super();
-    this.name = "carusel"
+    this._name = "carusel"
     this.decorated = decorated
     console.log('SlideShowCarusel()')
   }
   deco() { return this.decorated }
   elem() { return this.deco().elem() }
+  name() { return this._name }
   load() {
     this.deco().load()
   }
@@ -219,16 +221,16 @@ class SlideShowCarusel extends SlideShow {
  * image. Under root element .slider-nav objects are to be found.
  */
 class SlideShowButtons extends SlideShow {
-
   constructor(decorated) {
     super();
-    this.name = "buttons"
+    this._name = "buttons"
     this.decorated = decorated
   }
   deco() { return this.decorated }
   elem() {
     return this.deco().elem()
   }
+  name() { return this._name }
   load() {
     this.deco().load()
   }
