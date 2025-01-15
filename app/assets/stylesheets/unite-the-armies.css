@@ -223,6 +223,7 @@ body {
   line-height: 1;
 }
 
+/* Slides under all kinds of Slideshows */
 .slideshow-container .slideshow {
   .slider-content {
     width: 100%;
@@ -235,6 +236,8 @@ body {
     text-align: center;
     position: absolute;
     z-index: 2;
+    text-shadow: 1px 1px 0em rgba(0, 0, 0, 0.5), 0 0 0.3em rgba(0, 0, 0, 0.3),
+      0 0 0.7em rgba(0, 0, 0, 0.4);
   }
 
   li {
@@ -279,6 +282,11 @@ body {
   }
 }
 
+/*
+public: Slideshow-containers (standard, carousel)
+
+Contains css for Slideshow headers (Different than Slide headers).
+*/
 .slideshow-container .slideshow-standard,
 .slideshow-container .slideshow-carousel {
   h1 {
@@ -311,9 +319,11 @@ body {
   }
 }
 
+/* public: Slideshow-carusel. */
 .slideshow-container .slideshow-carusel {
 }
 
+/* public: Headers of all kinds of Slideshows. */
 .slideshow-container .slideshow-headers {
   position: absolute;
   z-index: 3;
@@ -343,7 +353,8 @@ body {
   }
 }
 
-.slideshow-container-welcome-carousel {
+/* public: Slideshow-container for Welcome carousel. */
+.slideshow-container.slideshow-container-welcome-carousel {
   h1,
   h2,
   h3,
