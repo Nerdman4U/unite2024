@@ -187,8 +187,11 @@ module ApplicationHelper
     return "" unless slider
     return "" if slider.slides.empty?
 
-    additional_html = yield || {}
-    additional_html[:link] = additional_html[:link] || ""
+    additional_html = {}
+    if block_given?
+      additional_html = yield || {}
+      additional_html[:link] = additional_html[:link] || ""
+    end
 
     tag.section class: "slideshow-container slideshow-container-top slideshow-container-#{slider.name} unite-screenheight-100", "data-decorators": slider.decorators.join(", ") do
       slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}" do
