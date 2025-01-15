@@ -1,3 +1,17 @@
+## 1.64.0 (2025-01-15)
+
+### Feat
+
+- Slider helper takes css classes
+- Slide header text shadows
+- Slider additional html, fixes welcome index voting button
+- **Bootstrap-icons**: Locally
+
+### Fix
+
+- Welcome carousel working
+- Slider html helper fix if no block was given
+
 ## 1.63.0 (2025-01-14)
 
 ### Feat
