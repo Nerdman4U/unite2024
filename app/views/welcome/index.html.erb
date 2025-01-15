@@ -66,8 +66,9 @@ end
   </p>
 </section>
 
-<%= slider_new(@welcome_carousel) do end %>
-
+<%= slider_new(@welcome_carousel) do
+  { css: "slideshow-container-top vh-100" }
+end %>
 <!-- karuselli -->
 <%
 =begin%>
