@@ -51,22 +51,64 @@ class WelcomeController < ApplicationController
         h2: [_("To Our Common World")],
         h3: [_("There is a hidden potential at hand: the national armies.")]
       },
-      slides: [{
-        name: "seascape",
-        res: [640,960,1024,1280,1920,2048,3072,4096],
-        type: 'jpg',
-        default: 640,
-        alt: _(UNITE_TITLE),
-        decorators: ["image"]
-      },
-      {
-        name: "woodland",
-        res: [640,960,1024,1280,1920,2048,3072,4500],
-        type: 'jpg',
-        default: 640,
-        alt: _("Woodland forest moss sunset by TheOtherKev"),
-        decorators: ["image"]
-      }]
+      slides: [
+        {
+          name: "tickseed",
+          res: [640,960,1024,1280,1920,2048,3072,4000,4710],
+          type: 'jpg',
+          default: 1024,
+          alt: _("Tickseed Careopsis Calliopsis by JamesDeMers"),
+          decorators: ["image"]
+        },
+        {
+          name: "forest",
+          res: [640,960,1024,1280,1920,2048],
+          type: 'jpg',
+          default: 1024,
+          alt: _("Woodland forest moss sunset by TheOtherKev"),
+          decorators: ["image"]
+        },
+        {
+          name: "avaruus",
+          res: [640,960,1024,1280,1920,2048],
+          type: 'jpg',
+          default: 1024,
+          alt: _("Stars on the horizon"),
+          decorators: ["image"]
+        },
+        {
+          name: "talvi18",
+          res: [640,960,1024,1280,1920,2048],
+          type: 'jpg',
+          default: 1024,
+          alt: _("Snowy landscape from Finland"),
+          decorators: ["image"]
+        },
+        {
+          name: "autumn-shore",
+          res: [640,960,1024,1280,1920,2048],
+          type: 'jpg',
+          default: 1024,
+          alt: _(""),
+          decorators: ["image"]
+        },
+        {
+          name: "woodland",
+          res: [640,960,1024,1280,1920,2048,3072,4500],
+          type: 'jpg',
+          default: 1024,
+          alt: _("Woodland forest moss sunset by TheOtherKev"),
+          decorators: ["image"]
+        },
+        {
+          name: "sunrise-on-the-sea",
+          res: [640,960,1024,1280,1920,2048],
+          type: 'jpg',
+          default: 1024,
+          alt: _("Wildlife park wolf by Wolfgang65"),
+          decorators: ["image"]
+        }
+      ]
     }
     @welcome_carousel = Slider.new(options)
   end
