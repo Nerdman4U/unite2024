@@ -187,6 +187,15 @@
   padding-bottom: 1vw;
 }
 
+.upt-12 {
+  padding-top: 12vw;
+}
+.upt-11 {
+  padding-top: 11vw;
+}
+.upt-10 {
+  padding-top: 10vw;
+}
 .upt-9 {
   padding-top: 9vw;
 }
@@ -297,6 +306,15 @@
 }
 
 /* Margin */
+.um-12 {
+  margin: 12vw;
+}
+.um-11 {
+  margin: 11vw;
+}
+.um-10 {
+  margin: 10vw;
+}
 .um-9 {
   margin: 9vw;
 }

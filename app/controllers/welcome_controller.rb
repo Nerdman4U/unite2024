@@ -4,8 +4,14 @@ class WelcomeController < ApplicationController
 
   ## public: landing page.
   #
+  # Javascript Decorator info:
+  #
+  # Slider is a javascript object connected to html element. Slider structure
+  # is defined with helper_method using Slider ruby class instances.
+  #
   # TODO: move somewhere.
-  # => decorators should be read from element properties etc.
+  # TODO: decorators should be read from element properties etc.
+  #
   # Slider decorators:
   # - nav1
   # - carousel

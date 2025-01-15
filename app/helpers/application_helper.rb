@@ -187,6 +187,9 @@ module ApplicationHelper
     return "" unless slider
     return "" if slider.slides.empty?
 
+    additional_html = yield || {}
+    additional_html[:link] = additional_html[:link] || ""
+
     tag.section class: "slideshow-container slideshow-container-top slideshow-container-#{slider.name} unite-screenheight-100", "data-decorators": slider.decorators.join(", ") do
       slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}" do
         slider.slides.map do |slide|
@@ -203,6 +206,11 @@ module ApplicationHelper
               if slide.headers.h2.present?
                 content_result << tag.h2(class: "ufs-1 color-white lspacing-medium") do
                   slide.headers.h2.join(" ")
+                end
+              end
+              if additional_html[:link].present?
+                content_result << tag.div(class: "upt-10") do
+                  additional_html[:link]
                 end
               end
               content_result.join.html_safe
