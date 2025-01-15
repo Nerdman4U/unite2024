@@ -353,6 +353,7 @@ Contains css for Slideshow headers (Different than Slide headers).
 
 /* public: Slideshow-container for Welcome carousel. */
 .slideshow-container.slideshow-container-welcome-carousel {
+  position: relative;
   h1,
   h2,
   h3,
