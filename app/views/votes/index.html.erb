@@ -1,4 +1,6 @@
-<%= slider_new(@slider) %>
+<%= slider_new(@slider) do
+  { css: "slideshow-container-top vh-30" }
+end %>
 
 <% if locale == :fi %>
 <!-- Feature Column Section -->

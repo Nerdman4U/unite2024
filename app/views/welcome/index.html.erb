@@ -13,6 +13,7 @@ TODO: add generic html to any slide
 =end%>
 <%= slider_new(@welcome_slider) do
     {
+      css: "slideshow-container-top vh-100",
       link: link_to(appeal_path(locale: locale), { class: button_white }) do
               content = tag.span class: "bi bi-info-circle align-middle" do " " end
               content << _("Support now")

@@ -1,4 +1,7 @@
-<%= slider_new(@slider) %>
+<%= slider_new(@slider) do
+  { css: "slideshow-container-top vh-100" }
+end
+%>
 
 <%# fs_slider({show_navigation: true}) do
   [{
