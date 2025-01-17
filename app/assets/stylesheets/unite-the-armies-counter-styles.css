@@ -1,0 +1,25 @@
+@counter-style smiling-face {
+  system: cyclic;
+  symbols: "\263A";
+  suffix: " ";
+}
+@counter-style thumbs {
+  system: cyclic;
+  symbols: "\1F44D";
+  suffix: " ";
+}
+@counter-style asterism {
+  system: cyclic;
+  symbols: "\2042";
+  suffix: " ";
+}
+@counter-style question-exclamation {
+  system: cyclic;
+  symbols: "\2049";
+  suffix: " ";
+}
+@counter-style information-source {
+  system: cyclic;
+  symbols: "\2139";
+  suffix: " ";
+}

@@ -59,6 +59,11 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
   test "should add flash message" do
     get locale_root_url locale: :en
 
+    @controller.flash[:success] = []
+    @controller.flash[:danger] = []
+    @controller.flash[:warning] = []
+    @controller.flash[:info] = []
+
     result = @controller.send(:add_flash, :invalid_type, "There was a success")
     assert_nil @controller.flash[:invalid_type]
     assert_equal result, false

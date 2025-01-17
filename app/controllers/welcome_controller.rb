@@ -22,6 +22,24 @@ class WelcomeController < ApplicationController
   #
   # Returns index view.
   def index
+    if flash[:warning].blank?
+      flash[:warning] = []
+      flash[:warning] << _("Under Construction")
+      flash[:warning] << _("Website is not ready and some features are missing.")
+      flash[:warning] << _("DONT PANIC! :smilie:")
+      flash[:warning] << _("You can browse site if you like, its amazing!")
+    end
+
+    if flash[:info].blank?
+      flash[:info] = []
+      flash[:info] << _("Feel free to browse the website!")
+      flash[:info] << _("Please be aware that some features may not work as expected and outlook is not optimal.")
+      flash[:info] << _("Voting works and it is possible. Votes will be moved to the site published in the future.")
+      flash[:info] << _("Images are not correctly shown at every page.")
+      flash[:info] << _("Mobile version navigation tab is not working.")
+      flash[:info] << _("Please be patient.")
+    end
+
     @welcome_slider = Slider.new({
       name: "welcome",
       fullscreen: true,

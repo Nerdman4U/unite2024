@@ -1,18 +1,57 @@
 module ApplicationHelper
+
+  ## public: Flash messages
+  #
+  # Build a list of flash messages. After first similar message following
+  # messages are added as send list under the first message.
+  #
+  # Example:
+  #
+  # flash[:success] = [_("There was a success")
+  #
+  #   <ul class="alert-success">
+  #    <li class="h2">There was a success</li>
+  #   </ul>
+  #
+  # flash[:success] = [_("There was a success"), _("There was another success")]
+  #
+  #   <ul class="alert-success">
+  #    <li><h2>There was a success</h2></li>
+  #    <ul class="sub-list">
+  #      <li class="h2">There was another success</li>
+  #    </ul>
+  #   </ul>
+  #
+  # Returns flash messages
+  def smilie txt
+    txt.gsub(/:smilie:/, '<i class="bi bi-emoji-smile" style="color:inherit"></i>').html_safe
+  end
   def flash_messages
-    # flash[:success] = [_("There was a success")] || flash[:success] << _("There was a success")
-    # flash[:success] << _("There was a success")
+    # flash[:success] = [_("There was a success")]
+    # flash[:success] << _("There was an another success")
+    # flash[:success] << _("... and another success")
     # flash[:warning] = [_("There was a warning")]
+    # flash[:warning] << _("There was an another warning")
     # flash[:danger] = [_("There was a danger")]
     # flash[:info] = [_("There was an info")]
 
     content_tag :div, class: "flash_container" do
       final = ApplicationController::FLASH_TYPES.map do |type|
         next unless flash[type].present?
-        result = tag.ul class: "alert-#{type}", role: "alert" do
-          flash[type].map do |msg|
-            tag.li class: "h2", onClick: "$(this).hide()" do msg end
-          end.join.html_safe
+        result = tag.ul class: "alert-#{type}", role: "alert", onClick: "$(this).hide()" do
+          tag.li do
+            first = flash[type].first
+            result_sub = tag.h2 class: 'h2' do
+              smilie(first)
+            end
+            submsgs = flash[type][1..-1] || []
+            result_sub += tag.ul class: "sub-list" do
+              submsgs.map do |msg|
+                tag.li do smilie(msg) end
+              end.join.html_safe
+            end
+            result_sub.html_safe
+          end
         end.html_safe
       end.join.html_safe
     end.html_safe
