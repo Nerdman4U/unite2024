@@ -74,6 +74,7 @@ class SlideShowContainer {
     //console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
     let slideshows = this.el.find(".slideshow").map(function(index, el) {
       let slideShow = new SlideShow($(el))
+      let interval = $(el).data('interval') || 5000
       for (let decorator of decorators) {
         console.log('SlideShowContainer#loadSlideShows() deco:', decorator)
         switch (decorator) {
@@ -81,7 +82,7 @@ class SlideShowContainer {
             slideShow = new SlideShowButtons(slideShow);
             break;
           case 'carousel':
-            slideShow = new SlideShowCarusel(slideShow);
+            slideShow = new SlideShowCarusel(slideShow, {interval: interval});
             break;
         }
       }

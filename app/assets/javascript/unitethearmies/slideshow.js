@@ -178,10 +178,11 @@ class SlideShow {
  * TODO: more options.
  */
 class SlideShowCarusel extends SlideShow {
-  constructor(decorated) {
+  constructor(decorated, options={}) {
     super();
     this._name = "carusel"
     this.decorated = decorated
+    this._options = options;
     console.log('SlideShowCarusel()')
   }
   deco() { return this.decorated }
@@ -190,9 +191,10 @@ class SlideShowCarusel extends SlideShow {
   load() {
     this.deco().load()
   }
+  interval() { return this._options.interval || 5000 }
   init() {
     this.deco().init()
-    window.funks.push([this.run, this])
+    window.timers.register(this.interval(), function() { this.run() }.bind(this) )
   }
   run() {
     this.proceed(1)

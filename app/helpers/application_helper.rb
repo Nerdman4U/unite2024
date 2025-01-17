@@ -234,16 +234,18 @@ module ApplicationHelper
 
     additional_html = {
       link: "",
-      css: ""
+      css: "",
+      interval: 5000
     }
     if block_given?
       additional_html = yield || {}
       additional_html[:link] = additional_html[:link] || ""
       additional_html[:css] = additional_html[:css] || ""
+      additional_html[:interval] = additional_html[:interval] || 5000
     end
 
     tag.section class: "slideshow-container slideshow-container-#{slider.name} #{additional_html[:css]}", "data-decorators": slider.decorators.join(", ") do
-      slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}" do
+      slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}", "data-interval": additional_html[:interval] do
         slider.slides.map do |slide|
           # TODO: slide.decorators.join(",")
           tag.li "data-decorators": slide.decorators.join(", ") do

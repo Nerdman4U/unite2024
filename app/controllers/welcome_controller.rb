@@ -203,8 +203,8 @@ class WelcomeController < ApplicationController
       },{
         name: "milky_way",
         headers: {
-          h1: [_("Around us is 400 billion solar systems.")],
-          h2: [_("This is our home Galaxy, Milky Way.")],
+          h1: [_("Around us are 400 billion solar systems.")],
+          h2: [_("The Milky Way - OUR Galaxy.")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000, 6000, 7000, 8262],
         type: 'jpg',
@@ -214,8 +214,8 @@ class WelcomeController < ApplicationController
       },{
         name: "galaxy",
         headers: {
-          h1: [_("Our galaxy is in infinite space. The Universe.")],
-          h2: [_("All light comes from distant stars, like our home sun.")],
+          h1: [_("The Universe.")],
+          h2: [_("There are billions of galaxies in the Universe.")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000, 5257],
         type: 'jpg',
