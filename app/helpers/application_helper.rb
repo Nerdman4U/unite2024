@@ -255,12 +255,12 @@ module ApplicationHelper
             li_result << tag.div(class: "slider-content") do
               content_result = []
               if slide.headers.h1.present?
-                content_result << tag.h1(class: "ufs-1-5 color-white lspacing-medium") do
+                content_result << tag.h1(class: "ufs-1-5 lspacing-medium") do
                   slide.headers.h1.join(" ")
                 end
               end
               if slide.headers.h2.present?
-                content_result << tag.h2(class: "ufs-1 color-white lspacing-medium") do
+                content_result << tag.h2(class: "ufs-1 lspacing-medium") do
                   slide.headers.h2.join(" ")
                 end
               end

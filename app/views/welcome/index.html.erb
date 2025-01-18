@@ -1,19 +1,12 @@
 <%
 =begin%>
-helper block parameter:
-
-link: anchor which will be shown at all slides.
-TODO: add generic html to any slide
-=> {
-'slide-id': {
-'parent-#id': "string"
-}
-}
+css: "slideshow-container-top vh-100",
 <%
 =end%>
+
 <%= slider_new(@welcome_slider) do
     {
-      css: "slideshow-container-top vh-100",
+      css: "slideshow-container-top",
       link: link_to(appeal_path(locale: locale), { class: button_white }) do
               content = tag.span class: "bi bi-info-circle align-middle" do " " end
               content << _("Support now")

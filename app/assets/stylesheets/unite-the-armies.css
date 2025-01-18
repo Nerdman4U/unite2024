@@ -25,6 +25,16 @@ body {
   overflow-y: scroll;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
 .wrapper {
   width: 100%;
   margin-right: auto;
@@ -159,8 +169,8 @@ body {
 .footer {
   width: 100%;
   background: #fff;
-  /* z-index: 1;
-  position: relative; */
+  z-index: 1;
+  position: relative;
 }
 
 .featured-media .tm-slider-container {
@@ -199,10 +209,17 @@ body {
   width: inherit;
 }
 
+/* public: Flag Icons
+ *
+ * At footer and votes.
+ */
 #recent_votes_container .flag-icon,
 .country_flag .flag-icon {
   height: 3vw;
   width: 4vw;
+}
+.votes .vote_percentage > div {
+  height: 1vh;
 }
 
 .slideshow.slideshow-landing {
@@ -221,7 +238,59 @@ body {
   line-height: 1;
 }
 
-/* Slides under all kinds of Slideshows */
+/** =========================================================================
+  *                       <!-- Slideshow Containers
+  * =========================================================================
+  *
+  * public: Slideshow containers.
+  *
+  * Set defaults for elements under slideshow-container.
+  */
+.slideshow-container {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: white;
+    opacity: 0;
+  }
+
+  .slider-content {
+    padding-top: 30vmin;
+  }
+
+  &.vh-100 {
+  }
+  &.vh-50 {
+    .slider-content {
+      padding-top: 20vmin;
+    }
+  }
+  &.vh-30 {
+    .slider-content {
+      padding-top: 15vmin;
+    }
+  }
+}
+
+/** public: Slideshow-container for Welcome carousel.
+  */
+.slideshow-container.slideshow-container-welcome-carousel {
+  position: relative;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    transition: opacity 3s 0.6s ease-in, transform 8s ease-out;
+  }
+}
+
+/** public: Slides under all kinds of Slideshows
+  *
+  * .slider-content - contains headers and images of a slide.
+  **/
 .slideshow-container .slideshow {
   .slider-content {
     width: 100%;
@@ -241,11 +310,11 @@ body {
   li {
     visibility: hidden;
     z-index: 0;
-    position: absolute;
+    /* position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
+    bottom: 0; */
     margin: 0;
     padding: 0;
 
@@ -259,19 +328,12 @@ body {
       transform: translate(0, 0);
       transition: scale 10s;
     }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      opacity: 0;
-    }
   }
 
   li.active {
     visibility: visible;
     z-index: 1;
+
     img {
       height: 100%;
       width: 100%;
@@ -280,35 +342,33 @@ body {
   }
 }
 
-/*
-public: Slideshow-containers (standard, carousel)
-
-Contains css for Slideshow headers (Different than Slide headers).
-*/
-.slideshow-container .slideshow-standard,
-.slideshow-container .slideshow-carousel {
-  h1 {
+/* public: Slide continue, headers.
+ *
+ * Contains css for Slide headers (Different than Slideshow headers).
+ */
+.slideshow-container .slideshow li.active .slider-content {
+  > h1 {
     /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
-    transform: translateY(-1rem);
+    transform: translateY(-1vmin);
   }
-  h1.show {
+  > h1.show {
     visibility: visible;
     opacity: 1;
     scale: 3;
     display: block;
     transition: opacity 600ms ease-in, scale 2s cubic-bezier(0.9, 0.2, 0.4, 1);
   }
-  h2,
-  h3,
-  h4,
-  h5 {
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
     /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
-    transform: translateY(1rem);
+    transform: translateY(1vmin);
   }
-  h2.show,
-  h3.show,
-  h4.show,
-  h5.show {
+  > h2.show,
+  > h3.show,
+  > h4.show,
+  > h5.show {
     visibility: visible;
     opacity: 1;
     scale: 2;
@@ -317,7 +377,10 @@ Contains css for Slideshow headers (Different than Slide headers).
   }
 }
 
-/* public: Slideshow-carusel. */
+/** public: Slideshow-carusel.
+  *
+  * Spesific css for carusels.
+  */
 .slideshow-container .slideshow-carusel {
 }
 
@@ -339,39 +402,22 @@ Contains css for Slideshow headers (Different than Slide headers).
     opacity: 0;
     transform: translate(50px, 50px);
   }
-}
-.slideshow-container .slideshow-headers.active {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
 
-/* public: Slideshow-container for Welcome carousel. */
-.slideshow-container.slideshow-container-welcome-carousel {
-  position: relative;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: white;
-    transition: opacity 3s 0.6s ease-in, transform 8s ease-out;
+  &.active {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      opacity: 1;
+      transform: translate(0);
+    }
   }
 }
-
-.slideshow-container-top {
-  h1 {
-    color: white;
-  }
-  .slider-content {
-    padding-top: 40vh;
-  }
-}
+/** =========================================================================
+  *                         Slideshow Containers -- END />
+  * =========================================================================
+  **/
 
 /* .tm-slider-container {
   width: 100%;
@@ -428,16 +474,6 @@ Contains css for Slideshow headers (Different than Slide headers).
   -ms-perspective: 1000;
   perspective: 1000;
 } */
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-}
 
 .flash_container {
   position: absolute !important;
@@ -838,6 +874,10 @@ h6 {
   span {
     color: black;
   }
+}
+
+.section-block:not([class*="bg-*"]) {
+  background-color: var(--bs-light);
 }
 
 @media only screen and (max-width: 960px) {
