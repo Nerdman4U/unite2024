@@ -1,7 +1,10 @@
 <header class="header header-fixed header-fixed-on-mobile header-transparent">
   <div class="container-fluid header-inner">
     <div class="row nav-bar upx-8">
-      <div class="col-md-3 nav-bar-inner">
+      <div class="col-1">
+        <%= link_to image_tag("earth.png", alt: _("The Planet Earth, our home.")), locale_root_path(locale: locale), :class => "no-transition" %>
+      </div>
+      <div class="col-md-2 nav-bar-inner">
         <div class="logo" id="logo">
           <div class="logo-inner">
             <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
