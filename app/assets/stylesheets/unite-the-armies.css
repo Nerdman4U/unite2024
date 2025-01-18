@@ -474,6 +474,10 @@ img {
     text-transform: lowercase;
     background-color: transparent;
     border: 0;
+
+    span {
+      padding-left: 0.5vw;
+    }
   }
 }
 .flash_container ul.alert-success ul.sub-list {

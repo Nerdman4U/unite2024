@@ -47,7 +47,9 @@ module ApplicationHelper
             submsgs = flash[type][1..-1] || []
             result_sub += tag.ul class: "sub-list" do
               submsgs.map do |msg|
-                tag.li do smilie(msg) end
+                tag.li do
+                  tag.span do smilie(msg) end
+                end
               end.join.html_safe
             end
             result_sub.html_safe
