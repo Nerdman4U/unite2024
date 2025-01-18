@@ -1,3 +1,25 @@
+## 1.66.0 (2025-01-18)
+
+### Feat
+
+- Removed old theme css, header css fixes
+- Slideshow container css, headers for different medias
+- Flash message item padding after marker
+- Interval class, longer intervals at carousels
+- Flash messages update: multiple submessages, icons and even smilie
+- Video position and size
+
+## 1.65.0 (2025-01-15)
+
+### Feat
+
+- Carousel images, old and new
+- JS Slider decorator names
+
+### Fix
+
+- Carousel headers correctly
+
 ## 1.64.0 (2025-01-15)
 
 ### Feat
