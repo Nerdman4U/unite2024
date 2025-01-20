@@ -16,8 +16,8 @@ class MobileBrowseSiteTest < MobileSystemTestCase
     assert page.footer
 
     assert_selector 'h1', text: 'Save the Planet'.upcase
-    assert_selector '.header .mobile-navigation'
-    assert_no_selector '.header .primary-navigation'
+    assert_selector 'header .mobile-navigation'
+    assert_no_selector 'header .primary-navigation'
   end
 
 

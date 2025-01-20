@@ -1,10 +1,12 @@
 import RecentVotes from RAILS_ASSET_URL("./unitethearmies/recent-votes.js");
 import SlideShowContainer from RAILS_ASSET_URL("./unitethearmies/slideshowcontainer.js");
+import Header from RAILS_ASSET_URL("./unitethearmies/header.js");
 
 class UniteTheArmies {
   constructor() {
     this.recent_votes = new RecentVotes();
     this.slideshowcontainers = [];
+    this.header = new Header();
   }
 
   load() {

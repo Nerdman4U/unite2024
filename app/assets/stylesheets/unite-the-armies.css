@@ -92,14 +92,16 @@ header {
     width: 6vw;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-      margin: 0 0.5vw;
-      height: 0.7vw;
-      line-height: 0.5vw;
+  @media only screen and (min-width: 960px) {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin: 0 0.5vw;
+        height: 0.7vw;
+        line-height: 0.5vw;
+      }
     }
   }
 
@@ -117,7 +119,7 @@ header {
       }
     }
   }
-  .mobile-navigation:hover {
+  .mobile-navigation .mobile-toggle:hover {
     border: 1px dashed #333;
     opacity: 1;
   }
@@ -550,13 +552,37 @@ header .header-inner {
 
 @media only screen and (max-width: 960px) {
   header .primary-navigation {
-    display: none !important;
+    display: none;
   }
   header .construction-info {
-    display: block !important;
+    display: block;
     height: 4vmax;
     line-height: 4vmax;
     text-align: center;
+  }
+
+  .primary-navigation {
+    position: absolute;
+    z-index: 101;
+    border: 1px dashed #333;
+    top: 8vh;
+    right: 10vmin;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding-left: 1vmin;
+    &.show-navigation {
+      display: block;
+    }
+    &.hide-navigation {
+      display: none;
+    }
+    li {
+      display: list-item;
+      a {
+        font-size: 1vmax;
+        color: #333;
+      }
+    }
   }
 }
 
@@ -869,8 +895,10 @@ h6 {
   background-color: var(--bs-light);
 }
 
-.header ul > li > a {
-  color: var(--bs-light);
+@media only screen and (min-width: 960px) {
+  .header ul > li > a {
+    color: var(--bs-light);
+  }
 }
 
 .header-background ul > li > a,

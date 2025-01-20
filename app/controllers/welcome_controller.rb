@@ -22,23 +22,23 @@ class WelcomeController < ApplicationController
   #
   # Returns index view.
   def index
-    if flash[:warning].blank?
-      flash[:warning] = []
-      flash[:warning] << _("Under Construction")
-      flash[:warning] << _("Website is not ready and some features are missing.")
-      flash[:warning] << _("DONT PANIC! :smilie:")
-      flash[:warning] << _("You can browse site freely, its amazing!")
-    end
+    # if flash[:warning].blank?
+    #   flash[:warning] = []
+    #   flash[:warning] << _("Under Construction")
+    #   flash[:warning] << _("Website is not ready and some features are missing.")
+    #   flash[:warning] << _("DONT PANIC! :smilie:")
+    #   flash[:warning] << _("You can browse site freely, its amazing!")
+    # end
 
-    if flash[:info].blank?
-      flash[:info] = []
-      flash[:info] << _("Still lacking some features.")
-      flash[:info] << _("Outlook is not optimal. But its getting close \o/")
-      flash[:info] << _("Voting works and it is possible.")
-      flash[:info] << _("Mobile version navigation tab is not working.")
-      flash[:info] << _("Please, be patient.")
-      flash[:info] << _("Meanwhile, take a deep breath! :smilie: (no, seriously)")
-    end
+    # if flash[:info].blank?
+    #   flash[:info] = []
+    #   flash[:info] << _("Still lacking some features.")
+    #   flash[:info] << _("Outlook is not optimal. But its getting close \o/")
+    #   flash[:info] << _("Voting works and it is possible.")
+    #   flash[:info] << _("Mobile version navigation tab is not working.")
+    #   flash[:info] << _("Please, be patient.")
+    #   flash[:info] << _("Meanwhile, take a deep breath! :smilie: (no, seriously)")
+    # end
 
     @welcome_slider = Slider.new({
       name: "welcome",
