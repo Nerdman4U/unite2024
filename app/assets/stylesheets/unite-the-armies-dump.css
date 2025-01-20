@@ -1,27 +1,3 @@
-/* Bootstrap */
-
-.bi {
-  font-size: 2rem;
-  color: cornflowerblue;
-}
-
-.bkg-cornflowerblue {
-  background-color: cornflowerblue;
-  border-color: cornflowerblue;
-}
-.bkg-hover-cornflowerblue:hover {
-  background-color: cornflowerblue;
-  border-color: cornflowerblue;
-}
-
-.text-light a {
-  color: var(--bs-light);
-}
-.text-dark a {
-  color: var(--bs-dark);
-}
-/* End Bootstrap */
-
 .button {
   text-decoration: none;
 }

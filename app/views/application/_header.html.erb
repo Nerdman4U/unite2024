@@ -1,20 +1,20 @@
-<header class="header header-fixed header-fixed-on-mobile header-transparent">
+<header class="header header-transparent">
   <div class="container-fluid header-inner">
     <div class="row nav-bar upx-8">
-      <div class="col-1">
-        <%= link_to image_tag("earth.png", alt: _("The Planet Earth, our home.")), locale_root_path(locale: locale), :class => "no-transition" %>
-      </div>
-      <div class="col-md-2 nav-bar-inner">
+      <div class="col nav-bar-inner">
+        <div class="earth">
+          <%= link_to image_tag("earth.png", alt: _("The Planet Earth, our home.")), locale_root_path(locale: locale), :class => "no-transition" %>
+        </div>
         <div class="logo" id="logo">
           <div class="logo-inner">
-            <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
-            <%= link_to image_tag(UNITE_LOGO, alt: "Logo"), locale_root_path(locale: locale), :class => "no-transition" %>
+            <%= link_to image_tag(UNITE_LOGO_DARK, alt: "Logo"), locale_root_path(locale: locale)  %>
+            <%= link_to image_tag(UNITE_LOGO, alt: "Logo"), locale_root_path(locale: locale) %>
           </div>
         </div>
       </div>
-      <div class="col-md-9">
-        <nav class="nav-block construction-info text-white" style="display:none">
-          Under construction
+      <div class="col">
+        <nav class="nav-block mobile-navigation text-end upt-1">
+          <div class="btn mobile-toggle"><%= image_tag("nav-icon.png", alt: "Menu") %></div>
         </nav>
         <nav class="nav-block primary-navigation text-end upt-1">
           <ul class="p-0 m-0">
@@ -30,16 +30,12 @@
             <% if logged_in? && current_vote %>
             <li>
               <%= link_to_vote %>
-              <%# link_to _("My Vote"), vote_path(token: current_vote.encoded_payload) %>
             </li>
             <li>
               <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>
             </li>
             <% end %>
           </ul>
-        </nav>
-
-        <nav class="nav-block primary-navigation text-end">
           <%= language_selection %>
         </nav>
 

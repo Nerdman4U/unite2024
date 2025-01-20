@@ -14,6 +14,10 @@ class BrowseSiteTest < ApplicationSystemTestCase
     assert !page.secure?
     assert page.header.logo.present?
     assert page.footer
+
+    assert_selector 'h1', text: 'Save the Planet'.upcase
+    assert_no_selector '.header .mobile-navigation'
+    assert_selector '.header .primary-navigation'
   end
 
   test 'should redirect landing from page without locale' do

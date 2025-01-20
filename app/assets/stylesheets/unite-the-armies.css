@@ -15,9 +15,9 @@ Copyright: Save the Planet - Unite the Armies
 
 Based on Sartre Skin Barber Shop by ThemeMountain.
 
------------------------------------------------------------------
-* 1. Construction
------------------------------------------------------------------
+/** =========================================================================
+  *   1. CONSTRUCTION
+  * =========================================================================
 */
 
 body {
@@ -65,99 +65,111 @@ img {
   right: 0; */
 }
 
-.header {
-  /* width: 100%; */
-  position: relative;
-  /* height: 5vmax; */
-  /* TODO: header-inner has 1px margin-left/right and i dont know why */
-  padding: 2vmin 0;
-  box-sizing: border-box;
-  /* border: 3px solid orange; */
-  .logo {
-    height: 4vmax;
-    line-height: 4vmax;
-    display: table;
-    width: 100%;
-  }
-}
-
-.header nav {
-  line-height: 1.5vmax;
-}
-.header nav[class*="primary-navigation"].first {
-  padding-top: 0.5vmax;
-}
-
-.header-fixed {
+header {
   position: fixed !important;
   top: 0;
   left: 0;
   /* bottom: 15vh; */
   right: 0;
   z-index: 100;
-}
+  /* width: 100%; */
+  /* height: 5vmax; */
+  /* TODO: header-inner has 1px margin-left/right and i dont know why */
+  padding: 2vmin 0;
+  box-sizing: border-box;
+  /* border: 3px solid orange; */
 
-.header ul {
-  margin: 0;
-  padding: 0;
-  li {
-    display: inline-block;
-    margin: 0 0.5vw;
-    height: 0.7vw;
-    line-height: 0.5vw;
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 13vw;
+    height: 4vmax;
+    line-height: 4vmax;
+    display: table;
+    width: 18vw;
+  }
+  .earth {
+    width: 6vw;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin: 0 0.5vw;
+      height: 0.7vw;
+      line-height: 0.5vw;
+    }
+  }
+
+  .mobile-navigation {
+    .mobile-toggle {
+      transition: background-color 2s ease-in-out;
+      padding-bottom: 10px;
+    }
+  }
+
+  &.header-background {
+    .mobile-navigation {
+      .mobile-toggle {
+        background-color: #333;
+      }
+    }
+  }
+  .mobile-navigation:hover {
+    border: 1px dashed #333;
+    opacity: 1;
   }
 }
 
-.vh-30 {
-  height: 30vh;
-}
-.vh-50 {
-  height: 50vh;
-}
-.vh-100 {
-  height: 100vh;
+header .header-inner {
+  width: inherit;
 }
 
-.header .logo a:hover {
+header nav {
+  line-height: 1.5vmax;
+}
+header nav[class*="primary-navigation"].first {
+  padding-top: 0.5vmax;
+}
+
+header .logo a:hover {
   opacity: 0.6 !important;
 }
-.header .logo img {
+header .logo img {
   width: 100%;
   height: auto;
   max-height: 100%;
 }
 
-.header .logo a {
+header .logo a {
   /* display: block !important; */
   position: absolute;
   top: 0;
 }
-.header-in .logo a,
-.header-out .logo a {
-  -webkit-transition-duration: 0ms;
-  transition-duration: 0ms;
-}
-.header .logo a:first-child {
+
+header .logo a:first-child {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-.header .logo a + a {
+header .logo a + a {
   display: none !important;
 }
 
-.header .v-align-middle,
-.header .logo-inner {
+header .v-align-middle,
+header .logo-inner {
   height: 100%;
   display: table-cell;
   vertical-align: middle;
   position: relative;
 }
-.header .logo-inner {
+header .logo-inner {
   overflow: hidden;
 }
 
-.header .header-inner {
+header .header-inner {
   max-width: 100%;
   opacity: 1;
   position: relative;
@@ -166,22 +178,10 @@ img {
   transform: translateZ(0);
 }
 
-.header-transparent .header-inner {
+header .header-inner {
   background-color: transparent;
   background-image: url(blank.gif);
 }
-
-.footer {
-  width: 100%;
-  background: #fff;
-  z-index: 1;
-  position: relative;
-}
-
-.featured-media .tm-slider-container {
-  background-color: white;
-}
-
 .nav-bar {
   width: 100%;
   /* min-height: 5rem; */
@@ -201,6 +201,29 @@ img {
   margin-top: -4px;
 }
 
+/* </--- Header */
+
+.vh-30 {
+  height: 30vh;
+}
+.vh-50 {
+  height: 50vh;
+}
+.vh-100 {
+  height: 100vh;
+}
+
+.footer {
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.featured-media .tm-slider-container {
+  background-color: white;
+}
+
 .random-comment {
   .random-comment-body {
     padding: 1vw;
@@ -208,10 +231,6 @@ img {
   .random-comment-name {
     letter-spacing: 1.5px;
   }
-}
-
-.header .header-inner {
-  width: inherit;
 }
 
 /* public: Flag Icons
@@ -243,14 +262,10 @@ img {
   line-height: 1;
 }
 
-/** =========================================================================
-  *                       <!-- Slideshow Containers
-  * =========================================================================
-  *
-  * public: Slideshow containers.
-  *
-  * Set defaults for elements under slideshow-container.
-  */
+/* -----------------------------------------------------------------
+ *  1.1 Slideshow
+ * ----------------------------------------------------------------- */
+
 .slideshow-container {
   h1,
   h2,
@@ -419,10 +434,9 @@ img {
     }
   }
 }
-/** =========================================================================
-  *                         Slideshow Containers -- END />
-  * =========================================================================
-  **/
+/* -----------------------------------------------------------------
+ *  </-- END 1.1 Slideshow
+ * ----------------------------------------------------------------- */
 
 /* .tm-slider-container {
   width: 100%;
@@ -484,7 +498,7 @@ img {
   position: absolute !important;
   left: 1vw;
   right: 1vw;
-  z-index: 1000;
+  z-index: 99;
   top: 10em;
 
   ul {
@@ -581,18 +595,17 @@ img {
     }
   } */
 
-/*
------------------------------------------------------------------
-* 2. Typography
-*
-* font, letter-spacing, list-style
------------------------------------------------------------------
-*/
+/** =========================================================================
+  * 2. TYPOGRAPHY
+  *
+  * - font, letter-spacing, list-style
+  * ========================================================================= */
 
 body {
   font-family: "Lato", "Helvetica Neue", sans-serif;
   letter-spacing: 0;
   font-weight: 400;
+  font-size: 1vmax;
 }
 
 footer a,
@@ -639,7 +652,7 @@ h1 {
   font-weight: 700;
 }
 
-.header ul > li > a {
+header ul > li > a {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0;
@@ -655,45 +668,62 @@ h1 {
   }
 }
 
-/*
------------------------------------------------------------------
-* 3. Animation
------------------------------------------------------------------
-*/
+/* -----------------------------------------------------------------
+ *  2.1 Bootstrap
+ * ----------------------------------------------------------------- */
+.bi {
+  font-size: 1vmax;
+  color: cornflowerblue;
+}
 
-.header.header-animated {
-  -webkit-transition-property: height, transform, visibility;
+.bkg-cornflowerblue {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+.bkg-hover-cornflowerblue:hover {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+.text-light a {
+  color: var(--bs-light);
+}
+.text-dark a {
+  color: var(--bs-dark);
+}
+
+/** =========================================================================
+  * 2. ANIMATION
+  * ========================================================================= */
+
+header {
   transition-property: height, transform, visibility;
 }
 
-.header-animated .header-inner,
-.header-animated .header-inner .navigation,
-.header-animated .header-inner .navigation > ul > li,
-.header-animated .header-inner .navigation > ul > li > a,
-.header-animated .dropdown > .nav-icon,
-.header-animated .navigation-show a {
-  -webkit-transition-property: height, background, border, padding, margin,
-    font-size, line-height, color, opacity;
+/* header .header-inner,
+header .header-inner .navigation,
+header .header-inner .navigation > ul > li,
+header .header-inner .navigation > ul > li > a,
+header .dropdown > .nav-icon,
+header .navigation-show a {
   transition-property: height, background, border, padding, margin, font-size,
     color, line-height, opacity;
 }
-.header-animated .logo,
-.header-animated .logo span {
-  -webkit-transition-property: width, height, background, border, padding,
-    margin, font-size, line-height, opacity;
+header .logo,
+header .logo span {
   transition-property: width, height, background, border, padding, margin,
     font-size, line-height, opacity;
 }
-.header-animated,
-.header-animated .header-inner,
-.header-animated .header-inner .navigation,
-.header-animated .header-inner .navigation > ul > li,
-.header-animated .header-inner .navigation > ul > li > a,
-.header-animated .dropdown > .nav-icon,
-.header-animated .navigation-show a,
-.header-animated .logo,
-.header-animated .logo span,
-.header-animated .logo a {
+header,
+header .header-inner,
+header .header-inner .navigation,
+header .header-inner .navigation > ul > li,
+header .header-inner .navigation > ul > li > a,
+header .dropdown > .nav-icon,
+header .navigation-show a,
+header .logo,
+header .logo span,
+header .logo a {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
@@ -719,9 +749,9 @@ h1 {
   -webkit-transform: translate3d(0, -10rem, 0);
   transform: translate3d(0, -10rem, 0);
 }
-.header-in .header-inner .logo,
-.header-in .header-inner .navigation,
-.header-in .navigation-show {
+*/
+
+.no-transition {
   transition: none !important;
 }
 
@@ -735,6 +765,7 @@ h1 {
   display: block !important;
   -webkit-transform: translateY(0);
   transform: translateY(0);
+  width: 100%;
 }
 
 .header-background .logo a:first-child {
@@ -815,11 +846,9 @@ h1 {
   transition-duration: 300ms;
 }
 
-/*
------------------------------------------------------------------
-* 4. Color
------------------------------------------------------------------
-*/
+/** =========================================================================
+  * 2. COLOR
+  * ========================================================================= */
 
 .header {
   background-color: black;
@@ -897,13 +926,30 @@ h6 {
   .header .header-inner {
     border: none;
   }
+  header {
+    .mobile-navigation {
+      display: block;
+    }
+  }
 }
 
-/*
------------------------------------------------------------------
-* 5. Decoration
------------------------------------------------------------------
-*/
+@media only screen and (min-width: 960px) {
+  header {
+    .mobile-navigation {
+      display: none;
+    }
+  }
+}
+
+@media only print {
+  header {
+    display: none;
+  }
+}
+
+/** =========================================================================
+  * 2. DECORATION
+  * ========================================================================= */
 
 .random-comment {
   border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
