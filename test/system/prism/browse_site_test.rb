@@ -3,7 +3,7 @@ require "application_system_test_case"
 class BrowseSiteTest < ApplicationSystemTestCase
 
   def setup
-    FastGettext.locale = :en
+    super
     @app = ApplicationPrism.new
   end
 

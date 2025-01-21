@@ -3,7 +3,7 @@ require "application_system_test_case"
 class MobileBrowseSiteTest < MobileSystemTestCase
 
   def setup
-    FastGettext.locale = :en
+    super
     @app = ApplicationPrism.new
   end
 
@@ -19,8 +19,5 @@ class MobileBrowseSiteTest < MobileSystemTestCase
     assert_selector 'header .mobile-navigation'
     assert_no_selector 'header .primary-navigation'
   end
-
-
-
 
 end

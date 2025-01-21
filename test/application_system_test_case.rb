@@ -6,15 +6,31 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   def setup
     I18n.locale = :en
+    FastGettext.locale = :en
     visit locale_root_path
   end
 
 end
 
 class MobileSystemTestCase < ApplicationSystemTestCase
-  driven_by :cuprite, using: :chromium, screen_size: [375, 666]
+  # driven_by :cuprite, using: :chromium, screen_size: [375, 666]
 
-  private
+  def setup
+    Capybara.page.current_window.resize_to(375, 666)
+    I18n.locale = :en
+    FastGettext.locale = :en
+    visit locale_root_path
+  end
 
 end
 
+class HighResolutionSystemTestCase < ApplicationSystemTestCase
+
+  def setup
+    Capybara.page.current_window.resize_to(6000, 4000)
+    I18n.locale = :en
+    FastGettext.locale = :en
+    visit locale_root_path
+  end
+
+end
