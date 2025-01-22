@@ -1,3 +1,13 @@
+## 1.68.0 (2025-01-22)
+
+### Feat
+
+- Slideshow fixes
+
+### Fix
+
+- Changed why vote dia texts
+
 ## 1.67.0 (2025-01-22)
 
 ### Feat
