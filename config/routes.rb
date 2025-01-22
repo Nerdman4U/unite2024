@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     root "welcome#index", as: :locale_root
     get "appeal" => "welcome#appeal", as: :appeal
     get "why_vote" => "welcome#why_vote", as: :why_vote
-    get "initiative" => "welcome#initiative", as: :initiative
+    get "initiative_presented_to_the_united_nations_to_save_the_world_by_redeploying_armed_forces_of_the_world" => "welcome#initiative", as: :initiative
     resources :votes, only: [ :new, :index ]
     resources :votes, only: [ :show ], as: :vote, constraints: { token: /[^\/]+/ }, param: "token"
     resources :comments, only: [ :new, :show, :index ], constraints: { id: /\d+/ }

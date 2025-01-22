@@ -7,20 +7,34 @@ class Interval {
   create(interval, callback) {
     return setInterval(callback, interval);
   }
+
+  /**
+   *
+   * @param {integer} interval in millisecods
+   * @param {function} callback
+   * @returns integer
+   */
   register(interval, callback) {
     // console.log('Interval#register() %s', interval)
     if (this.intervals[interval]) {
+      // console.error('Interval#register() %s already registered', interval)
       return;
     }
-    this.intervals[interval] = this.create(interval, callback)
+    let int = this.create(interval, callback);
+    this.intervals[interval] = int;
+    return int;
   }
-  remove(interval) {
-    // console.log('Interval#remove() %s', interval);
+  /**
+   * Returns result of clearInterval().
+   */
+  unregister(interval) {
+    console.log('Interval#unregister() %s', interval);
     if (!this.intervals[interval]) {
       // console.log('not removed')
       return
     }
     clearInterval(this.intervals[interval]);
+    return delete this.intervals[interval];
   }
 }
 

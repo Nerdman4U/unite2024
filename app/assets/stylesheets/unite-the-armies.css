@@ -13,6 +13,23 @@ Copyright: Save the Planet - Unite the Armies
 4. Color
 5. Decoration
 
+[Developer notes]
+
+1. z-index values
+
+  Header: 100
+  Header-inner: 100 // ??
+  .footer: 1
+
+  .slideshow-container .slideshow: 2
+
+  Slider-content contains slide specific headers.
+  .slider-content: 3
+
+
+
+[Info]
+
 Based on Sartre Skin Barber Shop by ThemeMountain.
 
 /** =========================================================================
@@ -324,19 +341,13 @@ header .header-inner {
     table-layout: fixed;
     text-align: center;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     text-shadow: 1px 1px 0em rgba(0, 0, 0, 0.5), 0 0 0.3em rgba(0, 0, 0, 0.3),
       0 0 0.7em rgba(0, 0, 0, 0.4);
   }
 
   li {
     visibility: hidden;
-    z-index: 0;
-    /* position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0; */
     margin: 0;
     padding: 0;
 
@@ -347,19 +358,21 @@ header .header-inner {
       display: block;
       float: none;
       position: relative;
-      transform: translate(0, 0);
-      transition: scale 10s;
+      transition: scale 8s ease-in-out, opacity 3s;
+      z-index: 0;
     }
   }
 
   li.active {
     visibility: visible;
-    z-index: 1;
+    z-index: 2;
 
     img {
       height: 100%;
       width: 100%;
       scale: 1.1;
+      z-index: 2;
+      transform: translate(0, 0);
     }
   }
 }
@@ -375,6 +388,7 @@ header .header-inner {
   }
   > h1.show {
     visibility: visible;
+    padding: 1vmin;
     opacity: 1;
     scale: 3;
     display: block;
@@ -392,6 +406,7 @@ header .header-inner {
   > h4.show,
   > h5.show {
     visibility: visible;
+    padding: 1vmin;
     opacity: 1;
     scale: 2;
     display: block;
@@ -403,7 +418,23 @@ header .header-inner {
   *
   * Spesific css for carusels.
   */
-.slideshow-container .slideshow-carusel {
+.slideshow-container .slideshow-carousel {
+  li {
+    position: absolute;
+    z-index: 0;
+    left: -10000px;
+    top: -10000px;
+    img {
+      opacity: 0.9;
+    }
+  }
+
+  li.active {
+    position: static;
+    img {
+      opacity: 1;
+    }
+  }
 }
 
 /* public: Headers of all kinds of Slideshows. */
@@ -436,6 +467,28 @@ header .header-inner {
     }
   }
 }
+
+.slideshow-container .slideshow-play-and-pause {
+  position: absolute;
+  z-index: 4;
+  right: 1vw;
+  top: 5vh;
+  height: auto;
+
+  .bi {
+    display: none;
+    font-size: 3vmin;
+    cursor: pointer;
+  }
+
+  .bi-play {
+  }
+
+  .bi-pause-fill {
+    color: gray;
+  }
+}
+
 /* -----------------------------------------------------------------
  *  </-- END 1.1 Slideshow
  * ----------------------------------------------------------------- */
@@ -678,22 +731,6 @@ h1 {
   font-weight: 700;
 }
 
-header ul > li > a {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-decoration: underline;
-}
-
-.random-comment {
-  .random-comment-body {
-    font-size: 2vw;
-  }
-  .random-comment-name {
-    font-weight: 700;
-  }
-}
-
 /* -----------------------------------------------------------------
  *  2.1 Bootstrap
  * ----------------------------------------------------------------- */
@@ -716,6 +753,23 @@ header ul > li > a {
 }
 .text-dark a {
   color: var(--bs-dark);
+}
+/* ----------------------------------------------------------------- */
+
+header ul > li > a {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: underline;
+}
+
+.random-comment {
+  .random-comment-body {
+    font-size: 2vw;
+  }
+  .random-comment-name {
+    font-weight: 700;
+  }
 }
 
 /** =========================================================================

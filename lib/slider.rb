@@ -53,6 +53,15 @@ class Slider
   def type
     @options[:type] || "standard"
   end
+  def autoplay
+    @options[:autoplay] || false
+  end
+  def autoplaySpeed
+    @options[:autoplaySpeed] || 5000
+  end
+  def showPlayAndPause
+    @options[:showPlayAndPause] || false
+  end
 
   ## public: Return Slider decorators.
   #

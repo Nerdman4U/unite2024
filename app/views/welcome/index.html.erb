@@ -1,9 +1,3 @@
-<%
-=begin%>
-css: "slideshow-container-top vh-100",
-<%
-=end%>
-
 <%= slider_new(@welcome_slider) do
     {
       css: "slideshow-container-top",
@@ -13,25 +7,6 @@ css: "slideshow-container-top vh-100",
               content
             end
     }
-end
-%>
-
-<%#= fs_slider({section_classes: ["slideshow-container-top"], show_navigation: false}) do
-[{
-  link: link_to(appeal_path(locale: locale), { class: button_white }) do
-          content = tag.span class: "bi bi-info-circle align-middle" do " " end
-          content << _("Support now")
-          content
-        end,
-  topic_1: _("Save the planet"),
-  topic_2: _("Give the armies a new, positive task: protect the environment"),
-  img_srcset: "#{image_path("slides/earth-w1024.jpg")} 1x, #{image_path("slides/earth-w2048@2x.jpg")} 2x, #{image_path("slides/earth-w3072@3x.jpg")} 3x, #{image_path("slides/earth-w4096@4x.jpg")} 4x",
-  img_mobile: image_path("slides/earth-w512.jpg"),
-  img_tablet: image_path("slides/earth-w1024.jpg"),
-  img_screen: image_path("slides/earth-w2048@2x.jpg"),
-  img_default: image_path("slides/earth-w512.jpg"),
-  img_blank: image_path("blank.gif")
-}]
 end
 %>
 
@@ -60,7 +35,7 @@ end
 </section>
 
 <!-- Karuselli -->
-<%= slider_new(@welcome_carousel) do
+<%#= slider_new(@welcome_carousel) do
   { css: "slideshow-container-top vh-100", interval: 8000 }
 end %>
 <!-- /Karuselli -->

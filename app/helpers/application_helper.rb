@@ -236,18 +236,19 @@ module ApplicationHelper
 
     additional_html = {
       link: "",
-      css: "",
-      interval: 5000
+      css: ""
     }
     if block_given?
       additional_html = yield || {}
       additional_html[:link] = additional_html[:link] || ""
       additional_html[:css] = additional_html[:css] || ""
-      additional_html[:interval] = additional_html[:interval] || 5000
     end
 
     tag.section class: "slideshow-container slideshow-container-#{slider.name} #{additional_html[:css]}", "data-decorators": slider.decorators.join(", ") do
-      slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}", "data-interval": additional_html[:interval] do
+      slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}",
+      "data-autoplaySpeed": slider.autoplaySpeed,
+      "data-autoplay": slider.autoplay,
+      "data-showplayandpause": slider.showPlayAndPause do
         slider.slides.map do |slide|
           # TODO: slide.decorators.join(",")
           tag.li "data-decorators": slide.decorators.join(", ") do
@@ -255,13 +256,13 @@ module ApplicationHelper
             li_result << tag.div(class: "slider-content") do
               content_result = []
               if slide.headers.h1.present?
-                content_result << tag.h1(class: "ufs-1-5 lspacing-medium") do
-                  slide.headers.h1.join(" ")
+                slide.headers.h1.map do |h1|
+                  content_result << tag.h1(class: "ufs-1-5 lspacing-medium") do h1 end
                 end
               end
               if slide.headers.h2.present?
-                content_result << tag.h2(class: "ufs-1 lspacing-medium") do
-                  slide.headers.h2.join(" ")
+                slide.headers.h2.map do |h2|
+                  content_result << tag.h2(class: "ufs-1 lspacing-medium") do h2 end
                 end
               end
               if additional_html[:link].present?
@@ -287,6 +288,7 @@ module ApplicationHelper
           end
         end.join.html_safe
       end
+
       slideshow_result << tag.div(class: "slideshow-headers umx-5 text-center") do
         headers_result = []
         # TODO: if h1 then ...
@@ -307,6 +309,19 @@ module ApplicationHelper
         end
         headers_result.join.html_safe
       end
+
+      if slider.showPlayAndPause
+        slideshow_result << tag.div(class: "slideshow-play-and-pause") do
+          tag.div(class: "") do
+            play_and_pause_buttons = []
+            play_and_pause_buttons << tag.span(class: "bi bi-pause-fill", title: _("Pause"))
+            play_and_pause_buttons << tag.span(class: "bi bi-play", title: _("Play"))
+            play_and_pause_buttons.join.html_safe
+          end
+        end
+      end
+
+      slideshow_result
     end
   end
 

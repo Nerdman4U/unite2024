@@ -18,12 +18,14 @@ class SlideShow {
    * current_slide - Slide.
    * decorated     - Slidable instance if decorated later.
    */
-  constructor(el) {
+  constructor(el, container) {
     this._name = "core"
     this.el = $(el);
     this.current_nro = 1;
     this._current_slide = $();
     this._slides = $([]);
+    this._container = container; // SlideShowContainer
+    console.log('SlideShow() container:', this._container)
     this.decorated = this
   }
 
@@ -35,6 +37,7 @@ class SlideShow {
   elem() { return this.el }
   currentSlide() { return this._current_slide; }
   name() { return this._name }
+  container() { return this._container }
 
   /**
    * public: returns SlideShow base class instance when called
@@ -61,6 +64,7 @@ class SlideShow {
    * Returns nothing.
    */
   init() {
+    console.log("SlideShow#init()")
     if (this.slides().length < 1) {
       console.error("SlideShow#init No slides!");
       return;
@@ -68,6 +72,7 @@ class SlideShow {
     this.slides().each(function(index, slide) { slide.init() })
 
     this.proceed(0)
+    console.log("SlideShow#init() this.current_nro:", this.current_nro)
   }
 
   /** deprecated: Slide decorators
@@ -78,6 +83,9 @@ class SlideShow {
    */
   decorators() {
     return this.elem().data('decorators') || []
+  }
+  data() {
+    return this.elem().data()
   }
 
   /**
@@ -126,10 +134,11 @@ class SlideShow {
     offset = parseInt(offset);
     if (!offset) offset = 0;
     let slide_nro = (this.current_nro += offset);
+    console.log("SlideShow#proceed() slide_nro:", slide_nro, "slides:", this.slides().length);
     if (!slide_nro) slide_nro = 1;
     if (slide_nro < 1) slide_nro = 1;
     if (slide_nro > this.slides().length) slide_nro = 1
-    console.log("SlideShow#proceed()", slide_nro, offset);
+    console.log("SlideShow#proceed() this.current_nro:", slide_nro, "offset:", offset);
     this.current_nro = slide_nro;
     this.setCurrentSlide(slide_nro);
   }
@@ -146,7 +155,7 @@ class SlideShow {
     this.deactivateSlides()
     this._current_slide = this.slides()[nro-1];
     this._current_slide.activate();
-    console.log('SlideShow#setCurrentSlide() currentSlide():', this.currentSlide().el.get(0))
+    console.log('SlideShow#setCurrentSlide() currentSlide():', this.currentSlide().elem().get(0))
   }
 
   deactivateSlides() {
@@ -176,25 +185,47 @@ class SlideShow {
  * Changes images on 5s interval.
  *
  * TODO: more options.
+ * TODO: carousel
  */
 class SlideShowCarusel extends SlideShow {
   constructor(decorated, options={}) {
     super();
     this._name = "carusel"
-    this.decorated = decorated
+    this._decorated = decorated
     this._options = options;
+    this._playing = false;
     console.log('SlideShowCarusel()')
   }
-  deco() { return this.decorated }
+  deco() {
+    return this._decorated
+    // return this.decorated.deco() ??
+  }
   elem() { return this.deco().elem() }
   name() { return this._name }
   load() {
     this.deco().load()
   }
-  interval() { return this._options.interval || 5000 }
+  // carousel running or not
+  playing() {
+    return this._playing
+  }
+  container() {
+    return this.deco().container()
+  }
+  autoplay() {
+    // console.log('SlideShowCarusel#autoplay()', this.deco().data().autoplay)
+    return this.deco().data().autoplay || false
+  }
+  showPlayAndPause() {
+    return this.deco().data().showplayandpause || false
+  }
+  interval() { return this.deco().data().autoplayspeed || 5000 }
   init() {
+    this.initButtons();
     this.deco().init()
-    window.timers.register(this.interval(), function() { this.run() }.bind(this) )
+    console.log('SlideShowCarusel#init()', this.autoplay())
+    if (this.visiblePlayButtons()) this.showButtons()
+    if (this.autoplay()) this.play()
   }
   run() {
     this.proceed(1)
@@ -214,6 +245,95 @@ class SlideShowCarusel extends SlideShow {
   deactivateSlides() {
     return this.deco().deactivateSlides()
   }
+  visiblePlayButtons() {
+    // console.log('visiblePlayButtons()')
+    return this.showPlayAndPause()
+  }
+
+  /** public: show Play and Pause buttons in correct place.
+   *
+   * Calculate top value based on header height. Show play or pause.
+   * Show only if showPlayAndPause is true.
+   */
+  showButtons() {
+    if (!this.visiblePlayButtons()) return
+
+    // TODO: could be found using container methods.
+    let header =  $('.header').height()
+    if (!header) {
+      console.error('No header')
+      return false
+    }
+    let height = header + 40;
+    this.playAndPauseContainer().css('top', height + 'px')
+
+    if (!this.playing()) {
+      this.playButton().show()
+      this.pauseButton().hide()
+    }
+    else {
+      this.pauseButton().show()
+      this.playButton().hide()
+    }
+
+    // console.log('SlideShowCarusel#showButtons()', height)
+    // this.playButton().show()
+    // this.pauseButton().hide()
+  }
+  playAndPauseContainer() {
+    return this.container().elem().find('.slideshow-play-and-pause')
+  }
+  playButton() {
+    return this.container().elem().find('.bi-play')
+  }
+  pauseButton() {
+    // if (!this.container()) return false
+    // if (!this.container().elem()) return false
+    return this.container().elem().find('.bi-pause-fill')
+  }
+  pause() {
+    if (!this.playing()) return
+    if (!this.visiblePlayButtons()) {
+      console.error('No play')
+      return false
+    }
+
+    if (!window.timers.unregister(this.interval())) {
+      console.error('SlideShowCarusel#pause() Timer failed', this.interval())
+      return false
+    }
+
+    this._playing = false;
+    this.pauseButton().hide()
+    this.playButton().show()
+  }
+
+  play() {
+    if (this.playing()) return
+    if (!this.visiblePlayButtons()) {
+      console.error('No play')
+      return false
+    }
+    if (!window.timers.register(this.interval(), function() { this.run() }.bind(this) )) {
+      console.error('Timer failed')
+      return false
+    }
+
+    console.log('SlideShowCarusel#play()')
+    this._playing = true // setPlaying(true)
+    this.playButton().hide()
+    this.pauseButton().show()
+  }
+
+  /** public: initialize play and pause buttons by adding click events.
+   *
+   * @returns nothing.
+   */
+  initButtons() {
+    if (!this.visiblePlayButtons()) return
+    this.playButton().click( function() { this.play() }.bind(this) )
+    this.pauseButton().click( function() { this.pause() }.bind(this) )
+  }
 }
 
 /**
@@ -228,13 +348,19 @@ class SlideShowButtons extends SlideShow {
     this._name = "buttons"
     this.decorated = decorated
   }
-  deco() { return this.decorated }
+  deco() {
+    return this.decorated
+    // return this.decorated.deco() ??
+  }
   elem() {
     return this.deco().elem()
   }
   name() { return this._name }
   load() {
     this.deco().load()
+  }
+  container() {
+    return this.deco().container()
   }
   slides() {
     return this.deco().slides()

@@ -31,7 +31,7 @@ class UniteTheArmies {
       cont.load()
       return cont
     })
-    console.log('UniteTheArmies#SlideShowContainers', result)
+    // console.log('UniteTheArmies#SlideShowContainers', result)
     this.slideshowcontainers = result;
     return result
   }

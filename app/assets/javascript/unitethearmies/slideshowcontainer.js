@@ -21,6 +21,10 @@ class SlideShowContainer {
     this.el.on('click', this.toggleSize.bind(this))
   }
 
+  elem() {
+    return this.el
+  }
+
   toggleSize() {
     let classes = this.el.attr('class').split(' ')
     if (classes.indexOf('unite-screenheight-50') > -1) {
@@ -71,12 +75,14 @@ class SlideShowContainer {
       let dec = this.el.data("decorators").split(",").map(function(e) { return $.trim(e) }) || []
       decorators = decorators.concat(dec)
     }
-    //console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
+    // console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
+    let obj = this;
     let slideshows = this.el.find(".slideshow").map(function(index, el) {
-      let slideShow = new SlideShow($(el))
+      // console.log('SlideShowContainer#loadSlideShows() el:', el, 'this:', obj)
+      let slideShow = new SlideShow($(el), obj)
       let interval = $(el).data('interval') || 5000
       for (let decorator of decorators) {
-        console.log('SlideShowContainer#loadSlideShows() deco:', decorator)
+        // console.log('SlideShowContainer#loadSlideShows() deco:', decorator)
         switch (decorator) {
           case 'nav1':
             slideShow = new SlideShowButtons(slideShow);
@@ -100,20 +106,20 @@ class SlideShowContainer {
    *
    * Returns SlideShow.
    */
-  slideShow(nro) {
-    let el = this.el.find(".slideshow:first-child"); // <ul> element
-    if (el.length < 1) {
-      console.error("SlideShows#slideShow() slideShow not found!");
-      return;
-    }
-    if (!el) {
-      console.error("SlideShow#slideShow() No element")
-      return;
-    }
-    let slideshow =  new SlideShow(el);
-    slideshow.showButtons();
-    return slideshow
-  }
+  // slideShow(nro) {
+  //   let el = this.el.find(".slideshow:first-child"); // <ul> element
+  //   if (el.length < 1) {
+  //     console.error("SlideShows#slideShow() slideShow not found!");
+  //     return;
+  //   }
+  //   if (!el) {
+  //     console.error("SlideShow#slideShow() No element")
+  //     return;
+  //   }
+  //   let slideshow =  new SlideShow(el, this);
+  //   slideshow.showButtons();
+  //   return slideshow
+  // }
 
   show() {
     this.el.show();

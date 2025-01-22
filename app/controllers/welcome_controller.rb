@@ -64,6 +64,9 @@ class WelcomeController < ApplicationController
       type: "carousel",
       decorators: ["carousel"],
       navigation: false,
+      autoplay: true,
+      autoplaySpeed: 8000,
+      showPlayAndPause: true,
       headers: {
         h1: [_("First Aid")],
         h2: [_("To Our Common World")],
@@ -107,7 +110,7 @@ class WelcomeController < ApplicationController
           res: [640,960,1024,1280,1920,2048],
           type: 'jpg',
           default: 1024,
-          alt: _(""),
+          alt: _("Autumn shore"),
           decorators: ["image"]
         },
         {
@@ -123,7 +126,7 @@ class WelcomeController < ApplicationController
           res: [640,960,1024,1280,1920,2048],
           type: 'jpg',
           default: 1024,
-          alt: _("Wildlife park wolf by Wolfgang65"),
+          alt: _("Sunrise on the sea"),
           decorators: ["image"]
         }
       ]
@@ -180,12 +183,16 @@ class WelcomeController < ApplicationController
       navigation: false,
       type: "carousel",
       decorators: ["carousel"],
+      autoplay: true,
+      autoplaySpeed: 12000,
+      showPlayAndPause: true,
       slides: [{
-        name: "earth-01",
+        name: "earth-02",
         headers: {
-          h1: [_("This is our home planet")],
+          h1: [_("This is our home planet.")],
+          h2: [_("The Earth: third planet from the sun.")]
         },
-        res: [512, 640, 960, 1024, 1280, 1920, 2048, 2458],
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000],
         type: 'jpg',
         default: 1024,
         alt: _("Earth"),
@@ -193,7 +200,8 @@ class WelcomeController < ApplicationController
       },{
         name: "earth-01",
         headers: {
-          h1: [_("We all live here")],
+          h1: [_("We all live here.")],
+          h2: [_("All people in the universe reside on this planet."), _("Also, all animals and plants live here."), _("Microbes live here too :)")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 2458],
         type: 'jpg',
