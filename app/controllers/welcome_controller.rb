@@ -177,6 +177,13 @@ class WelcomeController < ApplicationController
   end
 
   def why_vote
+    earth_pics = [
+      { name:"earth-02", res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000] },
+      { name:"earth-03", res: [512, 640, 960, 1024, 1280, 1920, 2048, 2500] },
+      { name:"earth-04", res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000] }
+    ]
+    earth_pic = earth_pics.sample
+
     @slider = Slider.new({
       name: "why_vote",
       fullscreen: true,
@@ -184,15 +191,15 @@ class WelcomeController < ApplicationController
       type: "carousel",
       decorators: ["carousel"],
       autoplay: true,
-      autoplaySpeed: 12000,
+      autoplaySpeed: 4000,
       showPlayAndPause: true,
       slides: [{
-        name: "earth-02",
+        name: earth_pic[:name],
         headers: {
           h1: [_("This is our home planet.")],
           h2: [_("The Earth: third planet from the sun.")]
         },
-        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000],
+        res: earth_pic[:res],
         type: 'jpg',
         default: 1024,
         alt: _("Earth"),
@@ -229,6 +236,90 @@ class WelcomeController < ApplicationController
         type: 'jpg',
         default: 1024,
         alt: _("Constellations"),
+        decorators: ["headers", "image"]
+      },{
+        name: "blank",
+        headers: {
+          h1: [_("There is a problem for us on this planet.")],
+          h2: [_("It is ourselves. Humans.")],
+        },
+        res: [],
+        default: 1024,
+        decorators: ["headers", "image"]
+      },{
+        name: "overpopulation",
+        headers: {
+          h1: [_("Overpopulation.")],
+        },
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Overpopulation"),
+        decorators: ["headers", "image"]
+      },{
+        name: "mining-01",
+        headers: {
+          h1: [_("We are using this planet...")],
+        },
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000, 6000],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Mining"),
+        decorators: ["headers", "image"]
+      },{
+        name: "trash-01",
+        headers: {
+          h1: [_("...and by doing that we create...")],
+          h2: [_("trash"), _("pollution")]
+        },
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4128],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Trash, plastics"),
+        decorators: ["headers", "image"]
+      },{
+        name: "monkey",
+        headers: {
+          h1: [_("...and by living our life... ")],
+          h2: [_("...we destroy homes of others...")]
+        },
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 3840],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Monkey mother and baby"),
+        decorators: ["headers", "image"]
+      },{
+        name: "forest-02",
+        headers: {
+          h1: [_("We can change things.")],
+          h2: [_("First aid help for ecosystem would be..."), _("...to grow trees to deserts"), _("...clear seas from waste")],
+        },
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4879],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Trees"),
+        decorators: ["headers", "image"]
+      },{
+        name: "blank",
+        headers: {
+          h1: [_("Our planet is the only planet with life.")],
+          h2: [_("We are destroying it.")],
+        },
+        res: [],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Trees"),
+        decorators: ["headers", "image"]
+      },{
+        name: "blank",
+        headers: {
+          h1: [_("You can help life!")],
+          h2: [_("Vote for the initiative presented on this site!")],
+        },
+        res: [],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Trees"),
         decorators: ["headers", "image"]
       }]
     })

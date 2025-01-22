@@ -332,7 +332,11 @@ module ApplicationHelper
   #
   # Returns image path.
   def slide_image_path slide, res
-    image_path("slides/#{slide.name}-w#{res}.#{slide.type}")
+    if slide.name == 'blank'
+      image_path("blank.gif")
+    else
+      image_path("slides/#{slide.name}-w#{res}.#{slide.type}")
+    end
   end
 
 
