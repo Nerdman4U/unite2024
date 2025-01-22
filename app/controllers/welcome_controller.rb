@@ -241,21 +241,10 @@ class WelcomeController < ApplicationController
       },{
         name: "blank",
         headers: {
-          h1: [_("There is a problem for us on this planet.")],
-          h2: [_("It is ourselves. Humans.")],
+          h1: [_("There are environmental problems on this planet.")],
         },
         res: [],
         default: 1024,
-        decorators: ["headers", "image"]
-      },{
-        name: "overpopulation",
-        headers: {
-          h1: [_("Overpopulation.")],
-        },
-        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000],
-        type: 'jpg',
-        default: 1024,
-        alt: _("Overpopulation"),
         decorators: ["headers", "image"]
       },{
         name: "mining-01",
@@ -279,9 +268,19 @@ class WelcomeController < ApplicationController
         alt: _("Trash, plastics"),
         decorators: ["headers", "image"]
       },{
+        name: "overpopulation",
+        headers: {
+          h1: [_("We are more than ever...")],
+        },
+        res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000],
+        type: 'jpg',
+        default: 1024,
+        alt: _("Overpopulation"),
+        decorators: ["headers", "image"]
+      },{
         name: "monkey",
         headers: {
-          h1: [_("...and by living our life... ")],
+          h1: [_("...but by living our lives... ")],
           h2: [_("...we destroy homes of others...")]
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 3840],
@@ -314,8 +313,8 @@ class WelcomeController < ApplicationController
       },{
         name: "blank",
         headers: {
-          h1: [_("You can help life!")],
-          h2: [_("Vote for the initiative presented on this site!")],
+          h1: [_("You can help.")],
+          h2: [_("Vote for the initiative presented on this site.")],
         },
         res: [],
         type: 'jpg',
