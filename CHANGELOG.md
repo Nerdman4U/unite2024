@@ -1,3 +1,20 @@
+## 1.67.0 (2025-01-22)
+
+### Feat
+
+- Header earth images from America and Asia
+- Why vote diashow update
+- Play and pause buttons at carousel, slideshow fixes, added more informative slug for Initiative
+- Mobiletests working
+- Mobile navigation
+- Header css fixes for mobile navigation
+- **_header.html.erb**: Transparent planet earth image at header
+
+### Fix
+
+- **welcome/index.html.erb**: Carousel
+- Flash under construction-  messages
+
 ## 1.66.0 (2025-01-18)
 
 ### Feat
