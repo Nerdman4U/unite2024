@@ -180,7 +180,8 @@ class WelcomeController < ApplicationController
     earth_pics = [
       { name:"earth-02", res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000] },
       { name:"earth-03", res: [512, 640, 960, 1024, 1280, 1920, 2048, 2500] },
-      { name:"earth-04", res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000] }
+      { name:"earth-04", res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000] },
+      { name:"earth-05", res: [512, 640, 960, 1024, 1280, 1920, 2048] }
     ]
     earth_pic = earth_pics.sample
 
@@ -191,7 +192,7 @@ class WelcomeController < ApplicationController
       type: "carousel",
       decorators: ["carousel"],
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 12000,
       showPlayAndPause: true,
       slides: [{
         name: earth_pic[:name],

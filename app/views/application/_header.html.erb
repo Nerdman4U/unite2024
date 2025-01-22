@@ -3,7 +3,9 @@
     <div class="row nav-bar upx-8">
       <div class="col nav-bar-inner">
         <div class="earth">
-          <%= link_to image_tag("earth.png", alt: _("The Planet Earth, our home.")), locale_root_path(locale: locale), :class => "no-transition" %>
+          <% earths = ["earth.png", "earth-02.png", "earth-05.png"]
+             %>
+          <%= link_to image_tag(earths.sample, alt: _("The Planet Earth, our home.")), locale_root_path(locale: locale), :class => "no-transition" %>
         </div>
         <div class="logo" id="logo">
           <div class="logo-inner">
