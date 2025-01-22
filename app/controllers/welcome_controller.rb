@@ -241,7 +241,7 @@ class WelcomeController < ApplicationController
       },{
         name: "blank",
         headers: {
-          h1: [_("There are environmental problems on this planet.")],
+          h1: [_("There are environmental"), _("problems on this planet.")],
         },
         res: [],
         default: 1024,

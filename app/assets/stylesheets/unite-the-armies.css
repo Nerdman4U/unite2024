@@ -388,7 +388,7 @@ header .header-inner {
   }
   > h1.show {
     visibility: visible;
-    padding: 1vmin;
+    padding: 3vmin;
     opacity: 1;
     scale: 3;
     display: block;
