@@ -256,8 +256,7 @@ class SlideShowCarusel extends SlideShow {
    * returns nothing.
    */
   initPlayAndPause() {
-    // console.log('SlideShowCarusel#initPlayAndPause() playing:', this.playing(), "visible:", this.visiblePlayButtons())
-    if (!this.visiblePlayButtons()) return;
+    if (!this.showPlayAndPause()) return;
 
     this.playButton().click( function() { this.togglePlayAndPause() }.bind(this) )
     this.pauseButton().click( function() { this.togglePlayAndPause() }.bind(this) )
@@ -308,10 +307,6 @@ class SlideShowCarusel extends SlideShow {
   }
   deactivateSlides() {
     return this.deco().deactivateSlides()
-  }
-  visiblePlayButtons() {
-    // console.log('visiblePlayButtons()')
-    return this.showPlayAndPause()
   }
 
   toggleFullscreen() {
@@ -408,10 +403,10 @@ class SlideShowCarusel extends SlideShow {
   }
   pause() {
     if (!this.playing()) return
-    if (!this.visiblePlayButtons()) {
-      console.error('No play')
-      return false
-    }
+    // if (!this.visiblePlayButtons()) {
+    //   console.error('No play')
+    //   return false
+    // }
 
     if (!window.timers.unregister(this.interval())) {
       console.error('SlideShowCarusel#pause() Timer failed', this.interval())
@@ -422,10 +417,12 @@ class SlideShowCarusel extends SlideShow {
 
   play() {
     if (this.playing()) return
-    if (!this.visiblePlayButtons()) {
-      console.error('No play')
-      return false
-    }
+    // Can play without buttons...
+    //
+    // if (!this.visiblePlayButtons()) {
+    //   console.error('No play')
+    //   return false
+    // }
     if (!window.timers.register(this.interval(), function() { this.run() }.bind(this) )) {
       console.error('Timer failed')
       return false
