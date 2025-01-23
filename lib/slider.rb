@@ -57,10 +57,16 @@ class Slider
     @options[:autoplay] || false
   end
   def autoplaySpeed
-    @options[:autoplaySpeed] || 5000
+    @options[:autoplayspeed] || 5000
   end
   def showPlayAndPause
-    @options[:showPlayAndPause] || false
+    @options[:showplayandpause] || false
+  end
+  def startFullScreen
+    @options[:startfullscreen] || false
+  end
+  def showFullScreenButtons
+    @options[:showfullscreenbuttons] || false
   end
 
   ## public: Return Slider decorators.

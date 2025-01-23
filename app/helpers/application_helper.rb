@@ -248,7 +248,9 @@ module ApplicationHelper
       slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}",
       "data-autoplaySpeed": slider.autoplaySpeed,
       "data-autoplay": slider.autoplay,
-      "data-showplayandpause": slider.showPlayAndPause do
+      "data-showplayandpause": slider.showPlayAndPause,
+      "data-startfullscreen": slider.startFullScreen,
+      "data-showfullscreenbuttons": slider.showFullScreenButtons do
         slider.slides.map do |slide|
           # TODO: slide.decorators.join(",")
           tag.li "data-decorators": slide.decorators.join(", ") do
@@ -316,15 +318,19 @@ module ApplicationHelper
       end
 
       if slider.showPlayAndPause
-        slideshow_result << tag.div(class: "slideshow-play-and-pause") do
+        slideshow_result << tag.div(class: "slideshow-controls") do
           tag.div(class: "") do
             play_and_pause_buttons = []
             play_and_pause_buttons << tag.span(class: "bi bi-pause-fill", title: _("Pause"))
             play_and_pause_buttons << tag.span(class: "bi bi-play", title: _("Play"))
+            play_and_pause_buttons << tag.span(class: "bi bi-fullscreen", title: _("Fullscreen"))
+            play_and_pause_buttons << tag.span(class: "bi bi-fullscreen-exit", title: _("Minimize"))
             play_and_pause_buttons.join.html_safe
           end
         end
       end
+
+
 
       slideshow_result
     end

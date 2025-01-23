@@ -17,6 +17,7 @@ class UniteTheArmies {
     this.loadVotes();
     this.removeSliderLoader();
     this.initSlideShowContainers()
+    this.slideshowcontainers[0].show()
   }
 
   initSlideShowContainers() {
@@ -45,6 +46,8 @@ class UniteTheArmies {
     loader.length && loader.remove()
   }
 
+
+  /** deprecated */
   isFullscreenSlider() {
     return $(".unite-slider-container").first() &&
       $(".unite-slider-container").first().hasClass("unite-screenheight-100")

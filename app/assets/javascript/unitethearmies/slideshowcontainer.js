@@ -15,25 +15,22 @@ class SlideShowContainer {
    * current - order number, starting from 1.
    */
   constructor(el) {
-    this.el = $(el)
-    this.current = 1;
+    this._el = $(el)
+    this._current_nro = 1;
+    this._current = null;
     this.slideshows = $([]);
-    this.el.on('click', this.toggleSize.bind(this))
+    this.elem().on('click', this.toggleSize.bind(this))
   }
-
-  elem() {
-    return this.el
-  }
-
+  elem() { return this._el }
   toggleSize() {
-    let classes = this.el.attr('class').split(' ')
+    let classes = this.elem().attr('class').split(' ')
     if (classes.indexOf('unite-screenheight-50') > -1) {
-      this.el.removeClass('unite-screenheight-50')
-      this.el.addClass('unite-screenheight-100')
+      this.elem().removeClass('unite-screenheight-50')
+      this.elem().addClass('unite-screenheight-100')
     }
     else {
-      this.el.removeClass('unite-screenheight-100')
-      this.el.addClass('unite-screenheight-50')
+      this.elem().removeClass('unite-screenheight-100')
+      this.elem().addClass('unite-screenheight-50')
     }
 
     console.log('SlideShowContainer#toggleSize()', classes)
@@ -59,7 +56,7 @@ class SlideShowContainer {
     if (this.headers().length > 0) this.headers().addClass('active')
   }
   headers() {
-    return this.el.find('.slideshow-headers')
+    return this.elem().find('.slideshow-headers')
   }
 
   initSlideShows() {
@@ -68,16 +65,16 @@ class SlideShowContainer {
 
   loadSlideShows() {
     let decorators = []
-    if (this.el.find('.slider-nav').length > 0) {
+    if (this.elem().find('.slider-nav').length > 0) {
       decorators.push('nav1')
     }
-    if (this.el.data('decorators')) {
-      let dec = this.el.data("decorators").split(",").map(function(e) { return $.trim(e) }) || []
+    if (this.elem().data('decorators')) {
+      let dec = this.elem().data("decorators").split(",").map(function(e) { return $.trim(e) }) || []
       decorators = decorators.concat(dec)
     }
     // console.log('SlideShowContainer#loadSlideShows() decorators', decorators, this.el)
     let obj = this;
-    let slideshows = this.el.find(".slideshow").map(function(index, el) {
+    let slideshows = this.elem().find(".slideshow").map(function(index, el) {
       // console.log('SlideShowContainer#loadSlideShows() el:', el, 'this:', obj)
       let slideShow = new SlideShow($(el), obj)
       let interval = $(el).data('interval') || 5000
@@ -122,11 +119,13 @@ class SlideShowContainer {
   // }
 
   show() {
-    this.el.show();
+    // TODO: If there is ever need to have many slideshows under same container.
+    this._current = this.slideshows[this._current_nro - 1];
+    this.elem().show();
   }
 
   hide() {
-    this.el.hide();
+    this.elem().hide();
   }
 
   next() {}

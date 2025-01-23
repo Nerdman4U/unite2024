@@ -194,7 +194,9 @@ class SlideShowCarusel extends SlideShow {
     this._decorated = decorated
     this._options = options;
     this._playing = false;
-    console.log('SlideShowCarusel()')
+    this._fullscreen = false;
+    this._content_margin_top = 0;
+    // console.log('SlideShowCarusel()')
   }
   deco() {
     return this._decorated
@@ -202,12 +204,14 @@ class SlideShowCarusel extends SlideShow {
   }
   elem() { return this.deco().elem() }
   name() { return this._name }
-  load() {
-    this.deco().load()
-  }
+  load() { this.deco().load() }
   // carousel running or not
-  playing() {
-    return this._playing
+  playing() { return this._playing }
+  fullscreen() { return this._fullscreen }
+  startFullScreen() { return this.deco().data().startfullscreen || false }
+  showFullScreenButtons() { return this.deco().data().showfullscreenbuttons || false }
+  showPlayAndPause() {
+    return this.deco().data().showplayandpause || false
   }
   container() {
     return this.deco().container()
@@ -216,17 +220,77 @@ class SlideShowCarusel extends SlideShow {
     // console.log('SlideShowCarusel#autoplay()', this.deco().data().autoplay)
     return this.deco().data().autoplay || false
   }
-  showPlayAndPause() {
-    return this.deco().data().showplayandpause || false
-  }
   interval() { return this.deco().data().autoplayspeed || 5000 }
   init() {
-    this.initButtons();
     this.deco().init()
-    console.log('SlideShowCarusel#init()', this.autoplay())
-    if (this.visiblePlayButtons()) this.showButtons()
     if (this.autoplay()) this.play()
+    this.calibrateControls()
+    this.initPlayAndPause();
+    this.initFullscreen();
   }
+
+  /** public: calculate top position of button area.
+   *
+   * Returns nothing.
+   */
+  calibrateControls() {
+    // console.log('SlideShowCarusel#calibrateControls()')
+    // TODO: could be found using container methods.
+    let header_height =  $('.header').height();
+    if (!header_height) header_height = 0;
+    if ($('.header').css('display') === 'none') header_height = 0;
+
+    if (header_height > 0) {
+      header_height = header_height + 40;
+      let header_padding = parseInt($('.header').css('padding-bottom')) + 10;
+      let hh = header_height + header_padding;
+      this.controls().css('top', hh + 'px');
+    }
+    else {
+      this.controls().css('top', '1vmin');
+    }
+  }
+
+  /** public: initialize play and pause buttons by adding click events.
+   *
+   * returns nothing.
+   */
+  initPlayAndPause() {
+    // console.log('SlideShowCarusel#initPlayAndPause() playing:', this.playing(), "visible:", this.visiblePlayButtons())
+    if (!this.visiblePlayButtons()) return;
+
+    this.playButton().click( function() { this.togglePlayAndPause() }.bind(this) )
+    this.pauseButton().click( function() { this.togglePlayAndPause() }.bind(this) )
+
+    if (!this.playing()) {
+      this.playButton().show()
+      this.pauseButton().hide()
+    }
+    else {
+      this.pauseButton().show()
+      this.playButton().hide()
+    }
+  }
+
+  initFullscreen() {
+    if (!this.showFullScreenButtons()) return;
+    if (this.startFullScreen()) {
+      this.setFullScreen()
+    }
+
+    this.fullscreenButton().click( function() { this.toggleFullscreen() }.bind(this) )
+    this.fullscreenExitButton().click( function() { this.toggleFullscreen() }.bind(this) )
+
+    // console.log('SlideShowCarusel#initFullscreen() fullscreen:', this.fullscreen())
+    if (this.fullscreen()) {
+      this.hideFullscreenButton()
+      this.showFullscreenExitButton()
+    } else {
+      this.showFullscreenButton()
+      this.hideFullscreenExitButton()
+    }
+  }
+
   run() {
     this.proceed(1)
    }
@@ -250,38 +314,67 @@ class SlideShowCarusel extends SlideShow {
     return this.showPlayAndPause()
   }
 
+  toggleFullscreen() {
+    // console.log('SlideShowCarusel#toggleFullscreen() fullscreen:', this.fullscreen())
+    if (this.fullscreen()) {
+      this.exitFullscreen()
+      this.showFullscreenButton()
+      this.hideFullscreenExitButton()
+    } else {
+      this.setFullScreen()
+      this.hideFullscreenButton()
+      this.showFullscreenExitButton()
+    }
+  }
+  /** public: Set fullscreen.
+   *
+   * Hide header, calculate buttons, remove top margins.
+   */
+  setFullScreen() {
+    this._fullscreen = true
+    $('.header').hide()
+    this._content_margin_top = $('.content').css('margin-top')
+    $('.content').css('margin-top', '0')
+    this.calibrateControls()
+  }
+  exitFullscreen() {
+    this._fullscreen = false
+    $('.header').show()
+    $('.content').css('margin-top', "5vmax") // from css file, if read with js it translates to px
+    this.calibrateControls()
+  }
+
   /** public: show Play and Pause buttons in correct place.
    *
    * Calculate top value based on header height. Show play or pause.
    * Show only if showPlayAndPause is true.
+   *
+   * Returns nothing.
    */
-  showButtons() {
-    if (!this.visiblePlayButtons()) return
+  togglePlayAndPause() {
+    // console.log('SlideShowCarusel#togglePlayAndPause() playing:', this.playing())
+    // this.calibrateControls()
 
-    // TODO: could be found using container methods.
-    let header =  $('.header').height()
-    if (!header) {
-      console.error('No header')
-      return false
-    }
-    let height = header + 40;
-    this.playAndPauseContainer().css('top', height + 'px')
-
-    if (!this.playing()) {
+    if (this.playing()) {
+      this.pause()
       this.playButton().show()
       this.pauseButton().hide()
     }
     else {
+      this.play()
       this.pauseButton().show()
       this.playButton().hide()
     }
-
-    // console.log('SlideShowCarusel#showButtons()', height)
-    // this.playButton().show()
-    // this.pauseButton().hide()
   }
-  playAndPauseContainer() {
-    return this.container().elem().find('.slideshow-play-and-pause')
+
+  /** public: returns controls element.
+   *
+   * contains play, pause, fullscreen and fullscreen-exit buttons.
+   *
+   * Returns element.
+   */
+  controls() {
+    return this.container().elem().find('.slideshow-controls')
   }
   playButton() {
     return this.container().elem().find('.bi-play')
@@ -290,6 +383,28 @@ class SlideShowCarusel extends SlideShow {
     // if (!this.container()) return false
     // if (!this.container().elem()) return false
     return this.container().elem().find('.bi-pause-fill')
+  }
+  fullscreenButton() {
+    return this.container().elem().find('.bi-fullscreen')
+  }
+  fullscreenExitButton() {
+    return this.container().elem().find('.bi-fullscreen-exit')
+  }
+  showFullscreenExitButton() {
+    if (!this.fullscreenExitButton()) return
+    this.fullscreenExitButton().show()
+  }
+  hideFullscreenExitButton() {
+    if (!this.fullscreenExitButton()) return
+    this.fullscreenExitButton().hide()
+  }
+  showFullscreenButton() {
+    if (!this.fullscreenButton()) return
+    this.fullscreenButton().show()
+  }
+  hideFullscreenButton() {
+    if (!this.fullscreenButton()) return
+    this.fullscreenButton().hide()
   }
   pause() {
     if (!this.playing()) return
@@ -302,10 +417,7 @@ class SlideShowCarusel extends SlideShow {
       console.error('SlideShowCarusel#pause() Timer failed', this.interval())
       return false
     }
-
     this._playing = false;
-    this.pauseButton().hide()
-    this.playButton().show()
   }
 
   play() {
@@ -318,22 +430,10 @@ class SlideShowCarusel extends SlideShow {
       console.error('Timer failed')
       return false
     }
-
     console.log('SlideShowCarusel#play()')
     this._playing = true // setPlaying(true)
-    this.playButton().hide()
-    this.pauseButton().show()
   }
 
-  /** public: initialize play and pause buttons by adding click events.
-   *
-   * @returns nothing.
-   */
-  initButtons() {
-    if (!this.visiblePlayButtons()) return
-    this.playButton().click( function() { this.play() }.bind(this) )
-    this.pauseButton().click( function() { this.pause() }.bind(this) )
-  }
 }
 
 /**
@@ -381,7 +481,7 @@ class SlideShowButtons extends SlideShow {
   init() {
     this.deco().init()
     this.initButtons();
-    this.showButtons();
+    this.togglePlayAndPause();
   }
 
   buttons() {

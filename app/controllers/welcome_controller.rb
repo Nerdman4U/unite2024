@@ -191,9 +191,11 @@ class WelcomeController < ApplicationController
       navigation: false,
       type: "carousel",
       decorators: ["carousel"],
-      autoplay: true,
-      autoplaySpeed: 2000,
-      showPlayAndPause: true,
+      autoplay: false,
+      autoplayspeed: 2000,
+      showplayandpause: true,
+      startfullscreen: false,
+      showfullscreenbuttons: true,
       slides: [{
         name: earth_pic[:name],
         headers: {
@@ -241,7 +243,7 @@ class WelcomeController < ApplicationController
       },{
         name: "blank",
         headers: {
-          h1: [_("There are huge"), _("environmental"), _("problems on this planet.")],
+          h1: [_("There are huge"), _("environmental"), _("problems on our home planet.")],
         },
         res: [],
         default: 1024,
@@ -310,7 +312,7 @@ class WelcomeController < ApplicationController
       },{
         name: "blank",
         headers: {
-          h1: [_("Our planet is the only planet with life.")],
+          h1: [_("Our home is the only planet with life.")],
           h2: [_("We are destroying it.")],
         },
         res: [],
