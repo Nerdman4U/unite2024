@@ -1,3 +1,14 @@
+## 1.69.0 (2025-01-23)
+
+### Feat
+
+- Slideshow fullscreen and minimize
+- SVG support for slideshow
+
+### Fix
+
+- Slideshow settings for diashow and welcome carousel
+
 ## 1.68.0 (2025-01-22)
 
 ### Feat
