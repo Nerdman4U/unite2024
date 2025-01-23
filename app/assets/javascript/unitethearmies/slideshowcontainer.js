@@ -33,10 +33,10 @@ class SlideShowContainer {
       this.elem().addClass('unite-screenheight-50')
     }
 
-    console.log('SlideShowContainer#toggleSize()', classes)
-    for (let slideshow of this.slideshows) {
-      slideshow.hideButtons && slideshow.hideButtons()
-    }
+    // console.log('SlideShowContainer#toggleSize()', classes)
+    // for (let slideshow of this.slideshows) {
+    //   slideshow.hideButtons && slideshow.hideButtons()
+    // }
   }
 
   /**

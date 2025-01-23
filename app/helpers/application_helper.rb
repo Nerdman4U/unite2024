@@ -330,7 +330,27 @@ module ApplicationHelper
         end
       end
 
+      if slider.showNextAndPrevious
+        slideshow_result << tag.div(class: "slideshow-next-and-previous") do
 
+            # <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
+            # <i class="bi bi-chevron-compact-left"></i>
+            # </a>
+            # <a href="#" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
+            # <i class="bi bi-chevron-compact-right"></i>
+            # </a>
+
+            next_and_prev_buttons = []
+            next_and_prev_buttons << link_to("#", class: "slider-nav slider-nav-prev", style: "display:none", "data-offset": "-1", title: _("Previous")) do
+              tag.span(class: "bi bi-chevron-compact-left", title: _("Previous"))
+            end
+            next_and_prev_buttons << link_to("#", class: "slider-nav slider-nav-next", style: "display:none", "data-offset": "1", title: _("Next")) do
+              tag.span(class: "bi bi-chevron-compact-right", title: _("Next"))
+            end
+            next_and_prev_buttons.join.html_safe
+
+        end
+      end
 
       slideshow_result
     end

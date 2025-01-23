@@ -138,6 +138,8 @@ header {
       }
     }
   }
+
+  /* mobile menu is used smaller screens, not only touch screens */
   .mobile-navigation .mobile-toggle:hover {
     border: 1px dashed #333;
     opacity: 1;
@@ -878,12 +880,13 @@ header .logo a {
 /* <!-- logo animation */
 
 .slider-nav {
-  margin-top: -2.5rem;
+  /* margin-top: -2.5rem;
   width: 5rem;
-  height: 5rem;
+  height: 5rem; */
+  width: 5vmin;
+  height: fit-content;
   background-color: rgba(0, 0, 0, 0.3);
   color: #ccc;
-  font-size: 3rem;
   text-align: center;
   line-height: 5rem;
   display: none;
@@ -891,11 +894,14 @@ header .logo a {
   z-index: 10;
   i {
     color: white;
+    font-size: 30rem;
   }
+  /* visibility: hidden; */
 }
 .slider-nav:hover {
-  width: 7rem;
+  /* width: 7rem; */
   color: #fff;
+  visibility: visible;
 }
 
 .slider-nav-next {

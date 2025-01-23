@@ -438,24 +438,19 @@ class SlideShowCarusel extends SlideShow {
  *
  * Adds navigation buttons to the left and right side of current slideshow
  * image. Under root element .slider-nav objects are to be found.
+ *
+ * TODO: rename SlideNextPrevButtons.
  */
 class SlideShowButtons extends SlideShow {
   constructor(decorated) {
     super();
     this._name = "buttons"
-    this.decorated = decorated
+    this._decorated = decorated
   }
-  deco() {
-    return this.decorated
-    // return this.decorated.deco() ??
-  }
-  elem() {
-    return this.deco().elem()
-  }
+  deco() { return this._decorated }
+  elem() { return this.deco().elem() }
   name() { return this._name }
-  load() {
-    this.deco().load()
-  }
+  load() { this.deco().load() }
   container() {
     return this.deco().container()
   }
@@ -476,14 +471,15 @@ class SlideShowButtons extends SlideShow {
   }
 
   init() {
+    console.log('SlideShowButtons#init()')
     this.deco().init()
     this.initButtons();
-    this.togglePlayAndPause();
+    this.showButtons();
   }
 
   buttons() {
-    console.log('SlideShowButtons#buttons()')
-    let buttons = this.elem().find(".slider-nav");
+    console.log('SlideShowButtons#buttons() el:', this.container().elem().get(0))
+    let buttons = this.container().elem().find(".slider-nav");
     if (buttons.length < 1) {
       console.error("SlideShow#showButtons() Slideshow buttons not found!");
       return;
@@ -491,6 +487,8 @@ class SlideShowButtons extends SlideShow {
     return buttons;
   }
 
+  /** public: initialize next and previous buttons.
+   */
   initButtons() {
     if (!this.buttons()) return
     this.buttons().each(
@@ -500,8 +498,8 @@ class SlideShowButtons extends SlideShow {
             e.preventDefault();
             this.deactivate(); // deactivate all slides.
             this.proceed(el.dataset.offset); // select new slide.
-            if (!this.current_slide) {
-              console.error("SlideShow#initButtons click: No Slide!");
+            if (!this.currentSlide()) {
+              console.error("SlideShowButtons#initButtons click: No Slide!");
               return;
             }
           }.bind(this)
@@ -511,16 +509,18 @@ class SlideShowButtons extends SlideShow {
   }
 
   showButtons() {
+    console.log('SlideShowButtons#showButtons()')
     if (!this.buttons()) return
     this.buttons().each(function (index, el) {
-      $(el).show();
+      $(el).css('display','block')
     });
   }
 
   hideButtons() {
+    console.log('SlideShowButtons#hideButtons()')
     if (!this.buttons()) return
     this.buttons().each(function (index, el) {
-      $(el).hide();
+      $(el).css('display','none')
     });
   }
 

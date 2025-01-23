@@ -190,12 +190,13 @@ class WelcomeController < ApplicationController
       fullscreen: true,
       navigation: false,
       type: "carousel",
-      decorators: ["carousel"],
+      decorators: ["carousel","nav1"],
       autoplay: true,
       autoplayspeed: 12000,
       showplayandpause: true,
       startfullscreen: true,
       showfullscreenbuttons: true,
+      shownextandprevious: true,
       slides: [{
         name: earth_pic[:name],
         headers: {

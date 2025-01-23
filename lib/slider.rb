@@ -68,6 +68,9 @@ class Slider
   def showFullScreenButtons
     @options[:showfullscreenbuttons] || false
   end
+  def showNextAndPrevious
+    @options[:shownextandprevious] || false
+  end
 
   ## public: Return Slider decorators.
   #
