@@ -192,7 +192,7 @@ class WelcomeController < ApplicationController
       type: "carousel",
       decorators: ["carousel"],
       autoplay: true,
-      autoplaySpeed: 12000,
+      autoplaySpeed: 2000,
       showPlayAndPause: true,
       slides: [{
         name: earth_pic[:name],
@@ -241,7 +241,7 @@ class WelcomeController < ApplicationController
       },{
         name: "blank",
         headers: {
-          h1: [_("There are environmental"), _("problems on this planet.")],
+          h1: [_("There are huge"), _("environmental"), _("problems on this planet.")],
         },
         res: [],
         default: 1024,
@@ -249,7 +249,7 @@ class WelcomeController < ApplicationController
       },{
         name: "mining-01",
         headers: {
-          h1: [_("We are using this planet...")],
+          h1: [_("We are misusing our home planet...")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000, 6000],
         type: 'jpg',
@@ -260,7 +260,7 @@ class WelcomeController < ApplicationController
         name: "trash-01",
         headers: {
           h1: [_("...and by doing that we create...")],
-          h2: [_("trash"), _("pollution")]
+          h2: [_("Trash..."), _("Pollution..."), _("Warm climate and oceans..."), _("Increase deforestation...")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4128],
         type: 'jpg',
@@ -270,7 +270,7 @@ class WelcomeController < ApplicationController
       },{
         name: "overpopulation",
         headers: {
-          h1: [_("We are more than ever...")],
+          h1: [_("There are more humans than ever before.")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 5000],
         type: 'jpg',
@@ -278,9 +278,17 @@ class WelcomeController < ApplicationController
         alt: _("Overpopulation"),
         decorators: ["headers", "image"]
       },{
+        name: "population-graph",
+        headers: {
+          h1: [_("We have grown"), _("beyond sustainable limits!")],
+        },
+        type: 'svg',
+        alt: _("Overpopulation"),
+        decorators: ["headers", "image"]
+      },{
         name: "monkey",
         headers: {
-          h1: [_("...but by living our lives... ")],
+          h1: [_("...just by living our lives... ")],
           h2: [_("...we destroy homes of others...")]
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 3840],
@@ -291,7 +299,7 @@ class WelcomeController < ApplicationController
       },{
         name: "forest-02",
         headers: {
-          h1: [_("We can change things.")],
+          h1: [_("We can change things."), _("We made them."), _("We fix.")],
           h2: [_("First aid help for ecosystem would be..."), _("...to grow trees to deserts"), _("...clear seas from waste")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4879],

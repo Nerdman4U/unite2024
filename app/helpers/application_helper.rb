@@ -272,17 +272,22 @@ module ApplicationHelper
               end
               content_result.join.html_safe
             end
-            li_result << tag.picture do
-              # slide.res = 640
-              # slide.img_type = 'jpg'
-              # =>
-              # <source media="(max-width: 640px)" srcset="#{slide.name}-w#{res}.img_type" />
-              source = slide.res.map do |r|
-                tag.source(media: "(max-width: #{r}px)", srcset:"#{slide_image_path(slide, r)}")
+
+            if (slide.type == 'svg')
+              li_result << image_tag(slide_image_path(slide, slide.default), alt: slide.alt, class: "svg")
+            else
+              li_result << tag.picture do
+                # slide.res = 640
+                # slide.img_type = 'jpg'
+                # =>
+                # <source media="(max-width: 640px)" srcset="#{slide.name}-w#{res}.img_type" />
+                source = slide.res.map do |r|
+                  tag.source(media: "(max-width: #{r}px)", srcset:"#{slide_image_path(slide, r)}")
+                end
+                source << tag.source(media: "(min-width: #{slide.res[-1]}px)", srcset:"#{slide_image_path(slide, slide.res[-1])}")
+                source << image_tag(slide_image_path(slide, slide.default), "alt" => slide.alt)
+                source.join.html_safe
               end
-              source << tag.source(media: "(min-width: #{slide.res[-1]}px)", srcset:"#{slide_image_path(slide, slide.res[-1])}")
-              source << image_tag(slide_image_path(slide, slide.default), "alt" => slide.alt)
-              source.join.html_safe
             end
             li_result.join.html_safe
           end
@@ -334,6 +339,8 @@ module ApplicationHelper
   def slide_image_path slide, res
     if slide.name == 'blank'
       image_path("blank.gif")
+    elsif slide.type == 'svg'
+      image_path("slides/#{[slide.name, slide.type].join(".")}")
     else
       image_path("slides/#{slide.name}-w#{res}.#{slide.type}")
     end

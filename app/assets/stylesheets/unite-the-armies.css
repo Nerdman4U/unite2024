@@ -21,7 +21,9 @@ Copyright: Save the Planet - Unite the Armies
   Header-inner: 100 // ??
   .footer: 1
 
-  .slideshow-container .slideshow: 2
+  .slideshow-container
+    .slideshow: 2
+      li.active img: 2
 
   Slider-content contains slide specific headers.
   .slider-content: 3
@@ -361,6 +363,11 @@ header .header-inner {
       transition: scale 8s ease-in-out, opacity 3s;
       z-index: 0;
     }
+    img.svg {
+      width: fit-content;
+      height: fit-content;
+      margin-top: 20vh;
+    }
   }
 
   li.active {
@@ -368,8 +375,8 @@ header .header-inner {
     z-index: 2;
 
     img {
-      height: 100%;
-      width: 100%;
+      /* height: 100%;
+      width: 100%; */
       scale: 1.1;
       z-index: 2;
       transform: translate(0, 0);
