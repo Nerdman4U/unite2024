@@ -4,6 +4,21 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+## Install
+
+Should work just:
+$ git clone / fork this repository
+$ bundle install
+$ (add environment variables)
+$ rails s
+
+### Environment
+
+UNITE_GOOGLE_APP_PASSWORD (from Google)
+UNITE_GMAIL_USERNAME (Gmail account used to send email)
+UNITE_RUN_RECENT_VOTES (1 or 0)
+UNITE_ADMIN_HASH (not in use, any string)
+
 ## Contribute
 
 ### Translate
@@ -38,11 +53,6 @@ Commitizen settings are at .cz.yaml.
 - $ rails test
 
 #### Deployment
-
-Environment:
-
-- UNITE_GMAIL_USERNAME, UNITE_GMAIL_PASSWORD
-- RECAPTHA_PRIVATE_KEY
 
 - $ cap production deploy
 
