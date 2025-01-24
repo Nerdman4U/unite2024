@@ -65,9 +65,12 @@ class SlideShowContainer {
 
   loadSlideShows() {
     let decorators = []
-    if (this.elem().find('.slider-nav').length > 0) {
-      decorators.push('nav1')
-    }
+
+    // TODO: this automatic decoration could be useful if not
+    // unintentionally mix with manual decoration...
+    // if (this.elem().find('.slider-nav').length > 0) {
+    //   decorators.push('nav1')
+    // }
     if (this.elem().data('decorators')) {
       let dec = this.elem().data("decorators").split(",").map(function(e) { return $.trim(e) }) || []
       decorators = decorators.concat(dec)
@@ -82,9 +85,11 @@ class SlideShowContainer {
         // console.log('SlideShowContainer#loadSlideShows() deco:', decorator)
         switch (decorator) {
           case 'nav1':
+            // console.log('SlideShowContainer#loadSlideShows() buttons, decorated:', slideShow.name())
             slideShow = new SlideShowButtons(slideShow);
             break;
           case 'carousel':
+            // console.log('SlideShowContainer#loadSlideShows() carousel, decorated:', slideShow.name())
             slideShow = new SlideShowCarusel(slideShow, {interval: interval});
             break;
         }

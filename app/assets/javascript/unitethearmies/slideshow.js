@@ -25,7 +25,7 @@ class SlideShow {
     this._current_slide = $();
     this._slides = $([]);
     this._container = container; // SlideShowContainer
-    console.log('SlideShow() container:', this._container)
+    // console.log('SlideShow() container:', this._container)
     this._decorated = this
   }
 
@@ -109,7 +109,7 @@ class SlideShow {
 
         if (decorators.indexOf('headers') > -1) {
           slide = new SlideWithHeaders(slide)
-          console.log('SlideShow#loadSlideShow() headers!')
+          // console.log('SlideShow#loadSlideShow() headers!')
         }
         if (decorators.indexOf('image') > -1) {
           slide = new SlideWithImage(slide)
@@ -134,11 +134,11 @@ class SlideShow {
     offset = parseInt(offset);
     if (!offset) offset = 0;
     let slide_nro = (this.current_nro += offset);
-    console.log("SlideShow#proceed() slide_nro:", slide_nro, "slides:", this.slides().length);
+    // console.log("SlideShow#proceed() slide_nro:", slide_nro, "slides:", this.slides().length);
     if (!slide_nro) slide_nro = 1;
     if (slide_nro < 1) slide_nro = 1;
     if (slide_nro > this.slides().length) slide_nro = 1
-    console.log("SlideShow#proceed() this.current_nro:", slide_nro, "offset:", offset);
+    // console.log("SlideShow#proceed() this.current_nro:", slide_nro, "offset:", offset);
     this.current_nro = slide_nro;
     this.setCurrentSlide(slide_nro);
   }
@@ -151,11 +151,11 @@ class SlideShow {
    * Returns nothing.
    */
   setCurrentSlide(nro) {
-    console.log('SlideShow#setCurrentSlide() nro:', nro)
+    // console.log('SlideShow#setCurrentSlide() nro:', nro)
     this.deactivateSlides()
     this._current_slide = this.slides()[nro-1];
     this._current_slide.activate();
-    console.log('SlideShow#setCurrentSlide() currentSlide():', this.currentSlide().elem().get(0))
+    // console.log('SlideShow#setCurrentSlide() currentSlide():', this.currentSlide().elem().get(0))
   }
 
   deactivateSlides() {
@@ -200,7 +200,7 @@ class SlideShowCarusel extends SlideShow {
     this._playing = false;
     this._fullscreen = false;
     this._content_margin_top = 0;
-    // console.log('SlideShowCarusel()')
+    // console.log('SlideShowCarusel() decorated:', this._decorated.name())
   }
   deco() {
     return this._decorated
@@ -240,20 +240,20 @@ class SlideShowCarusel extends SlideShow {
    * Returns nothing.
    */
   calibrateControls() {
-    console.log('SlideShowCarusel#calibrateControls()')
+    // console.log('SlideShowCarusel#calibrateControls()')
     // TODO: could be found using container methods.
     let header_height =  $('.header').height();
     if (!header_height) header_height = 0;
     if ($('.header').css('display') === 'none') header_height = 0;
 
-    console.log('SlideShowCarusel#calibrateControls() header_height:', header_height)
+    // console.log('SlideShowCarusel#calibrateControls() header_height:', header_height)
 
     if (header_height > 0) {
       // header_height = header_height + 40;
       // let header_padding = parseInt($('.header').css('padding-bottom')) + 10;
       // let hh = header_height + header_padding;
       let hh = header_height + 6;
-      console.log('SlideShowCarusel#calibrateControls() hh:', hh)
+      // console.log('SlideShowCarusel#calibrateControls() hh:', hh)
       this.controls().css('top', hh + 'px');
     }
     else {
@@ -456,6 +456,7 @@ class SlideShowButtons extends SlideShow {
     super();
     this._name = "buttons"
     this._decorated = decorated
+    // console.log('SlideShowButtons() decorated:', this._decorated.name())
   }
   deco() { return this._decorated }
   elem() { return this.deco().elem() }
@@ -507,11 +508,14 @@ class SlideShowButtons extends SlideShow {
   /** public: initialize next and previous buttons.
    */
   initButtons() {
+    // console.log('SlideShowButtons#initButtons()');
     if (this.nextAndPrevButtons().length < 1) return
     this.nextAndPrevButtons().each(
       function (index, el) {
+        // console.log("SlideShowButtons#initButtons el:", el);
         $(el).click(
           function (e) {
+            // console.log("SlideShowButtons#initButtons click:", e);
             e.preventDefault();
             this.deactivate(); // deactivate all slides.
             this.proceed(el.dataset.offset); // select new slide.
@@ -526,7 +530,7 @@ class SlideShowButtons extends SlideShow {
   }
 
   showButtons() {
-    console.log('SlideShowButtons#showButtons()');
+    // console.log('SlideShowButtons#showButtons()');
     if (this.nextAndPrevButtons().length < 1) return;
     this.nextAndPrevButtons().each(function (index, el) {
       $(el).css('display','block');
@@ -534,7 +538,7 @@ class SlideShowButtons extends SlideShow {
   }
 
   hideButtons() {
-    console.log('SlideShowButtons#hideButtons()');
+    // console.log('SlideShowButtons#hideButtons()');
     if (this.nextAndPrevButtons().length < 1) return;
     this.nextAndPrevButtons().each(function (index, el) {
       $(el).css('display','none');

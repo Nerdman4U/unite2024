@@ -131,11 +131,11 @@ class SlideWithImage extends Slide {
 class SlideWithHeaders extends Slide {
   constructor(decorated) {
     super();
-    this.decorated = decorated;
-    console.log("SlideWithHeaders");
+    this._decorated = decorated;
+    // console.log("SlideWithHeaders");
   }
   deco() {
-    return this.decorated;
+    return this._decorated;
   }
   elem() {
     return this.deco().elem();

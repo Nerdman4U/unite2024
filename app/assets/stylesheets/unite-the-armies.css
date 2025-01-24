@@ -958,34 +958,37 @@ header .logo a {
 }
 /* <!-- logo animation */
 
+/* Next and previous buttons */
 .slider-nav {
   /* margin-top: -2.5rem;
   width: 5rem;
   height: 5rem; */
-  width: 5vmin;
+  width: fit-content;
   height: fit-content;
   background-color: rgba(0, 0, 0, 0.3);
   color: #ccc;
-  text-align: center;
-  line-height: 5rem;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 5vh;
   display: none;
   position: absolute;
   z-index: 10;
-  i {
+  .bi {
     color: white;
-    font-size: 30rem;
+    font-size: 10vmax;
   }
   /* visibility: hidden; */
 }
 .slider-nav:hover {
-  /* width: 7rem; */
+  /* border: 1px dotted #eee; */
+  /* width: 10vmin; */
   color: #fff;
-  visibility: visible;
+  text-align: right;
 }
 
 .slider-nav-next {
   top: 50%;
-  right: 0;
+  right: 1vmin;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
