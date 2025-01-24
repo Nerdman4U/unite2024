@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-4 upt-2">
       <div class="row">
-        <div class="col-5 p-0">
+        <div class="col-5 p-0 text-center">
           <div>
             <%= link_to TEP_URL, target: "_blank" do %>
             <%= image_tag "teplogo-scaled.jpg", alt: _(TEP_NAME) %>
@@ -110,14 +110,12 @@
       </div>
     </div>
   </div>
-</footer>
 
-<footer class="footer upx-8">
   <div class="row upy-3">
-    <div class="col-6 left ufs-0-5">
+    <div class="col-6 left ufs-0-5 text-start">
       Save the Planet - Unite the Armies v.<%= Rails.application.config.version %> with Ruby <%= RUBY_VERSION %>, Rails <%= Rails.version %>
     </div>
-    <div class="col-6 right ufs-0-5">
+    <div class="col-6 right ufs-0-5 text-end">
       <%= copyright %>
     </div>
   </div>

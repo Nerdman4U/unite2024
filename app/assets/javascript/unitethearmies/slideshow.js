@@ -338,6 +338,7 @@ class SlideShowCarusel extends SlideShow {
   setFullScreen() {
     this._fullscreen = true
     $('.header').hide()
+    $('footer').hide()
     this._content_margin_top = $('.content').css('margin-top')
     $('.content').css('margin-top', '0')
     this.calibrateControls()
@@ -345,6 +346,7 @@ class SlideShowCarusel extends SlideShow {
   exitFullscreen() {
     this._fullscreen = false
     $('.header').show()
+    $('footer').show()
     $('.content').css('margin-top', "5vmax") // from css file, if read with js it translates to px
     this.calibrateControls()
   }
