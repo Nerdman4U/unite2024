@@ -398,8 +398,13 @@ header .header-inner {
       }
     }
 
+    /* without width:100% at high res screen images are not streched.
+     */
     img {
+      width: 100%;
       max-width: 100%;
+      object-fit: cover;
+      object-position: center;
       max-height: 100%;
       margin: 0 auto;
       display: block;
