@@ -1,3 +1,16 @@
+## 1.70.0 (2025-01-24)
+
+### Feat
+
+- Slideshow fullscreen hides footer, footer layout fixes
+- Slideshow next and previous button hidden when mouse off area
+- Slideshow double click bug, fixed next and previous buttons css
+- Slideshow controls calibration on resize
+- Slideshow update to fit images if screen width is larger
+- Slideshow update, custom css classes to slides, css fixes, next and previous buttons
+- Slider next and previous buttons
+- **votes/new.html.erb**: Link to Initiative
+
 ## 1.69.0 (2025-01-23)
 
 ### Feat
