@@ -970,7 +970,7 @@ header .logo a {
   text-align: right;
   padding-right: 10px;
   line-height: 5vh;
-  display: none;
+  /* display: none; */
   position: absolute;
   z-index: 10;
   .bi {

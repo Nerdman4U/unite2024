@@ -457,6 +457,7 @@ class SlideShowButtons extends SlideShow {
     this._name = "buttons"
     this._decorated = decorated
     // console.log('SlideShowButtons() decorated:', this._decorated.name())
+    this._buttons_visible = false
   }
   deco() { return this._decorated }
   elem() { return this.deco().elem() }
@@ -485,7 +486,19 @@ class SlideShowButtons extends SlideShow {
     console.log('SlideShowButtons#init()')
     this.deco().init()
     this.initButtons();
-    this.showButtons();
+    this.hideButtons();
+
+    this._buttons_visible = this.nextAndPrevContainer().css('display') == 'block'
+    console.log('SlideShowButtons#init() this._buttons_visible:', this._buttons_visible, 'display:', this.nextAndPrevContainer().css('display'))
+
+    this.elem().on('mousemove', function(e) { this.showButtons() }.bind(this))
+    this.nextAndPrevContainer().on('mousemove', function(e) { this.showButtons() }.bind(this))
+    this.elem().on('mouseout', function(e) { this.hideButtons() }.bind(this))
+    // this.nextAndPrevContainer().on('mouseout', function(e) { this.hideButtons() }.bind(this))
+
+    // untested
+    this.elem().on('touchstart', function(e) { this.showButtons() }.bind(this))
+    this.elem().on('touchend', function(e) { this.hideButtons() }.bind(this))
   }
 
   nextAndPrevContainer() {
@@ -529,22 +542,44 @@ class SlideShowButtons extends SlideShow {
     );
   }
 
+  buttonsVisible() {
+    return this._buttons_visible == true;
+  }
+  buttonsHidden() {
+    return this._buttons_visible == false;
+  }
+
+  /** public show next and previous buttons container.
+   *
+   * Run method only if flag is false.
+   *
+   * returns nothing.
+   */
   showButtons() {
+    if (this.buttonsVisible()) {
+      console.log('SlideShowButtons#showButtons() already visible')
+      return
+    }
     // console.log('SlideShowButtons#showButtons()');
-    if (this.nextAndPrevButtons().length < 1) return;
-    this.nextAndPrevButtons().each(function (index, el) {
-      $(el).css('display','block');
-    });
+    if (this.nextAndPrevContainer().length < 1) return;
+    this.nextAndPrevContainer().css('display','block');
+    this._buttons_visible = true;
   }
 
+  /** public: Hide next and previous button container.
+   *
+   * Set container always hidden and visibility flag to
+   * false to prevent desynchronization.
+   *
+   * returns nothing.
+   */
   hideButtons() {
+    // if (this.buttonsHidden()) return
     // console.log('SlideShowButtons#hideButtons()');
-    if (this.nextAndPrevButtons().length < 1) return;
-    this.nextAndPrevButtons().each(function (index, el) {
-      $(el).css('display','none');
-    });
+    if (this.nextAndPrevContainer().length < 1) return;
+    this.nextAndPrevContainer().css('display','none');
+    this._buttons_visible = false;
   }
-
 }
 
 export { SlideShow, SlideShowCarusel, SlideShowButtons }
