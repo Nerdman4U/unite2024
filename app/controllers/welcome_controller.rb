@@ -191,7 +191,7 @@ class WelcomeController < ApplicationController
       navigation: false,
       type: "carousel",
       decorators: ["carousel","nav1"],
-      autoplay: true,
+      autoplay: false,
       autoplay_speed: 2000,
       show_play_and_pause: true,
       start_fullscreen: true,

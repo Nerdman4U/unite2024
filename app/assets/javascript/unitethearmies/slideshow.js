@@ -26,7 +26,7 @@ class SlideShow {
     this._slides = $([]);
     this._container = container; // SlideShowContainer
     console.log('SlideShow() container:', this._container)
-    this.decorated = this
+    this._decorated = this
   }
 
   /**
@@ -45,7 +45,7 @@ class SlideShow {
    *
    * Returns SlideShow.
    */
-  deco() { return this.decorated }
+  deco() { return this._decorated }
 
   /**
    * public: Creates Slide instances with decorators.
@@ -177,6 +177,10 @@ class SlideShow {
       slide.deactivate();
     });
   }
+
+  calibrateControls() {
+    this.deco().calibrateControls()
+  }
 }
 
 /**
@@ -227,6 +231,8 @@ class SlideShowCarusel extends SlideShow {
     this.calibrateControls()
     this.initPlayAndPause();
     this.initFullscreen();
+
+    $(window).on("resize", function() { this.calibrateControls() }.bind(this))
   }
 
   /** public: calculate top position of button area.
@@ -234,16 +240,20 @@ class SlideShowCarusel extends SlideShow {
    * Returns nothing.
    */
   calibrateControls() {
-    // console.log('SlideShowCarusel#calibrateControls()')
+    console.log('SlideShowCarusel#calibrateControls()')
     // TODO: could be found using container methods.
     let header_height =  $('.header').height();
     if (!header_height) header_height = 0;
     if ($('.header').css('display') === 'none') header_height = 0;
 
+    console.log('SlideShowCarusel#calibrateControls() header_height:', header_height)
+
     if (header_height > 0) {
-      header_height = header_height + 40;
-      let header_padding = parseInt($('.header').css('padding-bottom')) + 10;
-      let hh = header_height + header_padding;
+      // header_height = header_height + 40;
+      // let header_padding = parseInt($('.header').css('padding-bottom')) + 10;
+      // let hh = header_height + header_padding;
+      let hh = header_height + 6;
+      console.log('SlideShowCarusel#calibrateControls() hh:', hh)
       this.controls().css('top', hh + 'px');
     }
     else {
