@@ -192,11 +192,11 @@ class WelcomeController < ApplicationController
       type: "carousel",
       decorators: ["carousel","nav1"],
       autoplay: true,
-      autoplayspeed: 12000,
-      showplayandpause: true,
-      startfullscreen: true,
-      showfullscreenbuttons: true,
-      shownextandprevious: true,
+      autoplay_speed: 2000,
+      show_play_and_pause: true,
+      start_fullscreen: true,
+      show_fullscreen_buttons: true,
+      show_next_and_previous: true,
       slides: [{
         name: earth_pic[:name],
         headers: {
@@ -221,6 +221,7 @@ class WelcomeController < ApplicationController
         decorators: ["headers", "image"]
       },{
         name: "milky_way",
+        css: { classes: ["text-light"] },
         headers: {
           h1: [_("Around us are 400 billion solar systems.")],
           h2: [_("The Milky Way - OUR Galaxy.")],
@@ -243,6 +244,7 @@ class WelcomeController < ApplicationController
         decorators: ["headers", "image"]
       },{
         name: "blank",
+        css: { classes: ["text-dark"] },
         headers: {
           h1: [_("There are huge"), _("environmental"), _("problems on our home planet.")],
         },
@@ -272,6 +274,7 @@ class WelcomeController < ApplicationController
         decorators: ["headers", "image"]
       },{
         name: "overpopulation",
+        css: { classes: ["text-dark"] },
         headers: {
           h1: [_("There are more humans than ever before.")],
         },
@@ -282,6 +285,7 @@ class WelcomeController < ApplicationController
         decorators: ["headers", "image"]
       },{
         name: "population-graph",
+        css: { classes: ["text-dark"] },
         headers: {
           h1: [_("We have grown"), _("beyond sustainable limits!")],
         },
@@ -303,7 +307,6 @@ class WelcomeController < ApplicationController
         name: "forest-02",
         headers: {
           h1: [_("We can change things."), _("We made them."), _("We fix.")],
-          h2: [_("First aid help for ecosystem would be..."), _("...to grow trees to deserts"), _("...clear seas from waste")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4879],
         type: 'jpg',
@@ -312,6 +315,7 @@ class WelcomeController < ApplicationController
         decorators: ["headers", "image"]
       },{
         name: "blank",
+        css: { classes: ["text-dark"] },
         headers: {
           h1: [_("Our home is the only planet with life.")],
           h2: [_("We are destroying it.")],
@@ -323,6 +327,7 @@ class WelcomeController < ApplicationController
         decorators: ["headers", "image"]
       },{
         name: "blank",
+        css: { classes: ["text-dark"] },
         headers: {
           h1: [_("You can help.")],
           h2: [_("Vote for the initiative presented on this site.")],

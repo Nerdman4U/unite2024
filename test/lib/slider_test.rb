@@ -14,6 +14,9 @@ class SliderTest < ActiveSupport::TestCase
       },
       slides: [{
         name: "seascape",
+        css: {
+          classes: ["testi-30"]
+        },
         headers: {
           h1: ["testi 30"],
           h2: ["testi 40"],
@@ -106,7 +109,11 @@ class SliderTest < ActiveSupport::TestCase
 
     assert slide.headers.h1.present?
     assert slide.headers.h3.blank?
+  end
 
+  test "should return css classes" do
+    slide = @slider.slides[0]
+    assert slide.css_classes.include? "testi-30"
   end
 
 end

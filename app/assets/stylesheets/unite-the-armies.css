@@ -274,22 +274,16 @@ header .header-inner {
   min-height: 300pt;
 }
 
-.slideshow-container .slideshow {
-  position: relative;
-  list-style-type: none;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  line-height: 1;
-}
+/* .slideshow-container .slideshow {
+} */
 
 /* -----------------------------------------------------------------
  *  1.1 Slideshow
  * ----------------------------------------------------------------- */
 
 .slideshow-container {
+  position: relative;
+
   h1,
   h2,
   h3,
@@ -317,6 +311,17 @@ header .header-inner {
   }
 }
 
+.slideshow-container-top {
+  /* use only and all viewport area,
+   * without explicited height, height will be more that
+   * viewport and control buttons will be located
+   * outside of viewport.
+   */
+  /* height: 100vh; */
+  height: fit-content;
+  max-height: 100vh;
+}
+
 /** public: Slideshow-container for Welcome carousel.
   */
 .slideshow-container.slideshow-container-welcome-carousel {
@@ -335,6 +340,15 @@ header .header-inner {
   * .slider-content - contains headers and images of a slide.
   **/
 .slideshow-container .slideshow {
+  position: relative;
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+
   .slider-content {
     width: 100%;
     max-width: 100%;
@@ -355,6 +369,35 @@ header .header-inner {
     margin: 0;
     padding: 0;
 
+    &.slide.text-dark {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--bs-dark);
+      }
+    }
+    &.slide.text-light {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--bs-light);
+      }
+    }
+
+    /* blank.gif is 1px width and height by default. */
+    &.slide.slide-blank {
+      img {
+        width: 100%;
+        object-fit: cover;
+        /* height: 100%;
+        object-position: center; */
+      }
+    }
+
     img {
       max-width: 100%;
       max-height: 100%;
@@ -368,7 +411,8 @@ header .header-inner {
     img.svg {
       width: fit-content;
       height: fit-content;
-      margin-top: 20vh;
+      /* margin-top: 20vh; */
+      padding: 10vw;
     }
   }
 
@@ -376,9 +420,25 @@ header .header-inner {
     visibility: visible;
     z-index: 2;
 
+    /*  fit-content - image height is not streched if resolution width
+     *                is small and height is big.
+     *
+     *  width: 100% - ei voi olla koska venyttää kuvan rikki,
+     *                esim. maapallo.
+     *
+     *  kuvat näytetään koko leveydeltä ja korkeudelta ilman mitään lisäasetuksia,
+     *  jos kuva on suurempi kuin alue...
+     *  - täytyy olla cover:in lisäksi min-height viewportin koon mukaan.
+     *
+     *  erityistapaus: blank.gif
+     *  - täytyy olla width: 100% ja height: 100%.
+     *
+     */
     img {
-      height: fit-content;
-      width: fit-content;
+      min-height: 100vh;
+      /* max-height: 100vh; */
+      object-fit: cover;
+      object-position: bottom;
       scale: 1.1;
       z-index: 2;
       transform: translate(0, 0);
@@ -397,7 +457,7 @@ header .header-inner {
   }
   > h1.show {
     visibility: visible;
-    padding: 3vmin;
+    padding: 8vmin;
     opacity: 1;
     scale: 3;
     display: block;
@@ -415,7 +475,7 @@ header .header-inner {
   > h4.show,
   > h5.show {
     visibility: visible;
-    padding: 1vmin;
+    padding: 3vmin;
     opacity: 1;
     scale: 2;
     display: block;
@@ -433,6 +493,12 @@ header .header-inner {
     z-index: 0;
     left: -10000px;
     top: -10000px;
+
+    /* at small resolution cannot have
+       min-height: 100vh, goes over footer.
+     */
+    max-height: 100vh;
+
     img {
       opacity: 0.6;
     }
@@ -505,6 +571,14 @@ header .header-inner {
   .bi-pause-fill {
     color: gray;
   }
+}
+
+.slideshow-container .slideshow-next-and-previous {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  /* height: 100%; */
+  width: 100%;
 }
 
 /* -----------------------------------------------------------------

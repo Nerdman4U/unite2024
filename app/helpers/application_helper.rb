@@ -246,14 +246,15 @@ module ApplicationHelper
 
     tag.section class: "slideshow-container slideshow-container-#{slider.name} #{additional_html[:css]}", "data-decorators": slider.decorators.join(", ") do
       slideshow_result = tag.ul class: "slideshow slideshow-#{slider.type}",
-      "data-autoplaySpeed": slider.autoplaySpeed,
+      "data-autoplayspeed": slider.autoplay_speed,
       "data-autoplay": slider.autoplay,
-      "data-showplayandpause": slider.showPlayAndPause,
-      "data-startfullscreen": slider.startFullScreen,
-      "data-showfullscreenbuttons": slider.showFullScreenButtons do
+      "data-showplayandpause": slider.show_play_and_pause,
+      "data-startfullscreen": slider.start_fullscreen,
+      "data-showfullscreenbuttons": slider.show_fullscreen_buttons do
         slider.slides.map do |slide|
           # TODO: slide.decorators.join(",")
-          tag.li "data-decorators": slide.decorators.join(", ") do
+          css_classes = ["slide", "slide-#{slide.name}"].concat(slide.css_classes)
+          tag.li "data-decorators": slide.decorators.join(", "), class: css_classes.join(" ") do
             li_result = []
             li_result << tag.div(class: "slider-content") do
               content_result = []
@@ -317,7 +318,7 @@ module ApplicationHelper
         headers_result.join.html_safe
       end
 
-      if slider.showPlayAndPause
+      if slider.show_play_and_pause
         slideshow_result << tag.div(class: "slideshow-controls") do
           tag.div(class: "") do
             play_and_pause_buttons = []
@@ -330,7 +331,7 @@ module ApplicationHelper
         end
       end
 
-      if slider.showNextAndPrevious
+      if slider.show_next_and_previous
         slideshow_result << tag.div(class: "slideshow-next-and-previous") do
 
             # <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">

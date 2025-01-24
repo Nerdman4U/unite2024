@@ -25,6 +25,12 @@ class Slide
   def headers
     OpenStruct.new(@options[:headers] || {})
   end
+  def css
+    @options[:css] || {}
+  end
+  def css_classes
+    css()[:classes] || []
+  end
 end
 
 class Slider
@@ -56,20 +62,20 @@ class Slider
   def autoplay
     @options[:autoplay] || false
   end
-  def autoplaySpeed
-    @options[:autoplayspeed] || 5000
+  def autoplay_speed
+    @options[:autoplay_speed] || 5000
   end
-  def showPlayAndPause
-    @options[:showplayandpause] || false
+  def show_play_and_pause
+    @options[:show_play_and_pause] || false
   end
-  def startFullScreen
-    @options[:startfullscreen] || false
+  def start_fullscreen
+    @options[:start_fullscreen] || false
   end
-  def showFullScreenButtons
-    @options[:showfullscreenbuttons] || false
+  def show_fullscreen_buttons
+    @options[:show_fullscreen_buttons] || false
   end
-  def showNextAndPrevious
-    @options[:shownextandprevious] || false
+  def show_next_and_previous
+    @options[:show_next_and_previous] || false
   end
 
   ## public: Return Slider decorators.

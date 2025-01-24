@@ -477,9 +477,16 @@ class SlideShowButtons extends SlideShow {
     this.showButtons();
   }
 
-  buttons() {
-    console.log('SlideShowButtons#buttons() el:', this.container().elem().get(0))
-    let buttons = this.container().elem().find(".slider-nav");
+  nextAndPrevContainer() {
+    return this.container().elem().find(".slideshow-next-and-previous");
+  }
+
+  nextAndPrevButtons() {
+    if (this.nextAndPrevContainer().length < 1) {
+      console.error("SlideShow#nextAndPrevButtons() Slideshow buttons container not found!");
+      return;
+    }
+    let buttons = this.nextAndPrevContainer().find(".slider-nav");
     if (buttons.length < 1) {
       console.error("SlideShow#showButtons() Slideshow buttons not found!");
       return;
@@ -490,8 +497,8 @@ class SlideShowButtons extends SlideShow {
   /** public: initialize next and previous buttons.
    */
   initButtons() {
-    if (!this.buttons()) return
-    this.buttons().each(
+    if (this.nextAndPrevButtons().length < 1) return
+    this.nextAndPrevButtons().each(
       function (index, el) {
         $(el).click(
           function (e) {
@@ -509,18 +516,18 @@ class SlideShowButtons extends SlideShow {
   }
 
   showButtons() {
-    console.log('SlideShowButtons#showButtons()')
-    if (!this.buttons()) return
-    this.buttons().each(function (index, el) {
-      $(el).css('display','block')
+    console.log('SlideShowButtons#showButtons()');
+    if (this.nextAndPrevButtons().length < 1) return;
+    this.nextAndPrevButtons().each(function (index, el) {
+      $(el).css('display','block');
     });
   }
 
   hideButtons() {
-    console.log('SlideShowButtons#hideButtons()')
-    if (!this.buttons()) return
-    this.buttons().each(function (index, el) {
-      $(el).css('display','none')
+    console.log('SlideShowButtons#hideButtons()');
+    if (this.nextAndPrevButtons().length < 1) return;
+    this.nextAndPrevButtons().each(function (index, el) {
+      $(el).css('display','none');
     });
   }
 
