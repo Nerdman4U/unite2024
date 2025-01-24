@@ -316,10 +316,15 @@ header .header-inner {
    * without explicited height, height will be more that
    * viewport and control buttons will be located
    * outside of viewport.
+   *
+   * with max-height next section at landing page is not shown because
+   * previous sibling section has then only 100vh height but child
+   * image is larger and runs over sibling section... so do not use:
+   * max-height: 100vh;
    */
   /* height: 100vh; */
   height: fit-content;
-  max-height: 100vh;
+  /*  */
 }
 
 /** public: Slideshow-container for Welcome carousel.
