@@ -22,24 +22,6 @@ class WelcomeController < ApplicationController
   #
   # Returns index view.
   def index
-    # if flash[:warning].blank?
-    #   flash[:warning] = []
-    #   flash[:warning] << _("Under Construction")
-    #   flash[:warning] << _("Website is not ready and some features are missing.")
-    #   flash[:warning] << _("DONT PANIC! :smilie:")
-    #   flash[:warning] << _("You can browse site freely, its amazing!")
-    # end
-
-    # if flash[:info].blank?
-    #   flash[:info] = []
-    #   flash[:info] << _("Still lacking some features.")
-    #   flash[:info] << _("Outlook is not optimal. But its getting close \o/")
-    #   flash[:info] << _("Voting works and it is possible.")
-    #   flash[:info] << _("Mobile version navigation tab is not working.")
-    #   flash[:info] << _("Please, be patient.")
-    #   flash[:info] << _("Meanwhile, take a deep breath! :smilie: (no, seriously)")
-    # end
-
     @welcome_slider = Slider.new({
       name: "welcome",
       fullscreen: true,
@@ -177,6 +159,10 @@ class WelcomeController < ApplicationController
   end
 
   def why_vote
+    unless session[:fullscreen_info_seen]
+      flash.now[:info] = [_("For optimal experience please use F11 to allow full screen mode :bi-emoji-smile-fill:.")]
+      session[:fullscreen_info_seen] = true
+    end
     earth_pics = [
       { name:"earth-02", res: [512, 640, 960, 1024, 1280, 1920, 2048, 3000] },
       { name:"earth-03", res: [512, 640, 960, 1024, 1280, 1920, 2048, 2500] },

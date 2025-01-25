@@ -1,3 +1,5 @@
+using StringExtensions
+
 module ApplicationHelper
 
   ## public: Flash messages
@@ -23,9 +25,9 @@ module ApplicationHelper
   #   </ul>
   #
   # Returns flash messages
-  def smilie txt
-    txt.gsub(/:smilie:/, '<i class="bi bi-emoji-smile" style="color:inherit"></i>').html_safe
-  end
+  # def smilie txt
+  #   txt.gsub(/:smilie:/, '<i class="bi bi-emoji-smile" style="color:inherit"></i>').html_safe
+  # end
   def flash_messages
     # flash[:success] = [_("There was a success")]
     # flash[:success] << _("There was an another success")
@@ -41,14 +43,14 @@ module ApplicationHelper
         result = tag.ul class: "alert-#{type}", role: "alert", onClick: "$(this).hide()" do
           tag.li do
             first = flash[type].first
-            result_sub = tag.h2 class: 'h2' do
-              smilie(first)
+            result_sub = tag.h1 do
+              first.emotify.html_safe
             end
             submsgs = flash[type][1..-1] || []
             result_sub += tag.ul class: "sub-list" do
               submsgs.map do |msg|
                 tag.li do
-                  tag.span do smilie(msg) end
+                  tag.span do msg.emotify.html_safe end
                 end
               end.join.html_safe
             end

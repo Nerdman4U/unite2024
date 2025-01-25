@@ -595,62 +595,6 @@ header .header-inner {
  *  </-- END 1.1 Slideshow
  * ----------------------------------------------------------------- */
 
-/* .tm-slider-container {
-  width: 100%;
-  height: 50vw;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-} */
-
-/* .tms-content-inner {
-  height: 100%;
-  display: block;
-  float: none;
-} */
-
-/* .tms-slide > video + img,
-.tms-slide.tms-forcefit > img,
-.tms-fullscreen .tms-slide > img {
-  max-width: none;
-  max-height: none;
-  float: none;
-  position: absolute;
-} */
-
-/* .slideshow.slideshow-standard {
-}
-
-.unite-screenheight-100 .tms-content-inner {
-  padding-top: 20vw;
-}
-.unite-screenheight-50 .tms-content-inner {
-  padding-top: 15vw;
-} */
-
-/* Unready
-.tms-caption {
-  width: auto;
-  display: inline-block !important;
-  background-image: url(blank.gif);
-  opacity: 0;
-  position: absolute;
-  z-index: 2;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  perspective: 1000;
-} */
-
 .flash_container {
   position: absolute !important;
   left: 1vw;
@@ -661,15 +605,41 @@ header .header-inner {
   ul {
     text-align: center;
     padding: 0;
-    text-align: center;
+    margin: 0;
+
+    &.alert-success {
+      border-color: var(--bs-success);
+      background-color: var(--bs-success);
+    }
+    &.alert-warning {
+      border-color: var(--bs-warning);
+      background-color: var(--bs-warning);
+    }
+    &.alert-danger {
+      border-color: var(--bs-danger);
+      background-color: var(--bs-danger);
+    }
+    &.alert-info {
+      border-color: var(--bs-info);
+      background-color: var(--bs-info);
+    }
+    border: 1vmin solid;
+    border-radius: 1vmax;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    &.sub-list {
+      border: 0;
+    }
+
     li {
-      padding: 1vw;
+      padding: 1vw 1vw 0 1vw;
       color: var(--bs-alert-color);
-      background-color: var(--bs-alert-bg);
-      border: 1px solid var(--bs-alert-border-color);
       text-transform: uppercase;
-      a {
-        color: var(--bs-alert-link-color);
+
+      i {
+        font-size: 10vmin;
+        color: yellow;
+        /* background-color: yellow; */
       }
     }
   }
@@ -882,57 +852,6 @@ header {
   transition-property: height, transform, visibility;
 }
 
-/* header .header-inner,
-header .header-inner .navigation,
-header .header-inner .navigation > ul > li,
-header .header-inner .navigation > ul > li > a,
-header .dropdown > .nav-icon,
-header .navigation-show a {
-  transition-property: height, background, border, padding, margin, font-size,
-    color, line-height, opacity;
-}
-header .logo,
-header .logo span {
-  transition-property: width, height, background, border, padding, margin,
-    font-size, line-height, opacity;
-}
-header,
-header .header-inner,
-header .header-inner .navigation,
-header .header-inner .navigation > ul > li,
-header .header-inner .navigation > ul > li > a,
-header .dropdown > .nav-icon,
-header .navigation-show a,
-header .logo,
-header .logo span,
-header .logo a {
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
-}
-.header-hide .header-inner {
-  opacity: 0;
-}
-.header-positioned .header-inner {
-  -webkit-transform: translate3d(0, -10rem, 0);
-  transform: translate3d(0, -10rem, 0);
-}
-.header-in .header-inner,
-.header-out .header-inner {
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
-}
-.header-in .header-inner {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-.header-out .header-inner {
-  -webkit-transform: translate3d(0, -10rem, 0);
-  transform: translate3d(0, -10rem, 0);
-}
-*/
-
 .no-transition {
   transition: none !important;
 }
@@ -1048,7 +967,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #000;
+  color: inherit;
 }
 
 .header ul > li > a:hover {
