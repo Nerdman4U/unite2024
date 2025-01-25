@@ -26,6 +26,15 @@ msgstr "我们必须抓紧行动。我们没有几个世纪的时间，可能只
 msgid "%{count} votes"
 msgstr "%{count} 投票"
 
+msgid "...and by doing that we create..."
+msgstr ""
+
+msgid "...just by living our lives... "
+msgstr ""
+
+msgid "...we destroy homes of others..."
+msgstr ""
+
 msgid "About Us"
 msgstr "关于我们"
 
@@ -34,6 +43,12 @@ msgstr "添加评论"
 
 msgid "Air pollution is a global Challenge!"
 msgstr "空气污染是全球性的挑战"
+
+msgid "All people in the universe reside on this planet."
+msgstr ""
+
+msgid "Also, all animals and plants live here."
+msgstr ""
 
 msgid "Anonymous?"
 msgstr ""
@@ -44,7 +59,16 @@ msgstr ""
 msgid "Arabic"
 msgstr "阿拉伯语"
 
-msgid "At duckboard"
+msgid "Around us are 400 billion solar systems."
+msgstr ""
+
+msgid "At Duckboard"
+msgstr ""
+
+msgid "At this site we collect signatures for the initiative sent to the United Nations."
+msgstr ""
+
+msgid "Autumn shore"
 msgstr ""
 
 msgid "Background"
@@ -83,6 +107,9 @@ msgstr ""
 msgid "Confirm email sent"
 msgstr ""
 
+msgid "Constellations"
+msgstr ""
+
 msgid "Contact our Campaign Assistant"
 msgstr ""
 
@@ -96,10 +123,16 @@ msgstr "国家"
 msgid "Created at"
 msgstr "创建于"
 
+msgid "Desert plants"
+msgstr ""
+
 msgid "Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!"
 msgstr ""
 
 msgid "Download"
+msgstr ""
+
+msgid "Earth"
 msgstr ""
 
 msgid "Email"
@@ -148,16 +181,17 @@ msgstr "芬兰语"
 msgid "First Aid"
 msgstr "紧急救助"
 
-#, fuzzy
-msgid "First Aid 1"
-msgstr "紧急救助"
+msgid "For optimal experience please use F11 to allow full screen mode :bi-emoji-smile-fill:."
+msgstr ""
 
-#, fuzzy
-msgid "First Aid 2"
-msgstr "紧急救助"
+msgid "Forest"
+msgstr ""
 
 msgid "French"
 msgstr "法语"
+
+msgid "Fullscreen"
+msgstr ""
 
 msgid "German"
 msgstr ""
@@ -190,8 +224,11 @@ msgstr ""
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr "在接下来的数十年中，唯有采取强力有效的应对措施才能中断这一问题的恶化过程。我们在此提议：全球军力开支应得到重新分配，转而用于以更集中的方式解决社会问题及环境恶化。"
 
-msgid "In these pages we collect support for a global initiative."
-msgstr "在该网站内我们收集针对该全球行动的支持"
+msgid "Increase deforestation..."
+msgstr ""
+
+msgid "Initiative"
+msgstr ""
 
 msgid "Initiative presented to the United Nations:"
 msgstr "提交给联合国的倡议"
@@ -214,11 +251,15 @@ msgstr ""
 msgid "Language"
 msgstr "语言"
 
-msgid "List of votes"
-msgstr ""
+#, fuzzy
+msgid "Leave a comment"
+msgstr "评论"
 
 msgid "Listing comments"
 msgstr "显示评论"
+
+msgid "Login"
+msgstr ""
 
 msgid "Logout"
 msgstr ""
@@ -235,10 +276,28 @@ msgstr ""
 msgid "Menu"
 msgstr "菜单"
 
+msgid "Microbes live here too :)"
+msgstr ""
+
+msgid "Milky way"
+msgstr ""
+
 msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
 msgstr "成千上万吨的塑料垃圾污染了海洋和海岸。"
 
+msgid "Minimize"
+msgstr ""
+
+msgid "Mining"
+msgstr ""
+
+msgid "Monkey mother and baby"
+msgstr ""
+
 msgid "More material"
+msgstr ""
+
+msgid "More than a week."
 msgstr ""
 
 msgid "More work must be done"
@@ -272,6 +331,9 @@ msgstr "军事力量在全球的新角色"
 msgid "New vote"
 msgstr ""
 
+msgid "Next"
+msgstr ""
+
 msgid "On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs."
 msgstr "从政治方面看，军队可以用于救助突发的自然灾害，这在全世界都是普遍接受的惯例。因此，我们把这一惯例延伸也是符合逻辑的——理想情况下，在与本土非政府组织合作的基础上，把军队资源用于应对发展更缓慢，但规模更巨大，影响更深远的自然灾害。"
 
@@ -281,10 +343,25 @@ msgstr ""
 msgid "Our campaign promotes a petition sent to the United Nations to deploy the world’s armies into environmental work to protect the diversity of the global ecosystem and win the battle against climate change."
 msgstr ""
 
+msgid "Our home is the only planet with life."
+msgstr ""
+
+msgid "Overpopulation"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
 msgid "Please check your email"
 msgstr ""
 
 msgid "Pollution"
+msgstr ""
+
+msgid "Pollution..."
 msgstr ""
 
 msgid "Positive initiations will be published."
@@ -292,6 +369,9 @@ msgstr "我们将会公布积极的举措"
 
 msgid "Present the task with max. 1000 characters."
 msgstr "提议在1000字符以内"
+
+msgid "Previous"
+msgstr ""
 
 msgid "Radical actions are urgently needed to save our planet."
 msgstr "需要采取积极的行动拯救我们的星球"
@@ -301,6 +381,9 @@ msgstr ""
 
 msgid "Read more"
 msgstr "拯救我们共有的世界"
+
+msgid "Read the Initiative"
+msgstr ""
 
 #, fuzzy
 msgid "Recent Votes"
@@ -343,12 +426,21 @@ msgstr "让我们行动起来"
 msgid "Slideshow image"
 msgstr ""
 
+msgid "Snowy landscape from Finland"
+msgstr ""
+
+msgid "Snowy tree"
+msgstr ""
+
 #, fuzzy
 msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
 msgstr "芬兰语"
 
 msgid "Spanish"
 msgstr "西班牙语"
+
+msgid "Stars on the horizon"
+msgstr ""
 
 msgid "State of the global environment"
 msgstr "全球环境状况"
@@ -358,6 +450,9 @@ msgstr "这类恶性问题正加快恶化，并且往往产生相互作用、彼
 
 msgid "Suggest a new task for the Action of the United Armies not presented here."
 msgstr "建议这里还没有提到的新任务。"
+
+msgid "Sunrise on the sea"
+msgstr ""
 
 msgid "Support"
 msgstr "支持"
@@ -380,6 +475,15 @@ msgstr "谢谢你和你的支持！你是第 %{name}"
 msgid "Thank you in any case for signing the petition,"
 msgstr ""
 
+msgid "The Earth: third planet from the sun."
+msgstr ""
+
+msgid "The Milky Way - OUR Galaxy."
+msgstr ""
+
+msgid "The Planet Earth, our home."
+msgstr ""
+
 msgid "The Suggested task must benefit the whole world."
 msgstr "你的建议必须对全世界都有益处"
 
@@ -392,6 +496,9 @@ msgstr "军队必须保证所有地方的人都有足够的生存所需要的水
 msgid "The United Armies must protect the areas reserved for nature."
 msgstr "军队要保护那些自然景区。"
 
+msgid "The Universe."
+msgstr ""
+
 msgid "The activities of the United Armies must be controlled by a common, international organ."
 msgstr "必须有有一个共同的全球性的组织来控制联合军队的行动。"
 
@@ -400,6 +507,15 @@ msgstr "这个活动关注的是全球环境从根本上的恶化。越来越快
 
 msgid "The resources and capacity of the United Armies must be directed to reforestation of the deserts."
 msgstr "军队的资源和能力要被定向在使沙漠森林化方面。"
+
+msgid "There are billions of galaxies in the Universe."
+msgstr ""
+
+msgid "There are huge"
+msgstr ""
+
+msgid "There are more humans than ever before."
+msgstr ""
 
 msgid "There is a hidden potential at hand: the national armies."
 msgstr "国家的军队在这项行动中有着巨大的潜力"
@@ -410,9 +526,15 @@ msgstr "发生了一个错误\""
 msgid "There was an error with human verifying"
 msgstr "身份认证发生了错误\""
 
+msgid "This is our home planet."
+msgstr ""
+
 #, fuzzy
 msgid "This is your private vote (%s)"
 msgstr "这是您的私人投票"
+
+msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
+msgstr ""
 
 msgid "To Our Common World"
 msgstr "为了我们共有的世界"
@@ -439,6 +561,15 @@ msgstr "题目"
 msgid "Total global spending on armaments is estimated at $1500 billion annually; such spending can be put into perspective by setting it alongside the estimated cost of the afforestation of the entire Sahara Desert, which would amount to about one-sixth of annual global armaments spending. This example neatly illustrates the extent of the potential needed for action in this matter, should the political will be found."
 msgstr "每年全球的军力开支预计为1.5万亿美元。透视这笔开支，与之相比，为整个撒哈拉沙漠植树造林的预算成本仅占全球军力开支的六分之一。上述例证很好阐释了一旦相关政治问题得以解决，在这一问题上采取行动将有巨大的发展潜力。"
 
+msgid "Trash, plastics"
+msgstr ""
+
+msgid "Trash..."
+msgstr ""
+
+msgid "Trees"
+msgstr ""
+
 msgid "Type your email used while voting. Link to your private vote will be sent to your mailbox."
 msgstr ""
 
@@ -457,17 +588,44 @@ msgstr ""
 msgid "View anonymous comments given by previous voters."
 msgstr ""
 
+msgid "Vote"
+msgstr ""
+
+msgid "Vote for the initiative presented on this site."
+msgstr ""
+
+msgid "Warm climate and oceans..."
+msgstr ""
+
 msgid "Water is the Mother of Life – we all need it!"
 msgstr "水是生命之源—我们都需要它。"
+
+msgid "We all live here."
+msgstr ""
+
+msgid "We are destroying it."
+msgstr ""
+
+msgid "We are misusing our home planet..."
+msgstr ""
+
+msgid "We can change things."
+msgstr ""
 
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr "我们衷心企盼联合国能够率先开展一项全球行动以实施上述提议，并重新调遣全世界的武装部队，使其尽快参与至此项新使命中。该项行动能够切实有效地促进世界和平。"
 
-msgid "We have to give the armies a new, positive task."
-msgstr "我们有必要赋予国家军队新的，积极的任务."
+msgid "We fix."
+msgstr ""
+
+msgid "We have grown"
+msgstr ""
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
 msgstr "我们介绍这项活动是为支持U.B. LIndström 和 Eero Paloheimo两位教授提交给联合国秘书处的一项倡议。"
+
+msgid "We made them."
+msgstr ""
 
 msgid "We must defend Life's Richness on our Planet!"
 msgstr "我们必须保护地球上丰富多彩的生命。"
@@ -481,17 +639,30 @@ msgstr "我们建议联合国在此项计划中进行全球性指挥，并尽快
 msgid "We the undersigned addressees turn to you because of our concern at the state of the global environment. In many parts of the world the deterioration of the environment can be linked directly to social problems among the local population."
 msgstr "我们出于对全球环境的殷切关心，特此向您寻求帮助。在全世界许多地区，环境恶化都与当地人口面临的社会问题息息相关。"
 
+msgid "Why vote?"
+msgstr ""
+
 msgid "Wildlife Park Wolf"
+msgstr ""
+
+msgid "Woodland forest moss sunset by TheOtherKev"
 msgstr ""
 
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "你想要一份你自己语言的倡议书----请不要犹豫，与我们联系！"
+
+#, fuzzy
+msgid "Yesterday"
+msgstr "天"
 
 msgid "You can also add Your own %s!"
 msgstr ""
 
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "加入后你也可以加入讨论。你会收到一封有关这个活动的邮件。"
+
+msgid "You can help."
+msgstr ""
 
 msgid "You can invite your friends, colleagues and family to sign the petition by using a form below. You can also share this vote in social media."
 msgstr ""
@@ -557,15 +728,21 @@ msgstr ""
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr ""
 
+msgid "a List of votes"
+msgstr ""
+
+msgid "beyond sustainable limits!"
+msgstr ""
+
 #, fuzzy
 msgid "comment"
 msgstr "评论"
 
-msgid "day"
-msgstr "天"
-
 msgid "days"
 msgstr "天"
+
+msgid "environmental"
+msgstr ""
 
 msgid "hour"
 msgstr ""
@@ -612,6 +789,9 @@ msgstr "分"
 
 msgid "minutes"
 msgstr "分"
+
+msgid "problems on our home planet."
+msgstr ""
 
 msgid "professor"
 msgstr "教授"
