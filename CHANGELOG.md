@@ -1,3 +1,15 @@
+## 2.0.0 (2025-01-25)
+
+### Feat
+
+- **README.md**: Up to date readme file.
+- **application.html.erb**: Using application cache
+- **lib/string_extensions.rb**: Added emotify method to String and started to use it at flash messages
+
+### Fix
+
+- Slideshow container max-height cannot be full screen if instrinct height is larger than full screen
+
 ## 1.70.0 (2025-01-24)
 
 ### Feat
