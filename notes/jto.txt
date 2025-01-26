@@ -1,58 +1,84 @@
-Joni Töyrylä
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+               SAVE THE PLANET - UNITE THE ARMIES WEBSITE
+                            DEVELOPER DIARY
+
+                              Joni Töyrylä
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 Table of Contents
 ─────────────────
 
 1. Unite The Armies
-.. 1. Muistiinpanoja
-.. 2. Muutoksia
-.. 3. Päiväkirja
+.. 1. Päiväkirja
 ..... 1. clock
-..... 2. 6.1.2025
-..... 3. 5.1.2025
-..... 4. 4.1.2025
-..... 5. 3.1.2025
-..... 6. 2.1.2025
-..... 7. 1.1.2025
-..... 8. 31.12.2024
-..... 9. 30.12.2024
-..... 10. 29.12.2024
-..... 11. 28.12.2024
-..... 12. 27.12.2024
-..... 13. 26.12.2024
-..... 14. 25.12.2024
-..... 15. 24.12.2024
-..... 16. 23.12.2024
-..... 17. 21.12.2024
-..... 18. 19.12.2024
-..... 19. 18.12.2024
-..... 20. 17.12.2024
-..... 21. 16.12.2024
-..... 22. 14.12.2024
-..... 23. 13.12.2024
-..... 24. 12.12.2024
-..... 25. 11.12.2024
-..... 26. 10.12.2024
-..... 27. 9.12.2024
-..... 28. 7.12.2024
-..... 29. 6.12.2024
-..... 30. 3.12.2024
-..... 31. 2.12.2024
-..... 32. 29.11.2024
-..... 33. 28.11.2024
-..... 34. 27.11.2024
-..... 35. 26.11.2024
-..... 36. 22.11.2024
-..... 37. 21.11.2024
-..... 38. 20.11.2024
-..... 39. 19.11.2024
-..... 40. 18.11.2024
-..... 41. 15.11.2024
-..... 42. 14.11.2024
-..... 43. 13.11.2024
-..... 44. 12.11.2024
-..... 45. 11.11.2024
+..... 2. 26.1
+..... 3. 25.1
+..... 4. 24.1
+..... 5. 23.1
+..... 6. 22.1
+..... 7. 21.1
+..... 8. 20.1
+..... 9. 18.1
+..... 10. 17.1
+..... 11. 15.1
+..... 12. 14.1.2025
+..... 13. 13.1.2025
+..... 14. 12.1.2025
+..... 15. 11.1.2025
+..... 16. 10.1.2025
+..... 17. 9.1.2025
+..... 18. 8.1.2025
+..... 19. 7.1.2025
+..... 20. 6.1.2025
+..... 21. 5.1.2025
+..... 22. 4.1.2025
+..... 23. 3.1.2025
+..... 24. 2.1.2025
+..... 25. 1.1.2025
+..... 26. 31.12.2024
+..... 27. 30.12.2024
+..... 28. 29.12.2024
+..... 29. 28.12.2024
+..... 30. 27.12.2024
+..... 31. 26.12.2024
+..... 32. 25.12.2024
+..... 33. 24.12.2024
+..... 34. 23.12.2024
+..... 35. 21.12.2024
+..... 36. 19.12.2024
+..... 37. 18.12.2024
+..... 38. 17.12.2024
+..... 39. 16.12.2024
+..... 40. 14.12.2024
+..... 41. 13.12.2024
+..... 42. 12.12.2024
+..... 43. 11.12.2024
+..... 44. 10.12.2024
+..... 45. 9.12.2024
+..... 46. 7.12.2024
+..... 47. 6.12.2024
+..... 48. 3.12.2024
+..... 49. 2.12.2024
+..... 50. 29.11.2024
+..... 51. 28.11.2024
+..... 52. 27.11.2024
+..... 53. 26.11.2024
+..... 54. 22.11.2024
+..... 55. 21.11.2024
+..... 56. 20.11.2024
+..... 57. 19.11.2024
+..... 58. 18.11.2024
+..... 59. 15.11.2024
+..... 60. 14.11.2024
+..... 61. 13.11.2024
+..... 62. 12.11.2024
+..... 63. 11.11.2024
+.. 2. Muistiinpanoja
+.. 3. Muutoksia
+.. 4. Basics
+..... 1. scripts
+.. 5. Kuvat
 
 
 1 Unite The Armies
@@ -60,129 +86,417 @@ Table of Contents
 
   Päivitetään projekti ruby 3.3.6 ja rails 8.0 versioille.
 
+  This is a personal diary of updating Save the Planet - Unite the
+  Armies- project from v1 to v2. Its just for fun for those who are
+  interested.
 
-1.1 Muistiinpanoja
-──────────────────
-
-  <https://guides.rubyonrails.org/debugging_rails_applications.html>
-  <https://rubyonrails.org/2024/9/27/rails-8-beta1-no-paas-required>
-
-
-1.2 Muutoksia
-─────────────
-
-  • ☐ votesControllerTest kuinkas header accept-language asetetaan että
-    voi testata meneekö oikeaan lokaleen
-  • ☐ logger
-    • kuinkas saa lokista virheet kätevästi => pitäisi testata
-      development modessa log_leveliä joka tulostaa vain errorit
-      tms. eli että ei tule kauheaa kaatoa vaan vain muutama rivi…
-  • ☐ javascript
-    • ☐ turha pois, konvertoidaan uudeksi ecmaksi
-    • ☐ unitethearmies.js tarvitaanko muita kuin loadVotes?
-  • ☐ vimeo siirretään videot palvelimelle…
-  • ☐ vote belongs_to vote :counter_cache vote_test.rb:124
-  • ☐ ./log mitenkäs rotaatio
-  • ☐ Cache ja Queue config.cache_store on kommentoitu koska en saa
-    luotua taulua schemasta, production modessa hajoaa.  => schema on
-    database dump eikä siitä voi luoda taulua.
-  • ☐ test
-    • ☐ system
-      • ☐ create vote
-      • ☐ flash messageista
-      • ☐ show vote
-      • ☐ invite äänestä, olet äänessä, käytä ääntä (create, show,
-        invite)
-    • ☐ vote_test:secret_confirm_hash minkä takia vote objektiin
-      (fixture) tallennettu tieto ei löydy ORM:in metodeita
-      käyttäen? eli fixture on vai ei ole synkronoitu tietokannan
-      kanssa?
-    • ☐ admin upload upload fixture on näemmä muuttunut
-  • ☐ UaSetting
-    • ☐ nimeäminen varmaan on jokin paremmalta kuulostava nimi
-      olemassa, setting on ainakin väärin, pitäisi vähintään olla
-      "settings".
-      • pitää olla kannassa koska lähetettyjen mailien datetime
-        täytyy aina saada talteen.
-      • miksi ei voisi olla vain "Settings", voi tulla namespace
-        ongelemia (?)
+  Its written in finglish and Codeium is helping - Com can read and
+  write finglish.
 
 
-1.3 Päiväkirja
+1.1 Päiväkirja
 ──────────────
 
-1.3.1 clock
+1.1.1 clock
 ╌╌╌╌╌╌╌╌╌╌╌
 
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Headline          Time                        
-  ───────────────────────────────────────────────
-   *Total time*      *6d 15:46*                  
-  ───────────────────────────────────────────────
-   Unite The Armies  6d 15:46                    
-   Päiväkirja                  6d 15:46        
-     27.12.2024                           8:08 
-     26.12.2024                           3:57 
-     25.12.2024                           7:31 
-     24.12.2024                          21:56 
-     23.12.2024                           5:59 
-     21.12.2024                           6:09 
-     19.12.2024                           4:34 
-     18.12.2024                           2:45 
-     17.12.2024                           2:21 
-     16.12.2024                           3:49 
-     14.12.2024                           5:33 
-     13.12.2024                           1:39 
-     12.12.2024                           2:50 
-     11.12.2024                           3:13 
-     10.12.2024                           1:39 
-     9.12.2024                            4:13 
-     7.12.2024                            3:34 
-     6.12.2024                            0:14 
-     3.12.2024                            3:12 
-     2.12.2024                            1:28 
-     29.11.2024                           4:58 
-     28.11.2024                           3:52 
-     27.11.2024                           4:59 
-     26.11.2024                           4:56 
-     22.11.2024                           3:39 
-     21.11.2024                           4:50 
-     20.11.2024                           4:00 
-     19.11.2024                           7:06 
-     18.11.2024                           4:25 
-     15.11.2024                           4:52 
-     14.11.2024                           2:54 
-     13.11.2024                           6:00 
-     12.11.2024                           5:06 
-     11.11.2024                           3:25 
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Table 1: Clock summary at [2024-12-27 Fri 18:26]
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Headline          Time                          
+  ─────────────────────────────────────────────────
+   *Total time*      *11d 18:12*                   
+  ─────────────────────────────────────────────────
+   Unite The Armies  11d 18:12                     
+   Päiväkirja                   11d 18:12        
+     26.1                                   1:41 
+     25.1                                   4:26 
+     24.1                                   7:36 
+     23.1                                   4:22 
+     22.1                                   6:16 
+     21.1                                   4:36 
+     20.1                                   4:10 
+     18.1                                   3:55 
+     17.1                                   1:38 
+     15.1                                   2:25 
+     14.1.2025                              5:04 
+     13.1.2025                              6:55 
+     12.1.2025                              5:24 
+     11.1.2025                              3:10 
+     10.1.2025                              4:07 
+     9.1.2025                               3:27 
+     8.1.2025                               4:23 
+     7.1.2025                               2:35 
+     6.1.2025                               5:18 
+     5.1.2025                               3:25 
+     4.1.2025                               4:52 
+     3.1.2025                               2:42 
+     2.1.2025                               2:01 
+     1.1.2025                               4:28 
+     31.12.2024                             7:00 
+     30.12.2024                             6:01 
+     29.12.2024                             6:32 
+     28.12.2024                             3:57 
+     27.12.2024                             8:08 
+     26.12.2024                             3:57 
+     25.12.2024                             7:31 
+     24.12.2024                            21:56 
+     23.12.2024                             5:59 
+     21.12.2024                             6:09 
+     19.12.2024                             4:34 
+     18.12.2024                             2:45 
+     17.12.2024                             2:21 
+     16.12.2024                             3:49 
+     14.12.2024                             5:33 
+     13.12.2024                             1:39 
+     12.12.2024                             2:50 
+     11.12.2024                             3:13 
+     10.12.2024                             1:39 
+     9.12.2024                              4:13 
+     7.12.2024                              3:34 
+     6.12.2024                              0:14 
+     3.12.2024                              3:12 
+     2.12.2024                              1:28 
+     29.11.2024                             4:58 
+     28.11.2024                             3:52 
+     27.11.2024                             4:59 
+     26.11.2024                             4:56 
+     22.11.2024                             3:39 
+     21.11.2024                             4:50 
+     20.11.2024                             4:00 
+     19.11.2024                             7:06 
+     18.11.2024                             4:25 
+     15.11.2024                             4:52 
+     14.11.2024                             2:54 
+     13.11.2024                             6:00 
+     12.11.2024                             5:06 
+     11.11.2024                             3:25 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Table 1: Clock summary at [2025-01-26 Sun 09:51]
 
 
-1.3.2 6.1.2025
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.2 26.1
+╌╌╌╌╌╌╌╌╌╌
 
-  • ☐ testit
-    • ☐ äänisivu
-    • ☐ uloskirjautuminen
-    • ☐ kommentointi
+  • ☑ facebook
+    • ☑ kuva
+  • ☑ flash why_vote:ssa vain jos selain
+    <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent>
+  • ☐ org-mode
+    • ☐ export settings
+  • ☐ github
+    • ☐ joku default workflow
+  • ☐ mailer
+    • ☐ layout
+
+
+1.1.3 25.1
+╌╌╌╌╌╌╌╌╌╌
+
+  vanha toimiikin: unite.the.armies@gmail.com
+
+  uusikin on: unitethearmiessavetheplanet@gmail.com ??  => tämän tein
+  kun aikaisempaan en saanut yhteyttä.
+
+  • ☑ cache, offline
+    <https://www.geeksforgeeks.org/what-is-the-application-cache-and-why-it-is-used-in-html5/>
+  • ☑ facebook tsekkaus uusi url, gmail on siis
+    unite.the.armies@gmail.com.
+  • ☑ string
+    • ☑ emotify
+    • ☑ testi
+    • ☑ käyttöön
+  • ☑ flash
+    • ☑ ikoni
+    • ☑ fullscreen
+    • ☑ css
+    • ☑ sessioon
+  • ☑ readme
+  • ☐ discord
+
+  .header-in .header-inner, .header-out .header-inner {
+  -webkit-transition-property: -webkit-transform; transition-property:
+  transform; -webkit-transition-duration: 500ms; transition-duration:
+  500ms; } .header-in .header-inner { -webkit-transform: translate3d(0,
+  0, 0); transform: translate3d(0, 0, 0); } .header-out .header-inner {
+  -webkit-transform: translate3d(0, -10rem, 0); transform:
+  translate3d(0, -10rem, 0); }
+
+  .tms-slide > video + img perspective: 1000;
+
+
+1.1.4 24.1
+╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ dia
+    • ☑ css luokat joissain dioissa musta fontti.
+    • ☑ css
+      • ☑ juttuja
+      • ☑ high reso kuvat ei veny vielä
+    • ☑ controls calibrate on resize
+    • ☑ click onkohan nappulassa molemmat eventit nyt => automaattinen
+      dekorointi oli jäänyt.
+    • ☑ fullscreen footer toggle
+    • ☑ next/prev hide if mouse not moving
+  • ☑ ostokset
+    • ☑ ovh update
+    • ☑ google drive tarjous
+
+
+1.1.5 23.1
+╌╌╌╌╌╌╌╌╌╌
+
+  • ☐ votes
+    • ☐ testiäänet piiloon
+  • ☐ mailit
+    • ☐ layout
+  • ☒ dia
+    • ☐ controls ei voi tietenkään headerin perusteella laskea…
+      welcome karuselli on keskellä layoutia.  => relatiivisesti
+      kuvan yläreunaan => pois näkyvistä jos viewport katoaa
+    • ☑ svg => menee huonosti jos width/height 100% mutta täytyy olla
+      muiden kuvien takia että isoilla resoluutioilla näkyy oikein.
+      => fit-content
+    • ☑ fullscreen (toggle header)
+      • header
+      • content margin
+      • playandpause top
+    • ☑ overpopulation kuva
+    • ☑ next/prev napit tainneet kadota rysäkässä.
+    • ☐ smilie flash bs ikoni voisi olla string laajennus "joo
+      :heart-fill: jep".emotify = > "joo <span class="bi
+      bi-heart-fill"></span> jep"
+
+
+1.1.6 22.1
+╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ carusel
+    • ☑ jatko transitiot
+    • ☑ pause nappi
+    • ☑ maapallon kuvia
+    • ☑ why vote dioja
+
+
+1.1.7 21.1
+╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ test
+    • ☑ mobile r.19 johtuuko transitiosta vai mistä, joskus ei löydy
+      napua.
+  • ☐ deploy laitetaanpas näkyviin capybaran avulla ja tutkitaan sitten
+    dockeria… deployment vasta kun on muistia.  => odotellaan
+    vastausta.
+  • ☐ docker kokeillaan saada docker hub toimimaan.  $ docker tag
+    local-image:tagname new-repo:tagname $ docker push
+    new-repo:tagname
+  • ☑ SEO
+    • ☑ pikaluku site: => löytyy testi indeksistä.  koodi on
+      aikalailla toiveiden mukaista.  sitemap voisi olla mutta
+      sekään ei ole tärkeä.
+  • ☑ pm2 pm2-logrotate moduli, tarkista toimiiko ~/.pm2/logs
+  • ☐ rails
+    <https://guides.rubyonrails.org/getting_started.html#extracting-a-concern>
+
+
+1.1.8 20.1
+╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ mobiili
+    • ☑ menu
+  • ☐ vscode
+    • ☐ getting started with docker
+
+
+1.1.9 18.1
+╌╌╌╌╌╌╌╌╌╌
+
+  • ☐ maapallo
+    • ☐ kuvia eripuolilta.
+
+  • ☑ flash
+    • ☑ padding after marker
+  • ☑ kuvat
+    • ☑ kuva pitäisi näyttää muuttamatta mittasuhteita, esim. vh-30.
+    • ☑ with media
+  • ☑ header toimii erilaisilla resoluutioilla, edelleen under
+    construction mobiilissa.
+  • ☑ wanha teema pois
+  • ☑ logo sijainti voisi olla keskellä, voisiko maapalloa lisätä logoon
+    takaisin?
+
+
+1.1.10 17.1
+╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ logger ensimmäistä lokiriviä seuraavat tulostetaan listaksi?
+  • ☑ timer diaesitystä varten pitäisi olla vapaasti valittavissa
+    slideshow timer.
+
+
+1.1.11 15.1
+╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ theme pois siirrä esim. vendor/stylesheets => ensin mobile
+    • ☑ theme.css
+    • ☑ theme.core.css
+  • ☑ bootstrap
+    • ikonit lokaalisti.
+  • ☒ slider
+    • ☑ äänestysnappi
+    • ☐ slide kuvan alareunaan kuvaajan nimi, linkki => voisi olla
+      info- nappi himmeä, josta saisi myös suurennettua ja
+      pienennettyä kuvaa ja piiloitettua tekstin.
+    • ☐ click pienentyessä headerin sijainti => koko pienennys/toggle
+      pitäisi uudelleen miettiä, siis miksi, tarkoitushan oli
+      poistaa tekstit kuvan edestä, pienennykseen tai toggleen pitää
+      olla pikkulinkki jos haluaa sen.  => klikitys ei toimi
+  • ☒ karuselli
+    • ☑ kuvat vanhat ja uudet
+    • ☐ transitiot kun kuva vaihtuu…
+  • ☑ otsikot
+    • ☑ varjostukset
+  • ☐ mobile
+    • ☐ ikoni dialogin avaamiseen
+    • ☐ languages- linkki
+
+
+1.1.12 14.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ slider
+    • ☑ karusellihelper
+  • ☑ imageMagic kuvakonversiot $ uniteKuva path/to/kuva $ => kuvat
+    hakemistoon $ foo.jpg => foo-wXXX.jpg, …
+
+  • ☑ Dekoraattorit js sliden dekoraattorit on ul elementissä, eli
+    kaikki slidet tulee samoiksi, pitäisi tietysti olla slide
+    kohtaiset slide dekoraattorit… ja slideshow dekoraattori erikseen.
+
+
+1.1.13 13.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ slider
+    • ☑ muut sivut
+    • ☑ paremmat kuvat
+
+  640 960 1280×720 (default) 1920×1080, 16x9 standardi 2048 3072 4096
+
+
+1.1.14 12.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • teksti lyhyt teksti "Tällä sivulla kerätään ääniä aloitteeseen…"
+    • ☑ high density study
+    • ☑ resolution alternatives … with 240 ppi
+  • ☑ javascript
+    • ☑ säätö
+    • ☑ napit
+    • ☑ slide
+      • ☑ kapea slide ja otsikot esim. materiaalisivu
+
+
+1.1.15 11.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ responsive images
+    <https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images>
+
+  Lets comment with TomDoc, <http://tomdoc.org/>
+
+  • ☑ javascript
+    • ☑ slideshow decorators
+    • ☑ karuselli
+      • ☑ perus
+      • ☑ intervalli tämä ei lähdekkään suoraan => lähti kuitenkin.
+
+
+1.1.16 10.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  karuselli taitaa jäädä huomiselle.
+
+  • ☑ kuvat
+    • ☑ retina => pikseleitä vaan lisää vanhasta löytyy jotain.
+      picture/source:
+      <https://html.spec.whatwg.org/multipage/embedded-content.html#attr-source-srcset>
+  • ☑ javascript
+    • ☑ feature- kuvat
+    • ☑ slide toimimaan
+    • ☑ slide header transitio:
+      data-animate-in="opacity:0;scale:1.5px;duration:600ms;easing:easeFastSlow;"
+      data-no-scale
+      data-animate-in="opacity:0;transY:50px;duration:600ms;delay:300ms;easing:easeFastSlow;"
+      data-no-scale
+
+
+1.1.17 9.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  $(window).height()
+
+  • ☒ javascript
+    • ☑ tutkitaan slideshowta => active slide css luokka ei riitä
+      sliden toimintaan, muutoin nyt toimii alustavasti.
+    • ☐ hover ikonit
+  • ☐ icons
+    • ☐ viewport meta
+
+
+1.1.18 8.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  >> rails fix_once:anonymous_and_confirmed_at rails
+  >> fix_once:languages_and_confirmed_at
+
+  • ☒ kommentit
+    • ☐ kommentin vahvistaminen
+      • eli siis admin tilasta
+    • ☑ näkyville comment/show/{slug} => show random comment at chosen
+      language at landing page.
+    • ☑ slug
+    • ☑ kielisyys kommentit voi jättää kaikilla käyttöliittymän
+      kielillä (koska esim. paljon suomenkielisiä kommentteja)
+  • ☐ vote
+    • ☐ ääneen kytketyt äänet?
+      • näkyville esim. linkitetyt emailit
+
+
+1.1.19 7.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☐ speed tsekkaus
+    <https://pagespeedchecklist.com/asynchronous-google-fonts>
+    • ☐ taustakuvat kommenttia lisätessä ja random kommentissa
+      • täytyy olla lokaalisti
+  • ☑ testit SitePrism toimii hienosti.
+    • ☑ äänisivu
+    • ☑ uloskirjautuminen
+    • ☑ kommentointi
+  • ☑ fontit tutkia pittee.
+    <https://developers.google.com/fonts/docs/getting_started>
+    <https://pagespeedchecklist.com/asynchronous-google-fonts>
+
+
+1.1.20 6.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • ☑ Language
+    • ☑ UNLanguage ja UILanguage ja testit
   • ☑ route
     • ☑ resource :token
     • ☑ route testit
 
 
-1.3.3 5.1.2025
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.21 5.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ SitePrism vähän selausta ja kirjautuminen
-  • ☐ rails
-    • ☐ status: bad_request => tyhjä sivu
-  • ☐ fontit tutkia pittee.
-    <https://developers.google.com/fonts/docs/getting_started>
+  • ☑ rails
+    • ☑ status: bad_request
 
 
-1.3.4 4.1.2025
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.22 4.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ javascript
     • ☑ header
@@ -195,8 +509,8 @@ Table of Contents
       • ☑ media query
 
 
-1.3.5 3.1.2025
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.23 3.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ julkaisuun
     • ☑ flash useita viestejä per tyyppi
@@ -211,16 +525,16 @@ Table of Contents
     • ☐ lokirotaatio
 
 
-1.3.6 2.1.2025
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.24 2.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ sass, flags-gem oukkidoukki, nyt täytyy tutkia mites sass lähtee
     toimintaan => ei onnistunut mutta sain generoitua tavallisen css
     tiedoston
 
 
-1.3.7 1.1.2025
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.25 1.1.2025
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Tehdäänpäs vielä hetki.
   • ☑ languages main branchiin ja kielenkäännökset googlella.
@@ -231,8 +545,8 @@ Table of Contents
   • ☑ tutkin Rails konfigurointia
 
 
-1.3.8 31.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.26 31.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   timber:r.694 timber:r.800
 
@@ -251,24 +565,21 @@ Table of Contents
       header ja feature-media height edelleen js:stä.
 
 
-1.3.9 30.12.2024
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+1.1.27 30.12.2024
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flags varmaan löytyy päivitetty kirjasto (recent votes)
 
   • ☒ comments#new
     • ☑ post
-    • ☒ pikkuvirheitä
+    • ☑ pikkuvirheitä
       • ☑ flash
-      • ☐ asemointi jos header teksti
-    • ☐ redirect, status virhe miksi comments.create redirect ei
-      toimi: redirect_to new_comment_path(locale: locale), status:
-      :unprocessable_entity mutta toimii jos status on ok.
+      • ☑ asemointi jos header teksti
   • ☑ font size
     • ☑ layout kuntoon
-  • ☒ flash
+  • ☑ flash
     • ☑ sulkeminen
-    • ☐ useat allekkain eri viestit, eri tyypit saman tyypin sisäkkäin
+    • ☑ useat allekkain eri viestit, eri tyypit saman tyypin sisäkkäin
       listassa.
   • ☑ vote#show
     • ☑ punainen sydän
@@ -277,7 +588,7 @@ Table of Contents
       ominaan.
 
 
-1.3.10 29.12.2024
+1.1.28 29.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ comment#new
@@ -310,10 +621,10 @@ Table of Contents
   testataan.
 
 
-1.3.11 28.12.2024
+1.1.29 28.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  • ☒ comment#new
+  • ☑ comment#new
     • ☑ värkkäys aloitetaanpa uudella idealla.
   • ☐ FastGetText
     • ☐ plural
@@ -321,7 +632,7 @@ Table of Contents
       onkohan monikot millä tavalla tällä hetkellä?
 
 
-1.3.12 27.12.2024
+1.1.30 27.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ footer pientä ulkoasusäätöä.
@@ -350,24 +661,24 @@ Table of Contents
       • ☑ header katoaa
       • ☑ alakerran napit limittyy
       • ☑ footer ei oikein näytä hyvältä
-  • ☐ test:system
-    • ☐ headerin koko ja käyttäytyminen täytyy siis tehdä testi joka
+  • ☑ test:system
+    • ☑ headerin koko ja käyttäytyminen täytyy siis tehdä testi joka
       testaa että header pysyy yhdellä rivillä, cuprite ehkä osaa
       testata eri resoluutioilla
-  • ☐ font joitain fontteja ladataan googlesta, täytyisi tietysti olla
-    lokaalisti..
-  • ☐ teema voisi olla ideaa myös alkaa siirtämään toimintoja uuteen
+  • ☑ font joitain fontteja ladataan googlesta, täytyisi tietysti olla
+    lokaalisti..  => asynkroninen lataus
+  • ☑ teema voisi olla ideaa myös alkaa siirtämään toimintoja uuteen
     teemaan
     esim. <https://www.elegantthemes.com/gallery/divi/?theme=Divi>
-    • vanha js pois
+    • vanha js pois => ei nyt kuitenkaan.
     • headerin ja login javascript täytyy tutkia ja kuitenkin ottaa
       uuteen teemaan…
     • samoin tms-slide ja ul käyttö, nuo javascriptit
-    • ☐ responsive marginals onko mahdollista? nyt on isoja tyhjiä
+    • ☑ responsive marginals onko mahdollista? nyt on isoja tyhjiä
       välejä ulkoasun takia, pitäisi tietysti skaalautua.
 
 
-1.3.13 26.12.2024
+1.1.31 26.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Autocomplete ctrl-K ja ctrl-. tai tabilla
@@ -396,7 +707,7 @@ Table of Contents
   • ☐ UaSetting täytyy muuttaa nimi, UniteSettings (?), AppSettings (?)
 
 
-1.3.14 25.12.2024
+1.1.32 25.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ vote
@@ -421,7 +732,7 @@ Table of Contents
     • ☑ token käytössä vote_id, käytetään kuitenkin md5 tokenia.
 
 
-1.3.15 24.12.2024
+1.1.33 24.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ votes#show
@@ -436,10 +747,11 @@ Table of Contents
   • ☐ testi
     • ☐ animaatio pitäisi olla testi joka varmistaa että
       esim. animaatio toimii yms.
-  • ☐ päätelaitteet pitäisi alkaa testaamaan myös erilaisilla…
+  • ☑ päätelaitteet pitäisi alkaa testaamaan myös erilaisilla…  =>
+    application ja mobile testaus on.
 
 
-1.3.16 23.12.2024
+1.1.34 23.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   seuraavaksi:
@@ -457,7 +769,7 @@ Table of Contents
     • ☑ send login link
 
 
-1.3.17 21.12.2024
+1.1.35 21.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ assets kauhea säätö
@@ -467,7 +779,7 @@ Table of Contents
     • ☑ maapallo
 
 
-1.3.18 19.12.2024
+1.1.36 19.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☐ varoituksia
@@ -475,10 +787,8 @@ Table of Contents
   • ☐ github pittää olla unitethearmies tms.
   • ☐ flash
     • ☐ automaattisesti katoava
-  • ☐ kommentit
-    • ☐ kommentin vahvistaminen
 
-  • ☑ mailer confirm url on väärin tuotannossa: testi.unitethearmies.org
+  • ☐ mailer confirm url on väärin tuotannossa: testi.unitethearmies.org
     pitäisi olla.  => tällä kokemuksella näyttää siltä että mailerin
     viewissä path kadottaa vhostin eli toimii kun confirm_url
     kutsutaan controllerissa ja osoite viedään parametrina mailerille.
@@ -491,34 +801,33 @@ Table of Contents
   • ☒ layout
     • ☐ sharebuttons saisiko fixed positiolla scrollaamaan sivussa?
     • ☑ section_block_pt jos header onkin kuvan alapuolella
-  • ☐ test
-    • ☐ VoteTest#test_should_have_votes_to_be_send_to_admins
+  • ☑ test
+    • ☑ VoteTest#test_should_have_votes_to_be_send_to_admins
       [test/models/vote_test.rb:149]: epäonnistuu randomisti
-  • ☐ ikonit nyt käytössä icomoon.  <https://icomoon.io/ultimate#free>
+  • ☑ ikonit nyt käytössä icomoon.  <https://icomoon.io/ultimate#free>
     <https://icomoon.io/docs#packs> voisi vaihtaa bootstrappiin… vai?
     <https://icons.getbootstrap.com/#install>
   • ☑ confirm emailissa confirm vote url on rikki (pitäisi olla
     testi.unitethearmies.org)
 
 
-1.3.19 18.12.2024
+1.1.37 18.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☒ votes
     • ☑ my vote- linkki
       • ☑ indexissä linkki
       • ☑ vie voteen jos sessiossa on avain
-    • ☒ show
+    • ☑ show
       • ☑ jos ei ole tokenia, täytyy näyttää formi
       • ☑ jos ei ole aktivoitu, täytyy ohjata waiting- actioniin.
-      • ☐ logout nappi joka tyhjentää session tarvittaessa.
-    • ☐ ääneen kytketyt äänet?
+      • ☑ logout nappi joka tyhjentää session tarvittaessa.
     • ☐ email
       • ☐ attachment lisää jokaiseen postaukseen maapallo
       • ☐ similar should have similar layout
 
 
-1.3.20 17.12.2024
+1.1.38 17.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ waiting
@@ -528,7 +837,7 @@ Table of Contents
       "4min 32sec"
 
 
-1.3.21 16.12.2024
+1.1.39 16.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ aikataulu
@@ -555,7 +864,7 @@ Table of Contents
     unite…  => mailer parametrit nykyään mailer.with(a:b,…).method
 
 
-1.3.22 14.12.2024
+1.1.40 14.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ confirm confirm vote path väärin testissä => unitethearmies.org,
@@ -586,13 +895,13 @@ Table of Contents
     osoitteet eri osoitteina.
 
 
-1.3.23 13.12.2024
+1.1.41 13.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ säätöä
 
 
-1.3.24 12.12.2024
+1.1.42 12.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ testit
@@ -611,7 +920,7 @@ Table of Contents
         mailer_test tiedostoissa.
 
 
-1.3.25 11.12.2024
+1.1.43 11.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Huom.  RAILS_ENV=production rails db:migrate RAILS_ENV=production
@@ -630,14 +939,14 @@ Table of Contents
       lähetetään viesti.
 
 
-1.3.26 10.12.2024
+1.1.44 10.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flash message
     • ☑ nappi paremmin
 
 
-1.3.27 9.12.2024
+1.1.45 9.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Header animaatio meni bootstrapin myötä rikki
@@ -656,7 +965,7 @@ Table of Contents
   • ☑ recent votes bootstrap row/col
 
 
-1.3.28 7.12.2024
+1.1.46 7.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ flash ilmoituksen sulkeminen / ajastus
@@ -665,14 +974,14 @@ Table of Contents
   • ☐ Vimeo Täytyy siirtää Unite the Armies- käyttäjälle Youtubeen.
 
 
-1.3.29 6.12.2024
+1.1.47 6.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Hyvää Itsenäisyyspäivää!
   • ☑ ikonit paremmin
 
 
-1.3.30 3.12.2024
+1.1.48 3.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ captcha tuotannossa
@@ -685,7 +994,7 @@ Table of Contents
   • ☑ materiaali ladattavissa suoraan sivulta
 
 
-1.3.31 2.12.2024
+1.1.49 2.12.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ testit
@@ -695,7 +1004,7 @@ Table of Contents
     aikaisemmin ei palauttanut mitään.
 
 
-1.3.32 29.11.2024
+1.1.50 29.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ ainoastaan vahvistetut äänet näkyviin recent votessa
@@ -710,7 +1019,7 @@ Table of Contents
   • ☑ duplicate email poistetaan duplikaatit $ rails fix:duplicate_votes
 
 
-1.3.33 28.11.2024
+1.1.51 28.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Errno::ECONNREFUSED (Connection refused - connect(2) for
@@ -733,7 +1042,7 @@ Table of Contents
   • systemctl status docker => käynnistyy edelleen (docker engine?)
 
 
-1.3.34 27.11.2024
+1.1.52 27.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☐ Rails 8.1
@@ -758,7 +1067,7 @@ Table of Contents
   • ☑ test testatessa EI pitäisi oikeasti lähteä maileja.
 
 
-1.3.35 26.11.2024
+1.1.53 26.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy rake ja fix tuotannossa scriptin kautta… tässä tulikin
@@ -800,7 +1109,7 @@ Table of Contents
     • ☑ 2-vaiheinen
 
 
-1.3.36 22.11.2024
+1.1.54 22.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ äänestys
@@ -815,7 +1124,7 @@ Table of Contents
     UNITE_APPLICATION_PROTOCOL.
 
 
-1.3.37 21.11.2024
+1.1.55 21.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy commitizen, README
@@ -826,7 +1135,7 @@ Table of Contents
     mahdollisimman simppeli tilalle…  jQuery?
 
 
-1.3.38 20.11.2024
+1.1.56 20.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ rails new –webpack react jälleen uusi rails projekti, kopsattu
@@ -837,7 +1146,7 @@ Table of Contents
     esim. jqueryllä ja jättää react hautumaan.
 
 
-1.3.39 19.11.2024
+1.1.57 19.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ facebook ja twitter linkit vaan enpä saanut riviin, olkoon
@@ -854,7 +1163,7 @@ Table of Contents
   • ☑ React lopultakin ilman javascript virheitä.
 
 
-1.3.40 18.11.2024
+1.1.58 18.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ liput
@@ -871,7 +1180,7 @@ Table of Contents
     to english.
 
 
-1.3.41 15.11.2024
+1.1.59 15.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   <https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/apache/oss/bionic/deploy_app.html>
@@ -895,7 +1204,7 @@ Table of Contents
     kotihakemisto kun passenger ajetaan ei käyttäjänä.
 
 
-1.3.42 14.11.2024
+1.1.60 14.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ passenger asennettu ohjeen mukaan, ylimääräinen gem poistettu.
@@ -911,7 +1220,7 @@ Table of Contents
     hakemistossa kun komento ajetaan.
 
 
-1.3.43 13.11.2024
+1.1.61 13.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ deploy
@@ -937,7 +1246,7 @@ Table of Contents
     environment.
 
 
-1.3.44 12.11.2024
+1.1.62 12.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Katsotaanpas jos saisin jotain eloa javascripteihin… onnistui.
@@ -948,7 +1257,7 @@ Table of Contents
   vaihtunut juuri rails8:ssa.
 
 
-1.3.45 11.11.2024
+1.1.63 11.11.2024
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   • ☑ Eka onnistunut boottaus
@@ -960,3 +1269,112 @@ Table of Contents
     asennu ilman sudoa jos käyttäjä ei ole rvm ryhmässä. Käyttäjä ei
     päivity prosessin ryhmään ilman REBOOT:tia, eli logout ei
     riittänyt vaikka ohjeessa näin sanottiin.
+
+
+1.2 Muistiinpanoja
+──────────────────
+
+  <https://guides.rubyonrails.org/debugging_rails_applications.html>
+  <https://rubyonrails.org/2024/9/27/rails-8-beta1-no-paas-required>
+
+
+1.3 Muutoksia
+─────────────
+
+  • ☐ votesControllerTest kuinkas header accept-language asetetaan että
+    voi testata meneekö oikeaan lokaleen
+  • ☐ logger
+    • kuinkas saa lokista virheet kätevästi => pitäisi testata
+      development modessa log_leveliä joka tulostaa vain errorit
+      tms. eli että ei tule kauheaa kaatoa vaan vain muutama rivi…
+  • ☐ vimeo siirretään videot palvelimelle…
+  • ☐ vote belongs_to vote :counter_cache vote_test.rb:124
+  • ☐ ./log mitenkäs rotaatio
+  • ☐ Cache ja Queue config.cache_store on kommentoitu koska en saa
+    luotua taulua schemasta, production modessa hajoaa.  => schema on
+    database dump eikä siitä voi luoda taulua.
+  • ☐ UaSetting
+    • ☐ nimeäminen varmaan on jokin paremmalta kuulostava nimi
+      olemassa, setting on ainakin väärin, pitäisi vähintään olla
+      "settings".
+      • pitää olla kannassa koska lähetettyjen mailien datetime
+        täytyy aina saada talteen.
+      • miksi ei voisi olla vain "Settings", voi tulla namespace
+        ongelemia (?)
+
+
+1.4 Basics
+──────────
+
+  to remember something
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Nimi         JS                 Ruby            JQuery 
+  ────────────────────────────────────────────────────────
+   onko arvoa?  indexOf(arvo) > 0  include?(arvo)         
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+1.4.1 scripts
+╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  $ unite original.jpg <hakemisto> => tekee pienemmät kuvat
+
+
+1.5 Kuvat
+─────────
+
+  svg:
+  <https://www.globalcitizen.org/en/content/world-population-charts-today-future/>
+
+  earth-05 <https://pixabay.com/photos/earth-planet-space-world-11008/>
+
+  forest-02
+  <https://pixabay.com/photos/forest-trees-fir-trees-woods-6874717/>
+
+  monkey
+  <https://pixabay.com/photos/monkeys-infant-forest-fire-fear-4273153/>
+
+  trash-01
+  <https://pixabay.com/photos/trash-trash-land-trash-dump-4897847/>
+
+  mining-01
+  <https://pixabay.com/photos/mining-coal-industry-energy-4838141/>
+
+  overpopulation:
+  <https://pixabay.com/photos/characters-crowd-model-train-4273081/>
+  <https://pixabay.com/illustrations/person-silhouettes-people-540262/>
+  <https://pixabay.com/photos/vancouver-british-columbia-canada-216595/>
+
+  earth-04
+  <https://pixabay.com/illustrations/earth-world-planet-globe-1303628/>
+
+  winter-trail JanBrzezinski
+  <https://pixabay.com/photos/winter-trail-forest-trees-wintry-5644263/>
+
+  milky_way Pexels
+  <https://pixabay.com/photos/cosmos-milky-way-stars-night-sky-1866820/>
+
+  galaxy StockSnap, constellations-galaxy-stars-sky
+  <https://pixabay.com/photos/constellations-galaxy-stars-sky-2609647/>
+
+  woodland TheOtherKev, woodland-forest-moss-sunset
+  <https://pixabay.com/photos/woodland-forest-moss-sunset-8479979/>
+
+  seascape Danganhfoto, seascape-landscape-beach-coast
+  <https://pixabay.com/photos/seascape-landscape-beach-coast-4844697/>
+
+  earth-01 WikiImages, earth-blue-planet-erball-earth-rise
+  <https://pixabay.com/photos/earth-blue-planet-erball-earth-rise-11005/>
+
+  earth-02 WikiImages, earth-globe-planet-world-space
+  <https://pixabay.com/photos/earth-globe-planet-world-space-11015/>
+
+  tickseed
+  <https://pixabay.com/photos/tickseed-coreopsis-calliopsis-2729137/>
+
+  <https://pixabay.com/photos/wildlife-park-poing-wolf-2646376/>
+
+  <https://pixabay.com/users/vieleineinerhuelle-18495/>
+
+  <https://pixabay.com/users/jamesdemers-3416/>
