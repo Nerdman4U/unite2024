@@ -1,87 +1,87 @@
 /* Font sizes */
 .ufs-10 {
-  font-size: 6vw !important;
+  font-size: 6vw;
 }
 .ufs-9 {
-  font-size: 5.5vw !important;
+  font-size: 5.5vw;
 }
 .ufs-8 {
-  font-size: 5vw !important;
+  font-size: 5vw;
 }
 .ufs-7 {
-  font-size: 4.5vw !important;
+  font-size: 4.5vw;
 }
 .ufs-6 {
-  font-size: 4vw !important;
+  font-size: 4vw;
 }
 .ufs-5 {
-  font-size: 3.5vw !important;
+  font-size: 3.5vw;
 }
 .ufs-4 {
-  font-size: 3vw !important;
+  font-size: 3vw;
 }
 .ufs-3-5 {
-  font-size: 2.5vw !important;
+  font-size: 2.5vw;
 }
 .ufs-3 {
-  font-size: 2vw !important;
+  font-size: 2vw;
 }
 .ufs-2 {
-  font-size: 1.6vw !important;
+  font-size: 1.6vw;
 }
 .ufs-1-9 {
-  font-size: 1.5vw !important;
+  font-size: 1.5vw;
 }
 .ufs-1-8 {
-  font-size: 1.4vw !important;
+  font-size: 1.4vw;
 }
 .ufs-1-7 {
-  font-size: 1.3vw !important;
+  font-size: 1.3vw;
 }
 .ufs-1-6 {
-  font-size: 1.2vw !important;
+  font-size: 1.2vw;
 }
 .ufs-1-5 {
-  font-size: 1.1vw !important;
+  font-size: 1.1vw;
 }
 .ufs-1-4 {
-  font-size: 1vw !important;
+  font-size: 1vw;
 }
 .ufs-1-3 {
-  font-size: 0.9vw !important;
+  font-size: 0.9vw;
 }
 .ufs-1-2 {
-  font-size: 0.8vw !important;
+  font-size: 0.8vw;
 }
 .ufs-1 {
-  font-size: 0.75vw !important;
+  font-size: 0.75vw;
 }
 .ufs-0-9 {
-  font-size: 0.7vw !important;
+  font-size: 0.7vw;
 }
 .ufs-0-8 {
-  font-size: 0.68vw !important;
+  font-size: 0.68vw;
 }
 .ufs-0-7 {
-  font-size: 0.63vw !important;
+  font-size: 0.63vw;
 }
 .ufs-0-6 {
-  font-size: 0.6vw !important;
+  font-size: 0.6vw;
 }
 .ufs-0-5 {
-  font-size: 0.55vw !important;
+  font-size: 0.55vw;
 }
 .ufs-0-4 {
-  font-size: 0.5vw !important;
+  font-size: 0.5vw;
 }
 .ufs-0-3 {
-  font-size: 0.45vw !important;
+  font-size: 0.45vw;
 }
 .ufs-0-2 {
-  font-size: 0.4vw !important;
+  font-size: 0.4vw;
 }
 .ufs-0-1 {
-  font-size: 0.3vw !important;
+  font-size: 0.3vw;
 }
 
 /* Padding */
@@ -546,20 +546,20 @@
 /* Header */
 
 h1 {
-  font-size: 3vw !important;
+  font-size: 3vw;
 }
 h2 {
-  font-size: 2vw !important;
+  font-size: 2vw;
 }
 h3 {
-  font-size: 1.5vw !important;
+  font-size: 1.5vw;
 }
 h4 {
-  font-size: 1vw !important;
+  font-size: 1vw;
 }
 h5 {
-  font-size: 0.8vw !important;
+  font-size: 0.8vw;
 }
 h6 {
-  font-size: 0.6vw !important;
+  font-size: 0.6vw;
 }

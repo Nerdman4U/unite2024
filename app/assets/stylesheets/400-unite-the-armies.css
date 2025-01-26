@@ -269,11 +269,6 @@ header .header-inner {
   height: 1vh;
 }
 
-.slideshow.slideshow-landing {
-  height: 66vw;
-  min-height: 300pt;
-}
-
 /* .slideshow-container .slideshow {
 } */
 
@@ -312,20 +307,25 @@ header .header-inner {
 }
 
 .slideshow-container-top {
-  /* use only and all viewport area,
-   * without explicited height, height will be more that
-   * viewport and control buttons will be located
+  /* Show slideshow using only and all visible viewport area,
+   * without explict height. If height will be more than
+   * viewport control buttons will be located
    * outside of viewport.
    *
    * with max-height next section at landing page is not shown because
    * previous sibling section has then only 100vh height but child
-   * image is larger and runs over sibling section... so do not use:
-   * max-height: 100vh;
+   * image is larger and runs over sibling section...
+   * do not use: max-height: 100vh;
+   * do not use: height: 100vh;
    */
-  /* height: 100vh; */
   height: fit-content;
   /*  */
 }
+
+/* .slideshow.slideshow-landing {
+  height: 66vw;
+  min-height: 300pt;
+} */
 
 /** public: Slideshow-container for Welcome carousel.
   */
@@ -593,19 +593,32 @@ header .header-inner {
 
 /* -----------------------------------------------------------------
  *  </-- END 1.1 Slideshow
+ *
+ *
+ * 1.2 Flash Messages
  * ----------------------------------------------------------------- */
+
+@media (hover: none) {
+  /* if media cannot handle hover, do not show this */
+  .show-if-hover {
+    display: none;
+  }
+}
 
 .flash_container {
   position: absolute !important;
   left: 1vw;
   right: 1vw;
   z-index: 99;
-  top: 10em;
+  top: 2vmin;
 
   ul {
     text-align: center;
     padding: 0;
     margin: 0;
+    /* box-shadow: 0.3vmin 0.3vmin 2px #999; */
+    border: 6px solid;
+    border-radius: 6px;
 
     &.alert-success {
       border-color: var(--bs-success);
@@ -623,23 +636,32 @@ header .header-inner {
       border-color: var(--bs-info);
       background-color: var(--bs-info);
     }
-    border: 1vmin solid;
-    border-radius: 1vmax;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
     &.sub-list {
       border: 0;
     }
 
     li {
-      padding: 1vw 1vw 0 1vw;
+      /* padding: 1vw 1vw 0 1vw; */
       color: var(--bs-alert-color);
       text-transform: uppercase;
 
       i {
-        font-size: 10vmin;
+        font-size: 3vmin;
         color: yellow;
         /* background-color: yellow; */
+      }
+
+      h1 {
+        font-size: 1vmax;
+        margin: 0;
+        padding: 1vmin;
+      }
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-size: 0.8vmax;
       }
     }
   }
@@ -648,12 +670,12 @@ header .header-inner {
 .flash_container ul.sub-list {
   text-align: left;
   padding: 0;
-  width: 30vw;
+  min-width: 30vmin;
   display: inline-block;
 
   li {
     padding: 0.5vw;
-    text-transform: lowercase;
+    text-transform: none;
     background-color: transparent;
     border: 0;
 
@@ -674,6 +696,10 @@ header .header-inner {
 .flash_container ul.alert-info ul.sub-list {
   list-style: inside information-source;
 }
+
+/* -----------------------------------------------------------------
+ *  </-- END 1.2 Flash Messages
+ * ----------------------------------------------------------------- */
 
 @media only screen and (max-width: 960px) {
   header .primary-navigation {
