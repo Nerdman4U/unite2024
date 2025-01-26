@@ -87,19 +87,22 @@ You need ruby 3.3.6. Install Ruby version manager and run $ rvm install 3.3.6
 
 Then should work just by:
 
-1. Create database
-
-   - install mysql-database
-   - add three (3) databases: unite_the_armies_for_production, unite_the_armies_for_development, unite_the_armies_for_test.
-
-2. Get the code
+1. Get the code
 
    $ git clone git@github.com:Nerdman4U/unite2024.git
    (or preferably fork and clone)
 
-3. Install libraries
+2. Install libraries
 
    $ bundle install
+
+3. Create database
+
+   install mysql server and create databases.
+
+   $ sudo apt install mysql-server
+
+   $ rails db:create:all
 
 4. Create tables
 
