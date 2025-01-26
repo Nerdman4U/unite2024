@@ -83,19 +83,45 @@ Note: We are moving to use AI on translations.
 
 ### 3.2 Install.
 
-Should work just:
+You need ruby 3.3.6. Install Ruby version manager and run $ rvm install 3.3.6
 
-- $ git clone / fork this repository
-- $ bundle install
-- $ (add environment variables)
-- $ rails s
+Then should work just by:
+
+1. Create database
+
+   - install mysql-database
+   - add three (3) databases: unite_the_armies_for_production, unite_the_armies_for_development, unite_the_armies_for_test.
+
+2. Get the code
+
+   $ git clone git@github.com:Nerdman4U/unite2024.git
+   (or preferably fork and clone)
+
+3. Install libraries
+
+   $ bundle install
+
+4. Create tables
+
+   $ rake db:migrate
+
+5. Environment
+
+   Add variables (below)
+
+6. Start rails server
+
+   $ rails s
+
+7. If you have problems
+
+   Let me know: info@jonitoyryla.eu
 
 #### 3.2.1 Environment
 
-- UNITE_GOOGLE_APP_PASSWORD (from Google)
-- UNITE_GMAIL_USERNAME (Gmail account used to send email)
-- UNITE_RUN_RECENT_VOTES (1 or 0)
-- UNITE_ADMIN_HASH (not in use, any string)
+- UNITE_GMAIL_USERNAME=my.gmail.username (Gmail account)
+- UNITE_GOOGLE_APP_PASSWORD=stringoftext (You get this from Google, for username above)
+- UNITE_RUN_RECENT_VOTES=1 (or 0, do you want show recent votes at footer)
 
 ### 3.3 Start developing.
 
