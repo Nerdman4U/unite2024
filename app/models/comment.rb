@@ -1,3 +1,5 @@
+using StringExtensions
+
 class Comment < ApplicationRecord
   scope :unconfirmed, -> { where(confirmed_at: nil) }
   scope :confirmed, -> { where.not(confirmed_at: nil) }
