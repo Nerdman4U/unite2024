@@ -37,7 +37,12 @@ module ApplicationHelper
     # flash[:danger] = [_("There was a danger")]
     # flash[:info] = [_("There was an info")]
 
-    content_tag :div, class: "flash_container" do
+    classes = ["flash_container"]
+    if flash[:container_classes].present?
+      classes << flash[:container_classes]
+    end
+
+    content_tag :section, class: classes.join(" ") do
       final = ApplicationController::FLASH_TYPES.map do |type|
         next unless flash[type].present?
         result = tag.ul class: "alert-#{type}", role: "alert", onClick: "$(this).hide()" do
@@ -47,12 +52,15 @@ module ApplicationHelper
               first.emotify.html_safe
             end
             submsgs = flash[type][1..-1] || []
-            result_sub += tag.ul class: "sub-list" do
-              submsgs.map do |msg|
-                tag.li do
-                  tag.span do msg.emotify.html_safe end
-                end
-              end.join.html_safe
+
+            unless submsgs.empty?
+              result_sub += tag.ul class: "sub-list" do
+                submsgs.map do |msg|
+                  tag.li do
+                    tag.span do msg.emotify.html_safe end
+                  end
+                end.join.html_safe
+              end
             end
             result_sub.html_safe
           end

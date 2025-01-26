@@ -159,8 +159,16 @@ class WelcomeController < ApplicationController
   end
 
   def why_vote
+    # session[:fullscreen_info_seen] = false
     unless session[:fullscreen_info_seen]
-      flash.now[:info] = [_("For optimal experience please use F11 to allow full screen mode :bi-emoji-smile-fill:.")]
+      # If brower does not support hover, lets assume it is mobile and does not have f11 key...
+      # TODO: there is probably better way, navigator.keyboard is not working at my firefox...
+      flash[:container_classes] = ["show-if-hover"]
+      flash.now[:info] = [
+        _("For optimal experience..."), _("Please use F11 to allow full screen mode!"),
+        _("Dont panic! This message is shown only once! :bi-emoji-smile-fill:"),
+        _("Let's spread happiness and work together to save the planet! :bi-heart-fill:")
+        ]
       session[:fullscreen_info_seen] = true
     end
     earth_pics = [
