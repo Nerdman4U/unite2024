@@ -609,7 +609,7 @@ header .header-inner {
   position: absolute !important;
   left: 1vw;
   right: 1vw;
-  z-index: 99;
+  z-index: 101;
   top: 2vmin;
 
   ul {

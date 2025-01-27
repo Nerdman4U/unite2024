@@ -161,23 +161,21 @@ class ApplicationController < ActionController::Base
     !request.hostname.match?("localhost")
   end
 
-  # Add flash message
+  # public: Add flash message
   #
   # flash[:type] is an array to allow multiple messages of the same type.
   #
-  # @param [Symbol] type
-  # @param [String] full_message A Message
-  # @return [Boolean]
+  # type         - info, warning, danger, success
+  # full_message - array or string
+  #
+  # Returns list of messages.
   def add_flash type, full_message
     return false if type.blank?
     return false if full_message.blank?
-    return false unless FLASH_TYPES.include?(type)
+    return false unless FLASH_TYPES.include?(type.to_sym)
 
-    if full_message.is_a?(Array)
-        full_message.flatten!
-        full_message = full_message.join("")
-    end
-
-    flash[type] = flash[type] ? flash[type] << full_message : [full_message]
+    flash[type] = flash[type] || []
+    full_message = [full_message] unless full_message.is_a?(Array)
+    flash[type].concat(full_message)
   end
 end
