@@ -168,6 +168,10 @@ In future versions, <span style="color:orange">Save the Planet - Unite the Armie
 
 Thank you for images and other support.
 
+### Theme.
+
+Based on Sartre Skin Barber Shop by ThemeMountain.
+
 ### Images.
 
 <dl>
