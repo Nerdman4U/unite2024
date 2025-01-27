@@ -20,10 +20,10 @@ Rails.application.configure do
 
   # At workstation: UNITE_PRODUCTION_SERVER=0
   # At production server: UNITE_PRODUCTION_SERVER=1
-  if ENV["UNITE_PRODUCTION_SERVER"] == 1
-    # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-    config.asset_host = "http://testi.unitethearmies.org"
-  end
+  # if ENV["UNITE_PRODUCTION_SERVER"] == 1
+  #   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  #   config.asset_host = "http://testi.unitethearmies.org"
+  # end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
