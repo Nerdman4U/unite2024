@@ -1,0 +1,12 @@
+<%= _("New comment") %>
+
+<%= _("Name") %>: <%= @comment.vote.name %>
+<%= _("Email") %>: <%= @comment.vote.email %>
+<%= _("Language") %>: <%= @comment.language_name %>
+<%= _("Created at") %>: <%= @comment.created_at %>
+<%= _("Updated at") %>: <%= @comment.updated_at %>
+<%= _("Topic") %>: <%= @comment.theme %>
+
+<%= _("You can confirm the comment at administration page") %>
+
+<%= @comment.body %>

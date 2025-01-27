@@ -1,0 +1,5 @@
+<%= @vote.name %>
+<%= _("We are happy to inform you that we have received your vote for the %{title}.") % {title: UNITE_TITLE} %>
+<%= (_("Please verify your email address by clicking %{link}.") % {link: @confirm_url}).html_safe %>
+<%= _("If you did not vote, feel free to delete this email.") %>
+<%= (_("Thank you once again for voting! In case of any questions, contact our support team by sending email to %s") % link_to(UNITE_CAMPAIGN_ASSISTANT_EMAIL, "mailto:" + UNITE_CAMPAIGN_ASSISTANT_EMAIL)).html_safe %>

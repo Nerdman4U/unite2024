@@ -1,0 +1,5 @@
+<h1><%= @vote.name %></h1>
+<p><%= _("We are happy to inform you that we have received your vote for the %{title}.") % {title: UNITE_TITLE} %></p>
+<p><%= (_("Please verify your email address by clicking %{link}.") % {link: link_to("here", @confirm_url)}).html_safe %></p>
+<p><%= _("If you did not vote, feel free to delete this email.") %></p>
+<p><%= (_("Thank you once again for voting! In case of any questions, contact our support team by sending email to %s") % link_to(UNITE_CAMPAIGN_ASSISTANT_EMAIL, "mailto:" + UNITE_CAMPAIGN_ASSISTANT_EMAIL)).html_safe %></p>

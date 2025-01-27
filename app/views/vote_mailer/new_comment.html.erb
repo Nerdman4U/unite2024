@@ -1,28 +1,33 @@
-<h1>_("New comment")</h1>
+<h1><%= _("New comment") %></h1>
 <table>
   <tr>
-    <th style="text-align: left">_("Name")</th>
+    <th style="text-align: left"><%= _("Name") %></th>
     <td><%= @comment.vote.name %></td>
   </tr>
   <tr>
-    <th style="text-align: left">_("Email")</th>
+    <th style="text-align: left"><%= _("Email") %></th>
     <td><%= @comment.vote.email %></td>
   </tr>
   <tr>
-    <th style="text-align: left">_("Language")</th>
+    <th style="text-align: left"><%= _("Language") %></th>
     <td><%= @comment.language_name %></td>
   </tr>
   <tr>
-    <th style="text-align: left">_("Created at")</th>
+    <th style="text-align: left"><%= _("Created at") %></th>
     <td><%= @comment.created_at %></td>
   </tr>
   <tr>
-    <th style="text-align: left">_("Updated at")</th>
+    <th style="text-align: left"><%= _("Updated at") %></th>
     <td><%= @comment.updated_at %></td>
   </tr>
   <tr>
-    <th style="text-align: left">_("Topic")</th>
+    <th style="text-align: left"><%= _("Topic") %></th>
     <td><%= @comment.theme %></td>
   </tr>
 </table>
+
+<section>
+  <p><%= _("You can confirm the comment at administration page") %></p>
+</section>
+
 <p style="white-space: pre-wrap"><%= @comment.body %></p>

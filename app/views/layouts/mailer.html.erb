@@ -4,25 +4,70 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <style>
-    /* Email styles need to be inline */
+    body {
+      text-align: center;
+      margin: 0;
+    }
+
+    table {
+      tr {
+        td {
+          padding: 0.2vmin 1vmin;
+        }
+      }
+    }
+
+    header {
+      background-color: orange;
+      color: black;
+      padding: 1vmin;
+      margin: 0;
+      text-align: center;
+      text-shadow: 0.1vmin 0.1vmin 2px white;
+    }
+
+    .mailer-body {
+      background: url("<%= image_path("world-map.svg") %>") top right no-repeat;
+      background-size: cover;
+      padding: 1vmin;
+      border: 1px solid blue;
+
+      .content {
+        width: 50%;
+        min-width: 50vw;
+        margin: 0 auto;
+        text-align: left;
+        padding: 3vmin;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: 1px solid #333;
+        border-radius: 10px;
+      }
+    }
+
+    footer {
+      background-color: orange;
+      color: black;
+      padding: 1vmin;
+      margin: 0;
+      text-align: center;
+      text-shadow: 0.1vmin 0.1vmin 2px white;
+    }
   </style>
 </head>
 
 <body>
 
-  <section class="mailer-header">
+  <header>
     <h1><%= _("Save the Planet - Unite the Armies") %></h1>
-    <%= image_tag attachments['earth.jpg'].url, style: "float:right" -%>
-  </section>
+  </header>
 
-  <section class="mailer-body">
-    <%= yield %>
-  </section>
-
-  <section>
-    <p><%= _("sincerely,") %></p>
-    <p><%= _(UNITE_SIGNATURE_TITLE) %></p>
-  </section>
+  <div class="mailer-body">
+    <section class="content">
+      <%= yield %>
+      <p><%= _("sincerely,") %></p>
+      <p><%= _(UNITE_SIGNATURE_TITLE) %></p>
+    </section>
+  </div>
 
   <footer class="mailer-footer">
     <p><%= link_to UNITE_ROOT_URL, UNITE_ROOT_URL %></p>

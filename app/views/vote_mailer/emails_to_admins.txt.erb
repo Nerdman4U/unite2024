@@ -1,0 +1,5 @@
+ID Nimi Maa Sähköposti Allekirjoitettu
+
+@votes.map do |vote| %>
+  <%= vote.id %> <%= vote.name %> <%= vote.country %> <%= vote.email %> <%= vote.created_at.localtime.to_s %>
+<% end %>

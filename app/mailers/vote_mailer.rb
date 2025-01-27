@@ -1,19 +1,22 @@
 class VoteMailer < ApplicationMailer
+
+  # public: Send signup after email has been confirmed.
   def sign_up
     @vote = params[:vote]
     unless @vote
       Rails.logger.error("Vote is blank")
       return
     end
-    attachments.inline["earth.jpg"] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
     mail(to: @vote.email, subject: _("Thank you for signing the Unite the Armies petition"))
   end
 
-  # = params
-  # inviter_name:  name of the inviter
-  # name: name of the invited
-  # email: email of the invited
-  # language: language of the invitation letter
+  # public: Send an invite letter to a person.
+  #
+  # options - a hash
+  #   inviter_name - name of the inviter
+  #   name         - name of the invited
+  #   email        - email of the invited
+  #   language     - language of the invitation letter
   def invite
     options = params[:options]
     unless options
@@ -52,7 +55,7 @@ class VoteMailer < ApplicationMailer
     I18n.locale = old_locale
   end
 
-  # Send vote emails to admins
+  # public: Send vote emails to admins / campaign assistant.
   #
   # After config.sent_count new votes, vote emails are sent as a list to admins.
   def emails_to_admins
@@ -66,6 +69,7 @@ class VoteMailer < ApplicationMailer
     mail(to: mail_to, subject: "Unite The Armies - allekirjoittajat", cc: "info@jonitoyryla.eu")
   end
 
+  # public: Inform admins that new comment has been added.
   def new_comment
     @comment = params[:comment]
     unless @comment
@@ -80,7 +84,7 @@ class VoteMailer < ApplicationMailer
     I18n.locale = old_locale
   end
 
-  # Confirm that email used voting exists
+  # public: Confirm email by clicking a link in an email.
   def confirmation
     @vote = params[:vote]
     @url = params[:url]
@@ -100,10 +104,10 @@ class VoteMailer < ApplicationMailer
     mail(to: @vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
   end
 
+  # public: Send login link to email.
   def token
     @vote = params[:vote]
     @token = params[:token]
-    attachments.inline["earth.jpg"] = File.read(Rails.root.join("app/assets/images/earth.jpg"))
     unless @vote
       Rails.logger.error("Vote is blank")
       return
