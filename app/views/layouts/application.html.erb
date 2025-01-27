@@ -5,29 +5,35 @@
   <%= render partial: "head" %>
 </head>
 
-<body manifest="unite-the-armies.appcache">
-  <%= javascript_include_tag 'jquery' %>
-  <%= javascript_include_tag 'countries' %>
-  <%= javascript_include_tag 'bootstrap.min.js' %>
-  <% if controller_name == "comments" %>
-  <%= javascript_include_tag 'unitethearmies/comment.js' %>
-  <% end %>
-  <%= javascript_include_tag 'unitethearmies/slideshowcontainer.js', type: 'module' %>
-  <%= javascript_include_tag 'unitethearmies/slideshow.js', type: 'module' %>
-  <%= javascript_include_tag 'unitethearmies', type: 'module' %>
-  <%= javascript_include_tag 'start', type: 'module' %>
+<body>
+  <%
+=begin%>
 
-  <%= flash_messages %>
+  <body manifest="unite-the-armies.appcache">
+    <%
+=end%>
+    <%= javascript_include_tag 'jquery' %>
+    <%= javascript_include_tag 'countries' %>
+    <%= javascript_include_tag 'bootstrap.min.js' %>
+    <% if controller_name == "comments" %>
+    <%= javascript_include_tag 'unitethearmies/comment.js' %>
+    <% end %>
+    <%= javascript_include_tag 'unitethearmies/slideshowcontainer.js', type: 'module' %>
+    <%= javascript_include_tag 'unitethearmies/slideshow.js', type: 'module' %>
+    <%= javascript_include_tag 'unitethearmies', type: 'module' %>
+    <%= javascript_include_tag 'start', type: 'module' %>
 
-  <div class="wrapper reveal-side-navigation">
-    <div class="wrapper-inner">
-      <%= render partial: "header" %>
-      <div class="content">
-        <%= yield %>
+    <%= flash_messages %>
+
+    <div class="wrapper reveal-side-navigation">
+      <div class="wrapper-inner">
+        <%= render partial: "header" %>
+        <div class="content">
+          <%= yield %>
+        </div>
+        <%= content_for?(:footer) ? yield(:footer) : render(partial: "footer") %>
       </div>
-      <%= content_for?(:footer) ? yield(:footer) : render(partial: "footer") %>
     </div>
-  </div>
-</body>
+  </body>
 
 </html>
