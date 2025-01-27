@@ -22,11 +22,12 @@ namespace :deploy do
         if (fetch(:stage) == :production)
           execute "bin/rails", "deploy:migrate_production"
           execute "bin/rails", "deploy:precompile_production"
+          execute "bin/rails", "deploy:restart_production"
         elsif (fetch(:stage) == :staging)
           execute "bin/rails", "deploy:migrate_staging"
           execute "bin/rails", "deploy:precompile_staging"
+          execute "bin/rails", "deploy:restart_staging"
         end
-        execute "bin/rails", "deploy:restart"
       end
     end
   end
