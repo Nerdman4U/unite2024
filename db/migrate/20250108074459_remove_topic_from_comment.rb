@@ -1,4 +1,4 @@
-class RemoveTopicFromComment < ActiveRecord::Migration[8.1]
+class RemoveTopicFromComment < ActiveRecord::Migration[8.0]
   def up
     remove_column :comments, :topic
   end

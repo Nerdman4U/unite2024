@@ -1,4 +1,4 @@
-class ChangeAnonymousAtComments < ActiveRecord::Migration[8.1]
+class ChangeAnonymousAtComments < ActiveRecord::Migration[8.0]
   def down
     change_column :comments, :anonymous, :boolean, default: nil
   end

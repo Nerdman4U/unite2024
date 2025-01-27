@@ -2,17 +2,16 @@
 lock "~> 3.19.2"
 
 # require "rvm/capistrano"
+# "config/local_env.yml",
 
 set :application, "unite-the-armies-2024"
 set :repo_url, "git@github.com:Nerdman4U/unite2024.git"
-append :linked_files, "config/credentials.yml.enc", "public/googleca9639854eea1a9b.html", "config/local_env.yml", "config/master.key"
+append :linked_files, "config/credentials.yml.enc", "public/googleca9639854eea1a9b.html", "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system"
 append :linked_dirs, ".bundle"
 set :keep_releases, 5
 set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
 set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
-set :stage, :production
-set :rails_env, :production
 
 namespace :deploy do
   desc "install"
@@ -20,14 +19,32 @@ namespace :deploy do
     on roles(:all) do
       within release_path do
         execute "bin/bundle", "install"
-        execute "bin/rails", "deploy:migrate"
-        execute "bin/rails", "deploy:precompile"
+        if (fetch(:stage) == :production)
+          execute "bin/rails", "deploy:migrate_production"
+          execute "bin/rails", "deploy:precompile_production"
+        elsif (fetch(:stage) == :staging)
+          execute "bin/rails", "deploy:migrate_staging"
+          execute "bin/rails", "deploy:precompile_staging"
+        end
         execute "bin/rails", "deploy:restart"
       end
     end
   end
 
-  desc "Test"
+  desc "Test and tune capistrano deployment"
+  task :tune do
+    on roles :all do
+      within release_path do
+        if (fetch(:stage) == :production)
+          execute "echo \"production\""
+        elsif (fetch(:stage) == :staging)
+          execute "echo \"staging\""
+        end
+      end
+    end
+  end
+
+  desc "Run rails tests"
   task :test do
     on roles :all do
       run_locally do

@@ -7,13 +7,19 @@ end
 
 namespace :deploy do
   desc "Precompile assets"
-  task :precompile do
+  task :precompile_production do
     system("RAILS_ENV=production bin/rails assets:precompile")
+  end
+  task :precompile_staging do
+    system("RAILS_ENV=staging bin/rails assets:precompile")
   end
 
   desc "Migrate"
-  task :migrate do
+  task :migrate_production do
     system("RAILS_ENV=production bin/rails db:migrate")
+  end
+  task :migrate_staging do
+    system("RAILS_ENV=staging bin/rails db:migrate")
   end
 
   task :restart do

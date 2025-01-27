@@ -1,4 +1,4 @@
-class AddConfirmedToComments < ActiveRecord::Migration[8.1]
+class AddConfirmedToComments < ActiveRecord::Migration[8.0]
   def up
     add_column :comments, :confirmed_at, :datetime, null: true, default: nil
   end

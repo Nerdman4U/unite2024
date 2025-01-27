@@ -1,4 +1,4 @@
-class AddSlugsToComment < ActiveRecord::Migration[8.1]
+class AddSlugsToComment < ActiveRecord::Migration[8.0]
   def up
     add_column :comments, :slug, :string, null: false
     add_index :comments, :slug
