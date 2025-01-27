@@ -22,7 +22,10 @@ namespace :deploy do
     system("RAILS_ENV=staging bin/rails db:migrate")
   end
 
-  task :restart do
-    system("passenger-config restart-app /var/www/unitethearmies.org/")
+  task :restart_production do
+    system("passenger-config restart-app /var/www/unitethearmies.org.2/www/")
+  end
+  task :restart_staging do
+    system("passenger-config restart-app /var/www/unitethearmies.org.2/testi/")
   end
 end
