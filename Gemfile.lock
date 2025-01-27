@@ -163,7 +163,7 @@ GEM
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
-    gettext (3.5.0)
+    gettext (3.5.1)
       erubi
       locale (>= 2.0.5)
       prime
