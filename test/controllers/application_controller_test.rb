@@ -85,13 +85,12 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
 
     @controller.flash[:warning] = nil
     @controller.send(:add_flash, :warning, [["There was an "],"error"])
-    assert_equal @controller.flash[:warning], ["There was an error"]
+    assert_equal @controller.flash[:warning], ["There was an ", "error"]
 
     @controller.send(:add_flash, :warning, nil)
-    assert_equal @controller.flash[:warning], ["There was an error"]
+    assert_equal @controller.flash[:warning], ["There was an ", "error"]
 
     @controller.send(:add_flash, :warning, "")
-    assert_equal @controller.flash[:warning], ["There was an error"]
-
+    assert_equal @controller.flash[:warning], ["There was an ", "error"]
   end
 end

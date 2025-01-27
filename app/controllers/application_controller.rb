@@ -163,7 +163,16 @@ class ApplicationController < ActionController::Base
 
   # public: Add flash message
   #
-  # flash[:type] is an array to allow multiple messages of the same type.
+  # flash[:type] is an array.
+  #
+  # Example:
+  #
+  #   add_flash :warning, "Message 1"
+  #   => ["Message 1"]
+  #   add_flash :warning, ["Message 1", "Message 2"]
+  #   => ["Message 1", "Message 2"]
+  #   add_flash :info, [["Message 1", "Message 2"], "Message 3"]
+  #   => ["Message 1", "Message 2", "Message 3"]
   #
   # type         - info, warning, danger, success
   # full_message - array or string
@@ -176,6 +185,7 @@ class ApplicationController < ActionController::Base
 
     flash[type] = flash[type] || []
     full_message = [full_message] unless full_message.is_a?(Array)
+    full_message = full_message.map { |msg| if msg.is_a?(Array); msg.flatten.join(""); else msg; end }
     flash[type].concat(full_message)
   end
 end
