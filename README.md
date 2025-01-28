@@ -125,6 +125,8 @@ Then should work just by:
 - UNITE_GMAIL_USERNAME=my.gmail.username (Gmail account)
 - UNITE_GOOGLE_APP_PASSWORD=stringoftext (You get this from Google, for username above)
 - UNITE_RUN_RECENT_VOTES=1 (or 0, do you want show recent votes at footer)
+- UNITE_DEPLOY_PATH_STAGING=path.to.folder
+- UNITE_DEPLOY_PATH_PRODUCTION=path.to.other.folder
 
 ### 3.3 Start developing.
 
