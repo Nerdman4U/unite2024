@@ -21,6 +21,9 @@
         <nav class="nav-block primary-navigation text-end upt-1">
           <ul class="p-0 m-0">
             <li>
+              <%= link_to _("Initiative"), initiative_path(locale: locale), class: "initiative" %>
+            </li>
+            <li>
               <%= link_to _("Supporters"), votes_path(locale: locale) %>
             </li>
             <li>

@@ -867,7 +867,7 @@ header ul > li > a {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .random-comment {
@@ -880,7 +880,7 @@ header ul > li > a {
 }
 
 /** =========================================================================
-  * 2. ANIMATION
+  * 3. ANIMATION
   * ========================================================================= */
 
 header {
@@ -990,11 +990,20 @@ header {
 }
 
 /** =========================================================================
-  * 2. COLOR
+  * 4. COLOR
   * ========================================================================= */
 
 .header {
   background-color: black;
+
+  .initiative {
+    color: rgb(220, 120, 0);
+    transition-property: color;
+    transition-duration: 300ms;
+    &:hover {
+      color: rgb(255, 180, 50);
+    }
+  }
 }
 h1,
 h2,
