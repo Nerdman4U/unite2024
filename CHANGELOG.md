@@ -1,3 +1,27 @@
+## 2.1.0 (2025-01-28)
+
+### Feat
+
+- Signatures at initiative
+- Staging and production logs to file
+- Deployment to staging, allow to use environments at workstation
+- Staging deployment
+- Work to have deployment to staging
+- Mailer view unite layout and txt mail views
+- Started to create a bit nicer mailer layout
+- **Rails**: Using rails 8.0.1
+- Added order to stylesheets
+- Possibility to add custom css classes to flash container
+
+### Fix
+
+- Removed previous cache
+- Flash fix to allow nested arrays
+- Flash messages update
+- Removed use of asset_host
+- **application.scss**: Renamed back
+- **comment.rb**: Using StringExtensions library
+
 ## 2.0.0 (2025-01-25)
 
 ### Feat
