@@ -772,6 +772,15 @@ header .header-inner {
     }
   } */
 
+.initiative-presented {
+  .initiative-signatures {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
 /** =========================================================================
   * 2. TYPOGRAPHY
   *
