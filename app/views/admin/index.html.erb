@@ -1,44 +1,66 @@
-<!-- Content -->
-<div class="content clearfix">
-  <!-- Fullscreen Slider Section -->
-  <section class="section-block featured-media tm-slider-parallax-container">
-    <div class="tm-slider-container full-width-slider" data-featured-slider data-progress-bar="false" data-parallax data-parallax-fade-out data-auto-advance data-animation="slide" data-scale-under="960" style="height:10rem">
-      <ul class="tms-slides">
-        <li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.0">
-          <div class="tms-content">
-            <div class="tms-content-inner center left-on-mobile v-align-middle">
-              <div class="row">
-                <div class="column width-12">
-                </div>
-              </div>
-            </div>
-          </div>
-          <img data-src=<%= image_path("slides/avaruus.jpg") %> src=<%= image_path("blank.gif") %> alt="" />
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section>
-    <div class="section-block grid-container fade-in-progressively bkg-charcoal color-white" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="0.7" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
-      <div class="row">
-        <div class="column width-12">
-          <h1>Ylläpito</h1>
-          <p>Mikäli et ole tämän sivuston ylläpitäjä, poistu sivulta välittömästi. Ota yhteyttä Unite The Armies- kehittäjiin sähköpostilla unite-the-armies@gmail.com.</p>
-          <p>If you are not an admin of this website, leave this page. Contact Unite The Armies developers at unitethearmies@gmail.com.</p>
+<%= slider_new(@slider) do
+  { css: "slideshow-container-top vh-50" }
+end %>
 
-          <h2>Lisää useita käyttäjiä</h2>
-          <p>Lataa CSV-tiedosto alla olevan lomakkeen kautta. </p>
-          <p>Tiedoston tulee olla CSV (comma separated values) muotoinen. Yksi allekirjoittanut aina rivillä niin että ensin on käyttäjän nimi, sitten käyttäjän sähköpostiosoite ja lopuksi maakoodi. Esimerkki yhdestä rivistä: Matti Meikäläinen, matti@gmail.com, fi</p>
-          <p>Virheelliset rivit ohitetaan. Esimerkiksi rivi "Matti, Meikälainen, matti@gmail.com" ei lisää käyttäjää järjestelmään.</p>
-          <p>Tiedostossa voi olla kuinka monta riviä tahansa.</p>
+<script type="text/javascript">
+  window.onload = function() {
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault()
+      alert('Does not work yet')
+      return false;
+    })
+
+  }
+</script>
+
+<div class="section-block grid-container fade-in-progressively bg-white text-dark admin">
+
+  <!-- Register -->
+  <section class="umx-8 umt-3">
+    <div class="row">
+      <div class="col-6">
+        <h2><%= _("Register your service") %></h2>
+        <p><%= (_("If you are running your own %s service you can register your service to the main service at Unitethearmies.org." % unite_title_html)).html_safe %>
+        <p><%= _("Registered services may share and show collected votes in different servers. After registering all registered services will be available to your service.") %>
+        <p><%= (_("You can read more at %s." % link_to(tag.icon(class: "bi bi-github"), GITHUB_URL)) ).html_safe %>
+      </div>
+      <div class="col-6">
+        <%= form_tag("/admin/register", method: :post) do %>
+        <div class="form-group">
+          <%=
+          register_form = []
+          register_form << label_tag(:register_site_url, "URL")
+          register_form << text_field_tag(:register_site_url, "", placeholder: "https://your.unite.the.armies.website.com", class: "form-control", aria: {describedby: "register_site_help"})
+          register_form << tag.small("Type your service url.", id: "register_site_help", class: "form-text text-muted")
+          register_form.join("\n").html_safe
+          %>
         </div>
-        <div class="column width-12">
-          <%= form_tag("/admin/#{params[:admin_hash]}", multipart: true) do %>
-          <%= file_field_tag(:admin_csv, {style: "width:auto;padding:0;margin:0;"}) %>
-          <%= submit_tag("Lähetä", {style: "color:#333 !important; width:auto; margin:0; padding:0"}) %>
-          <% end %>
+        <div class="form-group">
+          <%= submit_tag("Lähetä", class: "btn btn-primary") %>
         </div>
+        <% end %>
       </div>
     </div>
   </section>
+  <!-- Register End -->
+
+  <!-- Fileupload -->
+  <section class="umx-8 umt-3 upload-csv">
+    <div class="row">
+      <div class="col-6">
+        <h2><%= _("Add users by uploading a CSV file") %></h2>
+        <p><%= _("File needs to be in CSV (comma separated values) format.") %> <%= _("One user will be added per line, with name, email and country in that order.") %></p>
+        <p><%= _("Example: Matti Meikälinen, matti@gmail.com, fi") %></p>
+      </div>
+      <div class="col-6">
+        <%= form_tag("/admin/upload", method: :post, multipart: true) do %>
+        <%= file_field_tag(:admin_csv) %>
+        <%= submit_tag("Lähetä", class: "btn btn-primary") %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <!-- Fileupload End -->
+
+
 </div>

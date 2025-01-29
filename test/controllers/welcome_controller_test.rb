@@ -39,9 +39,4 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Home (Save the Planet - Unite the Armies)"
   end
 
-  test "should not get admin index with wrong hash" do
-    get admin_index_url admin_hash: "foobar"
-    assert_response :redirect
-  end
-
 end

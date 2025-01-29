@@ -118,6 +118,7 @@ class Vote < ApplicationRecord
     VoteMailer.with(options: options).invite.deliver_now
   end
 
+  # deprecated
   def self.duplicate_confirm_hash?(token)
     !!Vote.where(secret_confirm_hash: token).first
   end
@@ -137,6 +138,20 @@ class Vote < ApplicationRecord
 
   def public_token
     self.md5_secret_token
+  end
+
+  # public: Returns an array of roles
+  #
+  # Roles are stored in vote as a space separated string.
+  #
+  # Returns an array of symbols.
+  def roles
+    return [] if self.role.blank?
+    return self.role.split(" ").filter(&:present?).map(&:to_sym)
+  end
+
+  def admin?
+    roles.include?(:admin)
   end
 
   private

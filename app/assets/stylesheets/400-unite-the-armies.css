@@ -292,8 +292,6 @@ header .header-inner {
     padding-top: 30vmin;
   }
 
-  &.vh-100 {
-  }
   &.vh-50 {
     .slider-content {
       padding-top: 20vmin;
@@ -318,7 +316,9 @@ header .header-inner {
    * do not use: max-height: 100vh;
    * do not use: height: 100vh;
    */
-  height: fit-content;
+  &.vh-100 {
+    height: fit-content;
+  }
   /*  */
 }
 
@@ -781,6 +781,17 @@ header .header-inner {
   }
 }
 
+.content {
+  .admin {
+    > section {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      border: 1px solid #ccc;
+      padding: 6vmin;
+      border-radius: 10px;
+    }
+  }
+}
+
 /** =========================================================================
   * 2. TYPOGRAPHY
   *
@@ -1027,9 +1038,29 @@ h6 {
   }
 }
 
+.header {
+  .admin {
+    color: rgb(255, 102, 102);
+  }
+  .admin:hover {
+    color: rgb(255, 204, 204);
+  }
+}
+
 .header-background ul > li > a,
 .footer a {
-  color: var(--bs-dark) !important;
+  color: var(--bs-dark);
+  .admin {
+    color: rgb(255, 204, 204);
+  }
+  .admin:hover {
+    color: rgb(255, 102, 102);
+  }
+}
+
+.unite-title {
+  color: orange;
+  font-weight: 700;
 }
 
 #recent_votes_container .recent-vote:hover {

@@ -227,6 +227,28 @@ class VoteTest < ActiveSupport::TestCase
     assert vote.send(:public_token)
   end
 
+  test "should return roles" do
+    vote = votes("vote_1")
+    assert_nil vote.role
+    assert_equal vote.roles, []
+
+    vote.role = "admin"
+    vote.save
+    assert_equal vote.roles, [:admin]
+
+    vote.role = " a b   "
+    vote.save
+    assert_equal vote.roles, [:a, :b]
+  end
+
+  test "should be admin" do
+    vote = votes("vote_1")
+    vote.role = "admin"
+    assert vote.admin?
+    vote.role = "user"
+    assert_not vote.admin?
+  end
+
   # TODO
   # test 'should increment counter cache' do
   #   vote = votes("vote_1")

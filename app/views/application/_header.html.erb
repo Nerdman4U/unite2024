@@ -36,6 +36,13 @@
             <li>
               <%= link_to_vote %>
             </li>
+
+            <% if current_vote.admin? %>
+            <li>
+              <%= link_to _("Admin"), admin_path(locale: locale), class: "admin" %>
+            </li>
+            <% end %>
+
             <li>
               <%= link_to _("Logout"), logout_path, method: :delete, class: "logout" %>
             </li>

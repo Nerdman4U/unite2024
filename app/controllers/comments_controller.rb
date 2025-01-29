@@ -26,8 +26,7 @@ class CommentsController < ApplicationController
       }]
     })
 
-    vote = Vote.where(id: session[:current_vote_id]).first
-    unless vote
+    unless vote = current_vote
       Rails.logger.error("Comment#new: Vote not found")
       redirect_to new_vote_path(locale: locale)
       return
@@ -38,14 +37,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    unless session[:current_vote_id]
+    unless logged_in?
       add_flash :danger, _("You need to be logged in")
       redirect_to new_vote_path(locale: locale)
       return
     end
 
-    vote = Vote.where(id: session[:current_vote_id]).first
-    unless vote
+    unless vote = current_vote
       add_flash :danger, _("There was an error")
       Rails.logger.error("Comment#create: Vote not found")
       redirect_to locale_root_path(locale: locale)

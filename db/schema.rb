@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_08_074459) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_29_071605) do
   create_table "comments", id: :integer, charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
     t.text "body"
     t.string "language"
@@ -54,6 +54,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_08_074459) do
     t.boolean "spam", default: false, null: false
     t.string "secret_confirm_hash"
     t.datetime "email_confirmed"
+    t.string "role"
     t.index ["vote_id"], name: "fk_rails_c77b988d56"
   end
 end

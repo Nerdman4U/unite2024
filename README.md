@@ -116,7 +116,17 @@ Then should work just by:
 
    $ rails s
 
-7. If you have problems
+7. Create admin
+
+   Vote with your email
+
+   Open rails console and
+
+   > vote.role = "admin"
+
+   > vote.save
+
+8. If you have problems
 
    Let me know: info@jonitoyryla.eu
 
@@ -164,7 +174,13 @@ Feel free to install and deploy this service as your own.
 - You need a way to host your service. It maybe PaaS like Heroku or virtual/dedicated private server.
 - Then you need to reserve a domain name, i.e. unitethearmies.ru.
 
-In future versions, <span style="color:orange">Save the Planet - Unite the Armies</span> services will be able to share data and display votes from multiple servers, enabling a unified and global view of the initiative's progress.
+### Register
+
+Login to admin page at http/your.site/admin.
+
+Note: Registering a site is under construction.
+
+<span style="color:orange">Save the Planet - Unite the Armies</span> services will be able to share data and display votes from multiple servers, enabling a unified and global view of the initiative's progress.
 
 ## 5. Credits.
 

@@ -1,22 +1,35 @@
 # coding: utf-8
 
 class AdminController < ApplicationController
-  def index # admin
-    if params[:admin_hash] != Rails.application.config.x.admin_hash
-      redirect_to :root
-      nil
-    end
+  before_action :require_login
+  before_action :require_admin
+
+  def index
+    @vote = current_vote
+
+    @slider = Slider.new({
+      name: "admin",
+      fullscreen: true,
+      navigation: false,
+      slides: [{
+        name: "seascape",
+        headers: {
+          h1: [_("Administration")],
+        },
+        res: [640,960,1024,1280,1920,2048,3072,4096],
+        type: 'jpg',
+        default: 640,
+        alt: _(UNITE_TITLE),
+        decorators: ["headers", "image"]
+      }]
+    })
+
   end
 
-  # Add votes from file
+  # public: add votes from a file.
   #
   # Modify created_at value so that new votes has created_at value in future.
-  def upload # admin_upload
-    if params[:admin_hash] != Rails.application.config.x.admin_hash
-      redirect_to :root
-      return
-    end
-
+  def csv
     admin_csv = params[:admin_csv]
     if admin_csv.blank?
       add_flash :error, "Valitse tiedosto ja paina vasta sitten lähetä-nappia"
@@ -24,9 +37,17 @@ class AdminController < ApplicationController
       return
     end
 
+    service = ActiveStorage::Blob.service
+    file = service.download(admin_csv)
+    unless file and file.is_a?(String)
+      add_flash :error, "Tiedoston lataaminen epäonnistui"
+      render "index"
+      return
+    end
+
     # Parse and filter csv data
     require "csv"
-    data = CSV.parse(admin_csv.read)
+    data = CSV.parse(file)
     data = filter_csv(data)
 
     # Add the ip of the admin
@@ -55,6 +76,9 @@ class AdminController < ApplicationController
 
   private
 
+  # public: filter csv data to have name, email and country to add vote.
+  #
+  # old:
   # Data is a list of vote items read from csv. Every vote should have
   # name, email and country in that order.
   def filter_csv(data)
@@ -65,4 +89,5 @@ class AdminController < ApplicationController
       filtered && filtered.size === 3
     end
   end
+
 end

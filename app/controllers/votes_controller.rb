@@ -1,6 +1,8 @@
 class VotesController < ApplicationController
   helper_method :country_votes
 
+  before_action :require_login, only: [:show]
+
   def index
     # number_with_delimiter(VoteCount.total)
     @slider = Slider.new({
@@ -63,17 +65,7 @@ class VotesController < ApplicationController
   end
 
   def show
-    token = params[:token]
-    unless token
-      redirect_to new_token_url
-      return
-    end
     decoded_token = decode_token(params[:token])
-    unless decoded_token
-      Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
-      redirect_to new_token_url
-      return
-    end
     vote = Vote.where(id: decoded_token["vote_id"]).first
     unless vote
       add_flash :warning, _("There was an error")

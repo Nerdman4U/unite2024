@@ -1,41 +1,76 @@
 require "test_helper"
 class AdminControllerTest < ActionDispatch::IntegrationTest
   test "should get admin page" do
-    get admin_index_url admin_hash: Rails.application.config.x.admin_hash
+    vote = votes("vote_1")
+    assert vote.role.blank?
+    get admin_path token: vote.encoded_payload
+    assert_response :redirect
+
+    vote.role = "admin"
+    vote.save
+    get admin_path token: vote.encoded_payload
     assert_response :success
   end
 
-  # TODO?
-  # test "should parse CSV- file" do
-  #   admin_csv = fixture_file_upload("admin_csv", "text/plain")
-  #   assert_difference("Vote.count", 2) do
-  #     post admin_upload_url(admin_hash: Rails.application.config.x.admin_hash, admin_csv: admin_csv)
-  #   end
+  test "should get admin page after login at another page without explicitely givin token" do
+    vote = votes("vote_1")
+    vote.role = "admin"
+    vote.save
+    get vote_path token: vote.encoded_payload
+    assert_response :success
 
-  #   # TODO
-  #   # assert_not ActionMailer::Base.deliveries.empty?
-  # end
+    get admin_path
+    assert_response :success
+  end
+
+  test "should parse CSV- file" do
+    vote = votes("vote_1")
+    vote.role = "admin"
+    vote.save
+    get vote_path token: vote.encoded_payload
+
+    votes_csv = fixture_file_upload("admin_csv", "text/plain")
+    service = ActiveStorage::Blob.service
+    key = 'votes_csv'
+    service.upload(key, votes_csv)
+    # service.download(key)
+    # service.delete(key)
+
+    assert_difference("Vote.count", 2) do
+      post upload_votes_url(admin_csv: "votes_csv")
+    end
+
+    # TODO
+    # assert_not ActionMailer::Base.deliveries.empty?
+  end
 
   test "should not add votes if csv is nil" do
+    vote = votes("vote_1")
+    vote.role = "admin"
+    vote.save
+    get vote_path token: vote.encoded_payload
+
     admin_csv = nil
     assert_no_difference("Vote.count") do
-      post admin_upload_url(admin_hash: Rails.application.config.x.admin_hash, admin_csv: admin_csv)
+      post upload_votes_url(admin_csv: admin_csv)
     end
     # assert ActionMailer::Base.deliveries.empty?
   end
 
-  # test 'should filter csv data' do
-  #   get :index
-  #   admin_csv = fixture_file_upload('admin_csv','text/plain')
-  #   require "csv"
-  #   data = CSV.parse(admin_csv)
+  test 'should filter csv data' do
+    vote = votes("vote_1")
+    vote.role = "admin"
+    vote.save
+    get admin_path token: vote.encoded_payload
 
-  #   # TODO
-  #   # @controller.send does not return anything but it
-  #   # seems to work
-  #   filtered = @controller.send(:filter_csv, params: data)
-  #   # puts "final: #{filtered.inspect}"
-  #   #assert filtered
-  #   #assert_equal filtered.size, 2
-  # end
+    votes_csv = fixture_file_upload("admin_csv", "text/plain")
+
+    require "csv"
+    data = CSV.parse(votes_csv)
+
+    filtered = @controller.send(:filter_csv, data)
+    # puts "filtered: #{filtered.inspect}"
+    assert filtered
+    assert_equal filtered.size, 2
+  end
 end

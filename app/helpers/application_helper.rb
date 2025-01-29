@@ -488,4 +488,8 @@ module ApplicationHelper
     end
   end
 
+  def unite_title_html
+    tag.span UNITE_TITLE, class: "unite-title"
+  end
+
 end

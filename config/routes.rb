@@ -20,14 +20,14 @@ Rails.application.routes.draw do
     get "votes/waiting/:token" => "votes#waiting", as: :waiting
     get "votes/confirm/:token" => "votes#confirm", as: :confirm, constraints: { token: /[^\/]+/ }
     get "material" => "welcome#material", as: :material
+
+    draw(:admin)
   end
 
   post "comments" => "comments#create", as: "create_comment"
   post "votes" => "votes#create", as: "create_vote"
   post "tokens" => "tokens#create", as: "create_token"
   resolve("Token") { :token }
-
-  draw(:admin)
 
   # Wrong locale redirects back to locale_root with default locale.
   get "/*anything", to: redirect("/en")

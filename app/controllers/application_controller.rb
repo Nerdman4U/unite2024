@@ -22,6 +22,45 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # public: Check if already logged in or that given token is valid.
+  #
+  # Valid token means authorized login.
+  def require_login
+    return if logged_in?
+    token = params[:token]
+    unless token
+      redirect_to new_token_url
+    end
+    decoded_token = decode_token(params[:token])
+    unless decoded_token
+      Rails.logger.error("Vote#show: Invalid token, token: #{params[:token]}")
+      redirect_to new_token_url
+    end
+    unless decoded_token["vote_id"]
+      redirect_to new_token_url
+    end
+  end
+
+  # public: Check that logged in user has admin role.
+  def require_admin
+    if logged_in?
+      vote_id = current_vote.id
+    elsif params[:token]
+      vote_id = decode_token(params[:token])["vote_id"]
+    else
+      redirect_to new_token_url
+    end
+    unless vote_id
+      redirect_to new_token_url
+    end
+    vote = Vote.unspam.confirmed.where(id: vote_id).first
+    unless vote.admin?
+      redirect_to locale_root_path
+      return
+    end
+    @vote = vote
+  end
+
   def user_tagged_logging
     if logged_in? && current_vote
       logger.tagged(current_vote.email) do
@@ -92,8 +131,12 @@ class ApplicationController < ActionController::Base
 
   def current_vote
     return unless logged_in?
+    unless session[:current_vote_id].is_a? Integer
+      session.delete(:current_vote_id)
+      return
+    end
     begin
-      Vote.where(id: session[:current_vote_id]).first
+      Vote.unspam.confirmed.where(id: session[:current_vote_id]).first
     rescue
       logout
       nil
