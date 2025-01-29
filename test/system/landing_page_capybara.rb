@@ -45,10 +45,26 @@ class LocalesTest < ApplicationSystemTestCase
 
   test "should have locale links at header http" do
     visit locale_root_path(locale: :en)
-
     click_link "in English"
-
     assert_not current_url.match? "https"
+  end
+
+  test "should not have admin" do
+    visit locale_root_path(locale: :en)
+    assert_selector "header a.admin", count: 0
+  end
+
+  test "should have admin" do
+    vote = votes("vote_1")
+    vote.role = "admin"
+    vote.save
+
+    # loggin in
+    visit vote_path(locale: :en, token: vote.encoded_payload)
+
+    # visit root, logged in
+    visit locale_root_path(locale: :en)
+    assert_selector "header a.admin", count: 1
   end
 
 end
