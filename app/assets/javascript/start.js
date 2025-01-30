@@ -48,7 +48,7 @@ $(function () {
   unite.init();
   window.unite = unite;
   window.funks.push([unite.loadVotes, unite])
-  window.timers.register(5000, function() { unite.loadVotes() })
+  window.timers.register(60000, function() { unite.loadVotes() })
 });
 
 $(window).scroll(function () {
