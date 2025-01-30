@@ -1,3 +1,18 @@
+## 2.2.0 (2025-01-30)
+
+### Feat
+
+- Added test for admin primary navigation link
+- Removed email addresses from appeal page
+- Admin view
+- Link to initiative at main navigation, color
+
+### Fix
+
+- **unitethearmies.js**: js wont crash on page without slideshows
+- Deploy paths as environment variables
+- Returned application cache
+
 ## 2.1.0 (2025-01-28)
 
 ### Feat
