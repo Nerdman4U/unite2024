@@ -34,6 +34,8 @@ class VotesController < ApplicationController
   # - parent_vote :: public_token of parent vote
   #
   def new
+    logout!
+
     @slider = Slider.new({
       name: "new_vote",
       fullscreen: true,
@@ -318,8 +320,8 @@ class VotesController < ApplicationController
       return
     end
 
-    vote.email_confirmed = Time.now
-    vote.save
+    # vote.email_confirmed = Time.now
+    vote.confirm!
 
     VoteMailer.with(vote: vote).sign_up.deliver_later
     add_flash :success, _("Your email has been confirmed")

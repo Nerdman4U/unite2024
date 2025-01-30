@@ -22,10 +22,12 @@ namespace :deploy do
         if (fetch(:stage) == :production)
           execute "bin/rails", "deploy:migrate_production"
           execute "bin/rails", "deploy:precompile_production"
+          #invoke "passenger:restart"
           # execute "bin/rails", "deploy:restart_production"
         elsif (fetch(:stage) == :staging)
           execute "bin/rails", "deploy:migrate_staging"
           execute "bin/rails", "deploy:precompile_staging"
+          #invoke "passenger:restart"
           # execute "bin/rails", "deploy:restart_staging"
         end
       end
@@ -38,6 +40,7 @@ namespace :deploy do
       within release_path do
         if (fetch(:stage) == :production)
           execute "echo \"production\""
+          invoke "passenger:restart"
         elsif (fetch(:stage) == :staging)
           execute "echo \"staging\""
         end

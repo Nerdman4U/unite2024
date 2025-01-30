@@ -80,17 +80,34 @@ class VoteTest < ActiveSupport::TestCase
     assert @vote.save
   end
 
-  test "should add vote count" do
+  test "should add vote count after confirm" do
+    vote = votes("vote_2")
+    vote.confirm!
+    assert 1, VoteCount.where(country: @vote.country).first.count
+  end
+
+  test "should not add vote count if not confirmed" do
+    assert_nil Vote.maximum(:order_number)
+    count_before = VoteCount.where(country: @vote.country).first.count
+    vote = Vote.new({name: "testi", email: "info@email.test", country: "fi", ip: "1.1.1.1"})
+    vote.save
+
+    assert !vote.new_record?
+    assert_nil vote.email_confirmed
+    assert_equal vote.order_number, 1
+    assert_equal 1000, count_before
+  end
+
+  test "should add order number" do
+    bef = VoteCount.where(country: @vote.country).first.count
     @vote.save
-    vote_count = VoteCount.where(country: @vote.country).first
-    assert vote_count
-    assert_equal vote_count.count, 1001
+    assert_equal @vote.order_number, 1
+    assert 0, VoteCount.where(country: @vote.country).first.count
 
     # Multiple saves should not add vote count.
     @vote.save
-    vote_count = VoteCount.where(country: @vote.country).first
-    assert vote_count
-    assert_equal vote_count.count, 1001
+    assert_equal @vote.order_number, 1
+    assert 1, VoteCount.where(country: @vote.country).first.count
   end
 
   test "should calculate ago" do
@@ -180,9 +197,9 @@ class VoteTest < ActiveSupport::TestCase
     assert_equal encoded_payload, encoded_payload2
   end
 
-  test "should have order number" do
+  test "should have order number after save" do
     @vote.save
-    assert_equal @vote.order_number, 3001
+    assert_equal @vote.order_number, 1
   end
 
   test "should send email invitation" do

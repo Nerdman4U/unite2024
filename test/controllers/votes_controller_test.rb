@@ -21,6 +21,18 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_vote_url
+    assert !controller.send(:logged_in?)
+    assert_response :success
+  end
+
+  test "should logout if get new while logged in" do
+    vote = votes("vote_1")
+    get vote_path(locale: "en", token: vote.encoded_payload)
+    assert controller.send(:logged_in?)
+    assert_response :success
+
+    get new_vote_url
+    assert !controller.send(:logged_in?)
     assert_response :success
   end
 
@@ -242,18 +254,21 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     get votes_path(locale: "wrong") # with wrong locale redirects to locale_root_path
     assert_redirected_to locale_root_path
 
-    get vote_path(locale: "en", token: vote.encoded_payload)
-    assert_dom "title", text: "My vote (Save the Planet - Unite the Armies)"
-
     get votes_path(locale: "en")
     assert_dom "title", text: "a List of votes (Save the Planet - Unite the Armies)"
 
     get new_vote_path(locale: "en")
     assert_dom "title", text: "New vote (Save the Planet - Unite the Armies)"
+  end
+
+  test "should have proper title in english while logged in" do
+    vote = votes("vote_1")
+    get vote_path(locale: "en", token: vote.encoded_payload)
+    assert_dom "title", text: "My vote (Save the Planet - Unite the Armies)"
 
     # COMMENTS
     get new_comment_path
     assert_dom "title", text: "New comment (Save the Planet - Unite the Armies)"
-
   end
+
 end

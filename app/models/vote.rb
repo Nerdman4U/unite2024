@@ -21,7 +21,9 @@ class Vote < ApplicationRecord
 
   after_initialize :strip_email
   after_initialize :downcase_country_code
+
   before_save :add_vote_count
+  before_save :set_order_number
 
   has_many :votes, foreign_key: :vote_id
   has_many :comments, foreign_key: :vote_id
@@ -88,13 +90,29 @@ class Vote < ApplicationRecord
     VoteCount.target_vote_count - VoteCount.total
   end
 
-  # Vote#order_number as the total number of all votes
+  # public: add vote count to VoteCount.
+  #
+  # Vote count must be added after confirmed vote is saved.
+  #
+  # Vote#order_number as the total number of all votes (if this is
+  # last vote).
+  #
+  # Returns nothing.
   def add_vote_count
-    Rails.logger.debug("Adding vote count for #{self.inspect}")
-    return unless self.new_record?
-    # puts "adding vote count for #{self.inspect}"
+    # do not add vote count if spam and unless confirmed.
+    return if self.email_confirmed.nil?
+    return if self.spam
+
+    # do not add vote count again unless email_confirmed has changed
+    # which should never change.
+    return unless will_save_change_to_email_confirmed?
+
     VoteCount.add_vote(self)
-    self.order_number = VoteCount.total
+  end
+  def set_order_number
+    return unless self.new_record?
+    nro = Vote.maximum(:order_number) || 0
+    self.order_number = nro + 1
   end
 
   def invite(options)
@@ -116,6 +134,11 @@ class Vote < ApplicationRecord
     end
     options = options.merge(inviter_name: name, token: self.public_token)
     VoteMailer.with(options: options).invite.deliver_now
+  end
+
+  def confirm!
+    self.email_confirmed = Time.now
+    self.save
   end
 
   # deprecated

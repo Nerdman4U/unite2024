@@ -29,9 +29,11 @@
             <li>
               <%= link_to _("Read more"), appeal_path(locale: locale) %>
             </li>
+            <% unless logged_in? %>
             <li>
               <%= link_to _("Support now"), new_vote_path(locale: locale) %>
             </li>
+            <% end %>
             <% if logged_in? && current_vote %>
             <li>
               <%= link_to_vote %>
