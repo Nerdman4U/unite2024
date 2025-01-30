@@ -1,3 +1,9 @@
+## 2.2.2 (2025-01-30)
+
+### Fix
+
+- **start.js**: Load recent votes at minute interval
+
 ## 2.2.1 (2025-01-30)
 
 ### Fix
