@@ -176,21 +176,24 @@ class VotesController < ApplicationController
   def create
     logout!
 
+    @vote = Vote.new(vote_params)
+    @vote.ip = request.env["REMOTE_ADDR"]
+
     if params[:vote][:email] != params[:vote][:email_repeat]
       Rails.logger.error("Vote#create: Emails do not match")
       add_flash :warning, _("Emails do not match")
-      redirect_to new_vote_path(locale: locale)
+      render :new, status: :bad_request
+      #redirect_to new_vote_path(locale: locale)
       return
     end
 
     unless verify_captcha
       add_flash :warning, _("There was an error with human verifying")
-      redirect_to new_vote_path(locale: locale)
+      render :new, status: :bad_request
+      #redirect_to new_vote_path(locale: locale)
       return
     end
 
-    @vote = Vote.new(vote_params)
-    @vote.ip = request.env["REMOTE_ADDR"]
     @vote.save
 
     unless @vote.valid?

@@ -112,7 +112,7 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
       post create_vote_path, params: { vote: values, "g-recaptcha-response": "valid" }
     end
     assert_equal flash[:warning], ["Emails do not match"]
-    assert_redirected_to new_vote_path(locale: "en")
+    assert_response :bad_request
   end
 
   test "should not create vote if email is invalid" do
