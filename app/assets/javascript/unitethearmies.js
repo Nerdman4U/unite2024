@@ -17,7 +17,10 @@ class UniteTheArmies {
     this.loadVotes();
     this.removeSliderLoader();
     this.initSlideShowContainers()
-    this.slideshowcontainers[0].show()
+
+    if (this.slideshowcontainers.length > 0) {
+      this.slideshowcontainers[0].show()
+    }
   }
 
   initSlideShowContainers() {
