@@ -1,3 +1,10 @@
+## 2.2.1 (2025-01-30)
+
+### Fix
+
+- Render new instead redirect to serve typed form values intact
+- Vote counts were added for unconfirmed votes
+
 ## 2.2.0 (2025-01-30)
 
 ### Feat
