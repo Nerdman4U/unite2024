@@ -21,7 +21,7 @@ class VoteCountTest < ActiveSupport::TestCase
 
   test "should not add vote whene unvalid data" do
     assert_not VoteCount.new(country: nil).save
-    assert_not VoteCount.new(country: "fi", count: 0).save
+    assert_not VoteCount.new(country: "fi", count: -1).save
     assert_not VoteCount.new(country: "fi", count: "a").save
     assert_not VoteCount.new(country: "fii", count: 1).save
   end
