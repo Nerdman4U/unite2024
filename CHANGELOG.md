@@ -1,3 +1,9 @@
+## 2.2.3 (2025-01-31)
+
+### Fix
+
+- **vote_count.rb**: Allow count to be zero
+
 ## 2.2.2 (2025-01-30)
 
 ### Fix
