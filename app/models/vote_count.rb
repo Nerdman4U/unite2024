@@ -1,6 +1,6 @@
 class VoteCount < ApplicationRecord
   validates :country, presence: true
-  validates :count, numericality: { greater_than: 0 }
+  validates :count, numericality: { greater_than_or_equal_to: 0 }
   validate :validate_country_code
 
   after_initialize :downcase_country_name
