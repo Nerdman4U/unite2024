@@ -23,8 +23,8 @@ class VotesController < ApplicationController
       }]
     })
 
-    @votes = VoteCount.all
-    @sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
+    @sorted_votes = VoteCount.where("count > 0").order(count: :desc)
+    #@sorted_votes = @votes.sort { |a, b| b.count <=> a.count }
   end
 
   ## Create a new vote
