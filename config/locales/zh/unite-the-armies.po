@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-02-01 20:40+0200\n"
+"PO-Revision-Date: 2025-02-01 21:03+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgstr "%{title} v%{version} 与 Ruby %{ruby_version} 和 Rails %{rails_version}
 msgid "%{unite_title} - allekirjoittajat"
 msgstr ""
 
-#, fuzzy
 msgid "%{unite_title} - new comment"
-msgstr "评论"
+msgstr ""
 
 msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
 msgstr "&copy; 2015-%{year} 拯救地球 - 团结军队。保留所有权利。"
@@ -115,9 +114,8 @@ msgstr "评论成功"
 msgid "Comments"
 msgstr "评论"
 
-#, fuzzy
 msgid "Confirm Your vote for %{unite_title}"
-msgstr "你的投票"
+msgstr ""
 
 msgid "Confirm email sent"
 msgstr "确认电子邮件已发送"
@@ -500,9 +498,8 @@ msgstr "支持者"
 msgid "Swedish"
 msgstr "瑞典"
 
-#, fuzzy
 msgid "Thank you for signing the %{unite_title} petition"
-msgstr "感谢您签署“团结军队”请愿书"
+msgstr ""
 
 msgid "Thank you for your support %{name}"
 msgstr "谢谢你和你的支持！你是第 %{name}"
@@ -768,9 +765,8 @@ msgstr "您的支持编号为 %{count}."
 msgid "Your vote"
 msgstr "你的投票"
 
-#, fuzzy
 msgid "Your vote for %{unite_title}"
-msgstr "你的投票"
+msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "您的投票已添加，但电子邮件尚未确认。请检查您的电子邮件。"

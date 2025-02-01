@@ -1,11 +1,16 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2025-02-01 20:57+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: Save the Planet - Unite the Armies\n"
-"Language: sv\n"
 
 msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
 msgstr "Tiden tar slut medan vi förstör planetens resurser. Det måste ändras och det kan ändras. Du kan delta. Handla idag."
@@ -16,8 +21,20 @@ msgstr "Vi har bråttom.Vi har inte århundraden på oss, endast årtionden. Dä
 msgid "%{count} votes"
 msgstr "%{count} röster"
 
-msgid "...and by doing that we create..."
-msgstr "...och genom att göra det skapar vi..."
+msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr "%{title} v%{version} med Ruby %{ruby_version} och Rails %{rails_version}"
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+msgid "%{unite_title} - new comment"
+msgstr ""
+
+msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
+msgstr "&copy; 2015-%{year} RÄDDA PLANETEN - FÖRENA ARMÉEN. Alla rättigheter reserverade."
+
+msgid "...and by doing that we create problems."
+msgstr "...och genom att göra det skapar vi problem."
 
 msgid "...just by living our lives... "
 msgstr "...bara genom att leva våra liv... "
@@ -46,9 +63,6 @@ msgstr "Luftföroreningen är en världsomfattande utmaning "
 msgid "All people in the universe reside on this planet."
 msgstr "Alla människor i universum bor på denna planet."
 
-msgid "Also, all animals and plants live here."
-msgstr "Dessutom lever alla djur och växter här."
-
 msgid "Anonymous?"
 msgstr "Anonym?"
 
@@ -64,8 +78,8 @@ msgstr "Runt oss finns 400 miljarder solsystem."
 msgid "At Duckboard"
 msgstr "På Duckboard"
 
-msgid "At this site we collect signatures for the initiative sent to the United Nations."
-msgstr "På denna sida samlar vi in ​​underskrifter för initiativet som skickats till FN."
+msgid "At this site, we collect signatures for the initiative to be sent to the United Nations."
+msgstr "På den här webbplatsen samlar vi in ​​underskrifter för att initiativet ska skickas till FN."
 
 msgid "Autumn shore"
 msgstr "Höstens strand"
@@ -100,8 +114,8 @@ msgstr "En konstruktiv kommentar skapades framgångsrikt"
 msgid "Comments"
 msgstr "Kommentar"
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
-msgstr "Bekräfta din röst på Unite the Armies - Save the Planet"
+msgid "Confirm Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Confirm email sent"
 msgstr "Bekräfta skickat e-postmeddelande"
@@ -115,9 +129,8 @@ msgstr "Kontakta vår kampanjassistent"
 msgid "Country"
 msgstr " Landet"
 
-#, fuzzy
 msgid "Country (*)"
-msgstr " Landet"
+msgstr "Land (*)"
 
 msgid "Created at"
 msgstr "Skapades vid"
@@ -140,33 +153,26 @@ msgstr "Jorden"
 msgid "Email"
 msgstr "Email"
 
-#, fuzzy
 msgid "Email (*)"
-msgstr "Email"
+msgstr "E-post (*)"
 
-#, fuzzy
 msgid "Email Confirmation (*)"
-msgstr "Email bekräftelse"
+msgstr "E-postbekräftelse (*)"
 
-#, fuzzy
 msgid "Email is already registered."
-msgstr "Email"
+msgstr "E-post är redan registrerat."
 
-#, fuzzy
 msgid "Email is not confirmed"
-msgstr "Email"
+msgstr "E-post är inte bekräftat"
 
-#, fuzzy
 msgid "Email is not valid"
-msgstr "Email"
+msgstr "E-postadressen är inte giltig"
 
-#, fuzzy
 msgid "Email was not found"
-msgstr "Email"
+msgstr "E-posten hittades inte"
 
-#, fuzzy
 msgid "Emails do not match"
-msgstr "Email"
+msgstr "E-postmeddelanden stämmer inte överens"
 
 msgid "English"
 msgstr "Engelska"
@@ -204,9 +210,8 @@ msgstr "Helskärm"
 msgid "German"
 msgstr "Tyska"
 
-#, fuzzy
 msgid "Get to your private vote"
-msgstr "Detta är din privata röst"
+msgstr "Gå till din privata röst"
 
 msgid "Give the armies a new, positive task: protect the environment"
 msgstr "Ge arméerna en ny positiv uppgift: att skydda miljön"
@@ -238,9 +243,6 @@ msgstr "Om du inte röstade får du gärna radera detta mejl."
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr "Inom de närmaste decennierna kan endast starka och effektiva motåtgärder stoppa denna process. Vi föreslår att en del av de resurser som globalt går till militärsektorn i stället skulle riktas till den sociala sektorn och för att bromsa miljöförstörelsen. "
 
-msgid "Increase deforestation..."
-msgstr "Öka avskogningen..."
-
 msgid "Initiative"
 msgstr "Initiativ"
 
@@ -265,9 +267,8 @@ msgstr "Gå med i diskussionen på Discord."
 msgid "Language"
 msgstr "Språket"
 
-#, fuzzy
 msgid "Leave a comment"
-msgstr "Kommentar"
+msgstr "Lämna en kommentar"
 
 msgid "Let's spread happiness and work together to save the planet! :bi-heart-fill:"
 msgstr "Låt oss sprida glädje och arbeta tillsammans för att rädda planeten! :bi-heart-fill:"
@@ -292,9 +293,6 @@ msgstr "Material"
 
 msgid "Menu"
 msgstr "Meny"
-
-msgid "Microbes live here too :)"
-msgstr "Mikrober bor här också :)"
 
 msgid "Milky way"
 msgstr "Vintergatan"
@@ -329,9 +327,8 @@ msgstr "Min röst"
 msgid "Name"
 msgstr "Namn"
 
-#, fuzzy
 msgid "Name (*)"
-msgstr "Namn"
+msgstr "Namn (*)"
 
 msgid "Name of your friend"
 msgstr "Din väns namn"
@@ -387,9 +384,6 @@ msgstr "Vänligen verifiera din e-postadress genom att klicka på %{link}."
 msgid "Pollution"
 msgstr "Föroreningar"
 
-msgid "Pollution..."
-msgstr "Föroreningar..."
-
 msgid "Positive initiations will be published."
 msgstr "Positiva initiativ kommer att publiceras"
 
@@ -399,9 +393,8 @@ msgstr "Presentera uppgiften med max 1000 tecken"
 msgid "Previous"
 msgstr "Tidigare"
 
-#, fuzzy
 msgid "Professor"
-msgstr "professor"
+msgstr "Professor"
 
 msgid "Radical actions are urgently needed to save our planet."
 msgstr "Det behövs radikala åtgärder för att snabbt rädda vår planet."
@@ -415,9 +408,8 @@ msgstr "Läs mera"
 msgid "Read the Initiative"
 msgstr "Läs initiativet"
 
-#, fuzzy
 msgid "Recent Votes"
-msgstr "%{count} röster"
+msgstr "Senaste röster"
 
 msgid "Register your service"
 msgstr "Registrera din tjänst"
@@ -437,9 +429,8 @@ msgstr "Ryska"
 msgid "Save the Planet - Unite the Armies"
 msgstr "Save the Planet - Förena arméerna"
 
-#, fuzzy
 msgid "Save the Planet! Act Now!"
-msgstr "Rädda jorden! Handla NU"
+msgstr "Rädda planeten! Agera nu!"
 
 msgid "Save the planet"
 msgstr "Rädda planeten"
@@ -453,9 +444,8 @@ msgstr "Se vilka som redan har röstat!"
 msgid "Send"
 msgstr "Skicka"
 
-#, fuzzy
 msgid "Send!"
-msgstr "Skicka"
+msgstr "Skicka!"
 
 msgid "Share the opportunity to vote with your friends!"
 msgstr "Dela möjligheten att rösta med dina vänner!"
@@ -475,9 +465,8 @@ msgstr "Snöigt träd"
 msgid "Someone has requested access to your vote. If it was not you, remove this email. If it was you, use the below link to log in."
 msgstr "Någon har begärt tillgång till din röst. Om det inte var du, ta bort det här e-postmeddelandet. Om det var du, använd länken nedan för att logga in."
 
-#, fuzzy
 msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
-msgstr "Finska"
+msgstr "Tyvärr är vårt material mestadels på finska. Vi ber om ursäkt för eventuella besvär detta kan orsaka och hoppas kunna tillhandahålla mer flerspråkigt material i framtiden."
 
 msgid "Spanish"
 msgstr "Spanska"
@@ -509,8 +498,8 @@ msgstr "Supportrarna"
 msgid "Swedish"
 msgstr "Spanska"
 
-msgid "Thank you for signing the Unite the Armies petition"
-msgstr "Tack för att du undertecknade Unite the Armies-uppropet"
+msgid "Thank you for signing the %{unite_title} petition"
+msgstr ""
 
 msgid "Thank you for your support %{name}"
 msgstr "Tack för ditt stöd %{name}!"
@@ -557,8 +546,8 @@ msgstr "De förenade arméernas  resurser och kapacitet skall nyttjas för skogs
 msgid "There are billions of galaxies in the Universe."
 msgstr "Det finns miljarder galaxer i universum."
 
-msgid "There are huge"
-msgstr "Det finns enorma"
+msgid "There are huge environmental problems on our home planet."
+msgstr "Det finns enorma miljöproblem på vår hemplanet."
 
 msgid "There are more humans than ever before."
 msgstr "Det finns fler människor än någonsin tidigare."
@@ -575,9 +564,8 @@ msgstr "Det skedde ett verifieringsmistag"
 msgid "This is our home planet."
 msgstr "Det här är vår hemplanet."
 
-#, fuzzy
 msgid "This is your private vote (%s)"
-msgstr "Detta är din privata röst"
+msgstr "Det här är din privata röst (%s)"
 
 msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
 msgstr "Tickseed Careopsis Calliopsis av JamesDeMers"
@@ -588,9 +576,8 @@ msgstr "Till vår gemensamma värld"
 msgid "To comment page"
 msgstr "Till kommentarssidan"
 
-#, fuzzy
 msgid "To comments"
-msgstr "Kommentar"
+msgstr "Till kommentarer"
 
 msgid "To material page (in finnish)"
 msgstr "Till materialsida (på finska)"
@@ -610,9 +597,6 @@ msgstr "Arméernas totala kostnader i världen uppskattas till 1500 miljarder do
 msgid "Trash, plastics"
 msgstr "Skräp, plast"
 
-msgid "Trash..."
-msgstr "Skräp..."
-
 msgid "Trees"
 msgstr "Träd"
 
@@ -628,12 +612,8 @@ msgstr "Skriv din väns e-postadress igen"
 msgid "Type your friend's name"
 msgstr "Skriv din väns namn"
 
-msgid "Unite The Armies - new comment"
-msgstr "Unite The Armies - ny kommentar"
-
-#, fuzzy
 msgid "Updated at"
-msgstr "Skapades vid"
+msgstr "Uppdaterad kl"
 
 msgid "View anonymous comments given by previous voters."
 msgstr "Se anonyma kommentarer från tidigare väljare."
@@ -644,8 +624,8 @@ msgstr "Rösta"
 msgid "Vote for the initiative presented on this site."
 msgstr "Rösta på initiativet som presenteras på denna sida."
 
-msgid "Warm climate and oceans..."
-msgstr "Varmt klimat och hav..."
+msgid "Waste and pollution. Warm climate and rising ocean temperatures. Increased deforestation. Loss of living space for individuals of other species."
+msgstr "Avfall och föroreningar. Varmt klimat och stigande havstemperaturer. Ökad avskogning. Förlust av livsrum för individer av andra arter."
 
 msgid "Water is the Mother of Life – we all need it!"
 msgstr "Vattnet är Livets Moder - vi behöver alla det"
@@ -668,14 +648,17 @@ msgstr "Vi kan förändra saker."
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr "Vi önskar att Förenta Nationerna allvarligt begrundar detta världsomfattande initiativ och nyttjar ovanstående presentation för att föra fram en ny uppgift för världens militära styrkor och detta så fort som möjligt. Ett sådant initiativ skulle också ha en vikitig fredsbefrämjande effekt i världen."
 
-msgid "We fix."
-msgstr "Vi fixar."
+msgid "We fix them."
+msgstr "Vi fixar dem."
 
-msgid "We have grown"
-msgstr "Vi har vuxit"
+msgid "We have grown beyond sustainable limits!"
+msgstr "Vi har vuxit bortom hållbara gränser!"
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
 msgstr "Vi introducerar denna kampanj för att stödja initiativet, vilket två professorer, U. B. Lindström och Eero Paloheimo, har framställt för sekretariatet hos Förenta Nationerna"
+
+msgid "We live here with animals and plants. Microbes live here too! :)"
+msgstr "Vi lever här med djur och växter. Mikrober bor här också! :)"
 
 msgid "We made them."
 msgstr "Vi gjorde dem."
@@ -704,9 +687,8 @@ msgstr "Solnedgång för skogsmossa av TheOtherKev"
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "Om du vill ha initiativet på ditt språk - var god, kontakta oss!"
 
-#, fuzzy
 msgid "Yesterday"
-msgstr "dagar"
+msgstr "I går"
 
 msgid "You can also add Your own %s!"
 msgstr "Du kan också lägga till din egen %s!"
@@ -714,9 +696,8 @@ msgstr "Du kan också lägga till din egen %s!"
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "Efter undertecknandet kan du delta i diskussionen. Du kommer att få ett separat meddelande av detta via e-mail"
 
-#, fuzzy
 msgid "You can confirm the comment at administration page"
-msgstr "Kommentar"
+msgstr "Du kan bekräfta kommentaren på administrationssidan"
 
 msgid "You can help."
 msgstr "Du kan hjälpa till."
@@ -766,9 +747,8 @@ msgstr "Din e-post har bekräftats"
 msgid "Your friends email address"
 msgstr "Din väns e-mail adress"
 
-#, fuzzy
 msgid "Your friends email address again"
-msgstr "Din väns e-mail adress"
+msgstr "Din väns e-postadress igen"
 
 msgid "Your name"
 msgstr "Ditt namn"
@@ -785,8 +765,8 @@ msgstr "Ditt stödnummer är %{count}."
 msgid "Your vote"
 msgstr "Din röst"
 
-msgid "Your vote for Unite the Armies - Save the Planet"
-msgstr "Din röst på Unite the Armies - Save the Planet"
+msgid "Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "Din röst har lagts till men e-postadressen är inte bekräftad ännu. Kontrollera din e-post."
@@ -794,18 +774,11 @@ msgstr "Din röst har lagts till men e-postadressen är inte bekräftad ännu. K
 msgid "a List of votes"
 msgstr "en röstlista"
 
-msgid "beyond sustainable limits!"
-msgstr "bortom hållbara gränser!"
-
-#, fuzzy
 msgid "comment"
-msgstr "Kommentar"
+msgstr "kommentar"
 
 msgid "days"
 msgstr "dagar"
-
-msgid "environmental"
-msgstr "miljö-"
 
 msgid "hour"
 msgstr "timme"
@@ -813,37 +786,29 @@ msgstr "timme"
 msgid "hours"
 msgstr "timmar"
 
-#, fuzzy
 msgid "in Arabic"
-msgstr "Arabiska "
+msgstr "på arabiska"
 
-#, fuzzy
 msgid "in Chinese"
-msgstr "Kinesiska"
+msgstr "på kinesiska"
 
-#, fuzzy
 msgid "in English"
-msgstr "Engelska"
+msgstr "på engelska"
 
-#, fuzzy
 msgid "in Finnish"
-msgstr "Finska"
+msgstr "på finska"
 
-#, fuzzy
 msgid "in French"
-msgstr "Franska"
+msgstr "på franska"
 
-#, fuzzy
 msgid "in German"
-msgstr "Tyska"
+msgstr "på tyska"
 
-#, fuzzy
 msgid "in Russian"
-msgstr "Ryska"
+msgstr "på ryska"
 
-#, fuzzy
 msgid "in Spanish"
-msgstr "Spanska"
+msgstr "på spanska"
 
 msgid "in Swedish"
 msgstr "på svenska"
@@ -856,9 +821,6 @@ msgstr "minuter"
 
 msgid "minutes"
 msgstr "minuter"
-
-msgid "problems on our home planet."
-msgstr "problem på vår hemplanet."
 
 msgid "professor"
 msgstr "professor"

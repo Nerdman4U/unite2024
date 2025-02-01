@@ -1,11 +1,16 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2025-02-01 21:11+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: Save the Planet - Unite the Armies\n"
-"Language: fi\n"
 
 msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
 msgstr ""
@@ -18,8 +23,20 @@ msgstr "Meillä on kiire. Meillä ei ole aikaa vuosisatoja, vain vuosikymmeniä.
 msgid "%{count} votes"
 msgstr "%{count} kannattajaa"
 
-msgid "...and by doing that we create..."
-msgstr "...ja tekemällä sitä luomme..."
+msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr "%{title} v%{version} Rubylla %{ruby_version} ja kiskoilla %{rails_version}"
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+msgid "%{unite_title} - new comment"
+msgstr ""
+
+msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
+msgstr "&copy; 2015-%{year} SAVE THE PLANET – YHDISTÄ ARMEIJAT. Kaikki oikeudet pidätetään."
+
+msgid "...and by doing that we create problems."
+msgstr "...ja tekemällä niin luomme ongelmia."
 
 msgid "...just by living our lives... "
 msgstr "...elämällä elämäämme... "
@@ -48,9 +65,6 @@ msgstr "Ilmakehän saastuminen on globaali haaste!"
 msgid "All people in the universe reside on this planet."
 msgstr "Kaikki maailmankaikkeuden ihmiset asuvat tällä planeetalla."
 
-msgid "Also, all animals and plants live here."
-msgstr "Myös kaikki eläimet ja kasvit elävät täällä."
-
 msgid "Anonymous?"
 msgstr "Anonyymi?"
 
@@ -66,8 +80,8 @@ msgstr "Ympärillämme on 400 miljardia aurinkokuntaa."
 msgid "At Duckboard"
 msgstr "Duckboardilla"
 
-msgid "At this site we collect signatures for the initiative sent to the United Nations."
-msgstr "Tällä sivustolla keräämme allekirjoituksia YK:lle lähetetylle aloitteelle."
+msgid "At this site, we collect signatures for the initiative to be sent to the United Nations."
+msgstr "Tällä sivustolla keräämme allekirjoituksia aloitteen lähettämiseksi YK:lle."
 
 msgid "Autumn shore"
 msgstr "Syksyinen ranta"
@@ -102,8 +116,8 @@ msgstr "Kommentti on lisätty onnistuneesti."
 msgid "Comments"
 msgstr "Kommentit"
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
-msgstr "Vahvista äänesi Yhdistäkäämme armeijat - Pelastetaan maailma kampanjan puolesta"
+msgid "Confirm Your vote for %{unite_title}"
+msgstr "Vahvista äänesi %{unite_title} kampanjan puolesta"
 
 msgid "Confirm email sent"
 msgstr "Vahvista sahkopostisi"
@@ -198,9 +212,8 @@ msgstr "Koko näyttö"
 msgid "German"
 msgstr "Saksa"
 
-#, fuzzy
 msgid "Get to your private vote"
-msgstr "Tämä on henkilökohtainen kannattajasivusi"
+msgstr "Siirry yksityisäänestykseen"
 
 msgid "Give the armies a new, positive task: protect the environment"
 msgstr "Annetaan armeijoille uusi positiivinen, ympäristönsuojelijan tehtävä"
@@ -215,7 +228,7 @@ msgid "Helsinki, 4.11.2014"
 msgstr "Helsinki, 4.11.2014"
 
 msgid "Home"
-msgstr "Kotiin"
+msgstr "Koti"
 
 msgid "IP"
 msgstr "IP"
@@ -232,9 +245,6 @@ msgstr "Jos et äänestänyt, poista tämä sähköposti."
 
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr "Vain vahvat ja tehokkaat vastatoimet voivat torjua muutoksen kiihtymisen tulevina vuosikymmeninä. Ehdotamme harkittavaksi, että maailman varustelumenoja suunnattaisiin nykyistä tehokkaammin vahingollisen ekologis/sosiaalisen muutoksen pysäyttämiseen, ympäristön muun suojelun rinnalla.  "
-
-msgid "Increase deforestation..."
-msgstr "Lisää metsäkadon määrää..."
 
 msgid "Initiative"
 msgstr "Aloite"
@@ -260,9 +270,8 @@ msgstr "Liity Discord kanavalle."
 msgid "Language"
 msgstr "Kieli"
 
-#, fuzzy
 msgid "Leave a comment"
-msgstr "Kommentti"
+msgstr "Jätä kommentti"
 
 msgid "Let's spread happiness and work together to save the planet! :bi-heart-fill:"
 msgstr "Levitetään onnea ja toimitaan yhdessä planeetan pelastamiseksi! :bi-heart-fill:"
@@ -287,9 +296,6 @@ msgstr "Materiaalia"
 
 msgid "Menu"
 msgstr "Valikko"
-
-msgid "Microbes live here too :)"
-msgstr "Mikrobitkin elävät täällä :)"
 
 msgid "Milky way"
 msgstr "Linnunrata"
@@ -381,9 +387,6 @@ msgstr "Vahvista sähköpostiosoitteesi napsauttamalla %{link}."
 msgid "Pollution"
 msgstr "Saastuminen"
 
-msgid "Pollution..."
-msgstr "Saastuminen..."
-
 msgid "Positive initiations will be published."
 msgstr "Positiiviset aloitteet julkaistaan."
 
@@ -393,9 +396,8 @@ msgstr "Ehdota tehtävää korkeintaan 1000 merkin pituisena."
 msgid "Previous"
 msgstr "Edellinen"
 
-#, fuzzy
 msgid "Professor"
-msgstr "professori"
+msgstr "Professori"
 
 msgid "Radical actions are urgently needed to save our planet."
 msgstr "Radikaaleja toimenpiteitä tarvitaan planeettamme pelastamiseksi."
@@ -430,9 +432,8 @@ msgstr "Venäjä"
 msgid "Save the Planet - Unite the Armies"
 msgstr "Save the Planet – yhdistä armeijat"
 
-#, fuzzy
 msgid "Save the Planet! Act Now!"
-msgstr "Pelasta maailma! Toimi nyt!"
+msgstr "Pelasta planeetta! Toimi nyt!"
 
 msgid "Save the planet"
 msgstr "Pelasta maailma"
@@ -446,9 +447,8 @@ msgstr "Katso ketkä ovat kannattaneet!"
 msgid "Send"
 msgstr "Lähetä"
 
-#, fuzzy
 msgid "Send!"
-msgstr "Lähetä"
+msgstr "Lähetä!"
 
 msgid "Share the opportunity to vote with your friends!"
 msgstr "Jaa mahdollisuus äänestää ystäviesi kanssa!"
@@ -468,9 +468,8 @@ msgstr "Luminen puu"
 msgid "Someone has requested access to your vote. If it was not you, remove this email. If it was you, use the below link to log in."
 msgstr "Joku on pyytänyt pääsyä ääneesi. Jos et ollut sinä, poista tämä sähköposti. Jos se olit sinä, käytä alla olevaa linkkiä kirjautuaksesi sisään."
 
-#, fuzzy
 msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
-msgstr "Suomi"
+msgstr "Valitettavasti materiaalimme on pääosin suomeksi. Pahoittelemme tästä mahdollisesti aiheutuvaa haittaa ja toivomme voivamme tarjota lisää monikielistä materiaalia tulevaisuudessa."
 
 msgid "Spanish"
 msgstr "Espanja"
@@ -502,7 +501,7 @@ msgstr "Kannattajat"
 msgid "Swedish"
 msgstr "ruotsi"
 
-msgid "Thank you for signing the Unite the Armies petition"
+msgid "Thank you for signing the %{unite_title} petition"
 msgstr "Kiitokset allekirjoituksesta ja mahdollisuus auttaa"
 
 msgid "Thank you for your support %{name}"
@@ -550,8 +549,8 @@ msgstr "Yhdistynyt armeija suunnattava aavikoiden metsittämiseen."
 msgid "There are billions of galaxies in the Universe."
 msgstr "Universumissa on miljardeja galakseja."
 
-msgid "There are huge"
-msgstr "Siellä on valtavia"
+msgid "There are huge environmental problems on our home planet."
+msgstr "Kotiplaneetallamme on valtavia ympäristöongelmia."
 
 msgid "There are more humans than ever before."
 msgstr "Ihmisiä on enemmän kuin koskaan ennen."
@@ -568,9 +567,8 @@ msgstr "Tapahtui virhe varmennuksessa"
 msgid "This is our home planet."
 msgstr "Tämä on kotiplaneettamme."
 
-#, fuzzy
 msgid "This is your private vote (%s)"
-msgstr "Tämä on henkilökohtainen kannattajasivusi"
+msgstr "Tämä on yksityinen äänesi (%s)"
 
 msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
 msgstr "Punkkiensiemen Careopsis Calliopsis kirjoittanut JamesDeMers"
@@ -581,9 +579,8 @@ msgstr "Yhteiselle maailmallemme"
 msgid "To comment page"
 msgstr "Kommenttisivulle"
 
-#, fuzzy
 msgid "To comments"
-msgstr "Kommentit"
+msgstr "Kommentteihin"
 
 msgid "To material page (in finnish)"
 msgstr "Materiaalisivulle (suomeksi)"
@@ -603,9 +600,6 @@ msgstr "Maailman valtioiden yhteisiksi varustelukuluiksi on arvioitu 1500 miljar
 msgid "Trash, plastics"
 msgstr "Roskia, muovia"
 
-msgid "Trash..."
-msgstr "Roskakori..."
-
 msgid "Trees"
 msgstr "puut"
 
@@ -621,12 +615,8 @@ msgstr "Kirjoita ystäväsi sähköpostiosoite uudelleen"
 msgid "Type your friend's name"
 msgstr "Kirjoita ystäväsi nimi"
 
-msgid "Unite The Armies - new comment"
-msgstr "Unite The Armies - uusi kommentti"
-
-#, fuzzy
 msgid "Updated at"
-msgstr "Lisätty"
+msgstr "Päivitetty klo"
 
 msgid "View anonymous comments given by previous voters."
 msgstr "Katso aiempien äänestäjien anonyymit kommentit."
@@ -637,8 +627,8 @@ msgstr "Äänestää"
 msgid "Vote for the initiative presented on this site."
 msgstr "Äänestä tällä sivustolla esiteltyä aloitetta."
 
-msgid "Warm climate and oceans..."
-msgstr "Lämmin ilmasto ja valtameret..."
+msgid "Waste and pollution. Warm climate and rising ocean temperatures. Increased deforestation. Loss of living space for individuals of other species."
+msgstr "Jäte ja saastuminen. Lämmin ilmasto ja valtameren lämpötilan nousu. Lisääntynyt metsien hävittäminen. Muiden lajien yksilöiden elintilan menetys."
 
 msgid "Water is the Mother of Life – we all need it!"
 msgstr "Vesi on elämän äiti - me kaikki tarvitsemme sitä!"
@@ -661,14 +651,17 @@ msgstr "Voimme muuttaa asioita."
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr "Toivomme, että YK harkitsisi maailman armeijoiden suuntaamista uuteen tehtävään ja tekisi maailmanlaajuisen aloitteen edellä esitetyn ehdotuksen nopeaksi toteuttamiseksi. Aloitteella olisi myös ilmeinen maailmanrauhaa edistävä vaikutuksensa.      "
 
-msgid "We fix."
-msgstr "Korjaamme."
+msgid "We fix them."
+msgstr "Korjaamme ne."
 
-msgid "We have grown"
-msgstr "Olemme kasvaneet"
+msgid "We have grown beyond sustainable limits!"
+msgstr "Olemme kasvaneet kestävien rajojen yli!"
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
 msgstr "Kampanjamme tukee aloitetta, jonka ovat lähettäneet Yhdistyneille Kansakunnille professorit U.B. Lindström ja Eero Paloheimo."
+
+msgid "We live here with animals and plants. Microbes live here too! :)"
+msgstr "Elämme täällä eläinten ja kasvien kanssa. Mikrobit elävät myös täällä! :)"
 
 msgid "We made them."
 msgstr "Teimme ne."
@@ -697,9 +690,8 @@ msgstr "TheOtherKevin metsän sammal auringonlasku"
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "Haluatko nähdä koko vetoomuksen omalla kielelläsi - ole hyvä ja ota yhteyttä!"
 
-#, fuzzy
 msgid "Yesterday"
-msgstr "päivä"
+msgstr "Eilen"
 
 msgid "You can also add Your own %s!"
 msgstr "Voit myös lisätä oman %s!"
@@ -707,9 +699,8 @@ msgstr "Voit myös lisätä oman %s!"
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "Voit osallistua keskusteluun äänestyksen jälkeen. Saat lisätietoa sähköpostilla."
 
-#, fuzzy
 msgid "You can confirm the comment at administration page"
-msgstr "Kommentti"
+msgstr "Voit vahvistaa kommentin hallintosivulla"
 
 msgid "You can help."
 msgstr "Voit auttaa."
@@ -759,9 +750,8 @@ msgstr "Sähköpostisi on vahvistettu"
 msgid "Your friends email address"
 msgstr "Ystäväsi sähköpostiosoite"
 
-#, fuzzy
 msgid "Your friends email address again"
-msgstr "Ystäväsi sähköpostiosoite"
+msgstr "Ystäväsi sähköpostiosoite uudelleen"
 
 msgid "Your name"
 msgstr "Sinun nimesi"
@@ -778,8 +768,8 @@ msgstr "Olet kannattaja %{count}."
 msgid "Your vote"
 msgstr "Sinun äänesi"
 
-msgid "Your vote for Unite the Armies - Save the Planet"
-msgstr "Äänesi Unite the Armies - Save the Planet -sivustolle"
+msgid "Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "Äänesi on lisätty, mutta sähköpostiosoitetta ei ole vielä vahvistettu. Tarkista sähköpostisi."
@@ -787,18 +777,11 @@ msgstr "Äänesi on lisätty, mutta sähköpostiosoitetta ei ole vielä vahviste
 msgid "a List of votes"
 msgstr "äänestyslista"
 
-msgid "beyond sustainable limits!"
-msgstr "kestävien rajojen yli!"
-
-#, fuzzy
 msgid "comment"
-msgstr "Kommentti"
+msgstr "kommentti"
 
 msgid "days"
 msgstr "päivää"
-
-msgid "environmental"
-msgstr "ympäristön kannalta"
 
 msgid "hour"
 msgstr "tunti"
@@ -841,9 +824,6 @@ msgstr "minuutti"
 
 msgid "minutes"
 msgstr "minuuttia"
-
-msgid "problems on our home planet."
-msgstr "ongelmia kotiplaneetallamme."
 
 msgid "professor"
 msgstr "professori"

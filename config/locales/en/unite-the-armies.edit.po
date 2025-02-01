@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unite-the-armies 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-10-20 15:34+0300\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2025-02-01 20:15+0200\n"
+"Last-Translator: Joni Töyrylä <info@jonitoyryla.eu>\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,12 @@ msgid "%{count} votes"
 msgstr "%{count} supporters"
 
 msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr ""
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+msgid "%{unite_title} - new comment"
 msgstr ""
 
 msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
@@ -113,7 +119,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
+msgid "Confirm Your vote for %{unite_title}"
 msgstr ""
 
 msgid "Confirm email sent"
@@ -209,9 +215,8 @@ msgstr ""
 msgid "German"
 msgstr ""
 
-#, fuzzy
 msgid "Get to your private vote"
-msgstr "This is your private support page"
+msgstr ""
 
 msgid "Give the armies a new, positive task: protect the environment"
 msgstr "Give the armies of the world a new, positive task: to protect the environment"
@@ -408,9 +413,8 @@ msgstr ""
 msgid "Read the Initiative"
 msgstr ""
 
-#, fuzzy
 msgid "Recent Votes"
-msgstr "%{count} supporters"
+msgstr ""
 
 msgid "Register your service"
 msgstr ""
@@ -499,7 +503,7 @@ msgstr ""
 msgid "Swedish"
 msgstr ""
 
-msgid "Thank you for signing the Unite the Armies petition"
+msgid "Thank you for signing the %{unite_title} petition"
 msgstr ""
 
 msgid "Thank you for your support %{name}"
@@ -565,9 +569,8 @@ msgstr ""
 msgid "This is our home planet."
 msgstr ""
 
-#, fuzzy
 msgid "This is your private vote (%s)"
-msgstr "This is your private support page"
+msgstr ""
 
 msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
 msgstr ""
@@ -612,9 +615,6 @@ msgid "Type your friend's email again"
 msgstr ""
 
 msgid "Type your friend's name"
-msgstr ""
-
-msgid "Unite The Armies - new comment"
 msgstr ""
 
 msgid "Updated at"
@@ -752,9 +752,8 @@ msgstr ""
 msgid "Your friends email address"
 msgstr "Your friend’s email address"
 
-#, fuzzy
 msgid "Your friends email address again"
-msgstr "Your friend’s email address"
+msgstr ""
 
 msgid "Your name"
 msgstr ""
@@ -771,7 +770,7 @@ msgstr "You are supporter number %{count}."
 msgid "Your vote"
 msgstr ""
 
-msgid "Your vote for Unite the Armies - Save the Planet"
+msgid "Your vote for %{unite_title}"
 msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
@@ -839,8 +838,3 @@ msgstr ""
 
 msgid "sincerely,"
 msgstr ""
-
-#~ msgid "In these pages we collect support for a global initiative."
-#~ msgstr "Via these pages we gather support for a global initiative."
-#~ msgid "We have to give the armies a new, positive task."
-#~ msgstr "We have to give them a new, positive task."

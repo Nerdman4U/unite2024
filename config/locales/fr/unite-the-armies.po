@@ -1,11 +1,16 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2025-02-01 20:51+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: Save the Planet - Unite the Armies\n"
-"Language: fr\n"
 
 msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
 msgstr "Le  temps va manquer, alors que nous sommes en train de détruire les ressources de la planète. Ceci doit ”changer et peut être changé. Vous pouvez participer. Agissez dès aujourd'hui."
@@ -22,9 +27,8 @@ msgstr "%{title} v%{version} avec Ruby %{ruby_version} et Rails %{rails_version}
 msgid "%{unite_title} - allekirjoittajat"
 msgstr ""
 
-#, fuzzy
 msgid "%{unite_title} - new comment"
-msgstr "commentaire"
+msgstr ""
 
 msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
 msgstr "&copy; 2015-%{year} SAUVONS LA PLANÈTE - UNISSONS LES ARMÉES. Tous droits réservés."
@@ -110,9 +114,8 @@ msgstr "Le commentaire est correctement créé."
 msgid "Comments"
 msgstr "Commentaires"
 
-#, fuzzy
 msgid "Confirm Your vote for %{unite_title}"
-msgstr "Votre vote"
+msgstr ""
 
 msgid "Confirm email sent"
 msgstr "Confirmer l'envoi de l'e-mail"
@@ -495,9 +498,8 @@ msgstr "Partisans"
 msgid "Swedish"
 msgstr "suédois"
 
-#, fuzzy
 msgid "Thank you for signing the %{unite_title} petition"
-msgstr "Merci d'avoir signé la pétition Unissons les armées"
+msgstr ""
 
 msgid "Thank you for your support %{name}"
 msgstr "Merci pour votre support %{name}"
@@ -765,9 +767,8 @@ msgstr "Votre numéro de supporteur est %{count}."
 msgid "Your vote"
 msgstr "Votre vote"
 
-#, fuzzy
 msgid "Your vote for %{unite_title}"
-msgstr "Votre vote"
+msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "Votre vote a été ajouté mais votre email n'est pas encore confirmé. Veuillez vérifier votre email."

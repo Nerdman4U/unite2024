@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the unite-the-armies package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: unite-the-armies 1.0.0\n"
@@ -28,6 +27,12 @@ msgid "%{count} votes"
 msgstr "%{count} supporters"
 
 msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr ""
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+msgid "%{unite_title} - new comment"
 msgstr ""
 
 msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
@@ -114,7 +119,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
+msgid "Confirm Your vote for %{unite_title}"
 msgstr ""
 
 msgid "Confirm email sent"
@@ -498,7 +503,7 @@ msgstr ""
 msgid "Swedish"
 msgstr ""
 
-msgid "Thank you for signing the Unite the Armies petition"
+msgid "Thank you for signing the %{unite_title} petition"
 msgstr ""
 
 msgid "Thank you for your support %{name}"
@@ -610,9 +615,6 @@ msgid "Type your friend's email again"
 msgstr ""
 
 msgid "Type your friend's name"
-msgstr ""
-
-msgid "Unite The Armies - new comment"
 msgstr ""
 
 msgid "Updated at"
@@ -768,7 +770,7 @@ msgstr "You are supporter number %{count}."
 msgid "Your vote"
 msgstr ""
 
-msgid "Your vote for Unite the Armies - Save the Planet"
+msgid "Your vote for %{unite_title}"
 msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."

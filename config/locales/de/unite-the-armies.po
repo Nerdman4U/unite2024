@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-02-01 20:10+0200\n"
+"PO-Revision-Date: 2025-02-01 21:02+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,12 @@ msgstr "%{count} Kürzliche Unterschriften"
 
 msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
 msgstr "%{title} v%{version} mit Ruby %{ruby_version} und Rails %{rails_version}"
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+msgid "%{unite_title} - new comment"
+msgstr ""
 
 msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
 msgstr "&copy; 2015-%{year} RETTEN SIE DEN PLANETEN – VEREINIGEN SIE DIE ARMEEN. Alle Rechte vorbehalten."
@@ -108,8 +114,8 @@ msgstr "Der Kommentar wurde erfolgreich erstellt."
 msgid "Comments"
 msgstr "Kommentieren"
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
-msgstr "Bestätigen Sie Ihre Stimme für Unite the Armies - Save the Planet"
+msgid "Confirm Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Confirm email sent"
 msgstr "E-Mail-Versand bestätigen"
@@ -492,8 +498,8 @@ msgstr "Unterstützer"
 msgid "Swedish"
 msgstr "Schwedisch"
 
-msgid "Thank you for signing the Unite the Armies petition"
-msgstr "Vielen Dank für Ihre Unterzeichnung der Unite the Armies-Petition"
+msgid "Thank you for signing the %{unite_title} petition"
+msgstr ""
 
 msgid "Thank you for your support %{name}"
 msgstr "Vielen Dank für die Unterstützung %{name}!"
@@ -605,9 +611,6 @@ msgstr "Geben Sie die E-Mail-Adresse Ihres Freundes erneut ein"
 
 msgid "Type your friend's name"
 msgstr "Geben Sie den Namen Ihres Freundes ein"
-
-msgid "Unite The Armies - new comment"
-msgstr "Unite The Armies - neuer Kommentar"
 
 msgid "Updated at"
 msgstr "Aktualisiert am"
@@ -762,8 +765,8 @@ msgstr "Du bist der/die %{count}. Unterstützer(in)."
 msgid "Your vote"
 msgstr "Ihre Stimme"
 
-msgid "Your vote for Unite the Armies - Save the Planet"
-msgstr "Ihre Stimme für Unite the Armies - Save the Planet"
+msgid "Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "Ihre Stimme wurde hinzugefügt, die E-Mail-Adresse ist jedoch noch nicht bestätigt. Bitte überprüfen Sie Ihre E-Mail."

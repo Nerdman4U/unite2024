@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-02-01 19:53+0200\n"
+"PO-Revision-Date: 2025-02-01 21:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,12 @@ msgstr "آخرالأصوات %{count}"
 
 msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
 msgstr "%{title} v%{version} مع Ruby %{ruby_version} و Rails %{rails_version}"
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+msgid "%{unite_title} - new comment"
+msgstr ""
 
 msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
 msgstr "&copy; 2015-%{year} أنقذوا الكوكب - وحِّدوا الجيوش. جميع الحقوق محفوظة."
@@ -110,8 +116,8 @@ msgstr "تم تحقيق التعليق بنجاح"
 msgid "Comments"
 msgstr "التعليق"
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
-msgstr "أكد تصويتك لـ \"توحيد الجيوش - إنقاذ الكوكب\""
+msgid "Confirm Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Confirm email sent"
 msgstr "تأكيد إرسال البريد الإلكتروني"
@@ -494,8 +500,8 @@ msgstr "ادعم الآن"
 msgid "Swedish"
 msgstr "إسباني"
 
-msgid "Thank you for signing the Unite the Armies petition"
-msgstr "شكرا لك على التوقيع على عريضة توحيد الجيوش"
+msgid "Thank you for signing the %{unite_title} petition"
+msgstr ""
 
 msgid "Thank you for your support %{name}"
 msgstr "%{name}شكراً على دعمك "
@@ -607,9 +613,6 @@ msgstr "اكتب البريد الإلكتروني لصديقك مرة أخرى"
 
 msgid "Type your friend's name"
 msgstr "اكتب اسم صديقك"
-
-msgid "Unite The Armies - new comment"
-msgstr "توحيد الجيوش - تعليق جديد"
 
 msgid "Updated at"
 msgstr "تم التحديث في"
@@ -764,8 +767,8 @@ msgstr "رقم ترتيب دعمك هو %{count}"
 msgid "Your vote"
 msgstr "صوتك"
 
-msgid "Your vote for Unite the Armies - Save the Planet"
-msgstr "صوتك لـ \"توحيد الجيوش - إنقاذ الكوكب\""
+msgid "Your vote for %{unite_title}"
+msgstr ""
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "لقد تم إضافة صوتك ولكن لم يتم تأكيد البريد الإلكتروني بعد. يرجى التحقق من بريدك الإلكتروني."
