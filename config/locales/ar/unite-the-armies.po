@@ -1,11 +1,16 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2025-02-01 19:53+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: Save the Planet - Unite the Armies\n"
-"Language: ar\n"
 
 msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
 msgstr " الوقت ينفد بينما نحن ندمّر موارد الكوكب.هذا يجب أن يتغير وأنه يمكن تغييره،ويمكنك المشاركة وإتخاذ الإجراءات اليوم."
@@ -18,8 +23,14 @@ msgstr ""
 msgid "%{count} votes"
 msgstr "آخرالأصوات %{count}"
 
-msgid "...and by doing that we create..."
-msgstr "...ومن خلال القيام بذلك فإننا نخلق..."
+msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr "%{title} v%{version} مع Ruby %{ruby_version} و Rails %{rails_version}"
+
+msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
+msgstr "&copy; 2015-%{year} أنقذوا الكوكب - وحِّدوا الجيوش. جميع الحقوق محفوظة."
+
+msgid "...and by doing that we create problems."
+msgstr "...ومن خلال القيام بذلك فإننا نخلق المشاكل."
 
 msgid "...just by living our lives... "
 msgstr "...فقط من خلال عيش حياتنا... "
@@ -48,9 +59,6 @@ msgstr "تلوث الهواء هو تحدّ عالمي"
 msgid "All people in the universe reside on this planet."
 msgstr "جميع الناس في الكون يقيمون على هذا الكوكب."
 
-msgid "Also, all animals and plants live here."
-msgstr "كما تعيش هنا كافة الحيوانات والنباتات."
-
 msgid "Anonymous?"
 msgstr "مجهول؟"
 
@@ -66,8 +74,8 @@ msgstr "يوجد حولنا 400 مليار نظام شمسي."
 msgid "At Duckboard"
 msgstr "في داكبورد"
 
-msgid "At this site we collect signatures for the initiative sent to the United Nations."
-msgstr "في هذا الموقع نقوم بجمع التوقيعات للمبادرة المرسلة إلى الأمم المتحدة."
+msgid "At this site, we collect signatures for the initiative to be sent to the United Nations."
+msgstr "في هذا الموقع نقوم بجمع التوقيعات من أجل إرسال المبادرة إلى الأمم المتحدة."
 
 msgid "Autumn shore"
 msgstr "شاطئ الخريف"
@@ -117,9 +125,8 @@ msgstr "اتصل بمساعد الحملة لدينا"
 msgid "Country"
 msgstr "البلد"
 
-#, fuzzy
 msgid "Country (*)"
-msgstr "البلد"
+msgstr "دولة (*)"
 
 msgid "Created at"
 msgstr "تم تحقيقه في"
@@ -142,33 +149,26 @@ msgstr "أرض"
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#, fuzzy
 msgid "Email (*)"
-msgstr "البريد الإلكتروني"
+msgstr "بريد إلكتروني (*)"
 
-#, fuzzy
 msgid "Email Confirmation (*)"
-msgstr "التأكيد على البريد الإلكتووني"
+msgstr "تأكيد البريد الإلكتروني (*)"
 
-#, fuzzy
 msgid "Email is already registered."
-msgstr "البريد الإلكتروني"
+msgstr "البريد الإلكتروني مسجل بالفعل."
 
-#, fuzzy
 msgid "Email is not confirmed"
-msgstr "البريد الإلكتروني"
+msgstr "لم يتم تأكيد البريد الإلكتروني"
 
-#, fuzzy
 msgid "Email is not valid"
-msgstr "البريد الإلكتروني"
+msgstr "البريد الإلكتروني غير صالح"
 
-#, fuzzy
 msgid "Email was not found"
-msgstr "البريد الإلكتروني"
+msgstr "لم يتم العثور على البريد الإلكتروني"
 
-#, fuzzy
 msgid "Emails do not match"
-msgstr "البريد الإلكتروني"
+msgstr "رسائل البريد الإلكتروني لا تتطابق"
 
 msgid "English"
 msgstr "إنجليزي"
@@ -206,9 +206,8 @@ msgstr "ملء الشاشة"
 msgid "German"
 msgstr "الألمانية"
 
-#, fuzzy
 msgid "Get to your private vote"
-msgstr "هذا هو التصويت الخاص بك"
+msgstr "احصل على تصويتك الخاص"
 
 msgid "Give the armies a new, positive task: protect the environment"
 msgstr " أعط الجيوش مهمة جديدة إيجابية : حماية البيئة."
@@ -240,9 +239,6 @@ msgstr "إذا لم تصوت، فلا تتردد في حذف هذا البريد
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr "ولا يمكن محاربة تسارع هذه التغيرات في العقود القليلة المقبلة إلا باتخاذ تدابير مضادة قوية وفعالة. نقترح عليكم توجيه الإنفاق على التسلح في العالم  لمعالجة التدهور البيئي والاجتماعي بطريقة أكثر تركيزا مما هو عليه الآن—إلى جانب تدابير حماية البيئة الأخرى. "
 
-msgid "Increase deforestation..."
-msgstr "زيادة إزالة الغابات..."
-
 msgid "Initiative"
 msgstr "مبادرة"
 
@@ -267,9 +263,8 @@ msgstr "انضم إلى المناقشة على Discord."
 msgid "Language"
 msgstr "اللغة"
 
-#, fuzzy
 msgid "Leave a comment"
-msgstr "التعليق"
+msgstr "اترك تعليقا"
 
 msgid "Let's spread happiness and work together to save the planet! :bi-heart-fill:"
 msgstr "دعونا ننشر السعادة ونعمل معًا لإنقاذ الكوكب! :bi-heart-fill:"
@@ -294,9 +289,6 @@ msgstr "مادة"
 
 msgid "Menu"
 msgstr "القائمة"
-
-msgid "Microbes live here too :)"
-msgstr "الميكروبات تعيش هنا أيضا :)"
 
 msgid "Milky way"
 msgstr "درب التبانة"
@@ -331,9 +323,8 @@ msgstr "صوتي"
 msgid "Name"
 msgstr "الإسم"
 
-#, fuzzy
 msgid "Name (*)"
-msgstr "الإسم"
+msgstr "اسم (*)"
 
 msgid "Name of your friend"
 msgstr "إسم صديقك"
@@ -389,9 +380,6 @@ msgstr "يرجى التحقق من عنوان بريدك الإلكتروني ب
 msgid "Pollution"
 msgstr "تلوث"
 
-msgid "Pollution..."
-msgstr "تلوث..."
-
 msgid "Positive initiations will be published."
 msgstr "سيتم نشر مبادرات إيجابية."
 
@@ -401,9 +389,8 @@ msgstr "اعرض الوظيفة بــ 1000 حرف كحد أقصى."
 msgid "Previous"
 msgstr "سابق"
 
-#, fuzzy
 msgid "Professor"
-msgstr "الأستاذ"
+msgstr "أستاذ"
 
 msgid "Radical actions are urgently needed to save our planet."
 msgstr "يجب اتخاذ تدابير صارمة فوراً لإنقاذ كوكبنا."
@@ -417,9 +404,8 @@ msgstr "اقرأ المنزيد"
 msgid "Read the Initiative"
 msgstr "اقرأ المبادرة"
 
-#, fuzzy
 msgid "Recent Votes"
-msgstr "آخرالأصوات %{count}"
+msgstr "الأصوات الأخيرة"
 
 msgid "Register your service"
 msgstr "سجل خدمتك"
@@ -439,9 +425,8 @@ msgstr "روسي"
 msgid "Save the Planet - Unite the Armies"
 msgstr "أنقذوا الكوكب - وحّدوا الجيوش"
 
-#, fuzzy
 msgid "Save the Planet! Act Now!"
-msgstr "أنقذ العالم اعمل الآن"
+msgstr "أنقذ الكوكب! تحرك الآن!"
 
 msgid "Save the planet"
 msgstr "أنقذ الكوكب."
@@ -455,9 +440,8 @@ msgstr "شاهد من صوتوا بالفعل!"
 msgid "Send"
 msgstr "أرسل"
 
-#, fuzzy
 msgid "Send!"
-msgstr "أرسل"
+msgstr "يرسل!"
 
 msgid "Share the opportunity to vote with your friends!"
 msgstr "شارك فرصة التصويت مع أصدقائك!"
@@ -477,9 +461,8 @@ msgstr "شجرة ثلجية"
 msgid "Someone has requested access to your vote. If it was not you, remove this email. If it was you, use the below link to log in."
 msgstr "لقد طلب شخص ما الوصول إلى تصويتك. إذا لم تكن أنت من طلب ذلك، فاحذف هذا البريد الإلكتروني. إذا كنت أنت من طلب ذلك، فاستخدم الرابط أدناه لتسجيل الدخول."
 
-#, fuzzy
 msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
-msgstr "فنلندي"
+msgstr "نأسف، فمعظم مادتنا باللغة الفنلندية. نعتذر عن أي إزعاج قد يسببه هذا ونأمل في تقديم المزيد من المواد متعددة اللغات في المستقبل."
 
 msgid "Spanish"
 msgstr "إسباني"
@@ -559,8 +542,8 @@ msgstr "الموارد وقدرة الجيوش المتحدة يجب أن تُو
 msgid "There are billions of galaxies in the Universe."
 msgstr "هناك مليارات المجرات في الكون."
 
-msgid "There are huge"
-msgstr "هناك ضخمة"
+msgid "There are huge environmental problems on our home planet."
+msgstr "هناك مشاكل بيئية ضخمة على كوكبنا."
 
 msgid "There are more humans than ever before."
 msgstr "لقد أصبح عدد البشر الآن أكبر من أي وقت مضى."
@@ -577,9 +560,8 @@ msgstr "كان هناك خطأ في تعريف الهوية الشخصية"
 msgid "This is our home planet."
 msgstr "هذا هو كوكبنا الأم."
 
-#, fuzzy
 msgid "This is your private vote (%s)"
-msgstr "هذا هو التصويت الخاص بك"
+msgstr "هذا هو تصويتك الخاص (%s)"
 
 msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
 msgstr "بذور القراد Careopsis Calliopsis بقلم JamesDeMers"
@@ -590,9 +572,8 @@ msgstr "إلى عالمنا المشترك"
 msgid "To comment page"
 msgstr "للتعليق على الصفحة"
 
-#, fuzzy
 msgid "To comments"
-msgstr "التعليق"
+msgstr "الى التعليقات"
 
 msgid "To material page (in finnish)"
 msgstr "إلى صفحة المواد (باللغة الفنلندية)"
@@ -612,9 +593,6 @@ msgstr "يقدر إجمالي الإنفاق العالمي للدول على ا
 msgid "Trash, plastics"
 msgstr "القمامة والبلاستيك"
 
-msgid "Trash..."
-msgstr "نفاية..."
-
 msgid "Trees"
 msgstr "الأشجار"
 
@@ -633,9 +611,8 @@ msgstr "اكتب اسم صديقك"
 msgid "Unite The Armies - new comment"
 msgstr "توحيد الجيوش - تعليق جديد"
 
-#, fuzzy
 msgid "Updated at"
-msgstr "تم تحقيقه في"
+msgstr "تم التحديث في"
 
 msgid "View anonymous comments given by previous voters."
 msgstr "عرض التعليقات المجهولة التي قدمها الناخبون السابقون."
@@ -646,8 +623,8 @@ msgstr "تصويت"
 msgid "Vote for the initiative presented on this site."
 msgstr "صوتوا للمبادرة المقدمة على هذا الموقع."
 
-msgid "Warm climate and oceans..."
-msgstr "المناخ الدافئ والمحيطات..."
+msgid "Waste and pollution. Warm climate and rising ocean temperatures. Increased deforestation. Loss of living space for individuals of other species."
+msgstr "النفايات والتلوث. المناخ الدافئ وارتفاع درجات حرارة المحيطات. زيادة إزالة الغابات. فقدان مساحات المعيشة للأفراد من الأنواع الأخرى."
 
 msgid "Water is the Mother of Life – we all need it!"
 msgstr "إن الماء هو أساس وجود الحياة على الأرض – نحن كلنا في حاجة إليه."
@@ -670,14 +647,17 @@ msgstr "يمكننا تغيير الأمور."
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr "نأمل أن تنظر الأمم المتحدة في إمكانية توجيه جيوش العالم إلى هذه المهمة الجديدة، وأن تتخذ مبادرة على الصعيد العالمي لوضع المقترحات المذكورة أعلاه حيز التنفيذ في أقرب وقت ممكن. ومن شأن هذه المبادرة أيضا أن تُؤثر تأثيرا ملموسا في تعزيز السلام العالمي. "
 
-msgid "We fix."
-msgstr "نحن نصلح."
+msgid "We fix them."
+msgstr "نحن نصلحهم."
 
-msgid "We have grown"
-msgstr "لقد نمونا"
+msgid "We have grown beyond sustainable limits!"
+msgstr "لقد تجاوزنا حدود الاستدامة!"
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
 msgstr " نحن نعرض هذه الحملة لدعم مبادرة قُدّمت إلى الأمانة العامة للأمم المتحدة من قبل الأستاذين : ليندستروم وبالوهيمو."
+
+msgid "We live here with animals and plants. Microbes live here too! :)"
+msgstr "نحن نعيش هنا مع الحيوانات والنباتات، كما تعيش الميكروبات هنا أيضًا! :)"
 
 msgid "We made them."
 msgstr "نحن صنعناهم."
@@ -706,9 +686,8 @@ msgstr "غروب الشمس في غابة غابات مغطاة بالطحالب
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "هل ترغب في الحصول على المبادرة بلغتك – يُرجى الإتصال بنا "
 
-#, fuzzy
 msgid "Yesterday"
-msgstr "أيام"
+msgstr "أمس"
 
 msgid "You can also add Your own %s!"
 msgstr "يمكنك أيضًا إضافة %s الخاص بك!"
@@ -716,9 +695,8 @@ msgstr "يمكنك أيضًا إضافة %s الخاص بك!"
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "يمكنك أيضاً الإشتراك في المناقشة بعد أن توقّع على المبادرة. ستحصل على رسالة منفردة بالبريد الإلكتروني بهدا الخصوص."
 
-#, fuzzy
 msgid "You can confirm the comment at administration page"
-msgstr "التعليق"
+msgstr "يمكنك تأكيد التعليق في صفحة الإدارة"
 
 msgid "You can help."
 msgstr "يمكنك المساعدة."
@@ -768,9 +746,8 @@ msgstr "لقد تم تأكيد بريدك الإلكتروني"
 msgid "Your friends email address"
 msgstr "عنوان البريد الإلكتروني لأصدقائك"
 
-#, fuzzy
 msgid "Your friends email address again"
-msgstr "عنوان البريد الإلكتروني لأصدقائك"
+msgstr "عنوان البريد الإلكتروني لأصدقائك مرة أخرى"
 
 msgid "Your name"
 msgstr "اسمك"
@@ -796,18 +773,11 @@ msgstr "لقد تم إضافة صوتك ولكن لم يتم تأكيد البر
 msgid "a List of votes"
 msgstr "قائمة الأصوات"
 
-msgid "beyond sustainable limits!"
-msgstr "ما وراء حدود الاستدامة!"
-
-#, fuzzy
 msgid "comment"
-msgstr "التعليق"
+msgstr "تعليق"
 
 msgid "days"
 msgstr "أيام"
-
-msgid "environmental"
-msgstr "بيئي"
 
 msgid "hour"
 msgstr "ساعة"
@@ -818,36 +788,29 @@ msgstr "ساعات"
 msgid "in Arabic"
 msgstr "باللغة العربية"
 
-#, fuzzy
 msgid "in Chinese"
-msgstr "صيني"
+msgstr "بالصينية"
 
-#, fuzzy
 msgid "in English"
-msgstr "إنجليزي"
+msgstr "باللغة الإنجليزية"
 
-#, fuzzy
 msgid "in Finnish"
-msgstr "فنلندي"
+msgstr "باللغة الفنلندية"
 
-#, fuzzy
 msgid "in French"
-msgstr "فرنسي"
+msgstr "بالفرنسية"
 
 msgid "in German"
 msgstr "باللغة الألمانية"
 
-#, fuzzy
 msgid "in Russian"
-msgstr "روسي"
+msgstr "باللغة الروسية"
 
-#, fuzzy
 msgid "in Spanish"
-msgstr "إسباني"
+msgstr "باللغة الاسبانية"
 
-#, fuzzy
 msgid "in Swedish"
-msgstr "إسباني"
+msgstr "باللغة السويدية"
 
 msgid "let’s spread the word!"
 msgstr "دعونا ننشر الكلمة!"
@@ -857,9 +820,6 @@ msgstr "دقائق"
 
 msgid "minutes"
 msgstr "دقائق"
-
-msgid "problems on our home planet."
-msgstr "المشاكل على كوكبنا الأم."
 
 msgid "professor"
 msgstr "الأستاذ"
