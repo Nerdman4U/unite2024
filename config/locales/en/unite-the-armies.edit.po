@@ -26,7 +26,13 @@ msgstr ""
 msgid "%{count} votes"
 msgstr "%{count} supporters"
 
-msgid "...and by doing that we create..."
+msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr ""
+
+msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
+msgstr ""
+
+msgid "...and by doing that we create problems."
 msgstr ""
 
 msgid "...just by living our lives... "
@@ -56,9 +62,6 @@ msgstr ""
 msgid "All people in the universe reside on this planet."
 msgstr ""
 
-msgid "Also, all animals and plants live here."
-msgstr ""
-
 msgid "Anonymous?"
 msgstr ""
 
@@ -74,7 +77,7 @@ msgstr ""
 msgid "At Duckboard"
 msgstr ""
 
-msgid "At this site we collect signatures for the initiative sent to the United Nations."
+msgid "At this site, we collect signatures for the initiative to be sent to the United Nations."
 msgstr ""
 
 msgid "Autumn shore"
@@ -240,9 +243,6 @@ msgstr ""
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr ""
 
-msgid "Increase deforestation..."
-msgstr ""
-
 msgid "Initiative"
 msgstr ""
 
@@ -292,9 +292,6 @@ msgid "Material"
 msgstr ""
 
 msgid "Menu"
-msgstr ""
-
-msgid "Microbes live here too :)"
 msgstr ""
 
 msgid "Milky way"
@@ -385,9 +382,6 @@ msgid "Please verify your email address by clicking %{link}."
 msgstr ""
 
 msgid "Pollution"
-msgstr ""
-
-msgid "Pollution..."
 msgstr ""
 
 msgid "Positive initiations will be published."
@@ -553,7 +547,7 @@ msgstr "The United Armies must push toward reforestation of the deserts and allo
 msgid "There are billions of galaxies in the Universe."
 msgstr ""
 
-msgid "There are huge"
+msgid "There are huge environmental problems on our home planet."
 msgstr ""
 
 msgid "There are more humans than ever before."
@@ -605,9 +599,6 @@ msgstr ""
 msgid "Trash, plastics"
 msgstr ""
 
-msgid "Trash..."
-msgstr ""
-
 msgid "Trees"
 msgstr ""
 
@@ -638,7 +629,7 @@ msgstr ""
 msgid "Vote for the initiative presented on this site."
 msgstr ""
 
-msgid "Warm climate and oceans..."
+msgid "Waste and pollution. Warm climate and rising ocean temperatures. Increased deforestation. Loss of living space for individuals of other species."
 msgstr ""
 
 msgid "Water is the Mother of Life – we all need it!"
@@ -662,13 +653,16 @@ msgstr ""
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr ""
 
-msgid "We fix."
+msgid "We fix them."
 msgstr ""
 
-msgid "We have grown"
+msgid "We have grown beyond sustainable limits!"
 msgstr ""
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
+msgstr ""
+
+msgid "We live here with animals and plants. Microbes live here too! :)"
 msgstr ""
 
 msgid "We made them."
@@ -786,16 +780,10 @@ msgstr ""
 msgid "a List of votes"
 msgstr ""
 
-msgid "beyond sustainable limits!"
-msgstr ""
-
 msgid "comment"
 msgstr ""
 
 msgid "days"
-msgstr ""
-
-msgid "environmental"
 msgstr ""
 
 msgid "hour"
@@ -838,9 +826,6 @@ msgid "minute"
 msgstr ""
 
 msgid "minutes"
-msgstr ""
-
-msgid "problems on our home planet."
 msgstr ""
 
 msgid "professor"
