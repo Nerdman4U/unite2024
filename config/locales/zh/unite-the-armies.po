@@ -1,11 +1,16 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2025-02-01 20:40+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: Save the Planet - Unite the Armies\n"
-"Language: zh-CN\n"
 
 msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
 msgstr "时间紧迫，我们正在摧毁地球资源。我们必须改变这种状况，而且它能够被改变。你也可以参与。现在就行动。"
@@ -16,8 +21,21 @@ msgstr "我们必须抓紧行动。我们没有几个世纪的时间，可能只
 msgid "%{count} votes"
 msgstr "%{count} 投票"
 
-msgid "...and by doing that we create..."
-msgstr "...通过这样做我们创造了..."
+msgid "%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}"
+msgstr "%{title} v%{version} 与 Ruby %{ruby_version} 和 Rails %{rails_version}"
+
+msgid "%{unite_title} - allekirjoittajat"
+msgstr ""
+
+#, fuzzy
+msgid "%{unite_title} - new comment"
+msgstr "评论"
+
+msgid "&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved."
+msgstr "&copy; 2015-%{year} 拯救地球 - 团结军队。保留所有权利。"
+
+msgid "...and by doing that we create problems."
+msgstr "...我们这样做就会产生问题。"
 
 msgid "...just by living our lives... "
 msgstr "...只要过着我们的生活... "
@@ -46,9 +64,6 @@ msgstr "空气污染是全球性的挑战"
 msgid "All people in the universe reside on this planet."
 msgstr "宇宙中的所有人类都居住在这个星球上。"
 
-msgid "Also, all animals and plants live here."
-msgstr "此外，所有的动物和植物都生活在这里。"
-
 msgid "Anonymous?"
 msgstr "匿名的？"
 
@@ -64,8 +79,8 @@ msgstr "我们的周围有4000亿个太阳系。"
 msgid "At Duckboard"
 msgstr "在 Duckboard"
 
-msgid "At this site we collect signatures for the initiative sent to the United Nations."
-msgstr "我们在此网站收集向联合国发出倡议的签名。"
+msgid "At this site, we collect signatures for the initiative to be sent to the United Nations."
+msgstr "在这个网站上，我们收集倡议书的签名，以便发送给联合国。"
 
 msgid "Autumn shore"
 msgstr "秋日海岸"
@@ -100,8 +115,9 @@ msgstr "评论成功"
 msgid "Comments"
 msgstr "评论"
 
-msgid "Confirm Your vote for Unite the Armies - Save the Planet"
-msgstr "确认您对“团结军队 - 拯救地球”的投票"
+#, fuzzy
+msgid "Confirm Your vote for %{unite_title}"
+msgstr "你的投票"
 
 msgid "Confirm email sent"
 msgstr "确认电子邮件已发送"
@@ -115,9 +131,8 @@ msgstr "联系我们的竞选助理"
 msgid "Country"
 msgstr "国家"
 
-#, fuzzy
 msgid "Country (*)"
-msgstr "国家"
+msgstr "国家 （*）"
 
 msgid "Created at"
 msgstr "创建于"
@@ -140,33 +155,26 @@ msgstr "地球"
 msgid "Email"
 msgstr "电子邮件"
 
-#, fuzzy
 msgid "Email (*)"
-msgstr "电子邮件"
+msgstr "电子邮件 （*）"
 
-#, fuzzy
 msgid "Email Confirmation (*)"
-msgstr "电子邮件确认"
+msgstr "电子邮件确认 (*)"
 
-#, fuzzy
 msgid "Email is already registered."
-msgstr "电子邮件"
+msgstr "电子邮件已经注册。"
 
-#, fuzzy
 msgid "Email is not confirmed"
-msgstr "电子邮件"
+msgstr "电子邮件尚未确认"
 
-#, fuzzy
 msgid "Email is not valid"
-msgstr "电子邮件"
+msgstr "电子邮件无效"
 
-#, fuzzy
 msgid "Email was not found"
-msgstr "电子邮件"
+msgstr "未找到电子邮件"
 
-#, fuzzy
 msgid "Emails do not match"
-msgstr "电子邮件"
+msgstr "邮箱不匹配"
 
 msgid "English"
 msgstr "英文"
@@ -204,9 +212,8 @@ msgstr "全屏"
 msgid "German"
 msgstr "德语"
 
-#, fuzzy
 msgid "Get to your private vote"
-msgstr "这是您的私人投票"
+msgstr "进行私人投票"
 
 msgid "Give the armies a new, positive task: protect the environment"
 msgstr "赋予军队一项全新且富有意义的使命：保护我们的环境"
@@ -238,9 +245,6 @@ msgstr "如果您没有投票，请随意删除此电子邮件。"
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr "在接下来的数十年中，唯有采取强力有效的应对措施才能中断这一问题的恶化过程。我们在此提议：全球军力开支应得到重新分配，转而用于以更集中的方式解决社会问题及环境恶化。"
 
-msgid "Increase deforestation..."
-msgstr "增加森林砍伐......"
-
 msgid "Initiative"
 msgstr "倡议"
 
@@ -265,9 +269,8 @@ msgstr "加入 Discord 上的讨论。"
 msgid "Language"
 msgstr "语言"
 
-#, fuzzy
 msgid "Leave a comment"
-msgstr "评论"
+msgstr "发表评论"
 
 msgid "Let's spread happiness and work together to save the planet! :bi-heart-fill:"
 msgstr "让我们传播快乐，共同努力拯救地球！:bi-heart-fill:"
@@ -292,9 +295,6 @@ msgstr "材料"
 
 msgid "Menu"
 msgstr "菜单"
-
-msgid "Microbes live here too :)"
-msgstr "微生物也生活在这里:)"
 
 msgid "Milky way"
 msgstr "银河系"
@@ -329,9 +329,8 @@ msgstr "我的投票"
 msgid "Name"
 msgstr "姓名"
 
-#, fuzzy
 msgid "Name (*)"
-msgstr "姓名"
+msgstr "姓名 （*）"
 
 msgid "Name of your friend"
 msgstr "您朋友的名字"
@@ -387,9 +386,6 @@ msgstr "请点击 %{link} 验证您的电子邮件地址。"
 msgid "Pollution"
 msgstr "污染"
 
-msgid "Pollution..."
-msgstr "污染..."
-
 msgid "Positive initiations will be published."
 msgstr "我们将会公布积极的举措"
 
@@ -399,7 +395,6 @@ msgstr "提议在1000字符以内"
 msgid "Previous"
 msgstr "以前的"
 
-#, fuzzy
 msgid "Professor"
 msgstr "教授"
 
@@ -415,9 +410,8 @@ msgstr "拯救我们共有的世界"
 msgid "Read the Initiative"
 msgstr "阅读倡议"
 
-#, fuzzy
 msgid "Recent Votes"
-msgstr "%{count} 投票"
+msgstr "近期投票"
 
 msgid "Register your service"
 msgstr "注册你的服务"
@@ -437,9 +431,8 @@ msgstr "俄语"
 msgid "Save the Planet - Unite the Armies"
 msgstr "拯救地球 - 团结军队"
 
-#, fuzzy
 msgid "Save the Planet! Act Now!"
-msgstr "拯救地球。马上行动"
+msgstr "拯救地球！立即行动！"
 
 msgid "Save the planet"
 msgstr "拯救地球"
@@ -453,9 +446,8 @@ msgstr "看看谁已经投票了！"
 msgid "Send"
 msgstr "发送"
 
-#, fuzzy
 msgid "Send!"
-msgstr "发送"
+msgstr "发送！"
 
 msgid "Share the opportunity to vote with your friends!"
 msgstr "与您的朋友分享投票的机会！"
@@ -475,9 +467,8 @@ msgstr "雪树"
 msgid "Someone has requested access to your vote. If it was not you, remove this email. If it was you, use the below link to log in."
 msgstr "有人请求访问您的投票。如果不是您本人，请删除此电子邮件。如果是您本人，请使用以下链接登录。"
 
-#, fuzzy
 msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
-msgstr "芬兰语"
+msgstr "抱歉，我们的资料大多为芬兰语。对于由此造成的不便，我们深表歉意，并希望将来能提供更多多语言资料。"
 
 msgid "Spanish"
 msgstr "西班牙语"
@@ -509,7 +500,8 @@ msgstr "支持者"
 msgid "Swedish"
 msgstr "瑞典"
 
-msgid "Thank you for signing the Unite the Armies petition"
+#, fuzzy
+msgid "Thank you for signing the %{unite_title} petition"
 msgstr "感谢您签署“团结军队”请愿书"
 
 msgid "Thank you for your support %{name}"
@@ -557,8 +549,8 @@ msgstr "军队的资源和能力要被定向在使沙漠森林化方面。"
 msgid "There are billions of galaxies in the Universe."
 msgstr "宇宙中有数十亿个星系。"
 
-msgid "There are huge"
-msgstr "有巨大的"
+msgid "There are huge environmental problems on our home planet."
+msgstr "我们的地球家园存在着巨大的环境问题。"
 
 msgid "There are more humans than ever before."
 msgstr "人类的数量比以往任何时候都多。"
@@ -575,9 +567,8 @@ msgstr "身份认证发生了错误\""
 msgid "This is our home planet."
 msgstr "这就是我们的家园。"
 
-#, fuzzy
 msgid "This is your private vote (%s)"
-msgstr "这是您的私人投票"
+msgstr "这是您的私人投票（％s）"
 
 msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
 msgstr "金鸡菊（Tickseed Careopsis Calliopsis），JamesDeMers 拍摄"
@@ -588,9 +579,8 @@ msgstr "为了我们共有的世界"
 msgid "To comment page"
 msgstr "前往评论页面"
 
-#, fuzzy
 msgid "To comments"
-msgstr "评论"
+msgstr "前往评论"
 
 msgid "To material page (in finnish)"
 msgstr "转至材料页面（芬兰语）"
@@ -610,9 +600,6 @@ msgstr "每年全球的军力开支预计为1.5万亿美元。透视这笔开支
 msgid "Trash, plastics"
 msgstr "垃圾、塑料"
 
-msgid "Trash..."
-msgstr "垃圾..."
-
 msgid "Trees"
 msgstr "树木"
 
@@ -628,12 +615,8 @@ msgstr "再次输入朋友的电子邮件地址"
 msgid "Type your friend's name"
 msgstr "输入朋友的姓名"
 
-msgid "Unite The Armies - new comment"
-msgstr "团结军队 - 新评论"
-
-#, fuzzy
 msgid "Updated at"
-msgstr "创建于"
+msgstr "更新于"
 
 msgid "View anonymous comments given by previous voters."
 msgstr "查看之前投票者的匿名评论。"
@@ -644,8 +627,8 @@ msgstr "投票"
 msgid "Vote for the initiative presented on this site."
 msgstr "对本网站提出的倡议进行投票。"
 
-msgid "Warm climate and oceans..."
-msgstr "温暖的气候和海洋……"
+msgid "Waste and pollution. Warm climate and rising ocean temperatures. Increased deforestation. Loss of living space for individuals of other species."
+msgstr "废物和污染。气候变暖和海洋温度上升。森林砍伐增加。其他物种个体生存空间的丧失。"
 
 msgid "Water is the Mother of Life – we all need it!"
 msgstr "水是生命之源—我们都需要它。"
@@ -668,14 +651,17 @@ msgstr "我们可以改变事情。"
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr "我们衷心企盼联合国能够率先开展一项全球行动以实施上述提议，并重新调遣全世界的武装部队，使其尽快参与至此项新使命中。该项行动能够切实有效地促进世界和平。"
 
-msgid "We fix."
-msgstr "我们修复。"
+msgid "We fix them."
+msgstr "我们修复它们。"
 
-msgid "We have grown"
-msgstr "我们已经成长"
+msgid "We have grown beyond sustainable limits!"
+msgstr "我们的成长已超越可持续的极限！"
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
 msgstr "我们介绍这项活动是为支持U.B. LIndström 和 Eero Paloheimo两位教授提交给联合国秘书处的一项倡议。"
+
+msgid "We live here with animals and plants. Microbes live here too! :)"
+msgstr "我们与动物和植物一起生活在这里。微生物也生活在这里！:)"
 
 msgid "We made them."
 msgstr "我们制作了它们。"
@@ -704,9 +690,8 @@ msgstr "林地森林苔藓日落，摄影：TheOtherKev"
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "你想要一份你自己语言的倡议书----请不要犹豫，与我们联系！"
 
-#, fuzzy
 msgid "Yesterday"
-msgstr "天"
+msgstr "昨天"
 
 msgid "You can also add Your own %s!"
 msgstr "您还可以添加您自己的 %s！"
@@ -714,9 +699,8 @@ msgstr "您还可以添加您自己的 %s！"
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "加入后你也可以加入讨论。你会收到一封有关这个活动的邮件。"
 
-#, fuzzy
 msgid "You can confirm the comment at administration page"
-msgstr "评论"
+msgstr "您可以在管理页面确认评论"
 
 msgid "You can help."
 msgstr "你可以帮忙。"
@@ -766,9 +750,8 @@ msgstr "您的邮箱已确认"
 msgid "Your friends email address"
 msgstr "你朋友的电子邮箱"
 
-#, fuzzy
 msgid "Your friends email address again"
-msgstr "你朋友的电子邮箱"
+msgstr "再次输入您朋友的电子邮件地址"
 
 msgid "Your name"
 msgstr "您的名字"
@@ -785,8 +768,9 @@ msgstr "您的支持编号为 %{count}."
 msgid "Your vote"
 msgstr "你的投票"
 
-msgid "Your vote for Unite the Armies - Save the Planet"
-msgstr "您对“团结军队 - 拯救地球”的投票"
+#, fuzzy
+msgid "Your vote for %{unite_title}"
+msgstr "你的投票"
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
 msgstr "您的投票已添加，但电子邮件尚未确认。请检查您的电子邮件。"
@@ -794,18 +778,11 @@ msgstr "您的投票已添加，但电子邮件尚未确认。请检查您的电
 msgid "a List of votes"
 msgstr "投票列表"
 
-msgid "beyond sustainable limits!"
-msgstr "超出可持续的极限！"
-
-#, fuzzy
 msgid "comment"
 msgstr "评论"
 
 msgid "days"
 msgstr "天"
-
-msgid "environmental"
-msgstr "环境的"
 
 msgid "hour"
 msgstr "小时"
@@ -822,22 +799,18 @@ msgstr "中文"
 msgid "in English"
 msgstr "英文"
 
-#, fuzzy
 msgid "in Finnish"
 msgstr "芬兰语"
 
-#, fuzzy
 msgid "in French"
 msgstr "法语"
 
 msgid "in German"
 msgstr "德语"
 
-#, fuzzy
 msgid "in Russian"
 msgstr "俄语"
 
-#, fuzzy
 msgid "in Spanish"
 msgstr "西班牙语"
 
@@ -852,9 +825,6 @@ msgstr "分"
 
 msgid "minutes"
 msgstr "分"
-
-msgid "problems on our home planet."
-msgstr "我们星球家园的问题。"
 
 msgid "professor"
 msgstr "教授"
