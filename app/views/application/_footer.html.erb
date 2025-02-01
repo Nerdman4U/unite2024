@@ -113,7 +113,7 @@
 
   <div class="row upy-3">
     <div class="col-6 left ufs-0-5 text-start">
-      Save the Planet - Unite the Armies v.<%= Rails.application.config.version %> with Ruby <%= RUBY_VERSION %>, Rails <%= Rails.version %>
+      <%= _("%{title} v%{version} with Ruby %{ruby_version} and Rails %{rails_version}") % {title: _(UNITE_TITLE), version: Rails.application.config.version, ruby_version: RUBY_VERSION, rails_version: Rails.version} %>
     </div>
     <div class="col-6 right ufs-0-5 text-end">
       <%= copyright %>
