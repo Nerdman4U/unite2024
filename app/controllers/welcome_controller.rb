@@ -206,7 +206,7 @@ class WelcomeController < ApplicationController
         name: "earth-01",
         headers: {
           h1: [_("We all live here.")],
-          h2: [_("All people in the universe reside on this planet."), _("Also, all animals and plants live here."), _("Microbes live here too :)")],
+          h2: [_("All people in the universe reside on this planet."), ("We live here with animals and plants. Microbes live here too! :)")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 2458],
         type: 'jpg',
@@ -240,7 +240,7 @@ class WelcomeController < ApplicationController
         name: "blank",
         css: { classes: ["text-dark"] },
         headers: {
-          h1: [_("There are huge"), _("environmental"), _("problems on our home planet.")],
+          h1: [_("There are huge environmental problems on our home planet.")],
         },
         res: [],
         default: 1024,
@@ -258,8 +258,8 @@ class WelcomeController < ApplicationController
       },{
         name: "trash-01",
         headers: {
-          h1: [_("...and by doing that we create...")],
-          h2: [_("Trash..."), _("Pollution..."), _("Warm climate and oceans..."), _("Increase deforestation...")],
+          h1: [_("...and by doing that we create problems.")],
+          h2: [_("Waste and pollution. Warm climate and rising ocean temperatures. Increased deforestation. Loss of living space for individuals of other species.")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4128],
         type: 'jpg',
@@ -281,7 +281,7 @@ class WelcomeController < ApplicationController
         name: "population-graph",
         css: { classes: ["text-dark"] },
         headers: {
-          h1: [_("We have grown"), _("beyond sustainable limits!")],
+          h1: [_("We have grown beyond sustainable limits!")],
         },
         type: 'svg',
         alt: _("Overpopulation"),
@@ -300,7 +300,7 @@ class WelcomeController < ApplicationController
       },{
         name: "forest-02",
         headers: {
-          h1: [_("We can change things."), _("We made them."), _("We fix.")],
+          h1: [_("We can change things."), _("We made them."), _("We fix them.")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 3072, 4000, 4879],
         type: 'jpg',

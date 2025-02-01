@@ -461,6 +461,17 @@ header .header-inner {
  * Contains css for Slide headers (Different than Slideshow headers).
  */
 .slideshow-container .slideshow li.active .slider-content {
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
+    position: relative;
+    max-width: 30vw;
+    line-height: 2vmax;
+    left: 30vw;
+    right: 30vw;
+  }
   > h1 {
     /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
     transform: translateY(-1vmin);
