@@ -7,7 +7,7 @@ class VoteMailer < ApplicationMailer
       Rails.logger.error("Vote is blank")
       return
     end
-    mail(to: @vote.email, subject: _("Thank you for signing the Unite the Armies petition"))
+    mail(to: @vote.email, subject: _("Thank you for signing the %{unite_title} petition") % {unite_title: UNITE_TITLE})
   end
 
   # public: Send an invite letter to a person.
@@ -51,7 +51,7 @@ class VoteMailer < ApplicationMailer
       return
     end
     I18n.locale = value
-    mail(to: email, subject: _(UNITE_TITLE))
+    mail(to: email, subject: UNITE_TITLE)
     I18n.locale = old_locale
   end
 
@@ -66,7 +66,7 @@ class VoteMailer < ApplicationMailer
     end
 
     mail_to = Rails.configuration.x.backup_email
-    mail(to: mail_to, subject: "Unite The Armies - allekirjoittajat", cc: "info@jonitoyryla.eu")
+    mail(to: mail_to, subject: _("%{unite_title} - allekirjoittajat") % {unite_title: UNITE_TITLE}, cc: "info@jonitoyryla.eu")
   end
 
   # public: Inform admins that new comment has been added.
@@ -80,7 +80,7 @@ class VoteMailer < ApplicationMailer
     old_locale = I18n.locale
     I18n.locale = "fi"
     mail_to = Rails.configuration.x.comment_email_to
-    mail(to: mail_to, subject: _("Unite The Armies - new comment"))
+    mail(to: mail_to, subject: _("%{unite_title} - new comment") % {unite_title: UNITE_TITLE})
     I18n.locale = old_locale
   end
 
@@ -101,7 +101,7 @@ class VoteMailer < ApplicationMailer
       Rails.logger.error("Confirm url is blank")
       return
     end
-    mail(to: @vote.email, subject: _("Confirm Your vote for Unite the Armies - Save the Planet"))
+    mail(to: @vote.email, subject: _("Confirm Your vote for %{unite_title}") % {unite_title: UNITE_TITLE})
   end
 
   # public: Send login link to email.
@@ -116,6 +116,6 @@ class VoteMailer < ApplicationMailer
       Rails.logger.error("Token is blank")
       return
     end
-    mail(to: @vote.email, subject: _("Your vote for Unite the Armies - Save the Planet"))
+    mail(to: @vote.email, subject: _("Your vote for %{unite_title}") % {unite_title: UNITE_TITLE})
   end
 end
