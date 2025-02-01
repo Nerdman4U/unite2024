@@ -42,6 +42,15 @@ msgstr "Qui sommes-nous?"
 msgid "Add a comment"
 msgstr "Ajoutez un commentaire"
 
+msgid "Add users by uploading a CSV file"
+msgstr ""
+
+msgid "Admin"
+msgstr ""
+
+msgid "Administration"
+msgstr ""
+
 msgid "Air pollution is a global Challenge!"
 msgstr "La polution de l'air est un défi mondial!"
 
@@ -130,6 +139,9 @@ msgstr ""
 msgid "Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!"
 msgstr ""
 
+msgid "Dont panic! This message is shown only once! :bi-emoji-smile-fill:"
+msgstr ""
+
 msgid "Download"
 msgstr ""
 
@@ -173,7 +185,13 @@ msgstr "Anglais"
 msgid "Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign."
 msgstr ""
 
+msgid "Example: Matti Meikälinen, matti@gmail.com, fi"
+msgstr ""
+
 msgid "Factory"
+msgstr ""
+
+msgid "File needs to be in CSV (comma separated values) format."
 msgstr ""
 
 msgid "Finnish"
@@ -182,7 +200,7 @@ msgstr "Finnois"
 msgid "First Aid"
 msgstr "Première aide"
 
-msgid "For optimal experience please use F11 to allow full screen mode :bi-emoji-smile-fill:."
+msgid "For optimal experience..."
 msgstr ""
 
 msgid "Forest"
@@ -219,7 +237,13 @@ msgstr ""
 msgid "IP"
 msgstr "IP"
 
+msgid "If you are running your own %s service you can register your service to the main service at Unitethearmies.org."
+msgstr ""
+
 msgid "If you click the link below, you’ll find your personal supporter page. If you so wish, you can spread awareness of our campaign via that page, so that the number of those who have signed via your link is recorded there. The best supporters shall be rewarded."
+msgstr ""
+
+msgid "If you did not vote, feel free to delete this email."
 msgstr ""
 
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
@@ -255,6 +279,9 @@ msgstr "Langue"
 #, fuzzy
 msgid "Leave a comment"
 msgstr "Commentaire"
+
+msgid "Let's spread happiness and work together to save the planet! :bi-heart-fill:"
+msgstr ""
 
 msgid "Listing comments"
 msgstr "Listage des commentaires"
@@ -341,6 +368,9 @@ msgstr "Au niveau politique, il est accepté partout que les militaires soient a
 msgid "Once your friend has cast their vote, you'll receive an email with the results and be able to view their votes on this page."
 msgstr ""
 
+msgid "One user will be added per line, with name, email and country in that order."
+msgstr ""
+
 msgid "Our campaign promotes a petition sent to the United Nations to deploy the world’s armies into environmental work to protect the diversity of the global ecosystem and win the battle against climate change."
 msgstr ""
 
@@ -359,6 +389,12 @@ msgstr ""
 msgid "Please check your email"
 msgstr ""
 
+msgid "Please use F11 to allow full screen mode!"
+msgstr ""
+
+msgid "Please verify your email address by clicking %{link}."
+msgstr ""
+
 msgid "Pollution"
 msgstr ""
 
@@ -373,6 +409,10 @@ msgstr "Présentez la tâche avec un maximum de 1000 caractères"
 
 msgid "Previous"
 msgstr ""
+
+#, fuzzy
+msgid "Professor"
+msgstr "professeur"
 
 msgid "Radical actions are urgently needed to save our planet."
 msgstr "Des actions radicales de toute urgence sont nécessaires pour sauver notre planète."
@@ -390,6 +430,12 @@ msgstr ""
 msgid "Recent Votes"
 msgstr "%{count} votes"
 
+msgid "Register your service"
+msgstr ""
+
+msgid "Registered services may share and show collected votes in different servers. After registering all registered services will be available to your service."
+msgstr ""
+
 msgid "Repeat your email"
 msgstr ""
 
@@ -399,7 +445,11 @@ msgstr "Règles pour les commentaires"
 msgid "Russian"
 msgstr "Russe"
 
-msgid "Save the World! Act Now!"
+msgid "Save the Planet - Unite the Armies"
+msgstr ""
+
+#, fuzzy
+msgid "Save the Planet! Act Now!"
 msgstr "Sauvez le monde! Agissez maintenant!"
 
 msgid "Save the planet"
@@ -431,6 +481,9 @@ msgid "Snowy landscape from Finland"
 msgstr ""
 
 msgid "Snowy tree"
+msgstr ""
+
+msgid "Someone has requested access to your vote. If it was not you, remove this email. If it was you, use the below link to log in."
 msgstr ""
 
 #, fuzzy
@@ -474,6 +527,9 @@ msgid "Thank you for your support %{name}"
 msgstr "Merci pour votre support %{name}"
 
 msgid "Thank you in any case for signing the petition,"
+msgstr ""
+
+msgid "Thank you once again for voting! In case of any questions, contact our support team by sending email to %s"
 msgstr ""
 
 msgid "The Earth: third planet from the sun."
@@ -588,6 +644,10 @@ msgstr ""
 msgid "Unite The Armies - new comment"
 msgstr ""
 
+#, fuzzy
+msgid "Updated at"
+msgstr "Créé à"
+
 msgid "View anonymous comments given by previous voters."
 msgstr ""
 
@@ -607,6 +667,9 @@ msgid "We all live here."
 msgstr ""
 
 msgid "We are destroying it."
+msgstr ""
+
+msgid "We are happy to inform you that we have received your vote for the %{title}."
 msgstr ""
 
 msgid "We are misusing our home planet..."
@@ -664,6 +727,10 @@ msgstr ""
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "Vous pouvez aussi contribuer à la discussion après avoir signé. Vous recevrez un message électronique séparé."
 
+#, fuzzy
+msgid "You can confirm the comment at administration page"
+msgstr "Commentaire"
+
 msgid "You can help."
 msgstr ""
 
@@ -673,11 +740,17 @@ msgstr ""
 msgid "You can now add a comment."
 msgstr "Vous pouvez maintenant ajouter un commentaire."
 
+msgid "You can read more at %s."
+msgstr ""
+
+msgid "You can sign the petition here:"
+msgstr ""
+
 msgid "You have added %{count} comments."
 msgstr "Vous avez ajouté  %{count} commentaires."
 
-msgid "You have been invited to Save the World - Unite the Armies by %{name}."
-msgstr "Vous avez été invité à Sauver le Monde-Unissez les armées par  %{name}."
+msgid "You have been invited to %{topic} by %{name}."
+msgstr ""
 
 msgid "You have been logged out"
 msgstr ""
