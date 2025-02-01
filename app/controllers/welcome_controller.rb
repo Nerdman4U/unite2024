@@ -206,7 +206,7 @@ class WelcomeController < ApplicationController
         name: "earth-01",
         headers: {
           h1: [_("We all live here.")],
-          h2: [_("All people in the universe reside on this planet."), ("We live here with animals and plants. Microbes live here too! :)")],
+          h2: [_("All people in the universe reside on this planet."), _("We live here with animals and plants. Microbes live here too! :)")],
         },
         res: [512, 640, 960, 1024, 1280, 1920, 2048, 2458],
         type: 'jpg',
