@@ -21,7 +21,7 @@ class VoteMailerTest < ActionMailer::TestCase
     # English letter
     assert_equal [ "info@jonitoyryla.eu" ], email.from
     assert_equal [ "user1@vote-example.com" ], email.to
-    assert_equal "Thank you for signing the Unite the Armies petition", email.subject
+    assert_equal "Thank you for signing the %{unite_title} petition" % {unite_title: UNITE_TITLE}, email.subject
     # assert_equal read_fixture('invite').join, email.body.to_s
 
     # Finnish letter
