@@ -1,21 +1,11 @@
-# Russian translations for unite-the-armies package.
-# Copyright (C) 2015 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the unite-the-armies package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: unite-the-armies 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-04 10:18+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Russian\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4"
-" && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Save the Planet - Unite the Armies\n"
+"Language: ru\n"
 
 msgid "\"Time is running out while we are destroying the planet's resources. This must be changed and it can be changed. You can participate. Take action today.\""
 msgstr "Время истекает пока мы уничтожаем ресурсы планеты. Это необходимо изменить и может быть изменено. Вы можете в этом принять участие. Действуйте сегодня."
@@ -27,13 +17,13 @@ msgid "%{count} votes"
 msgstr "%{count} К-во голосов"
 
 msgid "...and by doing that we create..."
-msgstr ""
+msgstr "...и делая это, мы создаем..."
 
 msgid "...just by living our lives... "
-msgstr ""
+msgstr "...просто проживая свою жизнь... "
 
 msgid "...we destroy homes of others..."
-msgstr ""
+msgstr "...мы разрушаем дома других..."
 
 msgid "About Us"
 msgstr "О нас"
@@ -42,43 +32,43 @@ msgid "Add a comment"
 msgstr "Добавьте комментарий"
 
 msgid "Add users by uploading a CSV file"
-msgstr ""
+msgstr "Добавьте пользователей, загрузив CSV-файл"
 
 msgid "Admin"
-msgstr ""
+msgstr "Админ"
 
 msgid "Administration"
-msgstr ""
+msgstr "Администрация"
 
 msgid "Air pollution is a global Challenge!"
 msgstr "Загрязнение воздуха – это глобальная Проблема!"
 
 msgid "All people in the universe reside on this planet."
-msgstr ""
+msgstr "Все люди во Вселенной проживают на этой планете."
 
 msgid "Also, all animals and plants live here."
-msgstr ""
+msgstr "Также здесь обитают все животные и растения."
 
 msgid "Anonymous?"
-msgstr ""
+msgstr "Аноним?"
 
 msgid "Appeal"
-msgstr ""
+msgstr "Обращаться"
 
 msgid "Arabic"
 msgstr "Арабский"
 
 msgid "Around us are 400 billion solar systems."
-msgstr ""
+msgstr "Вокруг нас 400 миллиардов солнечных систем."
 
 msgid "At Duckboard"
-msgstr ""
+msgstr "В Дакборде"
 
 msgid "At this site we collect signatures for the initiative sent to the United Nations."
-msgstr ""
+msgstr "На этом сайте мы собираем подписи в поддержку инициативы, направленной в Организацию Объединенных Наций."
 
 msgid "Autumn shore"
-msgstr ""
+msgstr "Осенний берег"
 
 msgid "Background"
 msgstr "Предыстория"
@@ -90,7 +80,7 @@ msgid "Chinese"
 msgstr "Китайский"
 
 msgid "Choose a theme"
-msgstr ""
+msgstr "Выберите тему"
 
 msgid "Choose the language"
 msgstr "Выберите язык"
@@ -111,16 +101,16 @@ msgid "Comments"
 msgstr "комментариев"
 
 msgid "Confirm Your vote for Unite the Armies - Save the Planet"
-msgstr ""
+msgstr "Подтвердите свой голос за «Объединяйте армии — спасите планету»"
 
 msgid "Confirm email sent"
-msgstr ""
+msgstr "Подтвердите отправку электронного письма"
 
 msgid "Constellations"
-msgstr ""
+msgstr "Созвездия"
 
 msgid "Contact our Campaign Assistant"
-msgstr ""
+msgstr "Свяжитесь с нашим помощником по проведению кампании"
 
 msgid "Country"
 msgstr "Страна"
@@ -133,19 +123,19 @@ msgid "Created at"
 msgstr "Добавлено в"
 
 msgid "Desert plants"
-msgstr ""
+msgstr "Растения пустыни"
 
 msgid "Do you wish to spread the word? You can use the methods below to invite anyone and everyone to use their influence on this serious matter!"
-msgstr ""
+msgstr "Хотите распространить информацию? Вы можете использовать методы ниже, чтобы пригласить всех и каждого использовать свое влияние в этом серьезном вопросе!"
 
 msgid "Dont panic! This message is shown only once! :bi-emoji-smile-fill:"
-msgstr ""
+msgstr "Не паникуйте! Это сообщение отображается только один раз! :bi-emoji-smile-fill:"
 
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 msgid "Earth"
-msgstr ""
+msgstr "Земля"
 
 msgid "Email"
 msgstr "Адрес электронной почты"
@@ -182,16 +172,16 @@ msgid "English"
 msgstr "Английский"
 
 msgid "Even if you’ve read everything on our web page, there’s still some material for you to see, such as a printable pamphlet in English+Finnish for you to distribute at your convenience. To spread the idea of armies doing environmental work, see also a simple one-page guide as to how to get more people to sign."
-msgstr ""
+msgstr "Даже если вы прочитали все на нашей веб-странице, все еще есть материал, который вы можете увидеть, например, печатную брошюру на английском и финском языках, которую вы можете распространять в удобное для вас время. Чтобы распространить идею о том, что армии выполняют экологическую работу, ознакомьтесь также с простым одностраничным руководством о том, как заставить больше людей подписать."
 
 msgid "Example: Matti Meikälinen, matti@gmail.com, fi"
-msgstr ""
+msgstr "Пример: Матти Мейкалинен, matti@gmail.com, fi"
 
 msgid "Factory"
-msgstr ""
+msgstr "Фабрика"
 
 msgid "File needs to be in CSV (comma separated values) format."
-msgstr ""
+msgstr "Файл должен быть в формате CSV (значения, разделенные запятыми)."
 
 msgid "Finnish"
 msgstr "Финский"
@@ -200,19 +190,19 @@ msgid "First Aid"
 msgstr "Первая помощь"
 
 msgid "For optimal experience..."
-msgstr ""
+msgstr "Для оптимального опыта..."
 
 msgid "Forest"
-msgstr ""
+msgstr "Лес"
 
 msgid "French"
 msgstr "Французский"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Полноэкранный"
 
 msgid "German"
-msgstr ""
+msgstr "немецкий"
 
 #, fuzzy
 msgid "Get to your private vote"
@@ -222,7 +212,7 @@ msgid "Give the armies a new, positive task: protect the environment"
 msgstr "Давайте передадим армиям новое гуманное задание: охранять нашу общую окружающую среду"
 
 msgid "Go to your mailbox and click confirmation link on email we just have sent!"
-msgstr ""
+msgstr "Зайдите в свой почтовый ящик и нажмите ссылку подтверждения в письме, которое мы только что отправили!"
 
 msgid "Greetings %{name}!"
 msgstr "Приветствую %{name}!"
@@ -231,28 +221,28 @@ msgid "Helsinki, 4.11.2014"
 msgstr "Хельсинки,4.11.2014"
 
 msgid "Home"
-msgstr ""
+msgstr "Дом"
 
 msgid "IP"
 msgstr "Интернет-протокол"
 
 msgid "If you are running your own %s service you can register your service to the main service at Unitethearmies.org."
-msgstr ""
+msgstr "Если вы управляете собственной службой %s, вы можете зарегистрировать ее на основном сервисе на Unitethearmies.org."
 
 msgid "If you click the link below, you’ll find your personal supporter page. If you so wish, you can spread awareness of our campaign via that page, so that the number of those who have signed via your link is recorded there. The best supporters shall be rewarded."
-msgstr ""
+msgstr "Если вы нажмете на ссылку ниже, вы найдете свою личную страницу сторонника. Если вы этого хотите, вы можете распространить информацию о нашей кампании через эту страницу, так что число тех, кто подписался по вашей ссылке, будет зафиксировано там. Лучшие сторонники будут вознаграждены."
 
 msgid "If you did not vote, feel free to delete this email."
-msgstr ""
+msgstr "Если вы не голосовали, смело удаляйте это письмо."
 
 msgid "In the next few decades only strong and effective countermeasures will be able to halt the advance of this process. We propose for your consideration the idea that global spending on armaments should be re-directed (along with other measures) to address social and environmental deterioration in a more focused manner than at present."
 msgstr "В течение нескольких следующих десятилетий продвижение этого процесса можно остановить только сильными и эффективными контрмерами. Предлагаем к вашему рассмотрению идею о том, что глобальные затраты на вооружение следует перенаправить (вместе с другими мерами)на приостановление более фокусированным образом, чем в настоящее время, ухудшения социальной сферы и состояния окружающей среды."
 
 msgid "Increase deforestation..."
-msgstr ""
+msgstr "Увеличить вырубку лесов..."
 
 msgid "Initiative"
-msgstr ""
+msgstr "Инициатива"
 
 msgid "Initiative presented to the United Nations:"
 msgstr "Инициатива, представленная ООН:"
@@ -264,13 +254,13 @@ msgid "It is accepted that the military are called to assist the areas affected 
 msgstr "Общепринятым является то, что военных привлекают на помощь на территории, подвергнутые неожиданным бедствиям. Ту же силу следовало бы использовать для защиты нас от постепенно развивающихся бедствий."
 
 msgid "It’s common practice in many countries that armies are called in to assist those affected by sudden environmental disasters. It would be a logical extension of this practice to employ such a resource in counteracting the somewhat more gradual but much larger-scale catastrophes – this with the help, it is to be hoped, of local NGOs – and that is the aim of our campaign."
-msgstr ""
+msgstr "Во многих странах принято вызывать армии для оказания помощи пострадавшим от внезапных экологических катастроф. Логичным продолжением этой практики было бы использование такого ресурса для противодействия несколько более постепенным, но гораздо более масштабным катастрофам – с помощью, как можно надеяться, местных НПО – и это цель нашей кампании."
 
 msgid "Japanese bridge park garden"
-msgstr ""
+msgstr "Японский мост парк сад"
 
 msgid "Join the discussion on Discord."
-msgstr ""
+msgstr "Присоединяйтесь к обсуждению на Discord."
 
 msgid "Language"
 msgstr "Язык"
@@ -280,16 +270,16 @@ msgid "Leave a comment"
 msgstr "Комментарий"
 
 msgid "Let's spread happiness and work together to save the planet! :bi-heart-fill:"
-msgstr ""
+msgstr "Давайте распространять счастье и работать вместе, чтобы спасти планету! :bi-heart-fill:"
 
 msgid "Listing comments"
 msgstr "Перечисление комментариев"
 
 msgid "Login"
-msgstr ""
+msgstr "Авторизоваться"
 
 msgid "Logout"
-msgstr ""
+msgstr "Выйти"
 
 msgid "Make an initiative for the action of the United Armies."
 msgstr "Выступите с инициативой по поводу действий Объединенных армий "
@@ -298,43 +288,43 @@ msgid "Make the initiative using some of the UN:s official languages (6)."
 msgstr "Выступите с инициативой, используя один из официальных языков ООН (6)."
 
 msgid "Material"
-msgstr ""
+msgstr "Материал"
 
 msgid "Menu"
 msgstr "Меню"
 
 msgid "Microbes live here too :)"
-msgstr ""
+msgstr "Микробы здесь тоже живут :)"
 
 msgid "Milky way"
-msgstr ""
+msgstr "Млечный Путь"
 
 msgid "Millions of Tons of Plastic Waste on the Shores and Oceans!"
 msgstr "Миллионы тонн пластмассовых отходов на побережьях и в океанах!"
 
 msgid "Minimize"
-msgstr ""
+msgstr "Свернуть"
 
 msgid "Mining"
-msgstr ""
+msgstr "Добыча полезных ископаемых"
 
 msgid "Monkey mother and baby"
-msgstr ""
+msgstr "Мать и детеныш обезьяны"
 
 msgid "More material"
-msgstr ""
+msgstr "Больше материала"
 
 msgid "More than a week."
-msgstr ""
+msgstr "Больше недели."
 
 msgid "More work must be done"
 msgstr "Необходимо приложить еще больше усилий"
 
 msgid "My supporter page"
-msgstr ""
+msgstr "Моя страница поддержки"
 
 msgid "My vote"
-msgstr ""
+msgstr "Мой голос"
 
 msgid "Name"
 msgstr "Имя и фамилия"
@@ -347,58 +337,58 @@ msgid "Name of your friend"
 msgstr "Имя и фамилия вашего друга"
 
 msgid "Navigate site"
-msgstr ""
+msgstr "Навигация по сайту"
 
 msgid "New comment"
-msgstr ""
+msgstr "Новый комментарий"
 
 msgid "New global role for the Military"
 msgstr "Новая глобальная роль Армии"
 
 msgid "New vote"
-msgstr ""
+msgstr "Новое голосование"
 
 msgid "Next"
-msgstr ""
+msgstr "Следующий"
 
 msgid "On a political level, it is the accepted practice everywhere that the military is called in to assist those affected by sudden and unexpected environmental disasters. It would simply be a logical extension of this practice to employ such a resource in counteracting the effects of more gradual but much larger-scale and inexorably-advancing catastrophes; this with the help, it is to be hoped, of local NGOs."
 msgstr "На политическом уровне, везде является общепринятой практикой вызывать армию на помощь тем, кого постигли внезапные и неожиданные бедствия. Логичным было бы распространить эту практику на применение данного ресурса для противодействия воздействиям более медленно развивающихся, но более крупномасштабных и неумолимо надвигающихся катастроф; это могло бы быть достигнуто, как мы надеемся, при помощи неправительственных общественных организаций местного уровня."
 
 msgid "Once your friend has cast their vote, you'll receive an email with the results and be able to view their votes on this page."
-msgstr ""
+msgstr "Как только ваш друг проголосует, вы получите электронное письмо с результатами и сможете просмотреть его голоса на этой странице."
 
 msgid "One user will be added per line, with name, email and country in that order."
-msgstr ""
+msgstr "В каждую строку будет добавлен один пользователь с указанием имени, адреса электронной почты и страны в указанном порядке."
 
 msgid "Our campaign promotes a petition sent to the United Nations to deploy the world’s armies into environmental work to protect the diversity of the global ecosystem and win the battle against climate change."
-msgstr ""
+msgstr "Наша кампания продвигает петицию, направленную в Организацию Объединенных Наций, с призывом направить армии мира на экологическую работу, чтобы защитить разнообразие глобальной экосистемы и выиграть битву с изменением климата."
 
 msgid "Our home is the only planet with life."
-msgstr ""
+msgstr "Наш дом — единственная планета, где есть жизнь."
 
 msgid "Overpopulation"
-msgstr ""
+msgstr "Перенаселение"
 
 msgid "Pause"
-msgstr ""
+msgstr "Пауза"
 
 msgid "Play"
-msgstr ""
+msgstr "Играть"
 
 msgid "Please check your email"
-msgstr ""
+msgstr "Пожалуйста, проверьте свою электронную почту."
 
 msgid "Please use F11 to allow full screen mode!"
-msgstr ""
+msgstr "Пожалуйста, используйте F11 для включения полноэкранного режима!"
 
 msgid "Please verify your email address by clicking %{link}."
-msgstr ""
+msgstr "Пожалуйста, подтвердите свой адрес электронной почты, нажав %{link}."
 
 msgid "Pollution"
-msgstr ""
+msgstr "Загрязнение"
 
 msgid "Pollution..."
-msgstr ""
+msgstr "Загрязнение..."
 
 msgid "Positive initiations will be published."
 msgstr "Положительные инициативы будут опубликованы."
@@ -407,7 +397,7 @@ msgid "Present the task with max. 1000 characters."
 msgstr "Предложите задание, используя макс. 1000 знаков."
 
 msgid "Previous"
-msgstr ""
+msgstr "Предыдущий"
 
 #, fuzzy
 msgid "Professor"
@@ -417,26 +407,26 @@ msgid "Radical actions are urgently needed to save our planet."
 msgstr "Необходимы радикальные действия для спасения нашей планеты."
 
 msgid "Reach Us"
-msgstr ""
+msgstr "Свяжитесь с нами"
 
 msgid "Read more"
 msgstr "Читайте больше"
 
 msgid "Read the Initiative"
-msgstr ""
+msgstr "Прочитать инициативу"
 
 #, fuzzy
 msgid "Recent Votes"
 msgstr "%{count} К-во голосов"
 
 msgid "Register your service"
-msgstr ""
+msgstr "Зарегистрируйте свою услугу"
 
 msgid "Registered services may share and show collected votes in different servers. After registering all registered services will be available to your service."
-msgstr ""
+msgstr "Зарегистрированные сервисы могут делиться и показывать собранные голоса на разных серверах. После регистрации все зарегистрированные сервисы будут доступны вашему сервису."
 
 msgid "Repeat your email"
-msgstr ""
+msgstr "Повторите свой адрес электронной почты"
 
 msgid "Rules for Comments"
 msgstr "Правила, касающиеся комментариев"
@@ -445,7 +435,7 @@ msgid "Russian"
 msgstr "Русский"
 
 msgid "Save the Planet - Unite the Armies"
-msgstr ""
+msgstr "Спасем планету - Объединим армии"
 
 #, fuzzy
 msgid "Save the Planet! Act Now!"
@@ -455,10 +445,10 @@ msgid "Save the planet"
 msgstr "Спасите планету"
 
 msgid "See current comments"
-msgstr ""
+msgstr "Посмотреть текущие комментарии"
 
 msgid "See who have already voted!"
-msgstr ""
+msgstr "Посмотрите, кто уже проголосовал!"
 
 msgid "Send"
 msgstr "Отправьте"
@@ -468,22 +458,22 @@ msgid "Send!"
 msgstr "Отправьте"
 
 msgid "Share the opportunity to vote with your friends!"
-msgstr ""
+msgstr "Поделитесь возможностью проголосовать с друзьями!"
 
 msgid "Signatures! Let’s work further!"
 msgstr "Подписи! Давайте продолжим работу!"
 
 msgid "Slideshow image"
-msgstr ""
+msgstr "Слайд-шоу изображений"
 
 msgid "Snowy landscape from Finland"
-msgstr ""
+msgstr "Снежный пейзаж из Финляндии"
 
 msgid "Snowy tree"
-msgstr ""
+msgstr "Заснеженное дерево"
 
 msgid "Someone has requested access to your vote. If it was not you, remove this email. If it was you, use the below link to log in."
-msgstr ""
+msgstr "Кто-то запросил доступ к вашему голосу. Если это были не вы, удалите это письмо. Если это были вы, используйте ссылку ниже для входа."
 
 #, fuzzy
 msgid "Sorry, our material is mostly in Finnish. We apologize for any inconvenience this may cause and hope to provide more multilingual material in the future."
@@ -493,7 +483,7 @@ msgid "Spanish"
 msgstr "Испанский"
 
 msgid "Stars on the horizon"
-msgstr ""
+msgstr "Звезды на горизонте"
 
 msgid "State of the global environment"
 msgstr "Состояние глобальной окружающей среды"
@@ -505,7 +495,7 @@ msgid "Suggest a new task for the Action of the United Armies not presented here
 msgstr "Предложите новое задание для Действия Объединенных армий, которое здесь не было указано."
 
 msgid "Sunrise on the sea"
-msgstr ""
+msgstr "Восход солнца на море"
 
 msgid "Support"
 msgstr "ПОДДЕРЖКУ"
@@ -521,25 +511,25 @@ msgid "Swedish"
 msgstr "Испанский"
 
 msgid "Thank you for signing the Unite the Armies petition"
-msgstr ""
+msgstr "Спасибо за подписание петиции «Объединяем армии»"
 
 msgid "Thank you for your support %{name}"
 msgstr "Спасибо за вашу поддержку %{name}"
 
 msgid "Thank you in any case for signing the petition,"
-msgstr ""
+msgstr "В любом случае спасибо за подписание петиции."
 
 msgid "Thank you once again for voting! In case of any questions, contact our support team by sending email to %s"
-msgstr ""
+msgstr "Спасибо еще раз за голосование! В случае возникновения вопросов обращайтесь в нашу службу поддержки, отправив письмо на адрес %s"
 
 msgid "The Earth: third planet from the sun."
-msgstr ""
+msgstr "Земля: третья планета от Солнца."
 
 msgid "The Milky Way - OUR Galaxy."
-msgstr ""
+msgstr "Млечный Путь — НАША Галактика."
 
 msgid "The Planet Earth, our home."
-msgstr ""
+msgstr "Планета Земля — наш дом."
 
 msgid "The Suggested task must benefit the whole world."
 msgstr "Предложенное задание должно принести пользу всему миру."
@@ -554,7 +544,7 @@ msgid "The United Armies must protect the areas reserved for nature."
 msgstr "Объединенным армиям необходимо обеспечить защиту заповедных территорий."
 
 msgid "The Universe."
-msgstr ""
+msgstr "Вселенная."
 
 msgid "The activities of the United Armies must be controlled by a common, international organ."
 msgstr "Действия Объединенных армий должны контролироваться совместным, международным органом"
@@ -566,13 +556,13 @@ msgid "The resources and capacity of the United Armies must be directed to refor
 msgstr "Ресурсы Объединенных армий необходимо направить на восстановление леса в пустынях."
 
 msgid "There are billions of galaxies in the Universe."
-msgstr ""
+msgstr "Во Вселенной миллиарды галактик."
 
 msgid "There are huge"
-msgstr ""
+msgstr "Есть огромные"
 
 msgid "There are more humans than ever before."
-msgstr ""
+msgstr "Людей сейчас больше, чем когда-либо прежде."
 
 msgid "There is a hidden potential at hand: the national armies."
 msgstr "В наличии имеется скрытый потенциал: национальные армии. "
@@ -584,33 +574,33 @@ msgid "There was an error with human verifying"
 msgstr "При проверке человеком произошла ошибка"
 
 msgid "This is our home planet."
-msgstr ""
+msgstr "Это наша родная планета."
 
 #, fuzzy
 msgid "This is your private vote (%s)"
 msgstr "Это ваш личный голос"
 
 msgid "Tickseed Careopsis Calliopsis by JamesDeMers"
-msgstr ""
+msgstr "Кареопсис каллиопсис клещевины от Джеймса Демерса"
 
 msgid "To Our Common World"
 msgstr "Нашему Общему миру"
 
 msgid "To comment page"
-msgstr ""
+msgstr "На страницу комментариев"
 
 #, fuzzy
 msgid "To comments"
 msgstr "комментариев"
 
 msgid "To material page (in finnish)"
-msgstr ""
+msgstr "На страницу материала (на финском)"
 
 msgid "To the Secretary-General and Secretariat of the United Nations"
 msgstr "Генеральному секретарю и Секретариату ООН"
 
 msgid "Together, we can easily achieve %{target} signatures globally!"
-msgstr ""
+msgstr "Вместе мы легко сможем собрать %{target} подписей по всему миру!"
 
 msgid "Topic"
 msgstr "Тема"
@@ -619,77 +609,77 @@ msgid "Total global spending on armaments is estimated at $1500 billion annually
 msgstr "Общие глобальные затраты на вооружения ежегодно насчитывают в целом примерно 1500 миллиардов долларов США; такие расходы можно для наглядности сравнить с расчетными затратами на облесение всей пустыни Сахара, которые в денежном выражении составили бы примерно одну шестую долю ежегодных глобальных расходов на вооружения. Этот пример наглядно иллюстрирует степень потенциала, необходимого для принятия мер по этому вопросу, если только на это будет политическая воля."
 
 msgid "Trash, plastics"
-msgstr ""
+msgstr "Мусор, пластик"
 
 msgid "Trash..."
-msgstr ""
+msgstr "Мусор..."
 
 msgid "Trees"
-msgstr ""
+msgstr "Деревья"
 
 msgid "Type your email used while voting. Link to your private vote will be sent to your mailbox."
-msgstr ""
+msgstr "Введите ваш email, который вы использовали при голосовании. Ссылка на ваш личный голос будет отправлена на ваш почтовый ящик."
 
 msgid "Type your friend's email"
-msgstr ""
+msgstr "Введите адрес электронной почты вашего друга"
 
 msgid "Type your friend's email again"
-msgstr ""
+msgstr "Введите адрес электронной почты вашего друга еще раз"
 
 msgid "Type your friend's name"
-msgstr ""
+msgstr "Введите имя вашего друга"
 
 msgid "Unite The Armies - new comment"
-msgstr ""
+msgstr "Unite The Armies - новый комментарий"
 
 #, fuzzy
 msgid "Updated at"
 msgstr "Добавлено в"
 
 msgid "View anonymous comments given by previous voters."
-msgstr ""
+msgstr "Просмотрите анонимные комментарии предыдущих избирателей."
 
 msgid "Vote"
-msgstr ""
+msgstr "Голосование"
 
 msgid "Vote for the initiative presented on this site."
-msgstr ""
+msgstr "Проголосуйте за инициативу, представленную на этом сайте."
 
 msgid "Warm climate and oceans..."
-msgstr ""
+msgstr "Теплый климат и океаны..."
 
 msgid "Water is the Mother of Life – we all need it!"
 msgstr "Вода – мать жизни – она нужна нам всем!"
 
 msgid "We all live here."
-msgstr ""
+msgstr "Мы все здесь живем."
 
 msgid "We are destroying it."
-msgstr ""
+msgstr "Мы его уничтожаем."
 
 msgid "We are happy to inform you that we have received your vote for the %{title}."
-msgstr ""
+msgstr "Мы рады сообщить вам, что мы получили ваш голос за %{title}."
 
 msgid "We are misusing our home planet..."
-msgstr ""
+msgstr "Мы неправильно используем нашу родную планету..."
 
 msgid "We can change things."
-msgstr ""
+msgstr "Мы можем изменить ситуацию."
 
 msgid "We earnestly hope that the United Nations will consider suggesting a global initiative to put the proposals outlined above into effect and for a redeployment of the world’s armed forces into this new task as soon as possible. Such an initiative would also have a tangible effect in promoting world peace."
 msgstr "Мы убедительно надеемся, что ООН рассмотрит возможность предложения глобальной инициативы, с целью осуществления предложений, намеченных выше в общих чертах, и перенаправления как можно скорее глобальных армий на выполнение этого нового задания. такая инициатива также оказала бы заметное воздействие на способствование достижению мира в мире."
 
 msgid "We fix."
-msgstr ""
+msgstr "Мы исправим."
 
 msgid "We have grown"
-msgstr ""
+msgstr "Мы выросли"
 
 msgid "We introduce this campaign to support an initiative presented to the United Nations Secretariat by two professors: U.B. Lindström and Eero Paloheimo."
 msgstr "Мы начинаем эту кампанию, с целью оказания поддержки инициативе, представленной Секретариату ООН двумя профессорами: У.Б. Линдстрёмом и Ээро Палохеймо."
 
 msgid "We made them."
-msgstr ""
+msgstr "Мы их сделали."
 
 msgid "We must defend Life's Richness on our Planet!"
 msgstr "Нам необходимо защищать богатство жизни на нашей Планете!"
@@ -704,13 +694,13 @@ msgid "We the undersigned addressees turn to you because of our concern at the s
 msgstr "Мы, нижеподписавшиеся адресанты, обращаемся к вам по причине нашей озабоченности в отношении состояния глобальной окружающей среды. Во многих частях мира ухудшение состояния окружающей среды может быть напрямую привязано к социальным проблемам среди местного населения."
 
 msgid "Why vote?"
-msgstr ""
+msgstr "Зачем голосовать?"
 
 msgid "Wildlife Park Wolf"
-msgstr ""
+msgstr "Парк дикой природы Волк"
 
 msgid "Woodland forest moss sunset by TheOtherKev"
-msgstr ""
+msgstr "Лесной мох на закате от TheOtherKev"
 
 msgid "Would you like to have the initiative in your language – please, contact us!"
 msgstr "Если хотите получить инициативу на своем родном языке – просим связаться с нами!"
@@ -720,7 +710,7 @@ msgid "Yesterday"
 msgstr "дня/дней"
 
 msgid "You can also add Your own %s!"
-msgstr ""
+msgstr "Вы также можете добавить свой %s!"
 
 msgid "You can also contribute to the discussion after signing. You will get a separate message of that by email."
 msgstr "Можете принять участие в дискуссии после того как вы подписали. Вы получите отдельное сообщение об этом по электронной почте."
@@ -730,49 +720,49 @@ msgid "You can confirm the comment at administration page"
 msgstr "Комментарий"
 
 msgid "You can help."
-msgstr ""
+msgstr "Вы можете помочь."
 
 msgid "You can invite your friends, colleagues and family to sign the petition by using a form below. You can also share this vote in social media."
-msgstr ""
+msgstr "Вы можете пригласить своих друзей, коллег и семью подписать петицию, используя форму ниже. Вы также можете поделиться этим голосованием в социальных сетях."
 
 msgid "You can now add a comment."
 msgstr "Теперь можете добавить комментарий."
 
 msgid "You can read more at %s."
-msgstr ""
+msgstr "Подробнее можно прочитать на %s."
 
 msgid "You can sign the petition here:"
-msgstr ""
+msgstr "Подписать петицию можно здесь:"
 
 msgid "You have added %{count} comments."
 msgstr "Вы добавили %{count} комментариев."
 
 msgid "You have been invited to %{topic} by %{name}."
-msgstr ""
+msgstr "Вас пригласил на %{topic} %{name}."
 
 msgid "You have been logged out"
-msgstr ""
+msgstr "Вы вышли из системы"
 
 msgid "You have helped campaign by having %{count} people signed after you."
 msgstr "Вы помогли кампании тем, что привлекли %{count} человек к подписанию после вас."
 
 msgid "You may read the materials online, download them on your computer or print them; note that the pamphlet is designed to be printed on both sides of the paper."
-msgstr ""
+msgstr "Вы можете прочитать материалы онлайн, загрузить их на свой компьютер или распечатать; обратите внимание, что брошюра предназначена для печати на обеих сторонах листа."
 
 msgid "You need to be logged in"
-msgstr ""
+msgstr "Вам необходимо войти в систему"
 
 msgid "Your comment"
-msgstr ""
+msgstr "Ваш комментарий"
 
 msgid "Your comment has been sent"
-msgstr ""
+msgstr "Ваш комментарий был отправлен"
 
 msgid "Your email"
-msgstr ""
+msgstr "Ваш адрес электронной почты"
 
 msgid "Your email has been confirmed"
-msgstr ""
+msgstr "Ваш адрес электронной почты подтвержден"
 
 msgid "Your friends email address"
 msgstr "Адрес электронной почты вашего друга"
@@ -782,10 +772,10 @@ msgid "Your friends email address again"
 msgstr "Адрес электронной почты вашего друга"
 
 msgid "Your name"
-msgstr ""
+msgstr "Ваше имя"
 
 msgid "Your private link has been sent to your email"
-msgstr ""
+msgstr "Ваша личная ссылка была отправлена на ваш адрес электронной почты."
 
 msgid "Your support has been registered %{name}!"
 msgstr "Ваша поддержка зарегистрирована %{name}"
@@ -794,19 +784,19 @@ msgid "Your supporter number is %{count}."
 msgstr "Ваш номер содействующего лица %{count}."
 
 msgid "Your vote"
-msgstr ""
+msgstr "Ваш голос"
 
 msgid "Your vote for Unite the Armies - Save the Planet"
-msgstr ""
+msgstr "Ваш голос за «Объединяйте армии — спасите планету»"
 
 msgid "Your vote is added but email is not yet confirmed. Please check your email."
-msgstr ""
+msgstr "Ваш голос добавлен, но email еще не подтвержден. Пожалуйста, проверьте email."
 
 msgid "a List of votes"
-msgstr ""
+msgstr "Список голосов"
 
 msgid "beyond sustainable limits!"
-msgstr ""
+msgstr "за пределами устойчивых пределов!"
 
 #, fuzzy
 msgid "comment"
@@ -816,13 +806,13 @@ msgid "days"
 msgstr "дня/дней"
 
 msgid "environmental"
-msgstr ""
+msgstr "относящийся к окружающей среде"
 
 msgid "hour"
-msgstr ""
+msgstr "час"
 
 msgid "hours"
-msgstr ""
+msgstr "часы"
 
 #, fuzzy
 msgid "in Arabic"
@@ -845,7 +835,7 @@ msgid "in French"
 msgstr "Французский"
 
 msgid "in German"
-msgstr ""
+msgstr "на немецком"
 
 msgid "in Russian"
 msgstr "в России"
@@ -859,7 +849,7 @@ msgid "in Swedish"
 msgstr "Испанский"
 
 msgid "let’s spread the word!"
-msgstr ""
+msgstr "Давайте распространим эту информацию!"
 
 msgid "minute"
 msgstr "минуты/минут"
@@ -868,7 +858,7 @@ msgid "minutes"
 msgstr "минуты/минут"
 
 msgid "problems on our home planet."
-msgstr ""
+msgstr "проблемы на нашей родной планете."
 
 msgid "professor"
 msgstr "профессор"
@@ -880,4 +870,4 @@ msgid "seconds"
 msgstr "секунды/секунд"
 
 msgid "sincerely,"
-msgstr ""
+msgstr "искренне,"
