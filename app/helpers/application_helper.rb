@@ -395,7 +395,7 @@ module ApplicationHelper
   end
 
   def copyright
-    _("&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved." % { year: Date.today.year }).html_safe
+    (_("&copy; 2015-%{year} SAVE THE PLANET - UNITE THE ARMIES. All Rights Reserved.") % { year: Date.today.year }).html_safe
   end
 
   def language_item identifier
