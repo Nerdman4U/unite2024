@@ -1,5 +1,8 @@
 require 'ostruct'
 
+# TODO:
+# class ResponsiveImage
+
 class Slide
   def initialize(options)
     @options = options

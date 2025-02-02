@@ -1,4 +1,5 @@
 using StringExtensions
+require "ostruct"
 
 module ApplicationHelper
 
@@ -285,6 +286,32 @@ module ApplicationHelper
     end
   end
   alias :slideshow :slider_new
+
+  ## public: Get responsive image html with picture, source and img.
+  #
+  # img - a hash
+  #         {
+  #           name: 'slide_name',
+  #           type: 'jpg',
+  #           res: [640,960,1024,1280,1920,2048,3072,4096],
+  #           default: 640,
+  #           alt: 'slide_name',
+  #         }
+  def responsive_image img
+    img = OpenStruct.new(img)
+    tag.picture do
+      source = img.res.map do |r|
+        tag.source(media: "(max-width: #{r}px)", srcset:"#{responsive_image_path(img.name, r, img.type)}")
+      end
+      source << tag.source(media: "(min-width: #{img.res[-1]}px)", srcset:"#{responsive_image_path(img.name, img.res[-1], img.type)}")
+      source << image_tag(responsive_image_path(img.name, img.res[-1], img.type), "alt" => img.alt)
+      source.join.html_safe
+    end
+  end
+
+  def responsive_image_path name, res, type
+    image_path("#{name}-w#{res}.#{type}")
+  end
 
   ## public: Get image path.
   #

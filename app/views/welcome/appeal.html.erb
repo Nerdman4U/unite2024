@@ -86,19 +86,18 @@ end
   </div>
 </div>
 
-<div class="section-block container-fluid text-center upb-3">
-  <%= link_to initiative_path(locale: locale), { class: button_white, style: "display:inline-block;width:100%" } do %>
-  <!-- <span class="bi bi-person-add align-middle"></span> -->
-  <%= _("Read the Initiative") %>
-  <% end %>
-</div>
-
 <section class="section-block feature-2 bg-white upy-8 upx-8 color-white">
   <div class="row">
-    <div class="col-9 offset-1">
-      <%= link_to new_vote_path(locale: locale), { :class => button_black, :data => { :no_turbolink => true }} do %>
+    <div class="col-sm-3">
+      <%= link_to new_vote_path(locale: locale), { :class => button_black } do %>
       <span class="bi bi-person-add align-middle"></span>
       <%= _("Support now") %>
+      <% end %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to initiative_path(locale: locale), { :class => button_black } do %>
+      <span class="bi bi-person-add align-middle"></span>
+      <%= _("Read the Initiative") %>
       <% end %>
     </div>
   </div>

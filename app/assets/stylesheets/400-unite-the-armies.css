@@ -472,7 +472,7 @@ header .header-inner {
   > h5 {
     /* border: 1px solid blue; */
     /* position: relative; */
-    max-width: 40vw;
+    max-width: 32vw;
     margin: 0 auto;
     line-height: 2vmax;
     /* left: 30vw;
@@ -485,6 +485,8 @@ header .header-inner {
   > h1.show {
     visibility: visible;
     /* padding: 8vmin; */
+    /* padding 2vmin is because diashow has multiple h1's and they overlap without. */
+    padding: 2vmin;
     opacity: 1;
     scale: 3;
     display: block;
@@ -820,6 +822,21 @@ header .header-inner {
 
 .unite-shadow {
   box-shadow: 0.5vh 0.5vw 10px rgb(0 0 0 / 50%);
+}
+
+.animated-images {
+  .image-container {
+    height: 50vh;
+    /* width: 500px; */
+  }
+  img {
+    /* max-width: 40vw;
+    max-height: 30vh; */
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 /** =========================================================================

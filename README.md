@@ -219,6 +219,12 @@ https://pixabay.com/photos/vancouver-british-columbia-canada-216595/
 
 https://pixabay.com/illustrations/earth-world-planet-globe-1303628/
 
+https://pixabay.com/illustrations/animal-polar-bear-bear-icebear-ice-8825249/
+
+https://pixabay.com/illustrations/pollution-environment-plastic-8252583/
+
+https://pixabay.com/illustrations/drought-ground-pxclimateaction-7135470/
+
 <dl>
 <dt>JanBrzezinski</dt>
 <dd>

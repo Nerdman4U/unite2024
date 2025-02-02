@@ -535,7 +535,7 @@ class SlideShowButtons extends SlideShow {
             if (this.deco().pause) this.deco().pause();
             this.deactivate(); // deactivate all slides.
             this.proceed(el.dataset.offset); // select new slide.
-            if (this.deco().play) this.deco().play();
+            if (this.deco().play && !this.playing()) this.deco().play();
             if (!this.currentSlide()) {
               console.error("SlideShowButtons#initButtons click: No Slide!");
               return;

@@ -46,12 +46,13 @@ end %>
 <!-- /Karuselli -->
 
 <!-- info -->
-<section class="section-block bg-white color-dark upx-8">
+<section class="section-block bg-white color-dark upx-8 animated-images">
   <div class="row">
     <div class="col-6">
       <div class="center animated-block-l2r">
-        <div class="umy-3">
-          <%= image_tag "pollution.jpg", alt:_('Pollution') %>
+        <div class="umy-3 image-container">
+          <%# image_tag "pollution.jpg", alt:_('Pollution') %>
+          <%= responsive_image({ name: "tehdas", type: "jpg", res: [640,960,1024,1280,1920,2048,2500], default: 1024, alt:_("Factory") }) %>
         </div>
         <div class="feature-text">
           <h2 class="umy-1"><%= _("Air pollution is a global Challenge!") %></h2>
@@ -61,8 +62,9 @@ end %>
     </div>
     <div class="col-6">
       <div class="center animated-block-r2l">
-        <div class="umy-3">
-          <%= image_tag "nowater.jpg", alt:"" %>
+        <div class="umy-3 image-container">
+          <%# image_tag "nowater.jpg", alt:"" %>
+          <%= responsive_image({ name: "drought", type: "jpg", res: [640,960,1024,1280,1920,2048,3072,4000,5000], default: 1024, alt:_("No water") }) %>
         </div>
         <div class="feature-text">
           <h2 class="umy-1"><%= _("Water is the Mother of Life – we all need it!") %></h2>
@@ -70,27 +72,29 @@ end %>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6">
-        <div class="center animated-block-l2r">
-          <div class="umy-3">
-            <%= image_tag "trash.jpg", alt:"" %>
-          </div>
-          <div class="feature-text">
-            <h2 class="umy-1"><%= _("Millions of Tons of Plastic Waste on the Shores and Oceans!") %></h2>
-            <p class="ufs-1"><%= _("The United Armies must collect the plastic waste from the oceans and shores.") %></p>
-          </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="center animated-block-l2r">
+        <div class="umy-3 image-container">
+          <%= responsive_image({ name: "pollution-plastics", type: "jpg", res: [640,960,1024,1280,1920,2048,3072,3547], default: 1024, alt:_("Pollution plastics") }) %>
+          <%# image_tag "trash.jpg", alt:"" %>
+        </div>
+        <div class="feature-text">
+          <h2 class="umy-1"><%= _("Millions of Tons of Plastic Waste on the Shores and Oceans!") %></h2>
+          <p class="ufs-1"><%= _("The United Armies must collect the plastic waste from the oceans and shores.") %></p>
         </div>
       </div>
-      <div class="col-6">
-        <div class="center animated-block-r2l">
-          <div class="umy-3">
-            <%= image_tag "polars.jpg", alt:"" %>
-          </div>
-          <div class="feature-text">
-            <h2 class="umy-1"><%= _("We must defend Life's Richness on our Planet!") %></h2>
-            <p class="ufs-1"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
-          </div>
+    </div>
+    <div class="col-6">
+      <div class="center animated-block-r2l">
+        <div class="umy-3 image-container">
+          <%= responsive_image({ name: "polar-bear", type: "jpg", res: [640,960,1024,1280,1920,2048,3072,4096], default: 1024, alt:_("Polar bears") }) %>
+          <%# image_tag "polars.jpg", alt:"" %>
+        </div>
+        <div class="feature-text">
+          <h2 class="umy-1"><%= _("We must defend Life's Richness on our Planet!") %></h2>
+          <p class="ufs-1"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
         </div>
       </div>
     </div>
