@@ -98,11 +98,11 @@ module ApplicationHelper
   end
 
   def button_black
-    "button-black up-2 text-uppercase ufs-2 shadow border border-2 border-light rounded text-decoration-none"
+    "unite-button button-black up-2 text-uppercase unite-shadow border border-2 border-light rounded text-decoration-none text-center"
   end
 
   def button_white
-    "button-white up-2 text-uppercase ufs-2 shadow border border-2 border-dark rounded text-decoration-none"
+    "unite-button button-white up-2 text-uppercase unite-shadow border border-2 border-dark rounded text-decoration-none text-center"
   end
 
   def vimeo_stuff
@@ -138,90 +138,6 @@ module ApplicationHelper
   end
   def show_link_to_vote?
     !((controller.controller_name == "votes") && (controller.action_name == "show"))
-  end
-
-  def slide_section slide
-    result = <<~SECTION
-  <li>
-    <div class="slider-content">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1 class="ufs-2 color-white lspacing-medium">
-              #{slide[:topic_1]}
-            </h1>
-            <h5 class="ufs-1 color-white lspacing-medium">
-              #{slide[:topic_2]}
-            </h5>
-            <div class="clear"></div>
-            <div class="umt-5">
-            #{slide[:link]}
-            </div>
-          </div>
-      </div>
-    </div>
-    <picture>
-      <source media="(max-width: 640px)" srcset="#{slide[:img_mobile]}" />
-      <source media="(max-width: 1024px)" srcset="#{slide[:img_tablet]}" />
-      <source media="(max-width: 2048px)" srcset="#{slide[:img_screen]}" />
-      <img data-src=#{slide[:img_default]} srcset="#{slide[:img_srcset]}" src="#{slide[:img_blank]}" alt="#{slide[:img_alt] || _("Slideshow image")}" />
-    </picture>
-  </li>
-    SECTION
-    return result
-  end
-
-  ##
-  # Fullscreen slider.
-  #
-  # options - Hash options for the slider (default: {})
-  #           :section_classes - Array of additional css classes.
-  #           :show_navigation - Boolean to show navigation buttons
-  #                              (next, prev).
-  #
-  # Returns nothing.
-  def fs_slider options={}, &block
-    options[:section_classes] ||= []
-    options[:section_classes] << "unite-screenheight-100"
-    raw_slider(options, &block)
-  end
-  def slider options={}, &block
-    options[:section_classes] ||= []
-    options[:section_classes] << "unite-screenheight-50"
-    raw_slider(options, &block)
-  end
-  alias :slider_section :slider
-
-  def raw_slider options={}
-    section_classes = options[:section_classes] || []
-    show_navigation = options[:show_navigation] || false
-
-    slides = yield
-    slides_html = []
-    slides.map { |option|
-      slides_html << slide_section(option)
-    }
-    slider_navigation_html = show_navigation ? slider_navitation : ""
-
-    result = <<~SECTION
-    <section class="slideshow-container unite-slider-container #{section_classes.join(" ")}">
-      <ul class="slideshow slideshow-standard" data-decorators="headers,image">
-        #{slides_html.join("\n")}
-        #{slider_navigation_html}
-      </ul>
-    </section>
-    SECTION
-    result.html_safe
-  end
-
-  def slider_navitation
-    return <<~HTML
-      <a href="#" class="slider-nav slider-nav-prev" style="display:none" data-offset="-1">
-        <i class="bi bi-chevron-compact-left"></i>
-      </a>
-      <a href="#" class="slider-nav slider-nav-next" style="display:none" data-offset="1">
-        <i class="bi bi-chevron-compact-right"></i>
-      </a>
-    HTML
   end
 
   ##
@@ -267,23 +183,25 @@ module ApplicationHelper
           tag.li "data-decorators": slide.decorators.join(", "), class: css_classes.join(" ") do
             li_result = []
             li_result << tag.div(class: "slider-content") do
-              content_result = []
-              if slide.headers.h1.present?
-                slide.headers.h1.map do |h1|
-                  content_result << tag.h1(class: "ufs-1-5 lspacing-medium") do h1 end
+              tag.div(class: "slider-content-text") do
+                content_result = []
+                if slide.headers.h1.present?
+                  slide.headers.h1.map do |h1|
+                    content_result << tag.h1(class: "ufs-1-5 lspacing-medium") do h1 end
+                  end
                 end
-              end
-              if slide.headers.h2.present?
-                slide.headers.h2.map do |h2|
-                  content_result << tag.h2(class: "ufs-1 lspacing-medium") do h2 end
+                if slide.headers.h2.present?
+                  slide.headers.h2.map do |h2|
+                    content_result << tag.h2(class: "ufs-1 lspacing-medium") do h2 end
+                  end
                 end
-              end
-              if additional_html[:link].present?
-                content_result << tag.div(class: "upt-10") do
-                  additional_html[:link]
+                if additional_html[:link].present?
+                  content_result << tag.div(class: "upt-5") do
+                    additional_html[:link]
+                  end
                 end
+                content_result.join.html_safe
               end
-              content_result.join.html_safe
             end
 
             if (slide.type == 'svg')
@@ -366,6 +284,7 @@ module ApplicationHelper
       slideshow_result
     end
   end
+  alias :slideshow :slider_new
 
   ## public: Get image path.
   #

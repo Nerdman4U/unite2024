@@ -1,4 +1,4 @@
-<%= slider_new(@welcome_slider) do
+<%= slideshow(@welcome_slider) do
     {
       css: "slideshow-container-top",
       link: link_to(appeal_path(locale: locale), { class: button_white }) do
@@ -12,25 +12,31 @@ end
 
 <section class="section-block bg-white color-black upx-8 upy-8 text-center">
   <h1><%= _("At this site, we collect signatures for the initiative to be sent to the United Nations.") %></h1>
-  <p class="umt-3">
-    <%= link_to initiative_path(locale: locale),
+  <div class="row umt-3 justify-content-center">
+    <div class="col text-end">
+      <%= link_to initiative_path(locale: locale),
         { :class => button_white } do
           _("Initiative")
         end
     %>
-    <%= link_to why_vote_path(locale: locale),
+    </div>
+    <div class="col text-center">
+      <%= link_to why_vote_path(locale: locale),
         { :class => button_white } do
           _("Why vote?")
         end
     %>
-    <%= link_to new_vote_path(locale: locale),
+    </div>
+    <div class="col text-start">
+      <%= link_to new_vote_path(locale: locale),
         { :class => button_white } do
           content = tag.span class: "bi bi-person-add align-middle" do " " end
           content << _("Vote")
           content
         end
     %>
-  </p>
+    </div>
+  </div>
 </section>
 
 <!-- Karuselli -->
@@ -49,7 +55,7 @@ end %>
         </div>
         <div class="feature-text">
           <h2 class="umy-1"><%= _("Air pollution is a global Challenge!") %></h2>
-          <p class="blockquote"><%= _("The resources and capacity of the United Armies must be directed to reforestation of the deserts.") %></p>
+          <p class="ufs-1"><%= _("The resources and capacity of the United Armies must be directed to reforestation of the deserts.") %></p>
         </div>
       </div>
     </div>
@@ -60,7 +66,7 @@ end %>
         </div>
         <div class="feature-text">
           <h2 class="umy-1"><%= _("Water is the Mother of Life – we all need it!") %></h2>
-          <p class="blockquote"><%= _("The United Armies must ensure sufficient water availability everywhere for the needs of people and life.") %></p>
+          <p class="ufs-1"><%= _("The United Armies must ensure sufficient water availability everywhere for the needs of people and life.") %></p>
         </div>
       </div>
     </div>
@@ -72,7 +78,7 @@ end %>
           </div>
           <div class="feature-text">
             <h2 class="umy-1"><%= _("Millions of Tons of Plastic Waste on the Shores and Oceans!") %></h2>
-            <p class="blockquote"><%= _("The United Armies must collect the plastic waste from the oceans and shores.") %></p>
+            <p class="ufs-1"><%= _("The United Armies must collect the plastic waste from the oceans and shores.") %></p>
           </div>
         </div>
       </div>
@@ -83,7 +89,7 @@ end %>
           </div>
           <div class="feature-text">
             <h2 class="umy-1"><%= _("We must defend Life's Richness on our Planet!") %></h2>
-            <p class="blockquote"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
+            <p class="ufs-1"><%= _("The United Armies must protect the areas reserved for nature.") %></p>
           </div>
         </div>
       </div>
@@ -97,28 +103,38 @@ end %>
 
 <section class="section-block feature-2 bg-white upx-8 upy-8">
   <div class="row">
-    <div class="col-6 upt-2">
-      <%= link_to appeal_path(locale: locale),
+    <div class="col-6">
+      <div class="row">
+        <div class="col-sm">
+          <%= link_to appeal_path(locale: locale),
         { :class => button_black } do
           content = tag.span class: "bi bi-info-circle align-middle" do " " end
           content << _("Read more")
           content
         end
       %>
-      <%= link_to new_vote_path(locale: locale),
+        </div>
+        <div class="col-sm">
+          <%= link_to new_vote_path(locale: locale),
         { :class => button_black } do
           content = tag.span class: "bi bi-person-add align-middle" do " " end
           content << _("Support now")
           content
         end
       %>
+        </div>
+      </div>
     </div>
     <div class="col-6">
       <!-- video -->
       <section class="section-block bg-white">
         <!-- <div style="padding:80% 0 0 0;position:relative;"> -->
-        <div style="border 1px solid red; height: 50vh; width:100%">
-          <iframe src="https://player.vimeo.com/video/<%= unite_video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
+        <div class="row align-items-start">
+          <div class="col">
+            <div style="height: 20vmin; width:100%;">
+              <iframe src="https://player.vimeo.com/video/<%= unite_video_id %>?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Save the Planet - Unite the Armies"></iframe>
+            </div>
+          </div>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </section>

@@ -456,21 +456,27 @@ header .header-inner {
   }
 }
 
+.slider-container-text {
+  /* position: relative; */
+}
+
 /* public: Slide continue, headers.
  *
  * Contains css for Slide headers (Different than Slideshow headers).
  */
-.slideshow-container .slideshow li.active .slider-content {
+.slideshow-container .slideshow li.active .slider-content-text {
   > h1,
   > h2,
   > h3,
   > h4,
   > h5 {
-    position: relative;
-    max-width: 30vw;
+    /* border: 1px solid blue; */
+    /* position: relative; */
+    max-width: 40vw;
+    margin: 0 auto;
     line-height: 2vmax;
-    left: 30vw;
-    right: 30vw;
+    /* left: 30vw;
+    right: 30vw; */
   }
   > h1 {
     /* transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68); */
@@ -478,7 +484,7 @@ header .header-inner {
   }
   > h1.show {
     visibility: visible;
-    padding: 8vmin;
+    /* padding: 8vmin; */
     opacity: 1;
     scale: 3;
     display: block;
@@ -545,7 +551,7 @@ header .header-inner {
 .slideshow-container .slideshow-headers {
   position: absolute;
   z-index: 3;
-  width: 600px;
+  width: 40vw;
   right: 1vw;
   top: 15vh;
   height: auto;
@@ -801,6 +807,19 @@ header .header-inner {
       border-radius: 10px;
     }
   }
+}
+
+.unite-button {
+  display: block;
+  min-width: 10cqw;
+  max-width: 20cqw;
+  font-size: 1cqw;
+  margin: 0 auto;
+  padding: 1cqw 2cqw;
+}
+
+.unite-shadow {
+  box-shadow: 0.5vh 0.5vw 10px rgb(0 0 0 / 50%);
 }
 
 /** =========================================================================
