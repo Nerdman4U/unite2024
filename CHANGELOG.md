@@ -1,3 +1,34 @@
+## 2.3.0 (2025-02-02)
+
+### Feat
+
+- New images, css fixes
+- Translations
+- French translations
+- Chinese translations
+- Spanish translations
+- English translations
+- German translations
+- Arabic translation
+
+### Fix
+
+- Layout fixes
+- Mail headers fix test
+- Mail headers update
+- Copyright translation line fix
+- Translated language version line
+- Translated copyright
+- Missing gettext function
+- Slideshow slide captions css fixes and diashow text fixes
+- Restart carousel after click navigation buttons
+- **votes_controller.rb**: Show only if count is positive
+- Vote count test fix
+
+### Refactor
+
+- Removed unused commented code
+
 ## 2.2.3 (2025-01-31)
 
 ### Fix
