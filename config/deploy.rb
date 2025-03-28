@@ -6,12 +6,18 @@ lock "~> 3.19.2"
 
 set :application, "unite-the-armies-2024"
 set :repo_url, "git@github.com:Nerdman4U/unite2024.git"
-append :linked_files, "config/credentials.yml.enc", "public/googleca9639854eea1a9b.html", "config/master.key"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system"
-append :linked_dirs, ".bundle"
 set :keep_releases, 5
 set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
 set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
+set :bundle_dir, '/home/jto/.rvm/ruby/3.3.6/gems'
+set :default_env, {
+  'GEM_HOME': '/home/jto/.rvm/ruby/3.3.6/gems',
+  'GEM_PATH': '/home/jto/.rvm/ruby/3.3.6/gems'
+}
+
+append :linked_files, "config/credentials.yml.enc", "public/googleca9639854eea1a9b.html", "config/master.key"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system"
+append :linked_dirs, ".bundle"
 
 namespace :deploy do
   desc "install"
